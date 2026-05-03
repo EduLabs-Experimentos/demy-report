@@ -218,7 +218,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 # Capítulo I: Introducción
 
-## 1.1. Stratup Profile
+## 1.1. Startup Profile
 
 ### 1.1.1. Descripción de la Startup
 
@@ -229,6 +229,75 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 **Visión**: Ser reconocidos como la startup líder en soluciones móviles y web para la gestión académica en el Perú, destacando por la accesibilidad, seguridad e innovación de nuestras herramientas digitales.
 
 ### 1.1.2. Perfiles de integrantes del equipo
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-daniel.png" alt="daniel_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Daniel Crispin - U20221g120 </strong></p>
+          <p align="justify">
+            .....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-rafael.png" alt="rafael_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Rafel Dominguez - U202312318</strong></p>
+          <p align="justify">
+            .....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="img/profile-photos/member-kalet.png" alt="kalet_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Henry Esteban - U202310210</strong></p>
+          <p align="justify">
+            ....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-renso.png" alt="renso_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Renso Julca - U202121579</strong></p>
+          <p align="justify">
+             ...
+          </p>
+    </td>
+  </tr>
+</table>
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-diego.png" alt="diego_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Diego Vilca - u20231a778</strong></p>
+          <p align="justify">
+             Mi nombre es Diego Vilca, tengo 20 años y actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
+          </p>
+    </td>
+  </tr>
+</table>
 
 ## 1.2. Solution Profile
 
