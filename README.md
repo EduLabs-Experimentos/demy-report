@@ -529,6 +529,114 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
 
 ### 2.1.1. Análisis competitivo
 
+<table border="1" style="width: 100%; font-size: 11px; table-layout: fixed; word-wrap: break-word; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th colspan="6" style="padding: 5px; background-color: #f2f2f2;"><b>Competitive Analysis Landscape</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" align="center" style="padding: 5px;">¿Por qué llevar a cabo este análisis?</td>
+      <td colspan="4" align="center" style="padding: 5px;">El objetivo de este análisis competitivo es evaluar nuestro posicionamiento frente a otras soluciones de gestión académica y determinar nuestro diferencial estratégico.</td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="2" valign="top" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Startup y Competidores</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Nistra</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Academygest</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Playoff</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Quickschools</b></td>
+    </tr>
+    <tr>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/nistra-logo.png" alt="Nistra Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-academygest.jpg" alt="Academygest Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-playoff.jpg" alt="Playoff Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-quickschools.png" alt="Quickschools Logo" height="60" /></td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top" style="padding: 5px; width: 8%;"><b>Perfil</b></td>
+      <td valign="top" style="padding: 5px; width: 12%;">Overview</td>
+      <td valign="top" style="padding: 5px;">EduLabs ofrece a Demy una aplicación móvil multiplataformay web  que centraliza matrícula, pagos, asistencia y horarios, mejorando la eficiencia operativa y la experiencia para estudiantes y docentes.</td>
+      <td valign="top" style="padding: 5px;">Plataforma integral que facilita la gestión de academias y centros educativos, permitiendo organizar y mantener datos de alumnos.</td>
+      <td valign="top" style="padding: 5px;">Sistema de gestión para entidades, que ofrece también control de cobros, pagos y organización de actividades académicas.</td>
+      <td valign="top" style="padding: 5px;">Plataforma en la nube para gestión escolar, con funciones como calificaciones, asistencia y comunicación con padres. Dirigida a escuelas pequeñas y medianas.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+      <td valign="top" style="padding: 5px;">Diseño específico para academias presenciales, adaptabilidad local, escalabilidad y enfoque en experiencia móvil.</td>
+      <td valign="top" style="padding: 5px;">Optimización de la gestión administrativa, ahorro de tiempo y mejora de la eficiencia en la administración de centros educativos.</td>
+      <td valign="top" style="padding: 5px;">Incremento de la motivación y participación en programas educativos mediante dinámicas de juego personalizadas.</td>
+      <td valign="top" style="padding: 5px;">Gestión académica simple y flexible, enfocada en facilidad de uso y personalización para escuelas pequeñas y medianas.</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top" style="padding: 5px;"><b>Perfil de Marketing</b></td>
+      <td valign="top" style="padding: 5px;">Mercado objetivo</td>
+      <td valign="top" style="padding: 5px;">Academias preuniversitarias presenciales (una o varias sedes) que requieren digitalizar sus procesos administrativos.</td>
+      <td valign="top" style="padding: 5px;">Academias y centros de formación en España que requieren control académico, administrativo y financiero.</td>
+      <td valign="top" style="padding: 5px;">Entidades educativas y corporativas que buscan motivar mediante estrategias de gamificación.</td>
+      <td valign="top" style="padding: 5px;">Escuelas K-12 privadas y pequeñas instituciones educativas a nivel global que necesitan soluciones simples y flexibles.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Estrategias de marketing</td>
+      <td valign="top" style="padding: 5px;">Campañas digitales en redes sociales (TikTok, Instagram, Facebook), alianzas educativas y referencias locales.</td>
+      <td valign="top" style="padding: 5px;">Campañas en línea enfocadas en instituciones educativas que requieren soluciones de gestión.</td>
+      <td valign="top" style="padding: 5px;">Publicaciones de artículos y casos de éxito sobre implementación de gamificación educativa.</td>
+      <td valign="top" style="padding: 5px;">Generación de guías y contenidos educativos para atraer y retener clientes potenciales.</td>
+    </tr>
+    <tr>
+      <td rowspan="3" valign="top" style="padding: 5px;"><b>Perfil de Producto</b></td>
+      <td valign="top" style="padding: 5px;">Productos & Servicios</td>
+      <td valign="top" style="padding: 5px;">Gestión de entidades de la academia, matrículas, pagos automatizados, asistencia móvil y visualización de horarios desde la app.</td>
+      <td valign="top" style="padding: 5px;">Asistencia, pagos, reportes académicos, envío de SMS.</td>
+      <td valign="top" style="padding: 5px;">Gamificación, análisis de participación y personalización de experiencias.</td>
+      <td valign="top" style="padding: 5px;">Comunicación, registro académico, horarios inteligentes y acceso rápido a información.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Precios & Costos</td>
+      <td valign="top" style="padding: 5px;">Plan Básico: $50/mes (1 sede).<br> Plan Intermedio: $100/mes (2 sedes).<br> Plan Premium: $200/mes (varias sedes).</td>
+      <td valign="top" style="padding: 5px;">Plan único: 25€/mes.<br> Incluye:<br> - Sin instalaciones.<br> - Servicio 24/7.<br> - Alumnos y cursos ilimitados.<br> - Gestión de asistencia.<br> - Soporte técnico.</td>
+      <td valign="top" style="padding: 5px;">Plan Base: 34,95€.<br> Plan Pro: 49,95€.<br> Plan Top: 69,95€.<br> Plan Premium: personalizado.<br> Incluye prueba gratuita de 15 días.</td>
+      <td valign="top" style="padding: 5px;">Gaia Plan: $0.99/estudiante/mes.<br> Apollo Plan: $1.49/estudiante/mes.<br> Athena Plan: $2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Canales de distribución (Web y/o Móvil) </td>
+      <td valign="top" style="padding: 5px;">Acceso directo vía app móvil multiplataforma y web.</td>
+      <td valign="top" style="padding: 5px;">Disponible en navegadores web.</td>
+      <td valign="top" style="padding: 5px;">Distribución web y acceso a app móvil con el Plan Pro.</td>
+      <td valign="top" style="padding: 5px;">Disponible vía web y aplicaciones móviles.</td>
+    </tr>
+    <tr>
+      <td rowspan="4" valign="top" style="padding: 5px;"><b>Análisis SWOT</b></td>
+      <td valign="top" style="padding: 5px;">Fortalezas</td>
+      <td valign="top" style="padding: 5px;">Especialización en academias preuniversitarias. <br>Diseño móvil, planes escalables y usabilidad adaptada.</td>
+      <td valign="top" style="padding: 5px;">Plataforma intuitiva, en español, adecuada para academias pequeñas y medianas.<br> Cobertura completa de funciones básicas.</td>
+      <td valign="top" style="padding: 5px;">Enfoque especializado en gamificación educativa.<br> Adaptable a academias, empresas y áreas de RRHH.</td>
+      <td valign="top" style="padding: 5px;">Plataforma madura, flexible y con soporte eficaz.<br> Planes escalables.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Debilidades</td>
+      <td valign="top" style="padding: 5px;">Startup emergente con financiamiento limitado.</td>
+      <td valign="top" style="padding: 5px;">Limitado geográficamente a España.<br> Sin aplicación móvil.<br> Menor reconocimiento frente a competidores globales.</td>
+      <td valign="top" style="padding: 5px;">Solución complementaria, no integral.<br> App móvil solo disponible en ciertos planes.</td>
+      <td valign="top" style="padding: 5px;">Puede resultar costoso en grandes escalas.<br> Limitación al idioma inglés.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Oportunidades</td>
+      <td valign="top" style="padding: 5px;">Mercado poco saturado en Perú. <br>Creciente apertura digital. <br>Alta demanda de herramientas locales móviles.</td>
+      <td valign="top" style="padding: 5px;">Expansión a Latinoamérica.<br> Desarrollo de aplicación móvil.</td>
+      <td valign="top" style="padding: 5px;">Creciente interés en gamificación educativa.<br> Alianzas con plataformas educativas.</td>
+      <td valign="top" style="padding: 5px;">Inclusión del idioma español.<br> Posibilidad de alianzas con redes escolares y gobiernos.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Amenazas</td>
+      <td valign="top" style="padding: 5px;">Resistencia al cambio en academias tradicionales. <br>Competencia global. <br>Riesgos de seguridad informática por poca experiencia.</td>
+      <td valign="top" style="padding: 5px;">Alta competencia global.<br> Dependencia de un solo mercado geográfico.</td>
+      <td valign="top" style="padding: 5px;">Necesidad de clientes que comprendan el valor de la gamificación.<br> Riesgo de baja adopción.</td>
+      <td valign="top" style="padding: 5px;">Competencia con plataformas multilingües.<br> Saturación del mercado K-12.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
 ## 2.2. Entrevistas
