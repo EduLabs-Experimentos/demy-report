@@ -498,6 +498,29 @@ A continuación, se presenta el Lean UX Canvas elaborado en la herramienta *Miro
 
 ## 1.3. Segmentos objetivo
 
+En el análisis de los segmentos objetivo de **Demy**, hemos identificado dos grupos clave que se beneficiarán de nuestra plataforma: **profesores** y **personal administrativo** de academias educativas presenciales.
+
+### Profesores de academias
+
+Según la revista Gan@Mas (24 de julio, 2014), los docentes dedican hasta el **29% de su tiempo a tareas administrativas**, tiempo que debería enfocarse en la enseñanza. La alta demanda académica y la falta de herramientas integradas dificultan su labor, generando sobrecarga y limitando su rendimiento.
+
+- **Edad:** Profesores de cualquier rango de edad.
+- **Necesidad clave:** Reducir tareas administrativas y optimizar su tiempo para enfocarse en la enseñanza.
+- **Nivel educativo:** Formación universitaria, preferiblemente con especialización en educación o áreas afines.
+- **Uso de tecnología:** Manejo básico a intermedio de herramientas digitales, pero con necesidad de sistemas más eficientes para gestión académica.
+
+---
+
+### Administradores de academias
+
+El personal administrativo de academias suele enfrentarse a una carga de trabajo elevada, desde planificación de horarios hasta control de pagos y matrículas. La **Encuesta Nacional de Uso del Tiempo (ENUT, 2024)** señala que **el 45% de trabajadores en educación dedica más de 20 horas semanales a tareas administrativas**. Además, un estudio de **GRADE (2023)** indica que **el 70% de directores considera ineficientes las herramientas de gestión actuales**, evidenciando la necesidad de soluciones tecnológicas integradas.
+
+- **Edad:** Personal administrativo de cualquier edad.
+- **Necesidad clave:** Optimizar procesos internos y reducir errores administrativos mediante tecnología.
+- **Nivel educativo:** Formación técnica o universitaria en administración, gestión u otras áreas afines.
+- **Uso de tecnología:** Conocimientos básicos a avanzados en herramientas digitales, con necesidad de plataformas más centralizadas.
+
+
 <hr class="page-break">
 
 # Capítulo II: Requirements Elicitation & Analysis
