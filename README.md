@@ -40,6 +40,10 @@
 
 # Registro de Versiones del Informe
 
+| Versión | Fecha     | Autor         | Descripción de modificación                              |
+|---------|-----------|---------------|----------------------------------------------------------|
+| 1.0     | 3/05/2026 |  Diego Vilca  | Creación inicial de la estructura del informe            |
+
 <hr class="page-break">
 
 # Project Report Collaboration Insights
@@ -159,6 +163,56 @@
 <hr class="page-break">
 
 # Student Outcome
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4. 
+
+<table border="1" style="border-collapse: collapse; width: 100%; font-family: sans-serif; font-size: 14px;">
+    <thead>
+        <tr style="background-color: #f2f2f2; text-align: left;">
+            <th style="padding: 10px; width: 25%;">Criterio específico</th>
+            <th style="padding: 10px; width: 50%;">Acciones realizadas</th>
+            <th style="padding: 10px; width: 25%;">Conclusiones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 10px;"><strong> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </strong></td>
+            <td style="padding: 10px;">
+                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
+                ...</p>
+                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
+                ....</p>
+            </td>
+            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+                Como equipo,.....
+            </td>
+        </tr>
+                <tr>
+            <td style="padding: 10px;"><strong>  Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales .</strong></td>
+            <td style="padding: 10px;">
+                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
+                ...</p>
+                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
+                ....</p>
+                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
+                ....</p>
+            </td>
+            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+                Logramos ....
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <hr class="page-break">
 
