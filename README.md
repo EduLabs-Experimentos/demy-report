@@ -766,17 +766,121 @@ Este análisis refleja claramente patrones de uso, frustraciones comunes y crite
 
 ## 2.3. Needfinding
 
+El Needfinding permite identificar necesidades reales de los usuarios mediante entrevistas y análisis del contexto.
+A partir de esta información, se construyeron artefactos clave que ayudaron a comprender mejor sus objetivos, tareas, emociones y frustraciones.
+
 ### 2.3.1. User Personas
+
+
+Los User Personas fueron elaborados a partir de los hallazgos de las entrevistas, reflejando perfiles representativos de los segmentos objetivo.
+Cada ficha sintetiza aspectos demográficos, conductuales y emocionales que guían el diseño funcional y visual de la plataforma.
+
+#### User Persona: Administrador de academia
+
+Coordinadora administrativa que necesita centralizar pagos, matrículas y horarios.
+Busca evitar errores, ahorrar tiempo y modernizar los procesos de su academia.
+
+![User Persona – Administrator](./assets/images/photos/user-persona-admin.png)
+
+<hr class="page-break">
+
+#### User Persona: Docente de academia
+
+Profesor joven que busca herramientas simples y accesibles para gestionar asistencia y horarios desde su dispositivo movil.
+Valora la movilidad y odia perder tiempo con tareas repetitivas.
+
+![User Persona – Teacher](./assets/images/photos/user-persona-teacher.png)
+
+<hr class="page-break">
 
 ### 2.3.2. User Task Matrix
 
+En este User Task Matrix se detallan las tareas clave que cada tipo de usuario puede realizar dentro del sistema académico
+
+| **TAREA**                                              |  **Carmen Gutierrez.(Administrador) - Frecuencia**  |  **Carmen Gutierrez.(Administrador) - Importancia**  |
+|--------------------------------------------------------|:---------------------------------------------------:|:----------------------------------------------------:|
+| Registrar matrícula de estudiantes                     |                       always                        |                         high                         |
+| Gestionar los horarios de docentes y estudiantes       |                      sometimes                      |                         high                         |
+| Controlar los pagos de estudiantes                     |                      sometimes                      |                         high                         |
+| Visualizar la información académica                    |                        never                        |                        medium                        |
+| Ver la información financiera de los estudiantes       |                      sometimes                      |                         high                         |
+| Coordinar con los docentes para la gestión             |                      sometimes                      |                        medium                        |
+| Gestionar reportes para estudiantes y profesores       |                      sometimes                      |                         high                         |
+| Gestionar cambios en la asignación de aulas y horarios |                      sometimes                      |                         high                         |
+| Supervisar los procesos administrativos                |                       always                        |                         high                         |
+
+| **TAREA**                                       |  **Luis Mendoza(Profesor) - Frecuencia**  |  **Luis Mendoza(Profesor) - Importancia**  |
+|-------------------------------------------------|:-----------------------------------------:|:------------------------------------------:|
+| Registrar asistencia de estudiantes             |                 sometimes                 |                    high                    |
+| Revisar y gestionar horarios de clases          |                 sometimes                 |                   medium                   |
+| Registrar calificaciones                        |                  always                   |                    high                    |
+| Acceder a información de los estudiantes        |                 sometimes                 |                 sometimes                  |
+| Coordinar con el personal administrativo        |                 sometimes                 |                   medium                   |
+| Comunicar incidencias en horario regular        |                   never                   |                    high                    |
+| Preparar los materiales para las clases         |                  always                   |                    high                    |
+| Diseñar las evaluaciones                        |                 sometimes                 |                    high                    |
+| Gestionar que se cumplan las normas en el aula  |                  always                   |                    high                    |
+
+<hr class="page-break">
+
+
 ### 2.3.3. User Journey Mapping
+
+A continuación se presentarán los User Journey Maps de cada User Persona. Estos mapas nos permitirán comprender los puntos de dolor que experimentan en cada etapa, desde que descubren nuestra app hasta que comparten su opinión sobre ella.
+
+* User Journey Map de Luis Mendoza:
+  ![User Journey Map del User Persona Luis Mendoza](./assets/images/photos/user-journey-map-luis-mendoza.png)
+  [Ver Imagen detallada aquí](https://drive.google.com/file/d/1ZwP-W8qpUPP0yI6UFXMareIiCiphqNrr/view?usp=sharing)
+
+
+* User Journey Map de Carmen Gutiérrez:
+  ![User Journey Map del User Persona Carmen Gutiérrez](./assets/images/photos/user-journey-map-carmen-gutiérrez.png)
+  [Ver Imagen detallada aquí](https://drive.google.com/file/d/1oGSadSkVdSIzf-MeaMGnYL06wVVFKkJG/view?usp=sharing)
 
 ### 2.3.4. Empathy Mapping
 
+Se elaboraron los Empathy Mapping para los dos User Personas: el Administrador de la academia y el Profesor. Este proceso permitió comprender mejor lo que dicen, piensan, hacen y sienten en su día a día, identificando sus principales pains y gains para diseñar una solución que realmente se adapte a sus necesidades.
+
+---
+
+#### Administrador de academia
+
+![Empathy Mapping – Administrator](./assets/images/photos/empathy-mapping-admin.png)
+
+---
+
+#### Docente de academia
+
+![Empathy Mapping – Teacher](./assets/images/photos/empathy-mapping-teacher.png)
+
+<hr class="page-break">
+
 ### 2.3.5. As-is Scenario Mapping
 
+...
+
 ## 2.4. Ubiquitous Language
+
+Un glosario de términos clave utilizados en el dominio de gestión académica de **Demy**, redactado en inglés (con su equivalente en español), para asegurar una comunicación clara y sin ambigüedades entre todos los miembros del equipo y stakeholders.
+
+| Término         | Equivalente       | Definición                                                                                                                                                                    |
+|-----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Academy         | Academia          | Institución educativa presencial que ofrece preparación preuniversitaria.                                                                                                     |
+| Administrator   | Administrativo    | Persona encargada de procesos como matrícula, pagos, horarios y generación de reportes.                                                                                       |
+| Teacher         | Docente           | Persona responsable de dictar clases, registrar asistencia y reprogramar el horario académico en caso sea necesario.                                                          |
+| Student         | Estudiante        | Individuo que estudia en la academia y necesita acceso a información académica y notificaciones.                                                                              |
+| Enrollment      | Matrícula         | Proceso de inscripción de un estudiante en una academia.                                                                                                                      |
+| Attendance      | Asistencia        | Registro de la participación del estudiante en cada sesión de clase.                                                                                                          |
+| Schedule        | Horario           | Organización temporal de clases, docentes, salones y cursos.                                                                                                                  |
+| Course          | Curso             | Asignatura académica específica dentro de un ciclo académico, como Matemática, Física, Química, etc.                                                                          |
+| Classroom       | Aula              | Espacio físico donde se imparten sesiones de clase, ya sea una sala en sede presencial.                                                                                       |
+| Session         | Sesión            | Una clase individual dentro del horario académico.                                                                                                                            |
+| Payment         | Pago              | Transferencia de dinero de una parte (pagador) a otra (beneficiario) a cambio de bienes, servicios o para cumplir una obligación legal.                                       |
+| Transaction     | Transacción       | El procesamiento de pagos o cualquier operación que modifique el estado financiero o administrativo del sistema.                                                              |
+| Notification    | Notificación      | Mensaje enviado a usuarios sobre eventos importantes, como pagos o cambios de horario.                                                                                        |
+| Report          | Reporte           | Documento o vista analítica que muestra datos académicos y administrativos (matrículas, asistencia, pagos, etc.).                                                             |
+| Academic Period | Periodo académico | Periodo extenso de clases en academias preuniversitarias Identifica un plan de estudios definido en duración y nivel, usado para organizar y administrar la oferta educativa. |
+
 
 <hr class="page-break">
 
