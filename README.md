@@ -529,30 +529,358 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
 
 ### 2.1.1. Análisis competitivo
 
+<table border="1" style="width: 100%; font-size: 11px; table-layout: fixed; word-wrap: break-word; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th colspan="6" style="padding: 5px; background-color: #f2f2f2;"><b>Competitive Analysis Landscape</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" align="center" style="padding: 5px;">¿Por qué llevar a cabo este análisis?</td>
+      <td colspan="4" align="center" style="padding: 5px;">El objetivo de este análisis competitivo es evaluar nuestro posicionamiento frente a otras soluciones de gestión académica y determinar nuestro diferencial estratégico.</td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="2" valign="top" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Startup y Competidores</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Nistra</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Academygest</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Playoff</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Quickschools</b></td>
+    </tr>
+    <tr>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/nistra-logo.png" alt="Nistra Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-academygest.jpg" alt="Academygest Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-playoff.jpg" alt="Playoff Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-quickschools.png" alt="Quickschools Logo" height="60" /></td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top" style="padding: 5px; width: 8%;"><b>Perfil</b></td>
+      <td valign="top" style="padding: 5px; width: 12%;">Overview</td>
+      <td valign="top" style="padding: 5px;">EduLabs ofrece a Demy una aplicación móvil multiplataformay web  que centraliza matrícula, pagos, asistencia y horarios, mejorando la eficiencia operativa y la experiencia para estudiantes y docentes.</td>
+      <td valign="top" style="padding: 5px;">Plataforma integral que facilita la gestión de academias y centros educativos, permitiendo organizar y mantener datos de alumnos.</td>
+      <td valign="top" style="padding: 5px;">Sistema de gestión para entidades, que ofrece también control de cobros, pagos y organización de actividades académicas.</td>
+      <td valign="top" style="padding: 5px;">Plataforma en la nube para gestión escolar, con funciones como calificaciones, asistencia y comunicación con padres. Dirigida a escuelas pequeñas y medianas.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+      <td valign="top" style="padding: 5px;">Diseño específico para academias presenciales, adaptabilidad local, escalabilidad y enfoque en experiencia móvil.</td>
+      <td valign="top" style="padding: 5px;">Optimización de la gestión administrativa, ahorro de tiempo y mejora de la eficiencia en la administración de centros educativos.</td>
+      <td valign="top" style="padding: 5px;">Incremento de la motivación y participación en programas educativos mediante dinámicas de juego personalizadas.</td>
+      <td valign="top" style="padding: 5px;">Gestión académica simple y flexible, enfocada en facilidad de uso y personalización para escuelas pequeñas y medianas.</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top" style="padding: 5px;"><b>Perfil de Marketing</b></td>
+      <td valign="top" style="padding: 5px;">Mercado objetivo</td>
+      <td valign="top" style="padding: 5px;">Academias preuniversitarias presenciales (una o varias sedes) que requieren digitalizar sus procesos administrativos.</td>
+      <td valign="top" style="padding: 5px;">Academias y centros de formación en España que requieren control académico, administrativo y financiero.</td>
+      <td valign="top" style="padding: 5px;">Entidades educativas y corporativas que buscan motivar mediante estrategias de gamificación.</td>
+      <td valign="top" style="padding: 5px;">Escuelas K-12 privadas y pequeñas instituciones educativas a nivel global que necesitan soluciones simples y flexibles.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Estrategias de marketing</td>
+      <td valign="top" style="padding: 5px;">Campañas digitales en redes sociales (TikTok, Instagram, Facebook), alianzas educativas y referencias locales.</td>
+      <td valign="top" style="padding: 5px;">Campañas en línea enfocadas en instituciones educativas que requieren soluciones de gestión.</td>
+      <td valign="top" style="padding: 5px;">Publicaciones de artículos y casos de éxito sobre implementación de gamificación educativa.</td>
+      <td valign="top" style="padding: 5px;">Generación de guías y contenidos educativos para atraer y retener clientes potenciales.</td>
+    </tr>
+    <tr>
+      <td rowspan="3" valign="top" style="padding: 5px;"><b>Perfil de Producto</b></td>
+      <td valign="top" style="padding: 5px;">Productos & Servicios</td>
+      <td valign="top" style="padding: 5px;">Gestión de entidades de la academia, matrículas, pagos automatizados, asistencia móvil y visualización de horarios desde la app.</td>
+      <td valign="top" style="padding: 5px;">Asistencia, pagos, reportes académicos, envío de SMS.</td>
+      <td valign="top" style="padding: 5px;">Gamificación, análisis de participación y personalización de experiencias.</td>
+      <td valign="top" style="padding: 5px;">Comunicación, registro académico, horarios inteligentes y acceso rápido a información.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Precios & Costos</td>
+      <td valign="top" style="padding: 5px;">Plan Básico: $50/mes (1 sede).<br> Plan Intermedio: $100/mes (2 sedes).<br> Plan Premium: $200/mes (varias sedes).</td>
+      <td valign="top" style="padding: 5px;">Plan único: 25€/mes.<br> Incluye:<br> - Sin instalaciones.<br> - Servicio 24/7.<br> - Alumnos y cursos ilimitados.<br> - Gestión de asistencia.<br> - Soporte técnico.</td>
+      <td valign="top" style="padding: 5px;">Plan Base: 34,95€.<br> Plan Pro: 49,95€.<br> Plan Top: 69,95€.<br> Plan Premium: personalizado.<br> Incluye prueba gratuita de 15 días.</td>
+      <td valign="top" style="padding: 5px;">Gaia Plan: $0.99/estudiante/mes.<br> Apollo Plan: $1.49/estudiante/mes.<br> Athena Plan: $2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Canales de distribución (Web y/o Móvil) </td>
+      <td valign="top" style="padding: 5px;">Acceso directo vía app móvil multiplataforma y web.</td>
+      <td valign="top" style="padding: 5px;">Disponible en navegadores web.</td>
+      <td valign="top" style="padding: 5px;">Distribución web y acceso a app móvil con el Plan Pro.</td>
+      <td valign="top" style="padding: 5px;">Disponible vía web y aplicaciones móviles.</td>
+    </tr>
+    <tr>
+      <td rowspan="4" valign="top" style="padding: 5px;"><b>Análisis SWOT</b></td>
+      <td valign="top" style="padding: 5px;">Fortalezas</td>
+      <td valign="top" style="padding: 5px;">Especialización en academias preuniversitarias. <br>Diseño móvil, planes escalables y usabilidad adaptada.</td>
+      <td valign="top" style="padding: 5px;">Plataforma intuitiva, en español, adecuada para academias pequeñas y medianas.<br> Cobertura completa de funciones básicas.</td>
+      <td valign="top" style="padding: 5px;">Enfoque especializado en gamificación educativa.<br> Adaptable a academias, empresas y áreas de RRHH.</td>
+      <td valign="top" style="padding: 5px;">Plataforma madura, flexible y con soporte eficaz.<br> Planes escalables.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Debilidades</td>
+      <td valign="top" style="padding: 5px;">Startup emergente con financiamiento limitado.</td>
+      <td valign="top" style="padding: 5px;">Limitado geográficamente a España.<br> Sin aplicación móvil.<br> Menor reconocimiento frente a competidores globales.</td>
+      <td valign="top" style="padding: 5px;">Solución complementaria, no integral.<br> App móvil solo disponible en ciertos planes.</td>
+      <td valign="top" style="padding: 5px;">Puede resultar costoso en grandes escalas.<br> Limitación al idioma inglés.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Oportunidades</td>
+      <td valign="top" style="padding: 5px;">Mercado poco saturado en Perú. <br>Creciente apertura digital. <br>Alta demanda de herramientas locales móviles.</td>
+      <td valign="top" style="padding: 5px;">Expansión a Latinoamérica.<br> Desarrollo de aplicación móvil.</td>
+      <td valign="top" style="padding: 5px;">Creciente interés en gamificación educativa.<br> Alianzas con plataformas educativas.</td>
+      <td valign="top" style="padding: 5px;">Inclusión del idioma español.<br> Posibilidad de alianzas con redes escolares y gobiernos.</td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding: 5px;">Amenazas</td>
+      <td valign="top" style="padding: 5px;">Resistencia al cambio en academias tradicionales. <br>Competencia global. <br>Riesgos de seguridad informática por poca experiencia.</td>
+      <td valign="top" style="padding: 5px;">Alta competencia global.<br> Dependencia de un solo mercado geográfico.</td>
+      <td valign="top" style="padding: 5px;">Necesidad de clientes que comprendan el valor de la gamificación.<br> Riesgo de baja adopción.</td>
+      <td valign="top" style="padding: 5px;">Competencia con plataformas multilingües.<br> Saturación del mercado K-12.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+Para competir eficazmente en el mercado de plataformas de gestión para academias presenciales, EduLabs aplicará las siguientes estrategias y tácticas preliminares, basadas en sus fortalezas y en el entorno digital actual:
+
+* **Diferenciación por enfoque especializado**  
+  **Estrategia:** Posicionar a Demy como la app móvil y web dedicada exclusivamente a academias preuniversitarias presenciales, frente a soluciones más genéricas para colegios o empresas.  
+  **Tácticas:** Desarrollar módulos de simulacros de admisión y cronogramas personalizados de preparación.
+
+* **Modelo de precios escalables**  
+  **Estrategia:** Ofrecer esquemas de precios accesibles y diferenciados según el tamaño de la academia, con mayor relación costo-beneficio frente a QuickSchools o Playoff.  
+  **Tácticas:** Incluir prueba gratuita de X días, aplicar descuentos periódicos y ofrecer tarifas anuales con descuento.
+
+* **Mejora continua del producto**  
+  **Estrategia:** Aportar agilidad frente a plataformas consolidadas (como QuickSchools), implementando mejoras frecuentes basadas en la retroalimentación real.  
+  **Tácticas:** Actualizaciones mensuales en sprints y priorización del desarrollo móvil nativo.
+
+* **Seguridad y confiabilidad**  
+  **Estrategia:** Generar confianza desde etapas tempranas, mitigando la percepción de riesgo sobre ciberseguridad en startups.  
+  **Tácticas:** Contratar auditorías de seguridad externas periódicas.
+
+* **Aprovechamiento del impulso tecnológico en educación**  
+  **Estrategia:** Aprovechar la consolidación de la transformación digital en instituciones educativas para impulsar la adopción de Demy.  
+  **Tácticas:** Organizar webinars gratuitos como “Digitaliza tu academia en 3 pasos con Demy” y compartir casos de éxito que evidencian mejoras operativas.
 
 ## 2.2. Entrevistas
 
+En esta sección se aborda la investigación cualitativa realizada mediante entrevistas a representantes de los segmentos objetivo del proyecto: administrativos y docentes de academias educativas. El objetivo fue comprender las herramientas, procesos y problemáticas actuales en su gestión, así como validar posibles soluciones digitales a partir de sus propias experiencias.
+
 ### 2.2.1. Diseño de entrevistas
+
+Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenciados según el segmento objetivo. Las preguntas buscaban obtener tanto información objetiva (como el contexto de trabajo y herramientas utilizadas) como información subjetiva (percepciones, frustraciones y expectativas respecto a posibles soluciones).
+
+**Segmento 1: Administrativos de academias**
+
+**Preguntas sobre la problemática**
+1. ¿Cómo gestionan actualmente los procesos administrativos como matrículas, horarios, pagos y asistencia?
+2. ¿Qué problemas frecuentes enfrentas con las herramientas o métodos que usas hoy?
+3. ¿Qué tipo de información necesitas consultar con frecuencia, y qué tan fácil es acceder a ella?
+4. ¿Qué consecuencias trae la desorganización o errores en la administración para ti o tu equipo?
+
+**Preguntas sobre la solución**
+1. ¿Qué funcionalidades crees que debería tener una herramienta ideal para facilitar tu trabajo administrativo?
+2. ¿Qué tan importante sería para ti recibir alertas sobre tareas o pagos?
+3. ¿Preferirías un sistema con muchas funciones o uno más simple pero fácil de usar?
+4. ¿Qué beneficios esperas obtener si decides adoptar una nueva plataforma de gestión?
+5. ¿Estarías dispuesto a aprender a usar una nueva herramienta si mejora tu gestión (organización)?
+
+**Segmento 2: Docentes de academias**
+
+**Preguntas sobre la problemática**
+1. ¿Qué herramientas o métodos usas para registrar asistencia o notas en caso lo hagas? ¿Funcionan bien para usted?
+2. ¿Qué tipo de coordinación tiene con el personal administrativo? ¿Es fácil comunicarse con ellos o enfrenta dificultades?
+3. ¿Cómo accedes a la información de tus clases o alumnos cuando la necesitas?
+4. ¿Cómo manejas los cambios de aula, horarios u otras incidencias en tu día a día?
+
+**Preguntas sobre la solución**
+1. ¿Qué funcionalidades te gustaría que tenga una herramienta digital para docentes?
+2. ¿Qué tan útil sería para ti revisar tu horario o registrar asistencia desde cualquier dispositivo?
+3. ¿Qué tan importante es que la plataforma sea fácil de usar e intuitiva?
+4. ¿Preferirías acceder a la plataforma desde tu celular o tablet?
+5. ¿Qué tan valioso sería que recibas alertas (notificaciones) sobre cambios de horario o asistencia irregular, y demás?
+6. ¿Estarías dispuesto a aprender a usar una nueva herramienta si mejora tu gestión (organización)?
 
 ### 2.2.2. Registro de entrevistas
 
+...
+
 ### 2.2.3. Análisis de entrevistas
 
+Las entrevistas se realizaron entre el 2 y el 3 de septiembre de 2025 a un total de nueve participantes: tres docentes, tres
+administrativos/coordinadores de academias preuniversitarias y tres alumnos de las mismas en Lima, Ica y Trujillo. El objetivo fue entender sus contextos
+operativos, frustraciones actuales y validar hipótesis sobre posibles soluciones digitales.
+
+---
+
+**Segmento: Docentes de academias**
+
+**Total entrevistados:** 3  
+**Edades:** 21, 25, 25 años  
+**Distritos:** La Molina, Santa Anita, San Juan de Lurigancho  
+**Instituciones:** CEPRE Agraria, Círculos de estudio UNALM, Academia ADUNI  
+**Fechas:** 2 y 3 de septiembre de 2025  
+
+**Características objetivas**  
+* Usan Excel o Google Forms para registrar notas y asistencias: **3/3 (100%)**  
+* Prefieren gestionar tareas desde celulares o laptops: **3/3 (100%)**  
+* Los cambios de aula u horarios se gestionan por WhatsApp o encuestas improvisadas: **3/3 (100%)**
+* No utilizan plataformas centralizadas ni automatizadas: **3/3 (100%)**  
+
+**Características subjetivas**  
+* Encuentran incómodo el uso de Excel en celular: **2/3 (66%)**  
+* Consideran que el trabajo administrativo les resta tiempo valioso de enseñanza: **3/3 (100%)**  
+* Ven con buenos ojos una solución intuitiva y fácil de usar: **3/3 (100%)**  
+* Quieren acceso a la plataforma desde múltiples dispositivos, especialmente celular: **3/3 (100%)**  
+* Notificaciones de cambios de horario son altamente valoradas: **2/3 (66%)**  
+* Disposición a adoptar nuevas herramientas si mejoran su productividad: **3/3 (100%)**  
+
+---
+
+**Segmento: Administrativos de academias**
+
+**Total entrevistados:** 3  
+**Edades:** 28, 42, 58 años  
+**Distritos:** Ica (todos)  
+**Instituciones:** Enigmas, academias escolares particulares  
+**Fechas:** 2 y 3 de septiembre de 2025  
+
+**Características objetivas** 
+
+- Utilizan Excel y registros manuales para manejar pagos, matrículas, asistencia y horarios: **3/3 (100%)**  
+- Consultan frecuentemente asistencia, notas y estado de pagos: **3/3 (100%)**  
+- Dependen de múltiples hojas y archivos, dificultando la trazabilidad: **3/3 (100%)** 
+
+**Características subjetivas**  
+
+- Consideran sus métodos actuales ineficientes y repetitivos: **3/3 (100%)**  
+- Señalan consecuencias negativas como pérdida de tiempo y mala atención a padres: **3/3 (100%)**  
+- Alertas para pagos vencidos son altamente valoradas: **3/3 (100%)**  
+- Desean funcionalidades como búsqueda rápida por nombre o DNI: **2/3 (66%)**  
+- Esperan una solución intuitiva, accesible y asequible: **3/3 (100%)**  
+- Disposición a adoptar nuevas plataformas si mejoran su gestión: **3/3 (100%)** 
+
+---
+
+**Conclusión general**
+Este análisis refleja claramente patrones de uso, frustraciones comunes y criterios clave que deben guiar el diseño del sistema. La coincidencia en prioridades entre ambos segmentos refuerza la necesidad de una plataforma web centralizada, móvil, intuitiva y orientada a mejorar la eficiencia operativa diaria.
 
 ## 2.3. Needfinding
 
+El Needfinding permite identificar necesidades reales de los usuarios mediante entrevistas y análisis del contexto.
+A partir de esta información, se construyeron artefactos clave que ayudaron a comprender mejor sus objetivos, tareas, emociones y frustraciones.
+
 ### 2.3.1. User Personas
+
+
+Los User Personas fueron elaborados a partir de los hallazgos de las entrevistas, reflejando perfiles representativos de los segmentos objetivo.
+Cada ficha sintetiza aspectos demográficos, conductuales y emocionales que guían el diseño funcional y visual de la plataforma.
+
+#### User Persona: Administrador de academia
+
+Coordinadora administrativa que necesita centralizar pagos, matrículas y horarios.
+Busca evitar errores, ahorrar tiempo y modernizar los procesos de su academia.
+
+![User Persona – Administrator](./assets/images/photos/user-persona-admin.png)
+
+<hr class="page-break">
+
+#### User Persona: Docente de academia
+
+Profesor joven que busca herramientas simples y accesibles para gestionar asistencia y horarios desde su dispositivo movil.
+Valora la movilidad y odia perder tiempo con tareas repetitivas.
+
+![User Persona – Teacher](./assets/images/photos/user-persona-teacher.png)
+
+<hr class="page-break">
 
 ### 2.3.2. User Task Matrix
 
+En este User Task Matrix se detallan las tareas clave que cada tipo de usuario puede realizar dentro del sistema académico
+
+| **TAREA**                                              |  **Carmen Gutierrez.(Administrador) - Frecuencia**  |  **Carmen Gutierrez.(Administrador) - Importancia**  |
+|--------------------------------------------------------|:---------------------------------------------------:|:----------------------------------------------------:|
+| Registrar matrícula de estudiantes                     |                       always                        |                         high                         |
+| Gestionar los horarios de docentes y estudiantes       |                      sometimes                      |                         high                         |
+| Controlar los pagos de estudiantes                     |                      sometimes                      |                         high                         |
+| Visualizar la información académica                    |                        never                        |                        medium                        |
+| Ver la información financiera de los estudiantes       |                      sometimes                      |                         high                         |
+| Coordinar con los docentes para la gestión             |                      sometimes                      |                        medium                        |
+| Gestionar reportes para estudiantes y profesores       |                      sometimes                      |                         high                         |
+| Gestionar cambios en la asignación de aulas y horarios |                      sometimes                      |                         high                         |
+| Supervisar los procesos administrativos                |                       always                        |                         high                         |
+
+| **TAREA**                                       |  **Luis Mendoza(Profesor) - Frecuencia**  |  **Luis Mendoza(Profesor) - Importancia**  |
+|-------------------------------------------------|:-----------------------------------------:|:------------------------------------------:|
+| Registrar asistencia de estudiantes             |                 sometimes                 |                    high                    |
+| Revisar y gestionar horarios de clases          |                 sometimes                 |                   medium                   |
+| Registrar calificaciones                        |                  always                   |                    high                    |
+| Acceder a información de los estudiantes        |                 sometimes                 |                 sometimes                  |
+| Coordinar con el personal administrativo        |                 sometimes                 |                   medium                   |
+| Comunicar incidencias en horario regular        |                   never                   |                    high                    |
+| Preparar los materiales para las clases         |                  always                   |                    high                    |
+| Diseñar las evaluaciones                        |                 sometimes                 |                    high                    |
+| Gestionar que se cumplan las normas en el aula  |                  always                   |                    high                    |
+
+<hr class="page-break">
+
+
 ### 2.3.3. User Journey Mapping
+
+A continuación se presentarán los User Journey Maps de cada User Persona. Estos mapas nos permitirán comprender los puntos de dolor que experimentan en cada etapa, desde que descubren nuestra app hasta que comparten su opinión sobre ella.
+
+* User Journey Map de Luis Mendoza:
+  ![User Journey Map del User Persona Luis Mendoza](./assets/images/photos/user-journey-map-luis-mendoza.png)
+  [Ver Imagen detallada aquí](https://drive.google.com/file/d/1ZwP-W8qpUPP0yI6UFXMareIiCiphqNrr/view?usp=sharing)
+
+
+* User Journey Map de Carmen Gutiérrez:
+  ![User Journey Map del User Persona Carmen Gutiérrez](./assets/images/photos/user-journey-map-carmen-gutiérrez.png)
+  [Ver Imagen detallada aquí](https://drive.google.com/file/d/1oGSadSkVdSIzf-MeaMGnYL06wVVFKkJG/view?usp=sharing)
 
 ### 2.3.4. Empathy Mapping
 
+Se elaboraron los Empathy Mapping para los dos User Personas: el Administrador de la academia y el Profesor. Este proceso permitió comprender mejor lo que dicen, piensan, hacen y sienten en su día a día, identificando sus principales pains y gains para diseñar una solución que realmente se adapte a sus necesidades.
+
+---
+
+#### Administrador de academia
+
+![Empathy Mapping – Administrator](./assets/images/photos/empathy-mapping-admin.png)
+
+---
+
+#### Docente de academia
+
+![Empathy Mapping – Teacher](./assets/images/photos/empathy-mapping-teacher.png)
+
+<hr class="page-break">
+
 ### 2.3.5. As-is Scenario Mapping
 
+...
+
 ## 2.4. Ubiquitous Language
+
+Un glosario de términos clave utilizados en el dominio de gestión académica de **Demy**, redactado en inglés (con su equivalente en español), para asegurar una comunicación clara y sin ambigüedades entre todos los miembros del equipo y stakeholders.
+
+| Término         | Equivalente       | Definición                                                                                                                                                                    |
+|-----------------|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Academy         | Academia          | Institución educativa presencial que ofrece preparación preuniversitaria.                                                                                                     |
+| Administrator   | Administrativo    | Persona encargada de procesos como matrícula, pagos, horarios y generación de reportes.                                                                                       |
+| Teacher         | Docente           | Persona responsable de dictar clases, registrar asistencia y reprogramar el horario académico en caso sea necesario.                                                          |
+| Student         | Estudiante        | Individuo que estudia en la academia y necesita acceso a información académica y notificaciones.                                                                              |
+| Enrollment      | Matrícula         | Proceso de inscripción de un estudiante en una academia.                                                                                                                      |
+| Attendance      | Asistencia        | Registro de la participación del estudiante en cada sesión de clase.                                                                                                          |
+| Schedule        | Horario           | Organización temporal de clases, docentes, salones y cursos.                                                                                                                  |
+| Course          | Curso             | Asignatura académica específica dentro de un ciclo académico, como Matemática, Física, Química, etc.                                                                          |
+| Classroom       | Aula              | Espacio físico donde se imparten sesiones de clase, ya sea una sala en sede presencial.                                                                                       |
+| Session         | Sesión            | Una clase individual dentro del horario académico.                                                                                                                            |
+| Payment         | Pago              | Transferencia de dinero de una parte (pagador) a otra (beneficiario) a cambio de bienes, servicios o para cumplir una obligación legal.                                       |
+| Transaction     | Transacción       | El procesamiento de pagos o cualquier operación que modifique el estado financiero o administrativo del sistema.                                                              |
+| Notification    | Notificación      | Mensaje enviado a usuarios sobre eventos importantes, como pagos o cambios de horario.                                                                                        |
+| Report          | Reporte           | Documento o vista analítica que muestra datos académicos y administrativos (matrículas, asistencia, pagos, etc.).                                                             |
+| Academic Period | Periodo académico | Periodo extenso de clases en academias preuniversitarias Identifica un plan de estudios definido en duración y nivel, usado para organizar y administrar la oferta educativa. |
+
 
 <hr class="page-break">
 
