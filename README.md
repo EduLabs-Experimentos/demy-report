@@ -303,6 +303,70 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 
 ### 1.2.1. Antecedentes y problemática
 
+## ¿Cuáles son las 5W?
+
+#### What?
+
+#### ¿Cuál es el problema?
+
+El principal desafío identificado es la ausencia de un sistema centralizado para la gestión administrativa en academias educativas presenciales del Perú. Actualmente, muchas de estas instituciones dependen de hojas de cálculo, documentos físicos o plataformas no integradas, lo que incrementa la carga operativa, favorece errores recurrentes, provoca pérdida de información y reduce la eficiencia en el uso del tiempo. 
+
+Según Naranjo et al. (2025), los procesos administrativos manuales, con su falta de claridad, duplicación de tareas y largos tiempos de respuesta, son obstáculos que reducen la satisfacción del estudiante y la productividad del personal (p. 3). Esta ineficiencia subraya la necesidad de un cambio. De igual manera, Díaz-García et al. (2023) enfatizan que la digitalización es esencial para implementar un modelo de gestión basado en datos, lo cual requiere sistemas que provean información en tiempo real para facilitar el control, la administración y la toma de decisiones estratégicas (p. 10). Ambos estudios coinciden en que digitalizar y optimizar los procesos administrativos es un paso indispensable para mejorar la eficiencia institucional y elevar la calidad del servicio educativo.
+
+#### When (Cuando)
+
+#### ¿Cuándo sucede el problema?
+
+Esta situación se presenta de manera continua en el funcionamiento diario de las academias, siendo más evidente al inicio de cada ciclo académico. Durante estos periodos críticos se concentran tareas como la matrícula de estudiantes, el registro de asistencia, la organización de horarios y la gestión de pagos. La carencia de procesos automatizados y centralizados ralentiza las operaciones, afectando la productividad desde el primer contacto con el estudiante hasta el final del periodo académico.
+
+#### Where (Dónde)
+
+#### ¿A dónde se dirige?
+
+La solución está orientada a academias educativas que desean modernizar su gestión interna mediante el uso de una herramienta tecnológica práctica, accesible y adaptada a sus necesidades operativas.
+
+#### ¿Dónde surge el problema?
+
+Este problema se origina en academias presenciales a nivel nacional que aún dependen de procesos manuales para la gestión administrativa. Estas instituciones tienen un rol fundamental en la formación académica en el Perú, ya que aproximadamente **cuatro de cada cinco estudiantes universitarios recurrieron a academias y/o centros preuniversitarios como preparación previa a su ingreso a la universidad** (Ministerio de Educación del Perú, 2021). Esta alta participación evidencia la necesidad de optimizar y modernizar sus sistemas de gestión.
+
+#### Who (Quién)
+
+#### ¿Quiénes están involucrados? ¿Quién lo utilizará?
+
+Los principales usuarios de la aplicación serán los administrativos, docentes y estudiantes de las academias. Los administrativos podrán realizar matrículas, gestionar pagos, asignar horarios y generar reportes. Los docentes, por su parte, tendrán acceso a funciones como el registro de asistencia y la reprogramación de clases. Los estudiantes podran visualizar sus respectivos horarios de estudio y modificaciones en caso se realice una reprogramación de clase.
+
+#### Why (Por qué)
+
+#### ¿Cuál es la causa del problema?
+
+La raíz del problema está en la falta de herramientas digitales accesibles y diseñadas específicamente para academias presenciales. Muchas instituciones no han adoptado soluciones tecnológicas debido a limitaciones presupuestarias, desconocimiento o resistencia al cambio, lo que perpetúa el uso de procesos manuales y poco eficientes.
+
+## ¿Cuáles son las 2H?
+
+#### How (Cómo)
+
+#### ¿Cómo se utilizará el producto?
+
+La aplicación móvil y web será usada diariamente por el personal administrativo, mientras que el docente usará una app móvil multiplataforma. A través de una interfaz sencilla e intuitiva, podrán realizar matrículas, programar clases, gestionar pagos y registrar asistencia. El sistema permitirá el acceso desde computadoras, smartphones o tablets, brindando flexibilidad y disponibilidad de información en cualquier momento con conexión a internet.
+
+#### ¿Cómo lograremos alcanzar la correcta gestión de los procesos administrativos de la academia dentro de la plataforma?
+
+La solución estará compuesta por módulos diseñados específicamente para cada necesidad:
+
+- Módulo de registro completo de usuarios, salones, cursos, aulas, horarios y periodos académicos.
+
+- Módulo de matrícula de estudiantes para administrativos.
+
+- Módulo de asistencia accesible para docentes.
+
+- Módulo de horarios por visualizar para docentes.
+
+#### How much (Cuánto)
+
+#### ¿Qué porcentaje del personal académico-administrativo se beneficiaría?
+
+Se estima que el sistema podría beneficiar directamente al 80% del personal de una academia promedio, incluyendo al menos 3 a 5 administrativos y entre 10 y 20 docentes, aunque todo esto dependeria del tamaño de la academia y las sedes que esta maneje.
+
 ### 1.2.2. Lean UX Process
 
 #### 1.2.2.1. Leaun UX Problem Statements
