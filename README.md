@@ -218,27 +218,308 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 # Capítulo I: Introducción
 
-## 1.1. Stratup Profile
+## 1.1. Startup Profile
 
 ### 1.1.1. Descripción de la Startup
 
+La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de Ingeniería de Software, tiene como objetivo desarrollar soluciones tecnológicas innovadoras orientadas a optimizar la gestión administrativa de academias educativas en el Perú. Con nuestra aplicación web y móvil **Demy**, buscamos digitalizar y simplificar tareas clave de las academias, incluyendo matrículas, control de asistencia, organización de horarios, así como la gestión de pagos.
+
+**Misión**: Transformar la administración de academias educativas en el Perú mediante una aplicación móvil y web innovadora que optimice procesos clave, incremente la eficiencia y mejore la experiencia de gestión para todos los usuarios.
+
+**Visión**: Ser reconocidos como la startup líder en soluciones móviles y web para la gestión académica en el Perú, destacando por la accesibilidad, seguridad e innovación de nuestras herramientas digitales.
+
 ### 1.1.2. Perfiles de integrantes del equipo
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-daniel.png" alt="daniel_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Daniel Crispin - U20221g120 </strong></p>
+          <p align="justify">
+            .....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-rafael.png" alt="rafael_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Rafel Dominguez - U202312318</strong></p>
+          <p align="justify">
+            .....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="img/profile-photos/member-kalet.png" alt="kalet_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Henry Esteban - U202310210</strong></p>
+          <p align="justify">
+            ....
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-renso.png" alt="renso_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Renso Julca - U202121579</strong></p>
+          <p align="justify">
+             ...
+          </p>
+    </td>
+  </tr>
+</table>
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/images/photos/member-diego.png" alt="diego_photo"  width="520"></img>
+    </td>
+      <td>
+          <p align="center"><strong>Diego Vilca - u20231a778</strong></p>
+          <p align="justify">
+             Mi nombre es Diego Vilca, tengo 20 años y actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
+          </p>
+    </td>
+  </tr>
+</table>
 
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
 
+## ¿Cuáles son las 5W?
+
+#### What?
+
+#### ¿Cuál es el problema?
+
+El principal desafío identificado es la ausencia de un sistema centralizado para la gestión administrativa en academias educativas presenciales del Perú. Actualmente, muchas de estas instituciones dependen de hojas de cálculo, documentos físicos o plataformas no integradas, lo que incrementa la carga operativa, favorece errores recurrentes, provoca pérdida de información y reduce la eficiencia en el uso del tiempo. 
+
+Según Naranjo et al. (2025), los procesos administrativos manuales, con su falta de claridad, duplicación de tareas y largos tiempos de respuesta, son obstáculos que reducen la satisfacción del estudiante y la productividad del personal (p. 3). Esta ineficiencia subraya la necesidad de un cambio. De igual manera, Díaz-García et al. (2023) enfatizan que la digitalización es esencial para implementar un modelo de gestión basado en datos, lo cual requiere sistemas que provean información en tiempo real para facilitar el control, la administración y la toma de decisiones estratégicas (p. 10). Ambos estudios coinciden en que digitalizar y optimizar los procesos administrativos es un paso indispensable para mejorar la eficiencia institucional y elevar la calidad del servicio educativo.
+
+#### When (Cuando)
+
+#### ¿Cuándo sucede el problema?
+
+Esta situación se presenta de manera continua en el funcionamiento diario de las academias, siendo más evidente al inicio de cada ciclo académico. Durante estos periodos críticos se concentran tareas como la matrícula de estudiantes, el registro de asistencia, la organización de horarios y la gestión de pagos. La carencia de procesos automatizados y centralizados ralentiza las operaciones, afectando la productividad desde el primer contacto con el estudiante hasta el final del periodo académico.
+
+#### Where (Dónde)
+
+#### ¿A dónde se dirige?
+
+La solución está orientada a academias educativas que desean modernizar su gestión interna mediante el uso de una herramienta tecnológica práctica, accesible y adaptada a sus necesidades operativas.
+
+#### ¿Dónde surge el problema?
+
+Este problema se origina en academias presenciales a nivel nacional que aún dependen de procesos manuales para la gestión administrativa. Estas instituciones tienen un rol fundamental en la formación académica en el Perú, ya que aproximadamente **cuatro de cada cinco estudiantes universitarios recurrieron a academias y/o centros preuniversitarios como preparación previa a su ingreso a la universidad** (Ministerio de Educación del Perú, 2021). Esta alta participación evidencia la necesidad de optimizar y modernizar sus sistemas de gestión.
+
+#### Who (Quién)
+
+#### ¿Quiénes están involucrados? ¿Quién lo utilizará?
+
+Los principales usuarios de la aplicación serán los administrativos, docentes y estudiantes de las academias. Los administrativos podrán realizar matrículas, gestionar pagos, asignar horarios y generar reportes. Los docentes, por su parte, tendrán acceso a funciones como el registro de asistencia y la reprogramación de clases. Los estudiantes podran visualizar sus respectivos horarios de estudio y modificaciones en caso se realice una reprogramación de clase.
+
+#### Why (Por qué)
+
+#### ¿Cuál es la causa del problema?
+
+La raíz del problema está en la falta de herramientas digitales accesibles y diseñadas específicamente para academias presenciales. Muchas instituciones no han adoptado soluciones tecnológicas debido a limitaciones presupuestarias, desconocimiento o resistencia al cambio, lo que perpetúa el uso de procesos manuales y poco eficientes.
+
+## ¿Cuáles son las 2H?
+
+#### How (Cómo)
+
+#### ¿Cómo se utilizará el producto?
+
+La aplicación móvil y web será usada diariamente por el personal administrativo, mientras que el docente usará una app móvil multiplataforma. A través de una interfaz sencilla e intuitiva, podrán realizar matrículas, programar clases, gestionar pagos y registrar asistencia. El sistema permitirá el acceso desde computadoras, smartphones o tablets, brindando flexibilidad y disponibilidad de información en cualquier momento con conexión a internet.
+
+#### ¿Cómo lograremos alcanzar la correcta gestión de los procesos administrativos de la academia dentro de la plataforma?
+
+La solución estará compuesta por módulos diseñados específicamente para cada necesidad:
+
+- Módulo de registro completo de usuarios, salones, cursos, aulas, horarios y periodos académicos.
+
+- Módulo de matrícula de estudiantes para administrativos.
+
+- Módulo de asistencia accesible para docentes.
+
+- Módulo de horarios por visualizar para docentes.
+
+#### How much (Cuánto)
+
+#### ¿Qué porcentaje del personal académico-administrativo se beneficiaría?
+
+Se estima que el sistema podría beneficiar directamente al 80% del personal de una academia promedio, incluyendo al menos 3 a 5 administrativos y entre 10 y 20 docentes, aunque todo esto dependeria del tamaño de la academia y las sedes que esta maneje.
+
 ### 1.2.2. Lean UX Process
+
+El Lean UX Process es una metodología ágil enfocada en diseñar soluciones centradas en el usuario mediante ciclos cortos de validación, retroalimentación y mejora continua.
+Para este proyecto, utilizamos este enfoque para analizar los desafíos administrativos que enfrentan las academias presenciales y construir una aplicación móvil multiplataforma y web que responda a sus necesidades reales, mejorando la eficiencia y organización interna.
 
 #### 1.2.2.1. Leaun UX Problem Statements
 
+El servicio de Demy tiene como objetivo proporcionar a las instituciones educativas una aplicación móvil y web que permita automatizar procesos administrativos esenciales, como matrículas, control de asistencia, asignación de horarios, docentes y salones y seguimiento de pagos.
+
+El problema se manifiesta en la manera tradicional y desorganizada con la que muchas academias manejan su administración interna. Actualmente, la mayoría utiliza herramientas básicas como hojas de Excel, documentos físicos o plataformas que no están integradas entre sí. Esto genera duplicidad de tareas, falta de trazabilidad, pérdida de información clave, complicaciones en la gestión de pagos y control de asistencia. Como consecuencia, el personal administrativo invierte un tiempo excesivo en tareas repetitivas, y los docentes enfrentan dificultades para coordinar sus horarios o registrar adecuadamente la asistencia de los alumnos.
+
+Hemos identificado que esta deficiencia en la administración limita seriamente la capacidad de crecimiento y profesionalización de muchas academias. Además, deteriora la experiencia de alumnos y profesores, y afecta negativamente la percepción del servicio ofrecido. La ausencia de un sistema unificado también impide tomar decisiones informadas sobre finanzas, rendimiento académico, generando un impacto directo en la sostenibilidad del negocio.
+
+¿Cómo podríamos centralizar y automatizar la gestión administrativa de academias presenciales de forma escalable y accesible, permitiendo al personal administrativo y docente ahorrar tiempo, reducir errores y mejorar el control sobre los procesos clave del día a día?
+
+**Domain:**
+
+La gestión administrativa de academias presenciales en Perú sigue siendo un proceso manual y fragmentado, que depende de documentos físicos, hojas de cálculo y plataformas no integradas.
+
+**Customer Segments:**
+
+- Administrativos: Encargados de matrículas, pagos, reportes y asignación de horarios.
+
+- Docentes: Necesitan herramientas para registrar asistencia, coordinar clases y acceder a sus horarios.
+
+**Pain Points:**
+
+- Falta de centralización de la información, lo que ocasiona duplicidad de tareas.
+
+- Procesos manuales lentos y propensos a errores, que incrementan la carga operativa.
+
+- Dificultad para generar reportes y analizar datos de manera ágil.
+
+- Falta de trazabilidad en pagos y asistencia.
+
+- Mala experiencia para docentes, afectando la percepción del servicio.
+
+**Gap:**
+
+Actualmente no existe una aplicación móvil y web enfocada específicamente en academias peruanas que ofrezca una experiencia simple y adaptada a sus flujos de trabajo, lo que limita su capacidad de crecimiento y profesionalización.
+
+**Vision/Strategy:**
+
+Crear una app móvil y web  que centralice la administración académica y facilite tareas clave como matrícula, pagos, control de asistencia y horarios. Su diseño será simple, intuitivo y funcional, con soporte local y opciones escalables según el tamaño de la academia.
+
+**Initial Segment:**
+
+El lanzamiento se enfocará en academias educativas presenciales de tamaño mediano en Lima y otras ciudades principales del Perú. Estas instituciones presentan mayor necesidad de digitalización por su volumen de estudiantes (50-200) y procesos administrativos frecuentes.
+
 #### 1.2.2.2. Lean UX Assumptions
+
+**¿Quién es el usuario?**
+
+Administrativos que gestionan procesos internos, docentes que registran asistencia y organizan clases.
+
+**¿Qué problema tiene nuestro producto que debe resolver?**
+
+Resolver la desorganización administrativa, el exceso de tareas manuales, la falta de control de pagos y asistencia, y la ausencia de una plataforma centralizada.
+
+**¿Qué características son importantes?**
+
+Control de matrículas, asistencia, horarios, pagos con alertas y reportes claros.
+
+**¿Dónde encaja nuestro producto en su trabajo o vida?**
+
+Administrativos lo usarán para gestión diaria, docentes para organizar clases y asistencia.
+
+**¿Cúando y cómo es nuestro producto? ¿Usado?**
+
+Será usado a diario desde tablets y deskptop por administrativos, y principalmente desde smartphones por docentes.
+
+**¿Cómo debe verse nuestro producto y cómo debe comportarse?**
+
+Debe ser moderno, simple, responsivo y seguro, con navegación intuitiva, respuestas rápidas y notificaciones útiles.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+ **Hypothesis 01:**
+
+  **Creemos que** los administradores de academias presenciales adoptarán nuestra plataforma para digitalizar procesos como matrícula, pagos, asistencia y horarios, mejorando su eficiencia operativa.
+
+  **Sabremos que** hemos tenido éxito.
+
+  **Cuando** al menos el 70% de los usuarios administrativos gestionen estos procesos en el primer mes y el 60% renueve su suscripción al segundo mes.
+
+- **Hypothesis 02:**
+
+  **Creemos que** los recordatorios automáticos de pagos reducirán significativamente la morosidad de los estudiantes.
+
+  **Sabremos que** hemos tenido éxito.
+
+  **Cuando** los pagos atrasados disminuyan en al menos un 40% en los primeros tres meses de uso.
+
+- **Hypothesis 03:**
+
+  **Creemos que** centralizar información académica y financiera en una sola plataforma mejorará la comunicación y el acceso a información para administrativos y docentes.
+
+  **Sabremos que** hemos tenido éxito.
+
+  **Cuando** al menos el 80% de los docentes utilicen la plataforma activamente en el primer ciclo académico.
+
+- **Hypothesis 04:**
+
+  **Creemos que** una interfaz simple, intuitiva y adaptable incrementará el uso de la plataforma por parte de administrativos, docentes y estudiantes, incluso sin experiencia tecnológica previa.
+
+  **Sabremos que** hemos tenido éxito.
+
+  **Cuando** al menos el 75% de los usuarios califiquen la plataforma como “fácil” o “muy fácil” en encuestas de la fase piloto.
+
+- **Hypothesis 05:**
+
+  **Creemos que** los planes escalables (Essentials, Pro, Elite) facilitarán el crecimiento de las academias dentro del sistema.
+
+  **Sabremos que** hemos tenido éxito.
+
+  **Cuando** al menos el 25% de clientes del plan Essentials migren a planes superiores en seis meses.
+
+
 #### 1.2.2.4. Lean UX Canvas
 
+El **Lean UX Canvas** permite organizar de manera clara y colaborativa los elementos esenciales del diseño, como el problema, los usuarios, las suposiciones, las hipótesis y las métricas.  
+En este proyecto, esta herramienta nos ayuda a enfocar el desarrollo en generar **valor real para las academias educativas**.
+
+A continuación, se presenta el Lean UX Canvas elaborado en la herramienta *Miro*:
+
+![Lean UX Canvas](./assets/lean-ux/canvas/lean-ux-canvas-demy.jpg)
+
+**Enlace al Lean UX Canvas:** [*Ver en Miro*](https://miro.com/app/board/uXjVJOf6qbw=/?share_link_id=946873343163)
+
 ## 1.3. Segmentos objetivo
+
+En el análisis de los segmentos objetivo de **Demy**, hemos identificado dos grupos clave que se beneficiarán de nuestra plataforma: **profesores** y **personal administrativo** de academias educativas presenciales.
+
+### Profesores de academias
+
+Según la revista Gan@Mas (24 de julio, 2014), los docentes dedican hasta el **29% de su tiempo a tareas administrativas**, tiempo que debería enfocarse en la enseñanza. La alta demanda académica y la falta de herramientas integradas dificultan su labor, generando sobrecarga y limitando su rendimiento.
+
+- **Edad:** Profesores de cualquier rango de edad.
+- **Necesidad clave:** Reducir tareas administrativas y optimizar su tiempo para enfocarse en la enseñanza.
+- **Nivel educativo:** Formación universitaria, preferiblemente con especialización en educación o áreas afines.
+- **Uso de tecnología:** Manejo básico a intermedio de herramientas digitales, pero con necesidad de sistemas más eficientes para gestión académica.
+
+---
+
+### Administradores de academias
+
+El personal administrativo de academias suele enfrentarse a una carga de trabajo elevada, desde planificación de horarios hasta control de pagos y matrículas. La **Encuesta Nacional de Uso del Tiempo (ENUT, 2024)** señala que **el 45% de trabajadores en educación dedica más de 20 horas semanales a tareas administrativas**. Además, un estudio de **GRADE (2023)** indica que **el 70% de directores considera ineficientes las herramientas de gestión actuales**, evidenciando la necesidad de soluciones tecnológicas integradas.
+
+- **Edad:** Personal administrativo de cualquier edad.
+- **Necesidad clave:** Optimizar procesos internos y reducir errores administrativos mediante tecnología.
+- **Nivel educativo:** Formación técnica o universitaria en administración, gestión u otras áreas afines.
+- **Uso de tecnología:** Conocimientos básicos a avanzados en herramientas digitales, con necesidad de plataformas más centralizadas.
+
 
 <hr class="page-break">
 
