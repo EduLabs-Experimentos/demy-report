@@ -1135,6 +1135,67 @@ Se incluyen diferentes tipos de historias, tales como:
 
 ### 5.2.2. Implemented Landing Page Evidence
 
+**Landing Page:**
+
+En esta sección se describen los pasos realizados para desplegar la Landing Page utilizando Netlify con integración a GitHub. Se incluyen capturas de cada etapa como evidencia.
+
+Primero, se cuenta con una cuenta en GitHub con el repositorio de la landing organizado y público. De igual modo, cuenta en Netlify y permiso para integrarse con la organización de GitHub.
+
+**1) Ingresar a Netlify**  
+Autenticación con GitHub mediante *“Log in with GitHub”.* 
+![Netlify Login](./assets/ux-ui/evidences/landing/landing-deploy-step-1.png)
+
+**2) Ir a Projects e iniciar un nuevo sitio**  
+Desde Projects seleccionar Add new project.  
+![Netlify Sites / Add new site](./assets/ux-ui/evidences/landing/landing-deploy-step-2.png)
+
+**3) Elegir el proveedor GitHub**  
+En *"Import a Git repository"* seleccionar GitHub.  
+![Seleccionar GitHub](./assets/ux-ui/evidences/landing/landing-deploy-step-3.png)
+
+**4) Configurar Netlify con Github**  
+Seleccionamos *"Configure Netlify on Github"*
+![Configuración Netlify](./assets/ux-ui/evidences/landing/landing-deploy-step-4.png)
+
+**5) Autorizar la instalación en la organización**  
+Elegir la organización de GitHub donde se encuentra el repositorio, que en este caso es *EduLabs Experimentos* 
+![Seleccionar organización](./assets/ux-ui/evidences/landing/landing-deploy-step-5.png)
+
+**6) Seleccionar el repositorio**  
+Elegir el repo de la landing  
+![Seleccionar repositorio](./assets/ux-ui/evidences/landing/landing-deploy-step-6.png)
+
+**7) Confirmar acceso en GitHub**  
+Verificación adicional para otorgar permisos a Netlify.  
+![Configuración general](./assets/ux-ui/evidences/landing/landing-deploy-step-7.png)
+
+**8) Configurar parámetros generales**  
+Definir Project/Site name, Team y la rama a desplegar (`main`).  
+![Build & Publish directory](./assets/ux-ui/evidences/landing/landing-deploy-step-8.png)
+
+**9) Configurar build y publicación**  
+Establecer Build command (`npm run build`) y Publish directory (`dist`). Iniciar el despliegue.
+![Deploy en progreso](./assets/ux-ui/evidences/landing/landing-deploy-step-9.png)
+
+**10)  Monitorear el proceso**  
+Netlify ejecuta el build y publica en su CDN; se puede seguir el estado en tiempo real.  
+![Deploy en progreso](./assets/ux-ui/evidences/landing/landing-deploy-step-10.png)
+
+**11) Verificación final y próximos pasos**  
+En Project overview se confirma el estado deployed (indicador verde). Desde aquí se pueden configurar dominio personalizado.  
+![Project overview / listo](./assets/ux-ui/evidences/landing/landing-deploy-step-11.png)
+
+**12) Despliegue listo**  
+El proyecto queda publicado con HTTPS y URL pública.
+![Deploy completado](./assets/ux-ui/evidences/landing/landing-deploy-step-12.png)
+
+Queda habilitado el despliegue continuo; cada push a la rama configurada desencadena automáticamente un nuevo build y publicación.
+
+**Repositorio de la Landing Page:** [Abrir en GitHub](https://github.com/EduLabs-Experimentos/demy-landing)  
+
+**Enlace público de la Landing Page:** [Abrir en el navegador](https://demy-nistra.netlify.app/)
+
+
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
 ### 5.2.4. Implemented Native-Mobile Application Evidence
