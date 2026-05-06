@@ -1199,7 +1199,73 @@ En **Demy** buscamos ofrecer la mejor experiencia a nuestros usuarios, asegurand
 
 ## 4.3. Landing Page UI Desing
 
+En esta sección se presentan los wireframes y mock-ups de la página de inicio (landing page) de la plataforma Demy. Se describen las principales secciones, funcionalidades y elementos visuales que componen esta pantalla.
+
+
 ### 4.3.1. Landing Page Wireframe
+
+A continuación se presenta la sustentación de la landing page. El diseño se enfoca en la claridad y eficiencia para mostrar el producto a futuros usuarios.
+
+**Sección Hero**
+
+Encabezado claro, subtítulo con propuesta de valor y dos capturas para descargar la app en iOS y android. Incluye foto de portada y fondo con efecto “glass” suave.
+
+![Landing Hero](./assets/ux-ui/wireframes/landing/landing_hero.png)
+
+**Cómo Funciona**
+
+Proceso en 3 pasos (descubre, configura y comienza). Refuerza la facilidad de adopción de la idea del producto.
+
+![Landing Cómo Funciona](./assets/ux-ui/wireframes/landing/landing_howitworks.png)
+
+**Características (features)**
+
+Features principales con características cortas sobre el producto.
+
+![Landing Features](./assets/ux-ui/wireframes/landing/landing_features.png)
+
+**Otras características (features)**
+
+Descripción con características cortas sobre el producto.
+
+![Landing Features](./assets/ux-ui/wireframes/landing/landing_features_2.png)
+
+**Precios**
+
+Planes comparables (Essential/Pro/Elite) con lista de inclusiones y recomendaciones. Transparencia en términos y facturación.
+
+![Landing Precios](./assets/ux-ui/wireframes/landing/landing_pricing.png)
+
+**Testimonios**
+
+Prueba social con citas verificables dados por usuarios clientes.
+
+![Landing Testimonios](./assets/ux-ui/wireframes/landing/landing_testimonials.png)
+
+**Equipo**
+
+Cards de integrantes con rol y enlaces profesionales. Refuerza credibilidad técnica y de soporte.
+
+![Landing Equipo](./assets/ux-ui/wireframes/landing/landing_team.png)
+
+**Preguntas Frecuentes (FAQ)**
+
+Resuelve objeciones comunes ( datos, cancelación, soporte).
+
+![Landing FAQ](./assets/ux-ui/wireframes/landing/landing_faq.png)
+
+**Contáctanos**
+
+Formulario breve y canales alternativos (correo, WhatsApp, redes).
+
+![Landing Contacto](./assets/ux-ui/wireframes/landing/landing_contact_us.png)
+
+**Footer**
+
+Navegación secundaria, legales (Términos/Privacidad), redes sociales y sello de derechos.
+
+![Landing Footer](./assets/ux-ui/wireframes/landing/landing_footer.png)
+
 
 ### 4.3.2. Landing Page Mock-up
 
