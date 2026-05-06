@@ -1600,13 +1600,13 @@ Pantalla o modal de confirmación que permite al usuario cerrar sesión de maner
 
 Esta sección tiene como objetivo describir los posibles flujos de usuario diseñados para la aplicación web. Mediante el uso de prototipos interactivos, se ilustra la navegación y las rutas que siguen los diferentes tipos de usuarios al interactuar con la plataforma para cumplir sus respectivas tareas.
 
-A continuación, se presentan los enlaces al video explicativo y a los prototipos interactivos:
+A continuación, se presentan el enlace al video explicativo:
 
 
 ![imagesPrototypeWeb](assets/ux-ui/prototypes/web-application/captura-prototype.png)
 
 - **Video - Web Applications Prototyping**  
-  Explicación en video de los flujos de usuario en la aplicación web (desktop y mobile):  
+  Explicación en video de los flujos de usuario en la aplicación web:  
   [Ver video en OneDrive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQDXWxdpjpYhQLw_2PhlpYSlAZZ7wJ_K3aykZ1h0xIsEbKo?e=RdK2yT&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
