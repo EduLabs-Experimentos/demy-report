@@ -1402,6 +1402,55 @@ Pantalla que proporciona información de contacto como correo, teléfono y horar
 
 ### 4.6.2. Web Application Wireflow Diagrams
 
+**User goal:** Registrar un curso  
+**User persona:** Administrador de academia  
+![Wireflow-2](assets/ux-ui/wireflows/web-application/wireflow-register-course-admin.png)  
+**Explicación del flujo:**  
+En flujo comienza desde la sección "Mi organización", el administrador selecciona el módulo "Cursos" para gestionar las asignaturas disponibles en su academia. Al hacer click en el botón "Agregar curso", se despliega un formulario donde debe ingresar el nombre del curso, un código identificador. Tras completar los campos requeridos y confirmar la acción con el botón "Crear Curso", el sistema agrega el curso a la lista y lo deja disponible para ser asignado posteriormente a periodos académicos.
+
+**User goal:** Crear un periodo académico  
+**User persona:** Administrador de academia  
+![Wireflow-3](assets/ux-ui/wireflows/web-application/wireflow-register-period-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Periodos" donde visualiza la lista de periodos ya creados. Al presionar el botón "Agregar periodo", es dirigido a la sección "Crear periodo", que incluye una tabla tipo horario semanal. En esta interfaz, el administrador puede seleccionar los bloques de horas haciendo clic sobre las celdas correspondientes y luego presionar el botón "Seleccionar curso" para asignar uno de los cursos disponibles previamente creados. Una vez completada la asignación del horario, presiona "Guardar periodo", lo que activa un cuadro de confirmación que pregunta si está seguro de registrar el periodo. Al confirmar la acción, el sistema guarda la configuración y redirige al administrador a la lista de periodos, donde ya se visualiza el nuevo periodo registrado.
+
+**User goal:** Crear un aula  
+**User persona:** Administrador de academia  
+![Wireflow-4](assets/ux-ui/wireflows/web-application/wireflow-register-classroom-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Aulas", donde se encuentra con la lista de aulas ya creadas. Al presionar el botón "Agregar aula", se le presenta un cuadro emergente para crear una nueva aula. En este cuadro, el administrador debe asignar un código único para el aula y seleccionar uno de los periodos académicos previamente creados. Una vez completados estos campos, el administrador presiona el botón "Crear aula". El sistema valida la información y, al confirmarse, el aula se agrega a la lista de aulas disponibles, permitiendo al administrador gestionar y asignar profesores a las aulas.
+
+**User goal:** Crear un profesor  
+**User persona:** Administrador de academia  
+![Wireflow-5](assets/ux-ui/wireflows/web-application/wireflow-register-teacher-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Profesores" y presiona el botón "Agregar profesor". Se le presenta un cuadro emergente en el que debe ingresar los datos del profesor, como su nombre completo, DNI y las aulas a las que será asignado. Para asignar un aula, el administrador debe presionar el botón "Insertar aula-curso", lo que abre una pequeña tabla con las aulas y los cursos disponibles. El administrador puede agregar múltiples aulas y cursos al profesor. Una vez completada la asignación, el administrador presiona el botón "Agregar profesor". Se muestra un cuadro de confirmación para verificar que la información es correcta. Tras confirmar, el sistema genera un cuadro con las credenciales del profesor (correo y contraseña) para acceder a la plataforma Demy. Finalmente, el profesor se agrega a la lista de profesores disponibles.
+
+**User goal:** Matricular a un alumno  
+**User persona:** Administrador de academia  
+![Wireflow-6](assets/ux-ui/wireflows/web-application/wireflow-enrollment-admin.png)  
+**Explicación del flujo:**  
+El administrador ingresa a la sección "Panel de control" y selecciona el módulo "Matrícula". Dentro de este, se presenta un formulario donde debe llenar los datos del alumno, como su nombre, DNI y aula asignada. Al completar el formulario, el administrador presiona el botón "Guardar matrícula". Luego, aparece un cuadro de confirmación para asegurar que la información ingresada es correcta. Tras confirmar, el sistema registra la matrícula y redirige al administrador a la sección "Historial de matrícula", donde podrá ver la lista de matrículas realizadas, incluyendo la del alumno recién matriculado.
+
+**User goal:** Registrar pagos de alumnos  
+**User persona:** Administrador de academia  
+![Wireflow-8](assets/ux-ui/wireflows/web-application/wireflow-payments-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y luego al módulo "Pagos". Desde allí, puede buscar directamente a un alumno para visualizar su estado de pagos pendientes y registrar un nuevo pago. Una vez identificado el alumno, se completan los datos correspondientes del pago, y se presiona el botón "Guardar pago". A continuación, aparece un cuadro de confirmación para verificar si desea continuar, y tras confirmar, el pago se registra en el sistema. Alternativamente, el administrador puede acceder al "Historial de pagos", donde se muestra una tabla con los pagos pendientes. Desde ahí, también puede presionar el botón "Registrar pago" para completar los datos y realizar el registro. Cualquiera de estos caminos permite llevar un control eficiente de los pagos de los alumnos.
+
+**User goal:** Visualizar horarios de aulas  
+**User persona:** Administrador de academia  
+![Wireflow-9](assets/ux-ui/wireflows/web-application/wireflow-schedules-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Horarios". Una vez dentro, se le presenta una opción para buscar un aula específica. Tras ingresar el nombre o código del aula, el sistema muestra el horario semanal correspondiente a esa aula, heredado previamente del periodo asignado. Esta visualización permite al administrador tener un control claro sobre la distribución de cursos y bloques horarios asignados a cada aula.
+
+**User goal:** Registrar egresos y generar reportes financieros  
+**User persona:** Administrador de academia  
+![Wireflow-10](assets/ux-ui/wireflows/web-application/wireflow-expense-report-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Finanzas". Para registrar un egreso, debe completar un formulario con los campos: concepto, monto, fecha y categoría, y luego presionar el botón "Registrar egreso". Además, tiene la opción de generar reportes financieros de la academia, eligiendo entre un reporte general o mensual. Una vez seleccionada la opción deseada, el sistema genera una tabla con la información correspondiente y muestra al final un resumen con el total de ingresos, egresos y el balance financiero.
+
+
 ### 4.6.3. Web Applications Mock-ups
 
 ### 4.6.4. Web Applications User Flow Diagrams
