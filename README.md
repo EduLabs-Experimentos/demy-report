@@ -1055,6 +1055,24 @@ Se incluyen diferentes tipos de historias, tales como:
 
 ### 4.2.1. Organization Systems
 
+Vamos a usar diferentes sistemas de organización según el tipo de contenido que se presente, con el objetivo de facilitar la comprensión, la navegación táctil y la interacción por parte del usuario en su dispositivo móvil.
+
+**Organización visual del contenido**
+
+- **Jerárquica (Visual Hierarchy):** Utilizaremos una jerarquía visual clara para destacar mensajes principales y llamadas a la acción (CTAs). Este tipo de organización guía la mirada del usuario desde lo más importante (títulos grandes, botones de colores contrastantes) hasta los detalles secundarios, optimizando el espacio reducido de la pantalla.
+
+- **Listas Verticales:** Será el sistema de organización principal para mostrar directorios, menús o historiales, permitiendo un *scroll* natural y fluido.
+
+- **Tarjetas y Cuadrículas (Cards & Grid):** Aplicaremos una organización en tarjetas (ya sea en listas de una columna, cuadrículas de dos columnas o carruseles de *scroll* horizontal) cuando se presenten múltiples elementos visuales similares, como productos o servicios. Esto permite al usuario comparar la información fácilmente sin saturar la pantalla.
+
+**Esquemas de categorización de contenido**
+
+- **Por tópicos o categorías:** Se utilizará cuando el contenido pueda agruparse por temas, facilitando que el usuario encuentre información relacionada a través de menús de navegación (como un *Bottom Navigation Bar* o pestañas).
+
+- **Secuencial (Step-by-step):** Se usará cuando el usuario deba seguir un orden lógico para completar una tarea (por ejemplo, el proceso de *onboarding* inicial o el pago/registro de matrículas), guiándolo pantalla por pantalla para evitar frustraciones.
+
+- **Según perfil de usuario:** El contenido se adaptará dependiendo del tipo de cuenta o rol (ej. Administrador o Docente) con el que el usuario inicie sesión, mostrando solo las opciones relevantes para su perfil.
+
 ### 4.2.2. Labeling Systems
 
 ### 4.2.3. SEO Tags and Meta Tags
