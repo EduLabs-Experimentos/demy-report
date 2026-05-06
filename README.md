@@ -1347,6 +1347,59 @@ Navegación secundaria, enlaces legales (Términos/Privacidad) y redes sociales.
 
 ### 4.6.1. Web Applications Wireframes
 
+
+**Dashboard**
+Pantalla principal de la aplicación Demy donde se muestra un resumen general del sistema, incluyendo indicadores como balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos, además de gráficos de ingresos vs egresos, categorías de gastos y una vista previa de horarios.
+![Wireframe-Dashboard](assets/ux-ui/wireframes/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**
+Pantalla donde se registran y administran los profesores mediante un formulario con datos personales y una tabla que muestra la lista de docentes con opciones de búsqueda, edición y eliminación.
+![Wireframe-Teachers](assets/ux-ui/wireframes/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**
+Pantalla destinada al registro y administración de estudiantes, con un formulario que incluye datos como DNI, código, contacto y fecha de nacimiento, además de una tabla con opciones de búsqueda, edición y eliminación.
+![Wireframe-Students](assets/ux-ui/wireframes/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**
+Pantalla donde se crean y administran los periodos académicos mediante un formulario con nombre, fecha de inicio y fin, y una tabla que permite buscar, editar y eliminar periodos registrados.
+![Wireframe-Periods](assets/ux-ui/wireframes/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**
+Pantalla para registrar y gestionar cursos, incluyendo un formulario con nombre, código y descripción, junto con una tabla que muestra los cursos registrados con opciones de búsqueda, edición y eliminación.
+![Wireframe-Courses](assets/ux-ui/wireframes/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**
+Pantalla donde se registran aulas con datos como código, capacidad y campus, además de una tabla que permite visualizar, buscar, editar y eliminar aulas existentes.
+![Wireframe-Classrooms](assets/ux-ui/wireframes/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**
+Pantalla para crear horarios donde se registra un nombre de horario y se agregan sesiones mediante un formulario con selección de día, hora, curso, aula y profesor, mostrando además una lista de sesiones y una tabla de horarios con opciones de búsqueda, edición y eliminación.
+![Wireframe-Schedules](assets/ux-ui/wireframes/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**
+Pantalla donde se registran matrículas mediante un formulario con selección de estudiante, periodo académico, horario, curso, monto y estado de pago, además de una tabla con búsqueda, edición y eliminación de registros.
+![Wireframe-Enrollments](assets/ux-ui/wireframes/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**
+Pantalla que permite visualizar un calendario semanal seleccionando un horario, mostrando las sesiones distribuidas de lunes a domingo entre las 7:00 a.m. y 9:00 p.m. con información de curso, aula y profesor.
+![Wireframe-Scheduling](assets/ux-ui/wireframes/web-application/scheduling.png)
+
+**Facturación (Billing)**
+Pantalla donde se pueden consultar las cuentas de estudiantes buscando por ID o DNI, mostrando el historial de pagos realizados y los montos pendientes en una tabla organizada.
+![Wireframe-Billing](assets/ux-ui/wireframes/web-application/billing.png)
+
+**Contabilidad (Accounting)**
+Pantalla que muestra todas las transacciones en una tabla completa con filtros por tipo, categoría, método y descripción, incluyendo acciones para editar y eliminar registros.
+![Wireframe-Accounting](assets/ux-ui/wireframes/web-application/accounting.png)
+
+**Configuración (Settings)**
+Pantalla donde el usuario puede ajustar preferencias del sistema como idioma, modo oscuro, accesibilidad, cambio de contraseña y opciones para reportar errores.
+![Wireframe-Settings](assets/ux-ui/wireframes/web-application/settings.png)
+
+**Ayuda (Help)**
+Pantalla que proporciona información de contacto como correo, teléfono y horarios de atención, además de secciones de preguntas frecuentes, términos y condiciones y políticas de privacidad.
+![Wireframe-Help](assets/ux-ui/wireframes/web-application/help.png)
+
 ### 4.6.2. Web Application Wireflow Diagrams
 
 ### 4.6.3. Web Applications Mock-ups
