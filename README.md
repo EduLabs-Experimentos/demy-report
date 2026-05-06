@@ -1041,7 +1041,109 @@ Se incluyen diferentes tipos de historias, tales como:
 
 ## 4.1. Style Guidelines
 
+La guía de estilos sienta las bases de diseño para la plataforma Demy,asegurando una experiencia de usuario coherente y atractiva. En esta sección se detallan los colores, tipografías, iconografía y otros elementos visuales que conforman la identidad de la marca.
+
 ### 4.1.1. General Style Guidelines
+
+La identidad visual de Demy ha sido diseñada para transmitir cercanía, confianza y profesionalismo, cualidades esenciales en una herramienta dirigida a academias educativas que buscan modernizar sus procesos. El estilo visual se basa en principios de simplicidad, accesibilidad y consistencia, permitiendo que los usuarios, incluso aquellos con poca experiencia digital, puedan interactuar con facilidad tanto en la versión web como en móvil.
+
+**Color**
+
+Los colores juegan un papel clave en la primera impresión que los usuarios tienen de Demy, por lo que se seleccionaron con base en la psicología del color y la teoría del color para reforzar los valores de la marca.
+
+La psicología del color es el estudio de cómo los colores afectan las percepciones y comportamientos humanos. Colores como el azul y el verde son asociados con la confianza, la calma y la seguridad, mientras que colores como el rojo y el amarillo pueden evocar emociones más intensas como la urgencia o la felicidad.
+
+![Color Psychology](./assets/images/figures/color-psychology.webp)
+
+En el caso de Demy, se eligieron colores que evocan sentimientos de confianza, seguridad y profesionalismo, esenciales para una plataforma educativa.
+
+Por otro lado, la teoría del color se refiere a la forma en que los colores interactúan entre sí y cómo pueden ser combinados para crear armonía visual. Existen varias armonías de color según el uso del círculo cromático, como los esquemas de colores complementarios, análogos y triádicos.
+
+![Color Harmonies](./assets/images/figures/color-harmonies.jpg)
+
+Para Demy, se escogió un esquema *Split-Complementary Colors* (colores complementarios divididos) que incluye un color principal y dos colores secundarios que son adyacentes al color complementario del color principal. Este esquema proporciona un alto contraste visual, manteniendo al mismo tiempo una armonía agradable.
+
+![Split-Complementary Colors](./assets/images/figures/split-complementary-colors.jpg)
+
+Después de este análisis, se seleccionaron los tonos de colores en base a los estilos de diseño Material Design de Google, que promueven la claridad y la funcionalidad. Se muestran a continuación la paleta de colores de Demy:
+
+- **Color Primario:** Índigo 500 (#3F51B5): El color principal de la marca, utilizado en elementos clave como botones de acción, encabezados y enlaces. Este tono de azul transmite confianza y profesionalismo.
+- **Color Secundario:** Orange 700 (#F57C00): Utilizado para resaltar elementos secundarios y llamadas a la acción menos prominentes. Este tono de naranja aporta energía y dinamismo.
+- **Color Terciario:** Purple 400 (#AB47BC): Utilizado para acentos y detalles, proporcionando un contraste visual atractivo. Este tono de púrpura añade un toque de creatividad y sofisticación.
+- **Color de Información:** Blue 500 (#2196F3): Utilizado para mensajes informativos y enlaces, este tono de azul claro es amigable y accesible.
+- **Color de Éxito:** Green 500 (#4CAF50): Utilizado para indicar acciones exitosas y estados positivos, este tono de verde transmite crecimiento y estabilidad.
+- **Color de Advertencia:** Amber 500 (#FFC107): Utilizado para alertas y mensajes de precaución, este tono de ámbar es llamativo sin ser alarmante.
+- **Color de Error:** Red 500 (#F44336): Utilizado para mensajes de error y advertencias críticas, este tono de rojo es intenso y urgente.
+
+![Demy Color Palette](./assets/images/figures/demy-color-palette.png)
+
+**Tipografía**
+
+La tipografía es otro componente esencial de la identidad visual de una marca. La elección de fuentes tipográficas debe reflejar la personalidad de la marca y garantizar la legibilidad en todos los dispositivos.
+
+En el caso de Demy, se seleccionaron las siguientes fuentes:
+
+- **Títulos y Encabezados:** *Montserrat* - Una fuente sans-serif moderna y geométrica que transmite profesionalismo y claridad. Es ideal para títulos y encabezados debido a su fuerte presencia visual.
+- **Cuerpo de Texto:** *Poppins* - Una fuente sans-serif redondeada y amigable que facilita la lectura en bloques de texto más largos. Su diseño limpio y contemporáneo la hace adecuada para el cuerpo de texto en interfaces digitales.
+
+Con estas elecciones tipográficas, Demy logra un equilibrio entre modernidad y accesibilidad, asegurando que los usuarios puedan leer y comprender el contenido sin esfuerzo.
+
+![Demy Typography Headings](./assets/images/figures/demy-typography-headings.png)
+
+![Demy Typography Body](./assets/images/figures/demy-typography-body.png)
+
+**Iconografía**
+
+La iconografía utilizada en Demy sigue un estilo lineal y minimalista, alineado con las tendencias actuales de diseño. Los iconos son simples, claros y fácilmente reconocibles, lo que facilita la navegación y la comprensión de las funciones de la plataforma.
+
+Además, se sigue el estilo de Material Design Icons, que proporciona una amplia variedad de iconos coherentes y bien diseñados. Los iconos se utilizan para representar acciones comunes, estados y categorías, ayudando a los usuarios a identificar rápidamente las funciones disponibles.
+
+![Demy Iconography](./assets/images/figures/demy-iconography.png)
+
+**Sistema de Cuadrículas**
+
+El diseño de la interfaz de usuario de Demy se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
+
+![Demy Grid System](./assets/images/figures/demy-grid-system.png)
+
+**Espaciado**
+
+El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En Demy, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
+
+![Demy Spacing System](./assets/images/figures/demy-spacing-system.png)
+
+**Branding**
+
+Según Brandemia (2024), los arquetipos de marca representan patrones de comportamiento universales que son fácilmente reconocibles por las personas. Estos arquetipos ayudan a definir la personalidad de una marca y a establecer una conexión emocional con su audiencia.
+
+![Brand Archetypes](./assets/images/figures/brand-archetypes.webp)
+
+El arquetipo de marca elegido para Demy es el del "Cuidador" (The Caregiver). Este arquetipo se caracteriza por su deseo de ayudar a los demás, proteger y cuidar. Las marcas que adoptan este arquetipo suelen ser vistas como confiables, compasivas y dedicadas al bienestar de sus usuarios. Es adecuado para una plataforma educativa como Demy, ya que refleja el compromiso de la marca con la mejora de la educación y el apoyo a las academias y sus estudiantes.
+
+Por otra parte, la identidad visual de Demy se ve reflejada en la elección de su imagen de marca. Holum Studio (2022) explica que existen siete tipos principales de logotipos, cada uno con una función comunicativa distinta en la construcción de marca:
+
+- Logotipo (Wordmark): basado únicamente en texto o tipografía (ej. Google).
+- Isotipo (Brandmark): símbolo o ícono sin texto (ej. Apple).
+- Imagotipo: texto e ícono combinados, pero que pueden funcionar por separado (ej. Lacoste).
+- Isologo: texto e ícono integrados en una misma unidad visual (ej. Burger King).
+- Monograma: siglas o iniciales estilizadas (ej. IBM).
+- Emblema: texto dentro de una forma o escudo (ej. Harley-Davidson).
+- Símbolo abstracto: figura no literal que representa un concepto (ej. Nike).
+
+Se muestra a continuación una representación visual de algunos de estos tipos:
+
+![Logo Types](./assets/images/figures/logo-types.png)
+
+Para Demy, se optó por un imagotipo que combina un símbolo gráfico con el nombre de la marca. Un imagotipo es una representación visual que integra tanto un logotipo (el nombre de la marca) como un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
+
+![Demy Imagotype](./assets/images/figures/demy-combination-mark.png)
+
+El imagotipo de Demy se compone por un símbolo "D" estilizado, que representa tanto la inicial de la marca como un elemento visual que evoca tecnología y modernidad. El diseño del símbolo es simple y limpio, utilizando líneas suaves y formas geométricas que transmiten profesionalismo y accesibilidad. El color principal del imagotipo es el Índigo 500 (#3F51B5), que refuerza la identidad visual de la marca y su asociación con la confianza y la seguridad.
+
+Además, el imagotipo incluye el nombre "Demy" en una tipografía moderna y legible, utilizando la fuente Montserrat en un peso semi-bold para asegurar visibilidad y claridad. La combinación del símbolo gráfico con el nombre de la marca crea una identidad visual fuerte y coherente que puede ser aplicada en diversos medios y formatos, desde la interfaz de usuario de la plataforma hasta materiales de marketing y comunicación.
+
+Finalmente, el tono de comunicación de Demy se escogió para reflejar los valores de la marca y conectar emocionalmente con su audiencia. El tono es amigable, accesible y profesional, buscando transmitir confianza y cercanía. Se evita el uso de jerga técnica o lenguaje demasiado formal, optando por un estilo conversacional que facilite la comprensión y genere empatía. Se utilizan frases cortas y directas, con un enfoque en los beneficios y soluciones que la plataforma ofrece a sus usuarios.
+
 
 ### 4.1.2. Web Style Guidelines
 
