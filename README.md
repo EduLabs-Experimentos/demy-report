@@ -1171,7 +1171,20 @@ Las decisiones tomadas buscan garantizar una experiencia de usuario coherente, a
 
 #### 4.1.3.1 iOS Mobyle Style Guidelines
 
+Para la versión de iOS de la plataforma Demy, desarrollada mediante el framework multiplataforma Flutter, las decisiones de diseño se alinean con las Human Interface Guidelines (HIG) de Apple. Aunque la aplicación hereda la identidad visual general de la marca (colores y tipografías base), la interacción se adapta para que los usuarios de iOS experimenten un comportamiento natural e intuitivo dentro de su ecosistema.
+
+* **Navegación:** Se prioriza el uso de Tab Bars en la parte inferior para la navegación principal, asegurando que los módulos más importantes (como asistencia o calendario) estén accesibles con el pulgar. Además, se respeta el gesto nativo de iOS de deslizar desde el borde izquierdo de la pantalla para retroceder de vista (swipe-to-go-back).
+* **Componentes Adaptados (Cupertino):** Para interacciones críticas del sistema, como cuadros de diálogo (Dialogs), selectores de fecha (Date Pickers) o interruptores (Switches), se hace uso de la biblioteca de componentes Cupertino de Flutter. Esto garantiza que, aunque la aplicación comparta la lógica de negocio multiplataforma, los controles se sientan 100% nativos para el usuario de Apple.
+* **Áreas de Interacción (Touch Targets):** Siguiendo las estrictas recomendaciones de Apple para la accesibilidad táctil, todos los elementos interactivos, botones y enlaces mantienen un área de toque mínima de 44x44 pt, evitando errores de pulsación en pantallas de iPhone.
+
 #### 4.1.3.2. Android Mobile Style Guidelines
+
+La versión de Android de Demy ha sido desarrollada de manera nativa con un enfoque exclusivo para dispositivos Tablet. Al disponer de pantallas significativamente más grandes que un smartphone tradicional, el diseño se fundamenta en las directrices de Material Design 3 para Large Screens, optimizando la distribución espacial y la productividad del usuario.
+
+* **Uso del Espacio y Layouts Multipanel:** Para evitar estirar los componentes de un extremo a otro de la pantalla, se implementan patrones de diseño de maestro-detalle (List-Detail View). Esto permite, por ejemplo, que un administrador vea la lista de alumnos en el panel izquierdo y el detalle de la asistencia o calificaciones de un estudiante específico en el panel derecho simultáneamente.
+* **Navegación Adaptada:** Dado el formato de la tablet, el tradicional Bottom Navigation es reemplazado por un Navigation Rail (Riel de navegación lateral) o un Navigation Drawer permanente. Esto aprovecha mejor el ancho de la pantalla y mantiene las acciones principales al alcance de los pulgares cuando el usuario sostiene el dispositivo en formato horizontal.
+* **Componentes Material Nativos:** Se hace uso extensivo de los componentes estándar de Android, destacando el uso de tarjetas (Cards) enriquecidas, botones flotantes de acción (FAB) ubicados de acuerdo a la ergonomía de una pantalla grande, y modales (Dialogs) que no bloquean innecesariamente toda la interfaz visual.
+* **Áreas de Interacción:** De acuerdo con los estándares de Material Design, los objetivos táctiles se establecen en un mínimo de 48x48 dp, asegurando una interacción cómoda, precisa y sin esfuerzo en entornos de trabajo académico.
 
 ## 4.2. Information Architecture
 
