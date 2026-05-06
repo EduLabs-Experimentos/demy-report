@@ -1269,6 +1269,64 @@ Navegación secundaria, legales (Términos/Privacidad), redes sociales y sello d
 
 ### 4.3.2. Landing Page Mock-up
 
+A continuación se presenta la sustentación de los mockups de la landing page. El diseño prioriza claridad, escaneabilidad y consistencia visual con un estilo “glass” sutil, gradientes suaves y contraste de colores para legibilidad.
+
+**Sección Hero**
+
+Toolbar y texto con dos badges de descarga (App Store / Google Play). Imagen principal a la derecha y fondo con efecto “liquid glass” para dar profundidad sin distraer.
+
+![Landing Hero](./assets/ux-ui/mockups/landing/landing_herosection.png)
+
+**Cómo Funciona**
+
+Flujo en 3 pasos (descubre, configura, comienza) con numeración clara, íconos consistentes y tarjetas para separar etapas.
+
+![Landing Cómo Funciona](./assets/ux-ui/mockups/landing/landing_howitworks.png)
+
+**Características (features)**
+
+Bloque principal de features de la aplicación.
+
+![Landing Features](./assets/ux-ui/mockups/landing/landing_features.png)
+
+**Otras características (features)**
+
+Descripción complementaria sobre la aplicación. Se emplea tipografía y colores en escala.
+
+![Landing Features 3](./assets/ux-ui/mockups/landing/landing_features3.png)
+
+**Precios**
+
+Comparativa de planes (Essential / Pro / Elite) con lista de inclusiones. El plan recomendado resalta con un tono de acento y un borde más notorio. Información de facturación y términos visible.
+
+![Landing Precios](./assets/ux-ui/mockups/landing/landing_pricing.png)
+
+**Testimonios**
+
+Testimonios con foto, nombre y rol; calificación visible. Opción de mostrar perfil de clientes para reforzar credibilidad.
+
+![Landing Testimonios](./assets/ux-ui/mockups/landing/landing_testimonials.png)
+
+**Preguntas Frecuentes (FAQ)**
+
+Acordeón con preguntas habituales (datos, cancelación, soporte).
+
+![Landing FAQ](./assets/ux-ui/mockups/landing/landing_faq.png)
+
+**Contáctanos**
+
+Formulario breve (nombre, correo, mensaje) y canales alternativos (correo, WhatsApp, redes).
+
+![Landing Contacto](./assets/ux-ui/mockups/landing/landing_contactus.png)
+
+**Footer**
+
+Navegación secundaria, enlaces legales (Términos/Privacidad) y redes sociales. Contraste elevado para accesibilidad y lectura final.
+
+![Landing Footer](./assets/ux-ui/mockups/landing/landing_footer.png)
+
+<hr class="page-break">
+
 ## 4.4 Mobile Applications UX/UI Design
 
 ### 4.1.1. Mobile Applications Wireframes
