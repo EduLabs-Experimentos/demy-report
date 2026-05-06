@@ -1,0 +1,35 @@
+# IntelliJ / JetBrains IDE settings
+.idea/
+*.iml
+
+# OS-specific system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# Compiled Java
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Large/generated files (optional)
+*.mp4
+*.zip
+*.tar.gz
+*.rar
