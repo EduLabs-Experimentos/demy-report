@@ -1347,13 +1347,268 @@ Navegación secundaria, enlaces legales (Términos/Privacidad) y redes sociales.
 
 ### 4.6.1. Web Applications Wireframes
 
+
+**Dashboard**
+Pantalla principal de la aplicación Demy donde se muestra un resumen general del sistema, incluyendo indicadores como balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos, además de gráficos de ingresos vs egresos, categorías de gastos y una vista previa de horarios.
+![Wireframe-Dashboard](assets/ux-ui/wireframes/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**
+Pantalla donde se registran y administran los profesores mediante un formulario con datos personales y una tabla que muestra la lista de docentes con opciones de búsqueda, edición y eliminación.
+![Wireframe-Teachers](assets/ux-ui/wireframes/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**
+Pantalla destinada al registro y administración de estudiantes, con un formulario que incluye datos como DNI, código, contacto y fecha de nacimiento, además de una tabla con opciones de búsqueda, edición y eliminación.
+![Wireframe-Students](assets/ux-ui/wireframes/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**
+Pantalla donde se crean y administran los periodos académicos mediante un formulario con nombre, fecha de inicio y fin, y una tabla que permite buscar, editar y eliminar periodos registrados.
+![Wireframe-Periods](assets/ux-ui/wireframes/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**
+Pantalla para registrar y gestionar cursos, incluyendo un formulario con nombre, código y descripción, junto con una tabla que muestra los cursos registrados con opciones de búsqueda, edición y eliminación.
+![Wireframe-Courses](assets/ux-ui/wireframes/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**
+Pantalla donde se registran aulas con datos como código, capacidad y campus, además de una tabla que permite visualizar, buscar, editar y eliminar aulas existentes.
+![Wireframe-Classrooms](assets/ux-ui/wireframes/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**
+Pantalla para crear horarios donde se registra un nombre de horario y se agregan sesiones mediante un formulario con selección de día, hora, curso, aula y profesor, mostrando además una lista de sesiones y una tabla de horarios con opciones de búsqueda, edición y eliminación.
+![Wireframe-Schedules](assets/ux-ui/wireframes/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**
+Pantalla donde se registran matrículas mediante un formulario con selección de estudiante, periodo académico, horario, curso, monto y estado de pago, además de una tabla con búsqueda, edición y eliminación de registros.
+![Wireframe-Enrollments](assets/ux-ui/wireframes/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**
+Pantalla que permite visualizar un calendario semanal seleccionando un horario, mostrando las sesiones distribuidas de lunes a domingo entre las 7:00 a.m. y 9:00 p.m. con información de curso, aula y profesor.
+![Wireframe-Scheduling](assets/ux-ui/wireframes/web-application/scheduling.png)
+
+**Facturación (Billing)**
+Pantalla donde se pueden consultar las cuentas de estudiantes buscando por ID o DNI, mostrando el historial de pagos realizados y los montos pendientes en una tabla organizada.
+![Wireframe-Billing](assets/ux-ui/wireframes/web-application/billing.png)
+
+**Contabilidad (Accounting)**
+Pantalla que muestra todas las transacciones en una tabla completa con filtros por tipo, categoría, método y descripción, incluyendo acciones para editar y eliminar registros.
+![Wireframe-Accounting](assets/ux-ui/wireframes/web-application/accounting.png)
+
+**Configuración (Settings)**
+Pantalla donde el usuario puede ajustar preferencias del sistema como idioma, modo oscuro, accesibilidad, cambio de contraseña y opciones para reportar errores.
+![Wireframe-Settings](assets/ux-ui/wireframes/web-application/settings.png)
+
+**Ayuda (Help)**
+Pantalla que proporciona información de contacto como correo, teléfono y horarios de atención, además de secciones de preguntas frecuentes, términos y condiciones y políticas de privacidad.
+![Wireframe-Help](assets/ux-ui/wireframes/web-application/help.png)
+
 ### 4.6.2. Web Application Wireflow Diagrams
+
+**User goal:** Registrar un curso  
+**User persona:** Administrador de academia  
+![Wireflow-2](assets/ux-ui/wireflows/web-application/wireflow-register-course-admin.png)  
+**Explicación del flujo:**  
+En flujo comienza desde la sección "Mi organización", el administrador selecciona el módulo "Cursos" para gestionar las asignaturas disponibles en su academia. Al hacer click en el botón "Agregar curso", se despliega un formulario donde debe ingresar el nombre del curso, un código identificador. Tras completar los campos requeridos y confirmar la acción con el botón "Crear Curso", el sistema agrega el curso a la lista y lo deja disponible para ser asignado posteriormente a periodos académicos.
+
+**User goal:** Crear un periodo académico  
+**User persona:** Administrador de academia  
+![Wireflow-3](assets/ux-ui/wireflows/web-application/wireflow-register-period-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Periodos" donde visualiza la lista de periodos ya creados. Al presionar el botón "Agregar periodo", es dirigido a la sección "Crear periodo", que incluye una tabla tipo horario semanal. En esta interfaz, el administrador puede seleccionar los bloques de horas haciendo clic sobre las celdas correspondientes y luego presionar el botón "Seleccionar curso" para asignar uno de los cursos disponibles previamente creados. Una vez completada la asignación del horario, presiona "Guardar periodo", lo que activa un cuadro de confirmación que pregunta si está seguro de registrar el periodo. Al confirmar la acción, el sistema guarda la configuración y redirige al administrador a la lista de periodos, donde ya se visualiza el nuevo periodo registrado.
+
+**User goal:** Crear un aula  
+**User persona:** Administrador de academia  
+![Wireflow-4](assets/ux-ui/wireflows/web-application/wireflow-register-classroom-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Aulas", donde se encuentra con la lista de aulas ya creadas. Al presionar el botón "Agregar aula", se le presenta un cuadro emergente para crear una nueva aula. En este cuadro, el administrador debe asignar un código único para el aula y seleccionar uno de los periodos académicos previamente creados. Una vez completados estos campos, el administrador presiona el botón "Crear aula". El sistema valida la información y, al confirmarse, el aula se agrega a la lista de aulas disponibles, permitiendo al administrador gestionar y asignar profesores a las aulas.
+
+**User goal:** Crear un profesor  
+**User persona:** Administrador de academia  
+![Wireflow-5](assets/ux-ui/wireflows/web-application/wireflow-register-teacher-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Profesores" y presiona el botón "Agregar profesor". Se le presenta un cuadro emergente en el que debe ingresar los datos del profesor, como su nombre completo, DNI y las aulas a las que será asignado. Para asignar un aula, el administrador debe presionar el botón "Insertar aula-curso", lo que abre una pequeña tabla con las aulas y los cursos disponibles. El administrador puede agregar múltiples aulas y cursos al profesor. Una vez completada la asignación, el administrador presiona el botón "Agregar profesor". Se muestra un cuadro de confirmación para verificar que la información es correcta. Tras confirmar, el sistema genera un cuadro con las credenciales del profesor (correo y contraseña) para acceder a la plataforma Demy. Finalmente, el profesor se agrega a la lista de profesores disponibles.
+
+**User goal:** Matricular a un alumno  
+**User persona:** Administrador de academia  
+![Wireflow-6](assets/ux-ui/wireflows/web-application/wireflow-enrollment-admin.png)  
+**Explicación del flujo:**  
+El administrador ingresa a la sección "Panel de control" y selecciona el módulo "Matrícula". Dentro de este, se presenta un formulario donde debe llenar los datos del alumno, como su nombre, DNI y aula asignada. Al completar el formulario, el administrador presiona el botón "Guardar matrícula". Luego, aparece un cuadro de confirmación para asegurar que la información ingresada es correcta. Tras confirmar, el sistema registra la matrícula y redirige al administrador a la sección "Historial de matrícula", donde podrá ver la lista de matrículas realizadas, incluyendo la del alumno recién matriculado.
+
+**User goal:** Registrar pagos de alumnos  
+**User persona:** Administrador de academia  
+![Wireflow-8](assets/ux-ui/wireflows/web-application/wireflow-payments-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y luego al módulo "Pagos". Desde allí, puede buscar directamente a un alumno para visualizar su estado de pagos pendientes y registrar un nuevo pago. Una vez identificado el alumno, se completan los datos correspondientes del pago, y se presiona el botón "Guardar pago". A continuación, aparece un cuadro de confirmación para verificar si desea continuar, y tras confirmar, el pago se registra en el sistema. Alternativamente, el administrador puede acceder al "Historial de pagos", donde se muestra una tabla con los pagos pendientes. Desde ahí, también puede presionar el botón "Registrar pago" para completar los datos y realizar el registro. Cualquiera de estos caminos permite llevar un control eficiente de los pagos de los alumnos.
+
+**User goal:** Visualizar horarios de aulas  
+**User persona:** Administrador de academia  
+![Wireflow-9](assets/ux-ui/wireflows/web-application/wireflow-schedules-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Horarios". Una vez dentro, se le presenta una opción para buscar un aula específica. Tras ingresar el nombre o código del aula, el sistema muestra el horario semanal correspondiente a esa aula, heredado previamente del periodo asignado. Esta visualización permite al administrador tener un control claro sobre la distribución de cursos y bloques horarios asignados a cada aula.
+
+**User goal:** Registrar egresos y generar reportes financieros  
+**User persona:** Administrador de academia  
+![Wireflow-10](assets/ux-ui/wireflows/web-application/wireflow-expense-report-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Finanzas". Para registrar un egreso, debe completar un formulario con los campos: concepto, monto, fecha y categoría, y luego presionar el botón "Registrar egreso". Además, tiene la opción de generar reportes financieros de la academia, eligiendo entre un reporte general o mensual. Una vez seleccionada la opción deseada, el sistema genera una tabla con la información correspondiente y muestra al final un resumen con el total de ingresos, egresos y el balance financiero.
+
 
 ### 4.6.3. Web Applications Mock-ups
 
+**Dashboard**  
+Pantalla principal de la aplicación Demy donde se muestra un resumen visual del sistema con tarjetas destacadas que incluyen balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos. Además, se presentan gráficos interactivos de ingresos vs egresos y categorías de gastos, junto con una vista moderna del horario.  
+
+![Mockup-Dashboard](assets/ux-ui/mockups/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**  
+Pantalla donde se registran y administran los profesores mediante un formulario visualmente organizado con campos claros y botones destacados. Incluye una tabla moderna con buscador, paginación y acciones como editar y eliminar, usando componentes estilizados de PrimeNG.  
+
+![Mockup-Teachers](assets/ux-ui/mockups/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**  
+Pantalla diseñada para registrar y gestionar estudiantes con un formulario estructurado y amigable que incluye datos personales. También presenta una tabla interactiva con búsqueda, filtros y acciones, manteniendo una interfaz limpia y moderna.  
+
+![Mockup-Students](assets/ux-ui/mockups/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**  
+Pantalla que permite crear y administrar periodos académicos mediante un formulario con selectores de fecha visuales. Incluye una tabla estilizada con opciones de búsqueda, edición y eliminación, respetando una jerarquía visual clara.  
+
+![Mockup-Periods](assets/ux-ui/mockups/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**  
+Pantalla enfocada en el registro de cursos con un formulario moderno que incluye campos de texto y área de descripción. La tabla de cursos presenta un diseño limpio con acciones visibles y navegación intuitiva.  
+
+![Mockup-Courses](assets/ux-ui/mockups/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**  
+Pantalla donde se gestionan las aulas con un formulario visual claro y una tabla organizada que permite visualizar la información de manera rápida, incluyendo opciones de búsqueda y acciones sobre cada registro.  
+
+![Mockup-Classrooms](assets/ux-ui/mockups/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**  
+Pantalla que permite crear horarios de forma dinámica mediante una interfaz visual con dropdowns, selectores de tiempo y botones para agregar sesiones. Se muestra una lista de sesiones añadidas y una tabla de horarios con un diseño moderno y organizado.  
+
+![Mockup-Schedules](assets/ux-ui/mockups/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**  
+Pantalla donde se registran matrículas utilizando formularios con múltiples selectores y campos organizados en secciones. Incluye una tabla interactiva que permite gestionar los registros con acciones claras y accesibles.  
+
+![Mockup-Enrollments](assets/ux-ui/mockups/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**  
+Pantalla que muestra un calendario semanal visualmente atractivo, con bloques organizados que representan las sesiones. Incluye un selector de horarios y una distribución clara por días y horas, facilitando la comprensión de la planificación.  
+
+![Mockup-Scheduling](assets/ux-ui/mockups/web-application/scheduling.png)
+
+**Facturación (Billing)**  
+Pantalla que permite consultar el estado de cuenta de estudiantes mediante un buscador destacado. Se muestra una tabla con historial de pagos y deudas, organizada de manera clara y fácil de interpretar.  
+
+![Mockup-Billing](assets/ux-ui/mockups/web-application/billing.png)
+
+**Finanzas (Finance)**  
+Pantalla que combina formularios para registrar transacciones con visualizaciones gráficas del estado financiero. Incluye gráficos de ingresos vs egresos y distribución de gastos por categoría, facilitando el análisis de la información.  
+
+![Mockup-Finance](assets/ux-ui/mockups/web-application/finance.png)
+
+**Contabilidad (Accounting)**  
+Pantalla que presenta una tabla completa de transacciones con filtros avanzados por tipo, categoría, método y descripción. Incluye acciones visibles para editar y eliminar registros, con un diseño enfocado en claridad y control.  
+
+![Mockup-Accounting](assets/ux-ui/mockups/web-application/accounting.png)
+
+**Configuración (Settings)**  
+Pantalla donde el usuario puede personalizar la aplicación, incluyendo opciones como cambio de idioma, modo oscuro, accesibilidad, configuración general y actualización de contraseña, organizadas en secciones claras.  
+
+![Mockup-Settings](assets/ux-ui/mockups/web-application/settings.png)
+
+**Ayuda (Help)**  
+Pantalla que ofrece información de soporte al usuario, incluyendo datos de contacto, horarios de atención, preguntas frecuentes, términos y condiciones y políticas de privacidad, organizados en bloques informativos.  
+
+![Mockup-Help](assets/ux-ui/mockups/web-application/help.png)
+
+**Cerrar sesión (Log out)**  
+Pantalla o modal de confirmación que permite al usuario cerrar sesión de manera segura, mostrando una alerta clara con opciones para cancelar o confirmar la acción.  
+
+![Mockup-Logout](assets/ux-ui/mockups/web-application/logout.png)
+
 ### 4.6.4. Web Applications User Flow Diagrams
 
+**UserGoal: Agregar un curso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Courses" desde el menú lateral de Demy. Luego, visualiza un formulario donde debe ingresar el nombre del curso, código y descripción. Una vez completados los campos, presiona el botón de registrar curso, lo que permite guardar la información y visualizar el nuevo curso en la tabla de cursos registrados.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-curso.png)
+
+**UserGoal: Agregar aula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Classrooms" y completa el formulario con el código del aula, su capacidad y el campus correspondiente. Al hacer clic en registrar, el aula se guarda en el sistema y aparece en la tabla de aulas registradas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-aula.png)
+
+**UserGoal: Agregar profesor**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Teachers" y completa el formulario con datos como nombre, apellido, correo, teléfono, contraseña y género. Luego de presionar el botón de registro, el profesor se guarda en el sistema y se muestra en la lista de docentes.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-profesor.png)
+
+**UserGoal: Agregar horario**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Schedules" y registra un nuevo horario ingresando un nombre. Luego, procede a añadir sesiones seleccionando el día, hora de inicio y fin, curso, aula y profesor mediante dropdowns. Al presionar “Add Session”, las sesiones se agregan al horario. Finalmente, guarda el horario completo y lo visualiza en la lista de horarios.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-horario.png)
+
+**UserGoal: Agregar periodo académico**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Periods" y completa un formulario con el nombre del periodo, fecha de inicio y fecha de fin. Luego presiona el botón de registrar, lo que permite almacenar el periodo y visualizarlo en la lista de periodos académicos disponibles.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-periodo.png)
+
+**UserGoal: Agregar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y completa el formulario seleccionando estudiante, periodo académico, horario, curso, monto y estado de pago. Al registrar la matrícula, esta se almacena en el sistema y se visualiza en la tabla de matrículas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-matricula.png)
+
+**UserGoal: Eliminar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y busca la matrícula que desea eliminar mediante la barra de búsqueda. Luego selecciona la opción de eliminar en la tabla y confirma la acción en un modal. Finalmente, la matrícula se elimina del sistema y deja de aparecer en la lista.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/eliminar-matricula.png)
+
+**UserGoal: Registrar pago de alumno por búsqueda**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Billing" y busca al estudiante mediante su DNI o ID. Luego visualiza el estado de cuenta y selecciona la opción de registrar pago. Completa los datos necesarios del pago y confirma la operación, actualizando el estado financiero del estudiante.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-pago.png)
+
+**UserGoal: Buscar horario de clase**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Scheduling" y selecciona un horario desde un dropdown. Automáticamente se muestra el calendario semanal con las sesiones organizadas por día y hora, permitiendo visualizar fácilmente la distribución de clases.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/buscar-horario.png)
+
+**UserGoal: Mirar el reporte financiero**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Finance" donde visualiza gráficos de ingresos y egresos, así como un análisis de las principales categorías de gasto. Esta información le permite entender el estado financiero de la institución.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/reporte-financiero.png)
+
+**UserGoal: Registrar un egreso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Finance" y completa el formulario seleccionando tipo "egreso", categoría, método de pago, monto, moneda, fecha y descripción. Luego de registrar la transacción, esta se guarda en el sistema y se refleja en los reportes financieros.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-egreso.png)
+
 ## 4.7. Web Applications Prototyping
+
+Esta sección tiene como objetivo describir los posibles flujos de usuario diseñados para la aplicación web. Mediante el uso de prototipos interactivos, se ilustra la navegación y las rutas que siguen los diferentes tipos de usuarios al interactuar con la plataforma para cumplir sus respectivas tareas.
+
+A continuación, se presentan el enlace al video explicativo:
+
+
+![imagesPrototypeWeb](assets/ux-ui/prototypes/web-application/captura-prototype.png)
+
+- **Video - Web Applications Prototyping**  
+  Explicación en video de los flujos de usuario en la aplicación web:  
+  [Ver video en OneDrive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQDXWxdpjpYhQLw_2PhlpYSlAZZ7wJ_K3aykZ1h0xIsEbKo?e=RdK2yT&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 ## 4.8. Domain-Driven Software Architecture
 
