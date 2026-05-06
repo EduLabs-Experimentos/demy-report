@@ -1075,6 +1075,24 @@ Vamos a usar diferentes sistemas de organización según el tipo de contenido qu
 
 ### 4.2.2. Labeling Systems
 
+La interfaz de nuestra aplicación debe ser clara y fácil de usar, con palabras claves que sean conocidas por nuestros usuarios. Por esta razón, las etiquetas empleadas deben explicar de manera concisa su función en pocas palabras. Así, hemos creado etiquetas para la navegación principal en las dos versiones de nuestra aplicación web:
+
+***Administrador***
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Matrícula: Acceso al registro de matrícula de alumnos, permitiendo su alta en el sistema.
+- Alumnos: Acceso a filtros de búsqueda de alumnos por DNI y muestra detalles generales como: nombres, apellidos, DNI, apoderado, fecha de matrícula, estado de matrícula y estado de pago.
+- Pagos: Acceso para registrar el pago de mensualidades de los alumnos, con opciones para actualizar el estado de pago.
+- Horarios: Acceso a un calendario semanal donde están programadas las clases, con un filtro por código de salón.
+- Asistencia: Acceso a la gestión de asistencia de los alumnos, con filtro por DNI y visualización de su historial.
+- Finanzas: Acceso al registro de egresos, balance mensual y visualización de los últimos egresos realizados.
+
+***Profesor***
+
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Horarios: Acceso a los horarios del profesor, con la programación detallada de sus clases y la asignación por día y aula.
+- Asistencia: Acceso a la gestión de asistencia, con un filtro por aula y un panel interactivo para marcar la asistencia de los alumnos durante las clases.
+
+
 ### 4.2.3. SEO Tags and Meta Tags
 
 ### 4.2.4. Searching Systems
