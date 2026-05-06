@@ -1149,7 +1149,9 @@ Estas etiquetas contribuyen a mejorar el posicionamiento en buscadores, la acces
 
 #### Mobile App - ASO
 Para el componente móvil de Demy, el posicionamiento (SEO móvil) se rige bajo las reglas de las tiendas de aplicaciones (Google Play / App Store) utilizando los siguientes parámetros:
-
+- App Name : "Demy: Gestión para Academias"
+- Short Description: "Controla la asistencia, horarios y pagos de tu academia fácilmente desde tu celular."
+- Keywords: "educación, academia, asistencia, docentes, gestión escolar, pagos"
 
 ### 4.2.4. Searching Systems
 
@@ -1157,17 +1159,43 @@ A medida que se incrementa la cantidad de información almacenada en nuestra pla
 
 #### Búsqueda por palabra clave
 En secciones como la de estudiantes o aulas, el usuario podrá ingresar términos específicos, como el **DNI del estudiante** o el **código del aula**, dentro de un buscador con el clásico ícono de lupa. El sistema mostrará coincidencias inmediatas, facilitando la navegación sin necesidad de recorrer listas extensas.
-- App Name : "Demy: Gestión para Academias"
-- Short Description: "Controla la asistencia, horarios y pagos de tu academia fácilmente desde tu celular."
-- Keywords: "educación, academia, asistencia, docentes, gestión escolar, pagos"
 
 #### Filtros desplegables por categoría y fecha
 Para consultar información detallada o generar reportes, los usuarios contarán con filtros como **tipo de ciclo**, **categoría**, **año** y **mes**. Estos se presentan en menús desplegables con una flecha hacia abajo, permitiendo seleccionar la opción deseada de forma rápida y sin errores.
 
 #### Selector de tipo de reporte
+
 En el módulo financiero, los usuarios tendrán la posibilidad de elegir entre **generar un reporte mensual** o **visualizar el historial completo** de movimientos. Esta acción se realiza mediante botones de selección simple, que adaptan dinámicamente el contenido mostrado en pantalla según la opción elegida.
 
 ### 4.2.5. Navigation Systems
+
+En **Demy** buscamos ofrecer la mejor experiencia a nuestros usuarios, asegurando la usabilidad en nuestras interfaces. Para ello, se han definido las siguientes decisiones de UI:
+
+#### Landing Page
+
+- La navegación de la Landing Page utiliza **scroll vertical**, ya que es el patrón más común y cómodo en páginas web.
+- Cuenta con una **barra de menú superior fija (sticky navbar)** que permanece visible mientras el usuario se desplaza. Esta incluye enlaces a las secciones: *About*, *Benefits*, *Plans* y *Contact*.
+- Se emplean **Call to Action (CTA)** en secciones clave como *Hero*, *Plans* y *Contact*, mediante botones como **"Get Started"** y **"Start Today"**, incentivando la conversión de usuarios.
+
+#### Web Application
+
+- La aplicación contará con un **navbar principal** que permite navegar entre las secciones *Mi organización* y *Panel de control*.
+- Dentro del *Panel de control*, se desplegará un **side navbar (menú lateral)** con acceso a las distintas funcionalidades de la plataforma.
+- Se implementará navegación entre vistas con opción de **volver a la pantalla anterior**, garantizando que el usuario mantenga siempre el control del sistema.
+
+#### Mobile App
+
+- La aplicación móvil contará con una **barra de navegación inferior (bottom navigation bar)** para acceder rápidamente a las secciones principales.
+- Se incorporará un **menú tipo hamburguesa** o menú lateral para funcionalidades secundarias o configuraciones.
+- La navegación estará optimizada para uso con una sola mano, priorizando accesos rápidos y visibles.
+- Se implementarán **gestos táctiles** (como deslizamientos) para mejorar la fluidez en la navegación entre pantallas.
+- Se mantendrá consistencia visual y de interacción con la versión web para facilitar el aprendizaje del usuario.
+
+#### Accesibilidad y Usabilidad
+
+- Se aplicará **Responsive Design**, asegurando una experiencia consistente en diferentes dispositivos (desktop, tablet y móvil).
+- En dispositivos móviles, la navegación se adaptará mediante un **menú tipo hamburguesa (ícono de tres líneas)** que desplegará un side navbar con las funcionalidades disponibles.
+- Se prioriza la claridad visual, facilidad de uso y accesibilidad para todo tipo de usuarios.
 
 ## 4.3. Landing Page UI Desing
 
