@@ -1646,6 +1646,1202 @@ A continuación, se presentan el enlace al video explicativo:
 
 ### 5.2.1. Sprint Backlogs
 
+#### Sprint 1
+
+| Sprint # | Sprint 1 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-03-30                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 1 Goal                   | En este sprint nos enfocamos en desarrollar la base del sistema Demy, implementando la gestión de academia, profesores, periodos académicos, aulas, cursos, horarios y autenticación de usuarios. Adicionalmente, se completará la landing page pública. Esto permitirá contar con la estructura fundamental del sistema académico. El objetivo se cumplirá cuando estas funcionalidades estén operativas y se puedan registrar y visualizar correctamente desde la interfaz web. |
+| Sprint 1 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 1</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SWS001</td>
+        <td>Ver sección Hero</td>
+        <td>SWS001a</td>
+        <td>Maquetar Hero Section</td>
+        <td>Diseñar estructura con título, descripción y CTA principal</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS001</td>
+        <td>Ver sección Hero</td>
+        <td>SWS001b</td>
+        <td>Aplicar contenido y responsive</td>
+        <td>Agregar textos finales y adaptar vista móvil/tablet</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS002</td>
+        <td>Ver sección Features</td>
+        <td>SWS002a</td>
+        <td>Maquetar estructura base</td>
+        <td>Crear contenedor con título y colocar las features</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS002</td>
+        <td>Ver sección Features</td>
+        <td>SWS002b</td>
+        <td>Agregar iconos y estilos</td>
+        <td>Implementar título, descripción e imagen de manera alineada</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS003</td>
+        <td>Ver sección How It Works</td>
+        <td>SWS003a</td>
+        <td>Estructurar pasos del flujo</td>
+        <td>Maquetar pasos del proceso con íconos y descripciones</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS003</td>
+        <td>Ver sección How It Works</td>
+        <td>SWS003b</td>
+        <td>Optimizar interactividad</td>
+        <td>Agregar animaciones y responsividad del bloque</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS004</td>
+        <td>Ver sección About The Product</td>
+        <td>SWS004a</td>
+        <td>Diseñar encabezado</td>
+        <td>Agregar título, subtítulo y descripción general</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS004</td>
+        <td>Ver sección About The Product</td>
+        <td>SWS004b</td>
+        <td>Agregar características visuales</td>
+        <td>Incluir iconos y texto explicativo por característica</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS005</td>
+        <td>Ver sección Testimonials</td>
+        <td>SWS005a</td>
+        <td>Maquetar Cards de Testimonios</td>
+        <td>Agregar nombre, foto y texto de testimonio</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS005</td>
+        <td>Ver sección Testimonials</td>
+        <td>SWS005b</td>
+        <td>Aplicar estilo y responsive</td>
+        <td>Agregar puntuación de estrellas y adaptar vista móvil</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS006</td>
+        <td>Ver sección About Us</td>
+        <td>SWS006a</td>
+        <td>Maquetar contenido</td>
+        <td>Agregar título, subtítulo e imagen del equipo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS006</td>
+        <td>Ver sección About Us</td>
+        <td>SWS006b</td>
+        <td>Optimizar presentación</td>
+        <td>Aplicar estilos visuales y distribución responsive</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS007</td>
+        <td>Ver sección About The Team</td>
+        <td>SWS007a</td>
+        <td>Diseñar cards del equipo</td>
+        <td>Agregar nombre, rol y foto de cada integrante</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS007</td>
+        <td>Ver sección About The Team</td>
+        <td>SWS007b</td>
+        <td>Aplicar efectos y responsive</td>
+        <td>Ajustar alineación, hover y vista móvil</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS008</td>
+        <td>Ver sección Pricing</td>
+        <td>SWS008a</td>
+        <td>Maquetar estructura de planes</td>
+        <td>Crear layout con 3 pricing cards básicas</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS008</td>
+        <td>Ver sección Pricing</td>
+        <td>SWS008b</td>
+        <td>Agregar detalles y CTA</td>
+        <td>Aplicar botones de compra y diseño responsive</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS009</td>
+        <td>Ver sección FAQ</td>
+        <td>SWS009a</td>
+        <td>Diseñar estructura de preguntas</td>
+        <td>Maquetar lista de preguntas con comportamiento expandible</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS009</td>
+        <td>Ver sección FAQ</td>
+        <td>SWS009b</td>
+        <td>Optimizar visual y responsive</td>
+        <td>Aplicar estilos visuales y transiciones de apertura</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS010</td>
+        <td>Ver sección Contact</td>
+        <td>SWS010a</td>
+        <td>Maquetar formulario</td>
+        <td>Agregar inputs de Name, Email, Phone y Message</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS010</td>
+        <td>Ver sección Contact</td>
+        <td>SWS010b</td>
+        <td>Aplicar estilos y responsive</td>
+        <td>Agregar imagen lateral y validaciones visuales</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS011</td>
+        <td>Ver sección Footer</td>
+        <td>SWS011a</td>
+        <td>Estructurar Footer</td>
+        <td>Agregar logo, links y derechos reservados</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS011</td>
+        <td>Ver sección Footer</td>
+        <td>SWS011b</td>
+        <td>Agregar redes y responsive</td>
+        <td>Incluir iconos de redes y diseño adaptable</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001a</td>
+        <td>Crear modelo y migración de datos</td>
+        <td>Crear estructura de base de datos para academia</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001b</td>
+        <td>Crear endpoint API POST /academies</td>
+        <td>Implementar lógica de registro de academia</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US002</td>
+        <td>Actualizar academia</td>
+        <td>US002a</td>
+        <td>Crear endpoint API PUT /academies/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US002</td>
+        <td>Actualizar academia</td>
+        <td>US002b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US003</td>
+        <td>Eliminar academia</td>
+        <td>US003a</td>
+        <td>Crear endpoint API DELETE /academies/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US003</td>
+        <td>Eliminar academia</td>
+        <td>US003b</td>
+        <td>Crear confirmación de eliminación</td>
+        <td>Modal de confirmación antes de eliminar</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para profesor</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004b</td>
+        <td>Crear endpoint API POST /teachers</td>
+        <td>Implementar lógica de registro de profesor</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US005</td>
+        <td>Actualizar profesor</td>
+        <td>US005a</td>
+        <td>Crear endpoint API PUT /teachers/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US005</td>
+        <td>Actualizar profesor</td>
+        <td>US005b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US006</td>
+        <td>Eliminar profesor</td>
+        <td>US006a</td>
+        <td>Crear endpoint API DELETE /teachers/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US006</td>
+        <td>Eliminar profesor</td>
+        <td>US006b</td>
+        <td>Crear confirmación de eliminación</td>
+        <td>Modal de confirmación antes de eliminar</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para periodo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013b</td>
+        <td>Crear endpoint API POST /academic-periods</td>
+        <td>Implementar lógica de creación de periodo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con campos de fecha inicio y fin</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US014</td>
+        <td>Actualizar periodo</td>
+        <td>US014a</td>
+        <td>Crear endpoint API PUT /academic-periods/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US014</td>
+        <td>Actualizar periodo</td>
+        <td>US014b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US015</td>
+        <td>Eliminar periodo</td>
+        <td>US015a</td>
+        <td>Crear endpoint API DELETE /academic-periods/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016b</td>
+        <td>Crear endpoint API POST /classrooms</td>
+        <td>Implementar lógica de creación de aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con nombre y capacidad del aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US017</td>
+        <td>Actualizar aula</td>
+        <td>US017a</td>
+        <td>Crear endpoint API PUT /classrooms/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US017</td>
+        <td>Actualizar aula</td>
+        <td>US017b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US018</td>
+        <td>Eliminar aula</td>
+        <td>US018a</td>
+        <td>Crear endpoint API DELETE /classrooms/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para horario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019b</td>
+        <td>Crear endpoint con validación de conflictos</td>
+        <td>API que valida cruces de horario</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con selección de curso, aula y hora</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US020</td>
+        <td>Actualizar horario</td>
+        <td>US020a</td>
+        <td>Crear endpoint API PUT /schedules/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US020</td>
+        <td>Actualizar horario</td>
+        <td>US020b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US021</td>
+        <td>Eliminar horario</td>
+        <td>US021a</td>
+        <td>Crear endpoint API DELETE /schedules/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032a</td>
+        <td>Crear modelo de usuario</td>
+        <td>Crear estructura de base de datos para usuario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032b</td>
+        <td>Crear endpoint API POST /auth/sign-up</td>
+        <td>Implementar lógica de registro con hash de contraseña</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033a</td>
+        <td>Crear lógica de verificación con token</td>
+        <td>Implementar generación y validación de token</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033b</td>
+        <td>Crear pantalla de activación</td>
+        <td>Interfaz para ingresar código de verificación</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034a</td>
+        <td>Crear endpoint API POST /auth/login con JWT</td>
+        <td>Implementar autenticación y generación de token</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034b</td>
+        <td>Crear formulario de login</td>
+        <td>Interfaz de login con validaciones</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Sprint 2
+
+| Sprint # | Sprint 2 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-04-13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 2 Goal                   | En este sprint nos enfocamos en completar la gestión de matrículas de estudiantes, el control de pagos y la gestión financiera de la academia. Se implementarán las funcionalidades de inscripción, seguimiento de pagos, boletas y reportes financieros. El objetivo se cumplirá cuando los administrativos puedan gestionar completamente el ciclo de matrícula y pagos desde la interfaz web.                                                                                                   |
+| Sprint 2 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 2</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007a</td>
+        <td>Crear modelo de inscripción</td>
+        <td>Crear estructura de base de datos para inscripción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007b</td>
+        <td>Crear endpoint POST /enrollments</td>
+        <td>Implementar lógica de registro de inscripción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007c</td>
+        <td>Crear formulario de matrícula</td>
+        <td>Interfaz de matrícula con selección de curso y estudiante</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007d</td>
+        <td>Validar disponibilidad de cupos</td>
+        <td>Lógica de verificación de cupos disponibles</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US008</td>
+        <td>Actualizar inscripción</td>
+        <td>US008a</td>
+        <td>Crear endpoint PUT /enrollments/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US008</td>
+        <td>Actualizar inscripción</td>
+        <td>US008b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US009</td>
+        <td>Cancelar inscripción</td>
+        <td>US009a</td>
+        <td>Crear endpoint DELETE /enrollments/{id}</td>
+        <td>Implementar lógica de cancelación</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US009</td>
+        <td>Cancelar inscripción</td>
+        <td>US009b</td>
+        <td>Crear confirmación de cancelación</td>
+        <td>Modal de confirmación antes de cancelar</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022a</td>
+        <td>Crear modelo de boleta</td>
+        <td>Crear estructura de base de datos para boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022b</td>
+        <td>Crear endpoint POST /invoices</td>
+        <td>Implementar lógica de generación de boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022c</td>
+        <td>Crear interfaz de generación</td>
+        <td>Formulario para generar boletas de pago</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022d</td>
+        <td>Crear plantilla PDF de boleta</td>
+        <td>Generar documento PDF de la boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US023</td>
+        <td>Actualizar boletas de pago</td>
+        <td>US023a</td>
+        <td>Crear endpoint PUT /invoices/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US023</td>
+        <td>Actualizar boletas de pago</td>
+        <td>US023b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición de boleta</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US024</td>
+        <td>Eliminar boletas de pago</td>
+        <td>US024a</td>
+        <td>Crear endpoint DELETE /invoices/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025a</td>
+        <td>Crear modelo de transacción</td>
+        <td>Crear estructura de base de datos para transacción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025b</td>
+        <td>Crear endpoint POST /transactions</td>
+        <td>Implementar lógica de registro de transacción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025c</td>
+        <td>Crear formulario de transacciones</td>
+        <td>Interfaz para registrar ingresos y egresos</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US026</td>
+        <td>Actualizar ingreso/egreso</td>
+        <td>US026a</td>
+        <td>Crear endpoint PUT /transactions/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US026</td>
+        <td>Actualizar ingreso/egreso</td>
+        <td>US026b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición de transacción</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US027</td>
+        <td>Eliminar ingreso/egreso</td>
+        <td>US027a</td>
+        <td>Crear endpoint DELETE /transactions/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028a</td>
+        <td>Crear endpoint GET /transactions/summary</td>
+        <td>API para obtener resumen financiero</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028b</td>
+        <td>Crear dashboard financiero</td>
+        <td>Interfaz con métricas y gráficos</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028c</td>
+        <td>Crear gráficos y métricas</td>
+        <td>Visualización de ingresos vs egresos</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029a</td>
+        <td>Crear endpoint GET /reports/financial</td>
+        <td>API para generar reportes financieros</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029b</td>
+        <td>Crear exportación a PDF</td>
+        <td>Generar reporte en formato PDF</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029c</td>
+        <td>Crear exportación a Excel</td>
+        <td>Generar reporte en formato Excel</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Sprint 3
+
+| Sprint # | Sprint 3 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-04-27                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 3 Goal                   | En este sprint nos enfocamos en desarrollar la aplicación móvil completa para los tres roles: administrador, docente y estudiante. Se implementarán todas las funcionalidades de gestión académica en versión móvil nativa, incluyendo registro de asistencia, visualización de horarios y autenticación. El objetivo se cumplirá cuando los usuarios puedan acceder a sus funcionalidades desde dispositivos móviles de forma nativa.                                                                                                     |
+| Sprint 3 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 3</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010a</td>
+        <td>Crear modelo de asistencia</td>
+        <td>Crear estructura de base de datos para asistencia</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010b</td>
+        <td>Crear endpoint POST /attendances</td>
+        <td>API para registrar asistencia de estudiantes</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010c</td>
+        <td>Crear pantalla de registro de asistencia</td>
+        <td>Interfaz móvil para marcar asistencia</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US011</td>
+        <td>Actualizar asistencia</td>
+        <td>US011a</td>
+        <td>Crear endpoint PUT /attendances/{id}</td>
+        <td>API para actualizar registro de asistencia</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US011</td>
+        <td>Actualizar asistencia</td>
+        <td>US011b</td>
+        <td>Crear pantalla de edición de asistencia</td>
+        <td>Interfaz móvil para modificar asistencia</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US012</td>
+        <td>Visualizar reportes asistencia</td>
+        <td>US012a</td>
+        <td>Crear endpoint GET /reports/attendance</td>
+        <td>API para obtener reportes de asistencia</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US012</td>
+        <td>Visualizar reportes asistencia</td>
+        <td>US012b</td>
+        <td>Crear pantalla de reportes de asistencia</td>
+        <td>Interfaz móvil para visualizar reportes</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030a</td>
+        <td>Crear endpoint GET /teachers/{id}/schedules</td>
+        <td>API para obtener horarios del profesor</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030b</td>
+        <td>Crear pantalla de mi horario</td>
+        <td>Interfaz móvil para ver horarios asignados</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030c</td>
+        <td>Crear vista de calendario semanal</td>
+        <td>Visualización de horario en formato calendario</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031a</td>
+        <td>Crear endpoint PUT /schedules/{id}/reschedule</td>
+        <td>API para reprogramar una clase</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031b</td>
+        <td>Crear pantalla de solicitud de reprogramación</td>
+        <td>Interfaz móvil para solicitar cambio</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031c</td>
+        <td>Crear lógica de validación de conflictos</td>
+        <td>Validar que no haya cruces de horario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032a</td>
+        <td>Crear pantalla de registro</td>
+        <td>Interfaz móvil de registro de usuario</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032b</td>
+        <td>Validar registro desde móvil</td>
+        <td>Ajustar endpoint para llamadas desde app móvil</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033a</td>
+        <td>Crear pantalla de activación</td>
+        <td>Interfaz móvil para activar cuenta</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033b</td>
+        <td>Validar token desde móvil</td>
+        <td>Ajustar lógica de verificación para móvil</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034a</td>
+        <td>Crear pantalla de login</td>
+        <td>Interfaz móvil de autenticación</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034b</td>
+        <td>Validar autenticación JWT desde móvil</td>
+        <td>Ajustar generación de token para móvil</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ### 5.2.2. Implemented Landing Page Evidence
 
 **Landing Page:**
