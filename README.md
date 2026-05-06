@@ -1882,6 +1882,55 @@ Este grupo gestiona la visualización del horario del profesor y ofrece una func
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
+**SEGMENTO: ADMIN**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![UserFlow-1](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-1.png)
+
+***User Goal***  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![UserFlow-2](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![UserFlow-3](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-3.png)
+
+**User Goal**    
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![UserFlow-4](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-4.png)
+
+**User Goal**     
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![UserFlow-5](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-5.png)
+
+**SEGMENTO: TEACHER**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Userflow-Teacher-1](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ReportAttendance.png)
+
+**User Goal**
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Userflow-Teacher-2](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-RescheduleClass.png)
+
+**User Goal**
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Userflow-Teacher-3](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-TakeAttendance.png)
+
+**User Goal**
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Userflow-Teacher-4](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ViewSchedule.png)
+
 ## 4.5. Mobile Applications Prototyping
 
 ### 4.5.1. Android Mobile Application Prototyping
