@@ -1648,6 +1648,8 @@ A continuación, se presentan el enlace al video explicativo:
 
 #### Sprint 1
 
+#### Sprint Planning 1
+
 | Sprint # | Sprint 1 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -1660,6 +1662,8 @@ A continuación, se presentan el enlace al video explicativo:
 | Sprint 1 Goal                   | En este sprint nos enfocamos en desarrollar la base del sistema Demy, implementando la gestión de academia, profesores, periodos académicos, aulas, cursos, horarios y autenticación de usuarios. Adicionalmente, se completará la landing page pública. Esto permitirá contar con la estructura fundamental del sistema académico. El objetivo se cumplirá cuando estas funcionalidades estén operativas y se puedan registrar y visualizar correctamente desde la interfaz web. |
 | Sprint 1 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 1
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
@@ -2300,6 +2304,8 @@ A continuación, se presentan el enlace al video explicativo:
 
 #### Sprint 2
 
+#### Sprint Planning 2
+
 | Sprint # | Sprint 2 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -2312,6 +2318,8 @@ A continuación, se presentan el enlace al video explicativo:
 | Sprint 2 Goal                   | En este sprint nos enfocamos en completar la gestión de matrículas de estudiantes, el control de pagos y la gestión financiera de la academia. Se implementarán las funcionalidades de inscripción, seguimiento de pagos, boletas y reportes financieros. El objetivo se cumplirá cuando los administrativos puedan gestionar completamente el ciclo de matrícula y pagos desde la interfaz web.                                                                                                   |
 | Sprint 2 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 2
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
@@ -2612,6 +2620,8 @@ A continuación, se presentan el enlace al video explicativo:
 
 #### Sprint 3
 
+#### Sprint Planning 3
+
 | Sprint # | Sprint 3 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -2624,6 +2634,8 @@ A continuación, se presentan el enlace al video explicativo:
 | Sprint 3 Goal                   | En este sprint nos enfocamos en desarrollar la aplicación móvil completa para los tres roles: administrador, docente y estudiante. Se implementarán todas las funcionalidades de gestión académica en versión móvil nativa, incluyendo registro de asistencia, visualización de horarios y autenticación. El objetivo se cumplirá cuando los usuarios puedan acceder a sus funcionalidades desde dispositivos móviles de forma nativa.                                                                                                     |
 | Sprint 3 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 3
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
