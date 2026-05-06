@@ -857,7 +857,17 @@ Se elaboraron los Empathy Mapping para los dos User Personas: el Administrador d
 
 ### 2.3.5. As-is Scenario Mapping
 
-...
+Para elaborar el As-Is Scenario Mapping, como grupo es importante empatizar con nuestros futuros usuarios, buscando describir sus experiencias de forma que reflejaran sus pain points identificados en la seccion anterior.<br>
+
+#### As-Is Scenario Mapping Admin
+
+![As-Is Scenario – Admin](./assets/images/photos/as-is-scenario-mapping-coordinator.png)
+
+#### As-Is Scenario Mapping Teacher
+
+![As-Is Scenario – Teacher](./assets/images/photos/as-is-scenario-mapping-teacher.png)
+
+<hr class="page-break">
 
 ## 2.4. Ubiquitous Language
 
@@ -887,6 +897,20 @@ Un glosario de términos clave utilizados en el dominio de gestión académica d
 # Capítulo III: Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
+
+Para el desarrollo del To-be Scenario Mapping, el equipo planteó cómo mejorarían las actividades de los administradores y docentes tras implementar Demy. Este flujo proyectado soluciona los problemas detectados en el As-is Scenario, con procesos más ágiles, automatizados y centrados en una mejor gestión y comunicación.
+
+#### To-Be Scenario Mapping Admin
+
+![To-be Scenario – Admin](./assets/images/photos/to-be-scenario-mapping-coordinator.jpg)
+
+
+#### To-Be Scenario Mapping Teacher
+
+![To-Be Scenario – Teacher](./assets/images/photos/to-be-scenario-mapping-teacher.jpg)
+
+
+<hr class="page-break">
 
 ## 3.2. User Stories
 
