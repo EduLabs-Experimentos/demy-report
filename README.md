@@ -1652,6 +1652,56 @@ Este grupo gestiona la visualización del horario del profesor y ofrece una func
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
+
+**Mobile Applications Wireflow: Flujo de Administrador**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![Wireflow-Administrator-1](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-1.png)
+
+**User Goal**  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![Wireflow-Administrator-2](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![Wireflow-Administrator-3](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-3.png)
+
+**User Goal**  
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![Wireflow-Administrator-4](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-4.png)
+
+**User Goal**  
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![Wireflow-Administrator-5](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-5.png)
+
+**Mobile Applications Wireflow: Flujo de Profesor**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Wireflow-Teacher-1](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ReportAttendance.png)
+
+**User Goal** 
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Wireflow-Teacher-2](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-RescheduleClass.png)
+
+**User Goal** 
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Wireflow-Teacher-3](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-TakeAttendance.png)
+
+**User Goal** 
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Wireflow-Teacher-4](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ViewSchedule.png)
+
 ### 4.4.3. Mobile Applications Mock-ups
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
