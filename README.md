@@ -1055,13 +1055,147 @@ Se incluyen diferentes tipos de historias, tales como:
 
 ### 4.2.1. Organization Systems
 
+Vamos a usar diferentes sistemas de organización según el tipo de contenido que se presente, con el objetivo de facilitar la comprensión, la navegación táctil y la interacción por parte del usuario en su dispositivo móvil.
+
+**Organización visual del contenido**
+
+- **Jerárquica (Visual Hierarchy):** Utilizaremos una jerarquía visual clara para destacar mensajes principales y llamadas a la acción (CTAs). Este tipo de organización guía la mirada del usuario desde lo más importante (títulos grandes, botones de colores contrastantes) hasta los detalles secundarios, optimizando el espacio reducido de la pantalla.
+
+- **Listas Verticales:** Será el sistema de organización principal para mostrar directorios, menús o historiales, permitiendo un *scroll* natural y fluido.
+
+- **Tarjetas y Cuadrículas (Cards & Grid):** Aplicaremos una organización en tarjetas (ya sea en listas de una columna, cuadrículas de dos columnas o carruseles de *scroll* horizontal) cuando se presenten múltiples elementos visuales similares, como productos o servicios. Esto permite al usuario comparar la información fácilmente sin saturar la pantalla.
+
+**Esquemas de categorización de contenido**
+
+- **Por tópicos o categorías:** Se utilizará cuando el contenido pueda agruparse por temas, facilitando que el usuario encuentre información relacionada a través de menús de navegación (como un *Bottom Navigation Bar* o pestañas).
+
+- **Secuencial (Step-by-step):** Se usará cuando el usuario deba seguir un orden lógico para completar una tarea (por ejemplo, el proceso de *onboarding* inicial o el pago/registro de matrículas), guiándolo pantalla por pantalla para evitar frustraciones.
+
+- **Según perfil de usuario:** El contenido se adaptará dependiendo del tipo de cuenta o rol (ej. Administrador o Docente) con el que el usuario inicie sesión, mostrando solo las opciones relevantes para su perfil.
+
 ### 4.2.2. Labeling Systems
+
+La interfaz de nuestra aplicación debe ser clara y fácil de usar, con palabras claves que sean conocidas por nuestros usuarios. Por esta razón, las etiquetas empleadas deben explicar de manera concisa su función en pocas palabras. Así, hemos creado etiquetas para la navegación principal en las dos versiones de nuestra aplicación web:
+
+***Administrador***
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Matrícula: Acceso al registro de matrícula de alumnos, permitiendo su alta en el sistema.
+- Alumnos: Acceso a filtros de búsqueda de alumnos por DNI y muestra detalles generales como: nombres, apellidos, DNI, apoderado, fecha de matrícula, estado de matrícula y estado de pago.
+- Pagos: Acceso para registrar el pago de mensualidades de los alumnos, con opciones para actualizar el estado de pago.
+- Horarios: Acceso a un calendario semanal donde están programadas las clases, con un filtro por código de salón.
+- Asistencia: Acceso a la gestión de asistencia de los alumnos, con filtro por DNI y visualización de su historial.
+- Finanzas: Acceso al registro de egresos, balance mensual y visualización de los últimos egresos realizados.
+
+***Profesor***
+
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Horarios: Acceso a los horarios del profesor, con la programación detallada de sus clases y la asignación por día y aula.
+- Asistencia: Acceso a la gestión de asistencia, con un filtro por aula y un panel interactivo para marcar la asistencia de los alumnos durante las clases.
+
 
 ### 4.2.3. SEO Tags and Meta Tags
 
+Para optimizar la visibilidad de nuestra solución digital **Demy** y mejorar la experiencia de navegación e interacción, se han definido un conjunto de etiquetas SEO/Meta Tags para las plataformas web, así como directrices de ASO para la aplicación móvil.  
+Estas etiquetas contribuyen a mejorar el posicionamiento en buscadores, la accesibilidad, la correcta previsualización al compartir enlaces en redes sociales y la visibilidad en las tiendas de aplicaciones.
+
+- **Title**: Título que se muestra en la pestaña del navegador y encabezado de resultados de búsqueda.
+- **Description**: Resumen breve que describe el contenido de la página.
+- **Author**: Indica el equipo responsable del contenido del sitio web.
+- **Viewport**: Define el ajuste del contenido en diferentes tamaños de pantalla (esencial para diseño responsivo).
+- **Charset**: Establece el sistema de codificación de caracteres (UTF-8).
+- **Open Graph (OG)**: Etiquetas (`og:title`, `og:description`, `og:image`) que controlan cómo se previsualiza la página al ser compartida en redes sociales o aplicaciones de mensajería.
+- **Robots**: Indica a los motores de búsqueda qué páginas o paneles privados no deben ser indexados.
+
+#### Landing Page SEO Tags and Meta Tags
+
+- **Title**: "Demy - La forma inteligente de gestionar tu academia"
+- **Description**: "Demy es una plataforma web que digitaliza la gestión académica de academias presenciales: matrículas, pagos, asistencia y más desde un solo lugar."
+- **Author**: "Demy Team"
+- **Viewport**: Adaptable a cualquier dispositivo, permitiendo una navegación fluida en móviles, tablets y computadoras.
+- **Charset**: Se utilizará UTF-8 para asegurar compatibilidad con todos los idiomas.
+- **Keywords**: "gestión académica, software para academias, control de asistencia, matrícula online, pagos estudiantes, plataforma educativa"
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demy - La forma inteligente de gestionar tu academia</title>
+  <meta name="description" content="Demy es una plataforma web que digitaliza la gestión académica de academias presenciales: matrículas, pagos, asistencia y más desde un solo lugar.">
+  <meta name="keywords" content="gestión académica, software para academias, control de asistencia, matrícula online, pagos estudiantes, plataforma educativa">
+  <meta name="author" content="Demy Team">
+</head>
+```
+
+
+#### Web Application SEO Tags and Meta Tags
+
+- **Title:** "Demy App - Panel de gestión para academias y docentes"
+- **Description**: "Administra tu academia desde cualquier dispositivo: registra asistencia, visualiza horarios, controla pagos y más desde un solo lugar."
+- **Author**: "Demy Team"
+- **Viewport:** Responsive para que tanto docentes como administrativos puedan operar cómodamente desde celulares, tablets y PC.
+- **Charset**: UTF-8 para soportar correctamente todos los caracteres.
+- **Keywords:** "plataforma educativa, docentes, pagos, horarios, asistencia, gestión académica, software educativo, aulas"
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demy App - Panel de gestión para academias y docentes</title>
+  <meta name="description" content="Administra tu academia desde cualquier dispositivo: registra asistencia, visualiza horarios, controla pagos y más desde un solo lugar.">
+  <meta name="keywords" content="plataforma educativa, docentes, pagos, horarios, asistencia, gestión académica, software educativo, aulas">
+  <meta name="author" content="Demy Team">
+</head>
+```
+
+#### Mobile App - ASO
+Para el componente móvil de Demy, el posicionamiento (SEO móvil) se rige bajo las reglas de las tiendas de aplicaciones (Google Play / App Store) utilizando los siguientes parámetros:
+- App Name : "Demy: Gestión para Academias"
+- Short Description: "Controla la asistencia, horarios y pagos de tu academia fácilmente desde tu celular."
+- Keywords: "educación, academia, asistencia, docentes, gestión escolar, pagos"
+
 ### 4.2.4. Searching Systems
 
+A medida que se incrementa la cantidad de información almacenada en nuestra plataforma, resulta esencial brindar herramientas que ayuden a los usuarios a encontrar lo que necesitan de forma ágil y precisa. Para evitar que se sientan abrumados, hemos integrado diferentes mecanismos de búsqueda y filtrado que se adaptan a distintos contextos dentro del sistema.
+
+#### Búsqueda por palabra clave
+En secciones como la de estudiantes o aulas, el usuario podrá ingresar términos específicos, como el **DNI del estudiante** o el **código del aula**, dentro de un buscador con el clásico ícono de lupa. El sistema mostrará coincidencias inmediatas, facilitando la navegación sin necesidad de recorrer listas extensas.
+
+#### Filtros desplegables por categoría y fecha
+Para consultar información detallada o generar reportes, los usuarios contarán con filtros como **tipo de ciclo**, **categoría**, **año** y **mes**. Estos se presentan en menús desplegables con una flecha hacia abajo, permitiendo seleccionar la opción deseada de forma rápida y sin errores.
+
+#### Selector de tipo de reporte
+
+En el módulo financiero, los usuarios tendrán la posibilidad de elegir entre **generar un reporte mensual** o **visualizar el historial completo** de movimientos. Esta acción se realiza mediante botones de selección simple, que adaptan dinámicamente el contenido mostrado en pantalla según la opción elegida.
+
 ### 4.2.5. Navigation Systems
+
+En **Demy** buscamos ofrecer la mejor experiencia a nuestros usuarios, asegurando la usabilidad en nuestras interfaces. Para ello, se han definido las siguientes decisiones de UI:
+
+#### Landing Page
+
+- La navegación de la Landing Page utiliza **scroll vertical**, ya que es el patrón más común y cómodo en páginas web.
+- Cuenta con una **barra de menú superior fija (sticky navbar)** que permanece visible mientras el usuario se desplaza. Esta incluye enlaces a las secciones: *About*, *Benefits*, *Plans* y *Contact*.
+- Se emplean **Call to Action (CTA)** en secciones clave como *Hero*, *Plans* y *Contact*, mediante botones como **"Get Started"** y **"Start Today"**, incentivando la conversión de usuarios.
+
+#### Web Application
+
+- La aplicación contará con un **navbar principal** que permite navegar entre las secciones *Mi organización* y *Panel de control*.
+- Dentro del *Panel de control*, se desplegará un **side navbar (menú lateral)** con acceso a las distintas funcionalidades de la plataforma.
+- Se implementará navegación entre vistas con opción de **volver a la pantalla anterior**, garantizando que el usuario mantenga siempre el control del sistema.
+
+#### Mobile App
+
+- La aplicación móvil contará con una **barra de navegación inferior (bottom navigation bar)** para acceder rápidamente a las secciones principales.
+- Se incorporará un **menú tipo hamburguesa** o menú lateral para funcionalidades secundarias o configuraciones.
+- La navegación estará optimizada para uso con una sola mano, priorizando accesos rápidos y visibles.
+- Se implementarán **gestos táctiles** (como deslizamientos) para mejorar la fluidez en la navegación entre pantallas.
+- Se mantendrá consistencia visual y de interacción con la versión web para facilitar el aprendizaje del usuario.
+
+#### Accesibilidad y Usabilidad
+
+- Se aplicará **Responsive Design**, asegurando una experiencia consistente en diferentes dispositivos (desktop, tablet y móvil).
+- En dispositivos móviles, la navegación se adaptará mediante un **menú tipo hamburguesa (ícono de tres líneas)** que desplegará un side navbar con las funcionalidades disponibles.
+- Se prioriza la claridad visual, facilidad de uso y accesibilidad para todo tipo de usuarios.
 
 ## 4.3. Landing Page UI Desing
 
