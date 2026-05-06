@@ -1453,9 +1453,162 @@ El administrador accede a la sección "Panel de control" y selecciona el módulo
 
 ### 4.6.3. Web Applications Mock-ups
 
+**Dashboard**  
+Pantalla principal de la aplicación Demy donde se muestra un resumen visual del sistema con tarjetas destacadas que incluyen balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos. Además, se presentan gráficos interactivos de ingresos vs egresos y categorías de gastos, junto con una vista moderna del horario.  
+
+![Mockup-Dashboard](assets/ux-ui/mockups/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**  
+Pantalla donde se registran y administran los profesores mediante un formulario visualmente organizado con campos claros y botones destacados. Incluye una tabla moderna con buscador, paginación y acciones como editar y eliminar, usando componentes estilizados de PrimeNG.  
+
+![Mockup-Teachers](assets/ux-ui/mockups/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**  
+Pantalla diseñada para registrar y gestionar estudiantes con un formulario estructurado y amigable que incluye datos personales. También presenta una tabla interactiva con búsqueda, filtros y acciones, manteniendo una interfaz limpia y moderna.  
+
+![Mockup-Students](assets/ux-ui/mockups/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**  
+Pantalla que permite crear y administrar periodos académicos mediante un formulario con selectores de fecha visuales. Incluye una tabla estilizada con opciones de búsqueda, edición y eliminación, respetando una jerarquía visual clara.  
+
+![Mockup-Periods](assets/ux-ui/mockups/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**  
+Pantalla enfocada en el registro de cursos con un formulario moderno que incluye campos de texto y área de descripción. La tabla de cursos presenta un diseño limpio con acciones visibles y navegación intuitiva.  
+
+![Mockup-Courses](assets/ux-ui/mockups/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**  
+Pantalla donde se gestionan las aulas con un formulario visual claro y una tabla organizada que permite visualizar la información de manera rápida, incluyendo opciones de búsqueda y acciones sobre cada registro.  
+
+![Mockup-Classrooms](assets/ux-ui/mockups/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**  
+Pantalla que permite crear horarios de forma dinámica mediante una interfaz visual con dropdowns, selectores de tiempo y botones para agregar sesiones. Se muestra una lista de sesiones añadidas y una tabla de horarios con un diseño moderno y organizado.  
+
+![Mockup-Schedules](assets/ux-ui/mockups/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**  
+Pantalla donde se registran matrículas utilizando formularios con múltiples selectores y campos organizados en secciones. Incluye una tabla interactiva que permite gestionar los registros con acciones claras y accesibles.  
+
+![Mockup-Enrollments](assets/ux-ui/mockups/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**  
+Pantalla que muestra un calendario semanal visualmente atractivo, con bloques organizados que representan las sesiones. Incluye un selector de horarios y una distribución clara por días y horas, facilitando la comprensión de la planificación.  
+
+![Mockup-Scheduling](assets/ux-ui/mockups/web-application/scheduling.png)
+
+**Facturación (Billing)**  
+Pantalla que permite consultar el estado de cuenta de estudiantes mediante un buscador destacado. Se muestra una tabla con historial de pagos y deudas, organizada de manera clara y fácil de interpretar.  
+
+![Mockup-Billing](assets/ux-ui/mockups/web-application/billing.png)
+
+**Finanzas (Finance)**  
+Pantalla que combina formularios para registrar transacciones con visualizaciones gráficas del estado financiero. Incluye gráficos de ingresos vs egresos y distribución de gastos por categoría, facilitando el análisis de la información.  
+
+![Mockup-Finance](assets/ux-ui/mockups/web-application/finance.png)
+
+**Contabilidad (Accounting)**  
+Pantalla que presenta una tabla completa de transacciones con filtros avanzados por tipo, categoría, método y descripción. Incluye acciones visibles para editar y eliminar registros, con un diseño enfocado en claridad y control.  
+
+![Mockup-Accounting](assets/ux-ui/mockups/web-application/accounting.png)
+
+**Configuración (Settings)**  
+Pantalla donde el usuario puede personalizar la aplicación, incluyendo opciones como cambio de idioma, modo oscuro, accesibilidad, configuración general y actualización de contraseña, organizadas en secciones claras.  
+
+![Mockup-Settings](assets/ux-ui/mockups/web-application/settings.png)
+
+**Ayuda (Help)**  
+Pantalla que ofrece información de soporte al usuario, incluyendo datos de contacto, horarios de atención, preguntas frecuentes, términos y condiciones y políticas de privacidad, organizados en bloques informativos.  
+
+![Mockup-Help](assets/ux-ui/mockups/web-application/help.png)
+
+**Cerrar sesión (Log out)**  
+Pantalla o modal de confirmación que permite al usuario cerrar sesión de manera segura, mostrando una alerta clara con opciones para cancelar o confirmar la acción.  
+
+![Mockup-Logout](assets/ux-ui/mockups/web-application/logout.png)
+
 ### 4.6.4. Web Applications User Flow Diagrams
 
+**UserGoal: Agregar un curso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Courses" desde el menú lateral de Demy. Luego, visualiza un formulario donde debe ingresar el nombre del curso, código y descripción. Una vez completados los campos, presiona el botón de registrar curso, lo que permite guardar la información y visualizar el nuevo curso en la tabla de cursos registrados.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-curso.png)
+
+**UserGoal: Agregar aula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Classrooms" y completa el formulario con el código del aula, su capacidad y el campus correspondiente. Al hacer clic en registrar, el aula se guarda en el sistema y aparece en la tabla de aulas registradas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-aula.png)
+
+**UserGoal: Agregar profesor**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Teachers" y completa el formulario con datos como nombre, apellido, correo, teléfono, contraseña y género. Luego de presionar el botón de registro, el profesor se guarda en el sistema y se muestra en la lista de docentes.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-profesor.png)
+
+**UserGoal: Agregar horario**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Schedules" y registra un nuevo horario ingresando un nombre. Luego, procede a añadir sesiones seleccionando el día, hora de inicio y fin, curso, aula y profesor mediante dropdowns. Al presionar “Add Session”, las sesiones se agregan al horario. Finalmente, guarda el horario completo y lo visualiza en la lista de horarios.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-horario.png)
+
+**UserGoal: Agregar periodo académico**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Periods" y completa un formulario con el nombre del periodo, fecha de inicio y fecha de fin. Luego presiona el botón de registrar, lo que permite almacenar el periodo y visualizarlo en la lista de periodos académicos disponibles.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-periodo.png)
+
+**UserGoal: Agregar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y completa el formulario seleccionando estudiante, periodo académico, horario, curso, monto y estado de pago. Al registrar la matrícula, esta se almacena en el sistema y se visualiza en la tabla de matrículas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-matricula.png)
+
+**UserGoal: Eliminar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y busca la matrícula que desea eliminar mediante la barra de búsqueda. Luego selecciona la opción de eliminar en la tabla y confirma la acción en un modal. Finalmente, la matrícula se elimina del sistema y deja de aparecer en la lista.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/eliminar-matricula.png)
+
+**UserGoal: Registrar pago de alumno por búsqueda**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Billing" y busca al estudiante mediante su DNI o ID. Luego visualiza el estado de cuenta y selecciona la opción de registrar pago. Completa los datos necesarios del pago y confirma la operación, actualizando el estado financiero del estudiante.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-pago.png)
+
+**UserGoal: Buscar horario de clase**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Scheduling" y selecciona un horario desde un dropdown. Automáticamente se muestra el calendario semanal con las sesiones organizadas por día y hora, permitiendo visualizar fácilmente la distribución de clases.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/buscar-horario.png)
+
+**UserGoal: Mirar el reporte financiero**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Finance" donde visualiza gráficos de ingresos y egresos, así como un análisis de las principales categorías de gasto. Esta información le permite entender el estado financiero de la institución.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/reporte-financiero.png)
+
+**UserGoal: Registrar un egreso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Finance" y completa el formulario seleccionando tipo "egreso", categoría, método de pago, monto, moneda, fecha y descripción. Luego de registrar la transacción, esta se guarda en el sistema y se refleja en los reportes financieros.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-egreso.png)
+
 ## 4.7. Web Applications Prototyping
+
+Esta sección tiene como objetivo describir los posibles flujos de usuario diseñados para la aplicación web. Mediante el uso de prototipos interactivos, se ilustra la navegación y las rutas que siguen los diferentes tipos de usuarios al interactuar con la plataforma para cumplir sus respectivas tareas.
+
+A continuación, se presentan los enlaces al video explicativo y a los prototipos interactivos:
+
+
+![imagesPrototypeWeb](assets/ux-ui/prototypes/web-application/captura-prototype.png)
+
+- **Video - Web Applications Prototyping**  
+  Explicación en video de los flujos de usuario en la aplicación web (desktop y mobile):  
+  [Ver video en OneDrive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQDXWxdpjpYhQLw_2PhlpYSlAZZ7wJ_K3aykZ1h0xIsEbKo?e=RdK2yT&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 ## 4.8. Domain-Driven Software Architecture
 
