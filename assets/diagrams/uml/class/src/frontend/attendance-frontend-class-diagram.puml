@@ -1,0 +1,121 @@
+@startuml Demy: Attendance Frontend Class Diagram
+title Demy: Attendance Frontend Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #FAFAFA
+  BorderColor #757575
+  ArrowColor #424242
+}
+
+package "attendance" {
+
+  package "pages" {
+    interface "OnInit"
+
+    class "AttendancePageComponent" <<Component>> {
+      - classSession: ClassSession
+      - studentListComponent: StudentListComponent
+      + constructor(classSessionService: ClassSessionService)
+      + ngOnInit(): void
+      + onStatusChange(studentId: string, status: AttendanceStatus): void
+      + onSave(): void
+      + onAttendanceChanged(records: { studentId: string, attended: boolean }[]): void
+    }
+  }
+
+  package "components" {
+    class "AttendanceClassSelectComponent" <<Component>> {
+      classes: { id: string, name: string }[]
+      - selectedClass: string
+    }
+
+    class "AttendanceDateComponent" <<Component>> {
+      - selectedDate: Date
+    }
+
+    class "AttendanceSaveButtonComponent" <<Component>> {
+      saveClicked: EventEmitter<void>
+      + save(): void
+    }
+
+    class "StudentListComponent" <<Component>> {
+      attendanceChanged: EventEmitter<{ studentId: string, attended: boolean }[]>
+      - displayedColumns: string[]
+      - students: MatTableDataSource<AttendanceStudent>
+      - paginator: MatPaginator
+      + constructor(attendanceStudentService: AttendanceStudentService)
+      + ngOnInit(): void
+      + ngAfterViewInit(): void
+      + toggleAttendance(): void
+      + resetAttendance(): void
+    }
+
+    interface "OnInit"
+    interface "AfterViewInit"
+  }
+
+  package "services" {
+    class "ClassSessionService" <<Service>> {
+      + getAll(): Observable<ClassSession[]>
+      + save(session: ClassSession): Observable<any>
+    }
+
+    class "AttendanceStudentService" <<Service>> {
+      + getForAttendance(): Observable<AttendanceStudent[]>
+    }
+  }
+
+  package "model" {
+    class "ClassSession" <<Entity>> {
+      - id: string
+      - attendance: AttendanceRecord[]
+      - createdAt: Date
+      + constructor(id: string, attendance: AttendanceRecord[], createdAt?: Date)
+      + setAttendance(records: AttendanceRecord[]): void
+      + getAttendance(): AttendanceRecord[]
+      + toJSON(): any
+    }
+
+    class "AttendanceRecord" <<Entity>> {
+      - studentId: string
+      - status: AttendanceStatus
+      + constructor(studentId: string, status: AttendanceStatus)
+      + toJSON(): any
+    }
+
+    class "AttendanceStudent" <<Entity>> {
+      - id: string
+      - dni: string
+      - name: string
+      - attended: boolean
+    }
+
+    enum "AttendanceStatus" {
+      PRESENT
+      ABSENT
+    }
+  }
+}
+
+' Containment
+AttendancePageComponent  *-- AttendanceClassSelectComponent : uses >
+AttendancePageComponent  *-- AttendanceDateComponent : uses >
+AttendancePageComponent  *-- AttendanceSaveButtonComponent : uses >
+AttendancePageComponent  *-- StudentListComponent : uses >
+
+' Dependencies (services injected)
+AttendancePageComponent  ..> ClassSessionService : injects
+StudentListComponent     ..> AttendanceStudentService : injects
+
+' Entity relationships
+ClassSession             *-- "0..*" AttendanceRecord : contains
+AttendanceRecord         --> AttendanceStatus : uses
+StudentListComponent     ..> AttendanceStudent : displays
+AttendancePageComponent  ..> ClassSession : manages
+
+' Events
+StudentListComponent     ..> AttendancePageComponent : emits attendanceChanged
+AttendanceSaveButtonComponent ..> AttendancePageComponent : emits save
+
+@enduml

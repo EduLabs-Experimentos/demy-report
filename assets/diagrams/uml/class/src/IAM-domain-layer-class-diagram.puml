@@ -1,0 +1,142 @@
+@startuml Demy: IAM Domain Layer Class Diagram
+title Demy: IAM Domain Layer Class Diagram
+
+skinparam class {
+    BackgroundColor<<Aggregate Root>> #FFFFFF/B3E5FC
+    BackgroundColor<<Entity>> #FFFFFF/C8E6C9
+    BackgroundColor<<Value Object>> #FFFFFF/FFF9C4
+    BackgroundColor<<Domain Service>> #FFFFFF/FFCCBC
+    BorderColor #212121
+    ArrowColor #212121
+    FontSize 14
+}
+
+package "IAM Context" {
+  package "Domain Layer" {
+
+    ' =============== AGGREGATE =================
+    class "User" <<(A, #27D3F5) Aggregate Root>> {
+      - emailAddress : EmailAddress
+      - password : String
+      - roles : Set<Role>
+      - verificationStatus : VerificationStatus
+      - accountStatus : AccountStatus
+      - verificationCode : VerificationCode
+      - tenantId : TenantId
+      # User()
+      + User(emailAddress : EmailAddress, password : String, verificationCode : VerificationCode)
+      + User(emailAddress : EmailAddress, password : String, verificationCode : VerificationCode, roles : List<Role>)
+      + addRole(role : Role) : User
+      + addRoles(roles : List<Role>) : User
+      + isVerified() : boolean
+      + activate() : void
+      + assignVerificationCode(email : String, code : String, expirationMinutes : Integer) : void
+      + verifyUser(code : String) : void
+      + associateTenant(tenantId : TenantId) : void
+      + disassociateTenant(tenantId : TenantId) : void
+    }
+
+    ' =============== ENTITY ====================
+    class "Role" <<(E, #9ACD32) Entity>> {
+      - id : Long
+      - name : Roles
+      # Role()
+      + Role(name : Roles)
+      + getStringName() : String
+      + getDefaultRole() : Role
+      + toRoleFromName(name : String) : Role
+      + validateRoleSet(roles : List<Role>) : List<Role>
+    }
+
+    ' =============== VALUE OBJECTS =============
+    class "AccountStatus" <<(V, #FFD700) Value Object>> {
+      PENDING
+      ACTIVE
+      BLOCKED
+      DELETED
+      --
+      + isPending() : boolean
+      + isActive() : boolean
+      + isBlocked() : boolean
+      + isDeleted() : boolean
+    }
+
+    class "VerificationStatus" <<(V, #FFD700) Value Object>> {
+      NOT_VERIFIED
+      VERIFIED
+      --
+      + isVerified() : boolean
+    }
+
+    class "Roles" <<(V, #FFD700) Value Object>> {
+      ROLE_USER
+      ROLE_ADMINISTRATOR
+      ROLE_TEACHER
+      --
+      + isAdmin() : boolean
+      + isTeacher() : boolean
+      + isUser() : boolean
+    }
+
+    class "TenantId" <<(V, #FFD700) Value Object>> {
+      - tenantId : Long
+      # TenantId()
+      + TenantId(tenantId : Long)
+      + isAssigned() : boolean
+    }
+
+    class "VerificationCode" <<(V, #FFD700) Value Object>> {
+      - code : String
+      - expiration : LocalDateTime
+      # VerificationCode()
+      + VerificationCode(code : String, expiration : LocalDateTime)
+      + isExpired() : boolean
+      + matches(inputCode : String) : boolean
+    }
+
+    ' =============== DOMAIN SERVICES ===========
+    class "UserCommandService" <<(S, #FF8A65) Domain Service>> {
+      + handle(command : SignInCommand) : Optional<ImmutablePair<User, String>>
+      + handle(command : SignUpCommand) : Optional<User>
+      + handle(command : VerifyUserCommand) : boolean
+      + handle(command : ResendVerificationCodeCommand) : boolean
+      + handle(command : AssignUserTenantId) : void
+    }
+
+    class "UserQueryService" <<(S, #FF8A65) Domain Service>> {
+      + handle(query : GetAuthenticatedUserTenantIdQuery) : Optional<TenantId>
+    }
+
+    class "RoleCommandService" <<(S, #FF8A65) Domain Service>> {
+      + handle(command : SeedRolesCommand) : void
+    }
+  }
+}
+
+package "Shared Kernel" {
+  package "Domain Layer" {
+    class "EmailAddress" <<(V, #FFD700) Value Object>> {
+      - email : String
+      # EmailAddress()
+      + EmailAddress(email : String)
+    }
+  }
+}
+
+' =============== RELATIONSHIPS =================
+
+' Aggregate composition/usage
+User "1" *-- "0..*" Role : has >
+User "1" *-- "1" VerificationCode : has >
+User "1" *-- "1" TenantId : has >
+User "1" ..> "1" EmailAddress : uses >
+User "1" ..> "1" AccountStatus : uses >
+User "1" ..> "1" VerificationStatus : uses >
+Role "1" ..> "1" Roles : uses >
+
+' Services -> aggregates (semantic)
+UserCommandService ..> User : manages >
+UserQueryService ..> User : queries >
+RoleCommandService ..> Role : seeds defaults >
+
+@enduml

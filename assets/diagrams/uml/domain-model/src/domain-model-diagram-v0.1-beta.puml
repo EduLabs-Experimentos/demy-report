@@ -1,0 +1,426 @@
+@startuml Demy: Domain Model Diagram (Grouped by Bounded Context)
+
+skinparam class {
+    BackgroundColor LightYellow/D3F5F5
+    ArrowColor SeaGreen
+    ' BackgroundColor<<Aggregate Root>> #27D3F5
+    ' BackgroundColor<<Entity>> #9ACD32
+    ' BackgroundColor<<Value Object>> #FFD700
+    ' BorderColor Black
+    ' FontSize 12
+}
+
+package "Enrollment Context" <<Node>> #E0FFF9 {
+    class AcademicPeriod <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - PeriodDuration duration
+        - PeriodStatus status
+        - AcademyId academyId
+    }
+
+    class Enrollment <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - AcademicPeriodId periodId
+        - StudentId studentId
+        - ScheduleId scheduleId
+        - EnrollmentStatus status
+        - AcademyId academyId
+    }
+
+    class Student <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - FullName fullName
+        - Dni dni
+        - Sex sex
+        - LocalDate birthDate
+        - String address
+        - String phoneNumber
+        - String email
+        - AcademyId academyId
+        + updateContactInfo(String address, String phoneNumber, String email)
+    }
+
+    class AcademicPeriodId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class StudentId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class ScheduleId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class PeriodDuration <<(V, #FFD700) Value Object>> {
+        - LocalDate startDate
+        - LocalDate endDate
+        + boolean isCurrentlyActive()
+        + int getDurationInDays()
+    }
+
+    class PeriodStatus <<(V, #FFD700) Value Object>> {
+        - boolean isActive
+        + {static} ActiveStatus active()
+        + {static} ActiveStatus inactive()
+    }
+
+    enum EnrollmentStatus <<(E, #FF7F50) Value Object>> {
+        ACTIVE
+        INACTIVE
+    }
+
+    ' Relationships
+    AcademicPeriod "1" *-- "1" PeriodDuration : has >
+    AcademicPeriod "1" *-- "1" PeriodStatus : withStatus >
+    Enrollment "1" ..> "1" AcademicPeriodId : in >
+    Enrollment "1" ..> "1" StudentId : for >
+    Enrollment "1" ..> "1" ScheduleId : uses >
+    Enrollment "1" *-- "1" EnrollmentStatus : has >
+}
+
+package "Institution Management Context" <<Node>> #F0FFF0 {
+    class Academy <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - AdministratorId adminId
+        - Ruc ruc
+        + addTeacher(Teacher)
+        + assignAdministrator(Administrator)
+    }
+
+    class Administrator <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - AcademyId academyId
+        - FullName fullName
+    }
+
+    class Teacher <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - AcademyId academyId
+        - FullName fullName
+    }
+
+    class Ruc <<(V, #FFD700) Value Object>> {
+        - String value
+    }
+
+    class AdministratorId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class TeacherId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    ' Relationships
+    Academy "1" *-- "1" Ruc : has >
+    Academy "1" ..> "1" AdministratorId : isManagedBy >
+    Academy "1" ..> "0..*" TeacherId : includes >
+}
+
+package "Scheduling Context" <<Node>> #FFF0F0 {
+    class Schedule <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - String name
+        - AcademyId academyId
+        # Schedule()
+        + addClassSession(ClassSession)
+        + removeClassSession(ClassSession)
+        + validateConflicts(): boolean
+    }
+
+    class Course <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - String name
+        - CourseCode courseCode
+        - String description
+        - AcademyId academyId
+        # Course()
+    }
+
+    class Classroom <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - ClassroomCode classroomCode
+        - Integer capacity
+        - String campus
+        - AcademyId academyId
+        # Classroom()
+    }
+
+    class ClassSession <<(E, #9ACD32) Entity>> {
+        - Long id
+        - CourseId courseId
+        - ClassroomId classroomId
+        - TeacherId teacherId
+        - DayOfWeek dayOfWeek
+        - TimeRange timeRange
+    }
+
+    enum DayOfWeek <<(V, #FFD700) Value Object>> {
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY
+    }
+
+    class TimeRange <<(V, #FFD700) Value Object>> {
+        - LocalTime startTime
+        - LocalTime endTime
+        + boolean overlapsWith(TimeRange other)
+    }
+
+    class CourseCode <<(V, #FFD700) Value Object>> {
+        - String code
+    }
+
+    class ClassroomCode <<(V, #FFD700) Value Object>> {
+        - String code
+    }
+
+    class CourseId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class ClassroomId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    ' Relationships
+    Schedule "1" *-- "0..*" ClassSession : contains >
+    ClassSession "1" *-- "1" DayOfWeek : occursOn >
+    ClassSession "1" *-- "1" TimeRange : has >
+    Course "1" *-- "1" CourseCode : has >
+    Classroom "1" *-- "1" ClassroomCode : has >
+
+    ' Weak (ID-based) references
+    ClassSession ..> CourseId : has >
+    ClassSession ..> ClassroomId : in >
+}
+
+package "Attendance Context" <<Node>> #F0F8FF {
+    class ClassAttendance <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - ClassSessionId classSessionId
+        - LocalDate date
+        - List<AttendanceRecord> attendances
+        - AcademyId academyId
+        # ClassAttendance()
+        + recordAttendance(StudentId studentId, AttendanceStatus status)
+    }
+
+    class AttendanceRecord <<(E, #9ACD32) Entity>> {
+        - Long id
+        - StudentId studentId
+        + changeStatus(AttendanceStatus newStatus)
+    }
+
+    enum AttendanceStatus <<(V, #FFD700) Value Object>> {
+        PRESENT
+        ABSENT
+        EXCUSED
+    }
+
+    class ClassSessionId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    ' Relationships
+    ClassAttendance "1" *-- "0..*" AttendanceRecord : includes >
+    ClassAttendance "1" ..> "1" ClassSessionId : for >
+    AttendanceRecord "1" *-- "1" AttendanceStatus : has >
+}
+
+package "Staff Attendance Context" <<Node>> #FFFADF {
+    class WorkDayAttendance <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - LocalDate date
+        - TeacherId teacherId
+        + registerEntry(Source)
+        + registerExit(Source)
+    }
+
+    class EntryRecord <<(E, #9ACD32) Entity>> {
+        - LocalDateTime timestamp
+        - Source source
+    }
+
+    class ExitRecord <<(E, #9ACD32) Entity>> {
+        - LocalDateTime timestamp
+        - Source source
+    }
+
+    class Source <<(V, #FFD700) Value Object>> {
+        - String originType
+        - String deviceId
+    }
+
+    ' Relationships
+    WorkDayAttendance "1" --> "0..*" EntryRecord : has >
+    WorkDayAttendance "1" --> "0..*" ExitRecord : has >
+    EntryRecord "1" --> "1" Source : from >
+    ExitRecord "1" --> "1" Source : from >
+}
+
+package "Billing Management" <<Node>> #DFFFFF {
+    class BillingAccount <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - Long studentId
+        - List<Invoice> invoices
+        - AcademyId academyId
+        # BillingAccount()
+        + addInvoice(Invoice)
+        + getOutstandingBalance()
+        + getInvoiceStatus(invoiceId)
+    }
+
+    class Invoice <<(E, #9ACD32) Entity>> {
+        - Long id
+        - BigDecimal totalAmount
+        - LocalDate dueDate
+        - InvoiceStatus status
+        + isPaid()
+        + registerPayment(Payment)
+    }
+
+    class InvoicePaidEvent <<(D, #7FFFD4) Domain Event>> {
+        - Long invoiceId
+        - BigDecimal amountPaid
+        - LocalDateTime paymentDate
+        + notifyPaymentReceived()
+    }
+
+    enum InvoiceStatus <<(V, #FFD700) Value Object>> {
+        PENDING
+        PAID
+        OVERDUE
+        CANCELLED
+    }
+
+    ' Relationships
+    BillingAccount "1" --> "0..*" InvoicePaidEvent : emits >
+    BillingAccount "1" o-- "0..*" Invoice : manages >
+    Invoice "1" --> "1" InvoiceStatus : has >
+}
+
+package "Accounting Management" <<Node>> #FFEFD5 {
+    class Transaction <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - TransactionType type
+        - TransactionCategory category
+        - TransactionMethod method
+        - TransactionReference reference
+        - String concept
+        - BigDecimal amount
+        - LocalDateTime date
+        - AcademyId academyId
+        # Transaction()
+        + isManualEntry(): boolean
+        + isFromExternalSystem(): boolean
+        + validateReferenceId(): boolean
+    }
+
+    class TransactionReference <<(V, #FFD700) Value Object>> {
+        - ReferenceType type
+        - String referenceId
+    }
+
+    enum ReferenceType <<(V, #FFD700) Value Object>> {
+        MANUAL
+        AUTOMATIC
+    }
+
+    enum TransactionMethod <<(V, #FFD700) Value Object>> {
+        CREDIT_CARD
+        BANK_TRANSFER
+        CASH
+    }
+
+    enum TransactionType <<(V, #FFD700) Value Object>> {
+        INCOME
+        EXPENSE
+    }
+
+    enum TransactionCategory <<(V, #FFD700) Value Object>> {
+        STUDENTS
+        MATERIALS
+        SALARY
+        UTILITIES
+        OTHER
+    }
+
+    class Report <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - ReportPeriod period
+        - ReportStatus status
+        - String generatedBy
+        + generateReport(): void
+        + exportToPdf(): byte[]
+        + exportToExcel(): byte[]
+        + isCompleted(): boolean
+    }
+
+    class ReportSnapshot <<(E, #9ACD32) Entity>> {
+        - Long id
+        - ReportSection section
+        - String sectionData
+        - BigDecimal totalAmount
+    }
+
+    class ReportPeriod <<(V, #FFD700) Value Object>> {
+        - LocalDate startDate
+        - LocalDate endDate
+        + isValidPeriod(): boolean
+    }
+
+    enum ReportSection <<(V, #FFD700) Value Object>> {
+        INCOME_SUMMARY
+        EXPENSE_SUMMARY
+        CATEGORY_BREAKDOWN
+        PAYMENT_METHODS
+    }
+
+    enum ReportStatus <<(V, #FFD700) Value Object>> {
+        GENERATING
+        COMPLETED
+        FAILED
+    }
+
+    ' Relationships
+    Transaction "1" --> "1" TransactionType : has >
+    Transaction "1" --> "1" TransactionCategory : categorizedAs >
+    Transaction "1" --> "1" TransactionMethod : uses >
+    Transaction "1" --> "1" TransactionReference : references >
+    TransactionReference "1" --> "1" ReferenceType : ofType >
+
+    Report "1" --> "0..*" ReportSnapshot : contains >
+    Report "1" --> "1" ReportPeriod : covers >
+    Report "1" --> "1" ReportStatus : has >
+    ReportSnapshot "1" --> "1" ReportSection : represents >
+}
+
+package "Shared Kernel" <<Node>> #FFF5F5 {
+    class AcademyId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class TeacherId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class FullName <<(V, #FFD700) Value Object>> {
+        - String firstName
+        - String lastName
+        + String getFullName()
+    }
+}
+
+' Define relationships between contexts
+AcademicPeriod "1" ..> "1" AcademyId : belongsTo >
+'Student "1" --> "1" FullName : has >
+'ClassSession "1" --> "1" TeacherId : taughtBy >
+'WorkDayAttendance "1" --> "1" TeacherId : for >
+
+@enduml

@@ -1,0 +1,150 @@
+@startuml Demy: Billing Domain Layer Class Diagram
+
+title Demy: Billing Domain Layer Class Diagram
+
+skinparam class {
+    BackgroundColor<<Aggregate Root>> #FFFFFF/B3E5FC
+    BackgroundColor<<Entity>> #FFFFFF/C8E6C9
+    BackgroundColor<<Value Object>> #FFFFFF/FFF9C4
+    BackgroundColor<<Domain Service>> #FFFFFF/FFCCBC
+    BorderColor #212121
+    ArrowColor #212121
+    FontSize 14
+}
+
+package "Billing Context" {
+    package "Domain Layer" {
+        class "BillingAccount" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - studentId : StudentId
+            - invoices : Set<Invoice>
+            - accountStatus : AccountStatus
+            - academyId : AcademyId
+            # BillingAccount()
+            + BillingAccount(studentId : StudentId, academyId : AcademyId)
+            + BillingAccount(command : CreateBillingAccountCommand)
+            + addInvoice(invoice : Invoice) : void
+            + recordPayment(payment : Payment) : void
+            + getOutstandingBalance() : BigDecimal
+            + suspendAccount() : void
+            + reactivateAccount() : void
+        }
+
+        class "Invoice" <<(E, #9ACD32) Entity>> {
+            - id : Long
+            - invoiceType : InvoiceType
+            - amount : Money
+            - description : String
+            - issueDate : LocalDate
+            - dueDate : LocalDate
+            - invoiceStatus : InvoiceStatus
+            - billingAccountId : Long
+            # Invoice()
+            + Invoice(invoiceType : InvoiceType, amount : Money, description : String,
+              issueDate : LocalDate, dueDate : LocalDate, billingAccountId : Long)
+            + Invoice(command : AssignInvoiceCommand)
+            + markAsPaid() : void
+            + markAsOverdue() : void
+            + isOverdue() : boolean
+            + getOutstandingAmount() : Money
+            + updateDueDate(newDueDate : LocalDate) : void
+            + cancelInvoice() : void
+        }
+
+        class "AccountStatus" <<(V, #FFD700) Value Object>> {
+            ACTIVE
+            OVERDUE
+            SUSPENDED
+            CANCELLED
+            --
+            + isActive() : boolean
+            + isOverdue() : boolean
+            + isSuspended() : boolean
+            + isCancelled() : boolean
+        }
+
+        class "InvoiceType" <<(V, #FFD700) Value Object>> {
+            ENROLLMENT
+            MONTHLY
+            OTHER
+            --
+            + isEnrollment() : boolean
+            + isMonthly() : boolean
+            + isOther() : boolean
+        }
+
+        class "InvoiceStatus" <<(V, #FFD700) Value Object>> {
+            PENDING
+            PAID
+            OVERDUE
+            CANCELLED
+            --
+            + isPending() : boolean
+            + isPaid() : boolean
+            + isOverdue() : boolean
+            + isCancelled() : boolean
+        }
+
+        class "BillingAccountCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : CreateBillingAccountCommand) : Optional<BillingAccount>
+            + handle(command : AssignInvoiceCommand) : Optional<Invoice>
+            + handle(command : RecordPaymentCommand) : void
+            + handle(command : SuspendAccountCommand) : void
+            + handle(command : ReactivateAccountCommand) : void
+        }
+
+        class "BillingAccountQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetBillingAccountByIdQuery) : Optional<BillingAccount>
+            + handle(query : GetInvoicesByAccountIdQuery) : List<Invoice>
+            + handle(query : GetOutstandingBalanceQuery) : Optional<Money>
+            + handle(query : GetOverdueInvoicesQuery) : List<Invoice>
+            + handle(query : GetAccountStatusQuery) : Optional<AccountStatus>
+        }
+    }
+}
+
+package "Shared Kernel" {
+    package "Domain Layer" {
+        class "AcademyId" <<(V, #FFD700) Value Object>> {
+            - academyId : Long
+            # AcademyId()
+            + AcademyId(academyId : Long)
+            + getAcademyId() : Long
+        }
+
+        class "StudentId" <<(V, #FFD700) Value Object>> {
+            - studentId : Long
+            # StudentId()
+            + StudentId(studentId : Long)
+            + getStudentId() : Long
+        }
+
+        class "Money" <<(V, #FFD700) Value Object>> {
+            - amount : BigDecimal
+            - currency : Currency
+            # Money()
+            + Money(amount : BigDecimal, currency : Currency)
+            + {static} zero() : Money
+            + add(other : Money) : Money
+            + subtract(other : Money) : Money
+            + multiply(multiplier : int) : Money
+            + divide(divider : int) : Money
+            - scaleToCurrency(value : BigDecimal) : BigDecimal
+        }
+    }
+}
+
+' Billing Relationships
+BillingAccount "1" *-- "0..*" Invoice : contains >
+BillingAccount "1" *-- "1" AccountStatus : has >
+Invoice "1" *-- "1" InvoiceType : has >
+Invoice "1" *-- "1" InvoiceStatus : has >
+BillingAccountCommandService ..> BillingAccount : manages >
+BillingAccountQueryService ..> BillingAccount : queries >
+
+' Relationships between contexts
+BillingAccount "1" ..> "1" StudentId : references >
+BillingAccount "1" ..> "1" AcademyId : belongs to >
+Invoice "1" ..> "1" Money : uses >
+
+@enduml

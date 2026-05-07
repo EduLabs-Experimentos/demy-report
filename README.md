@@ -3497,13 +3497,372 @@ El Container Diagram descompone la solución en sus principales contenedores: un
 
 ## 4.9. Software Object-Oriented Design
 
-### 4.9.1 Class Diagrams
+En esta sección se presenta el diseño estructural del sistema a través de diagramas de clases y un diccionario que documenta los atributos y métodos de cada clase definida.
 
+### 4.9.1. Class Diagrams
+
+Esta sección presenta el diagrama de clases del sistema, modelado bajo principios de diseño orientado a objetos y alineado con los conceptos de Domain-Driven Design (DDD). Se representan las entidades clave, value objects, aggregates, así como las relaciones y los límites de contexto, reflejando la lógica del dominio identificada en el análisis previo.
+
+A continuación, se presentan los diagramas UML por cada bounded context, separando el **Frontend Web Application** del **Backend (Domain Layer)** para una mejor visibilidad.
+
+#### Bounded context IAM
+
+Sirve para la autenticación y gestión de usuarios, así como el manejo de roles.
+
+**FrontEnd**
+
+![IAM Frontend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20IAM%20Frontend%20Class%20Diagram.png)
+
+**BackEnd**
+
+![IAM Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20IAM%20Domain%20Layer%20Class%20Diagram.png)
+
+#### Bounded context Institution
+
+Gestiona academias, administradores y docentes que operan en cada academia.
+
+**BackEnd**
+
+![Institution Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Institution%20Domain%20Layer%20Class%20Diagram.png)
+
+#### Bounded context Enrollment
+
+Manejo y creación de matrículas a alumnos, creación de estudiantes y periodos académicos.
+**FrontEnd**
+
+![Enrollment Frontend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Enrollment%20Frontend%20Class%20Diagram.png)
+
+**BackEnd**
+
+![Enrollment Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Domain%20Model%20Diagram%20%28Grouped%20by%20Bounded%20Context%29.png)
+
+#### Bounded context Billing
+
+Manejo de facturas, pagos, egresos y transacciones financieras.
+
+**FrontEnd**
+
+![Billing Frontend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Billing%20Frontend%20Class%20Diagram.png)
+
+**BackEnd**
+
+![Billing Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Billing%20Domain%20Layer%20Class%20Diagram.png)
+
+#### Bounded context Scheduling
+
+Gestión de horarios, salones de clase, cursos y horarios semanales.
+
+**FrontEnd**
+
+![Scheduling Frontend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Scheduling%20Frontend%20Class%20Diagram.png)
+
+**BackEnd**
+
+![Scheduling Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Scheduling%20Domain%20Layer%20Class%20Diagram.png)
+
+#### Bounded context Attendance
+
+Control de asistencia y registro de faltas por sesiones de clase.
+
+**FrontEnd**
+
+![Attendance Frontend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Attendance%20Frontend%20Class%20Diagram.png)
+
+**BackEnd**
+
+![Attendance Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Domain%20Model%20Diagram%20%28Grouped%20by%20Bounded%20Context%29%20copy.png)
+
+#### Bounded context Accounting & Finance
+
+Registro de transacciones (ingresos y egresos) y generación de reportes financieros por academia.
+
+**BackEnd**
+
+![Accounting & Finance Backend Class Diagram](./assets/diagrams/uml/class/out/Demy%20%20Accounting%20&%20Finance%20Domain%20Layer%20Class%20Diagram.png)
 ### 4.9.2. Class Dictionary
+
+#### IAM Context
+
+**User**
+
+Representa una cuenta de usuario dentro del sistema, utilizada tanto por administradores como por docentes. Gestiona sus credenciales, el rol que desempeña y el estado actual de la cuenta.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the user account |
+| emailAddress | EmailAddress | Email address used to log into the system |
+| password | String | Encrypted password |
+| roles | Set\<Role\> | Set of roles assigned to the user |
+| verificationStatus | VerificationStatus | Account verification status (NOT_VERIFIED, VERIFIED) |
+| accountStatus | AccountStatus | Account status (PENDING, ACTIVE, BLOCKED, DELETED) |
+| verificationCode | VerificationCode | One-time verification code with expiration |
+| tenantId | TenantId | Identifier of the tenant (academy) the user belongs to |
+
+**Role**
+
+Representa un rol asignable a un usuario. Permite controlar los permisos disponibles según el tipo de actor.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the role |
+| name | Roles | Role name (ROLE_USER, ROLE_ADMINISTRATOR, ROLE_TEACHER) |
+
+#### Institution Context
+
+**Academy**
+
+Representa una academia educativa registrada en el sistema. Concentra los datos de identificación, contacto y dirección, y referencia al administrador que la gestiona.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the academy |
+| administratorId | AdministratorId | Identifier of the administrator who manages the academy |
+| academyName | AcademyName | Name of the academy |
+| academyDescription | AcademyDescription | Short description of the academy |
+| streetAddress | StreetAddress | Full street address (street, district, province, department) |
+| emailAddress | EmailAddress | Contact email address |
+| phoneNumber | PhoneNumber | Contact phone number with country code |
+| ruc | Ruc | RUC (tax identification number) |
+
+**Administrator**
+
+Representa al administrador responsable de operar una academia dentro del sistema.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the administrator |
+| personName | PersonName | Full name (first and last name) |
+| phoneNumber | PhoneNumber | Contact phone number |
+| dniNumber | DniNumber | National ID number |
+| academyId | AcademyId | Identifier of the academy managed |
+| userId | UserId | Identifier of the associated user account |
+
+**Teacher**
+
+Representa a un docente que dicta clases en una academia.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the teacher |
+| personName | PersonName | Full name (first and last name) |
+| academyId | AcademyId | Identifier of the academy where the teacher works |
+| userId | UserId | Identifier of the associated user account |
+
+#### Enrollment Context
+
+**AcademicPeriod**
+
+Representa un intervalo de tiempo en el que se desarrolla un ciclo académico dentro de una academia.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the academic period |
+| periodName | String | Name of the academic period |
+| duration | PeriodDuration | Start and end date of the period |
+| status | PeriodStatus | Active or inactive status of the period |
+| academyId | AcademyId | Identifier of the academy that owns the period |
+
+**Student**
+
+Representa a un estudiante que puede ser matriculado en una academia. Contiene su información de identificación y contacto.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the student |
+| fullName | FullName | Full name (first and last name) |
+| dni | Dni | National ID number |
+| sex | Sex | Sex of the student (MALE, FEMALE) |
+| birthDate | LocalDate | Date of birth |
+| address | String | Home address |
+| phoneNumber | PhoneNumber | Contact phone number |
+| email | Email | Contact email |
+| academyId | AcademyId | Identifier of the academy the student is registered with |
+
+**Enrollment**
+
+Representa el registro de un estudiante en un periodo académico, asociado a un horario y con un estado de pago.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the enrollment |
+| periodId | AcademicPeriodId | Identifier of the academic period |
+| studentId | StudentId | Identifier of the student being enrolled |
+| scheduleId | ScheduleId | Identifier of the schedule chosen |
+| status | EnrollmentStatus | Status of the enrollment (ACTIVE, INACTIVE) |
+| amount | Money | Amount charged for the enrollment |
+| academyId | AcademyId | Identifier of the academy where the enrollment is made |
+
+#### Scheduling Context
+
+**Schedule**
+
+Representa el horario semanal de una academia. Contiene las sesiones de clase programadas y permite gestionar agregados, actualizaciones y validaciones de disponibilidad.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the schedule |
+| name | String | Name of the schedule |
+| academyId | AcademyId | Identifier of the academy that owns the schedule |
+| classSessions | Set\<ClassSession\> | Class sessions scheduled |
+
+**Course**
+
+Representa un curso ofrecido por la academia que puede ser parte de un horario.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the course |
+| name | String | Name of the course |
+| courseCode | CourseCode | Unique code identifying the course |
+| description | String | Short description of the course |
+| academyId | AcademyId | Identifier of the academy offering the course |
+
+**Classroom**
+
+Representa un aula física o virtual donde se dicta una clase.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the classroom |
+| classroomCode | ClassroomCode | Code or identifier of the classroom |
+| capacity | Integer | Maximum number of people allowed |
+| campus | String | Campus where the classroom is located |
+| academyId | AcademyId | Identifier of the academy that owns the classroom |
+
+**ClassSession**
+
+Define una sesión específica dentro del horario, con curso, aula, docente y rango horario.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the class session |
+| courseId | CourseId | Identifier of the course taught |
+| classroomId | ClassroomId | Identifier of the classroom |
+| teacherId | TeacherId | Identifier of the teacher assigned |
+| dayOfWeek | DayOfWeek | Day of the week the session takes place |
+| timeRange | TimeRange | Start and end time of the session |
+
+#### Attendance Context
+
+**ClassAttendance**
+
+Representa el registro de asistencia de una sesión específica. Permite registrar y consultar los estados individuales de los estudiantes.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the class attendance |
+| classSessionId | ClassSessionId | Identifier of the related class session |
+| date | LocalDate | Date of the session |
+| attendances | List\<AttendanceRecord\> | List of individual attendance records |
+| academyId | AcademyId | Identifier of the academy |
+
+**AttendanceRecord**
+
+Representa el estado de asistencia de un estudiante en una sesión específica.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the attendance record |
+| studentId | StudentId | Identifier of the student |
+| status | AttendanceStatus | Attendance status (PRESENT, ABSENT, EXCUSED) |
+
+#### Billing Context
+
+**BillingAccount**
+
+Representa la cuenta de facturación asociada a un estudiante de la academia. Centraliza las facturas y el estado de la cuenta.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the billing account |
+| studentId | StudentId | Identifier of the related student |
+| invoices | Set\<Invoice\> | Set of invoices issued for the account |
+| accountStatus | AccountStatus | Status of the account (ACTIVE, OVERDUE, SUSPENDED, CANCELLED) |
+| academyId | AcademyId | Identifier of the academy |
+
+**Invoice**
+
+Representa una factura emitida dentro de una cuenta de facturación.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the invoice |
+| invoiceType | InvoiceType | Type of invoice (ENROLLMENT, MONTHLY, OTHER) |
+| amount | Money | Amount to be paid |
+| description | String | Short description of the invoice |
+| issueDate | LocalDate | Date when the invoice was issued |
+| dueDate | LocalDate | Due date of the invoice |
+| invoiceStatus | InvoiceStatus | Payment status (PENDING, PAID, OVERDUE, CANCELLED) |
+| billingAccountId | Long | Identifier of the parent billing account |
+
+#### Accounting & Finance Context
+
+**Transaction**
+
+Representa un movimiento financiero (ingreso o egreso) registrado en la academia.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the transaction |
+| transactionType | TransactionType | Type of transaction (INCOME, EXPENSE) |
+| transactionCategory | TransactionCategory | Category (ENROLLMENT, MONTHLY_FEE, SALARY, SUPPLIES, MAINTENANCE, OTHER) |
+| transactionMethod | TransactionMethod | Payment method (CASH, CREDIT_CARD, DEBIT_CARD, BANK_TRANSFER, WALLET, OTHER) |
+| amount | Money | Amount of the transaction |
+| description | String | Short description of the transaction |
+| transactionDate | LocalDate | Date of the transaction |
+| academyId | AcademyId | Identifier of the academy where the transaction occurred |
+
+**Report**
+
+Representa un reporte financiero generado para un periodo determinado.
+
+| Attribute | Type | Description |
+|---|---|---|
+| id | Long | Unique identifier for the report |
+| reportType | ReportType | Type of report (INCOME, EXPENSE, BALANCE_SHEET, CASH_FLOW, OTHER) |
+| reportPeriod | ReportPeriod | Period covered by the report (start and end date) |
+| generatedDate | LocalDate | Date when the report was generated |
+| academyId | AcademyId | Identifier of the academy the report belongs to |
 
 ## 4.10. Database Design
 
+Esta sección presenta el diseño de la base de datos del sistema, derivado del modelo orientado a objetos y los bounded contexts definidos bajo el enfoque de Domain-Driven Design (DDD). El objetivo es estructurar las entidades persistentes y sus relaciones para garantizar la integridad, escalabilidad y trazabilidad de los datos.
+
+Se optó por **MySQL** como sistema de gestión de bases de datos por su amplio soporte en la industria, facilidad de integración y buen rendimiento en aplicaciones web escalables.
+
 ### 4.10.1. Relational/Non-Relational Database Diagram
+
+A continuación se muestra el diagrama entidad-relación (ERD), que representa gráficamente las tablas de la base de datos, sus atributos principales y las relaciones existentes entre ellas. Este diagrama fue generado a partir del modelo de clases y ajustado a una representación relacional clara y normalizada.
+**Database Diagram (Relational)**
+
+![Relational Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Relational%20Database%20Diagram.png)
+
+A continuación se presentan los diagramas entidad-relación específicos por cada bounded context para una mejor visibilidad.
+
+**IAM**
+
+![IAM Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20IAM%20Database%20Diagram.png)
+
+**Institution**
+
+![Institution Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Institution%20Database%20Diagram.png)
+
+**Scheduling**
+
+![Scheduling Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Scheduling%20Database%20Diagram.png)
+
+
+**Attendance**
+
+![Attendance Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Attendance%20Database%20Diagram.png)
+
+**Billing**
+
+![Billing Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Billing%20Database%20Diagram.png)
+
+**Accounting & Finance**
+
+![Accounting & Finance Database Diagram](./assets/diagrams/database/erd/out/Demy%20%20Accounting%20&%20Finance%20Database%20Diagram.png)
 
 <hr class="page-break">
 

@@ -1,0 +1,139 @@
+@startuml Demy: IAM Frontend Class Diagram
+title Demy: IAM Frontend Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #FAFAFA
+  BorderColor #757575
+  ArrowColor #424242
+}
+
+package "shared" {
+  package "components" {
+    class "BaseFormComponent" <<Component>> {
+      + isInvalidControl(form: FormGroup, controlName: string): boolean
+      + errorMessagesForControl(form: FormGroup, controlName: string): string
+      + errorMessageForControl(controlName: string, errorKey: string): string
+    }
+  }
+
+  package "services" {
+    abstract class "BaseService<T>" <<Service>> {
+      # resourceEndpoint: string
+      + getAll(): Observable<T[]>
+      + getById(id: number): Observable<T>
+      + create(entity: T): Observable<T>
+      + update(id: number, entity: T): Observable<T>
+      + delete(id: number): Observable<void>
+    }
+  }
+}
+
+package "iam" {
+  package "pages" {
+    class "SignInPageComponent" <<Component>> {
+      - form: FormGroup
+      + onSubmit(): void
+    }
+
+    class "SignUpPageComponent" <<Component>> {
+      - form: FormGroup
+      + onSubmit(): void
+    }
+
+    class "VerifyAccountPageComponent" <<Component>> {
+      - form: FormGroup
+      + onSubmit(): void
+    }
+  }
+
+  package "components" {
+    class "SignInFormComponent" <<Component>> {
+      @Output() signInRequested: EventEmitter<SignInRequest>
+      + onSubmit(): void
+    }
+
+    class "SignUpFormComponent" <<Component>> {
+      @Output() signUpRequested: EventEmitter<SignUpRequest>
+      + onSubmit(): void
+    }
+
+    class "VerifyCodeFormComponent" <<Component>> {
+      @Output() codeSubmitted: EventEmitter<string>
+      + onSubmit(): void
+    }
+  }
+
+  package "services" {
+    class "AuthenticationService" <<Service>> {
+      - resourceEndpoint: string
+      + signIn(request: SignInRequest): Observable<AuthenticatedUser>
+      + signUp(request: SignUpRequest): Observable<User>
+      + verify(code: string): Observable<void>
+      + resendCode(email: string): Observable<void>
+    }
+
+    class "UserService" <<Service>> {
+      + getCurrentTenantId(): Observable<number>
+    }
+  }
+
+  package "model" {
+    class "User" <<Entity>> {
+      - id: string
+      - email: string
+      - roles: Role[]
+      - verificationStatus: VerificationStatus
+      - accountStatus: AccountStatus
+      - tenantId: number
+    }
+
+    class "Role" <<Entity>> {
+      - id: number
+      - name: Roles
+    }
+
+    enum "Roles" {
+      ROLE_USER
+      ROLE_ADMINISTRATOR
+      ROLE_TEACHER
+    }
+
+    enum "AccountStatus" {
+      PENDING
+      ACTIVE
+      BLOCKED
+      DELETED
+    }
+
+    enum "VerificationStatus" {
+      NOT_VERIFIED
+      VERIFIED
+    }
+  }
+}
+
+' Inheritance
+SignInFormComponent     ..|> BaseFormComponent
+SignUpFormComponent     ..|> BaseFormComponent
+VerifyCodeFormComponent ..|> BaseFormComponent
+AuthenticationService   --|> "BaseService<T>"
+UserService             --|> "BaseService<T>"
+
+' Containment
+SignInPageComponent          *-- SignInFormComponent : contains >
+SignUpPageComponent          *-- SignUpFormComponent : contains >
+VerifyAccountPageComponent   *-- VerifyCodeFormComponent : contains >
+
+' Dependencies
+SignInPageComponent        ..> AuthenticationService : injects
+SignUpPageComponent        ..> AuthenticationService : injects
+VerifyAccountPageComponent ..> AuthenticationService : injects
+AuthenticationService      ..> User : manages
+UserService                ..> User : queries
+User                       *-- Role
+Role                       --> Roles : uses
+User                       --> AccountStatus : has
+User                       --> VerificationStatus : has
+
+@enduml
