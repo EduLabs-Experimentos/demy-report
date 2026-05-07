@@ -542,13 +542,13 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
     </tr>
     <tr>
       <td colspan="2" rowspan="2" valign="top" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Startup y Competidores</b></td>
-      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Nistra</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>EduLabs</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Academygest</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Playoff</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Quickschools</b></td>
     </tr>
     <tr>
-      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/nistra-logo.png" alt="Nistra Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/edulabs-logo.jpeg" alt="EduLabs Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-academygest.jpg" alt="Academygest Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-playoff.jpg" alt="Playoff Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-quickschools.png" alt="Quickschools Logo" height="60" /></td>
@@ -593,10 +593,10 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
     </tr>
     <tr>
       <td valign="top" style="padding: 5px;">Precios & Costos</td>
-      <td valign="top" style="padding: 5px;">Plan Básico: $50/mes (1 sede).<br> Plan Intermedio: $100/mes (2 sedes).<br> Plan Premium: $200/mes (varias sedes).</td>
+      <td valign="top" style="padding: 5px;">Plan Básico: \$50/mes (1 sede).<br>Plan Intermedio: \$100/mes (2 sedes).<br>Plan Premium: \$200/mes (varias sedes)</td>
       <td valign="top" style="padding: 5px;">Plan único: 25€/mes.<br> Incluye:<br> - Sin instalaciones.<br> - Servicio 24/7.<br> - Alumnos y cursos ilimitados.<br> - Gestión de asistencia.<br> - Soporte técnico.</td>
       <td valign="top" style="padding: 5px;">Plan Base: 34,95€.<br> Plan Pro: 49,95€.<br> Plan Top: 69,95€.<br> Plan Premium: personalizado.<br> Incluye prueba gratuita de 15 días.</td>
-      <td valign="top" style="padding: 5px;">Gaia Plan: $0.99/estudiante/mes.<br> Apollo Plan: $1.49/estudiante/mes.<br> Athena Plan: $2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
+      <td valign="top" style="padding: 5px;">Gaia Plan: \$0.99/estudiante/mes.<br> Apollo Plan: \$1.49/estudiante/mes.<br> Athena Plan: \$2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
     </tr>
     <tr>
       <td valign="top" style="padding: 5px;">Canales de distribución (Web y/o Móvil) </td>
