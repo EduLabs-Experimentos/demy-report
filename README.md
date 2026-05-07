@@ -1933,9 +1933,32 @@ Reportar la asistencia consolidada de un grupo o período al sistema, facilitand
 
 ## 4.5. Mobile Applications Prototyping
 
+En esta sección se presentan los prototipos interactivos de las aplicaciones móviles de la plataforma Demy. Estos prototipos permiten simular la experiencia de usuario y validar el diseño antes de la implementación, facilitando la identificación de posibles mejoras y ajustes necesarios.
+
 ### 4.5.1. Android Mobile Application Prototyping
 
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de administradores.
+
+**Android Native-Mobile App: Administrador**
+
+![Admin Prototipo](./assets/ux-ui/prototypes/mobile/admin/admin-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Administrador: https://drive.google.com/file/d/12FZ2IRIIhuE7nQrtOv7mObbzK8FRCHPn/view?usp=sharing
+
+
+Enlace para acceder al prototipo interactivo del Administrador: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=0%3A1&node-id=342-3088&p=f&viewport=201%2C127%2C0.09&t=SfUpqFSc50n0lcZK-1&scaling=contain&content-scaling=fixed
+
 ### 4.5.2. iOS Mobile Applications Prototyping
+
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de profesores.
+
+**iOS Mobile App: Teacher**
+
+![Teacher Prototipo](./assets/ux-ui/prototypes/mobile/teacher/teacher-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Teacher: https://drive.google.com/file/d/1eFEvG6YEHWzEVwH1S6Pysucl1H7YtPuP/view?usp=sharing
+
+Enlace para acceder al prototipo interactivo del Teacher: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=22%3A2&node-id=500-11832&viewport=-1680%2C423%2C0.16&t=Acjxu5be6q8vxEMG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=500%3A11832
 
 ## 4.6. Web Applications UX/UI Design
 
