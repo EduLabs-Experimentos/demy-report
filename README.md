@@ -3870,13 +3870,441 @@ A continuación se presentan los diagramas entidad-relación específicos por ca
 
 ## 5.1. Software Configuration Management
 
+En esta sección se describen las herramientas y procesos utilizados para la gestión de la configuración del software, incluyendo el control de versiones, configuración de entornos y despliegue.
+
 ### 5.1.1. Software Development Environment Configuration
+
+ A continuación se presentan los productos de software seleccionados para apoyar cada etapa del ciclo de vida del producto digital. Se detallan sus nombres, propósitos específicos dentro del proyecto y enlaces para su acceso o descarga, diferenciando entre soluciones SaaS y software instalable.
+
+**Project Management**
+
+| **Herramienta**        | **Propósito**                                                                                   | **Enlace / Ruta de Acceso**                              |
+|------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------|
+| **Trello**             | Gestión ágil de tareas y tableros para organizar entregables, tareas individuales y por módulo. | [https://trello.com](https://trello.com)                 |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta**   | **Propósito**                                                                             | **Enlace / Ruta de Acceso**                    |
+|-------------------|-------------------------------------------------------------------------------------------|------------------------------------------------|
+| **UXPressia**     | Creación de User Personas, Empathy Maps, Journey Maps e Impact Maps.                      | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Propósito**                                                                                                             | **Enlace / Ruta de Acceso**                    |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Miro**        | Creación de Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases and Context Maps. | [https://miro.com](https://miro.com)           |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta**      | **Propósito**                                                                                             | **Enlace / Ruta de Acceso**                                |
+|----------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| **Structurizr DSL**  | Elaboración de diagramas de arquitectura siguiendo el C4 Model mediante código (Diagrams-as-Code).        | [https://structurizr.com/dsl](https://structurizr.com/dsl) |
+| **PlantUML**         | Creación de diagramas UML utilizando sintaxis de texto (compatible con Markdown y documentación técnica). | [https://plantuml.com](https://plantuml.com)               |
+| **Vertabelo**        | Diseño estructurado de bases de datos relacionales de forma visual y profesional.                         | [https://vertabelo.com](https://vertabelo.com)             |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta**     | **Propósito**                                                         | **Enlace / Ruta de Acceso**                      |
+|---------------------|-----------------------------------------------------------------------|--------------------------------------------------|
+| **Figma**           | Diseño colaborativo de wireframes, mockups y prototipos interactivos. | [https://figma.com](https://figma.com)           |
+| **Lucidchart**      | Creación de wireflows y user flows.                                   | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                             | **Enlace / Ruta de Descarga**                                                                          |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **WebStorm**                 | Desarrollo de la landing page del proyecto utilizando HTML5, CSS3, JavaScript y Tailwind CSS. También, el desarollo de la Web Application utilizando Angular                             | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)                               |
+| **IntelliJ IDEA**            | Elaboración del servicio REST API utilizando Java y Spring Boot.                                                          | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                       |
+| **Android Studio**           | Desarrollo de la aplicación móvil nativa para Android utilizando Kotlin y Jetpack Compose.                                | [https://developer.android.com/studio](https://developer.android.com/studio)                           |
+| **Visual Studio Code**       | Desarrollo de la aplicación móvil multiplataforma utilizando Dart y Flutter.                                              | [https://code.visualstudio.com](https://code.visualstudio.com)                                         |
+| **HTML5**                    | Lenguaje de marcado utilizado para definir la estructura semántica del contenido en la landing page.                      | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML)             |
+| **CSS3**                     | Lenguaje de estilos utilizado para definir la apariencia visual de la landing page.                                       | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS)               |
+| **JavaScript**               | Lenguaje de programación usado para manipular el DOM y permitir la internacionalización del contenido en la landing page. | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Tailwind CSS**             | Framework de estilos CSS utilizado para construir visualmente la landing page de manera eficiente.                        | [https://tailwindcss.com](https://tailwindcss.com)                                                     |
+| **Java**                     | Lenguaje de programación utilizado para desarrollar el backend del servicio REST API.                                     | [https://www.oracle.com/java](https://www.oracle.com/java)                                             |
+| **Spring Boot**              | Framework basado en Java utilizado para construir el servicio REST API de manera rápida y eficiente.                      | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)                       |
+| **Kotlin**                   | Lenguaje de programación utilizado para desarrollar la aplicación móvil nativa para Android.                              | [https://kotlinlang.org](https://kotlinlang.org)                                                       |
+| **Jetpack Compose**          | Toolkit moderno para construir interfaces de usuario nativas en Android de manera declarativa.                            | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)         |
+| **Dart**                     | Lenguaje de programación utilizado para desarrollar la aplicación móvil multiplataforma con Flutter.                      | [https://dart.dev](https://dart.dev)                                                                   |
+| **Flutter**                  | Framework UI de código abierto para construir aplicaciones nativas compiladas multiplataforma para móviles.               | [https://flutter.dev](https://flutter.dev)                                                             |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnología** | **Propósito** | **Enlace / Ruta de Descarga** |
+| :--- | :--- | :--- |
+| **Gherkin** | Lenguaje utilizado para escribir los criterios de aceptación de las **User Stories** de manera estructurada y comprensible para todos los miembros del equipo. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+| **JUnit (5)** | Framework principal para escribir y ejecutar las pruebas unitarias y de integración tanto en el backend (Spring Boot) como en la lógica de negocio móvil (Kotlin). | [https://junit.org/junit5/](https://junit.org/junit5/) |
+| **Mockito (Java)** | Librería utilizada en Spring Boot para crear simulaciones (*mocks*) de dependencias (como repositorios o servicios externos), permitiendo probar la lógica de los Casos de Uso de forma aislada. | [https://site.mockito.org/](https://site.mockito.org/) |
+| **Jasmine & Karma** | Herramientas estándar en Angular. Jasmine define la estructura de las pruebas (`describe`, `it`) y aserciones, mientras que Karma es el motor que las ejecutaba levantando una instancia de navegador. | [https://jasmine.github.io/](https://jasmine.github.io/)<br>[https://karma-runner.github.io/](https://karma-runner.github.io/) |
+| **Jest** | Framework de pruebas moderno y más rápido que se está convirtiendo en el nuevo estándar para Angular, ejecutando las pruebas directamente en Node.js sin necesidad de un navegador pesado. | [https://jestjs.io/es-ES/](https://jestjs.io/es-ES/) |
+| **MockK** | Librería de *mocking* nativa para Kotlin, preferida en Android moderno por su excelente integración y manejo fluido de corrutinas y funciones de extensión. | [https://mockk.io/](https://mockk.io/) |
+| **Jetpack Compose Testing** | API oficial (`compose-test-rule`) para interactuar, buscar y realizar aserciones directamente sobre los nodos de la Interfaz de Usuario (UI) en Android, sin depender de Espresso. | [https://developer.android.com/develop/ui/compose/testing](https://developer.android.com/develop/ui/compose/testing) |
+| **Flutter Test** | Paquete integrado en el SDK de Flutter que permite realizar pruebas a tres niveles: Unitarias (lógica Dart), de Widgets (UI aislada rápida) y de Integración (flujos completos E2E). | [https://docs.flutter.dev/testing](https://docs.flutter.dev/testing) |
+| **Mockito (Dart) / Mocktail** | Paquetes de la comunidad de Dart utilizados dentro del ecosistema de Flutter para generar *mocks* seguros en tiempo de compilación para las dependencias de los controladores o *providers*. | [https://pub.dev/packages/mockito](https://pub.dev/packages/mockito)<br>[https://pub.dev/packages/mocktail](https://pub.dev/packages/mocktail) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Propósito**                                                                                     | **Enlace / Ruta de Acceso**                                        |
+|------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| **Netlify**                  | Plataforma utilizada para el despliegue automático y gratuito de la landing page.                 | [https://www.netlify.com](https://www.netlify.com)                 |
+| **Railway**                  | Plataforma utilizada para el despliegue automático del servicio REST API, con prueba gratuita.    | [https://railway.app](https://railway.app)                         |
+| **Firebase**                 | Plataforma utilizada para el despliegue automático de la aplicación móvil multiplataforma.        | [https://firebase.google.com](https://firebase.google.com)         |
+| **Google Play Console**      | Plataforma utilizada para la publicación y distribución de la aplicación móvil nativa en Android. | [https://play.google.com/console](https://play.google.com/console) |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Propósito**                                                                                                                                                                        | **Enlace / Ruta de Acceso**                                                                                        |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **IntelliJ IDEA**         | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensiones para visualización previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                                   |
+| **Visual Studio Code**    | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensión para exportación formateada de Markdown a PDF.     | [https://code.visualstudio.com](https://code.visualstudio.com)                                                     |
+| **Markdown**              | Lenguaje de marcado ligero utilizado para escribir la documentación técnica del proyecto.                                                                                            | [https://www.markdownguide.org](https://www.markdownguide                                                          |
+| **Git**                   | Sistema de control de versiones distribuido utilizado para gestionar el código fuente del proyecto.                                                                                  | [https://git-scm.com](https://git-scm.com)                                                                         |
+| **GitHub**                | Repositorio con control de versiones que también sirve como canal de documentación técnica en issues y PRs.                                                                          | [https://github.com](https://github.com)                                                                           |
+| **GitFlow Workflow**      | Estrategia de ramificación utilizada para mantener la documentación y el código bien organizados.                                                                                    | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits**  | Estándar de nombres de commits que ayuda a generar changelogs y mantener trazabilidad.                                                                                               | [https://www.conventionalcommits.org](https://www.conventionalcommits.org)                                         |
+| **Semantic Versioning**   | Sistema de versionado utilizado para asignar versiones a las releases del software de manera coherente.                                                                              | [https://semver.org](https://semver.org)        
 
 ### 5.1.2. Source Code Management
 
+El equipo utilizará **GitHub** como plataforma de alojamiento y **Git** como control de versiones para todos los productos del proyecto **Demy**, aplicando la estrategia de ramificación **GitFlow Workflow**, con estándares de versionado **Semantic Versioning** y mensajes estructurados mediante **Conventional Commits**.
+
+**Repositorios del Proyecto**
+
+| **Producto**                          | **Repositorio GitHub**                                                                 |
+|---------------------------------------|----------------------------------------------------------------------------------------|
+| **Organization**                      | https://github.com/EduLabs-Experimentos                                                |
+| **Report**                            | https://github.com/EduLabs-Experimentos/demy-report                                    |
+| **Landing Page**                      | https://github.com/EduLabs-Experimentos/demy-landing                                   |
+| **RESTful API**                       | https://github.com/EduLabs-Experimentos/demy-backend                                   |
+| **Android Native-Mobile App**         | https://github.com/EduLabs-Experimentos/demy-admin-mobile-application                  |
+| **Flutter Cross-Platform Mobile App** | https://github.com/EduLabs-Experimentos/demy-teacher-mobile-application                |
+
+**GitFlow Workflow**
+
+![gitflow](assets/images/figures/gitflow-example.png)
+
+Se seguirá el modelo propuesto por Vincent Driessen, el cual define las siguientes ramas principales:
+
+- **main**: Rama principal, contiene las versiones estables en producción.
+- **develop**: Rama de desarrollo, donde se integran nuevas funcionalidades antes de pasar a producción.
+
+**Branches usados en GitFlow**
+
+| **Tipo de rama**   | **Propósito**                                         | **Convención de nombres**         | **Ejemplo**                  |
+|--------------------|-------------------------------------------------------|-----------------------------------|------------------------------|
+| **feature**        | Desarrollo de nuevas funcionalidades.                 | `feature/<nombre-descriptivo>`    | `feature/profile-management` |
+| **release**        | Preparación de una nueva versión de producción.       | `release/vX.Y.Z`                  | `release/v1.0.0`             |
+| **hotfix**         | Corrección urgente en producción.                     | `hotfix/<problema>`               | `hotfix/fix-crash-navbar`    |
+
+**Semantic Versioning**
+
+Se aplicará el esquema de **versionado semántico 2.0.0**, con el siguiente formato:
+
+`vMAJOR.MINOR.PATCH`
+
+- **MAJOR**: Cambios incompatibles con versiones anteriores.
+- **MINOR**: Nuevas funcionalidades compatibles con versiones anteriores.
+- **PATCH**: Correcciones de errores o mejoras menores.
+
+**Conventional Commits**
+
+Para los mensajes de commit, se utilizará el estándar **Conventional Commits**, que permite mayor trazabilidad y generación automática de changelogs.
+
+**Formato general**:
+
+`<tipo>(opcional-scope): descripción breve`
+
+**Tipos a usar**:
+- `feat`: una nueva funcionalidad
+- `fix`: corrección de errores
+- `docs`: cambios en documentación
+- `style`: formato (espacios, punto y coma, etc.)
+- `refactor`: cambios de código que no corrigen errores ni agregan funciones
+- `test`: agregar o modificar pruebas
+- `chore`: tareas generales o mantenimiento
+
 ### 5.1.3. Source Code Style Guide & Conventions
 
+Con el fin de asegurar un código limpio, mantenible y coherente entre todos los miembros del equipo, se han adoptado las siguientes convenciones de estilo y nomenclatura. Todas las variables, funciones, clases, archivos y elementos seguirán una **nomenclatura en inglés**.
+
+**Nomenclature General**
+
+- Se utilizará **inglés** como idioma único para nombres de variables, funciones, clases, comentarios y documentación.
+- Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
+
+**HTML**
+
+Basado en las [Convenciones de Código de HTML](https://www.w3.org/TR/html52/) y las [Buenas Prácticas de HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started), se adoptan las siguientes reglas:
+
+- Atributos en minúsculas y nombres de clase con **kebab-case** (`section-title`, `main-container`).
+- Uso de comillas dobles para atributos (`class="example"`).
+- Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangría con 2 espacios.
+- Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
+- Uso adecuado de etiquetas auto-cerradas (`<img />`, `<input />`).
+
+**CSS / Tailwind CSS**
+
+Basado en las [Convenciones de Código de CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) y las [Buenas Prácticas de Tailwind CSS](https://tailwindcss.com/docs/installation), se adoptan las siguientes reglas:
+
+- Nombres de clases en minúsculas.
+- Para clases personalizadas: usar **kebab-case**.
+- Se prioriza el uso de **Tailwind CSS** sobre CSS puro para la landing page.
+- Para clases de utilidad de Tailwind: usar **snake_case** (`text_center`, `bg_blue_500`).
+- Se agruparán clases de utilidad por orden lógico (layout -> spacing -> color -> typography).
+
+**Google JavaScript Style Guide**
+
+Basado en el [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), se adoptan las siguientes reglas para mantener un código limpio y coherente:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y constructores.
+- Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+
+Módulos y imports:
+- Preferir **imports explícitos y ordenados**: primero bibliotecas externas, luego internas.
+- Evitar `default exports`, usar siempre `export const` o `export class`.
+
+Buenas prácticas:
+- Preferir `const` sobre `let`, y evitar `var`.
+- Evitar usar `this` fuera de clases.
+- No mezclar funciones y lógica en componentes — delegar a servicios.
+
+**Angular & TypeScript**
+
+Basado en la [Guía de Estilo Oficial de Angular](https://angular.dev/style-guide) y las [Convenciones de TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, propiedades, métodos y parámetros.
+- **PascalCase** para Clases, Interfaces, Tipos (Types) y Enums.
+- **kebab-case** para nombres de archivos (ej. `user-profile.ts`) y selectores de componentes (ej. `app-user-profile`).
+- Nombres de interfaces sin el prefijo "I" (usar `User` en lugar de `IUser`), siguiendo la guía de estilo de Angular.
+- Constantes globales en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Seguir estrictamente la convención de sufijos para archivos: `.component.ts`, `.service.ts`, `.model.ts`, `.pipe.ts`.
+- Fomentar el uso de **Standalone Components** (arquitectura por defecto en versiones recientes de Angular) para reducir la dependencia de `NgModules`.
+- Aplicar tipado estricto: evitar a toda costa el uso de `any`, definiendo interfaces o tipos específicos para todos los datos.
+
+Buenas prácticas:
+- Evitar lógica de negocio compleja en los componentes; delegar estas responsabilidades y las llamadas HTTP a los **Servicios** (inyectables).
+- Preferir el uso de **Signals** o el pipe `async` junto con **RxJS** (Observables) para la gestión del estado y la reactividad.
+- Gestionar correctamente la destrucción de suscripciones (por ejemplo, usando `takeUntilDestroyed`) para prevenir fugas de memoria (*memory leaks*).
+
+**Java & Spring Boot**
+
+Basado en las [Convenciones de Código de Java](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html) y las [Buenas Prácticas de Spring](https://spring.io/guides/gs/spring-boot/), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, métodos y parámetros.
+- **PascalCase** para clases y interfaces.
+- Nombres de paquetes en minúsculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Cada clase en su propio archivo.
+- Métodos cortos y enfocados en una sola responsabilidad.
+- Uso de anotaciones de Spring para inyección de dependencias y configuración.
+
+Buenas prácticas:
+- Evitar lógica de negocio en controladores; usar servicios.
+- Manejo adecuado de excepciones con `@ControllerAdvice`.
+- Documentar APIs REST con Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Basado en las [Convenciones de Código de Kotlin](https://kotlinlang.org/docs/coding-conventions.html) y las [Buenas Prácticas de Jetpack Compose](https://developer.android.com/jetpack/compose), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y objetos.
+- Nombres de paquetes en minúsculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Cada clase y objeto en su propio archivo.
+- Funciones cortas y enfocadas en una sola responsabilidad.
+- Uso de `@Composable` para funciones de UI.
+
+Buenas prácticas:
+- Evitar lógica de negocio en composables; usar ViewModels.
+- Manejo adecuado del estado con `State` y `MutableState`.
+- Documentar funciones públicas con KDoc.
+
+**Dart & Flutter**
+
+Basado en las [Convenciones de Código de Dart](https://dart.dev/guides/language/effective-dart/style) y las [Buenas Prácticas de Flutter](https://flutter.dev/docs/development/ui/advanced), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y enums.
+- Nombres de paquetes en minúsculas y separados por guiones bajos (`my_package`).
+- Constantes en `lowercase_with_underscores`.
+
+Estructura y organización:
+- Cada clase en su propio archivo.
+- Widgets cortos y enfocados en una sola responsabilidad.
+- Uso de `StatelessWidget` y `StatefulWidget` según corresponda.
+
+Buenas prácticas:
+- Evitar lógica de negocio en widgets; usar Providers o Bloc.
+- Manejo adecuado del estado con `setState`, `Provider` o `Bloc`.
+- Documentar clases y métodos públicos con DartDoc.
+
+El código de pruebas es tan importante como el código de producción. Debe ser limpio, legible y mantenible. Para garantizar la consistencia en el aseguramiento de calidad (QA), se adoptan las siguientes reglas.
+
+**Pruebas / Gherkin**
+
+Basado en las [Buenas Prácticas de Gherkin](https://cucumber.io/docs/gherkin/reference/), se adoptan las siguientes reglas para la redacción de pruebas automatizadas:
+
+- Los archivos de características (`.feature`) se escribirán en inglés.
+- Cada escenario debe ser independiente y autocontenido (no depender del estado de un escenario anterior).
+- Utilizar nombres descriptivos para características y escenarios.
+- Seguir estrictamente la estructura **Given-When-Then** para separar el contexto, la acción y el resultado esperado.
+
+**JUnit 5 & Mockito (Java & Spring Boot)**
+
+Basado en las convenciones de la comunidad de JUnit y Spring, se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Los nombres de las clases de prueba deben terminar en `Test` (ej. `UserServiceTest`).
+- Nombrar los métodos de prueba describiendo el comportamiento esperado y el estado inicial. Se recomienda el formato `should_ExpectedBehavior_When_StateUnderTest` (ej. `should_ReturnUser_When_IdExists()`).
+
+Estructura y organización:
+- Estructurar el cuerpo de la prueba utilizando el patrón **AAA** (Arrange, Act, Assert), separando visualmente cada bloque con un salto de línea.
+- Opcionalmente, usar comentarios `// Given`, `// When`, `// Then` dentro del método si la prueba es compleja.
+
+Buenas prácticas:
+- Aislar completamente la unidad a probar utilizando `@Mock` y `@InjectMocks` de Mockito.
+- Evitar levantar el contexto completo de Spring (`@SpringBootTest`) para pruebas puramente unitarias; reservarlo solo para pruebas de integración.
+
+**Jasmine, Karma & Jest (Angular & TypeScript)**
+
+Basado en la [Guía de Testing de Angular](https://angular.dev/guide/testing), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Los archivos de prueba deben tener el sufijo `.spec.ts`.
+- Los bloques `describe` deben llevar el nombre de la clase, componente o servicio a probar.
+- Los bloques `it` deben comenzar con `should` describiendo claramente qué debe hacer (ej. `it('should display the user name')`).
+
+Estructura y organización:
+- Utilizar `beforeEach` para configurar el estado inicial y limpiar variables compartidas antes de cada prueba.
+
+Buenas prácticas:
+- Mantener la configuración del `TestBed` lo más ligera posible, declarando solo lo necesario para el componente bajo prueba.
+- Hacer *mock* sistemático de los servicios que realizan llamadas HTTP y dependencias pesadas para evitar ralentizar las pruebas.
+
+**JUnit & MockK (Kotlin)**
+
+Basado en las convenciones de testing de Kotlin y Android, se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Aprovechar la característica de Kotlin de usar *backticks* (`` ` ``) para crear nombres de funciones de prueba altamente legibles en inglés (ej. ``@Test fun `should return success response when credentials are valid`()``).
+
+Buenas prácticas:
+- Utilizar **MockK** en lugar de Mockito por su compatibilidad nativa.
+- Utilizar `coEvery` y `coVerify` para hacer *mocking* y aserciones sobre funciones suspendidas (*coroutines*).
+
+**Jetpack Compose Testing (Android UI)**
+
+Basado en las [Buenas prácticas de Testing en Compose](https://developer.android.com/develop/ui/compose/testing), se adoptan las siguientes reglas:
+
+- Utilizar `composeTestRule` para aislar el componente UI a probar.
+- Preferir interactuar con los nodos de la UI a través de semántica textual (`onNodeWithText`, `onNodeWithContentDescription`) para asegurar pruebas orientadas a la accesibilidad.
+- Utilizar `Modifier.testTag()` solo como último recurso cuando los elementos no tengan texto descriptivo.
+
+**Flutter Test & Mocktail (Dart)**
+
+Basado en las [Convenciones de Testing de Flutter](https://docs.flutter.dev/testing), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Agrupar lógicamente múltiples pruebas relacionadas usando `group('Feature Name', () { ... })`.
+- Los métodos `test()` y `testWidgets()` deben tener descripciones claras que empiecen con `should`.
+
+Buenas prácticas:
+- Separar estrictamente las pruebas unitarias (lógica Dart sin UI) de las pruebas de *Widgets* (interacciones de UI).
+- En las pruebas de *Widgets*, utilizar `pumpWidget` para renderizar elementos aislados.
+- Hacer *mock* de los controladores, *providers* de estado y repositorios utilizando **Mocktail** para evitar llamadas reales a la red o bases de datos locales durante la ejecución.
+
 ### 5.1.4. Software Deployment Configuration
+
+Se utilizarán las siguientes plataformas para el despliegue de los diferentes productos del proyecto:
+
+| **Producto**                          | **Plataforma de Despliegue** | **Propósito**                                                                                     | **Enlace / Ruta de Acceso**                                            |
+|---------------------------------------|------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Landing Page y Web Application**                      | **Netlify**                  | Plataforma utilizada para el despliegue automático y gratuito de la landing page y web application.                 | [https://www.netlify.com](https://www.netlify.com)                     |
+| **RESTful API**                       | **Railway**                  | Plataforma utilizada para el despliegue automático del servicio REST API, con prueba gratuita.    | [https://railway.app](https://railway.app)                             |
+| **Flutter Cross-Platform Mobile App** | **Firebase**                 | Plataforma utilizada para el despliegue automático de la aplicación móvil multiplataforma.        | [https://firebase.google.com](https://firebase.google.com)             |
+| **Android Native-Mobile App**         | **Google Play Console**      | Plataforma utilizada para la publicación y distribución de la aplicación móvil nativa en Android. | [https://play.google.com/console](https://play.google.com/console)     |
+
+
+**Netlify**
+
+Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estáticos y aplicaciones frontend. Ofrece integración con repositorios GitHub, permitiendo despliegues automáticos al hacer push en ramas específicas.
+
+Para configurar el despliegue automático de la landing page en Netlify, se siguen los siguientes pasos:
+1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla con el repositorio de GitHub que contiene el código de la landing page.
+2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main` o `develop`).
+4. Especificar los comandos de construcción y la carpeta de publicación (por ejemplo, `npm run build` y `dist/`).
+5. Guardar la configuración y permitir que Netlify realice el primer despliegue automático.
+
+**Railway**
+
+Railway es una plataforma de despliegue y gestión de aplicaciones backend que facilita la implementación de servicios REST API. Ofrece integración con repositorios GitHub y soporte para múltiples lenguajes y frameworks.
+
+Para configurar el despliegue automático del servicio REST API en Railway, se siguen los siguientes pasos:
+1. Crear una cuenta en [Railway](https://railway.app) y vincularla con el repositorio de GitHub que contiene el código del servicio REST API.
+2. Crear un nuevo proyecto en Railway, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main` o `develop`).
+4. Configurar las variables de entorno necesarias para la aplicación.
+5. Guardar la configuración y permitir que Railway realice el primer despliegue automático.
+
+**Firebase**
+
+Firebase es una plataforma de desarrollo de aplicaciones móviles y web que ofrece servicios como autenticación, base de datos en tiempo real y alojamiento. También permite el despliegue automático de aplicaciones móviles multiplataforma desarrolladas con Flutter.
+
+Para configurar el despliegue automático de la aplicación móvil multiplataforma en Firebase, se siguen los siguientes pasos:
+1. Crear una cuenta en [Firebase](https://firebase.google.com) y crear un nuevo proyecto.
+2. Vincular el proyecto de Firebase con el repositorio de GitHub que contiene el código de la aplicación móvil.
+3. Configurar la integración continua utilizando GitHub Actions o Firebase CLI.
+4. Definir los comandos de construcción y despliegue (por ejemplo, `flutter build apk` y `firebase appdistribution:distribute`).
+5. Guardar la configuración y permitir que Firebase realice el primer despliegue automático.
+
+**Google Play Console**
+
+Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones móviles nativas en Android. Permite la distribución de aplicaciones a través de Google Play Store, así como la gestión de versiones, análisis y monetización.
+
+Para publicar la aplicación móvil nativa en Android en Google Play Console, se siguen los siguientes pasos:
+1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console) y pagar la tarifa de registro única.
+2. Crear un nuevo proyecto de aplicación, proporcionando la información básica como el nombre, la descripción y las capturas de pantalla.
+3. Subir el archivo APK o AAB generado por Android Studio.
+4. Completar los detalles de la ficha de la aplicación, incluyendo la categoría, el contenido y la política de privacidad.
+5. Enviar la aplicación para revisión y publicación en Google Play Store.
+
+
+Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sistema, que ilustra cómo los diferentes componentes del proyecto Demy interactúan entre sí y con las plataformas de despliegue.
+
+![Software Deployment Configuration: Deployment Diagram](./assets/diagrams/software-architecture/deployment/software-architecture-deployment-diagram.png)
+
+<hr class="page-break">
 
 ## 5.2. Product Implementation & Deployment
 
