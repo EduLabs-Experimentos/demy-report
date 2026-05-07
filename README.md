@@ -1623,19 +1623,501 @@ Navegación secundaria, enlaces legales (Términos/Privacidad) y redes sociales.
 
 ## 4.4 Mobile Applications UX/UI Design
 
+En esta sección se presentan los wireframes y mock-ups de las aplicaciones móviles de la plataforma Demy. Se describen las principales pantallas, funcionalidades y elementos visuales que componen estas aplicaciones.
+
 ### 4.1.1. Mobile Applications Wireframes
+
+**Mobile Applications Wireframes: Flujo de Administrador**
+
+A continuación, se presenta la sustentación de los wireframes para la aplicación del **Administrador**. El diseño se enfoca en la seguridad, claridad y eficiencia, aplicando un Design System consistente para una experiencia de usuario intuitiva.
+
+**Registro y Creación de Cuenta**
+
+Estas pantallas guían al nuevo administrador en tres pasos claros y seguros: registro, verificación por email y finalización del perfil. Se utiliza un diseño minimalista para no abrumar al usuario, pidiendo la información de manera progresiva y asegurando la cuenta a través de la verificación del correo electrónico.
+
+![Admin Registro](./assets/ux-ui/wireframes/mobile/admin/admin_registro.png)
+![Admin Verificación Email](./assets/ux-ui/wireframes/mobile/admin/admin_verificacion_email.png)
+![Admin Completar Perfil](./assets/ux-ui/wireframes/mobile/admin/admin_completar_perfil.png)
+
+**Inicio de Sesión (Login)**
+
+Pantalla de acceso estándar y familiar diseñada para un ingreso rápido a la plataforma. Prioriza la usabilidad con campos claros y un enlace fácilmente accesible para la recuperación de contraseña, permitiendo la autogestión del usuario.
+
+![Admin Login](./assets/ux-ui/wireframes/mobile/admin/admin_login.png)
+
+**Recuperación de Contraseña**
+
+Estas pantallas garantizan el guiado en cuatro pasos simples para una recuperación de cuenta segura:
+1.  **Solicitud:** El usuario ingresa su email.
+2.  **Verificación:** Confirma su identidad con un código.
+3.  **Restablecimiento:** Crea una nueva contraseña.
+4.  **Confirmación:** Recibe una notificación de éxito.
+
+Solo el propietario de la cuenta pueda realizar cambios, ofreciendo una experiencia clara y sin fricciones.
+
+![Admin Recuperar Password Solicitud](./assets/ux-ui/wireframes/mobile/admin/admin_recuperar_password_solicitud.png)
+![Admin Recuperar Password Verificación Código](./assets/ux-ui/wireframes/mobile/admin/admin_recuperar_password_verificacion_codigo.png)
+![Admin Ingreso Nueva Password](./assets/ux-ui/wireframes/mobile/admin/admin_ingreso_nueva_password.png)
+![Admin Confirmación Cambio Password](./assets/ux-ui/wireframes/mobile/admin/admin_confirmacion_cambio_password.png)
+
+**Documentación Legal**
+
+Pantallas dedicadas para los **Términos y Condiciones** y la **Política de Privacidad**. El diseño es limpio y se centra en la legibilidad del contenido, asegurando la transparencia y facilitando la consulta desde el flujo de registro.
+
+![Admin Términos y Condiciones](./assets/ux-ui/wireframes/mobile/admin/admin_terminos_y_condiciones.png)
+![Admin Política de Privacidad](./assets/ux-ui/wireframes/mobile/admin/admin_politica_de_privacidad.png)
+
+**Suscripción y Configuración de Academia**
+
+Estas pantallas de onboarding que sigue al registro. Guía al administrador a través de la selección de un plan, el ingreso seguro de los datos de pago y la configuración inicial de la academia. El proceso está diseñado para ser rápido y motivador, finalizando con una pantalla de éxito que da la bienvenida al usuario y lo dirige al panel principal.
+
+![Admin Selección Plan](./assets/ux-ui/wireframes/mobile/admin/admin_seleccion_plan.png)
+![Admin Formulario Pago](./assets/ux-ui/wireframes/mobile/admin/admin_formulario_pago.png)
+![Admin Configuración Academia](./assets/ux-ui/wireframes/mobile/admin/admin_configuracion_academia.png)
+![Admin Confirmación Éxito](./assets/ux-ui/wireframes/mobile/admin/admin_confirmacion_exito.png)
+
+**Pantalla Principal (Dashboard)**
+
+Muestra un resumen visual del estado de la institución con métricas clave, gráficos de ingresos/gastos y datos importantes del periodo académico actual. Permite una visión general rápida.
+
+![Admin Dashboard](./assets/ux-ui/wireframes/mobile/admin/admin_dashboard.png)
+
+**Gestión de Periodos Académicos**
+
+Permite crear, ver, editar y eliminar periodos académicos. Muestra el periodo actual de forma destacada y un listado completo para una gestión sencilla.
+
+![Admin Periodos Management](./assets/ux-ui/wireframes/mobile/admin/admin_periods_management.png)
+![Admin Periodos Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_periods_new_form.png)
+
+**Gestión de Profesores**
+
+Facilita la administración de profesores, permitiendo registrar, editar y eliminar sus perfiles. El diseño es consistente con otras secciones de gestión para optimizar el flujo de trabajo.
+
+![Admin Profesores Registro Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_teachers_register_form.png)
+![Admin Profesores Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_teachers_edit_form.png)
+
+**Seguimiento de Estudiantes**
+
+Permite buscar y visualizar el perfil de cada estudiante. Al seleccionar uno, se muestra una tarjeta con su información principal para un seguimiento rápido y eficiente.
+
+![Admin Seguimiento Estudiantes](./assets/ux-ui/wireframes/mobile/admin/admin_student_monitoring.png)
+
+**Componente Reutilizable: Modal de Confirmación**
+
+Este modal de advertencia aparece antes de realizar acciones destructivas, como eliminar datos. Su propósito es prevenir errores, forzando al usuario a confirmar su decisión.
+
+![Admin Modal Confirmación Eliminación](./assets/ux-ui/wireframes/mobile/admin/admin_delete_confirmation_modal.png)
+
+**Gestión de Aulas (Classrooms)**
+
+Esta sección permite administrar la infraestructura de aulas. El administrador puede registrar nuevas aulas con detalles como código y capacidad, además de editar o eliminar las existentes. La interfaz mantiene la consistencia visual y funcional del resto de la aplicación para facilitar su uso.
+
+![Admin Aulas Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_classrooms_new_form.png)
+![Admin Aulas Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_classrooms_edit_form.png)
+
+**Gestión de Cursos**
+
+Aquí se gestiona la oferta académica de la institución. Permite la creación, edición y eliminación de cursos, asignando nombre, código y descripción. El diseño sigue el patrón de las demás pantallas de gestión para una experiencia de usuario unificada y predecible.
+
+![Admin Cursos Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_courses_new_form.png)
+![Admin Cursos Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_courses_edit_form.png)
+
+**Gestión de Horarios**
+
+Permite al administrador crear y gestionar horarios para los cursos. La interfaz es intuitiva, facilitando la asignación de días y horas, y asegurando que los horarios no se solapen.
+
+![Admin Horarios Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_schedules_new_form.png)
+![Admin Listado de Horarios](./assets/ux-ui/wireframes/mobile/admin/admin_schedules_list.png)
+
+**Gestión de Matrículas**
+
+Permite al administrador revisar y gestionar las inscripciones de los estudiantes a los cursos. Incluye funcionalidades para aprobar o rechazar inscripciones, así como ver detalles específicos de cada una.
+
+![Admin Matrículas Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_enrollments_form.png)
+![Admin Listado de Matrículas](./assets/ux-ui/wireframes/mobile/admin/admin_enrollments_list.png)
+
+**Gestión de Facturación (Billing)**
+
+Esta sección se centra en el control de las cuentas de facturación de los estudiantes. Permite buscar cuentas, ver su estado (activo, cancelado, suspendido) y gestionar facturas individuales. El administrador puede crear nuevas facturas directamente desde este módulo.
+
+![Admin Facturación Búsqueda](./assets/ux-ui/wireframes/mobile/admin/admin_billing_search.png)
+![Admin Facturación Nueva Factura](./assets/ux-ui/wireframes/mobile/admin/admin_billing_new_invoice.png)
+
+**Finanzas y Contabilidad (Finance & Accounting)**
+
+Funciona como el centro financiero general de la institución. Aquí, el administrador puede registrar todas las transacciones de ingresos y gastos, ver un historial detallado y analizar resúmenes visuales a través de gráficos para un mejor seguimiento contable.
+
+![Admin Nueva Transacción](./assets/ux-ui/wireframes/mobile/admin/admin_finance_new_transaction.png)
+![Admin Lista de Transacciones](./assets/ux-ui/wireframes/mobile/admin/admin_finance_transaction_list.png)
+
+**Perfil del Administrador**
+
+Pantalla donde el administrador puede ver y editar su información personal y los datos de la academia asociada a su cuenta. También muestra el estado de su cuenta de usuario (rol, estado de verificación).
+
+![Admin Perfil](./assets/ux-ui/wireframes/mobile/admin/admin_profile.png)
+
+**Configuración (Settings)**
+
+Permite al administrador personalizar su experiencia en la aplicación. Incluye opciones de accesibilidad, configuración de tema (modo oscuro, alto contraste), gestión de notificaciones y cambio de contraseña.
+
+![Admin Configuración](./assets/ux-ui/wireframes/mobile/admin/admin_settings.png)
+
+**Ayuda y Cierre de Sesión**
+
+La sección de Ayuda centraliza los recursos de soporte, como información de contacto y enlaces a documentos legales. El cierre de sesión se realiza de forma segura a través de un modal de confirmación para evitar salidas accidentales.
+
+![Admin Centro de Ayuda](./assets/ux-ui/wireframes/mobile/admin/admin_help_center.png)
+![Admin Modal Cierre de Sesión](./assets/ux-ui/wireframes/mobile/admin/admin_logout_modal.png)
+
+**Mobile Applications Wireframes: Flujo de Profesor**
+
+A continuación, se presentan los wireframes de la versión móvil destinados al perfil de docente. Estas pantallas muestran el flujo principal de interacción dentro de la aplicación, incluyendo el inicio de sesión, la gestión de asistencia, la visualización de horarios, la reprogramación de clases, el acceso al perfil del usuario, y la configuración de ajustes.
+
+Los wireframes permiten visualizar de manera clara la estructura, distribución y funcionalidad de cada sección antes de la etapa de diseño visual definitivo.
+
+**Flujo de Acceso y Recuperación de Contraseña**
+Este grupo incluye las pantallas necesarias para que el profesor ingrese a la aplicación o recupere su cuenta si ha olvidado la contraseña. El flujo está diseñado en pasos discretos para minimizar la frustración del usuario.
+
+![WireframeMobileTeacher9](./assets/ux-ui/wireframes/mobile/teacher/Loader.png)
+![WireframeMobileTeacher10](./assets/ux-ui/wireframes/mobile/teacher/Login.png)
+![WireframeMobileTeacher4](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-CreateNewPassword.png)
+![WireframeMobileTeacher5](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-ResetPassword.png)
+![WireframeMobileTeacher6](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-VerificationCode.png)
+
+**Flujo Principal y Gestión de Cuenta**
+Este flujo representa el centro de navegación de la aplicación. La Home actúa como dashboard con acceso rápido a las funciones clave, mientras que Profile y Settings permiten la gestión de la identidad y las preferencias del profesor.
+
+![WireframeMobileTeacher8](./assets/ux-ui/wireframes/mobile/teacher/Home.png)
+![WireframeMobileTeacher11](./assets/ux-ui/wireframes/mobile/teacher/Profile.png)
+![WireframeMobileTeacher12](./assets/ux-ui/wireframes/mobile/teacher/Settings.png)
+
+**Flujo de Asistencia**
+El objetivo de este flujo es la toma de asistencia rápida y la generación estructurada de informes. El proceso de reporte está dividido en pantallas de elección para asegurar la precisión de los filtros.
+
+![WireframeMobileTeacher7](./assets/ux-ui/wireframes/mobile/teacher/HomeAttendanceModal.png)
+![WireframeMobileTeacher13](./assets/ux-ui/wireframes/mobile/teacher/TakeAttendance.png)
+![WireframeMobileTeacher1](./assets/ux-ui/wireframes/mobile/teacher/AttencanceReport-ChooseCourse.png)
+![WireframeMobileTeacher2](./assets/ux-ui/wireframes/mobile/teacher/AttencanceReport-ChooseDate.png)
+![WireframeMobileTeacher3](./assets/ux-ui/wireframes/mobile/teacher/AttendanceReport.png)
+
+**Flujo de Horario y Reprogramación**
+Este grupo gestiona la visualización del horario del profesor y ofrece una funcionalidad guiada de reprogramación de clases a través de múltiples pasos de confirmación.
+
+![WireframeMobileTeacher14](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseStarTime.png)
+![WireframeMobileTeacher15](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseEndTime.png)
+![WireframeMobileTeacher16](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseDay.png)
+![WireframeMobileTeacher18](./assets/ux-ui/wireframes/mobile/teacher/TeachingSchedule.png)
+![WireframeMobileTeacher17](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule.png)
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
+
+**Mobile Applications Wireflow: Flujo de Administrador**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![Wireflow-Administrator-1](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-1.png)
+
+**User Goal**  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![Wireflow-Administrator-2](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![Wireflow-Administrator-3](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-3.png)
+
+**User Goal**  
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![Wireflow-Administrator-4](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-4.png)
+
+**User Goal**  
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![Wireflow-Administrator-5](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-5.png)
+
+**Mobile Applications Wireflow: Flujo de Profesor**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Wireflow-Teacher-1](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ReportAttendance.png)
+
+**User Goal** 
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Wireflow-Teacher-2](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-RescheduleClass.png)
+
+**User Goal** 
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Wireflow-Teacher-3](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-TakeAttendance.png)
+
+**User Goal** 
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Wireflow-Teacher-4](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ViewSchedule.png)
+
 ### 4.4.3. Mobile Applications Mock-ups
+
+**Mobile Applications Mock-ups: Administrador**
+
+A continuación, se presenta la sustentación de los mockups para la aplicación del **Administrador**. El diseño se enfoca en la seguridad, claridad y eficiencia, aplicando un Design System consistente para una experiencia de usuario intuitiva.
+
+**Registro y Creación de Cuenta**
+
+Estas pantallas guían al nuevo administrador en tres pasos claros y seguros: registro, verificación por email y finalización del perfil. Se utiliza un diseño minimalista para no abrumar al usuario, pidiendo la información de manera progresiva y asegurando la cuenta a través de la verificación del correo electrónico.
+
+![Admin Registro](assets/ux-ui/mockups/mobile/admin/admin_registro.png)
+![Admin Verificación Email](assets/ux-ui/mockups/mobile/admin/admin_verificacion_email.png)
+![Admin Completar Perfil](assets/ux-ui/mockups/mobile/admin/admin_completar_perfil.png)
+
+**Inicio de Sesión (Login)**
+
+Pantalla de acceso estándar y familiar diseñada para un ingreso rápido a la plataforma. Prioriza la usabilidad con campos claros y un enlace fácilmente accesible para la recuperación de contraseña, permitiendo la autogestión del usuario.
+
+![Admin Login](assets/ux-ui/mockups/mobile/admin/admin_login.png)
+
+**Recuperación de Contraseña**
+
+Estas pantallas garantizan el guiado en cuatro pasos simples para una recuperación de cuenta segura:
+1.  **Solicitud:** El usuario ingresa su email.
+2.  **Verificación:** Confirma su identidad con un código.
+3.  **Restablecimiento:** Crea una nueva contraseña.
+4.  **Confirmación:** Recibe una notificación de éxito.
+
+Solo el propietario de la cuenta pueda realizar cambios, ofreciendo una experiencia clara y sin fricciones.
+
+![Admin Recuperar Password Solicitud](assets/ux-ui/mockups/mobile/admin/admin_recuperar_password_solicitud.png)
+![Admin Recuperar Password Verificación Código](assets/ux-ui/mockups/mobile/admin/admin_recuperar_password_verificacion_codigo.png)
+![Admin Ingreso Nueva Password](assets/ux-ui/mockups/mobile/admin/admin_ingreso_nueva_password.png)
+![Admin Confirmación Cambio Password](assets/ux-ui/mockups/mobile/admin/admin_confirmacion_cambio_password.png)
+
+**Documentación Legal**
+
+Pantallas dedicadas para los **Términos y Condiciones** y la **Política de Privacidad**. El diseño es limpio y se centra en la legibilidad del contenido, asegurando la transparencia y facilitando la consulta desde el flujo de registro.
+
+![Admin Términos y Condiciones](assets/ux-ui/mockups/mobile/admin/admin_terminos_y_condiciones.png)
+![Admin Política de Privacidad](assets/ux-ui/mockups/mobile/admin/admin_politica_de_privacidad.png)
+
+**Suscripción y Configuración de Academia**
+
+Estas pantallas de onboarding que sigue al registro. Guía al administrador a través de la selección de un plan, el ingreso seguro de los datos de pago y la configuración inicial de la academia. El proceso está diseñado para ser rápido y motivador, finalizando con una pantalla de éxito que da la bienvenida al usuario y lo dirige al panel principal.
+
+![Admin Selección Plan](assets/ux-ui/mockups/mobile/admin/admin_seleccion_plan.png)
+![Admin Formulario Pago](assets/ux-ui/mockups/mobile/admin/admin_formulario_pago.png)
+![Admin Configuración Academia](assets/ux-ui/mockups/mobile/admin/admin_configuracion_academia.png)
+![Admin Confirmación Éxito](assets/ux-ui/mockups/mobile/admin/admin_confirmacion_exito.png)
+
+**Pantalla Principal (Dashboard)**
+
+Muestra un resumen visual del estado de la institución con métricas clave, gráficos de ingresos/gastos y datos importantes del periodo académico actual. Permite una visión general rápida.
+
+![Admin Dashboard](assets/ux-ui/mockups/mobile/admin/admin_dashboard.png)
+
+**Gestión de Periodos Académicos**
+
+Permite crear, ver, editar y eliminar periodos académicos. Muestra el periodo actual de forma destacada y un listado completo para una gestión sencilla.
+
+![Admin Periodos Management](assets/ux-ui/mockups/mobile/admin/admin_periods_management.png)
+![Admin Periodos Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_periods_new_form.png)
+
+**Gestión de Profesores**
+
+Facilita la administración de profesores, permitiendo registrar, editar y eliminar sus perfiles. El diseño es consistente con otras secciones de gestión para optimizar el flujo de trabajo.
+
+![Admin Profesores Registro Formulario](assets/ux-ui/mockups/mobile/admin/admin_teachers_register_form.png)
+![Admin Profesores Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_teachers_edit_form.png)
+
+**Seguimiento de Estudiantes**
+
+Permite buscar y visualizar el perfil de cada estudiante. Al seleccionar uno, se muestra una tarjeta con su información principal para un seguimiento rápido y eficiente.
+
+![Admin Seguimiento Estudiantes](assets/ux-ui/mockups/mobile/admin/admin_student_monitoring.png)
+
+**Componente Reutilizable: Modal de Confirmación**
+
+Este modal de advertencia aparece antes de realizar acciones destructivas, como eliminar datos. Su propósito es prevenir errores, forzando al usuario a confirmar su decisión.
+
+![Admin Modal Confirmación Eliminación](assets/ux-ui/mockups/mobile/admin/admin_delete_confirmation_modal.png)
+
+**Gestión de Aulas (Classrooms)**
+
+Esta sección permite administrar la infraestructura de aulas. El administrador puede registrar nuevas aulas con detalles como código y capacidad, además de editar o eliminar las existentes. La interfaz mantiene la consistencia visual y funcional del resto de la aplicación para facilitar su uso.
+
+![Admin Aulas Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_classrooms_new_form.png)
+![Admin Aulas Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_classrooms_edit_form.png)
+
+**Gestión de Cursos**
+
+Aquí se gestiona la oferta académica de la institución. Permite la creación, edición y eliminación de cursos, asignando nombre, código y descripción. El diseño sigue el patrón de las demás pantallas de gestión para una experiencia de usuario unificada y predecible.
+
+![Admin Cursos Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_courses_new_form.png)
+![Admin Cursos Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_courses_edit_form.png)
+
+**Gestión de Facturación (Billing)**
+
+Esta sección se centra en el control de las cuentas de facturación de los estudiantes. Permite buscar cuentas, ver su estado (activo, cancelado, suspendido) y gestionar facturas individuales. El administrador puede crear nuevas facturas directamente desde este módulo.
+
+![Admin Facturación Búsqueda](assets/ux-ui/mockups/mobile/admin/admin_billing_search.png)
+![Admin Facturación Nueva Factura](assets/ux-ui/mockups/mobile/admin/admin_billing_new_invoice.png)
+
+**Finanzas y Contabilidad (Finance & Accounting)**
+
+Funciona como el centro financiero general de la institución. Aquí, el administrador puede registrar todas las transacciones de ingresos y gastos, ver un historial detallado y analizar resúmenes visuales a través de gráficos para un mejor seguimiento contable.
+
+![Admin Nueva Transacción](assets/ux-ui/mockups/mobile/admin/admin_finance_new_transaction.png)
+![Admin Lista de Transacciones](assets/ux-ui/mockups/mobile/admin/admin_finance_transaction_list.png)
+
+**Perfil del Administrador**
+
+Pantalla donde el administrador puede ver y editar su información personal y los datos de la academia asociada a su cuenta. También muestra el estado de su cuenta de usuario (rol, estado de verificación).
+
+![Admin Perfil](assets/ux-ui/mockups/mobile/admin/admin_profile.png)
+
+**Configuración (Settings)**
+
+Permite al administrador personalizar su experiencia en la aplicación. Incluye opciones de accesibilidad, configuración de tema (modo oscuro, alto contraste), gestión de notificaciones y cambio de contraseña.
+
+![Admin Configuración](assets/ux-ui/mockups/mobile/admin/admin_settings.png)
+
+**Ayuda y Cierre de Sesión**
+
+La sección de Ayuda centraliza los recursos de soporte, como información de contacto y enlaces a documentos legales. El cierre de sesión se realiza de forma segura a través de un modal de confirmación para evitar salidas accidentales.
+
+![Admin Centro de Ayuda](assets/ux-ui/mockups/mobile/admin/admin_help_center.png)
+![Admin Modal Cierre de Sesión](assets/ux-ui/mockups/mobile/admin/admin_logout_modal.png)
+
+**Mobile Applications Mock-ups: Profesor**
+
+A continuación, se presentan los mockups de la versión móvil destinados al perfil de docente. Estas pantallas muestran el flujo principal de interacción dentro de la aplicación, incluyendo el inicio de sesión, la gestión de asistencia, la visualización de horarios, la reprogramación de clases, el acceso al perfil del usuario, y la configuración de ajustes.
+
+Los mockups permiten visualizar de manera clara la estructura, distribución y funcionalidad de cada sección antes de la etapa de diseño visual definitivo.
+
+**Acceso y Recuperación de Contraseña**
+
+Este grupo incluye las pantallas necesarias para que el profesor ingrese a la aplicación o recupere su cuenta si ha olvidado la contraseña. El flujo está diseñado en pasos discretos para minimizar la frustración del usuario.
+
+![Loader](./assets/ux-ui/mockups/mobile/teacher/Loader.png)
+![Login](./assets/ux-ui/mockups/mobile/teacher/Login.png)
+![ForgotPassword-CreateNew](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-CreateNew.png)
+![ForgotPassword-ResetPass](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-ResetPass.png)
+![ForgotPassword-Verification](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-Verification.png)
+
+**Principal y Gestión de Cuenta**
+
+Este flujo representa el centro de navegación de la aplicación. La Home actúa como dashboard con acceso rápido a las funciones clave, mientras que Profile y Settings permiten la gestión de la identidad y las preferencias del profesor.
+
+![Home](./assets/ux-ui/mockups/mobile/teacher/Home.png)
+![Profile](./assets/ux-ui/mockups/mobile/teacher/Profile.png)
+![Settings](./assets/ux-ui/mockups/mobile/teacher/Settings.png)
+
+**Asistencia**
+
+El objetivo de este flujo es la toma de asistencia rápida y la generación estructurada de informes. El proceso de reporte está dividido en pantallas de elección para asegurar la precisión de los filtros.
+
+![HomeAttendanceModal](./assets/ux-ui/mockups/mobile/teacher/HomeAttendanceModal.png)
+![TakeAttendance](./assets/ux-ui/mockups/mobile/teacher/TakeAttendance.png)
+![TakeAttendanceWithoutMarks](./assets/ux-ui/mockups/mobile/teacher/TakeAttendance-Without-Marks.png)
+![AttendanceReport-ChooseDate](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport-Choose-Date.png)
+![AttendanceReport-Modal](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport-Modal.png)
+![AttendanceReport](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport.png)
+
+**Horario y Reprogramación**
+
+Este grupo gestiona la visualización del horario del profesor y ofrece una funcionalidad guiada de reprogramación de clases a través de múltiples pasos de confirmación.
+
+![TeachingSchedule](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule.png)
+![TeachingSchedule-1](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule-1.png)
+![TeachingSchedule-2](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule-2.png)
+![TeachingReschedule](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule.png)
+![TeachingReschedule-ModalSave](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Modal-Save.png)
+![TeachingReschedule-ChooseDate](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-Date.png)
+![TeachingReschedule-ChooseStartTime](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-Start-Time.png)
+![TeachingReschedule-ChooseEndTime](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-End-Time.png)
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
+**SEGMENTO: ADMIN**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![UserFlow-1](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-1.png)
+
+***User Goal***  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![UserFlow-2](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![UserFlow-3](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-3.png)
+
+**User Goal**    
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![UserFlow-4](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-4.png)
+
+**User Goal**     
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![UserFlow-5](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-5.png)
+
+**SEGMENTO: TEACHER**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Userflow-Teacher-1](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ReportAttendance.png)
+
+**User Goal**
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Userflow-Teacher-2](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-RescheduleClass.png)
+
+**User Goal**
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Userflow-Teacher-3](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-TakeAttendance.png)
+
+**User Goal**
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Userflow-Teacher-4](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ViewSchedule.png)
+
 ## 4.5. Mobile Applications Prototyping
+
+En esta sección se presentan los prototipos interactivos de las aplicaciones móviles de la plataforma Demy. Estos prototipos permiten simular la experiencia de usuario y validar el diseño antes de la implementación, facilitando la identificación de posibles mejoras y ajustes necesarios.
 
 ### 4.5.1. Android Mobile Application Prototyping
 
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de administradores.
+
+**Android Native-Mobile App: Administrador**
+
+![Admin Prototipo](./assets/ux-ui/prototypes/mobile/admin/admin-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Administrador: https://drive.google.com/file/d/12FZ2IRIIhuE7nQrtOv7mObbzK8FRCHPn/view?usp=sharing
+
+
+Enlace para acceder al prototipo interactivo del Administrador: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=0%3A1&node-id=342-3088&p=f&viewport=201%2C127%2C0.09&t=SfUpqFSc50n0lcZK-1&scaling=contain&content-scaling=fixed
+
 ### 4.5.2. iOS Mobile Applications Prototyping
+
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de profesores.
+
+**iOS Mobile App: Teacher**
+
+![Teacher Prototipo](./assets/ux-ui/prototypes/mobile/teacher/teacher-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Teacher: https://drive.google.com/file/d/1eFEvG6YEHWzEVwH1S6Pysucl1H7YtPuP/view?usp=sharing
+
+Enlace para acceder al prototipo interactivo del Teacher: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=22%3A2&node-id=500-11832&viewport=-1680%2C423%2C0.16&t=Acjxu5be6q8vxEMG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=500%3A11832
 
 ## 4.6. Web Applications UX/UI Design
 
