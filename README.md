@@ -1773,9 +1773,61 @@ A continuación, se presentan el enlace al video explicativo:
 
 ### 4.8.1. Software Architecture Context Diagram
 
+El Context Diagram muestra como el sistema central que interactúa con 2 usuarios principales: el coordinador, que gestiona matrículas, horarios y pagos y el docente, que consulta horarios y registra asistencia. Además, el sistema se integra con Stripe y PagoEfectivo para la gestión de pagos y con Gmail para el envío de notificaciones por correo electrónico.
+
+![softwareContextDiagram](assets/diagramas_c4/SoftwareArchitectureContextDiagram.png)
+
 ### 4.8.2. Software Architecture Container Diagrams
 
+El Container Diagram descompone la solución en sus principales contenedores: una Flutter App para profesores, una Android App para administrador, todas conectadas a un API Backend desarrollado en Spring Boot que concentra la lógica de negocio y accede a una base de datos MySQL para la información académica. El backend también se integra con Stripe y PagoEfectivo para pagos y con Gmail para notificaciones automáticas.
+
+![softwareComponentsDiagram](assets/diagramas_c4/SoftwareArchitectureContainerDiagrams.png)
+
+<hr class="page-break">
+
 ### 4.8.3. Software Architecture Components Diagrams
+
+#### Attendance
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsAttendance.png)
+
+<hr class="page-break">
+
+#### Enrollment
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsEnrollment.png)
+
+<hr class="page-break">
+
+#### IAM
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsIAM.png)
+
+<hr class="page-break">
+
+#### Billing
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsBilling.png)
+
+<hr class="page-break">
+
+#### Scheduling
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsScheduling.png)
+
+<hr class="page-break">
+
+#### Accounting & Finance
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsAcounting.png)
+
+<hr class="page-break">
+
+#### Institution
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsInstitucion.png)
+
+<hr class="page-break">
 
 ## 4.9. Software Object-Oriented Design
 
