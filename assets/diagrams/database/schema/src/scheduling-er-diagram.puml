@@ -1,0 +1,48 @@
+@startuml Demy: Scheduling ER Diagram
+title Demy: Scheduling ER Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "schedules" as schedules {
+  *id : BIGINT <<PK>>
+  --
+  *name : VARCHAR(100)
+  *academy_id : BIGINT
+}
+
+entity "courses" as courses {
+  *id : BIGINT <<PK>>
+  --
+  *name : VARCHAR(100)
+  *course_code : VARCHAR(50) <<UK>>
+  *description : VARCHAR(255)
+  *academy_id : BIGINT
+}
+
+entity "classrooms" as classrooms {
+  *id : BIGINT <<PK>>
+  --
+  *classroom_code : VARCHAR(50) <<UK>>
+  *capacity : INT
+  *campus : VARCHAR(100)
+  *academy_id : BIGINT
+}
+
+entity "class_sessions" as class_sessions {
+  *id : BIGINT <<PK>>
+  --
+  *day_of_week : ENUM
+  *start_time : TIME
+  *end_time : TIME
+  *teacher_id : BIGINT
+  *classroom_id : BIGINT <<FK>>
+  *course_id : BIGINT <<FK>>
+  *schedule_id : BIGINT <<FK>>
+}
+
+schedules  ||--o{ class_sessions
+courses    ||--o{ class_sessions
+classrooms ||--o{ class_sessions
+
+@enduml

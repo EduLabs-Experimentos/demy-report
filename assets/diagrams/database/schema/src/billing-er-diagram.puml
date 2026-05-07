@@ -1,0 +1,37 @@
+@startuml Demy: Billing ER Diagram
+title Demy: Billing ER Diagram
+
+' NOTE: Per-Student `billing_accounts` replaced by per-Academy
+' `subscription_accounts`. Invoice types: SUBSCRIPTION,
+' SETUP_FEE, OTHER.
+
+hide circle
+skinparam linetype ortho
+
+entity "subscription_accounts" as subscription_accounts {
+  *id : BIGINT <<PK>>
+  --
+  *academy_id : BIGINT <<UK>>
+  *plan : ENUM('BASIC','STANDARD','PREMIUM','ENTERPRISE')
+  *billing_cycle : ENUM('MONTHLY','QUARTERLY','YEARLY')
+  *account_status : ENUM('ACTIVE','OVERDUE','SUSPENDED','CANCELLED')
+  *started_at : DATE
+  next_billing_at : DATE
+}
+
+entity "invoices" as invoices {
+  *id : BIGINT <<PK>>
+  --
+  *invoice_type : ENUM('SUBSCRIPTION','SETUP_FEE','OTHER')
+  *amount : DECIMAL(12,2)
+  *currency : VARCHAR(3)
+  *description : VARCHAR(255)
+  *issue_date : DATE
+  *due_date : DATE
+  *invoice_status : ENUM('PENDING','PAID','OVERDUE','CANCELLED')
+  *subscription_account_id : BIGINT <<FK>>
+}
+
+subscription_accounts ||--o{ invoices
+
+@enduml

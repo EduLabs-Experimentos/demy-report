@@ -1,0 +1,33 @@
+@startuml Demy: Accounting & Finance ER Diagram
+title Demy: Accounting & Finance ER Diagram
+
+' NOTE: Categories ENROLLMENT and MONTHLY_FEE removed.
+' New categories: SUBSCRIPTION, SETUP_FEE, EQUIPMENT.
+
+hide circle
+skinparam linetype ortho
+
+entity "transactions" as transactions {
+  *id : BIGINT <<PK>>
+  --
+  *transaction_type : ENUM('INCOME','EXPENSE')
+  *transaction_category : ENUM('SUBSCRIPTION','SETUP_FEE','SALARY','SUPPLIES','MAINTENANCE','EQUIPMENT','OTHER')
+  *transaction_method : ENUM('CASH','CREDIT_CARD','DEBIT_CARD','BANK_TRANSFER','WALLET','OTHER')
+  *amount : DECIMAL(12,2)
+  *currency : VARCHAR(3)
+  *description : VARCHAR(255)
+  *transaction_date : DATE
+  *academy_id : BIGINT
+}
+
+entity "reports" as reports {
+  *id : BIGINT <<PK>>
+  --
+  *report_type : ENUM('INCOME','EXPENSE','BALANCE_SHEET','CASH_FLOW','OTHER')
+  *start_date : DATE
+  *end_date : DATE
+  *generated_date : DATE
+  *academy_id : BIGINT
+}
+
+@enduml

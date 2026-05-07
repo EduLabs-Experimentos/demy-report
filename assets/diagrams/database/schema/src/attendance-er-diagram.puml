@@ -1,0 +1,30 @@
+@startuml Demy: Attendance ER Diagram
+title Demy: Attendance ER Diagram
+
+' NOTE: Originally tracked Student attendance.
+' Adapted to track Teacher attendance — student_id replaced
+' by teacher_id; LATE status added.
+
+hide circle
+skinparam linetype ortho
+
+entity "class_attendances" as class_attendances {
+  *id : BIGINT <<PK>>
+  --
+  *class_session_id : BIGINT
+  *date : DATE
+  *academy_id : BIGINT
+}
+
+entity "attendance_records" as attendance_records {
+  *id : BIGINT <<PK>>
+  --
+  *teacher_id : BIGINT
+  *status : ENUM('PRESENT','ABSENT','EXCUSED','LATE')
+  check_in_at : DATETIME
+  *class_attendances_id : BIGINT <<FK>>
+}
+
+class_attendances ||--o{ attendance_records
+
+@enduml

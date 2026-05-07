@@ -1,0 +1,48 @@
+@startuml Demy: Institution ER Diagram
+title Demy: Institution ER Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "academies" as academies {
+  *id : BIGINT <<PK>>
+  --
+  *academy_name : VARCHAR(80)
+  *academy_description : VARCHAR(255)
+  *street : VARCHAR(100)
+  *district : VARCHAR(50)
+  *province : VARCHAR(50)
+  *department : VARCHAR(50)
+  *email : VARCHAR(255) <<UK>>
+  *country_code : VARCHAR(5)
+  *phone : VARCHAR(15)
+  *ruc : CHAR(11) <<UK>>
+  administrator_id : BIGINT <<FK>>
+}
+
+entity "administrators" as administrators {
+  *id : BIGINT <<PK>>
+  --
+  *first_name : VARCHAR(50)
+  *last_name : VARCHAR(50)
+  *country_code : VARCHAR(5)
+  *phone : VARCHAR(15)
+  *dni : CHAR(8) <<UK>>
+  *academy_id : BIGINT <<FK>>
+  *user_id : BIGINT <<UK>>
+}
+
+entity "teachers" as teachers {
+  *id : BIGINT <<PK>>
+  --
+  *first_name : VARCHAR(50)
+  *last_name : VARCHAR(50)
+  *academy_id : BIGINT <<FK>>
+  *user_id : BIGINT <<UK>>
+}
+
+academies ||--o{ administrators
+academies ||--o{ teachers
+administrators ||--o| academies : "manages"
+
+@enduml
