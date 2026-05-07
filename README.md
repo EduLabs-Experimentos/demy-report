@@ -542,13 +542,13 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
     </tr>
     <tr>
       <td colspan="2" rowspan="2" valign="top" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Startup y Competidores</b></td>
-      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Nistra</b></td>
+      <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>EduLabs</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Academygest</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Playoff</b></td>
       <td valign="top" align="center" style="padding: 5px; width: 20%; background-color: #f9f9f9;"><b>Quickschools</b></td>
     </tr>
     <tr>
-      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/nistra-logo.png" alt="Nistra Logo" height="60" /></td>
+      <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/edulabs-logo.jpeg" alt="EduLabs Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-academygest.jpg" alt="Academygest Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-playoff.jpg" alt="Playoff Logo" height="60" /></td>
       <td valign="top" align="center" style="padding: 5px;"><img src="./assets/logos/competidor-quickschools.png" alt="Quickschools Logo" height="60" /></td>
@@ -593,10 +593,10 @@ El personal administrativo de academias suele enfrentarse a una carga de trabajo
     </tr>
     <tr>
       <td valign="top" style="padding: 5px;">Precios & Costos</td>
-      <td valign="top" style="padding: 5px;">Plan Básico: $50/mes (1 sede).<br> Plan Intermedio: $100/mes (2 sedes).<br> Plan Premium: $200/mes (varias sedes).</td>
+      <td valign="top" style="padding: 5px;">Plan Básico: \$50/mes (1 sede).<br>Plan Intermedio: \$100/mes (2 sedes).<br>Plan Premium: \$200/mes (varias sedes)</td>
       <td valign="top" style="padding: 5px;">Plan único: 25€/mes.<br> Incluye:<br> - Sin instalaciones.<br> - Servicio 24/7.<br> - Alumnos y cursos ilimitados.<br> - Gestión de asistencia.<br> - Soporte técnico.</td>
       <td valign="top" style="padding: 5px;">Plan Base: 34,95€.<br> Plan Pro: 49,95€.<br> Plan Top: 69,95€.<br> Plan Premium: personalizado.<br> Incluye prueba gratuita de 15 días.</td>
-      <td valign="top" style="padding: 5px;">Gaia Plan: $0.99/estudiante/mes.<br> Apollo Plan: $1.49/estudiante/mes.<br> Athena Plan: $2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
+      <td valign="top" style="padding: 5px;">Gaia Plan: \$0.99/estudiante/mes.<br> Apollo Plan: \$1.49/estudiante/mes.<br> Athena Plan: \$2.99/estudiante/mes.<br> Todos incluyen prueba gratuita de 30 días.<br> Plan Enterprise disponible bajo contacto directo.</td>
     </tr>
     <tr>
       <td valign="top" style="padding: 5px;">Canales de distribución (Web y/o Móvil) </td>
@@ -857,7 +857,17 @@ Se elaboraron los Empathy Mapping para los dos User Personas: el Administrador d
 
 ### 2.3.5. As-is Scenario Mapping
 
-...
+Para elaborar el As-Is Scenario Mapping, como grupo es importante empatizar con nuestros futuros usuarios, buscando describir sus experiencias de forma que reflejaran sus pain points identificados en la seccion anterior.<br>
+
+#### As-Is Scenario Mapping Admin
+
+![As-Is Scenario – Admin](./assets/images/photos/as-is-scenario-mapping-coordinator.png)
+
+#### As-Is Scenario Mapping Teacher
+
+![As-Is Scenario – Teacher](./assets/images/photos/as-is-scenario-mapping-teacher.png)
+
+<hr class="page-break">
 
 ## 2.4. Ubiquitous Language
 
@@ -888,11 +898,299 @@ Un glosario de términos clave utilizados en el dominio de gestión académica d
 
 ## 3.1. To-Be Scenario Mapping
 
+Para el desarrollo del To-be Scenario Mapping, el equipo planteó cómo mejorarían las actividades de los administradores y docentes tras implementar Demy. Este flujo proyectado soluciona los problemas detectados en el As-is Scenario, con procesos más ágiles, automatizados y centrados en una mejor gestión y comunicación.
+
+#### To-Be Scenario Mapping Admin
+
+![To-be Scenario – Admin](./assets/images/photos/to-be-scenario-mapping-coordinator.jpg)
+
+
+#### To-Be Scenario Mapping Teacher
+
+![To-Be Scenario – Teacher](./assets/images/photos/to-be-scenario-mapping-teacher.jpg)
+
+
+<hr class="page-break">
+
 ## 3.2. User Stories
+
+En esta sección se presentan las historias de usuario que describen las funcionalidades y características que el sistema debe ofrecer para satisfacer las necesidades de los usuarios y cumplir con los objetivos del negocio. Cada historia de usuario sigue el formato estándar "Como [tipo de usuario], quiero [acción] para [beneficio/valor]", lo que facilita la comprensión de los requisitos desde la perspectiva del usuario final.
+
+Se incluyen diferentes tipos de historias, tales como:
+- **Epics:** grandes funcionalidades que pueden descomponerse en varias historias más pequeñas.
+- **User Stories:** funcionalidades específicas que aportan valor directo al usuario.
+- **Static Web Stories:** historias relacionadas con la presentación y navegación en la interfaz web para los diferentes segmentos identificados.
+- **Technical Stories:** historias que abordan aspectos técnicos necesarios para el correcto funcionamiento del sistema, como la integración con servicios externos, seguridad, rendimiento, entre otros.
+- **Spike Stories:** historias que representan tareas de investigación o exploración técnica para resolver incertidumbres o evaluar alternativas antes de la implementación.
+
+
+| Story ID | User | Priority | Epic | Title | Description | Acceptance Criteria |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **EP001** | Administrador | Alta | — | Manejo de la Institución y Miembros | Como administrador, quiero gestionar la información de la academia y sus miembros docentes para mantener datos actualizados y facilitar la administración. | — |
+| **US001** | Administrador | Alta | EP001 | Registro de Academia | Como administrador, quiero registrar una nueva academia para poder gestionar sus miembros. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador cuenta con los permisos necesarios de registro<br>**Cuando** envía los datos correspondientes de una nueva academia en formato válido<br>**Entonces** el sistema registra la institución exitosamente en la base de datos y emite un mensaje de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador cuenta con los permisos necesarios de registro<br>**Cuando** envía información incompleta o con datos inválidos sobre la nueva academia<br>**Entonces** el sistema rechaza el proceso e indica los errores específicos encontrados. |
+| **US002** | Administrador | Alta | EP001 | Actualización de Academia | Como administrador, quiero actualizar la información de una academia existente para mantener los datos al día. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona una institución previamente registrada<br>**Cuando** modifica y envía los datos con nueva información válida<br>**Entonces** el sistema procesa la modificación y actualiza el registro institucional.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona una institución previamente registrada<br>**Cuando** envía los datos omitiendo información obligatoria<br>**Entonces** el sistema deniega la actualización y muestra un indicador de campos faltantes. |
+| **US003** | Administrador | Alta | EP001 | Eliminación de Academia | Como administrador, quiero eliminar una academia existente para deshacerme de una institución que ya no gestiono. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador solicita la eliminación de una academia existente<br>**Cuando** confirma definitivamente la orden de eliminación del registro<br>**Entonces** el sistema borra la institución del ecosistema y de los registros principales.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador solicita la eliminación de una academia existente<br>**Cuando** declina u omite la orden definitiva de eliminación<br>**Entonces** el sistema suspende la acción y conserva la institución sin alteraciones. |
+| **US004** | Administrador | Alta | EP001 | Registro de Profesor | Como administrador, quiero registrar un nuevo profesor para poder asignarlo a clases y gestionar su información. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador solicita el registro de un nuevo docente<br>**Cuando** envía las credenciales y datos válidos exigidos para el profesor<br>**Entonces** el sistema añade al profesor a la academia y confirma la creación del perfil.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador solicita el registro de un nuevo docente<br>**Cuando** envía los datos con información incorrecta o ya existente<br>**Entonces** el sistema bloquea el registro y notifica la incongruencia en los datos aportados. |
+| **US005** | Administrador | Alta | EP001 | Actualización de Profesor | Como administrador, quiero actualizar la información de un profesor existente para mantener los datos actualizados. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona el perfil de un docente existente<br>**Cuando** modifica y envía los datos requeridos con información válida<br>**Entonces** el sistema procesa los cambios y refleja la información actualizada del profesor.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona el perfil de un docente existente<br>**Cuando** envía los datos con información en formato inválido<br>**Entonces** el sistema rechaza los cambios e indica las fallas específicas en la información enviada. |
+| **US006** | Administrador | Alta | EP001 | Eliminación de Profesor | Como administrador, quiero eliminar un profesor existente para deshacerme de un docente que ya no forma parte de la academia. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con el perfil de un profesor registrado<br>**Cuando** confirma la orden explícita de eliminación de dicho usuario<br>**Entonces** el sistema retira al docente de la academia de manera exitosa.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con el perfil de un profesor registrado<br>**Cuando** declina la orden explícita de eliminación antes de que sea procesada<br>**Entonces** el sistema conserva la cuenta del docente activa y sin modificaciones. |
+| **EP002** | Administrador | Alta | — | Gestión de Matrículas | Como administrador, quiero gestionar las inscripciones en la plataforma para asegurar que los usuarios estén correctamente registrados en los cursos. | — |
+| **US007** | Administrador | Alta | EP002 | Registro de Inscripción | Como administrador, quiero registrar una inscripción en un periodo académico para habilitar el acceso a las clases correspondientes. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos válidos para una nueva inscripción en un periodo activo<br>**Entonces** el sistema registra la inscripción correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos de inscripción con información incompleta o referenciando cursos no disponibles<br>**Entonces** el sistema rechaza el registro y notifica los campos incorrectos. |
+| **US008** | Administrador | Alta | EP002 | Actualización de Inscripción | Como administrador, quiero actualizar la información de una inscripción existente para corregir datos o cambiar el estado del registro. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un registro de inscripción existente<br>**Cuando** modifica y envía los datos con información válida<br>**Entonces** el sistema actualiza el registro correctamente y emite una confirmación.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un registro de inscripción existente<br>**Cuando** envía modificaciones con información inválida o periodos inexistentes<br>**Entonces** el sistema rechaza los cambios e indica las fallas específicas encontradas. |
+| **US009** | Administrador | Alta | EP002 | Cancelación de Inscripción | Como administrador, quiero cancelar una inscripción activa para gestionar bajas o cambios en el registro del ciclo académico. | **Escenario 1: Cancelación exitosa**<br>**Dado** que un administrador interactúa con un registro de inscripción activo<br>**Cuando** confirma la orden explícita de cancelación<br>**Entonces** el sistema anula la inscripción y actualiza su estado en la base de datos de manera exitosa.<br><br>**Escenario 2: Declinación de cancelación**<br>**Dado** que un administrador interactúa con un registro de inscripción activo<br>**Cuando** declina u omite la orden de cancelación antes de su procesamiento<br>**Entonces** el sistema conserva la inscripción activa y sin aplicar modificaciones. |
+| **EP003** | Profesor | Alta | — | Registro de Asistencia | Como profesor, quiero registrar la asistencia en cada clase para llevar un control preciso y facilitar la gestión académica. | — |
+| **US010** | Profesor | Alta | EP003 | Registro de Asistencia | Como profesor, quiero registrar la asistencia en mis clases para llevar un control preciso y facilitar la gestión académica. | **Escenario 1: Registro exitoso**<br>**Dado** que un profesor cuenta con una sesión de clase asignada<br>**Cuando** marca el registro de participación y envía la información validada<br>**Entonces** el sistema guarda la asistencia correctamente y emite un mensaje de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un profesor cuenta con una sesión de clase asignada<br>**Cuando** intenta enviar el registro vacío sin indicar la participación en la sesión<br>**Entonces** el sistema rechaza la acción y solicita que se registre al menos un marcador de presencia. |
+| **US011** | Profesor | Alta | EP003 | Actualización de Asistencia | Como profesor, quiero actualizar los registros de asistencia para corregir errores o reflejar cambios en la participación real. | **Escenario 1: Actualización exitosa**<br>**Dado** que un profesor revisa un registro de asistencia previo<br>**Cuando** modifica y envía las participaciones actualizadas<br>**Entonces** el sistema guarda los cambios y confirma la actualización.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un profesor revisa un registro de asistencia previo<br>**Cuando** intenta enviar modificaciones sin realizar alteraciones a la información original<br>**Entonces** el sistema deniega la acción indicando que no hay cambios nuevos para procesar. |
+| **US012** | Profesor | Media | EP003 | Visualización de Reportes de Asistencia | Como profesor, quiero visualizar reportes de asistencia para analizar patrones y tomar decisiones informadas sobre la gestión académica. | **Escenario 1: Visualización exitosa**<br>**Dado** que un profesor requiere un informe de participaciones<br>**Cuando** solicita el reporte enviando los parámetros de un periodo válido<br>**Entonces** el sistema procesa los datos y retorna el informe de asistencia correspondiente.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un profesor requiere un informe de participaciones<br>**Cuando** solicita el reporte de un periodo que aún no cuenta con datos registrados<br>**Entonces** el sistema detiene la generación y notifica que no existe información disponible para ese rango. |
+| **EP004** | Administrador | Media | — | Gestión de Horarios | Como administrador, quiero gestionar los horarios de clases y asignar salones para optimizar el uso de los recursos y facilitar la planificación académica. | — |
+| **US013** | Administrador | Media | EP004 | Creación de Periodo Académico | Como administrador, quiero crear un nuevo periodo académico para organizar las clases y registros correspondientes. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos válidos para un nuevo periodo académico<br>**Entonces** el sistema registra el periodo correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en la creación**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía datos con fechas inconsistentes o incompletas<br>**Entonces** el sistema rechaza la creación e indica los campos incorrectos. |
+| **US014** | Administrador | Media | EP004 | Actualización de Periodo Académico | Como administrador, quiero actualizar la información de un periodo académico existente para mantener los datos vigentes. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un periodo registrado<br>**Cuando** envía las modificaciones con información válida<br>**Entonces** el sistema actualiza el registro del periodo y emite una confirmación.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un periodo registrado<br>**Cuando** envía modificaciones con información inválida o fechas que se solapan<br>**Entonces** el sistema rechaza los cambios e informa los errores. |
+| **US015** | Administrador | Media | EP004 | Eliminación de Periodo Académico | Como administrador, quiero eliminar un periodo académico existente para retirar aquellos que ya no son relevantes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador solicita eliminar un periodo académico<br>**Cuando** confirma explícitamente la acción de eliminación<br>**Entonces** el sistema elimina el periodo y emite un mensaje de éxito.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador solicita eliminar un periodo académico<br>**Cuando** declina la acción antes de que sea procesada<br>**Entonces** el sistema conserva el periodo sin aplicar modificaciones. |
+| **US016** | Administrador | Media | EP004 | Creación de Salones de Clase | Como administrador, quiero crear nuevos salones de clase para organizar los espacios físicos disponibles en la institución. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador cuenta con los permisos requeridos para gestionar espacios<br>**Cuando** envía los datos válidos de un nuevo salón de clase<br>**Entonces** el sistema registra el salón exitosamente en la base de datos.<br><br>**Escenario 2: Error en la creación**<br>**Dado** que un administrador cuenta con los permisos requeridos para gestionar espacios<br>**Cuando** envía los datos de un salón con información inválida o capacidad negativa<br>**Entonces** el sistema rechaza el registro e informa los campos incorrectos. |
+| **US017** | Administrador | Media | EP004 | Actualización de Salones de Clase | Como administrador, quiero actualizar la información de un salón de clase existente para mantener los datos de infraestructura al día. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un salón de clase registrado<br>**Cuando** modifica y envía los datos con información válida<br>**Entonces** el sistema procesa la modificación y actualiza el registro correctamente.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un salón de clase registrado<br>**Cuando** envía modificaciones omitiendo campos obligatorios<br>**Entonces** el sistema rechaza los cambios e indica la información faltante. |
+| **US018** | Administrador | Media | EP004 | Eliminación de Salones de Clase | Como administrador, quiero eliminar un salón de clase existente para retirar espacios físicos que ya no están operativos en la institución. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador requiere eliminar un salón de clase<br>**Cuando** confirma definitivamente la orden de eliminación<br>**Entonces** el sistema borra el salón de los registros permanentemente.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador requiere eliminar un salón de clase<br>**Cuando** declina la orden de eliminación antes de ser procesada<br>**Entonces** el sistema conserva el salón sin realizar modificaciones. |
+| **US019** | Administrador | Media | EP004 | Creación de Horarios | Como administrador, quiero crear horarios de clase para organizar las sesiones académicas y asignar a los docentes correspondientes. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador organiza la programación académica<br>**Cuando** envía los datos válidos para un nuevo horario sin solapamientos<br>**Entonces** el sistema genera el horario exitosamente en la base de datos.<br><br>**Escenario 2: Error por conflicto de horarios**<br>**Dado** que un administrador organiza la programación académica<br>**Cuando** envía los datos de un horario que presenta cruces con otros registros de profesores o salones<br>**Entonces** el sistema rechaza la creación y notifica el conflicto específico detectado. |
+| **US020** | Administrador | Media | EP004 | Actualización de Horarios | Como administrador, quiero actualizar un horario existente para ajustarlo ante imprevistos o cambios de planificación institucional. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador accede a un horario previamente establecido<br>**Cuando** envía nuevos datos válidos que no generan conflicto con otras sesiones<br>**Entonces** el sistema procesa los cambios y actualiza la programación del horario.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador accede a un horario previamente establecido<br>**Cuando** envía nuevos datos que generan un cruce de horarios<br>**Entonces** el sistema bloquea la actualización y muestra un mensaje advirtiendo el conflicto. |
+| **US021** | Administrador | Media | EP004 | Eliminación de Horarios | Como administrador, quiero eliminar un horario existente para retirar una programación que ya no se ejecutará. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador gestiona los horarios activos<br>**Cuando** emite la orden definitiva de eliminar un horario específico<br>**Entonces** el sistema retira la programación de la base de datos.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador gestiona los horarios activos<br>**Cuando** declina o cancela la eliminación del horario<br>**Entonces** el sistema mantiene el horario intacto sin aplicar modificaciones. |
+| **EP005** | Administrador | Media | — | Gestión de Boletas | Como administrador, quiero gestionar la emisión y seguimiento de las boletas de pago para asegurar que los usuarios cumplan con sus obligaciones financieras. | — |
+| **US022** | Administrador | Media | EP005 | Generación de Boletas de Pago | Como administrador, quiero generar boletas de pago para las inscripciones registradas para facilitar el proceso de cobro y seguimiento financiero. | **Escenario 1: Generación exitosa**<br>**Dado** que un administrador gestiona la facturación de las inscripciones<br>**Cuando** envía los parámetros requeridos para emitir un comprobante<br>**Entonces** el sistema genera la boleta de pago correctamente y confirma la operación.<br><br>**Escenario 2: Error en la generación**<br>**Dado** que un administrador gestiona la facturación de las inscripciones<br>**Cuando** solicita emitir un comprobante para una cuenta inactiva o con datos faltantes<br>**Entonces** el sistema rechaza la solicitud e indica el motivo del fallo. |
+| **US023** | Administrador | Media | EP005 | Actualización de Boletas de Pago | Como administrador, quiero actualizar la información de una boleta de pago existente para corregir errores o reflejar cambios en los montos. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador accede a un registro de cobro existente<br>**Cuando** envía modificaciones válidas sobre los montos o su estado<br>**Entonces** el sistema procesa y actualiza la boleta correctamente.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador accede a un registro de cobro existente<br>**Cuando** envía datos con valores financieros inválidos o montos negativos<br>**Entonces** el sistema bloquea el cambio y notifica la incongruencia en los valores. |
+| **US024** | Administrador | Media | EP005 | Eliminación de Boletas de Pago | Como administrador, quiero eliminar una boleta de pago existente para deshacerme de un registro incorrecto o duplicado. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con una boleta previamente generada<br>**Cuando** emite la orden definitiva para su eliminación<br>**Entonces** el sistema borra el registro financiero exitosamente de la base de datos.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con una boleta previamente generada<br>**Cuando** declina u omite la orden de borrado<br>**Entonces** el sistema conserva el comprobante sin aplicar modificaciones. |
+| **EP006** | Administrador | Media | — | Gestión Financiera y Contable | Como administrador, quiero gestionar los ingresos y egresos de la academia para mantener un control financiero adecuado y generar reportes contables. | — |
+| **US025** | Administrador | Media | EP006 | Registro de Ingreso/Egreso | Como administrador, quiero registrar ingresos y egresos financieros para mantener un control adecuado de la economía de la institución. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador gestiona las finanzas operativas<br>**Cuando** envía los datos válidos de una nueva transacción contable<br>**Entonces** el sistema registra el movimiento y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador gestiona las finanzas operativas<br>**Cuando** envía una transacción con valores negativos o parámetros incompletos<br>**Entonces** el sistema rechaza el registro y detalla los campos erróneos. |
+| **US026** | Administrador | Media | EP006 | Actualización de Ingreso/Egreso | Como administrador, quiero actualizar la información de un ingreso o egreso existente para corregir información contable. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador interactúa con una transacción registrada<br>**Cuando** envía modificaciones con montos y justificaciones válidas<br>**Entonces** el sistema actualiza el registro contable de manera exitosa.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador interactúa con una transacción registrada<br>**Cuando** omite información obligatoria o provee datos inconsistentes<br>**Entonces** el sistema deniega el cambio e indica la información faltante. |
+| **US027** | Administrador | Media | EP006 | Eliminación de Ingreso/Egreso | Como administrador, quiero eliminar un registro de ingreso o egreso existente para retirar información duplicada o incorrecta. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con un movimiento contable<br>**Cuando** confirma la instrucción irrevocable de eliminación<br>**Entonces** el sistema borra permanentemente el registro financiero.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con un movimiento contable<br>**Cuando** cancela o declina la orden antes de su confirmación<br>**Entonces** el sistema mantiene la transacción sin alteraciones. |
+| **US028** | Administrador | Media | EP006 | Visualización de Resumen de Finanzas | Como administrador, quiero visualizar un resumen de finanzas para evaluar el estado económico de la institución de forma rápida. | **Escenario 1: Visualización exitosa**<br>**Dado** que un administrador solicita la vista general de la economía institucional<br>**Cuando** el sistema procesa una consulta en un periodo con transacciones activas<br>**Entonces** retorna los indicadores financieros y métricas correspondientes.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un administrador solicita la vista general de la economía institucional<br>**Cuando** ocurre un problema en la disponibilidad o consulta de los datos<br>**Entonces** el sistema notifica que los registros no pueden ser cargados temporalmente. |
+| **US029** | Administrador | Media | EP006 | Generación de Reportes Financieros | Como administrador, quiero generar reportes financieros detallados para analizar la situación económica y tomar decisiones estratégicas. | **Escenario 1: Generación exitosa**<br>**Dado** que un administrador solicita un informe contable de operaciones<br>**Cuando** envía parámetros con un periodo de fechas válido<br>**Entonces** el sistema genera y retorna el reporte con los datos financieros estructurados.<br><br>**Escenario 2: Error por periodo sin registros**<br>**Dado** que un administrador solicita un informe contable de operaciones<br>**Cuando** especifica un rango de fechas que carece por completo de transacciones<br>**Entonces** el sistema detiene la operación e indica que no hay información disponible para exportar. |
+| **EP007** | Profesor | Media | — | Control de Horarios | Como profesor, quiero visualizar y gestionar mi horario de clases para organizar mejor mi tiempo y prepararme adecuadamente para cada sesión. | — |
+| **US030** | Profesor | Media | EP007 | Visualización de Horario de Clases | Como profesor, quiero visualizar mi horario asignado para organizar mi tiempo y preparar cada sesión. | **Escenario 1: Visualización exitosa**<br>**Dado** que un profesor accede a su programación académica<br>**Cuando** el sistema procesa la consulta para un periodo activo<br>**Entonces** retorna el horario con las clases asignadas y los detalles correspondientes.<br><br>**Escenario 2: Error en la visualización**<br>**Dado** que un profesor accede a su programación académica<br>**Cuando** ocurre un problema en la disponibilidad de los datos<br>**Entonces** el sistema emite una notificación de indisponibilidad temporal. |
+| **US031** | Profesor | Media | EP007 | Reprogramación de Clase | Como profesor, quiero reprogramar una clase para ajustar la programación ante imprevistos institucionales. | **Escenario 1: Reprogramación exitosa**<br>**Dado** que un profesor requiere ajustar la fecha de una sesión<br>**Cuando** envía los nuevos parámetros sin generar un conflicto de horarios<br>**Entonces** el sistema procesa el cambio y actualiza el cronograma exitosamente.<br><br>**Escenario 2: Error en la reprogramación**<br>**Dado** que un profesor requiere ajustar la fecha de una sesión<br>**Cuando** envía información que provoca cruces con otros registros<br>**Entonces** el sistema deniega el ajuste e informa sobre el conflicto detectado. |
+| **EP008** | Usuario | Alta | — | Gestión de Cuentas y Autenticación | Como usuario, quiero gestionar la cuenta y autenticación para acceder de manera segura a la plataforma y proteger la información personal. | — |
+| **US032** | Usuario | Alta | EP008 | Registro de Cuenta | Como usuario, quiero registrarme en la plataforma para acceder a los servicios ofrecidos. | **Escenario 1: Registro exitoso**<br>**Dado** que un usuario solicita registro en el ecosistema<br>**Cuando** envía los datos válidos obligatorios<br>**Entonces** el sistema crea la cuenta correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un usuario solicita registro en el ecosistema<br>**Cuando** envía los datos con información incompleta o formatos inválidos<br>**Entonces** el sistema rechaza la solicitud e indica los parámetros incorrectos. |
+| **US033** | Usuario | Alta | EP008 | Activación de Cuenta | Como usuario, quiero activar la cuenta después del registro para validar la identidad y utilizar los servicios. | **Escenario 1: Activación exitosa**<br>**Dado** que un usuario cuenta con una solicitud de validación pendiente<br>**Cuando** envía el código de verificación válido<br>**Entonces** el sistema activa la cuenta correctamente.<br><br>**Escenario 2: Error en la activación**<br>**Dado** que un usuario cuenta con una solicitud de validación pendiente<br>**Cuando** envía un código de verificación inválido o expirado<br>**Entonces** el sistema deniega la acción y notifica la invalidez del código. |
+| **US034** | Usuario | Alta | EP008 | Inicio de Sesión | Como usuario, quiero autenticarme en la plataforma para acceder al perfil y gestionar los servicios. | **Escenario 1: Inicio exitoso**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales válidas de una cuenta activa<br>**Entonces** el sistema permite el acceso y carga el perfil.<br><br>**Escenario 2: Error de credenciales**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales incorrectas<br>**Entonces** el sistema rechaza el acceso y notifica el error.<br><br>**Escenario 3: Cuenta inactiva**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales válidas pero la cuenta carece de activación previa<br>**Entonces** el sistema bloquea el acceso y requiere la validación obligatoria. |
+| **EP009** | Visitante | Baja | — | Navegación por el Sitio Web Estático | Como visitante, quiero explorar el portal público para obtener información sobre la plataforma y los servicios antes de registrarme. | — |
+| **SWS001** | Visitante | Baja | EP009 | Visualización de Propósito Principal (Hero) | Como visitante del segmento administrador, quiero visualizar la información principal para entender el propósito y beneficios del sistema. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante interactúa con el portal público<br>**Cuando** solicita el acceso inicial<br>**Entonces** el sistema presenta el propósito general y las opciones de interacción. |
+| **SWS002** | Visitante | Baja | EP009 | Visualización de Funcionalidades (Features) | Como visitante del segmento administrador, quiero visualizar las funcionalidades clave para conocer las capacidades de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las capacidades del sistema<br>**Entonces** el sistema expone la lista de funcionalidades disponibles. |
+| **SWS003** | Visitante | Baja | EP009 | Visualización del Funcionamiento (How It Works) | Como visitante del segmento administrador, quiero entender el proceso de uso para evaluar la simplicidad de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta el flujo de trabajo<br>**Entonces** el sistema detalla los pasos secuenciales de operación. |
+| **SWS004** | Visitante | Baja | EP009 | Visualización de Detalles (About The Product) | Como visitante del segmento administrador, quiero conocer más sobre los beneficios específicos del producto. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** solicita la descripción del sistema<br>**Entonces** el sistema expone las características y beneficios a profundidad. |
+| **SWS005** | Visitante | Baja | EP009 | Visualización de Casos de Éxito (Testimonials) | Como visitante del segmento administrador, quiero visualizar testimonios para validar la efectividad de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las referencias de terceros<br>**Entonces** el sistema lista las experiencias previas de otros usuarios. |
+| **SWS006** | Visitante | Baja | EP009 | Visualización de la Empresa (About Us) | Como visitante del segmento administrador, quiero conocer la misión de la empresa para generar confianza. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la información corporativa<br>**Entonces** el sistema expone la misión, visión y valores de la entidad. |
+| **SWS007** | Visitante | Baja | EP009 | Visualización del Equipo (About The Team) | Como visitante del segmento administrador, quiero conocer al equipo detrás de la plataforma para validar su credibilidad. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la estructura corporativa<br>**Entonces** el sistema expone los perfiles y roles de los miembros. |
+| **SWS008** | Visitante | Baja | EP009 | Visualización de Planes (Pricing) | Como visitante del segmento administrador, quiero conocer los planes disponibles para evaluar los costos del servicio. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la oferta comercial<br>**Entonces** el sistema presenta los planes, costos y características comparativas. |
+| **SWS009** | Visitante | Baja | EP009 | Visualización de Ayuda (FAQ) | Como visitante del segmento administrador, quiero encontrar respuestas a dudas comunes para resolver incertidumbres. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la sección de soporte informativo<br>**Entonces** el sistema expone el listado de preguntas frecuentes y sus respuestas. |
+| **SWS010** | Visitante | Baja | EP009 | Visualización de Contacto (Contact) | Como visitante del segmento administrador, quiero obtener los canales de comunicación para solicitar soporte directo. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** requiere asistencia adicional<br>**Entonces** el sistema expone los medios de contacto y opciones de solicitud de ayuda. |
+| **SWS011** | Visitante | Baja | EP009 | Visualización de Referencias Legales (Footer) | Como visitante del segmento administrador, quiero acceder a políticas y redes sociales para verificar la legalidad y presencia digital. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las referencias al pie del sitio<br>**Entonces** el sistema proporciona los enlaces legales y corporativos correspondientes. |
+| **EP010** | Developer | Alta | — | Servicios Técnicos y APIs REST | Como developer, quiero implementar servicios técnicos y APIs REST para facilitar la integración con otros sistemas y asegurar la escalabilidad de la plataforma. | — |
+| **TS001** | Developer | Alta | EP010 | Exponer endpoint para registrar academias | Como developer, quiero exponer POST /api/academies para permitir el registro de nuevas academias en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/academies con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea una nueva academia y se devuelve un estado 201 Created con los detalles correspondientes.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST /api/academies con datos inválidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request con un mensaje indicando los campos incorrectos.<br><br>**Escenario 3: Error por academia duplicada**<br>**Dado** que un cliente envía una solicitud POST /api/academies para una academia que ya existe<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict indicando que la academia ya está registrada. |
+| **TS002** | Developer | Alta | EP010 | Exponer endpoint para actualizar academias | Como developer, quiero exponer PUT /api/academies/{id} para permitir la actualización de academias existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/academies/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la academia y se devuelve un estado 200 OK con los detalles modificados.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud PUT /api/academies/{id} omitiendo campos obligatorios<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas.<br><br>**Escenario 3: Error por no encontrada**<br>**Dado** que un cliente envía una solicitud PUT para una academia inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found indicando que no fue encontrada. |
+| **TS004** | Developer | Alta | EP010 | Exponer endpoint para listar academias | Como developer, quiero exponer GET /api/academies para permitir la obtención de una lista de academias en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/academies<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de academias.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET /api/academies cuando no hay registros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista vacía. |
+| **TS005** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una academia | Como developer, quiero exponer GET /api/academies/{id} para permitir la obtención de los detalles de una academia específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/academies/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles solicitados.<br><br>**Escenario 2: Error por no encontrada**<br>**Dado** que un cliente envía una solicitud GET para una academia inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS006** | Developer | Alta | EP010 | Exponer endpoint para registrar administrador | Como developer, quiero exponer POST /api/admins para permitir el registro de nuevos administradores en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/admins con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea el administrador y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST /api/admins con datos inválidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas.<br><br>**Escenario 3: Error por duplicado**<br>**Dado** que un cliente envía una solicitud POST para un administrador existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS007** | Developer | Alta | EP010 | Exponer endpoint para actualizar administrador | Como developer, quiero exponer PUT /api/admins/{id} para permitir la actualización de administradores existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/admins/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS008** | Developer | Alta | EP010 | Exponer endpoint para eliminar administrador | Como developer, quiero exponer DELETE /api/admins/{id} para permitir la eliminación de administradores existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/admins/{id} para un perfil existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el perfil y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS009** | Developer | Alta | EP010 | Exponer endpoint para listar administradores | Como developer, quiero exponer GET /api/admins para permitir la obtención de una lista de administradores en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/admins<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de perfiles. |
+| **TS010** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un administrador | Como developer, quiero exponer GET /api/admins/{id} para permitir la obtención de los detalles de un administrador específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/admins/{id} para un perfil existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles del perfil.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS011** | Developer | Alta | EP010 | Exponer endpoint para registrar inscripciones | Como developer, quiero exponer POST /api/enrollments para permitir el registro de nuevas inscripciones en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/enrollments con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea una nueva inscripción y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST con datos faltantes (ej. falta el ID del participante)<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las omisiones.<br><br>**Escenario 3: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un participante que ya cuenta con una inscripción activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS012** | Developer | Alta | EP010 | Exponer endpoint para actualizar inscripciones | Como developer, quiero exponer PUT /api/enrollments/{id} para permitir la actualización de inscripciones existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/enrollments/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el registro y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para una inscripción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS013** | Developer | Alta | EP010 | Exponer endpoint para eliminar inscripciones | Como developer, quiero exponer DELETE /api/enrollments/{id} para permitir la eliminación de inscripciones existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/enrollments/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se borra la inscripción y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS014** | Developer | Alta | EP010 | Exponer endpoint para listar inscripciones | Como developer, quiero exponer GET /api/enrollments para permitir la obtención de una lista de inscripciones en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/enrollments<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de inscripciones. |
+| **TS015** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una inscripción | Como developer, quiero exponer GET /api/enrollments/{id} para permitir la obtención de los detalles de una inscripción específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/enrollments/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS016** | Developer | Alta | EP010 | Exponer endpoint para registrar asistencias de clase | Como developer, quiero exponer POST /api/class-attendances para permitir el registro de asistencias a clases en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/class-attendances con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo registro y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST omitiendo datos críticos (ej. ID del participante)<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request.<br><br>**Escenario 3: Error por duplicado**<br>**Dado** que un cliente envía una solicitud POST para un participante que ya tiene asistencia marcada<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS017** | Developer | Alta | EP010 | Exponer endpoint para actualizar asistencias de clase | Como developer, quiero exponer PUT /api/class-attendances/{id} para permitir la actualización de registros de asistencia en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/class-attendances/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la participación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS018** | Developer | Alta | EP010 | Exponer endpoint para eliminar asistencias de clase | Como developer, quiero exponer DELETE /api/class-attendances/{id} para permitir la eliminación de registros de asistencia en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/class-attendances/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS019** | Developer | Alta | EP010 | Exponer endpoint para listar asistencias de clase | Como developer, quiero exponer GET /api/class-attendances para permitir la obtención de una lista de registros de asistencia en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/class-attendances<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con la lista de participaciones.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET sin información almacenada previamente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
+| **TS020** | Developer | Alta | EP010 | Exponer endpoint para detalles de asistencia de clase | Como developer, quiero exponer GET /api/class-attendances/{id} para permitir la obtención de los detalles de un registro de asistencia específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/class-attendances/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS021** | Developer | Alta | EP010 | Exponer endpoint para registrar periodos académicos | Como developer, quiero exponer POST /api/academic-periods para permitir el registro de nuevos periodos académicos en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/academic-periods con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo periodo y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inconsistentes**<br>**Dado** que un cliente envía una solicitud POST con incongruencias de tiempo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request.<br><br>**Escenario 3: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un periodo que ya existe<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS022** | Developer | Alta | EP010 | Exponer endpoint para actualizar periodos académicos | Como developer, quiero exponer PUT /api/academic-periods/{id} para permitir la actualización de periodos académicos en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/academic-periods/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el periodo y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS023** | Developer | Alta | EP010 | Exponer endpoint para eliminar periodos académicos | Como developer, quiero exponer DELETE /api/academic-periods/{id} para permitir la eliminación de periodos académicos en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/academic-periods/{id} para un periodo existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS024** | Developer | Alta | EP010 | Exponer endpoint para listar periodos académicos | Como developer, quiero exponer GET /api/academic-periods para permitir la obtención de una lista de periodos académicos en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/academic-periods<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de periodos. |
+| **TS025** | Developer | Alta | EP010 | Exponer endpoint para detalles de periodo académico | Como developer, quiero exponer GET /api/academic-periods/{id} para permitir la obtención de los detalles de un periodo específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/academic-periods/{id} para un periodo existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS026** | Developer | Alta | EP010 | Exponer endpoint para registrar salones de clase | Como developer, quiero exponer POST /api/classrooms para permitir el registro de nuevos salones de clase en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/classrooms con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo salón de clase y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST con parámetros faltantes o capacidad negativa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando los errores correspondientes. |
+| **TS027** | Developer | Alta | EP010 | Exponer endpoint para actualizar salones de clase | Como developer, quiero exponer PUT /api/classrooms/{id} para permitir la actualización de salones de clase existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/classrooms/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el salón de clase y se devuelve un estado 200 OK con los detalles modificados.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS028** | Developer | Alta | EP010 | Exponer endpoint para eliminar salones de clase | Como developer, quiero exponer DELETE /api/classrooms/{id} para permitir la eliminación de salones de clase existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/classrooms/{id} para un salón existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS029** | Developer | Alta | EP010 | Exponer endpoint para listar salones de clase | Como developer, quiero exponer GET /api/classrooms para permitir la obtención de una lista de salones de clase en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/classrooms<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de salones de clase.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET cuando no hay salones registrados<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
+| **TS030** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un salón de clase | Como developer, quiero exponer GET /api/classrooms/{id} para permitir la obtención de los detalles de un salón de clase específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/classrooms/{id} para un salón existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles del salón.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS031** | Developer | Alta | EP010 | Exponer endpoint para registrar cursos | Como developer, quiero exponer POST /api/courses para permitir el registro de nuevos cursos en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/courses con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo curso y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un curso que ya cuenta con un registro idéntico<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS032** | Developer | Alta | EP010 | Exponer endpoint para actualizar cursos | Como developer, quiero exponer PUT /api/courses/{id} para permitir la actualización de cursos existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/courses/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualizan los datos del curso y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un registro de curso inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS033** | Developer | Alta | EP010 | Exponer endpoint para eliminar cursos | Como developer, quiero exponer DELETE /api/courses/{id} para permitir la eliminación de cursos existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/courses/{id} para un curso existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS034** | Developer | Alta | EP010 | Exponer endpoint para listar cursos | Como developer, quiero exponer GET /api/courses para permitir la obtención de una lista de cursos en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/courses<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de cursos. |
+| **TS035** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un curso | Como developer, quiero exponer GET /api/courses/{id} para permitir la obtención de los detalles de un curso específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/courses/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un curso inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS036** | Developer | Alta | EP010 | Exponer endpoint para registrar horarios | Como developer, quiero exponer POST /api/schedules para permitir el registro de nuevos horarios en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/schedules con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea la programación y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto de horario**<br>**Dado** que un cliente envía una solicitud POST con horas que se superponen con otras sesiones<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS037** | Developer | Alta | EP010 | Exponer endpoint para actualizar horarios | Como developer, quiero exponer PUT /api/schedules/{id} para permitir la actualización de horarios existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/schedules/{id} con parámetros de tiempo válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la programación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un horario inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS038** | Developer | Alta | EP010 | Exponer endpoint para eliminar horarios | Como developer, quiero exponer DELETE /api/schedules/{id} para permitir la eliminación de horarios existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/schedules/{id} para una programación activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se retira el horario y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una programación inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS039** | Developer | Alta | EP010 | Exponer endpoint para listar horarios | Como developer, quiero exponer GET /api/schedules para permitir la obtención de una lista de horarios en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/schedules<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de las programaciones registradas. |
+| **TS040** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un horario | Como developer, quiero exponer GET /api/schedules/{id} para permitir la obtención de los detalles de un horario específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/schedules/{id} para un horario activo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles requeridos.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una programación inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS041** | Developer | Alta | EP010 | Exponer endpoint para registrar cuentas de cobro | Como developer, quiero exponer POST /api/billing-accounts para permitir el registro de nuevas cuentas de cobro en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/billing-accounts con parámetros financieros válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo perfil de facturación y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un registro que ya posee un perfil de cobro asignado<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS042** | Developer | Alta | EP010 | Exponer endpoint para actualizar cuentas de cobro | Como developer, quiero exponer PUT /api/billing-accounts/{id} para permitir la actualización de cuentas de cobro existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/billing-accounts/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil de facturación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS043** | Developer | Alta | EP010 | Exponer endpoint para eliminar cuentas de cobro | Como developer, quiero exponer DELETE /api/billing-accounts/{id} para permitir la eliminación de cuentas de cobro existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/billing-accounts/{id} para una cuenta activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se borra el registro financiero y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS044** | Developer | Alta | EP010 | Exponer endpoint para listar cuentas de cobro | Como developer, quiero exponer GET /api/billing-accounts para permitir la obtención de una lista de cuentas de cobro en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/billing-accounts<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con el listado financiero. |
+| **TS045** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una cuenta de cobro | Como developer, quiero exponer GET /api/billing-accounts/{id} para permitir la obtención de los detalles de una cuenta de cobro específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/billing-accounts/{id} para un perfil activo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los parámetros financieros del perfil.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS046** | Developer | Alta | EP010 | Exponer endpoint para asignar boletas de pago | Como developer, quiero exponer POST /api/billing-accounts/invoices para permitir la asignación de boletas de pago a las cuentas de cobro en el sistema. | **Escenario 1: Asignación exitosa**<br>**Dado** que un cliente envía una solicitud POST con los datos de cobro válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** la boleta se vincula correctamente y se devuelve un estado 201 Created con sus detalles. |
+| **TS047** | Developer | Alta | EP010 | Exponer endpoint para actualizar boletas asignadas | Como developer, quiero exponer PUT /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la actualización de boletas de pago asignadas a una cuenta en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT con montos y estados financieros válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el comprobante y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT con identificadores financieros incorrectos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS048** | Developer | Alta | EP010 | Exponer endpoint para listar boletas asignadas | Como developer, quiero exponer GET /api/billing-accounts/{id}/invoices para permitir la obtención de boletas de pago asignadas a una cuenta. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET dirigida a una cuenta financiera activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista que detalla todos los comprobantes asignados. |
+| **TS049** | Developer | Alta | EP010 | Exponer endpoint para eliminar boletas asignadas | Como developer, quiero exponer DELETE /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la eliminación de boletas asignadas a una cuenta. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE con identificadores válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** el comprobante se desvincula de la cuenta y se devuelve un estado 204 No Content. |
+| **TS050** | Developer | Alta | EP010 | Exponer endpoint para registrar transacciones | Como developer, quiero exponer POST /api/transactions para permitir el registro de nuevas transacciones en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/transactions con montos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se consolida el movimiento contable y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST omitiendo datos contables como el monto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las faltas detectadas. |
+| **TS051** | Developer | Alta | EP010 | Exponer endpoint para actualizar transacciones | Como developer, quiero exponer PUT /api/transactions/{id} para permitir la actualización de transacciones financieras existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/transactions/{id} con datos contables válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la transacción y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud PUT con montos negativos o información faltante<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas. |
+| **TS052** | Developer | Alta | EP010 | Exponer endpoint para eliminar transacciones | Como developer, quiero exponer DELETE /api/transactions/{id} para permitir la eliminación de transacciones existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/transactions/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro financiero y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una transacción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS053** | Developer | Alta | EP010 | Exponer endpoint para listar transacciones | Como developer, quiero exponer GET /api/transactions para permitir la obtención de una lista de movimientos contables en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/transactions<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de transacciones.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET cuando no hay registros financieros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
+| **TS054** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una transacción | Como developer, quiero exponer GET /api/transactions/{id} para permitir la obtención de los detalles de un movimiento contable específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/transactions/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una transacción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS055** | Developer | Alta | EP010 | Exponer endpoint para generar reportes financieros | Como developer, quiero exponer GET /api/reports/financial para permitir la generación de reportes contables en el sistema. | **Escenario 1: Generación exitosa**<br>**Dado** que un cliente envía una solicitud GET con un rango de fechas válido<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se genera el reporte y se devuelve un estado 200 OK con el archivo exportado.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un cliente solicita un reporte en un periodo sin registros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 204 No Content indicando la ausencia de datos. |
+| **TS056** | Developer | Alta | EP010 | Exponer endpoint para visualizar horarios de un profesor | Como developer, quiero exponer GET /api/teachers/{id}/schedules para permitir la visualización de los horarios asignados a un docente específico. | **Escenario 1: Visualización exitosa**<br>**Dado** que un cliente envía una solicitud GET para un perfil docente existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con la lista de sus programaciones.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un perfil docente inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS057** | Developer | Alta | EP010 | Exponer endpoint para reprogramar una sesión de clases | Como developer, quiero exponer PUT /api/schedules/{id}/reschedule para permitir la reprogramación de una sesión en el sistema. | **Escenario 1: Reprogramación exitosa**<br>**Dado** que un cliente envía una solicitud PUT con una nueva fecha y hora válidas<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la sesión y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por cruce de horarios**<br>**Dado** que un cliente envía una solicitud PUT que genera un conflicto temporal<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS058** | Developer | Alta | EP010 | Exponer endpoint para registrar cuenta de usuario | Como developer, quiero exponer POST /api/auth/sign-up para permitir la creación segura de nuevas cuentas en el ecosistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea la cuenta, se cifra la credencial y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por duplicidad**<br>**Dado** que un cliente intenta registrar un correo ya existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
+| **TS059** | Developer | Alta | EP010 | Exponer endpoint para actualizar cuenta de usuario | Como developer, quiero exponer PUT /api/users/{id} para permitir la actualización de perfiles de cuenta en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT con información válida<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente intenta modificar un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
+| **TS060** | Developer | Alta | EP010 | Exponer endpoint para eliminar cuenta de usuario | Como developer, quiero exponer DELETE /api/users/{id} para retirar cuentas de usuario del sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE para un usuario existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se retira la cuenta y se devuelve un estado 204 No Content. |
+| **TS061** | Developer | Alta | EP010 | Exponer endpoint para activar cuenta de usuario | Como developer, quiero exponer POST /api/users/{id}/activate para gestionar la activación mediante validación. | **Escenario 1: Activación exitosa**<br>**Dado** que un cliente envía el token o código correcto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** el estado de la cuenta cambia a activa y devuelve 200 OK.<br><br>**Escenario 2: Error por cuenta ya activa**<br>**Dado** que un cliente solicita activar un perfil previamente validado<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** devuelve un estado 400 Bad Request. |
+| **TS062** | Developer | Alta | EP010 | Exponer endpoint para reenviar código de verificación | Como developer, quiero exponer POST /api/users/{id}/resend-verification para asegurar que los usuarios reciban sus credenciales de validación. | **Escenario 1: Reenvío exitoso**<br>**Dado** que un cliente solicita un nuevo código para una cuenta pendiente<br>**Cuando** el servidor procesa la orden<br>**Entonces** dispara el evento de mensajería y devuelve 200 OK.<br><br>**Escenario 2: Error por cuenta verificada**<br>**Dado** que un cliente solicita código para un perfil validado<br>**Cuando** el servidor procesa la orden<br>**Entonces** devuelve un estado 400 Bad Request. |
+| **TS063** | Developer | Alta | EP010 | Exponer endpoint para cambiar contraseña con código | Como developer, quiero exponer POST /api/users/{id}/change-password para facilitar la recuperación de acceso. | **Escenario 1: Cambio exitoso**<br>**Dado** que un cliente envía un código válido y una credencial nueva segura<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** actualiza la seguridad de la cuenta y retorna 200 OK.<br><br>**Escenario 2: Error por código inválido**<br>**Dado** que un cliente envía un código expirado o incorrecto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** bloquea la acción y devuelve un estado 400 Bad Request. |
+| **TS064** | Developer | Alta | EP010 | Exponer endpoint para iniciar sesión | Como developer, quiero exponer POST /api/auth/login para gestionar la autenticación y emisión de tokens. | **Escenario 1: Inicio exitoso**<br>**Dado** que un cliente envía credenciales correctas de una cuenta activa<br>**Cuando** el servidor las valida<br>**Entonces** retorna 200 OK junto con un token JWT firmado.<br><br>**Escenario 2: Error de autenticación**<br>**Dado** que un cliente envía credenciales incorrectas<br>**Cuando** el servidor las procesa<br>**Entonces** rechaza el acceso devolviendo 401 Unauthorized. |
+| **TS065** | Developer | Alta | EP010 | Exponer endpoint para validación de recursos | Como developer, quiero exponer HEAD /api/resource/{id} para permitir comprobaciones rápidas de existencia. | **Escenario 1: Verificación exitosa**<br>**Dado** que un cliente solicita validación de un elemento existente<br>**Cuando** el servidor la procesa<br>**Entonces** devuelve 200 OK sin cuerpo de respuesta.<br><br>**Escenario 2: Recurso ausente**<br>**Dado** que un cliente consulta un identificador inexistente<br>**Cuando** el servidor responde<br>**Entonces** emite 404 Not Found. |
+| **TS066** | Developer | Alta | EP010 | Exponer endpoint para manejo de CORS | Como developer, quiero exponer OPTIONS /api/resource para garantizar la seguridad transversal y comunicación entre orígenes. | **Escenario 1: Resolución de políticas**<br>**Dado** que un cliente emite una consulta de preflight<br>**Cuando** el servidor evalúa los orígenes permitidos<br>**Entonces** devuelve 204 No Content junto a los headers de autorización HTTP. |
+| **EP011** | Equipo de Desarrollo | Media | — | Investigación y Prototipado | Como equipo de desarrollo, quiero realizar investigación y prototipado para explorar nuevas tecnologías y enfoques que puedan mejorar la arquitectura de la solución propuesta. | — |
+| **SS001** | Equipo de Desarrollo | Media | EP011 | Investigación de la integración de pasarelas globales | Como equipo de desarrollo, quiero investigar la documentación de plataformas de pagos globales (ej. Stripe) para comprender su ciclo de integración técnica. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo revisa las guías de integración de la pasarela<br>**Cuando** documentan los flujos de cobro y webhooks requeridos<br>**Entonces** se genera un informe técnico detallando su viabilidad para la facturación. |
+| **SS002** | Equipo de Desarrollo | Media | EP011 | Investigación de la integración de servicios de correo | Como equipo de desarrollo, quiero explorar los protocolos SMTP y APIs de servicios como Gmail para garantizar el envío de códigos de verificación. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo estudia el motor de plantillas y autenticación del proveedor<br>**Cuando** se realizan pruebas de concepto aisladas de envío<br>**Entonces** se establece un estándar seguro para la mensajería del sistema. |
+| **SS003** | Equipo de Desarrollo | Media | EP011 | Investigación de métodos de cobro local | Como equipo de desarrollo, quiero analizar pasarelas de recaudo regional (ej. PagoEfectivo) para ofrecer alternativas en los cobros de cuentas y servicios. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo accede a los manuales de desarrollador del proveedor local<br>**Cuando** evalúan el flujo de generación de códigos de pago CIP<br>**Entonces** definen la estructura necesaria en el modelo financiero del sistema. |
+| **SS004** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de PDF y Excel | Como equipo de desarrollo, quiero evaluar el rendimiento de librerías exportadoras para soportar la generación de reportes financieros. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo implementa un entorno de pruebas con datos ficticios<br>**Cuando** procesan exportaciones masivas en formatos estáticos y hojas de cálculo<br>**Entonces** seleccionan la librería con mejor latencia y soporte de estilos. |
+| **SS005** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de gráficos | Como equipo de desarrollo, quiero probar bibliotecas de generación de gráficos para seleccionar las más adecuadas para la plataforma. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo de desarrollo investiga bibliotecas populares para la generación de gráficos<br>**Cuando** revisan reseñas, comparativas y documentación<br>**Entonces** crean una lista de posibles bibliotecas a evaluar. |
+| **SS006** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de códigos QR | Como equipo de desarrollo, quiero probar bibliotecas de generación de códigos QR para seleccionar las más adecuadas para la plataforma. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo de desarrollo investiga bibliotecas populares para la generación de códigos QR<br>**Cuando** revisan reseñas, comparativas y documentación<br>**Entonces** crean una lista de posibles bibliotecas a evaluar. |
+
+<hr class="page-break">
 
 ## 3.3. Product Backlog
 
-## 3.4. Impact Mapping
+En esta sección se presenta el Product Backlog del proyecto, el cual contiene una lista priorizada de todas las funcionalidades, mejoras y correcciones necesarias para el desarrollo de la plataforma educativa. Cada ítem del backlog está detallado con su User Story ID, Título y Story Points.
+
+La priorización se ha realizado considerando el valor que cada ítem aporta al negocio, la complejidad técnica y la dependencia entre tareas. Este backlog servirá como guía para el equipo de desarrollo durante las diferentes fases del proyecto, asegurando que se enfoquen en entregar el mayor valor posible en cada iteración.
+
+<div style="overflow-x:auto;">
+
+| # Orden | User Story ID | Título | Descripción | Story Points |
+|---------|--------------|--------|-------------|--------------|
+| 1 | US001 | Registro de Academia | Flujo principal del sistema; requiere validaciones de datos y persistencia en base de datos. | 5 |
+| 2 | TS006 | Exponer endpoint para registrar administrador | Endpoint POST con validaciones básicas y respuesta estándar. | 3 |
+| 3 | TS001 | Exponer endpoint para registrar academias | Endpoint POST con manejo de duplicados y validación de campos. | 3 |
+| 4 | US004 | Registro de Profesor | Implica creación de perfil docente con asignación a academia existente. | 5 |
+| 5 | US013 | Creación de Periodo Académico | Requiere validación de fechas y lógica de no solapamiento entre periodos. | 5 |
+| 6 | TS021 | Exponer endpoint para registrar periodos académicos | Endpoint POST con validación de consistencia temporal. | 3 |
+| 7 | US016 | Creación de Salones de Clase | Implica registro de espacio físico con capacidad y atributos de infraestructura. | 5 |
+| 8 | TS026 | Exponer endpoint para registrar salones de clase | Endpoint POST con validación de capacidad y campos requeridos. | 3 |
+| 9 | US019 | Creación de Horarios | Alta complejidad por detección de conflictos de horario entre docentes y salones. | 5 |
+| 10 | TS031 | Exponer endpoint para registrar cursos | Endpoint POST con manejo de duplicados por nombre o código. | 3 |
+| 11 | US007 | Matrícula de Alumno | Vincula alumno, periodo y curso; requiere validaciones de disponibilidad. | 5 |
+| 12 | TS011 | Exponer endpoint para registrar matrículas | Endpoint POST con control de conflictos de inscripción activa. | 3 |
+| 13 | US010 | Registro de Asistencia | Lógica simple de marcado por sesión con validación mínima. | 3 |
+| 14 | TS016 | Exponer endpoint para registrar asistencias de clase | Endpoint POST con control de duplicados por sesión y participante. | 2 |
+| 15 | US030 | Visualización de Horario de Clases | Consulta de datos filtrada por docente y periodo activo. | 3 |
+| 16 | TS036 | Exponer endpoint para registrar horarios | Endpoint POST con detección de solapamientos entre sesiones. | 3 |
+| 17 | US031 | Reprogramación de Clase | Requiere validación de nueva fecha sin conflictos y actualización del cronograma. | 5 |
+| 18 | TS055 | Exponer endpoint para reprogramar una sesión de clases | Endpoint PUT especializado con lógica de conflicto temporal. | 2 |
+| 19 | US022 | Generación de Boletas de Pago | Implica cálculo de montos, vinculación con inscripción y emisión de comprobante. | 5 |
+| 20 | TS041 | Exponer endpoint para registrar cuentas de cobro | Endpoint POST con validación financiera y control de duplicados. | 3 |
+| 21 | TS046 | Exponer endpoint para asignar boletas de pago | Endpoint POST de vinculación entre boleta y cuenta de cobro. | 2 |
+| 22 | US025 | Registro de Ingreso/Egreso | Requiere categorización de movimiento y validación de montos positivos. | 5 |
+| 23 | TS050 | Exponer endpoint para registrar transacciones | Endpoint POST con validación de monto y tipo de movimiento contable. | 3 |
+| 24 | US028 | Visualización de Resumen de Finanzas | Agregación de datos financieros con cálculo de indicadores por periodo. | 5 |
+| 25 | US029 | Generación de Reportes Financieros | Alta complejidad por procesamiento de datos, exportación y filtros por rango de fechas. | 8 |
+| 26 | TS053 | Exponer endpoint para generar reportes financieros | Endpoint GET con lógica de exportación y manejo de periodos sin datos. | 5 |
+| 27 | US032 | Registro de Cuenta | Creación de cuenta con validación de datos y confirmación de éxito. | 3 |
+| 28 | TS054 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de recurso no encontrado. | 3 |
+| 29 | TS056 | Exponer endpoint para visualizar horarios de un profesor | Endpoint GET filtrado por docente con validación de existencia. | 3 |
+| 30 | TS057 | Exponer endpoint para registrar cuenta de usuario | Endpoint POST con cifrado de credencial y control de duplicados por correo. | 2 |
+| 31 | TS060 | Exponer endpoint para activar cuenta de usuario | Endpoint POST con validación de token y cambio de estado de cuenta. | 3 |
+| 32 | TS061 | Exponer endpoint para reenviar código de verificación | Endpoint POST con disparo de evento de mensajería y control de estado. | 3 |
+| 33 | TS063 | Exponer endpoint para iniciar sesión | Endpoint POST con autenticación y emisión de token JWT. | 2 |
+| 34 | US002 | Actualización de Academia | Modificación de datos existentes con validación de campos obligatorios. | 2 |
+| 35 | US003 | Eliminación de Academia | Eliminación con confirmación explícita del administrador. | 2 |
+| 36 | TS002 | Exponer endpoint para actualizar academias | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
+| 37 | TS003 | Exponer endpoint para eliminar academias | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
+| 38 | TS004 | Exponer endpoint para listar academias | Endpoint GET que retorna lista o arreglo vacío. | 2 |
+| 39 | TS005 | Exponer endpoint para obtener detalles de una academia | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 40 | US005 | Actualización de Profesor | Edición de perfil docente con validación de formato de datos. | 2 |
+| 41 | US006 | Eliminación de Profesor | Baja de docente con confirmación y limpieza del perfil. | 2 |
+| 42 | TS007 | Exponer endpoint para actualizar administrador | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
+| 43 | TS008 | Exponer endpoint para eliminar administrador | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
+| 44 | TS009 | Exponer endpoint para listar administradores | Endpoint GET que retorna lista de perfiles registrados. | 3 |
+| 45 | TS010 | Exponer endpoint para obtener detalles de un administrador | Endpoint GET por ID con manejo de no encontrado. | 2 |
+| 46 | US008 | Actualización de Matrícula | Edición de inscripción con validación de periodos y estados disponibles. | 5 |
+| 47 | US009 | Cancelación de Matrícula | Anulación de inscripción activa con actualización de estado. | 2 |
+| 48 | TS012 | Exponer endpoint para actualizar matrículas | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
+| 49 | TS013 | Exponer endpoint para eliminar matrículas | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
+| 50 | TS014 | Exponer endpoint para listar matrículas | Endpoint GET que retorna lista de inscripciones registradas. | 2 |
+| 51 | TS015 | Exponer endpoint para obtener detalles de una matrícula | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 52 | US011 | Actualización de Asistencia | Corrección de marcadores de presencia en sesión previa. | 3 |
+| 53 | US012 | Visualización de Reportes de Asistencia | Generación de informe filtrado por periodo con manejo de datos vacíos. | 5 |
+| 54 | TS017 | Exponer endpoint para actualizar asistencias de clase | Endpoint PUT con validación de cambios y manejo de no encontrado. | 3 |
+| 55 | TS018 | Exponer endpoint para eliminar asistencias de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
+| 56 | TS019 | Exponer endpoint para listar asistencias de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
+| 57 | TS020 | Exponer endpoint para obtener detalles de una asistencia de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 58 | US014 | Actualización de Periodo Académico | Edición de fechas con validación de no solapamiento. | 3 |
+| 59 | US015 | Eliminación de Periodo Académico | Baja de periodo con confirmación explícita del administrador. | 3 |
+| 60 | TS022 | Exponer endpoint para actualizar periodos académicos | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
+| 61 | TS023 | Exponer endpoint para eliminar periodos académicos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
+| 62 | TS024 | Exponer endpoint para listar periodos académicos | Endpoint GET que retorna lista de periodos registrados. | 2 |
+| 63 | TS025 | Exponer endpoint para obtener detalles de un periodo académico | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 64 | US017 | Actualización de Salones de Clase | Edición de atributos del salón con validación de campos obligatorios. | 3 |
+| 65 | US018 | Eliminación de Salones de Clase | Baja de espacio físico con confirmación del administrador. | 2 |
+| 66 | TS027 | Exponer endpoint para actualizar salones de clase | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
+| 67 | TS028 | Exponer endpoint para eliminar salones de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
+| 68 | TS029 | Exponer endpoint para listar salones de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
+| 69 | TS030 | Exponer endpoint para obtener detalles de un salón de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 70 | US020 | Actualización de Horarios | Edición de programación con revalidación de conflictos entre sesiones. | 5 |
+| 71 | US021 | Eliminación de Horarios | Baja de programación con confirmación del administrador. | 2 |
+| 72 | TS032 | Exponer endpoint para actualizar cursos | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
+| 73 | TS033 | Exponer endpoint para eliminar cursos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
+| 74 | TS034 | Exponer endpoint para listar cursos | Endpoint GET que retorna lista de cursos registrados. | 2 |
+| 75 | TS035 | Exponer endpoint para obtener detalles de un curso | Endpoint GET por ID con manejo de no encontrado. | 2 |
+| 76 | TS037 | Exponer endpoint para actualizar horarios | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
+| 77 | TS038 | Exponer endpoint para eliminar horarios | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
+| 78 | TS039 | Exponer endpoint para listar horarios | Endpoint GET que retorna lista de programaciones registradas. | 2 |
+| 79 | TS040 | Exponer endpoint para obtener detalles de un horario | Endpoint GET por ID con manejo de no encontrado. | 1 |
+| 80 | US023 | Actualización de Boletas de Pago | Edición de montos y estado de comprobante con validación financiera. | 3 |
+| 81 | US024 | Eliminación de Boletas de Pago | Baja de comprobante duplicado o incorrecto con confirmación. | 1 |
+| 82 | TS042 | Exponer endpoint para actualizar cuentas de cobro | Endpoint PUT con validaciones financieras y manejo de no encontrado. | 5 |
+| 83 | TS043 | Exponer endpoint para eliminar cuentas de cobro | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
+| 84 | TS044 | Exponer endpoint para listar cuentas de cobro | Endpoint GET que retorna listado financiero. | 2 |
+| 85 | TS045 | Exponer endpoint para obtener detalles de una cuenta de cobro | Endpoint GET por ID con manejo de no encontrado. | 2 |
+| 86 | TS047 | Exponer endpoint para actualizar boletas de pago asignadas a una cuenta de cobro | Endpoint PUT anidado con validación de IDs y manejo de no encontrado. | 3 |
+| 87 | TS048 | Exponer endpoint para listar boletas de pago asignadas a una cuenta de cobro | Endpoint GET anidado que retorna comprobantes vinculados. | 3 |
+| 88 | TS049 | Exponer endpoint para eliminar boletas de pago asignadas a una cuenta de cobro | Endpoint DELETE anidado con desvinculación y respuesta 204. | 2 |
+| 89 | US026 | Actualización de Ingreso/Egreso | Corrección de movimiento contable con validación de montos y justificación. | 3 |
+| 90 | US027 | Eliminación de Ingreso/Egreso | Baja de transacción duplicada o incorrecta con confirmación. | 2 |
+| 91 | TS051 | Exponer endpoint para actualizar transacciones | Endpoint PUT con validación de montos y manejo de datos inválidos. | 3 |
+| 92 | TS052 | Exponer endpoint para eliminar transacciones | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
+| 93 | TS051 | Exponer endpoint para listar transacciones | Endpoint GET que retorna lista o arreglo vacío. | 2 |
+| 94 | TS052 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de no encontrado. | 2 |
+| 95 | TS058 | Exponer endpoint para actualizar cuenta de usuario | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
+| 96 | TS059 | Exponer endpoint para eliminar cuenta de usuario | Endpoint DELETE con respuesta 204 sin lógica adicional compleja. | 1 |
+| 97 | TS062 | Exponer endpoint para cambiar contraseña mediante código de verificación | Endpoint POST con validación de código, cifrado y actualización de credencial. | 5 |
+| 98 | TS066 | Exponer endpoint para manejo de CORS | Endpoint OPTIONS con configuración de headers y políticas de origen. | 5 |
+| 99 | SWS001 | Ver sección Hero | Sección estática de presentación principal; requiere diseño visual atractivo. | 5 |
+| 100 | SWS002 | Ver sección Features | Listado visual de funcionalidades clave de la plataforma. | 3 |
+| 101 | SWS003 | Ver sección How It Works | Secuencia de pasos explicativos con elementos visuales de flujo. | 3 |
+| 102 | SWS004 | Ver sección About The Product | Sección descriptiva con beneficios detallados; mayor contenido y diseño. | 5 |
+| 103 | SWS005 | Ver sección Testimonials | Componente de tarjetas o carrusel con experiencias de usuarios. | 3 |
+| 104 | SWS006 | Ver sección About Us | Sección informativa simple con misión, visión y valores. | 2 |
+| 105 | SWS007 | Ver sección About The Team | Grilla de perfiles de equipo con foto, nombre y rol. | 5 |
+| 106 | SWS008 | Ver sección Pricing | Tabla comparativa de planes con destacado visual del recomendado. | 3 |
+| 107 | SWS009 | Ver sección FAQ | Componente acordeón con preguntas y respuestas frecuentes. | 5 |
+| 108 | SWS010 | Ver sección Contact | Formulario de contacto con campos y canales de comunicación. | 3 |
+| 109 | SWS011 | Ver sección Footer | Pie de página con enlaces legales, redes sociales y referencias corporativas. | 2 |
+| 110 | SS001 | Investigación de la integración de Stripe | Exploración de flujos de cobro, webhooks y viabilidad técnica de integración. | 8 |
+| 111 | SS002 | Investigación de la integración de Gmail | Análisis de protocolo SMTP, autenticación y pruebas de envío de correos. | 8 |
+| 112 | SS003 | Investigación de la integración de PagoEfectivo | Evaluación del flujo CIP y estructura requerida en el modelo financiero. | 8 |
+| 113 | SS004 | Probar bibliotecas de generación de archivos PDF y Excel | Benchmark de librerías exportadoras por latencia y soporte de estilos. | 8 |
+| 114 | SS005 | Probar bibliotecas de generación de gráficos | Evaluación comparativa de librerías de visualización para la plataforma. | 8 |
+| 115 | SS006 | Probar bibliotecas de generación de códigos QR | Evaluación comparativa de librerías QR por facilidad de integración y calidad. | 8 |
+| 116 | TS064 | Exponer endpoint para validación de recursos | Endpoint HEAD para comprobación rápida de existencia sin cuerpo de respuesta. | 1 |
+| 117 | TS065 | Exponer endpoint para manejo de CORS y métodos permitidos | Endpoint OPTIONS con headers de autorización HTTP para preflight.    | 2 |
+
+</div>
+
+Definiciones del Product Backlog con Trello pues Pivol Tracker murio en 2024:
+
+[Link del Trello](https://trello.com/invite/b/69fc05a57b63f1e38e51eca1/ATTI1684792c97ecee9a1b2f4ecacdf8526a2880E529/diseno-de-experimentos)
+
+<hr class="page-break">
 
 ## 3.4. Impact Mapping
 
@@ -913,69 +1211,1251 @@ Esta distribución de responsabilidades permite que cada Deliverable esté aline
 
 ## 4.1. Style Guidelines
 
+La guía de estilos sienta las bases de diseño para la plataforma Demy,asegurando una experiencia de usuario coherente y atractiva. En esta sección se detallan los colores, tipografías, iconografía y otros elementos visuales que conforman la identidad de la marca.
+
 ### 4.1.1. General Style Guidelines
 
+La identidad visual de Demy ha sido diseñada para transmitir cercanía, confianza y profesionalismo, cualidades esenciales en una herramienta dirigida a academias educativas que buscan modernizar sus procesos. El estilo visual se basa en principios de simplicidad, accesibilidad y consistencia, permitiendo que los usuarios, incluso aquellos con poca experiencia digital, puedan interactuar con facilidad tanto en la versión web como en móvil.
+
+**Color**
+
+Los colores juegan un papel clave en la primera impresión que los usuarios tienen de Demy, por lo que se seleccionaron con base en la psicología del color y la teoría del color para reforzar los valores de la marca.
+
+La psicología del color es el estudio de cómo los colores afectan las percepciones y comportamientos humanos. Colores como el azul y el verde son asociados con la confianza, la calma y la seguridad, mientras que colores como el rojo y el amarillo pueden evocar emociones más intensas como la urgencia o la felicidad.
+
+![Color Psychology](./assets/images/figures/color-psychology.webp)
+
+En el caso de Demy, se eligieron colores que evocan sentimientos de confianza, seguridad y profesionalismo, esenciales para una plataforma educativa.
+
+Por otro lado, la teoría del color se refiere a la forma en que los colores interactúan entre sí y cómo pueden ser combinados para crear armonía visual. Existen varias armonías de color según el uso del círculo cromático, como los esquemas de colores complementarios, análogos y triádicos.
+
+![Color Harmonies](./assets/images/figures/color-harmonies.jpg)
+
+Para Demy, se escogió un esquema *Split-Complementary Colors* (colores complementarios divididos) que incluye un color principal y dos colores secundarios que son adyacentes al color complementario del color principal. Este esquema proporciona un alto contraste visual, manteniendo al mismo tiempo una armonía agradable.
+
+![Split-Complementary Colors](./assets/images/figures/split-complementary-colors.jpg)
+
+Después de este análisis, se seleccionaron los tonos de colores en base a los estilos de diseño Material Design de Google, que promueven la claridad y la funcionalidad. Se muestran a continuación la paleta de colores de Demy:
+
+- **Color Primario:** Índigo 500 (#3F51B5): El color principal de la marca, utilizado en elementos clave como botones de acción, encabezados y enlaces. Este tono de azul transmite confianza y profesionalismo.
+- **Color Secundario:** Orange 700 (#F57C00): Utilizado para resaltar elementos secundarios y llamadas a la acción menos prominentes. Este tono de naranja aporta energía y dinamismo.
+- **Color Terciario:** Purple 400 (#AB47BC): Utilizado para acentos y detalles, proporcionando un contraste visual atractivo. Este tono de púrpura añade un toque de creatividad y sofisticación.
+- **Color de Información:** Blue 500 (#2196F3): Utilizado para mensajes informativos y enlaces, este tono de azul claro es amigable y accesible.
+- **Color de Éxito:** Green 500 (#4CAF50): Utilizado para indicar acciones exitosas y estados positivos, este tono de verde transmite crecimiento y estabilidad.
+- **Color de Advertencia:** Amber 500 (#FFC107): Utilizado para alertas y mensajes de precaución, este tono de ámbar es llamativo sin ser alarmante.
+- **Color de Error:** Red 500 (#F44336): Utilizado para mensajes de error y advertencias críticas, este tono de rojo es intenso y urgente.
+
+![Demy Color Palette](./assets/images/figures/demy-color-palette.png)
+
+**Tipografía**
+
+La tipografía es otro componente esencial de la identidad visual de una marca. La elección de fuentes tipográficas debe reflejar la personalidad de la marca y garantizar la legibilidad en todos los dispositivos.
+
+En el caso de Demy, se seleccionaron las siguientes fuentes:
+
+- **Títulos y Encabezados:** *Montserrat* - Una fuente sans-serif moderna y geométrica que transmite profesionalismo y claridad. Es ideal para títulos y encabezados debido a su fuerte presencia visual.
+- **Cuerpo de Texto:** *Poppins* - Una fuente sans-serif redondeada y amigable que facilita la lectura en bloques de texto más largos. Su diseño limpio y contemporáneo la hace adecuada para el cuerpo de texto en interfaces digitales.
+
+Con estas elecciones tipográficas, Demy logra un equilibrio entre modernidad y accesibilidad, asegurando que los usuarios puedan leer y comprender el contenido sin esfuerzo.
+
+![Demy Typography Headings](./assets/images/figures/demy-typography-headings.png)
+
+![Demy Typography Body](./assets/images/figures/demy-typography-body.png)
+
+**Iconografía**
+
+La iconografía utilizada en Demy sigue un estilo lineal y minimalista, alineado con las tendencias actuales de diseño. Los iconos son simples, claros y fácilmente reconocibles, lo que facilita la navegación y la comprensión de las funciones de la plataforma.
+
+Además, se sigue el estilo de Material Design Icons, que proporciona una amplia variedad de iconos coherentes y bien diseñados. Los iconos se utilizan para representar acciones comunes, estados y categorías, ayudando a los usuarios a identificar rápidamente las funciones disponibles.
+
+![Demy Iconography](./assets/images/figures/demy-iconography.png)
+
+**Sistema de Cuadrículas**
+
+El diseño de la interfaz de usuario de Demy se basa en un sistema de cuadrículas flexible que asegura una disposición ordenada y coherente de los elementos visuales. Este sistema facilita la alineación y el espaciado, mejorando la legibilidad y la estética general de la plataforma.
+
+![Demy Grid System](./assets/images/figures/demy-grid-system.png)
+
+**Espaciado**
+
+El espaciado entre los elementos es crucial para evitar la saturación visual y mejorar la experiencia del usuario. En Demy, se utiliza un sistema de espaciado consistente basado en unidades de 8px, lo que permite una distribución equilibrada y armoniosa de los componentes en la interfaz.
+
+![Demy Spacing System](./assets/images/figures/demy-spacing-system.png)
+
+**Branding**
+
+Según Brandemia (2024), los arquetipos de marca representan patrones de comportamiento universales que son fácilmente reconocibles por las personas. Estos arquetipos ayudan a definir la personalidad de una marca y a establecer una conexión emocional con su audiencia.
+
+![Brand Archetypes](./assets/images/figures/brand-archetypes.webp)
+
+El arquetipo de marca elegido para Demy es el del "Cuidador" (The Caregiver). Este arquetipo se caracteriza por su deseo de ayudar a los demás, proteger y cuidar. Las marcas que adoptan este arquetipo suelen ser vistas como confiables, compasivas y dedicadas al bienestar de sus usuarios. Es adecuado para una plataforma educativa como Demy, ya que refleja el compromiso de la marca con la mejora de la educación y el apoyo a las academias y sus estudiantes.
+
+Por otra parte, la identidad visual de Demy se ve reflejada en la elección de su imagen de marca. Holum Studio (2022) explica que existen siete tipos principales de logotipos, cada uno con una función comunicativa distinta en la construcción de marca:
+
+- Logotipo (Wordmark): basado únicamente en texto o tipografía (ej. Google).
+- Isotipo (Brandmark): símbolo o ícono sin texto (ej. Apple).
+- Imagotipo: texto e ícono combinados, pero que pueden funcionar por separado (ej. Lacoste).
+- Isologo: texto e ícono integrados en una misma unidad visual (ej. Burger King).
+- Monograma: siglas o iniciales estilizadas (ej. IBM).
+- Emblema: texto dentro de una forma o escudo (ej. Harley-Davidson).
+- Símbolo abstracto: figura no literal que representa un concepto (ej. Nike).
+
+Se muestra a continuación una representación visual de algunos de estos tipos:
+
+![Logo Types](./assets/images/figures/logo-types.png)
+
+Para Demy, se optó por un imagotipo que combina un símbolo gráfico con el nombre de la marca. Un imagotipo es una representación visual que integra tanto un logotipo (el nombre de la marca) como un isotipo (un símbolo o icono) en una sola unidad coherente. Este enfoque permite que la marca sea fácilmente reconocible y memorable, ya que el símbolo gráfico puede ser utilizado de manera independiente en ciertos contextos, mientras que el nombre de la marca refuerza la identidad verbal.
+
+![Demy Imagotype](./assets/images/figures/demy-combination-mark.png)
+
+El imagotipo de Demy se compone por un símbolo "D" estilizado, que representa tanto la inicial de la marca como un elemento visual que evoca tecnología y modernidad. El diseño del símbolo es simple y limpio, utilizando líneas suaves y formas geométricas que transmiten profesionalismo y accesibilidad. El color principal del imagotipo es el Índigo 500 (#3F51B5), que refuerza la identidad visual de la marca y su asociación con la confianza y la seguridad.
+
+Además, el imagotipo incluye el nombre "Demy" en una tipografía moderna y legible, utilizando la fuente Montserrat en un peso semi-bold para asegurar visibilidad y claridad. La combinación del símbolo gráfico con el nombre de la marca crea una identidad visual fuerte y coherente que puede ser aplicada en diversos medios y formatos, desde la interfaz de usuario de la plataforma hasta materiales de marketing y comunicación.
+
+Finalmente, el tono de comunicación de Demy se escogió para reflejar los valores de la marca y conectar emocionalmente con su audiencia. El tono es amigable, accesible y profesional, buscando transmitir confianza y cercanía. Se evita el uso de jerga técnica o lenguaje demasiado formal, optando por un estilo conversacional que facilite la comprensión y genere empatía. Se utilizan frases cortas y directas, con un enfoque en los beneficios y soluciones que la plataforma ofrece a sus usuarios.
+
+
 ### 4.1.2. Web Style Guidelines
+
+En esta sección explicaremos y mostraremos de manera **referencial** las decisiones sobre los estándares visuales y de interacción aplicados a las interfaces web responsivas, desarrolladas con Angular y la biblioteca de componentes Angular Material
+<br>
+
+Las decisiones tomadas buscan garantizar una experiencia de usuario coherente, accesible y visualmente armónica en todos los dispositivos. Además, sacaremos provecho de los componentes que nos ofrece Angular Material, entre ellos los que más destacamos son:
+<br>
+
+* **Buttons**:Para los botones de acción dentro de la aplicación se utilizarán los componentes Buttons de Angular Material, con sus diferentes variantes las cuales no permitirá usar en muchas secciones. <br>
+  A continuación, se ilustra el estilo visual de manera referencial que tendrá en la aplicación web.
+![Buttons de la documentación de Angular Material](./assets/images/photos/buttons-angularmaterial-reference.png)
+
+* **Cards**:Para presentar información agrupada de manera visual, se utilizarán los componentes Card, los cuales permiten incluir títulos, subtítulos, imágenes y acciones dentro de un contenedor estilizado.<br>
+  Haremos uso de ellas en varias vistas como la de los planes mensuales que ofrece la aplicación <br>
+  A continuación, se ilustra de manera referencial los cards a implementar en la aplicación web sacado de la documentación oficial de Angular Material
+![Ejemplo de la documentación de Angular Material](./assets/images/photos/cards-angularmaterial-reference.png)
+
+* **Forms**:Los formularios no pueden faltar en ninguna aplicación web, se usa tanto para el logueo de la app o rellenar cualquier campo de información necesario como el registro de una materia para tal periodo académico.<br>
+  A continuación, se ilustra de manera referencial los form fields a implementar en la aplicación web sacado de la documentación oficial de Angular Material
+![Ejemplo de formularios de la documentación de Angular Material](./assets/images/photos/form-angularmaterial-reference.png)
+
 
 ### 4.1.3. Mobile Style Guidelines
 
 #### 4.1.3.1 iOS Mobyle Style Guidelines
 
+Para la versión de iOS de la plataforma Demy, desarrollada mediante el framework multiplataforma Flutter, las decisiones de diseño se alinean con las Human Interface Guidelines (HIG) de Apple. Aunque la aplicación hereda la identidad visual general de la marca (colores y tipografías base), la interacción se adapta para que los usuarios de iOS experimenten un comportamiento natural e intuitivo dentro de su ecosistema.
+
+* **Navegación:** Se prioriza el uso de Tab Bars en la parte inferior para la navegación principal, asegurando que los módulos más importantes (como asistencia o calendario) estén accesibles con el pulgar. Además, se respeta el gesto nativo de iOS de deslizar desde el borde izquierdo de la pantalla para retroceder de vista (swipe-to-go-back).
+* **Componentes Adaptados (Cupertino):** Para interacciones críticas del sistema, como cuadros de diálogo (Dialogs), selectores de fecha (Date Pickers) o interruptores (Switches), se hace uso de la biblioteca de componentes Cupertino de Flutter. Esto garantiza que, aunque la aplicación comparta la lógica de negocio multiplataforma, los controles se sientan 100% nativos para el usuario de Apple.
+* **Áreas de Interacción (Touch Targets):** Siguiendo las estrictas recomendaciones de Apple para la accesibilidad táctil, todos los elementos interactivos, botones y enlaces mantienen un área de toque mínima de 44x44 pt, evitando errores de pulsación en pantallas de iPhone.
+
 #### 4.1.3.2. Android Mobile Style Guidelines
+
+La versión de Android de Demy ha sido desarrollada de manera nativa con un enfoque exclusivo para dispositivos Tablet. Al disponer de pantallas significativamente más grandes que un smartphone tradicional, el diseño se fundamenta en las directrices de Material Design 3 para Large Screens, optimizando la distribución espacial y la productividad del usuario.
+
+* **Uso del Espacio y Layouts Multipanel:** Para evitar estirar los componentes de un extremo a otro de la pantalla, se implementan patrones de diseño de maestro-detalle (List-Detail View). Esto permite, por ejemplo, que un administrador vea la lista de alumnos en el panel izquierdo y el detalle de la asistencia o calificaciones de un estudiante específico en el panel derecho simultáneamente.
+* **Navegación Adaptada:** Dado el formato de la tablet, el tradicional Bottom Navigation es reemplazado por un Navigation Rail (Riel de navegación lateral) o un Navigation Drawer permanente. Esto aprovecha mejor el ancho de la pantalla y mantiene las acciones principales al alcance de los pulgares cuando el usuario sostiene el dispositivo en formato horizontal.
+* **Componentes Material Nativos:** Se hace uso extensivo de los componentes estándar de Android, destacando el uso de tarjetas (Cards) enriquecidas, botones flotantes de acción (FAB) ubicados de acuerdo a la ergonomía de una pantalla grande, y modales (Dialogs) que no bloquean innecesariamente toda la interfaz visual.
+* **Áreas de Interacción:** De acuerdo con los estándares de Material Design, los objetivos táctiles se establecen en un mínimo de 48x48 dp, asegurando una interacción cómoda, precisa y sin esfuerzo en entornos de trabajo académico.
 
 ## 4.2. Information Architecture
 
 ### 4.2.1. Organization Systems
 
+Vamos a usar diferentes sistemas de organización según el tipo de contenido que se presente, con el objetivo de facilitar la comprensión, la navegación táctil y la interacción por parte del usuario en su dispositivo móvil.
+
+**Organización visual del contenido**
+
+- **Jerárquica (Visual Hierarchy):** Utilizaremos una jerarquía visual clara para destacar mensajes principales y llamadas a la acción (CTAs). Este tipo de organización guía la mirada del usuario desde lo más importante (títulos grandes, botones de colores contrastantes) hasta los detalles secundarios, optimizando el espacio reducido de la pantalla.
+
+- **Listas Verticales:** Será el sistema de organización principal para mostrar directorios, menús o historiales, permitiendo un *scroll* natural y fluido.
+
+- **Tarjetas y Cuadrículas (Cards & Grid):** Aplicaremos una organización en tarjetas (ya sea en listas de una columna, cuadrículas de dos columnas o carruseles de *scroll* horizontal) cuando se presenten múltiples elementos visuales similares, como productos o servicios. Esto permite al usuario comparar la información fácilmente sin saturar la pantalla.
+
+**Esquemas de categorización de contenido**
+
+- **Por tópicos o categorías:** Se utilizará cuando el contenido pueda agruparse por temas, facilitando que el usuario encuentre información relacionada a través de menús de navegación (como un *Bottom Navigation Bar* o pestañas).
+
+- **Secuencial (Step-by-step):** Se usará cuando el usuario deba seguir un orden lógico para completar una tarea (por ejemplo, el proceso de *onboarding* inicial o el pago/registro de matrículas), guiándolo pantalla por pantalla para evitar frustraciones.
+
+- **Según perfil de usuario:** El contenido se adaptará dependiendo del tipo de cuenta o rol (ej. Administrador o Docente) con el que el usuario inicie sesión, mostrando solo las opciones relevantes para su perfil.
+
 ### 4.2.2. Labeling Systems
+
+La interfaz de nuestra aplicación debe ser clara y fácil de usar, con palabras claves que sean conocidas por nuestros usuarios. Por esta razón, las etiquetas empleadas deben explicar de manera concisa su función en pocas palabras. Así, hemos creado etiquetas para la navegación principal en las dos versiones de nuestra aplicación web:
+
+***Administrador***
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Matrícula: Acceso al registro de matrícula de alumnos, permitiendo su alta en el sistema.
+- Alumnos: Acceso a filtros de búsqueda de alumnos por DNI y muestra detalles generales como: nombres, apellidos, DNI, apoderado, fecha de matrícula, estado de matrícula y estado de pago.
+- Pagos: Acceso para registrar el pago de mensualidades de los alumnos, con opciones para actualizar el estado de pago.
+- Horarios: Acceso a un calendario semanal donde están programadas las clases, con un filtro por código de salón.
+- Asistencia: Acceso a la gestión de asistencia de los alumnos, con filtro por DNI y visualización de su historial.
+- Finanzas: Acceso al registro de egresos, balance mensual y visualización de los últimos egresos realizados.
+
+***Profesor***
+
+- Panel de Control: Acceso al panel principal con vistas rápidas y enlaces a todas las secciones principales de la aplicación, organizado en un estilo Bento Grid.
+- Horarios: Acceso a los horarios del profesor, con la programación detallada de sus clases y la asignación por día y aula.
+- Asistencia: Acceso a la gestión de asistencia, con un filtro por aula y un panel interactivo para marcar la asistencia de los alumnos durante las clases.
+
 
 ### 4.2.3. SEO Tags and Meta Tags
 
+Para optimizar la visibilidad de nuestra solución digital **Demy** y mejorar la experiencia de navegación e interacción, se han definido un conjunto de etiquetas SEO/Meta Tags para las plataformas web, así como directrices de ASO para la aplicación móvil.  
+Estas etiquetas contribuyen a mejorar el posicionamiento en buscadores, la accesibilidad, la correcta previsualización al compartir enlaces en redes sociales y la visibilidad en las tiendas de aplicaciones.
+
+- **Title**: Título que se muestra en la pestaña del navegador y encabezado de resultados de búsqueda.
+- **Description**: Resumen breve que describe el contenido de la página.
+- **Author**: Indica el equipo responsable del contenido del sitio web.
+- **Viewport**: Define el ajuste del contenido en diferentes tamaños de pantalla (esencial para diseño responsivo).
+- **Charset**: Establece el sistema de codificación de caracteres (UTF-8).
+- **Open Graph (OG)**: Etiquetas (`og:title`, `og:description`, `og:image`) que controlan cómo se previsualiza la página al ser compartida en redes sociales o aplicaciones de mensajería.
+- **Robots**: Indica a los motores de búsqueda qué páginas o paneles privados no deben ser indexados.
+
+#### Landing Page SEO Tags and Meta Tags
+
+- **Title**: "Demy - La forma inteligente de gestionar tu academia"
+- **Description**: "Demy es una plataforma web que digitaliza la gestión académica de academias presenciales: matrículas, pagos, asistencia y más desde un solo lugar."
+- **Author**: "Demy Team"
+- **Viewport**: Adaptable a cualquier dispositivo, permitiendo una navegación fluida en móviles, tablets y computadoras.
+- **Charset**: Se utilizará UTF-8 para asegurar compatibilidad con todos los idiomas.
+- **Keywords**: "gestión académica, software para academias, control de asistencia, matrícula online, pagos estudiantes, plataforma educativa"
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demy - La forma inteligente de gestionar tu academia</title>
+  <meta name="description" content="Demy es una plataforma web que digitaliza la gestión académica de academias presenciales: matrículas, pagos, asistencia y más desde un solo lugar.">
+  <meta name="keywords" content="gestión académica, software para academias, control de asistencia, matrícula online, pagos estudiantes, plataforma educativa">
+  <meta name="author" content="Demy Team">
+</head>
+```
+
+
+#### Web Application SEO Tags and Meta Tags
+
+- **Title:** "Demy App - Panel de gestión para academias y docentes"
+- **Description**: "Administra tu academia desde cualquier dispositivo: registra asistencia, visualiza horarios, controla pagos y más desde un solo lugar."
+- **Author**: "Demy Team"
+- **Viewport:** Responsive para que tanto docentes como administrativos puedan operar cómodamente desde celulares, tablets y PC.
+- **Charset**: UTF-8 para soportar correctamente todos los caracteres.
+- **Keywords:** "plataforma educativa, docentes, pagos, horarios, asistencia, gestión académica, software educativo, aulas"
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demy App - Panel de gestión para academias y docentes</title>
+  <meta name="description" content="Administra tu academia desde cualquier dispositivo: registra asistencia, visualiza horarios, controla pagos y más desde un solo lugar.">
+  <meta name="keywords" content="plataforma educativa, docentes, pagos, horarios, asistencia, gestión académica, software educativo, aulas">
+  <meta name="author" content="Demy Team">
+</head>
+```
+
+#### Mobile App - ASO
+Para el componente móvil de Demy, el posicionamiento (SEO móvil) se rige bajo las reglas de las tiendas de aplicaciones (Google Play / App Store) utilizando los siguientes parámetros:
+- App Name : "Demy: Gestión para Academias"
+- Short Description: "Controla la asistencia, horarios y pagos de tu academia fácilmente desde tu celular."
+- Keywords: "educación, academia, asistencia, docentes, gestión escolar, pagos"
+
 ### 4.2.4. Searching Systems
+
+A medida que se incrementa la cantidad de información almacenada en nuestra plataforma, resulta esencial brindar herramientas que ayuden a los usuarios a encontrar lo que necesitan de forma ágil y precisa. Para evitar que se sientan abrumados, hemos integrado diferentes mecanismos de búsqueda y filtrado que se adaptan a distintos contextos dentro del sistema.
+
+#### Búsqueda por palabra clave
+En secciones como la de estudiantes o aulas, el usuario podrá ingresar términos específicos, como el **DNI del estudiante** o el **código del aula**, dentro de un buscador con el clásico ícono de lupa. El sistema mostrará coincidencias inmediatas, facilitando la navegación sin necesidad de recorrer listas extensas.
+
+#### Filtros desplegables por categoría y fecha
+Para consultar información detallada o generar reportes, los usuarios contarán con filtros como **tipo de ciclo**, **categoría**, **año** y **mes**. Estos se presentan en menús desplegables con una flecha hacia abajo, permitiendo seleccionar la opción deseada de forma rápida y sin errores.
+
+#### Selector de tipo de reporte
+
+En el módulo financiero, los usuarios tendrán la posibilidad de elegir entre **generar un reporte mensual** o **visualizar el historial completo** de movimientos. Esta acción se realiza mediante botones de selección simple, que adaptan dinámicamente el contenido mostrado en pantalla según la opción elegida.
 
 ### 4.2.5. Navigation Systems
 
+En **Demy** buscamos ofrecer la mejor experiencia a nuestros usuarios, asegurando la usabilidad en nuestras interfaces. Para ello, se han definido las siguientes decisiones de UI:
+
+#### Landing Page
+
+- La navegación de la Landing Page utiliza **scroll vertical**, ya que es el patrón más común y cómodo en páginas web.
+- Cuenta con una **barra de menú superior fija (sticky navbar)** que permanece visible mientras el usuario se desplaza. Esta incluye enlaces a las secciones: *About*, *Benefits*, *Plans* y *Contact*.
+- Se emplean **Call to Action (CTA)** en secciones clave como *Hero*, *Plans* y *Contact*, mediante botones como **"Get Started"** y **"Start Today"**, incentivando la conversión de usuarios.
+
+#### Web Application
+
+- La aplicación contará con un **navbar principal** que permite navegar entre las secciones *Mi organización* y *Panel de control*.
+- Dentro del *Panel de control*, se desplegará un **side navbar (menú lateral)** con acceso a las distintas funcionalidades de la plataforma.
+- Se implementará navegación entre vistas con opción de **volver a la pantalla anterior**, garantizando que el usuario mantenga siempre el control del sistema.
+
+#### Mobile App
+
+- La aplicación móvil contará con una **barra de navegación inferior (bottom navigation bar)** para acceder rápidamente a las secciones principales.
+- Se incorporará un **menú tipo hamburguesa** o menú lateral para funcionalidades secundarias o configuraciones.
+- La navegación estará optimizada para uso con una sola mano, priorizando accesos rápidos y visibles.
+- Se implementarán **gestos táctiles** (como deslizamientos) para mejorar la fluidez en la navegación entre pantallas.
+- Se mantendrá consistencia visual y de interacción con la versión web para facilitar el aprendizaje del usuario.
+
+#### Accesibilidad y Usabilidad
+
+- Se aplicará **Responsive Design**, asegurando una experiencia consistente en diferentes dispositivos (desktop, tablet y móvil).
+- En dispositivos móviles, la navegación se adaptará mediante un **menú tipo hamburguesa (ícono de tres líneas)** que desplegará un side navbar con las funcionalidades disponibles.
+- Se prioriza la claridad visual, facilidad de uso y accesibilidad para todo tipo de usuarios.
+
 ## 4.3. Landing Page UI Desing
+
+En esta sección se presentan los wireframes y mock-ups de la página de inicio (landing page) de la plataforma Demy. Se describen las principales secciones, funcionalidades y elementos visuales que componen esta pantalla.
+
 
 ### 4.3.1. Landing Page Wireframe
 
+A continuación se presenta la sustentación de la landing page. El diseño se enfoca en la claridad y eficiencia para mostrar el producto a futuros usuarios.
+
+**Sección Hero**
+
+Encabezado claro, subtítulo con propuesta de valor y dos capturas para descargar la app en iOS y android. Incluye foto de portada y fondo con efecto “glass” suave.
+
+![Landing Hero](./assets/ux-ui/wireframes/landing/landing_hero.png)
+
+**Cómo Funciona**
+
+Proceso en 3 pasos (descubre, configura y comienza). Refuerza la facilidad de adopción de la idea del producto.
+
+![Landing Cómo Funciona](./assets/ux-ui/wireframes/landing/landing_howitworks.png)
+
+**Características (features)**
+
+Features principales con características cortas sobre el producto.
+
+![Landing Features](./assets/ux-ui/wireframes/landing/landing_features.png)
+
+**Otras características (features)**
+
+Descripción con características cortas sobre el producto.
+
+![Landing Features](./assets/ux-ui/wireframes/landing/landing_features_2.png)
+
+**Precios**
+
+Planes comparables (Essential/Pro/Elite) con lista de inclusiones y recomendaciones. Transparencia en términos y facturación.
+
+![Landing Precios](./assets/ux-ui/wireframes/landing/landing_pricing.png)
+
+**Testimonios**
+
+Prueba social con citas verificables dados por usuarios clientes.
+
+![Landing Testimonios](./assets/ux-ui/wireframes/landing/landing_testimonials.png)
+
+**Equipo**
+
+Cards de integrantes con rol y enlaces profesionales. Refuerza credibilidad técnica y de soporte.
+
+![Landing Equipo](./assets/ux-ui/wireframes/landing/landing_team.png)
+
+**Preguntas Frecuentes (FAQ)**
+
+Resuelve objeciones comunes ( datos, cancelación, soporte).
+
+![Landing FAQ](./assets/ux-ui/wireframes/landing/landing_faq.png)
+
+**Contáctanos**
+
+Formulario breve y canales alternativos (correo, WhatsApp, redes).
+
+![Landing Contacto](./assets/ux-ui/wireframes/landing/landing_contact_us.png)
+
+**Footer**
+
+Navegación secundaria, legales (Términos/Privacidad), redes sociales y sello de derechos.
+
+![Landing Footer](./assets/ux-ui/wireframes/landing/landing_footer.png)
+
+
 ### 4.3.2. Landing Page Mock-up
+
+A continuación se presenta la sustentación de los mockups de la landing page. El diseño prioriza claridad, escaneabilidad y consistencia visual con un estilo “glass” sutil, gradientes suaves y contraste de colores para legibilidad.
+
+**Sección Hero**
+
+Toolbar y texto con dos badges de descarga (App Store / Google Play). Imagen principal a la derecha y fondo con efecto “liquid glass” para dar profundidad sin distraer.
+
+![Landing Hero](./assets/ux-ui/mockups/landing/landing_herosection.png)
+
+**Cómo Funciona**
+
+Flujo en 3 pasos (descubre, configura, comienza) con numeración clara, íconos consistentes y tarjetas para separar etapas.
+
+![Landing Cómo Funciona](./assets/ux-ui/mockups/landing/landing_howitworks.png)
+
+**Características (features)**
+
+Bloque principal de features de la aplicación.
+
+![Landing Features](./assets/ux-ui/mockups/landing/landing_features.png)
+
+**Otras características (features)**
+
+Descripción complementaria sobre la aplicación. Se emplea tipografía y colores en escala.
+
+![Landing Features 3](./assets/ux-ui/mockups/landing/landing_features3.png)
+
+**Precios**
+
+Comparativa de planes (Essential / Pro / Elite) con lista de inclusiones. El plan recomendado resalta con un tono de acento y un borde más notorio. Información de facturación y términos visible.
+
+![Landing Precios](./assets/ux-ui/mockups/landing/landing_pricing.png)
+
+**Testimonios**
+
+Testimonios con foto, nombre y rol; calificación visible. Opción de mostrar perfil de clientes para reforzar credibilidad.
+
+![Landing Testimonios](./assets/ux-ui/mockups/landing/landing_testimonials.png)
+
+**Preguntas Frecuentes (FAQ)**
+
+Acordeón con preguntas habituales (datos, cancelación, soporte).
+
+![Landing FAQ](./assets/ux-ui/mockups/landing/landing_faq.png)
+
+**Contáctanos**
+
+Formulario breve (nombre, correo, mensaje) y canales alternativos (correo, WhatsApp, redes).
+
+![Landing Contacto](./assets/ux-ui/mockups/landing/landing_contactus.png)
+
+**Footer**
+
+Navegación secundaria, enlaces legales (Términos/Privacidad) y redes sociales. Contraste elevado para accesibilidad y lectura final.
+
+![Landing Footer](./assets/ux-ui/mockups/landing/landing_footer.png)
+
+<hr class="page-break">
 
 ## 4.4 Mobile Applications UX/UI Design
 
+En esta sección se presentan los wireframes y mock-ups de las aplicaciones móviles de la plataforma Demy. Se describen las principales pantallas, funcionalidades y elementos visuales que componen estas aplicaciones.
+
 ### 4.1.1. Mobile Applications Wireframes
+
+**Mobile Applications Wireframes: Flujo de Administrador**
+
+A continuación, se presenta la sustentación de los wireframes para la aplicación del **Administrador**. El diseño se enfoca en la seguridad, claridad y eficiencia, aplicando un Design System consistente para una experiencia de usuario intuitiva.
+
+**Registro y Creación de Cuenta**
+
+Estas pantallas guían al nuevo administrador en tres pasos claros y seguros: registro, verificación por email y finalización del perfil. Se utiliza un diseño minimalista para no abrumar al usuario, pidiendo la información de manera progresiva y asegurando la cuenta a través de la verificación del correo electrónico.
+
+![Admin Registro](./assets/ux-ui/wireframes/mobile/admin/admin_registro.png)
+![Admin Verificación Email](./assets/ux-ui/wireframes/mobile/admin/admin_verificacion_email.png)
+![Admin Completar Perfil](./assets/ux-ui/wireframes/mobile/admin/admin_completar_perfil.png)
+
+**Inicio de Sesión (Login)**
+
+Pantalla de acceso estándar y familiar diseñada para un ingreso rápido a la plataforma. Prioriza la usabilidad con campos claros y un enlace fácilmente accesible para la recuperación de contraseña, permitiendo la autogestión del usuario.
+
+![Admin Login](./assets/ux-ui/wireframes/mobile/admin/admin_login.png)
+
+**Recuperación de Contraseña**
+
+Estas pantallas garantizan el guiado en cuatro pasos simples para una recuperación de cuenta segura:
+1.  **Solicitud:** El usuario ingresa su email.
+2.  **Verificación:** Confirma su identidad con un código.
+3.  **Restablecimiento:** Crea una nueva contraseña.
+4.  **Confirmación:** Recibe una notificación de éxito.
+
+Solo el propietario de la cuenta pueda realizar cambios, ofreciendo una experiencia clara y sin fricciones.
+
+![Admin Recuperar Password Solicitud](./assets/ux-ui/wireframes/mobile/admin/admin_recuperar_password_solicitud.png)
+![Admin Recuperar Password Verificación Código](./assets/ux-ui/wireframes/mobile/admin/admin_recuperar_password_verificacion_codigo.png)
+![Admin Ingreso Nueva Password](./assets/ux-ui/wireframes/mobile/admin/admin_ingreso_nueva_password.png)
+![Admin Confirmación Cambio Password](./assets/ux-ui/wireframes/mobile/admin/admin_confirmacion_cambio_password.png)
+
+**Documentación Legal**
+
+Pantallas dedicadas para los **Términos y Condiciones** y la **Política de Privacidad**. El diseño es limpio y se centra en la legibilidad del contenido, asegurando la transparencia y facilitando la consulta desde el flujo de registro.
+
+![Admin Términos y Condiciones](./assets/ux-ui/wireframes/mobile/admin/admin_terminos_y_condiciones.png)
+![Admin Política de Privacidad](./assets/ux-ui/wireframes/mobile/admin/admin_politica_de_privacidad.png)
+
+**Suscripción y Configuración de Academia**
+
+Estas pantallas de onboarding que sigue al registro. Guía al administrador a través de la selección de un plan, el ingreso seguro de los datos de pago y la configuración inicial de la academia. El proceso está diseñado para ser rápido y motivador, finalizando con una pantalla de éxito que da la bienvenida al usuario y lo dirige al panel principal.
+
+![Admin Selección Plan](./assets/ux-ui/wireframes/mobile/admin/admin_seleccion_plan.png)
+![Admin Formulario Pago](./assets/ux-ui/wireframes/mobile/admin/admin_formulario_pago.png)
+![Admin Configuración Academia](./assets/ux-ui/wireframes/mobile/admin/admin_configuracion_academia.png)
+![Admin Confirmación Éxito](./assets/ux-ui/wireframes/mobile/admin/admin_confirmacion_exito.png)
+
+**Pantalla Principal (Dashboard)**
+
+Muestra un resumen visual del estado de la institución con métricas clave, gráficos de ingresos/gastos y datos importantes del periodo académico actual. Permite una visión general rápida.
+
+![Admin Dashboard](./assets/ux-ui/wireframes/mobile/admin/admin_dashboard.png)
+
+**Gestión de Periodos Académicos**
+
+Permite crear, ver, editar y eliminar periodos académicos. Muestra el periodo actual de forma destacada y un listado completo para una gestión sencilla.
+
+![Admin Periodos Management](./assets/ux-ui/wireframes/mobile/admin/admin_periods_management.png)
+![Admin Periodos Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_periods_new_form.png)
+
+**Gestión de Profesores**
+
+Facilita la administración de profesores, permitiendo registrar, editar y eliminar sus perfiles. El diseño es consistente con otras secciones de gestión para optimizar el flujo de trabajo.
+
+![Admin Profesores Registro Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_teachers_register_form.png)
+![Admin Profesores Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_teachers_edit_form.png)
+
+**Seguimiento de Estudiantes**
+
+Permite buscar y visualizar el perfil de cada estudiante. Al seleccionar uno, se muestra una tarjeta con su información principal para un seguimiento rápido y eficiente.
+
+![Admin Seguimiento Estudiantes](./assets/ux-ui/wireframes/mobile/admin/admin_student_monitoring.png)
+
+**Componente Reutilizable: Modal de Confirmación**
+
+Este modal de advertencia aparece antes de realizar acciones destructivas, como eliminar datos. Su propósito es prevenir errores, forzando al usuario a confirmar su decisión.
+
+![Admin Modal Confirmación Eliminación](./assets/ux-ui/wireframes/mobile/admin/admin_delete_confirmation_modal.png)
+
+**Gestión de Aulas (Classrooms)**
+
+Esta sección permite administrar la infraestructura de aulas. El administrador puede registrar nuevas aulas con detalles como código y capacidad, además de editar o eliminar las existentes. La interfaz mantiene la consistencia visual y funcional del resto de la aplicación para facilitar su uso.
+
+![Admin Aulas Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_classrooms_new_form.png)
+![Admin Aulas Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_classrooms_edit_form.png)
+
+**Gestión de Cursos**
+
+Aquí se gestiona la oferta académica de la institución. Permite la creación, edición y eliminación de cursos, asignando nombre, código y descripción. El diseño sigue el patrón de las demás pantallas de gestión para una experiencia de usuario unificada y predecible.
+
+![Admin Cursos Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_courses_new_form.png)
+![Admin Cursos Edición Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_courses_edit_form.png)
+
+**Gestión de Horarios**
+
+Permite al administrador crear y gestionar horarios para los cursos. La interfaz es intuitiva, facilitando la asignación de días y horas, y asegurando que los horarios no se solapen.
+
+![Admin Horarios Nuevo Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_schedules_new_form.png)
+![Admin Listado de Horarios](./assets/ux-ui/wireframes/mobile/admin/admin_schedules_list.png)
+
+**Gestión de Matrículas**
+
+Permite al administrador revisar y gestionar las inscripciones de los estudiantes a los cursos. Incluye funcionalidades para aprobar o rechazar inscripciones, así como ver detalles específicos de cada una.
+
+![Admin Matrículas Formulario](./assets/ux-ui/wireframes/mobile/admin/admin_enrollments_form.png)
+![Admin Listado de Matrículas](./assets/ux-ui/wireframes/mobile/admin/admin_enrollments_list.png)
+
+**Gestión de Facturación (Billing)**
+
+Esta sección se centra en el control de las cuentas de facturación de los estudiantes. Permite buscar cuentas, ver su estado (activo, cancelado, suspendido) y gestionar facturas individuales. El administrador puede crear nuevas facturas directamente desde este módulo.
+
+![Admin Facturación Búsqueda](./assets/ux-ui/wireframes/mobile/admin/admin_billing_search.png)
+![Admin Facturación Nueva Factura](./assets/ux-ui/wireframes/mobile/admin/admin_billing_new_invoice.png)
+
+**Finanzas y Contabilidad (Finance & Accounting)**
+
+Funciona como el centro financiero general de la institución. Aquí, el administrador puede registrar todas las transacciones de ingresos y gastos, ver un historial detallado y analizar resúmenes visuales a través de gráficos para un mejor seguimiento contable.
+
+![Admin Nueva Transacción](./assets/ux-ui/wireframes/mobile/admin/admin_finance_new_transaction.png)
+![Admin Lista de Transacciones](./assets/ux-ui/wireframes/mobile/admin/admin_finance_transaction_list.png)
+
+**Perfil del Administrador**
+
+Pantalla donde el administrador puede ver y editar su información personal y los datos de la academia asociada a su cuenta. También muestra el estado de su cuenta de usuario (rol, estado de verificación).
+
+![Admin Perfil](./assets/ux-ui/wireframes/mobile/admin/admin_profile.png)
+
+**Configuración (Settings)**
+
+Permite al administrador personalizar su experiencia en la aplicación. Incluye opciones de accesibilidad, configuración de tema (modo oscuro, alto contraste), gestión de notificaciones y cambio de contraseña.
+
+![Admin Configuración](./assets/ux-ui/wireframes/mobile/admin/admin_settings.png)
+
+**Ayuda y Cierre de Sesión**
+
+La sección de Ayuda centraliza los recursos de soporte, como información de contacto y enlaces a documentos legales. El cierre de sesión se realiza de forma segura a través de un modal de confirmación para evitar salidas accidentales.
+
+![Admin Centro de Ayuda](./assets/ux-ui/wireframes/mobile/admin/admin_help_center.png)
+![Admin Modal Cierre de Sesión](./assets/ux-ui/wireframes/mobile/admin/admin_logout_modal.png)
+
+**Mobile Applications Wireframes: Flujo de Profesor**
+
+A continuación, se presentan los wireframes de la versión móvil destinados al perfil de docente. Estas pantallas muestran el flujo principal de interacción dentro de la aplicación, incluyendo el inicio de sesión, la gestión de asistencia, la visualización de horarios, la reprogramación de clases, el acceso al perfil del usuario, y la configuración de ajustes.
+
+Los wireframes permiten visualizar de manera clara la estructura, distribución y funcionalidad de cada sección antes de la etapa de diseño visual definitivo.
+
+**Flujo de Acceso y Recuperación de Contraseña**
+Este grupo incluye las pantallas necesarias para que el profesor ingrese a la aplicación o recupere su cuenta si ha olvidado la contraseña. El flujo está diseñado en pasos discretos para minimizar la frustración del usuario.
+
+![WireframeMobileTeacher9](./assets/ux-ui/wireframes/mobile/teacher/Loader.png)
+![WireframeMobileTeacher10](./assets/ux-ui/wireframes/mobile/teacher/Login.png)
+![WireframeMobileTeacher4](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-CreateNewPassword.png)
+![WireframeMobileTeacher5](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-ResetPassword.png)
+![WireframeMobileTeacher6](./assets/ux-ui/wireframes/mobile/teacher/ForgotPassword-VerificationCode.png)
+
+**Flujo Principal y Gestión de Cuenta**
+Este flujo representa el centro de navegación de la aplicación. La Home actúa como dashboard con acceso rápido a las funciones clave, mientras que Profile y Settings permiten la gestión de la identidad y las preferencias del profesor.
+
+![WireframeMobileTeacher8](./assets/ux-ui/wireframes/mobile/teacher/Home.png)
+![WireframeMobileTeacher11](./assets/ux-ui/wireframes/mobile/teacher/Profile.png)
+![WireframeMobileTeacher12](./assets/ux-ui/wireframes/mobile/teacher/Settings.png)
+
+**Flujo de Asistencia**
+El objetivo de este flujo es la toma de asistencia rápida y la generación estructurada de informes. El proceso de reporte está dividido en pantallas de elección para asegurar la precisión de los filtros.
+
+![WireframeMobileTeacher7](./assets/ux-ui/wireframes/mobile/teacher/HomeAttendanceModal.png)
+![WireframeMobileTeacher13](./assets/ux-ui/wireframes/mobile/teacher/TakeAttendance.png)
+![WireframeMobileTeacher1](./assets/ux-ui/wireframes/mobile/teacher/AttencanceReport-ChooseCourse.png)
+![WireframeMobileTeacher2](./assets/ux-ui/wireframes/mobile/teacher/AttencanceReport-ChooseDate.png)
+![WireframeMobileTeacher3](./assets/ux-ui/wireframes/mobile/teacher/AttendanceReport.png)
+
+**Flujo de Horario y Reprogramación**
+Este grupo gestiona la visualización del horario del profesor y ofrece una funcionalidad guiada de reprogramación de clases a través de múltiples pasos de confirmación.
+
+![WireframeMobileTeacher14](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseStarTime.png)
+![WireframeMobileTeacher15](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseEndTime.png)
+![WireframeMobileTeacher16](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule-ChooseDay.png)
+![WireframeMobileTeacher18](./assets/ux-ui/wireframes/mobile/teacher/TeachingSchedule.png)
+![WireframeMobileTeacher17](./assets/ux-ui/wireframes/mobile/teacher/TeachingReschedule.png)
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
+
+**Mobile Applications Wireflow: Flujo de Administrador**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![Wireflow-Administrator-1](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-1.png)
+
+**User Goal**  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![Wireflow-Administrator-2](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![Wireflow-Administrator-3](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-3.png)
+
+**User Goal**  
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![Wireflow-Administrator-4](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-4.png)
+
+**User Goal**  
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![Wireflow-Administrator-5](./assets/ux-ui/wireflows/mobile-applications/administrator/Wireflow-Administrator-5.png)
+
+**Mobile Applications Wireflow: Flujo de Profesor**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Wireflow-Teacher-1](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ReportAttendance.png)
+
+**User Goal** 
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Wireflow-Teacher-2](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-RescheduleClass.png)
+
+**User Goal** 
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Wireflow-Teacher-3](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-TakeAttendance.png)
+
+**User Goal** 
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Wireflow-Teacher-4](./assets/ux-ui/wireflows/mobile-applications/teacher/Wireflow-Teacher-ViewSchedule.png)
+
 ### 4.4.3. Mobile Applications Mock-ups
+
+**Mobile Applications Mock-ups: Administrador**
+
+A continuación, se presenta la sustentación de los mockups para la aplicación del **Administrador**. El diseño se enfoca en la seguridad, claridad y eficiencia, aplicando un Design System consistente para una experiencia de usuario intuitiva.
+
+**Registro y Creación de Cuenta**
+
+Estas pantallas guían al nuevo administrador en tres pasos claros y seguros: registro, verificación por email y finalización del perfil. Se utiliza un diseño minimalista para no abrumar al usuario, pidiendo la información de manera progresiva y asegurando la cuenta a través de la verificación del correo electrónico.
+
+![Admin Registro](assets/ux-ui/mockups/mobile/admin/admin_registro.png)
+![Admin Verificación Email](assets/ux-ui/mockups/mobile/admin/admin_verificacion_email.png)
+![Admin Completar Perfil](assets/ux-ui/mockups/mobile/admin/admin_completar_perfil.png)
+
+**Inicio de Sesión (Login)**
+
+Pantalla de acceso estándar y familiar diseñada para un ingreso rápido a la plataforma. Prioriza la usabilidad con campos claros y un enlace fácilmente accesible para la recuperación de contraseña, permitiendo la autogestión del usuario.
+
+![Admin Login](assets/ux-ui/mockups/mobile/admin/admin_login.png)
+
+**Recuperación de Contraseña**
+
+Estas pantallas garantizan el guiado en cuatro pasos simples para una recuperación de cuenta segura:
+1.  **Solicitud:** El usuario ingresa su email.
+2.  **Verificación:** Confirma su identidad con un código.
+3.  **Restablecimiento:** Crea una nueva contraseña.
+4.  **Confirmación:** Recibe una notificación de éxito.
+
+Solo el propietario de la cuenta pueda realizar cambios, ofreciendo una experiencia clara y sin fricciones.
+
+![Admin Recuperar Password Solicitud](assets/ux-ui/mockups/mobile/admin/admin_recuperar_password_solicitud.png)
+![Admin Recuperar Password Verificación Código](assets/ux-ui/mockups/mobile/admin/admin_recuperar_password_verificacion_codigo.png)
+![Admin Ingreso Nueva Password](assets/ux-ui/mockups/mobile/admin/admin_ingreso_nueva_password.png)
+![Admin Confirmación Cambio Password](assets/ux-ui/mockups/mobile/admin/admin_confirmacion_cambio_password.png)
+
+**Documentación Legal**
+
+Pantallas dedicadas para los **Términos y Condiciones** y la **Política de Privacidad**. El diseño es limpio y se centra en la legibilidad del contenido, asegurando la transparencia y facilitando la consulta desde el flujo de registro.
+
+![Admin Términos y Condiciones](assets/ux-ui/mockups/mobile/admin/admin_terminos_y_condiciones.png)
+![Admin Política de Privacidad](assets/ux-ui/mockups/mobile/admin/admin_politica_de_privacidad.png)
+
+**Suscripción y Configuración de Academia**
+
+Estas pantallas de onboarding que sigue al registro. Guía al administrador a través de la selección de un plan, el ingreso seguro de los datos de pago y la configuración inicial de la academia. El proceso está diseñado para ser rápido y motivador, finalizando con una pantalla de éxito que da la bienvenida al usuario y lo dirige al panel principal.
+
+![Admin Selección Plan](assets/ux-ui/mockups/mobile/admin/admin_seleccion_plan.png)
+![Admin Formulario Pago](assets/ux-ui/mockups/mobile/admin/admin_formulario_pago.png)
+![Admin Configuración Academia](assets/ux-ui/mockups/mobile/admin/admin_configuracion_academia.png)
+![Admin Confirmación Éxito](assets/ux-ui/mockups/mobile/admin/admin_confirmacion_exito.png)
+
+**Pantalla Principal (Dashboard)**
+
+Muestra un resumen visual del estado de la institución con métricas clave, gráficos de ingresos/gastos y datos importantes del periodo académico actual. Permite una visión general rápida.
+
+![Admin Dashboard](assets/ux-ui/mockups/mobile/admin/admin_dashboard.png)
+
+**Gestión de Periodos Académicos**
+
+Permite crear, ver, editar y eliminar periodos académicos. Muestra el periodo actual de forma destacada y un listado completo para una gestión sencilla.
+
+![Admin Periodos Management](assets/ux-ui/mockups/mobile/admin/admin_periods_management.png)
+![Admin Periodos Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_periods_new_form.png)
+
+**Gestión de Profesores**
+
+Facilita la administración de profesores, permitiendo registrar, editar y eliminar sus perfiles. El diseño es consistente con otras secciones de gestión para optimizar el flujo de trabajo.
+
+![Admin Profesores Registro Formulario](assets/ux-ui/mockups/mobile/admin/admin_teachers_register_form.png)
+![Admin Profesores Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_teachers_edit_form.png)
+
+**Seguimiento de Estudiantes**
+
+Permite buscar y visualizar el perfil de cada estudiante. Al seleccionar uno, se muestra una tarjeta con su información principal para un seguimiento rápido y eficiente.
+
+![Admin Seguimiento Estudiantes](assets/ux-ui/mockups/mobile/admin/admin_student_monitoring.png)
+
+**Componente Reutilizable: Modal de Confirmación**
+
+Este modal de advertencia aparece antes de realizar acciones destructivas, como eliminar datos. Su propósito es prevenir errores, forzando al usuario a confirmar su decisión.
+
+![Admin Modal Confirmación Eliminación](assets/ux-ui/mockups/mobile/admin/admin_delete_confirmation_modal.png)
+
+**Gestión de Aulas (Classrooms)**
+
+Esta sección permite administrar la infraestructura de aulas. El administrador puede registrar nuevas aulas con detalles como código y capacidad, además de editar o eliminar las existentes. La interfaz mantiene la consistencia visual y funcional del resto de la aplicación para facilitar su uso.
+
+![Admin Aulas Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_classrooms_new_form.png)
+![Admin Aulas Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_classrooms_edit_form.png)
+
+**Gestión de Cursos**
+
+Aquí se gestiona la oferta académica de la institución. Permite la creación, edición y eliminación de cursos, asignando nombre, código y descripción. El diseño sigue el patrón de las demás pantallas de gestión para una experiencia de usuario unificada y predecible.
+
+![Admin Cursos Nuevo Formulario](assets/ux-ui/mockups/mobile/admin/admin_courses_new_form.png)
+![Admin Cursos Edición Formulario](assets/ux-ui/mockups/mobile/admin/admin_courses_edit_form.png)
+
+**Gestión de Facturación (Billing)**
+
+Esta sección se centra en el control de las cuentas de facturación de los estudiantes. Permite buscar cuentas, ver su estado (activo, cancelado, suspendido) y gestionar facturas individuales. El administrador puede crear nuevas facturas directamente desde este módulo.
+
+![Admin Facturación Búsqueda](assets/ux-ui/mockups/mobile/admin/admin_billing_search.png)
+![Admin Facturación Nueva Factura](assets/ux-ui/mockups/mobile/admin/admin_billing_new_invoice.png)
+
+**Finanzas y Contabilidad (Finance & Accounting)**
+
+Funciona como el centro financiero general de la institución. Aquí, el administrador puede registrar todas las transacciones de ingresos y gastos, ver un historial detallado y analizar resúmenes visuales a través de gráficos para un mejor seguimiento contable.
+
+![Admin Nueva Transacción](assets/ux-ui/mockups/mobile/admin/admin_finance_new_transaction.png)
+![Admin Lista de Transacciones](assets/ux-ui/mockups/mobile/admin/admin_finance_transaction_list.png)
+
+**Perfil del Administrador**
+
+Pantalla donde el administrador puede ver y editar su información personal y los datos de la academia asociada a su cuenta. También muestra el estado de su cuenta de usuario (rol, estado de verificación).
+
+![Admin Perfil](assets/ux-ui/mockups/mobile/admin/admin_profile.png)
+
+**Configuración (Settings)**
+
+Permite al administrador personalizar su experiencia en la aplicación. Incluye opciones de accesibilidad, configuración de tema (modo oscuro, alto contraste), gestión de notificaciones y cambio de contraseña.
+
+![Admin Configuración](assets/ux-ui/mockups/mobile/admin/admin_settings.png)
+
+**Ayuda y Cierre de Sesión**
+
+La sección de Ayuda centraliza los recursos de soporte, como información de contacto y enlaces a documentos legales. El cierre de sesión se realiza de forma segura a través de un modal de confirmación para evitar salidas accidentales.
+
+![Admin Centro de Ayuda](assets/ux-ui/mockups/mobile/admin/admin_help_center.png)
+![Admin Modal Cierre de Sesión](assets/ux-ui/mockups/mobile/admin/admin_logout_modal.png)
+
+**Mobile Applications Mock-ups: Profesor**
+
+A continuación, se presentan los mockups de la versión móvil destinados al perfil de docente. Estas pantallas muestran el flujo principal de interacción dentro de la aplicación, incluyendo el inicio de sesión, la gestión de asistencia, la visualización de horarios, la reprogramación de clases, el acceso al perfil del usuario, y la configuración de ajustes.
+
+Los mockups permiten visualizar de manera clara la estructura, distribución y funcionalidad de cada sección antes de la etapa de diseño visual definitivo.
+
+**Acceso y Recuperación de Contraseña**
+
+Este grupo incluye las pantallas necesarias para que el profesor ingrese a la aplicación o recupere su cuenta si ha olvidado la contraseña. El flujo está diseñado en pasos discretos para minimizar la frustración del usuario.
+
+![Loader](./assets/ux-ui/mockups/mobile/teacher/Loader.png)
+![Login](./assets/ux-ui/mockups/mobile/teacher/Login.png)
+![ForgotPassword-CreateNew](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-CreateNew.png)
+![ForgotPassword-ResetPass](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-ResetPass.png)
+![ForgotPassword-Verification](./assets/ux-ui/mockups/mobile/teacher/ForgotPassword-Verification.png)
+
+**Principal y Gestión de Cuenta**
+
+Este flujo representa el centro de navegación de la aplicación. La Home actúa como dashboard con acceso rápido a las funciones clave, mientras que Profile y Settings permiten la gestión de la identidad y las preferencias del profesor.
+
+![Home](./assets/ux-ui/mockups/mobile/teacher/Home.png)
+![Profile](./assets/ux-ui/mockups/mobile/teacher/Profile.png)
+![Settings](./assets/ux-ui/mockups/mobile/teacher/Settings.png)
+
+**Asistencia**
+
+El objetivo de este flujo es la toma de asistencia rápida y la generación estructurada de informes. El proceso de reporte está dividido en pantallas de elección para asegurar la precisión de los filtros.
+
+![HomeAttendanceModal](./assets/ux-ui/mockups/mobile/teacher/HomeAttendanceModal.png)
+![TakeAttendance](./assets/ux-ui/mockups/mobile/teacher/TakeAttendance.png)
+![TakeAttendanceWithoutMarks](./assets/ux-ui/mockups/mobile/teacher/TakeAttendance-Without-Marks.png)
+![AttendanceReport-ChooseDate](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport-Choose-Date.png)
+![AttendanceReport-Modal](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport-Modal.png)
+![AttendanceReport](./assets/ux-ui/mockups/mobile/teacher/AttendanceReport.png)
+
+**Horario y Reprogramación**
+
+Este grupo gestiona la visualización del horario del profesor y ofrece una funcionalidad guiada de reprogramación de clases a través de múltiples pasos de confirmación.
+
+![TeachingSchedule](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule.png)
+![TeachingSchedule-1](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule-1.png)
+![TeachingSchedule-2](./assets/ux-ui/mockups/mobile/teacher/Teaching-Schedule-2.png)
+![TeachingReschedule](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule.png)
+![TeachingReschedule-ModalSave](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Modal-Save.png)
+![TeachingReschedule-ChooseDate](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-Date.png)
+![TeachingReschedule-ChooseStartTime](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-Start-Time.png)
+![TeachingReschedule-ChooseEndTime](./assets/ux-ui/mockups/mobile/teacher/Teaching-Reschedule-Choose-End-Time.png)
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
+**SEGMENTO: ADMIN**
+
+**User Goal**  
+Tener un control eficiente y organizado de los pagos de los alumnos, tanto por concepto de mensualidad como de matrícula, permitiendo un seguimiento claro del estado de cada pago y evitando retrasos o confusiones en la gestión administrativa.
+
+![UserFlow-1](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-1.png)
+
+***User Goal***  
+Acceder de forma rápida y segura a los datos del alumno, incluyendo su información personal, académica y estado de pagos, para facilitar la gestión y toma de decisiones dentro del sistema.
+
+![UserFlow-2](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-2.png)
+
+**User Goal**  
+Realizar de manera sencilla, rápida y satisfactoria el proceso de matrícula del alumno, asegurando que los datos ingresados sean correctos y que la inscripción quede correctamente registrada en el sistema.
+
+![UserFlow-3](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-3.png)
+
+**User Goal**    
+Llevar un control claro y preciso de los ingresos y egresos de la academia, permitiendo supervisar el flujo económico, generar reportes financieros y optimizar la gestión administrativa.
+
+![UserFlow-4](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-4.png)
+
+**User Goal**     
+Gestionar de forma eficiente y organizada los recursos de la academia, incluyendo cursos, salones, horarios y periodos, con el fin de optimizar su uso y garantizar el correcto funcionamiento de las actividades académicas y administrativas.
+
+![UserFlow-5](./assets/ux-ui/userflows/mobile-applications/admin/userflow-admin-5.png)
+
+**SEGMENTO: TEACHER**
+
+**User Goal** 
+Tener una vista clara y concisa de su horario semanal de clases y actividades, permitiendo una planificación eficiente de su tiempo y evitando conflictos o inasistencias.
+
+![Userflow-Teacher-1](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ReportAttendance.png)
+
+**User Goal**
+Solicitar o ejecutar la reprogramación de una clase de manera eficiente, indicando el motivo y proponiendo una nueva fecha/hora, con la aprobación administrativa correspondiente.
+
+![Userflow-Teacher-2](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-RescheduleClass.png)
+
+**User Goal**
+Realizar la toma de asistencia de los alumnos de forma rápida y sencilla al inicio de cada clase, asegurando un registro preciso para fines académicos y administrativos.
+
+![Userflow-Teacher-3](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-TakeAttendance.png)
+
+**User Goal**
+Reportar la asistencia consolidada de un grupo o período al sistema, facilitando la gestión administrativa y la generación de informes finales de asistencia.
+
+![Userflow-Teacher-4](assets/ux-ui/userflows/mobile-applications/teacher/Userflow-Teacher-ViewSchedule.png)
+
 ## 4.5. Mobile Applications Prototyping
+
+En esta sección se presentan los prototipos interactivos de las aplicaciones móviles de la plataforma Demy. Estos prototipos permiten simular la experiencia de usuario y validar el diseño antes de la implementación, facilitando la identificación de posibles mejoras y ajustes necesarios.
 
 ### 4.5.1. Android Mobile Application Prototyping
 
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de administradores.
+
+**Android Native-Mobile App: Administrador**
+
+![Admin Prototipo](./assets/ux-ui/prototypes/mobile/admin/admin-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Administrador: https://drive.google.com/file/d/12FZ2IRIIhuE7nQrtOv7mObbzK8FRCHPn/view?usp=sharing
+
+
+Enlace para acceder al prototipo interactivo del Administrador: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=0%3A1&node-id=342-3088&p=f&viewport=201%2C127%2C0.09&t=SfUpqFSc50n0lcZK-1&scaling=contain&content-scaling=fixed
+
 ### 4.5.2. iOS Mobile Applications Prototyping
+
+A continuación, se presentan capturas y enlace del prototipo interactivo dirigido al segmento de profesores.
+
+**iOS Mobile App: Teacher**
+
+![Teacher Prototipo](./assets/ux-ui/prototypes/mobile/teacher/teacher-prototype.png)
+
+Enlace para acceder al video del prototipo interactivo del Teacher: https://drive.google.com/file/d/1eFEvG6YEHWzEVwH1S6Pysucl1H7YtPuP/view?usp=sharing
+
+Enlace para acceder al prototipo interactivo del Teacher: https://www.figma.com/proto/dxy4SyBNhaqOU8KWEg5iyT/Android---iOS?page-id=22%3A2&node-id=500-11832&viewport=-1680%2C423%2C0.16&t=Acjxu5be6q8vxEMG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=500%3A11832
 
 ## 4.6. Web Applications UX/UI Design
 
 ### 4.6.1. Web Applications Wireframes
 
+
+**Dashboard**
+Pantalla principal de la aplicación Demy donde se muestra un resumen general del sistema, incluyendo indicadores como balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos, además de gráficos de ingresos vs egresos, categorías de gastos y una vista previa de horarios.
+![Wireframe-Dashboard](assets/ux-ui/wireframes/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**
+Pantalla donde se registran y administran los profesores mediante un formulario con datos personales y una tabla que muestra la lista de docentes con opciones de búsqueda, edición y eliminación.
+![Wireframe-Teachers](assets/ux-ui/wireframes/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**
+Pantalla destinada al registro y administración de estudiantes, con un formulario que incluye datos como DNI, código, contacto y fecha de nacimiento, además de una tabla con opciones de búsqueda, edición y eliminación.
+![Wireframe-Students](assets/ux-ui/wireframes/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**
+Pantalla donde se crean y administran los periodos académicos mediante un formulario con nombre, fecha de inicio y fin, y una tabla que permite buscar, editar y eliminar periodos registrados.
+![Wireframe-Periods](assets/ux-ui/wireframes/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**
+Pantalla para registrar y gestionar cursos, incluyendo un formulario con nombre, código y descripción, junto con una tabla que muestra los cursos registrados con opciones de búsqueda, edición y eliminación.
+![Wireframe-Courses](assets/ux-ui/wireframes/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**
+Pantalla donde se registran aulas con datos como código, capacidad y campus, además de una tabla que permite visualizar, buscar, editar y eliminar aulas existentes.
+![Wireframe-Classrooms](assets/ux-ui/wireframes/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**
+Pantalla para crear horarios donde se registra un nombre de horario y se agregan sesiones mediante un formulario con selección de día, hora, curso, aula y profesor, mostrando además una lista de sesiones y una tabla de horarios con opciones de búsqueda, edición y eliminación.
+![Wireframe-Schedules](assets/ux-ui/wireframes/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**
+Pantalla donde se registran matrículas mediante un formulario con selección de estudiante, periodo académico, horario, curso, monto y estado de pago, además de una tabla con búsqueda, edición y eliminación de registros.
+![Wireframe-Enrollments](assets/ux-ui/wireframes/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**
+Pantalla que permite visualizar un calendario semanal seleccionando un horario, mostrando las sesiones distribuidas de lunes a domingo entre las 7:00 a.m. y 9:00 p.m. con información de curso, aula y profesor.
+![Wireframe-Scheduling](assets/ux-ui/wireframes/web-application/scheduling.png)
+
+**Facturación (Billing)**
+Pantalla donde se pueden consultar las cuentas de estudiantes buscando por ID o DNI, mostrando el historial de pagos realizados y los montos pendientes en una tabla organizada.
+![Wireframe-Billing](assets/ux-ui/wireframes/web-application/billing.png)
+
+**Contabilidad (Accounting)**
+Pantalla que muestra todas las transacciones en una tabla completa con filtros por tipo, categoría, método y descripción, incluyendo acciones para editar y eliminar registros.
+![Wireframe-Accounting](assets/ux-ui/wireframes/web-application/accounting.png)
+
+**Configuración (Settings)**
+Pantalla donde el usuario puede ajustar preferencias del sistema como idioma, modo oscuro, accesibilidad, cambio de contraseña y opciones para reportar errores.
+![Wireframe-Settings](assets/ux-ui/wireframes/web-application/settings.png)
+
+**Ayuda (Help)**
+Pantalla que proporciona información de contacto como correo, teléfono y horarios de atención, además de secciones de preguntas frecuentes, términos y condiciones y políticas de privacidad.
+![Wireframe-Help](assets/ux-ui/wireframes/web-application/help.png)
+
 ### 4.6.2. Web Application Wireflow Diagrams
+
+**User goal:** Registrar un curso  
+**User persona:** Administrador de academia  
+![Wireflow-2](assets/ux-ui/wireflows/web-application/wireflow-register-course-admin.png)  
+**Explicación del flujo:**  
+En flujo comienza desde la sección "Mi organización", el administrador selecciona el módulo "Cursos" para gestionar las asignaturas disponibles en su academia. Al hacer click en el botón "Agregar curso", se despliega un formulario donde debe ingresar el nombre del curso, un código identificador. Tras completar los campos requeridos y confirmar la acción con el botón "Crear Curso", el sistema agrega el curso a la lista y lo deja disponible para ser asignado posteriormente a periodos académicos.
+
+**User goal:** Crear un periodo académico  
+**User persona:** Administrador de academia  
+![Wireflow-3](assets/ux-ui/wireflows/web-application/wireflow-register-period-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Periodos" donde visualiza la lista de periodos ya creados. Al presionar el botón "Agregar periodo", es dirigido a la sección "Crear periodo", que incluye una tabla tipo horario semanal. En esta interfaz, el administrador puede seleccionar los bloques de horas haciendo clic sobre las celdas correspondientes y luego presionar el botón "Seleccionar curso" para asignar uno de los cursos disponibles previamente creados. Una vez completada la asignación del horario, presiona "Guardar periodo", lo que activa un cuadro de confirmación que pregunta si está seguro de registrar el periodo. Al confirmar la acción, el sistema guarda la configuración y redirige al administrador a la lista de periodos, donde ya se visualiza el nuevo periodo registrado.
+
+**User goal:** Crear un aula  
+**User persona:** Administrador de academia  
+![Wireflow-4](assets/ux-ui/wireflows/web-application/wireflow-register-classroom-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Aulas", donde se encuentra con la lista de aulas ya creadas. Al presionar el botón "Agregar aula", se le presenta un cuadro emergente para crear una nueva aula. En este cuadro, el administrador debe asignar un código único para el aula y seleccionar uno de los periodos académicos previamente creados. Una vez completados estos campos, el administrador presiona el botón "Crear aula". El sistema valida la información y, al confirmarse, el aula se agrega a la lista de aulas disponibles, permitiendo al administrador gestionar y asignar profesores a las aulas.
+
+**User goal:** Crear un profesor  
+**User persona:** Administrador de academia  
+![Wireflow-5](assets/ux-ui/wireflows/web-application/wireflow-register-teacher-admin.png)  
+**Explicación del flujo:**  
+Desde la sección "Mi organización", el administrador accede al módulo "Profesores" y presiona el botón "Agregar profesor". Se le presenta un cuadro emergente en el que debe ingresar los datos del profesor, como su nombre completo, DNI y las aulas a las que será asignado. Para asignar un aula, el administrador debe presionar el botón "Insertar aula-curso", lo que abre una pequeña tabla con las aulas y los cursos disponibles. El administrador puede agregar múltiples aulas y cursos al profesor. Una vez completada la asignación, el administrador presiona el botón "Agregar profesor". Se muestra un cuadro de confirmación para verificar que la información es correcta. Tras confirmar, el sistema genera un cuadro con las credenciales del profesor (correo y contraseña) para acceder a la plataforma Demy. Finalmente, el profesor se agrega a la lista de profesores disponibles.
+
+**User goal:** Matricular a un alumno  
+**User persona:** Administrador de academia  
+![Wireflow-6](assets/ux-ui/wireflows/web-application/wireflow-enrollment-admin.png)  
+**Explicación del flujo:**  
+El administrador ingresa a la sección "Panel de control" y selecciona el módulo "Matrícula". Dentro de este, se presenta un formulario donde debe llenar los datos del alumno, como su nombre, DNI y aula asignada. Al completar el formulario, el administrador presiona el botón "Guardar matrícula". Luego, aparece un cuadro de confirmación para asegurar que la información ingresada es correcta. Tras confirmar, el sistema registra la matrícula y redirige al administrador a la sección "Historial de matrícula", donde podrá ver la lista de matrículas realizadas, incluyendo la del alumno recién matriculado.
+
+**User goal:** Registrar pagos de alumnos  
+**User persona:** Administrador de academia  
+![Wireflow-8](assets/ux-ui/wireflows/web-application/wireflow-payments-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y luego al módulo "Pagos". Desde allí, puede buscar directamente a un alumno para visualizar su estado de pagos pendientes y registrar un nuevo pago. Una vez identificado el alumno, se completan los datos correspondientes del pago, y se presiona el botón "Guardar pago". A continuación, aparece un cuadro de confirmación para verificar si desea continuar, y tras confirmar, el pago se registra en el sistema. Alternativamente, el administrador puede acceder al "Historial de pagos", donde se muestra una tabla con los pagos pendientes. Desde ahí, también puede presionar el botón "Registrar pago" para completar los datos y realizar el registro. Cualquiera de estos caminos permite llevar un control eficiente de los pagos de los alumnos.
+
+**User goal:** Visualizar horarios de aulas  
+**User persona:** Administrador de academia  
+![Wireflow-9](assets/ux-ui/wireflows/web-application/wireflow-schedules-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Horarios". Una vez dentro, se le presenta una opción para buscar un aula específica. Tras ingresar el nombre o código del aula, el sistema muestra el horario semanal correspondiente a esa aula, heredado previamente del periodo asignado. Esta visualización permite al administrador tener un control claro sobre la distribución de cursos y bloques horarios asignados a cada aula.
+
+**User goal:** Registrar egresos y generar reportes financieros  
+**User persona:** Administrador de academia  
+![Wireflow-10](assets/ux-ui/wireflows/web-application/wireflow-expense-report-admin.png)  
+**Explicación del flujo:**  
+El administrador accede a la sección "Panel de control" y selecciona el módulo "Finanzas". Para registrar un egreso, debe completar un formulario con los campos: concepto, monto, fecha y categoría, y luego presionar el botón "Registrar egreso". Además, tiene la opción de generar reportes financieros de la academia, eligiendo entre un reporte general o mensual. Una vez seleccionada la opción deseada, el sistema genera una tabla con la información correspondiente y muestra al final un resumen con el total de ingresos, egresos y el balance financiero.
+
 
 ### 4.6.3. Web Applications Mock-ups
 
+**Dashboard**  
+Pantalla principal de la aplicación Demy donde se muestra un resumen visual del sistema con tarjetas destacadas que incluyen balance, periodo académico actual, cantidad de profesores, estudiantes, aulas y cursos. Además, se presentan gráficos interactivos de ingresos vs egresos y categorías de gastos, junto con una vista moderna del horario.  
+
+![Mockup-Dashboard](assets/ux-ui/mockups/web-application/dashboard.png)
+
+**Gestión de Profesores (Teachers)**  
+Pantalla donde se registran y administran los profesores mediante un formulario visualmente organizado con campos claros y botones destacados. Incluye una tabla moderna con buscador, paginación y acciones como editar y eliminar, usando componentes estilizados de PrimeNG.  
+
+![Mockup-Teachers](assets/ux-ui/mockups/web-application/teachers.png)
+
+**Gestión de Estudiantes (Students)**  
+Pantalla diseñada para registrar y gestionar estudiantes con un formulario estructurado y amigable que incluye datos personales. También presenta una tabla interactiva con búsqueda, filtros y acciones, manteniendo una interfaz limpia y moderna.  
+
+![Mockup-Students](assets/ux-ui/mockups/web-application/students.png)
+
+**Gestión de Periodos Académicos (Periods)**  
+Pantalla que permite crear y administrar periodos académicos mediante un formulario con selectores de fecha visuales. Incluye una tabla estilizada con opciones de búsqueda, edición y eliminación, respetando una jerarquía visual clara.  
+
+![Mockup-Periods](assets/ux-ui/mockups/web-application/periods.png)
+
+**Gestión de Cursos (Courses)**  
+Pantalla enfocada en el registro de cursos con un formulario moderno que incluye campos de texto y área de descripción. La tabla de cursos presenta un diseño limpio con acciones visibles y navegación intuitiva.  
+
+![Mockup-Courses](assets/ux-ui/mockups/web-application/courses.png)
+
+**Gestión de Aulas (Classrooms)**  
+Pantalla donde se gestionan las aulas con un formulario visual claro y una tabla organizada que permite visualizar la información de manera rápida, incluyendo opciones de búsqueda y acciones sobre cada registro.  
+
+![Mockup-Classrooms](assets/ux-ui/mockups/web-application/classrooms.png)
+
+**Gestión de Horarios (Schedules)**  
+Pantalla que permite crear horarios de forma dinámica mediante una interfaz visual con dropdowns, selectores de tiempo y botones para agregar sesiones. Se muestra una lista de sesiones añadidas y una tabla de horarios con un diseño moderno y organizado.  
+
+![Mockup-Schedules](assets/ux-ui/mockups/web-application/schedules.png)
+
+**Gestión de Matrículas (Enrollments)**  
+Pantalla donde se registran matrículas utilizando formularios con múltiples selectores y campos organizados en secciones. Incluye una tabla interactiva que permite gestionar los registros con acciones claras y accesibles.  
+
+![Mockup-Enrollments](assets/ux-ui/mockups/web-application/enrollments.png)
+
+**Visualización de Horarios (Scheduling)**  
+Pantalla que muestra un calendario semanal visualmente atractivo, con bloques organizados que representan las sesiones. Incluye un selector de horarios y una distribución clara por días y horas, facilitando la comprensión de la planificación.  
+
+![Mockup-Scheduling](assets/ux-ui/mockups/web-application/scheduling.png)
+
+**Facturación (Billing)**  
+Pantalla que permite consultar el estado de cuenta de estudiantes mediante un buscador destacado. Se muestra una tabla con historial de pagos y deudas, organizada de manera clara y fácil de interpretar.  
+
+![Mockup-Billing](assets/ux-ui/mockups/web-application/billing.png)
+
+**Finanzas (Finance)**  
+Pantalla que combina formularios para registrar transacciones con visualizaciones gráficas del estado financiero. Incluye gráficos de ingresos vs egresos y distribución de gastos por categoría, facilitando el análisis de la información.  
+
+![Mockup-Finance](assets/ux-ui/mockups/web-application/finance.png)
+
+**Contabilidad (Accounting)**  
+Pantalla que presenta una tabla completa de transacciones con filtros avanzados por tipo, categoría, método y descripción. Incluye acciones visibles para editar y eliminar registros, con un diseño enfocado en claridad y control.  
+
+![Mockup-Accounting](assets/ux-ui/mockups/web-application/accounting.png)
+
+**Configuración (Settings)**  
+Pantalla donde el usuario puede personalizar la aplicación, incluyendo opciones como cambio de idioma, modo oscuro, accesibilidad, configuración general y actualización de contraseña, organizadas en secciones claras.  
+
+![Mockup-Settings](assets/ux-ui/mockups/web-application/settings.png)
+
+**Ayuda (Help)**  
+Pantalla que ofrece información de soporte al usuario, incluyendo datos de contacto, horarios de atención, preguntas frecuentes, términos y condiciones y políticas de privacidad, organizados en bloques informativos.  
+
+![Mockup-Help](assets/ux-ui/mockups/web-application/help.png)
+
+**Cerrar sesión (Log out)**  
+Pantalla o modal de confirmación que permite al usuario cerrar sesión de manera segura, mostrando una alerta clara con opciones para cancelar o confirmar la acción.  
+
+![Mockup-Logout](assets/ux-ui/mockups/web-application/logout.png)
+
 ### 4.6.4. Web Applications User Flow Diagrams
 
+**UserGoal: Agregar un curso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Courses" desde el menú lateral de Demy. Luego, visualiza un formulario donde debe ingresar el nombre del curso, código y descripción. Una vez completados los campos, presiona el botón de registrar curso, lo que permite guardar la información y visualizar el nuevo curso en la tabla de cursos registrados.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-curso.png)
+
+**UserGoal: Agregar aula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Classrooms" y completa el formulario con el código del aula, su capacidad y el campus correspondiente. Al hacer clic en registrar, el aula se guarda en el sistema y aparece en la tabla de aulas registradas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-aula.png)
+
+**UserGoal: Agregar profesor**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Teachers" y completa el formulario con datos como nombre, apellido, correo, teléfono, contraseña y género. Luego de presionar el botón de registro, el profesor se guarda en el sistema y se muestra en la lista de docentes.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-profesor.png)
+
+**UserGoal: Agregar horario**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Schedules" y registra un nuevo horario ingresando un nombre. Luego, procede a añadir sesiones seleccionando el día, hora de inicio y fin, curso, aula y profesor mediante dropdowns. Al presionar “Add Session”, las sesiones se agregan al horario. Finalmente, guarda el horario completo y lo visualiza en la lista de horarios.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-horario.png)
+
+**UserGoal: Agregar periodo académico**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Periods" y completa un formulario con el nombre del periodo, fecha de inicio y fecha de fin. Luego presiona el botón de registrar, lo que permite almacenar el periodo y visualizarlo en la lista de periodos académicos disponibles.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-periodo.png)
+
+**UserGoal: Agregar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y completa el formulario seleccionando estudiante, periodo académico, horario, curso, monto y estado de pago. Al registrar la matrícula, esta se almacena en el sistema y se visualiza en la tabla de matrículas.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/agregar-matricula.png)
+
+**UserGoal: Eliminar matrícula**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Enrollments" y busca la matrícula que desea eliminar mediante la barra de búsqueda. Luego selecciona la opción de eliminar en la tabla y confirma la acción en un modal. Finalmente, la matrícula se elimina del sistema y deja de aparecer en la lista.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/eliminar-matricula.png)
+
+**UserGoal: Registrar pago de alumno por búsqueda**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Billing" y busca al estudiante mediante su DNI o ID. Luego visualiza el estado de cuenta y selecciona la opción de registrar pago. Completa los datos necesarios del pago y confirma la operación, actualizando el estado financiero del estudiante.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-pago.png)
+
+**UserGoal: Buscar horario de clase**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Scheduling" y selecciona un horario desde un dropdown. Automáticamente se muestra el calendario semanal con las sesiones organizadas por día y hora, permitiendo visualizar fácilmente la distribución de clases.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/buscar-horario.png)
+
+**UserGoal: Mirar el reporte financiero**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario accede a la sección "Finance" donde visualiza gráficos de ingresos y egresos, así como un análisis de las principales categorías de gasto. Esta información le permite entender el estado financiero de la institución.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/reporte-financiero.png)
+
+**UserGoal: Registrar un egreso**  
+**User persona:** Administradores <br>
+**Explicación del flujo:** El usuario ingresa a la sección "Finance" y completa el formulario seleccionando tipo "egreso", categoría, método de pago, monto, moneda, fecha y descripción. Luego de registrar la transacción, esta se guarda en el sistema y se refleja en los reportes financieros.
+
+![imagesFlowDiagrams](assets/ux-ui/userflows/web-application/registrar-egreso.png)
+
 ## 4.7. Web Applications Prototyping
+
+Esta sección tiene como objetivo describir los posibles flujos de usuario diseñados para la aplicación web. Mediante el uso de prototipos interactivos, se ilustra la navegación y las rutas que siguen los diferentes tipos de usuarios al interactuar con la plataforma para cumplir sus respectivas tareas.
+
+A continuación, se presentan el enlace al video explicativo:
+
+
+![imagesPrototypeWeb](assets/ux-ui/prototypes/web-application/captura-prototype.png)
+
+- **Video - Web Applications Prototyping**  
+  Explicación en video de los flujos de usuario en la aplicación web:  
+  [Ver video en OneDrive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQDXWxdpjpYhQLw_2PhlpYSlAZZ7wJ_K3aykZ1h0xIsEbKo?e=RdK2yT&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 ## 4.8. Domain-Driven Software Architecture
 
 ### 4.8.1. Software Architecture Context Diagram
 
+El Context Diagram muestra como el sistema central que interactúa con 2 usuarios principales: el coordinador, que gestiona matrículas, horarios y pagos y el docente, que consulta horarios y registra asistencia. Además, el sistema se integra con Stripe y PagoEfectivo para la gestión de pagos y con Gmail para el envío de notificaciones por correo electrónico.
+
+![softwareContextDiagram](assets/diagramas_c4/SoftwareArchitectureContextDiagram.png)
+
 ### 4.8.2. Software Architecture Container Diagrams
 
+El Container Diagram descompone la solución en sus principales contenedores: una Flutter App para profesores, una Android App para administrador, todas conectadas a un API Backend desarrollado en Spring Boot que concentra la lógica de negocio y accede a una base de datos MySQL para la información académica. El backend también se integra con Stripe y PagoEfectivo para pagos y con Gmail para notificaciones automáticas.
+
+![softwareComponentsDiagram](assets/diagramas_c4/SoftwareArchitectureContainerDiagrams.png)
+
+<hr class="page-break">
+
 ### 4.8.3. Software Architecture Components Diagrams
+
+#### Attendance
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsAttendance.png)
+
+<hr class="page-break">
+
+#### Enrollment
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsEnrollment.png)
+
+<hr class="page-break">
+
+#### IAM
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsIAM.png)
+
+<hr class="page-break">
+
+#### Billing
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsBilling.png)
+
+<hr class="page-break">
+
+#### Scheduling
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsScheduling.png)
+
+<hr class="page-break">
+
+#### Accounting & Finance
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsAcounting.png)
+
+<hr class="page-break">
+
+#### Institution
+
+![ArquiCompDiagram1](assets/diagramas_c4/SoftwareArchitectureComponentsDiagramsInstitucion.png)
+
+<hr class="page-break">
 
 ## 4.9. Software Object-Oriented Design
 
@@ -1005,17 +2485,1331 @@ Esta distribución de responsabilidades permite que cada Deliverable esté aline
 
 ### 5.2.1. Sprint Backlogs
 
+#### Sprint 1
+
+#### Sprint Planning 1
+
+| Sprint # | Sprint 1 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-03-30                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 1 Goal                   | En este sprint nos enfocamos en desarrollar la base del sistema Demy, implementando la gestión de academia, profesores, periodos académicos, aulas, cursos, horarios y autenticación de usuarios. Adicionalmente, se completará la landing page pública. Esto permitirá contar con la estructura fundamental del sistema académico. El objetivo se cumplirá cuando estas funcionalidades estén operativas y se puedan registrar y visualizar correctamente desde la interfaz web. |
+| Sprint 1 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 1
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 1</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SWS001</td>
+        <td>Ver sección Hero</td>
+        <td>SWS001a</td>
+        <td>Maquetar Hero Section</td>
+        <td>Diseñar estructura con título, descripción y CTA principal</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS001</td>
+        <td>Ver sección Hero</td>
+        <td>SWS001b</td>
+        <td>Aplicar contenido y responsive</td>
+        <td>Agregar textos finales y adaptar vista móvil/tablet</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS002</td>
+        <td>Ver sección Features</td>
+        <td>SWS002a</td>
+        <td>Maquetar estructura base</td>
+        <td>Crear contenedor con título y colocar las features</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS002</td>
+        <td>Ver sección Features</td>
+        <td>SWS002b</td>
+        <td>Agregar iconos y estilos</td>
+        <td>Implementar título, descripción e imagen de manera alineada</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS003</td>
+        <td>Ver sección How It Works</td>
+        <td>SWS003a</td>
+        <td>Estructurar pasos del flujo</td>
+        <td>Maquetar pasos del proceso con íconos y descripciones</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS003</td>
+        <td>Ver sección How It Works</td>
+        <td>SWS003b</td>
+        <td>Optimizar interactividad</td>
+        <td>Agregar animaciones y responsividad del bloque</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS004</td>
+        <td>Ver sección About The Product</td>
+        <td>SWS004a</td>
+        <td>Diseñar encabezado</td>
+        <td>Agregar título, subtítulo y descripción general</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS004</td>
+        <td>Ver sección About The Product</td>
+        <td>SWS004b</td>
+        <td>Agregar características visuales</td>
+        <td>Incluir iconos y texto explicativo por característica</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS005</td>
+        <td>Ver sección Testimonials</td>
+        <td>SWS005a</td>
+        <td>Maquetar Cards de Testimonios</td>
+        <td>Agregar nombre, foto y texto de testimonio</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS005</td>
+        <td>Ver sección Testimonials</td>
+        <td>SWS005b</td>
+        <td>Aplicar estilo y responsive</td>
+        <td>Agregar puntuación de estrellas y adaptar vista móvil</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS006</td>
+        <td>Ver sección About Us</td>
+        <td>SWS006a</td>
+        <td>Maquetar contenido</td>
+        <td>Agregar título, subtítulo e imagen del equipo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS006</td>
+        <td>Ver sección About Us</td>
+        <td>SWS006b</td>
+        <td>Optimizar presentación</td>
+        <td>Aplicar estilos visuales y distribución responsive</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS007</td>
+        <td>Ver sección About The Team</td>
+        <td>SWS007a</td>
+        <td>Diseñar cards del equipo</td>
+        <td>Agregar nombre, rol y foto de cada integrante</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS007</td>
+        <td>Ver sección About The Team</td>
+        <td>SWS007b</td>
+        <td>Aplicar efectos y responsive</td>
+        <td>Ajustar alineación, hover y vista móvil</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS008</td>
+        <td>Ver sección Pricing</td>
+        <td>SWS008a</td>
+        <td>Maquetar estructura de planes</td>
+        <td>Crear layout con 3 pricing cards básicas</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS008</td>
+        <td>Ver sección Pricing</td>
+        <td>SWS008b</td>
+        <td>Agregar detalles y CTA</td>
+        <td>Aplicar botones de compra y diseño responsive</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS009</td>
+        <td>Ver sección FAQ</td>
+        <td>SWS009a</td>
+        <td>Diseñar estructura de preguntas</td>
+        <td>Maquetar lista de preguntas con comportamiento expandible</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS009</td>
+        <td>Ver sección FAQ</td>
+        <td>SWS009b</td>
+        <td>Optimizar visual y responsive</td>
+        <td>Aplicar estilos visuales y transiciones de apertura</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS010</td>
+        <td>Ver sección Contact</td>
+        <td>SWS010a</td>
+        <td>Maquetar formulario</td>
+        <td>Agregar inputs de Name, Email, Phone y Message</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS010</td>
+        <td>Ver sección Contact</td>
+        <td>SWS010b</td>
+        <td>Aplicar estilos y responsive</td>
+        <td>Agregar imagen lateral y validaciones visuales</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS011</td>
+        <td>Ver sección Footer</td>
+        <td>SWS011a</td>
+        <td>Estructurar Footer</td>
+        <td>Agregar logo, links y derechos reservados</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>SWS011</td>
+        <td>Ver sección Footer</td>
+        <td>SWS011b</td>
+        <td>Agregar redes y responsive</td>
+        <td>Incluir iconos de redes y diseño adaptable</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001a</td>
+        <td>Crear modelo y migración de datos</td>
+        <td>Crear estructura de base de datos para academia</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001b</td>
+        <td>Crear endpoint API POST /academies</td>
+        <td>Implementar lógica de registro de academia</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>Registrar nueva academia</td>
+        <td>US001c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US002</td>
+        <td>Actualizar academia</td>
+        <td>US002a</td>
+        <td>Crear endpoint API PUT /academies/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US002</td>
+        <td>Actualizar academia</td>
+        <td>US002b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US003</td>
+        <td>Eliminar academia</td>
+        <td>US003a</td>
+        <td>Crear endpoint API DELETE /academies/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US003</td>
+        <td>Eliminar academia</td>
+        <td>US003b</td>
+        <td>Crear confirmación de eliminación</td>
+        <td>Modal de confirmación antes de eliminar</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para profesor</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004b</td>
+        <td>Crear endpoint API POST /teachers</td>
+        <td>Implementar lógica de registro de profesor</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US004</td>
+        <td>Registrar profesor</td>
+        <td>US004c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US005</td>
+        <td>Actualizar profesor</td>
+        <td>US005a</td>
+        <td>Crear endpoint API PUT /teachers/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US005</td>
+        <td>Actualizar profesor</td>
+        <td>US005b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US006</td>
+        <td>Eliminar profesor</td>
+        <td>US006a</td>
+        <td>Crear endpoint API DELETE /teachers/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US006</td>
+        <td>Eliminar profesor</td>
+        <td>US006b</td>
+        <td>Crear confirmación de eliminación</td>
+        <td>Modal de confirmación antes de eliminar</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para periodo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013b</td>
+        <td>Crear endpoint API POST /academic-periods</td>
+        <td>Implementar lógica de creación de periodo</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US013</td>
+        <td>Crear periodo académico</td>
+        <td>US013c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con campos de fecha inicio y fin</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US014</td>
+        <td>Actualizar periodo</td>
+        <td>US014a</td>
+        <td>Crear endpoint API PUT /academic-periods/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US014</td>
+        <td>Actualizar periodo</td>
+        <td>US014b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US015</td>
+        <td>Eliminar periodo</td>
+        <td>US015a</td>
+        <td>Crear endpoint API DELETE /academic-periods/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016b</td>
+        <td>Crear endpoint API POST /classrooms</td>
+        <td>Implementar lógica de creación de aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US016</td>
+        <td>Crear aula</td>
+        <td>US016c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con nombre y capacidad del aula</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US017</td>
+        <td>Actualizar aula</td>
+        <td>US017a</td>
+        <td>Crear endpoint API PUT /classrooms/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US017</td>
+        <td>Actualizar aula</td>
+        <td>US017b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US018</td>
+        <td>Eliminar aula</td>
+        <td>US018a</td>
+        <td>Crear endpoint API DELETE /classrooms/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019a</td>
+        <td>Crear modelo y migración</td>
+        <td>Crear estructura de base de datos para horario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019b</td>
+        <td>Crear endpoint con validación de conflictos</td>
+        <td>API que valida cruces de horario</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US019</td>
+        <td>Crear horario</td>
+        <td>US019c</td>
+        <td>Crear formulario de creación</td>
+        <td>Interfaz con selección de curso, aula y hora</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US020</td>
+        <td>Actualizar horario</td>
+        <td>US020a</td>
+        <td>Crear endpoint API PUT /schedules/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US020</td>
+        <td>Actualizar horario</td>
+        <td>US020b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US021</td>
+        <td>Eliminar horario</td>
+        <td>US021a</td>
+        <td>Crear endpoint API DELETE /schedules/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032a</td>
+        <td>Crear modelo de usuario</td>
+        <td>Crear estructura de base de datos para usuario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032b</td>
+        <td>Crear endpoint API POST /auth/sign-up</td>
+        <td>Implementar lógica de registro con hash de contraseña</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032c</td>
+        <td>Crear formulario de registro</td>
+        <td>Interfaz de registro con validaciones</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033a</td>
+        <td>Crear lógica de verificación con token</td>
+        <td>Implementar generación y validación de token</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033b</td>
+        <td>Crear pantalla de activación</td>
+        <td>Interfaz para ingresar código de verificación</td>
+        <td>1</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034a</td>
+        <td>Crear endpoint API POST /auth/login con JWT</td>
+        <td>Implementar autenticación y generación de token</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034b</td>
+        <td>Crear formulario de login</td>
+        <td>Interfaz de login con validaciones</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Sprint 2
+
+#### Sprint Planning 2
+
+| Sprint # | Sprint 2 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-04-13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 2 Goal                   | En este sprint nos enfocamos en completar la gestión de matrículas de estudiantes, el control de pagos y la gestión financiera de la academia. Se implementarán las funcionalidades de inscripción, seguimiento de pagos, boletas y reportes financieros. El objetivo se cumplirá cuando los administrativos puedan gestionar completamente el ciclo de matrícula y pagos desde la interfaz web.                                                                                                   |
+| Sprint 2 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 2
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 2</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007a</td>
+        <td>Crear modelo de inscripción</td>
+        <td>Crear estructura de base de datos para inscripción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007b</td>
+        <td>Crear endpoint POST /enrollments</td>
+        <td>Implementar lógica de registro de inscripción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007c</td>
+        <td>Crear formulario de matrícula</td>
+        <td>Interfaz de matrícula con selección de curso y estudiante</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US007</td>
+        <td>Registrar inscripción</td>
+        <td>US007d</td>
+        <td>Validar disponibilidad de cupos</td>
+        <td>Lógica de verificación de cupos disponibles</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US008</td>
+        <td>Actualizar inscripción</td>
+        <td>US008a</td>
+        <td>Crear endpoint PUT /enrollments/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US008</td>
+        <td>Actualizar inscripción</td>
+        <td>US008b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición con validaciones</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US009</td>
+        <td>Cancelar inscripción</td>
+        <td>US009a</td>
+        <td>Crear endpoint DELETE /enrollments/{id}</td>
+        <td>Implementar lógica de cancelación</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US009</td>
+        <td>Cancelar inscripción</td>
+        <td>US009b</td>
+        <td>Crear confirmación de cancelación</td>
+        <td>Modal de confirmación antes de cancelar</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022a</td>
+        <td>Crear modelo de boleta</td>
+        <td>Crear estructura de base de datos para boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022b</td>
+        <td>Crear endpoint POST /invoices</td>
+        <td>Implementar lógica de generación de boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022c</td>
+        <td>Crear interfaz de generación</td>
+        <td>Formulario para generar boletas de pago</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US022</td>
+        <td>Generar boletas de pago</td>
+        <td>US022d</td>
+        <td>Crear plantilla PDF de boleta</td>
+        <td>Generar documento PDF de la boleta</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US023</td>
+        <td>Actualizar boletas de pago</td>
+        <td>US023a</td>
+        <td>Crear endpoint PUT /invoices/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US023</td>
+        <td>Actualizar boletas de pago</td>
+        <td>US023b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición de boleta</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US024</td>
+        <td>Eliminar boletas de pago</td>
+        <td>US024a</td>
+        <td>Crear endpoint DELETE /invoices/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025a</td>
+        <td>Crear modelo de transacción</td>
+        <td>Crear estructura de base de datos para transacción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025b</td>
+        <td>Crear endpoint POST /transactions</td>
+        <td>Implementar lógica de registro de transacción</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US025</td>
+        <td>Registrar ingreso/egreso</td>
+        <td>US025c</td>
+        <td>Crear formulario de transacciones</td>
+        <td>Interfaz para registrar ingresos y egresos</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US026</td>
+        <td>Actualizar ingreso/egreso</td>
+        <td>US026a</td>
+        <td>Crear endpoint PUT /transactions/{id}</td>
+        <td>Implementar lógica de actualización</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US026</td>
+        <td>Actualizar ingreso/egreso</td>
+        <td>US026b</td>
+        <td>Crear interfaz de edición</td>
+        <td>Formulario de edición de transacción</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US027</td>
+        <td>Eliminar ingreso/egreso</td>
+        <td>US027a</td>
+        <td>Crear endpoint DELETE /transactions/{id}</td>
+        <td>Implementar lógica de eliminación</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028a</td>
+        <td>Crear endpoint GET /transactions/summary</td>
+        <td>API para obtener resumen financiero</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028b</td>
+        <td>Crear dashboard financiero</td>
+        <td>Interfaz con métricas y gráficos</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US028</td>
+        <td>Visualizar resumen finanzas</td>
+        <td>US028c</td>
+        <td>Crear gráficos y métricas</td>
+        <td>Visualización de ingresos vs egresos</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029a</td>
+        <td>Crear endpoint GET /reports/financial</td>
+        <td>API para generar reportes financieros</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029b</td>
+        <td>Crear exportación a PDF</td>
+        <td>Generar reporte en formato PDF</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US029</td>
+        <td>Generar reportes financieros</td>
+        <td>US029c</td>
+        <td>Crear exportación a Excel</td>
+        <td>Generar reporte en formato Excel</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### Sprint 3
+
+#### Sprint Planning 3
+
+| Sprint # | Sprint 3 |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Sprint Planning Background**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Date                            | 2026-04-27                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Time                            | 08:00 PM                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Location                        | Reunión virtual vía Discord                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Prepared By                     | Daniel Crispin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Attendees (to planning meeting) | Daniel Crispin, Rafael Dominguez, Henry Esteban, Renso Julca, Diego Vilca                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Sprint Goal & User Stories**  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Sprint 3 Goal                   | En este sprint nos enfocamos en desarrollar la aplicación móvil completa para los tres roles: administrador, docente y estudiante. Se implementarán todas las funcionalidades de gestión académica en versión móvil nativa, incluyendo registro de asistencia, visualización de horarios y autenticación. El objetivo se cumplirá cuando los usuarios puedan acceder a sus funcionalidades desde dispositivos móviles de forma nativa.                                                                                                     |
+| Sprint 3 Velocity               | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Sum of Story Points             | 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+#### Sprint Backlog 3
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 3</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010a</td>
+        <td>Crear modelo de asistencia</td>
+        <td>Crear estructura de base de datos para asistencia</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010b</td>
+        <td>Crear endpoint POST /attendances</td>
+        <td>API para registrar asistencia de estudiantes</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US010</td>
+        <td>Registro de asistencia</td>
+        <td>US010c</td>
+        <td>Crear pantalla de registro de asistencia</td>
+        <td>Interfaz móvil para marcar asistencia</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US011</td>
+        <td>Actualizar asistencia</td>
+        <td>US011a</td>
+        <td>Crear endpoint PUT /attendances/{id}</td>
+        <td>API para actualizar registro de asistencia</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US011</td>
+        <td>Actualizar asistencia</td>
+        <td>US011b</td>
+        <td>Crear pantalla de edición de asistencia</td>
+        <td>Interfaz móvil para modificar asistencia</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US012</td>
+        <td>Visualizar reportes asistencia</td>
+        <td>US012a</td>
+        <td>Crear endpoint GET /reports/attendance</td>
+        <td>API para obtener reportes de asistencia</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US012</td>
+        <td>Visualizar reportes asistencia</td>
+        <td>US012b</td>
+        <td>Crear pantalla de reportes de asistencia</td>
+        <td>Interfaz móvil para visualizar reportes</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030a</td>
+        <td>Crear endpoint GET /teachers/{id}/schedules</td>
+        <td>API para obtener horarios del profesor</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030b</td>
+        <td>Crear pantalla de mi horario</td>
+        <td>Interfaz móvil para ver horarios asignados</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US030</td>
+        <td>Visualizar horario clases</td>
+        <td>US030c</td>
+        <td>Crear vista de calendario semanal</td>
+        <td>Visualización de horario en formato calendario</td>
+        <td>2</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031a</td>
+        <td>Crear endpoint PUT /schedules/{id}/reschedule</td>
+        <td>API para reprogramar una clase</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031b</td>
+        <td>Crear pantalla de solicitud de reprogramación</td>
+        <td>Interfaz móvil para solicitar cambio</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US031</td>
+        <td>Reprogramar clase</td>
+        <td>US031c</td>
+        <td>Crear lógica de validación de conflictos</td>
+        <td>Validar que no haya cruces de horario</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032a</td>
+        <td>Crear pantalla de registro</td>
+        <td>Interfaz móvil de registro de usuario</td>
+        <td>2</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US032</td>
+        <td>Registro de cuenta</td>
+        <td>US032b</td>
+        <td>Validar registro desde móvil</td>
+        <td>Ajustar endpoint para llamadas desde app móvil</td>
+        <td>1</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033a</td>
+        <td>Crear pantalla de activación</td>
+        <td>Interfaz móvil para activar cuenta</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US033</td>
+        <td>Activación de cuenta</td>
+        <td>US033b</td>
+        <td>Validar token desde móvil</td>
+        <td>Ajustar lógica de verificación para móvil</td>
+        <td>1</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034a</td>
+        <td>Crear pantalla de login</td>
+        <td>Interfaz móvil de autenticación</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US034</td>
+        <td>Inicio de sesión</td>
+        <td>US034b</td>
+        <td>Validar autenticación JWT desde móvil</td>
+        <td>Ajustar generación de token para móvil</td>
+        <td>1</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ### 5.2.2. Implemented Landing Page Evidence
+
+**Landing Page:**
+
+En esta sección se describen los pasos realizados para desplegar la Landing Page utilizando Netlify con integración a GitHub. Se incluyen capturas de cada etapa como evidencia.
+
+Primero, se cuenta con una cuenta en GitHub con el repositorio de la landing organizado y público. De igual modo, cuenta en Netlify y permiso para integrarse con la organización de GitHub.
+
+**1) Ingresar a Netlify**  
+Autenticación con GitHub mediante *“Log in with GitHub”.* 
+![Netlify Login](./assets/ux-ui/evidences/landing/landing-deploy-step-1.png)
+
+**2) Ir a Projects e iniciar un nuevo sitio**  
+Desde Projects seleccionar Add new project.  
+![Netlify Sites / Add new site](./assets/ux-ui/evidences/landing/landing-deploy-step-2.png)
+
+**3) Elegir el proveedor GitHub**  
+En *"Import a Git repository"* seleccionar GitHub.  
+![Seleccionar GitHub](./assets/ux-ui/evidences/landing/landing-deploy-step-3.png)
+
+**4) Configurar Netlify con Github**  
+Seleccionamos *"Configure Netlify on Github"*
+![Configuración Netlify](./assets/ux-ui/evidences/landing/landing-deploy-step-4.png)
+
+**5) Autorizar la instalación en la organización**  
+Elegir la organización de GitHub donde se encuentra el repositorio, que en este caso es *EduLabs Experimentos* 
+![Seleccionar organización](./assets/ux-ui/evidences/landing/landing-deploy-step-5.png)
+
+**6) Seleccionar el repositorio**  
+Elegir el repo de la landing  
+![Seleccionar repositorio](./assets/ux-ui/evidences/landing/landing-deploy-step-6.png)
+
+**7) Confirmar acceso en GitHub**  
+Verificación adicional para otorgar permisos a Netlify.  
+![Configuración general](./assets/ux-ui/evidences/landing/landing-deploy-step-7.png)
+
+**8) Configurar parámetros generales**  
+Definir Project/Site name, Team y la rama a desplegar (`main`).  
+![Build & Publish directory](./assets/ux-ui/evidences/landing/landing-deploy-step-8.png)
+
+**9) Configurar build y publicación**  
+Establecer Build command (`npm run build`) y Publish directory (`dist`). Iniciar el despliegue.
+![Deploy en progreso](./assets/ux-ui/evidences/landing/landing-deploy-step-9.png)
+
+**10)  Monitorear el proceso**  
+Netlify ejecuta el build y publica en su CDN; se puede seguir el estado en tiempo real.  
+![Deploy en progreso](./assets/ux-ui/evidences/landing/landing-deploy-step-10.png)
+
+**11) Verificación final y próximos pasos**  
+En Project overview se confirma el estado deployed (indicador verde). Desde aquí se pueden configurar dominio personalizado.  
+![Project overview / listo](./assets/ux-ui/evidences/landing/landing-deploy-step-11.png)
+
+**12) Despliegue listo**  
+El proyecto queda publicado con HTTPS y URL pública.
+![Deploy completado](./assets/ux-ui/evidences/landing/landing-deploy-step-12.png)
+
+Queda habilitado el despliegue continuo; cada push a la rama configurada desencadena automáticamente un nuevo build y publicación.
+
+**Repositorio de la Landing Page:** [Abrir en GitHub](https://github.com/EduLabs-Experimentos/demy-landing)  
+
+**Enlace público de la Landing Page:** [Abrir en el navegador](https://demy-nistra.netlify.app/)
+
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-### 5.2.4. Implemented Native-Mobile Application Evidence
+### 5.2.4. Acuerdo de Servicio - SaaS
 
-### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+**1. Aceptación de los Términos**
+Al acceder y utilizar la plataforma Demy, usted acepta estar sujeto a estos términos y condiciones de uso. Demy es una plataforma de gestión académica diseñada para optimizar la administración de academias, centros educativos y organizaciones de enseñanza.
 
-### 5.2.6. RESTful API documentation
+**2. Descripción del Servicio**
+Demy proporciona herramientas de gestión académica que incluyen:
+- Gestión de matrículas y estudiantes
+- Control de horarios y clases
+- Administración de pagos y facturación
+- Seguimiento académico y reportes
+- Comunicación con estudiantes y padres de familia
+- Gestión de profesores y personal administrativo
 
-### 5.2.7. Team Collaboration Insights
+**3. Cuentas de Usuario**
+Para acceder a los servicios de Demy, debe crear una cuenta proporcionando información precisa y actualizada. Es responsable de mantener la confidencialidad de su contraseña y de todas las actividades que ocurran bajo su cuenta. Debe notificarnos inmediatamente cualquier uso no autorizado de su cuenta.
+
+**4. Uso Aceptable**
+Usted se compromete a utilizar Demy únicamente para fines legítimos de gestión académica. Está prohibido:
+- Usar la plataforma para actividades ilegales o no autorizadas
+- Interferir con el funcionamiento normal de la plataforma
+- Intentar acceder a cuentas de otros usuarios
+- Compartir información falsa o engañosa
+- Violar los derechos de propiedad intelectual
+
+**5. Datos y Contenido**
+Usted conserva todos los derechos sobre los datos académicos que ingrese en Demy. Al usar nuestros servicios, nos otorga una licencia limitada para procesar, almacenar y respaldar sus datos únicamente para proporcionar el servicio. Nos comprometemos a mantener la confidencialidad de la información académica sensible.
+
+**6. Facturación y Pagos**
+Los servicios de Demy están disponibles bajo planes de suscripción mensual o anual. Los pagos se procesan de forma segura y se renuevan automáticamente a menos que cancele su suscripción. Puede cancelar su suscripción en cualquier momento desde su panel de control.
+
+**7. Limitación de Responsabilidad**
+Demy se proporciona "tal como está". No garantizamos que el servicio esté libre de errores o interrupciones. Nuestra responsabilidad se limita al monto pagado por el servicio en los 12 meses anteriores al evento que dio lugar al reclamo.
+
+**8. Terminación**
+Podemos suspender o terminar su acceso a Demy si viola estos términos. Al terminar el servicio, sus datos permanecerán disponibles para exportación durante 30 días, después de los cuales serán eliminados permanentemente.
+
+**9. Modificaciones**
+Nos reservamos el derecho de modificar estos términos. Los cambios significativos serán notificados con 30 días de anticipación. El uso continuado del servicio constituye aceptación de los nuevos términos.
+
+**10. Contacto**
+Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en: contact_us@demy.com o al +51 927 230 192
+
+*Última actualización: Mayo 2026*
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
+
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+### 5.2.7. RESTful API documentation
+
+### 5.2.8. Team Collaboration Insights
 
 ## 5.3. Video About-the-Product
 
