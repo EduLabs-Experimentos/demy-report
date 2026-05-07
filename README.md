@@ -894,8 +894,6 @@ Un glosario de términos clave utilizados en el dominio de gestión académica d
 
 ## 3.4. Impact Mapping
 
-## 3.4. Impact Mapping
-
 El Impact Mapping evidencia cómo cada Business Goal de EduLab se sostiene en cambios concretos de comportamiento de los dos segmentos objetivo. El Administrador de Academia concentra la mayoría de los Impacts, ya que es el responsable de la configuración inicial, la operación financiera y las decisiones estratégicas de la academia. 
 
 El Docente, por su parte, participa en los Impacts vinculados a la operación académica diaria —registro de asistencia, visualización de horarios y reprogramación de sesiones— sin requerir tareas administrativas o financieras. 
