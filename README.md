@@ -4041,6 +4041,208 @@ Para los mensajes de commit, se utilizará el estándar **Conventional Commits**
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
+Con el fin de asegurar un código limpio, mantenible y coherente entre todos los miembros del equipo, se han adoptado las siguientes convenciones de estilo y nomenclatura. Todas las variables, funciones, clases, archivos y elementos seguirán una **nomenclatura en inglés**.
+
+**Nomenclature General**
+
+- Se utilizará **inglés** como idioma único para nombres de variables, funciones, clases, comentarios y documentación.
+- Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
+
+**HTML**
+
+Basado en las [Convenciones de Código de HTML](https://www.w3.org/TR/html52/) y las [Buenas Prácticas de HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started), se adoptan las siguientes reglas:
+
+- Atributos en minúsculas y nombres de clase con **kebab-case** (`section-title`, `main-container`).
+- Uso de comillas dobles para atributos (`class="example"`).
+- Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangría con 2 espacios.
+- Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
+- Uso adecuado de etiquetas auto-cerradas (`<img />`, `<input />`).
+
+**CSS / Tailwind CSS**
+
+Basado en las [Convenciones de Código de CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) y las [Buenas Prácticas de Tailwind CSS](https://tailwindcss.com/docs/installation), se adoptan las siguientes reglas:
+
+- Nombres de clases en minúsculas.
+- Para clases personalizadas: usar **kebab-case**.
+- Se prioriza el uso de **Tailwind CSS** sobre CSS puro para la landing page.
+- Para clases de utilidad de Tailwind: usar **snake_case** (`text_center`, `bg_blue_500`).
+- Se agruparán clases de utilidad por orden lógico (layout -> spacing -> color -> typography).
+
+**Google JavaScript Style Guide**
+
+Basado en el [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), se adoptan las siguientes reglas para mantener un código limpio y coherente:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y constructores.
+- Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+
+Módulos y imports:
+- Preferir **imports explícitos y ordenados**: primero bibliotecas externas, luego internas.
+- Evitar `default exports`, usar siempre `export const` o `export class`.
+
+Buenas prácticas:
+- Preferir `const` sobre `let`, y evitar `var`.
+- Evitar usar `this` fuera de clases.
+- No mezclar funciones y lógica en componentes — delegar a servicios.
+
+**Angular & TypeScript**
+
+Basado en la [Guía de Estilo Oficial de Angular](https://angular.dev/style-guide) y las [Convenciones de TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, propiedades, métodos y parámetros.
+- **PascalCase** para Clases, Interfaces, Tipos (Types) y Enums.
+- **kebab-case** para nombres de archivos (ej. `user-profile.ts`) y selectores de componentes (ej. `app-user-profile`).
+- Nombres de interfaces sin el prefijo "I" (usar `User` en lugar de `IUser`), siguiendo la guía de estilo de Angular.
+- Constantes globales en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Seguir estrictamente la convención de sufijos para archivos: `.component.ts`, `.service.ts`, `.model.ts`, `.pipe.ts`.
+- Fomentar el uso de **Standalone Components** (arquitectura por defecto en versiones recientes de Angular) para reducir la dependencia de `NgModules`.
+- Aplicar tipado estricto: evitar a toda costa el uso de `any`, definiendo interfaces o tipos específicos para todos los datos.
+
+Buenas prácticas:
+- Evitar lógica de negocio compleja en los componentes; delegar estas responsabilidades y las llamadas HTTP a los **Servicios** (inyectables).
+- Preferir el uso de **Signals** o el pipe `async` junto con **RxJS** (Observables) para la gestión del estado y la reactividad.
+- Gestionar correctamente la destrucción de suscripciones (por ejemplo, usando `takeUntilDestroyed`) para prevenir fugas de memoria (*memory leaks*).
+
+**Java & Spring Boot**
+
+Basado en las [Convenciones de Código de Java](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html) y las [Buenas Prácticas de Spring](https://spring.io/guides/gs/spring-boot/), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, métodos y parámetros.
+- **PascalCase** para clases y interfaces.
+- Nombres de paquetes en minúsculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Cada clase en su propio archivo.
+- Métodos cortos y enfocados en una sola responsabilidad.
+- Uso de anotaciones de Spring para inyección de dependencias y configuración.
+
+Buenas prácticas:
+- Evitar lógica de negocio en controladores; usar servicios.
+- Manejo adecuado de excepciones con `@ControllerAdvice`.
+- Documentar APIs REST con Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Basado en las [Convenciones de Código de Kotlin](https://kotlinlang.org/docs/coding-conventions.html) y las [Buenas Prácticas de Jetpack Compose](https://developer.android.com/jetpack/compose), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y objetos.
+- Nombres de paquetes en minúsculas y separados por puntos (`com.example.project`).
+- Constantes en `UPPER_CASE_WITH_UNDERSCORES`.
+
+Estructura y organización:
+- Cada clase y objeto en su propio archivo.
+- Funciones cortas y enfocadas en una sola responsabilidad.
+- Uso de `@Composable` para funciones de UI.
+
+Buenas prácticas:
+- Evitar lógica de negocio en composables; usar ViewModels.
+- Manejo adecuado del estado con `State` y `MutableState`.
+- Documentar funciones públicas con KDoc.
+
+**Dart & Flutter**
+
+Basado en las [Convenciones de Código de Dart](https://dart.dev/guides/language/effective-dart/style) y las [Buenas Prácticas de Flutter](https://flutter.dev/docs/development/ui/advanced), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- **camelCase** para variables, funciones y parámetros.
+- **PascalCase** para clases y enums.
+- Nombres de paquetes en minúsculas y separados por guiones bajos (`my_package`).
+- Constantes en `lowercase_with_underscores`.
+
+Estructura y organización:
+- Cada clase en su propio archivo.
+- Widgets cortos y enfocados en una sola responsabilidad.
+- Uso de `StatelessWidget` y `StatefulWidget` según corresponda.
+
+Buenas prácticas:
+- Evitar lógica de negocio en widgets; usar Providers o Bloc.
+- Manejo adecuado del estado con `setState`, `Provider` o `Bloc`.
+- Documentar clases y métodos públicos con DartDoc.
+
+El código de pruebas es tan importante como el código de producción. Debe ser limpio, legible y mantenible. Para garantizar la consistencia en el aseguramiento de calidad (QA), se adoptan las siguientes reglas.
+
+**Pruebas / Gherkin**
+
+Basado en las [Buenas Prácticas de Gherkin](https://cucumber.io/docs/gherkin/reference/), se adoptan las siguientes reglas para la redacción de pruebas automatizadas:
+
+- Los archivos de características (`.feature`) se escribirán en inglés.
+- Cada escenario debe ser independiente y autocontenido (no depender del estado de un escenario anterior).
+- Utilizar nombres descriptivos para características y escenarios.
+- Seguir estrictamente la estructura **Given-When-Then** para separar el contexto, la acción y el resultado esperado.
+
+**JUnit 5 & Mockito (Java & Spring Boot)**
+
+Basado en las convenciones de la comunidad de JUnit y Spring, se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Los nombres de las clases de prueba deben terminar en `Test` (ej. `UserServiceTest`).
+- Nombrar los métodos de prueba describiendo el comportamiento esperado y el estado inicial. Se recomienda el formato `should_ExpectedBehavior_When_StateUnderTest` (ej. `should_ReturnUser_When_IdExists()`).
+
+Estructura y organización:
+- Estructurar el cuerpo de la prueba utilizando el patrón **AAA** (Arrange, Act, Assert), separando visualmente cada bloque con un salto de línea.
+- Opcionalmente, usar comentarios `// Given`, `// When`, `// Then` dentro del método si la prueba es compleja.
+
+Buenas prácticas:
+- Aislar completamente la unidad a probar utilizando `@Mock` y `@InjectMocks` de Mockito.
+- Evitar levantar el contexto completo de Spring (`@SpringBootTest`) para pruebas puramente unitarias; reservarlo solo para pruebas de integración.
+
+**Jasmine, Karma & Jest (Angular & TypeScript)**
+
+Basado en la [Guía de Testing de Angular](https://angular.dev/guide/testing), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Los archivos de prueba deben tener el sufijo `.spec.ts`.
+- Los bloques `describe` deben llevar el nombre de la clase, componente o servicio a probar.
+- Los bloques `it` deben comenzar con `should` describiendo claramente qué debe hacer (ej. `it('should display the user name')`).
+
+Estructura y organización:
+- Utilizar `beforeEach` para configurar el estado inicial y limpiar variables compartidas antes de cada prueba.
+
+Buenas prácticas:
+- Mantener la configuración del `TestBed` lo más ligera posible, declarando solo lo necesario para el componente bajo prueba.
+- Hacer *mock* sistemático de los servicios que realizan llamadas HTTP y dependencias pesadas para evitar ralentizar las pruebas.
+
+**JUnit & MockK (Kotlin)**
+
+Basado en las convenciones de testing de Kotlin y Android, se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Aprovechar la característica de Kotlin de usar *backticks* (`` ` ``) para crear nombres de funciones de prueba altamente legibles en inglés (ej. ``@Test fun `should return success response when credentials are valid`()``).
+
+Buenas prácticas:
+- Utilizar **MockK** en lugar de Mockito por su compatibilidad nativa.
+- Utilizar `coEvery` y `coVerify` para hacer *mocking* y aserciones sobre funciones suspendidas (*coroutines*).
+
+**Jetpack Compose Testing (Android UI)**
+
+Basado en las [Buenas prácticas de Testing en Compose](https://developer.android.com/develop/ui/compose/testing), se adoptan las siguientes reglas:
+
+- Utilizar `composeTestRule` para aislar el componente UI a probar.
+- Preferir interactuar con los nodos de la UI a través de semántica textual (`onNodeWithText`, `onNodeWithContentDescription`) para asegurar pruebas orientadas a la accesibilidad.
+- Utilizar `Modifier.testTag()` solo como último recurso cuando los elementos no tengan texto descriptivo.
+
+**Flutter Test & Mocktail (Dart)**
+
+Basado en las [Convenciones de Testing de Flutter](https://docs.flutter.dev/testing), se adoptan las siguientes reglas:
+
+Nombres y sintaxis:
+- Agrupar lógicamente múltiples pruebas relacionadas usando `group('Feature Name', () { ... })`.
+- Los métodos `test()` y `testWidgets()` deben tener descripciones claras que empiecen con `should`.
+
+Buenas prácticas:
+- Separar estrictamente las pruebas unitarias (lógica Dart sin UI) de las pruebas de *Widgets* (interacciones de UI).
+- En las pruebas de *Widgets*, utilizar `pumpWidget` para renderizar elementos aislados.
+- Hacer *mock* de los controladores, *providers* de estado y repositorios utilizando **Mocktail** para evitar llamadas reales a la red o bases de datos locales durante la ejecución.
+
 ### 5.1.4. Software Deployment Configuration
 
 ## 5.2. Product Implementation & Deployment
