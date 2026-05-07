@@ -1,0 +1,188 @@
+@startuml Demy: Domain Model Diagram (Grouped by Bounded Context)
+
+skinparam class {
+    BackgroundColor LightYellow/D3F5F5
+    ArrowColor SeaGreen
+    ' BackgroundColor<<Aggregate Root>> #B7E9F7   ' Azul muy suave
+    BackgroundColor<<Entity>> #D4E9B2
+    BackgroundColor<<Service>> #F5B7B1
+    BackgroundColor<<Value Object>> #F9E79F
+}
+
+
+package "Enrollment Context" <<Node>> #FFFFFF {
+       ' ------------------ Command Services ------------------
+       class AcademicPeriodCommandService <<(S, #FFF0F0) Service>> {
+           + Long handle(CreateAcademicPeriodCommand command)
+           + void handle(DeleteAcademicPeriodCommand command)
+           + Optional<AcademicPeriod> handle(UpdateAcademicPeriodCommand command)
+       }
+
+       class EnrollmentCommandService <<(S, #FFF0F0) Service>> {
+           + Long handle(CreateEnrollmentCommand command)
+           + void handle(DeleteEnrollmentCommand command)
+           + Optional<Enrollment> handle(UpdateEnrollmentCommand command)
+       }
+
+       class StudentCommandService <<(S, #FFF0F0) Service>> {
+           + Long handle(CreateStudentCommand command)
+           + void handle(DeleteStudentCommand command)
+           + Optional<Student> handle(UpdateStudentCommand command)
+       }
+
+       ' ------------------ Query Services ------------------
+       class AcademicPeriodQueryService <<(S, #FFF5F5) Service>> {
+           + Optional<AcademicPeriod> handle(GetAcademicPeriodByIdQuery query)
+           + List<AcademicPeriod> handle(GetAllAcademicPeriodsQuery query)
+       }
+
+       class EnrollmentQueryService <<(S, #FFF5F5) Service>> {
+           + List<Enrollment> handle(GetAllEnrollmentsByStudentIdQuery query)
+           + List<Enrollment> handle(GetAllEnrollmentsQuery query)
+           + Optional<Enrollment> handle(GetEnrollmentByIdQuery query)
+           + List<Enrollment> handle(GetAllEnrollmentsByStudentDniQuery query)
+       }
+
+       class StudentQueryService <<(S, #FFF5F5) Service>> {
+           + Optional<Student> handle(GetStudentByIdQuery query)
+           + List<Student> handle(GetAllStudentsQuery query)
+           + Optional<Student> handle(GetStudentByDniQuery query)
+       }
+
+    class AcademicPeriod <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - String PeriodName
+        - PeriodDuration duration
+        - PeriodStatus status
+        - AcademyId academyId
+        # AcademicPeriod(): void
+        + AcademicPeriod(CreateAcademicPeriodCommand): void
+        + updateInformation(UpdateAcademicPeriodCommand): AcademicPeriod
+    }
+
+    class Enrollment <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - AcademicPeriodId periodId
+        - StudentId studentId
+        - AcademyId academyId
+        - ScheduleId scheduleId
+        - EnrollmentStatus status
+        - Money amount
+        # Enrollment(): void
+        + Enrollment(CreateEnrollmentCommand): void
+        + updateInformation(UpdateEnrollmentCommand): Enrollment
+
+    }
+
+    class Student <<(A, #27D3F5) Aggregate Root>> {
+        - Long id
+        - FullName fullName
+        - Dni dni
+        - Sex sex
+        - LocalDate birthDate
+        - String address
+        - PhoneNumber phoneNumber
+        - Email email
+        - AcademyId academyId
+        # Student(): void
+        + Student(CreateStudentCommand): void
+        + updateInformation(UpdateStudentCommand): Student
+    }
+
+    class AcademicPeriodId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class StudentId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class ScheduleId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class PeriodDuration <<(V, #FFD700) Value Object>> {
+        - LocalDate startDate
+        - LocalDate endDate
+        + boolean isCurrentlyActive()
+        + int getDurationInDays()
+    }
+
+    class PeriodStatus <<(V, #FFD700) Value Object>> {
+        - boolean isActive
+        + {static} ActiveStatus active()
+        + {static} ActiveStatus inactive()
+    }
+
+    class PhoneNumber <<(V, #FFD700) Value Object>> {
+        - String number
+        + PhoneNumber(String number)
+        + String getNumber()
+        + boolean isValid()
+    }
+
+    class Dni <<(V, #FFD700) Value Object>> {
+        - String dni
+        + Dni(String dni)
+        + String getValue()
+        + boolean isValid()
+    }
+
+    enum Sex <<(V, #FFD700) Value Object>> {
+        MALE
+        FEMALE
+    }
+
+    class Email <<(V, #FFD700) Value Object>> {
+        - String address
+        + Email(String address)
+        + String getAddress()
+        + boolean isValid()
+    }
+
+    enum EnrollmentStatus <<(E, #FF7F50) Value Object>> {
+        ACTIVE
+        INACTIVE
+    }
+
+    ' Relationships
+    AcademicPeriod "1" *-- "1" PeriodDuration : has >
+    AcademicPeriod "1" *-- "1" PeriodStatus : withStatus >
+    Enrollment "1" ..> "1" AcademicPeriodId : in >
+    Enrollment "1" ..> "1" StudentId : for >
+    Enrollment "1" ..> "1" ScheduleId : uses >
+    Enrollment "1" *-- "1" EnrollmentStatus : has >
+    Student "1" *-- "1" Dni : identifiedBy >
+    Student "1" *-- "1" Email: has >
+    Student "1" *-- "1" Sex: is >
+    Student "1" *-- "1" PhoneNumber: has>
+
+
+    'Between Aggregates and Services
+    AcademicPeriodCommandService ..> AcademicPeriod : manages >
+    AcademicPeriodQueryService ..> AcademicPeriod : queries >
+    EnrollmentCommandService ..> Enrollment : manages >
+    EnrollmentQueryService ..> Enrollment : queries >
+    StudentCommandService ..> Student : manages >
+    StudentQueryService ..> Student : queries >
+
+
+}
+
+package "Shared Kernel" <<Node>> #FFF5F5 {
+    class AcademyId <<(V, #FFD700) Value Object>> {
+        - Long id
+    }
+
+    class FullName <<(V, #FFD700) Value Object>> {
+        - String firstName
+        - String lastName
+        + String getFullName()
+    }
+}
+
+' Define relationships between contexts
+AcademicPeriod "1" ..> "1" AcademyId : belongsTo >
+Student "1" --> "1" FullName : has >
+
+@enduml

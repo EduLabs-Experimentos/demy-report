@@ -1,0 +1,194 @@
+@startuml Demy: Scheduling Domain Layer Class Diagram
+title Demy: Scheduling Domain Layer Class Diagram
+
+skinparam class {
+    BackgroundColor<<Aggregate Root>> #FFFFFF/B3E5FC
+    BackgroundColor<<Entity>> #FFFFFF/C8E6C9
+    BackgroundColor<<Value Object>> #FFFFFF/FFF9C4
+    BackgroundColor<<Domain Service>> #FFFFFF/FFCCBC
+    BorderColor #212121
+    ArrowColor #212121
+    FontSize 14
+}
+
+package "Scheduling Context" {
+    package "Domain Layer" {
+        ' Aggregate Roots
+        class "Schedule" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - name : String
+            - academyId : AcademyId
+            - classSessions : Set<ClassSession>
+            # Schedule()
+            + Schedule(name : String, academyId : AcademyId)
+            + addClassSession(session : ClassSession) : void
+            + removeClassSession(sessionId : Long) : void
+            + validateConflicts() : boolean
+        }
+
+        class "Course" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - name : String
+            - courseCode : CourseCode
+            - description : String
+            - academyId : AcademyId
+            # Course()
+            + Course(name : String, courseCode : CourseCode, academyId : AcademyId)
+            + updateCourse(command : UpdateCourseCommand) : Course
+        }
+
+        class "Classroom" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - classroomCode : ClassroomCode
+            - capacity : Integer
+            - campus : String
+            - academyId : AcademyId
+            # Classroom()
+            + Classroom(code : ClassroomCode, capacity : Integer, campus : String, academyId : AcademyId)
+            + updateClassroom(command : UpdateClassroomCommand) : Classroom
+        }
+
+        ' Entity
+        class "ClassSession" <<(E, #9ACD32) Entity>> {
+            - id : Long
+            - courseId : CourseId
+            - classroomId : ClassroomId
+            - teacherId : TeacherId
+            - dayOfWeek : DayOfWeek
+            - timeRange : TimeRange
+            # ClassSession()
+            + ClassSession(courseId : CourseId, classroomId : ClassroomId, teacherId : TeacherId,
+                           dayOfWeek : DayOfWeek, timeRange : TimeRange)
+            + reschedule(newRange : TimeRange) : void
+            + conflictsWith(other : ClassSession) : boolean
+        }
+
+        ' Value Objects
+        enum "DayOfWeek" <<Value Object>> {
+            MONDAY
+            TUESDAY
+            WEDNESDAY
+            THURSDAY
+            FRIDAY
+            SATURDAY
+            SUNDAY
+            --
+            + isWeekend() : boolean
+        }
+
+        class "TimeRange" <<(V, #FFD700) Value Object>> {
+            - startTime : LocalTime
+            - endTime : LocalTime
+            --
+            + overlapsWith(other : TimeRange) : boolean
+        }
+
+        class "CourseCode" <<(V, #FFD700) Value Object>> {
+            - code : String
+            # CourseCode()
+            + CourseCode(code : String)
+            + getCode() : String
+        }
+
+        class "ClassroomCode" <<(V, #FFD700) Value Object>> {
+            - code : String
+            # ClassroomCode()
+            + ClassroomCode(code : String)
+            + getCode() : String
+        }
+
+        ' Command Services
+        class "ScheduleCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : CreateScheduleCommand) : Optional<Schedule>
+            + handle(command : AddClassSessionCommand) : Optional<Schedule>
+            + handle(command : RemoveClassSessionCommand) : Optional<Schedule>
+            + handle(command : UpdateClassSessionCommand) : Optional<ClassSession>
+            + handle(command : DeleteScheduleCommand) : void
+        }
+
+        class "CourseCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : CreateCourseCommand) : Optional<Course>
+            + handle(command : UpdateCourseCommand) : Optional<Course>
+            + handle(command : DeleteCourseCommand) : void
+        }
+
+        class "ClassroomCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : CreateClassroomCommand) : Optional<Classroom>
+            + handle(command : UpdateClassroomCommand) : Optional<Classroom>
+            + handle(command : DeleteClassroomCommand) : void
+        }
+
+        ' Query Services
+        class "ScheduleQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetAllSchedulesQuery) : List<Schedule>
+            + handle(query : GetScheduleByIdQuery) : Optional<Schedule>
+            + handle(query : GetScheduleByNameQuery) : Optional<Schedule>
+            + handle(query : GetClassSessionsByTeacherIdQuery) : List<ClassSession>
+        }
+
+        class "CourseQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetAllCoursesQuery) : List<Course>
+            + handle(query : GetCourseByIdQuery) : Optional<Course>
+            + handle(query : GetCourseByCodeQuery) : Optional<Course>
+        }
+
+        class "ClassroomQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetAllClassroomsQuery) : List<Classroom>
+            + handle(query : GetClassroomByIdQuery) : Optional<Classroom>
+            + handle(query : GetClassroomByCodeQuery) : Optional<Classroom>
+        }
+    }
+}
+
+package "Shared Kernel" {
+    package "Domain Layer" {
+        class "AcademyId" <<(V, #FFD700) Value Object>> {
+            - academyId : Long
+            # AcademyId()
+            + AcademyId(academyId : Long)
+            + getAcademyId() : Long
+        }
+
+        class "TeacherId" <<(V, #FFD700) Value Object>> {
+            - teacherId : Long
+            # TeacherId()
+            + TeacherId(teacherId : Long)
+            + getTeacherId() : Long
+        }
+
+        class "CourseId" <<(V, #FFD700) Value Object>> {
+            - courseId : Long
+            # CourseId()
+            + CourseId(courseId : Long)
+            + getCourseId() : Long
+        }
+
+        class "ClassroomId" <<(V, #FFD700) Value Object>> {
+            - classroomId : Long
+            # ClassroomId()
+            + ClassroomId(classroomId : Long)
+            + getClassroomId() : Long
+        }
+    }
+}
+
+' Relationships
+Schedule "1" *-- "0..*" ClassSession : contains >
+ClassSession "1" ..> "1" CourseId : references >
+ClassSession "1" ..> "1" TeacherId : references >
+ClassSession "1" ..> "1" ClassroomId : references >
+ClassSession "1" *-- "1" DayOfWeek : occurs on >
+ClassSession "1" *-- "1" TimeRange : scheduled in >
+Schedule "1" ..> "1" AcademyId : belongs to >
+Course "1" ..> "1" AcademyId : belongs to >
+Classroom "1" ..> "1" AcademyId : belongs to >
+Course "1" ..> "1" CourseCode : identity >
+Classroom "1" ..> "1" ClassroomCode : has >
+ScheduleCommandService ..> Schedule : manages >
+ScheduleQueryService ..> Schedule : queries >
+CourseCommandService ..> Course : manages >
+CourseQueryService ..> Course : queries >
+ClassroomCommandService ..> Classroom : manages >
+ClassroomQueryService ..> Classroom : queries >
+
+@enduml

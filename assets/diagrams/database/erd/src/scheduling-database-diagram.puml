@@ -1,5 +1,5 @@
-@startuml Demy: Scheduling ER Diagram
-title Demy: Scheduling ER Diagram
+@startuml Demy: Scheduling Database Diagram
+title Demy: Scheduling Database Diagram
 
 hide circle
 skinparam linetype ortho
@@ -32,7 +32,7 @@ entity "classrooms" as classrooms {
 entity "class_sessions" as class_sessions {
   *id : BIGINT <<PK>>
   --
-  *day_of_week : ENUM
+  *day_of_week : ENUM('MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY')
   *start_time : TIME
   *end_time : TIME
   *teacher_id : BIGINT
