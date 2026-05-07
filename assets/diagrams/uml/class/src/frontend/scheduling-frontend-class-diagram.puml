@@ -1,0 +1,216 @@
+@startuml Demy: Scheduling Frontend Class Diagram
+title Demy: Scheduling Frontend Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #FAFAFA
+  BorderColor #757575
+  ArrowColor #424242
+}
+
+package "shared" {
+  package "components" {
+    class "BaseFormComponent" <<Component>> {
+      + isInvalidControl(form: FormGroup, controlName: string): boolean
+      + errorMessagesForControl(form: FormGroup, controlName: string): string
+      + errorMessageForControl(controlName: string, errorKey: string): string
+    }
+  }
+
+  package "services" {
+    abstract class "BaseService<T>" <<Service>> {
+      # resourceEndpoint: string
+      + getAll(): Observable<T[]>
+      + getById(id: string): Observable<T>
+      + create(entity: T): Observable<T>
+      + update(id: string, entity: T): Observable<T>
+      + delete(id: string): Observable<void>
+    }
+  }
+}
+
+package "scheduling" {
+
+  package "components" {
+    class "ScheduleCreateFormComponent" <<Component>> {
+      @Input() schedule: Schedule
+      @Input() editMode: boolean
+      @Output() scheduleAddRequested: EventEmitter<Schedule>
+      @Output() scheduleUpdateRequested: EventEmitter<Schedule>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('scheduleForm') scheduleForm: NgForm
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "CourseCreateFormComponent" <<Component>> {
+      @Input() course: Course
+      @Input() editMode: boolean
+      @Output() courseAddRequested: EventEmitter<Course>
+      @Output() courseUpdateRequested: EventEmitter<Course>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('courseForm') courseForm: NgForm
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "ClassroomCreateFormComponent" <<Component>> {
+      @Input() classroom: Classroom
+      @Input() editMode: boolean
+      @Output() classroomAddRequested: EventEmitter<Classroom>
+      @Output() classroomUpdateRequested: EventEmitter<Classroom>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('classroomForm') classroomForm: NgForm
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "ClassSessionCreateFormComponent" <<Component>> {
+      dayOfWeekOptions: {value: string, viewValue: string}[]
+      @Input() classSession: ClassSession
+      @Input() editMode: boolean
+      @Output() classSessionAddRequested: EventEmitter<ClassSession>
+      @Output() classSessionUpdateRequested: EventEmitter<ClassSession>
+      @Output() cancelRequested: EventEmitter<void>
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "ScheduleManagementComponent" <<Component>> {
+      scheduleData: Schedule
+      columnsToDisplay: string[]
+      paginator: MatPaginator
+      sort: MatSort
+      editMode: boolean
+      dataSource: MatTableDataSource<Schedule>
+      scheduleService: ScheduleService
+      + ngOnInit(): void
+      + ngAfterViewInit(): void
+      + getAllSchedules(): void
+      + createSchedule(): void
+      + updateSchedule(): void
+      + deleteSchedule(id: string): void
+    }
+  }
+
+  package "pages" {
+    class "SchedulesPageComponent" <<Component>> {
+      + ngOnInit(): void
+    }
+
+    class "CoursesPageComponent" <<Component>> {
+      + ngOnInit(): void
+    }
+
+    class "ClassroomsPageComponent" <<Component>> {
+      + ngOnInit(): void
+    }
+  }
+
+  package "services" {
+    class "ScheduleService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+    }
+
+    class "CourseService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+      + getByCode(code: string): Observable<Course>
+    }
+
+    class "ClassroomService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+      + getByCode(code: string): Observable<Classroom>
+    }
+
+    class "ClassSessionService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+      + getByTeacherId(teacherId: string): Observable<ClassSession[]>
+    }
+  }
+
+  package "model" {
+    class "Schedule" <<Entity>> {
+      - id: string
+      - name: string
+      - academyId: string
+      - classSessions: ClassSession[]
+      + constructor(schedule: {...})
+    }
+
+    class "Course" <<Entity>> {
+      - id: string
+      - name: string
+      - courseCode: string
+      - description: string
+      - academyId: string
+      + constructor(course: {...})
+    }
+
+    class "Classroom" <<Entity>> {
+      - id: string
+      - classroomCode: string
+      - capacity: number
+      - campus: string
+      - academyId: string
+      + constructor(classroom: {...})
+    }
+
+    class "ClassSession" <<Entity>> {
+      - id: string
+      - courseId: string
+      - classroomId: string
+      - teacherId: string
+      - dayOfWeek: DayOfWeek
+      - startTime: string
+      - endTime: string
+      - scheduleId: string
+      + constructor(classSession: {...})
+    }
+
+    enum "DayOfWeek" {
+      MONDAY
+      TUESDAY
+      WEDNESDAY
+      THURSDAY
+      FRIDAY
+      SATURDAY
+      SUNDAY
+    }
+  }
+}
+
+' Inheritance
+ScheduleCreateFormComponent      ..|> BaseFormComponent
+CourseCreateFormComponent        ..|> BaseFormComponent
+ClassroomCreateFormComponent     ..|> BaseFormComponent
+ClassSessionCreateFormComponent  ..|> BaseFormComponent
+ScheduleService                  --|> "BaseService<T>"
+CourseService                    --|> "BaseService<T>"
+ClassroomService                 --|> "BaseService<T>"
+ClassSessionService              --|> "BaseService<T>"
+
+' Containment
+SchedulesPageComponent       *-- ScheduleManagementComponent : contains >
+ScheduleManagementComponent  *-- ScheduleCreateFormComponent : contains >
+
+' Dependencies
+ScheduleManagementComponent  ..> ScheduleService : injects
+SchedulesPageComponent       ..> ClassSessionService : injects
+CoursesPageComponent         ..> CourseService : injects
+ClassroomsPageComponent      ..> ClassroomService : injects
+
+' Service - Entity
+ScheduleService     ..> Schedule : manages
+CourseService       ..> Course : manages
+ClassroomService    ..> Classroom : manages
+ClassSessionService ..> ClassSession : manages
+
+' Entity relationships
+Schedule        *-- ClassSession : contains
+ClassSession    --> DayOfWeek : occurs on
+
+@enduml
