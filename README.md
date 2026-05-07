@@ -4245,6 +4245,67 @@ Buenas prácticas:
 
 ### 5.1.4. Software Deployment Configuration
 
+Se utilizarán las siguientes plataformas para el despliegue de los diferentes productos del proyecto:
+
+| **Producto**                          | **Plataforma de Despliegue** | **Propósito**                                                                                     | **Enlace / Ruta de Acceso**                                            |
+|---------------------------------------|------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Landing Page y Web Application**                      | **Netlify**                  | Plataforma utilizada para el despliegue automático y gratuito de la landing page y web application.                 | [https://www.netlify.com](https://www.netlify.com)                     |
+| **RESTful API**                       | **Railway**                  | Plataforma utilizada para el despliegue automático del servicio REST API, con prueba gratuita.    | [https://railway.app](https://railway.app)                             |
+| **Flutter Cross-Platform Mobile App** | **Firebase**                 | Plataforma utilizada para el despliegue automático de la aplicación móvil multiplataforma.        | [https://firebase.google.com](https://firebase.google.com)             |
+| **Android Native-Mobile App**         | **Google Play Console**      | Plataforma utilizada para la publicación y distribución de la aplicación móvil nativa en Android. | [https://play.google.com/console](https://play.google.com/console)     |
+
+
+**Netlify**
+
+Netlify es una plataforma de alojamiento y despliegue continuo para sitios web estáticos y aplicaciones frontend. Ofrece integración con repositorios GitHub, permitiendo despliegues automáticos al hacer push en ramas específicas.
+
+Para configurar el despliegue automático de la landing page en Netlify, se siguen los siguientes pasos:
+1. Crear una cuenta en [Netlify](https://www.netlify.com) y vincularla con el repositorio de GitHub que contiene el código de la landing page.
+2. Configurar un nuevo sitio en Netlify, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main` o `develop`).
+4. Especificar los comandos de construcción y la carpeta de publicación (por ejemplo, `npm run build` y `dist/`).
+5. Guardar la configuración y permitir que Netlify realice el primer despliegue automático.
+
+**Railway**
+
+Railway es una plataforma de despliegue y gestión de aplicaciones backend que facilita la implementación de servicios REST API. Ofrece integración con repositorios GitHub y soporte para múltiples lenguajes y frameworks.
+
+Para configurar el despliegue automático del servicio REST API en Railway, se siguen los siguientes pasos:
+1. Crear una cuenta en [Railway](https://railway.app) y vincularla con el repositorio de GitHub que contiene el código del servicio REST API.
+2. Crear un nuevo proyecto en Railway, seleccionando el repositorio correspondiente.
+3. Definir la rama de despliegue (por ejemplo, `main` o `develop`).
+4. Configurar las variables de entorno necesarias para la aplicación.
+5. Guardar la configuración y permitir que Railway realice el primer despliegue automático.
+
+**Firebase**
+
+Firebase es una plataforma de desarrollo de aplicaciones móviles y web que ofrece servicios como autenticación, base de datos en tiempo real y alojamiento. También permite el despliegue automático de aplicaciones móviles multiplataforma desarrolladas con Flutter.
+
+Para configurar el despliegue automático de la aplicación móvil multiplataforma en Firebase, se siguen los siguientes pasos:
+1. Crear una cuenta en [Firebase](https://firebase.google.com) y crear un nuevo proyecto.
+2. Vincular el proyecto de Firebase con el repositorio de GitHub que contiene el código de la aplicación móvil.
+3. Configurar la integración continua utilizando GitHub Actions o Firebase CLI.
+4. Definir los comandos de construcción y despliegue (por ejemplo, `flutter build apk` y `firebase appdistribution:distribute`).
+5. Guardar la configuración y permitir que Firebase realice el primer despliegue automático.
+
+**Google Play Console**
+
+Google Play Console es la plataforma oficial para publicar y gestionar aplicaciones móviles nativas en Android. Permite la distribución de aplicaciones a través de Google Play Store, así como la gestión de versiones, análisis y monetización.
+
+Para publicar la aplicación móvil nativa en Android en Google Play Console, se siguen los siguientes pasos:
+1. Crear una cuenta de desarrollador en [Google Play Console](https://play.google.com/console) y pagar la tarifa de registro única.
+2. Crear un nuevo proyecto de aplicación, proporcionando la información básica como el nombre, la descripción y las capturas de pantalla.
+3. Subir el archivo APK o AAB generado por Android Studio.
+4. Completar los detalles de la ficha de la aplicación, incluyendo la categoría, el contenido y la política de privacidad.
+5. Enviar la aplicación para revisión y publicación en Google Play Store.
+
+
+Adicionalmente, se incluye el diagrama de despliegue de la arquitectura del sistema, que ilustra cómo los diferentes componentes del proyecto Demy interactúan entre sí y con las plataformas de despliegue.
+
+![Software Deployment Configuration: Deployment Diagram](./assets/diagrams/software-architecture/deployment/software-architecture-deployment-diagram.png)
+
+<hr class="page-break">
+
 ## 5.2. Product Implementation & Deployment
 
 ### 5.2.1. Sprint Backlogs
