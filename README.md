@@ -900,135 +900,1173 @@ Se incluyen diferentes tipos de historias, tales como:
 - **Spike Stories:** historias que representan tareas de investigación o exploración técnica para resolver incertidumbres o evaluar alternativas antes de la implementación.
 
 
-| Story ID | User | Priority | Epic | Title | Description | Acceptance Criteria |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **EP001** | Administrador | Alta | — | Manejo de la Institución y Miembros | Como administrador, quiero gestionar la información de la academia y sus miembros docentes para mantener datos actualizados y facilitar la administración. | — |
-| **US001** | Administrador | Alta | EP001 | Registro de Academia | Como administrador, quiero registrar una nueva academia para poder gestionar sus miembros. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador cuenta con los permisos necesarios de registro<br>**Cuando** envía los datos correspondientes de una nueva academia en formato válido<br>**Entonces** el sistema registra la institución exitosamente en la base de datos y emite un mensaje de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador cuenta con los permisos necesarios de registro<br>**Cuando** envía información incompleta o con datos inválidos sobre la nueva academia<br>**Entonces** el sistema rechaza el proceso e indica los errores específicos encontrados. |
-| **US002** | Administrador | Alta | EP001 | Actualización de Academia | Como administrador, quiero actualizar la información de una academia existente para mantener los datos al día. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona una institución previamente registrada<br>**Cuando** modifica y envía los datos con nueva información válida<br>**Entonces** el sistema procesa la modificación y actualiza el registro institucional.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona una institución previamente registrada<br>**Cuando** envía los datos omitiendo información obligatoria<br>**Entonces** el sistema deniega la actualización y muestra un indicador de campos faltantes. |
-| **US003** | Administrador | Alta | EP001 | Eliminación de Academia | Como administrador, quiero eliminar una academia existente para deshacerme de una institución que ya no gestiono. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador solicita la eliminación de una academia existente<br>**Cuando** confirma definitivamente la orden de eliminación del registro<br>**Entonces** el sistema borra la institución del ecosistema y de los registros principales.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador solicita la eliminación de una academia existente<br>**Cuando** declina u omite la orden definitiva de eliminación<br>**Entonces** el sistema suspende la acción y conserva la institución sin alteraciones. |
-| **US004** | Administrador | Alta | EP001 | Registro de Profesor | Como administrador, quiero registrar un nuevo profesor para poder asignarlo a clases y gestionar su información. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador solicita el registro de un nuevo docente<br>**Cuando** envía las credenciales y datos válidos exigidos para el profesor<br>**Entonces** el sistema añade al profesor a la academia y confirma la creación del perfil.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador solicita el registro de un nuevo docente<br>**Cuando** envía los datos con información incorrecta o ya existente<br>**Entonces** el sistema bloquea el registro y notifica la incongruencia en los datos aportados. |
-| **US005** | Administrador | Alta | EP001 | Actualización de Profesor | Como administrador, quiero actualizar la información de un profesor existente para mantener los datos actualizados. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona el perfil de un docente existente<br>**Cuando** modifica y envía los datos requeridos con información válida<br>**Entonces** el sistema procesa los cambios y refleja la información actualizada del profesor.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona el perfil de un docente existente<br>**Cuando** envía los datos con información en formato inválido<br>**Entonces** el sistema rechaza los cambios e indica las fallas específicas en la información enviada. |
-| **US006** | Administrador | Alta | EP001 | Eliminación de Profesor | Como administrador, quiero eliminar un profesor existente para deshacerme de un docente que ya no forma parte de la academia. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con el perfil de un profesor registrado<br>**Cuando** confirma la orden explícita de eliminación de dicho usuario<br>**Entonces** el sistema retira al docente de la academia de manera exitosa.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con el perfil de un profesor registrado<br>**Cuando** declina la orden explícita de eliminación antes de que sea procesada<br>**Entonces** el sistema conserva la cuenta del docente activa y sin modificaciones. |
-| **EP002** | Administrador | Alta | — | Gestión de Matrículas | Como administrador, quiero gestionar las inscripciones en la plataforma para asegurar que los usuarios estén correctamente registrados en los cursos. | — |
-| **US007** | Administrador | Alta | EP002 | Registro de Inscripción | Como administrador, quiero registrar una inscripción en un periodo académico para habilitar el acceso a las clases correspondientes. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos válidos para una nueva inscripción en un periodo activo<br>**Entonces** el sistema registra la inscripción correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos de inscripción con información incompleta o referenciando cursos no disponibles<br>**Entonces** el sistema rechaza el registro y notifica los campos incorrectos. |
-| **US008** | Administrador | Alta | EP002 | Actualización de Inscripción | Como administrador, quiero actualizar la información de una inscripción existente para corregir datos o cambiar el estado del registro. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un registro de inscripción existente<br>**Cuando** modifica y envía los datos con información válida<br>**Entonces** el sistema actualiza el registro correctamente y emite una confirmación.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un registro de inscripción existente<br>**Cuando** envía modificaciones con información inválida o periodos inexistentes<br>**Entonces** el sistema rechaza los cambios e indica las fallas específicas encontradas. |
-| **US009** | Administrador | Alta | EP002 | Cancelación de Inscripción | Como administrador, quiero cancelar una inscripción activa para gestionar bajas o cambios en el registro del ciclo académico. | **Escenario 1: Cancelación exitosa**<br>**Dado** que un administrador interactúa con un registro de inscripción activo<br>**Cuando** confirma la orden explícita de cancelación<br>**Entonces** el sistema anula la inscripción y actualiza su estado en la base de datos de manera exitosa.<br><br>**Escenario 2: Declinación de cancelación**<br>**Dado** que un administrador interactúa con un registro de inscripción activo<br>**Cuando** declina u omite la orden de cancelación antes de su procesamiento<br>**Entonces** el sistema conserva la inscripción activa y sin aplicar modificaciones. |
-| **EP003** | Profesor | Alta | — | Registro de Asistencia | Como profesor, quiero registrar la asistencia en cada clase para llevar un control preciso y facilitar la gestión académica. | — |
-| **US010** | Profesor | Alta | EP003 | Registro de Asistencia | Como profesor, quiero registrar la asistencia en mis clases para llevar un control preciso y facilitar la gestión académica. | **Escenario 1: Registro exitoso**<br>**Dado** que un profesor cuenta con una sesión de clase asignada<br>**Cuando** marca el registro de participación y envía la información validada<br>**Entonces** el sistema guarda la asistencia correctamente y emite un mensaje de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un profesor cuenta con una sesión de clase asignada<br>**Cuando** intenta enviar el registro vacío sin indicar la participación en la sesión<br>**Entonces** el sistema rechaza la acción y solicita que se registre al menos un marcador de presencia. |
-| **US011** | Profesor | Alta | EP003 | Actualización de Asistencia | Como profesor, quiero actualizar los registros de asistencia para corregir errores o reflejar cambios en la participación real. | **Escenario 1: Actualización exitosa**<br>**Dado** que un profesor revisa un registro de asistencia previo<br>**Cuando** modifica y envía las participaciones actualizadas<br>**Entonces** el sistema guarda los cambios y confirma la actualización.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un profesor revisa un registro de asistencia previo<br>**Cuando** intenta enviar modificaciones sin realizar alteraciones a la información original<br>**Entonces** el sistema deniega la acción indicando que no hay cambios nuevos para procesar. |
-| **US012** | Profesor | Media | EP003 | Visualización de Reportes de Asistencia | Como profesor, quiero visualizar reportes de asistencia para analizar patrones y tomar decisiones informadas sobre la gestión académica. | **Escenario 1: Visualización exitosa**<br>**Dado** que un profesor requiere un informe de participaciones<br>**Cuando** solicita el reporte enviando los parámetros de un periodo válido<br>**Entonces** el sistema procesa los datos y retorna el informe de asistencia correspondiente.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un profesor requiere un informe de participaciones<br>**Cuando** solicita el reporte de un periodo que aún no cuenta con datos registrados<br>**Entonces** el sistema detiene la generación y notifica que no existe información disponible para ese rango. |
-| **EP004** | Administrador | Media | — | Gestión de Horarios | Como administrador, quiero gestionar los horarios de clases y asignar salones para optimizar el uso de los recursos y facilitar la planificación académica. | — |
-| **US013** | Administrador | Media | EP004 | Creación de Periodo Académico | Como administrador, quiero crear un nuevo periodo académico para organizar las clases y registros correspondientes. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía los datos válidos para un nuevo periodo académico<br>**Entonces** el sistema registra el periodo correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en la creación**<br>**Dado** que un administrador cuenta con los permisos de gestión<br>**Cuando** envía datos con fechas inconsistentes o incompletas<br>**Entonces** el sistema rechaza la creación e indica los campos incorrectos. |
-| **US014** | Administrador | Media | EP004 | Actualización de Periodo Académico | Como administrador, quiero actualizar la información de un periodo académico existente para mantener los datos vigentes. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un periodo registrado<br>**Cuando** envía las modificaciones con información válida<br>**Entonces** el sistema actualiza el registro del periodo y emite una confirmación.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un periodo registrado<br>**Cuando** envía modificaciones con información inválida o fechas que se solapan<br>**Entonces** el sistema rechaza los cambios e informa los errores. |
-| **US015** | Administrador | Media | EP004 | Eliminación de Periodo Académico | Como administrador, quiero eliminar un periodo académico existente para retirar aquellos que ya no son relevantes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador solicita eliminar un periodo académico<br>**Cuando** confirma explícitamente la acción de eliminación<br>**Entonces** el sistema elimina el periodo y emite un mensaje de éxito.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador solicita eliminar un periodo académico<br>**Cuando** declina la acción antes de que sea procesada<br>**Entonces** el sistema conserva el periodo sin aplicar modificaciones. |
-| **US016** | Administrador | Media | EP004 | Creación de Salones de Clase | Como administrador, quiero crear nuevos salones de clase para organizar los espacios físicos disponibles en la institución. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador cuenta con los permisos requeridos para gestionar espacios<br>**Cuando** envía los datos válidos de un nuevo salón de clase<br>**Entonces** el sistema registra el salón exitosamente en la base de datos.<br><br>**Escenario 2: Error en la creación**<br>**Dado** que un administrador cuenta con los permisos requeridos para gestionar espacios<br>**Cuando** envía los datos de un salón con información inválida o capacidad negativa<br>**Entonces** el sistema rechaza el registro e informa los campos incorrectos. |
-| **US017** | Administrador | Media | EP004 | Actualización de Salones de Clase | Como administrador, quiero actualizar la información de un salón de clase existente para mantener los datos de infraestructura al día. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador selecciona un salón de clase registrado<br>**Cuando** modifica y envía los datos con información válida<br>**Entonces** el sistema procesa la modificación y actualiza el registro correctamente.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador selecciona un salón de clase registrado<br>**Cuando** envía modificaciones omitiendo campos obligatorios<br>**Entonces** el sistema rechaza los cambios e indica la información faltante. |
-| **US018** | Administrador | Media | EP004 | Eliminación de Salones de Clase | Como administrador, quiero eliminar un salón de clase existente para retirar espacios físicos que ya no están operativos en la institución. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador requiere eliminar un salón de clase<br>**Cuando** confirma definitivamente la orden de eliminación<br>**Entonces** el sistema borra el salón de los registros permanentemente.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador requiere eliminar un salón de clase<br>**Cuando** declina la orden de eliminación antes de ser procesada<br>**Entonces** el sistema conserva el salón sin realizar modificaciones. |
-| **US019** | Administrador | Media | EP004 | Creación de Horarios | Como administrador, quiero crear horarios de clase para organizar las sesiones académicas y asignar a los docentes correspondientes. | **Escenario 1: Creación exitosa**<br>**Dado** que un administrador organiza la programación académica<br>**Cuando** envía los datos válidos para un nuevo horario sin solapamientos<br>**Entonces** el sistema genera el horario exitosamente en la base de datos.<br><br>**Escenario 2: Error por conflicto de horarios**<br>**Dado** que un administrador organiza la programación académica<br>**Cuando** envía los datos de un horario que presenta cruces con otros registros de profesores o salones<br>**Entonces** el sistema rechaza la creación y notifica el conflicto específico detectado. |
-| **US020** | Administrador | Media | EP004 | Actualización de Horarios | Como administrador, quiero actualizar un horario existente para ajustarlo ante imprevistos o cambios de planificación institucional. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador accede a un horario previamente establecido<br>**Cuando** envía nuevos datos válidos que no generan conflicto con otras sesiones<br>**Entonces** el sistema procesa los cambios y actualiza la programación del horario.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador accede a un horario previamente establecido<br>**Cuando** envía nuevos datos que generan un cruce de horarios<br>**Entonces** el sistema bloquea la actualización y muestra un mensaje advirtiendo el conflicto. |
-| **US021** | Administrador | Media | EP004 | Eliminación de Horarios | Como administrador, quiero eliminar un horario existente para retirar una programación que ya no se ejecutará. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador gestiona los horarios activos<br>**Cuando** emite la orden definitiva de eliminar un horario específico<br>**Entonces** el sistema retira la programación de la base de datos.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador gestiona los horarios activos<br>**Cuando** declina o cancela la eliminación del horario<br>**Entonces** el sistema mantiene el horario intacto sin aplicar modificaciones. |
-| **EP005** | Administrador | Media | — | Gestión de Boletas | Como administrador, quiero gestionar la emisión y seguimiento de las boletas de pago para asegurar que los usuarios cumplan con sus obligaciones financieras. | — |
-| **US022** | Administrador | Media | EP005 | Generación de Boletas de Pago | Como administrador, quiero generar boletas de pago para las inscripciones registradas para facilitar el proceso de cobro y seguimiento financiero. | **Escenario 1: Generación exitosa**<br>**Dado** que un administrador gestiona la facturación de las inscripciones<br>**Cuando** envía los parámetros requeridos para emitir un comprobante<br>**Entonces** el sistema genera la boleta de pago correctamente y confirma la operación.<br><br>**Escenario 2: Error en la generación**<br>**Dado** que un administrador gestiona la facturación de las inscripciones<br>**Cuando** solicita emitir un comprobante para una cuenta inactiva o con datos faltantes<br>**Entonces** el sistema rechaza la solicitud e indica el motivo del fallo. |
-| **US023** | Administrador | Media | EP005 | Actualización de Boletas de Pago | Como administrador, quiero actualizar la información de una boleta de pago existente para corregir errores o reflejar cambios en los montos. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador accede a un registro de cobro existente<br>**Cuando** envía modificaciones válidas sobre los montos o su estado<br>**Entonces** el sistema procesa y actualiza la boleta correctamente.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador accede a un registro de cobro existente<br>**Cuando** envía datos con valores financieros inválidos o montos negativos<br>**Entonces** el sistema bloquea el cambio y notifica la incongruencia en los valores. |
-| **US024** | Administrador | Media | EP005 | Eliminación de Boletas de Pago | Como administrador, quiero eliminar una boleta de pago existente para deshacerme de un registro incorrecto o duplicado. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con una boleta previamente generada<br>**Cuando** emite la orden definitiva para su eliminación<br>**Entonces** el sistema borra el registro financiero exitosamente de la base de datos.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con una boleta previamente generada<br>**Cuando** declina u omite la orden de borrado<br>**Entonces** el sistema conserva el comprobante sin aplicar modificaciones. |
-| **EP006** | Administrador | Media | — | Gestión Financiera y Contable | Como administrador, quiero gestionar los ingresos y egresos de la academia para mantener un control financiero adecuado y generar reportes contables. | — |
-| **US025** | Administrador | Media | EP006 | Registro de Ingreso/Egreso | Como administrador, quiero registrar ingresos y egresos financieros para mantener un control adecuado de la economía de la institución. | **Escenario 1: Registro exitoso**<br>**Dado** que un administrador gestiona las finanzas operativas<br>**Cuando** envía los datos válidos de una nueva transacción contable<br>**Entonces** el sistema registra el movimiento y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un administrador gestiona las finanzas operativas<br>**Cuando** envía una transacción con valores negativos o parámetros incompletos<br>**Entonces** el sistema rechaza el registro y detalla los campos erróneos. |
-| **US026** | Administrador | Media | EP006 | Actualización de Ingreso/Egreso | Como administrador, quiero actualizar la información de un ingreso o egreso existente para corregir información contable. | **Escenario 1: Actualización exitosa**<br>**Dado** que un administrador interactúa con una transacción registrada<br>**Cuando** envía modificaciones con montos y justificaciones válidas<br>**Entonces** el sistema actualiza el registro contable de manera exitosa.<br><br>**Escenario 2: Error en la actualización**<br>**Dado** que un administrador interactúa con una transacción registrada<br>**Cuando** omite información obligatoria o provee datos inconsistentes<br>**Entonces** el sistema deniega el cambio e indica la información faltante. |
-| **US027** | Administrador | Media | EP006 | Eliminación de Ingreso/Egreso | Como administrador, quiero eliminar un registro de ingreso o egreso existente para retirar información duplicada o incorrecta. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un administrador interactúa con un movimiento contable<br>**Cuando** confirma la instrucción irrevocable de eliminación<br>**Entonces** el sistema borra permanentemente el registro financiero.<br><br>**Escenario 2: Cancelación de la eliminación**<br>**Dado** que un administrador interactúa con un movimiento contable<br>**Cuando** cancela o declina la orden antes de su confirmación<br>**Entonces** el sistema mantiene la transacción sin alteraciones. |
-| **US028** | Administrador | Media | EP006 | Visualización de Resumen de Finanzas | Como administrador, quiero visualizar un resumen de finanzas para evaluar el estado económico de la institución de forma rápida. | **Escenario 1: Visualización exitosa**<br>**Dado** que un administrador solicita la vista general de la economía institucional<br>**Cuando** el sistema procesa una consulta en un periodo con transacciones activas<br>**Entonces** retorna los indicadores financieros y métricas correspondientes.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un administrador solicita la vista general de la economía institucional<br>**Cuando** ocurre un problema en la disponibilidad o consulta de los datos<br>**Entonces** el sistema notifica que los registros no pueden ser cargados temporalmente. |
-| **US029** | Administrador | Media | EP006 | Generación de Reportes Financieros | Como administrador, quiero generar reportes financieros detallados para analizar la situación económica y tomar decisiones estratégicas. | **Escenario 1: Generación exitosa**<br>**Dado** que un administrador solicita un informe contable de operaciones<br>**Cuando** envía parámetros con un periodo de fechas válido<br>**Entonces** el sistema genera y retorna el reporte con los datos financieros estructurados.<br><br>**Escenario 2: Error por periodo sin registros**<br>**Dado** que un administrador solicita un informe contable de operaciones<br>**Cuando** especifica un rango de fechas que carece por completo de transacciones<br>**Entonces** el sistema detiene la operación e indica que no hay información disponible para exportar. |
-| **EP007** | Profesor | Media | — | Control de Horarios | Como profesor, quiero visualizar y gestionar mi horario de clases para organizar mejor mi tiempo y prepararme adecuadamente para cada sesión. | — |
-| **US030** | Profesor | Media | EP007 | Visualización de Horario de Clases | Como profesor, quiero visualizar mi horario asignado para organizar mi tiempo y preparar cada sesión. | **Escenario 1: Visualización exitosa**<br>**Dado** que un profesor accede a su programación académica<br>**Cuando** el sistema procesa la consulta para un periodo activo<br>**Entonces** retorna el horario con las clases asignadas y los detalles correspondientes.<br><br>**Escenario 2: Error en la visualización**<br>**Dado** que un profesor accede a su programación académica<br>**Cuando** ocurre un problema en la disponibilidad de los datos<br>**Entonces** el sistema emite una notificación de indisponibilidad temporal. |
-| **US031** | Profesor | Media | EP007 | Reprogramación de Clase | Como profesor, quiero reprogramar una clase para ajustar la programación ante imprevistos institucionales. | **Escenario 1: Reprogramación exitosa**<br>**Dado** que un profesor requiere ajustar la fecha de una sesión<br>**Cuando** envía los nuevos parámetros sin generar un conflicto de horarios<br>**Entonces** el sistema procesa el cambio y actualiza el cronograma exitosamente.<br><br>**Escenario 2: Error en la reprogramación**<br>**Dado** que un profesor requiere ajustar la fecha de una sesión<br>**Cuando** envía información que provoca cruces con otros registros<br>**Entonces** el sistema deniega el ajuste e informa sobre el conflicto detectado. |
-| **EP008** | Usuario | Alta | — | Gestión de Cuentas y Autenticación | Como usuario, quiero gestionar la cuenta y autenticación para acceder de manera segura a la plataforma y proteger la información personal. | — |
-| **US032** | Usuario | Alta | EP008 | Registro de Cuenta | Como usuario, quiero registrarme en la plataforma para acceder a los servicios ofrecidos. | **Escenario 1: Registro exitoso**<br>**Dado** que un usuario solicita registro en el ecosistema<br>**Cuando** envía los datos válidos obligatorios<br>**Entonces** el sistema crea la cuenta correctamente y emite una confirmación de éxito.<br><br>**Escenario 2: Error en el registro**<br>**Dado** que un usuario solicita registro en el ecosistema<br>**Cuando** envía los datos con información incompleta o formatos inválidos<br>**Entonces** el sistema rechaza la solicitud e indica los parámetros incorrectos. |
-| **US033** | Usuario | Alta | EP008 | Activación de Cuenta | Como usuario, quiero activar la cuenta después del registro para validar la identidad y utilizar los servicios. | **Escenario 1: Activación exitosa**<br>**Dado** que un usuario cuenta con una solicitud de validación pendiente<br>**Cuando** envía el código de verificación válido<br>**Entonces** el sistema activa la cuenta correctamente.<br><br>**Escenario 2: Error en la activación**<br>**Dado** que un usuario cuenta con una solicitud de validación pendiente<br>**Cuando** envía un código de verificación inválido o expirado<br>**Entonces** el sistema deniega la acción y notifica la invalidez del código. |
-| **US034** | Usuario | Alta | EP008 | Inicio de Sesión | Como usuario, quiero autenticarme en la plataforma para acceder al perfil y gestionar los servicios. | **Escenario 1: Inicio exitoso**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales válidas de una cuenta activa<br>**Entonces** el sistema permite el acceso y carga el perfil.<br><br>**Escenario 2: Error de credenciales**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales incorrectas<br>**Entonces** el sistema rechaza el acceso y notifica el error.<br><br>**Escenario 3: Cuenta inactiva**<br>**Dado** que un usuario interactúa con el sistema de autenticación<br>**Cuando** envía credenciales válidas pero la cuenta carece de activación previa<br>**Entonces** el sistema bloquea el acceso y requiere la validación obligatoria. |
-| **EP009** | Visitante | Baja | — | Navegación por el Sitio Web Estático | Como visitante, quiero explorar el portal público para obtener información sobre la plataforma y los servicios antes de registrarme. | — |
-| **SWS001** | Visitante | Baja | EP009 | Visualización de Propósito Principal (Hero) | Como visitante del segmento administrador, quiero visualizar la información principal para entender el propósito y beneficios del sistema. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante interactúa con el portal público<br>**Cuando** solicita el acceso inicial<br>**Entonces** el sistema presenta el propósito general y las opciones de interacción. |
-| **SWS002** | Visitante | Baja | EP009 | Visualización de Funcionalidades (Features) | Como visitante del segmento administrador, quiero visualizar las funcionalidades clave para conocer las capacidades de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las capacidades del sistema<br>**Entonces** el sistema expone la lista de funcionalidades disponibles. |
-| **SWS003** | Visitante | Baja | EP009 | Visualización del Funcionamiento (How It Works) | Como visitante del segmento administrador, quiero entender el proceso de uso para evaluar la simplicidad de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta el flujo de trabajo<br>**Entonces** el sistema detalla los pasos secuenciales de operación. |
-| **SWS004** | Visitante | Baja | EP009 | Visualización de Detalles (About The Product) | Como visitante del segmento administrador, quiero conocer más sobre los beneficios específicos del producto. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** solicita la descripción del sistema<br>**Entonces** el sistema expone las características y beneficios a profundidad. |
-| **SWS005** | Visitante | Baja | EP009 | Visualización de Casos de Éxito (Testimonials) | Como visitante del segmento administrador, quiero visualizar testimonios para validar la efectividad de la plataforma. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las referencias de terceros<br>**Entonces** el sistema lista las experiencias previas de otros usuarios. |
-| **SWS006** | Visitante | Baja | EP009 | Visualización de la Empresa (About Us) | Como visitante del segmento administrador, quiero conocer la misión de la empresa para generar confianza. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la información corporativa<br>**Entonces** el sistema expone la misión, visión y valores de la entidad. |
-| **SWS007** | Visitante | Baja | EP009 | Visualización del Equipo (About The Team) | Como visitante del segmento administrador, quiero conocer al equipo detrás de la plataforma para validar su credibilidad. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la estructura corporativa<br>**Entonces** el sistema expone los perfiles y roles de los miembros. |
-| **SWS008** | Visitante | Baja | EP009 | Visualización de Planes (Pricing) | Como visitante del segmento administrador, quiero conocer los planes disponibles para evaluar los costos del servicio. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la oferta comercial<br>**Entonces** el sistema presenta los planes, costos y características comparativas. |
-| **SWS009** | Visitante | Baja | EP009 | Visualización de Ayuda (FAQ) | Como visitante del segmento administrador, quiero encontrar respuestas a dudas comunes para resolver incertidumbres. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta la sección de soporte informativo<br>**Entonces** el sistema expone el listado de preguntas frecuentes y sus respuestas. |
-| **SWS010** | Visitante | Baja | EP009 | Visualización de Contacto (Contact) | Como visitante del segmento administrador, quiero obtener los canales de comunicación para solicitar soporte directo. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** requiere asistencia adicional<br>**Entonces** el sistema expone los medios de contacto y opciones de solicitud de ayuda. |
-| **SWS011** | Visitante | Baja | EP009 | Visualización de Referencias Legales (Footer) | Como visitante del segmento administrador, quiero acceder a políticas y redes sociales para verificar la legalidad y presencia digital. | **Escenario 1: Visualización exitosa**<br>**Dado** que un visitante explora el portal público<br>**Cuando** consulta las referencias al pie del sitio<br>**Entonces** el sistema proporciona los enlaces legales y corporativos correspondientes. |
-| **EP010** | Developer | Alta | — | Servicios Técnicos y APIs REST | Como developer, quiero implementar servicios técnicos y APIs REST para facilitar la integración con otros sistemas y asegurar la escalabilidad de la plataforma. | — |
-| **TS001** | Developer | Alta | EP010 | Exponer endpoint para registrar academias | Como developer, quiero exponer POST /api/academies para permitir el registro de nuevas academias en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/academies con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea una nueva academia y se devuelve un estado 201 Created con los detalles correspondientes.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST /api/academies con datos inválidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request con un mensaje indicando los campos incorrectos.<br><br>**Escenario 3: Error por academia duplicada**<br>**Dado** que un cliente envía una solicitud POST /api/academies para una academia que ya existe<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict indicando que la academia ya está registrada. |
-| **TS002** | Developer | Alta | EP010 | Exponer endpoint para actualizar academias | Como developer, quiero exponer PUT /api/academies/{id} para permitir la actualización de academias existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/academies/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la academia y se devuelve un estado 200 OK con los detalles modificados.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud PUT /api/academies/{id} omitiendo campos obligatorios<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas.<br><br>**Escenario 3: Error por no encontrada**<br>**Dado** que un cliente envía una solicitud PUT para una academia inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found indicando que no fue encontrada. |
-| **TS004** | Developer | Alta | EP010 | Exponer endpoint para listar academias | Como developer, quiero exponer GET /api/academies para permitir la obtención de una lista de academias en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/academies<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de academias.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET /api/academies cuando no hay registros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista vacía. |
-| **TS005** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una academia | Como developer, quiero exponer GET /api/academies/{id} para permitir la obtención de los detalles de una academia específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/academies/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles solicitados.<br><br>**Escenario 2: Error por no encontrada**<br>**Dado** que un cliente envía una solicitud GET para una academia inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS006** | Developer | Alta | EP010 | Exponer endpoint para registrar administrador | Como developer, quiero exponer POST /api/admins para permitir el registro de nuevos administradores en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/admins con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea el administrador y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST /api/admins con datos inválidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas.<br><br>**Escenario 3: Error por duplicado**<br>**Dado** que un cliente envía una solicitud POST para un administrador existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS007** | Developer | Alta | EP010 | Exponer endpoint para actualizar administrador | Como developer, quiero exponer PUT /api/admins/{id} para permitir la actualización de administradores existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/admins/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS008** | Developer | Alta | EP010 | Exponer endpoint para eliminar administrador | Como developer, quiero exponer DELETE /api/admins/{id} para permitir la eliminación de administradores existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/admins/{id} para un perfil existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el perfil y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS009** | Developer | Alta | EP010 | Exponer endpoint para listar administradores | Como developer, quiero exponer GET /api/admins para permitir la obtención de una lista de administradores en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/admins<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de perfiles. |
-| **TS010** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un administrador | Como developer, quiero exponer GET /api/admins/{id} para permitir la obtención de los detalles de un administrador específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/admins/{id} para un perfil existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles del perfil.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS011** | Developer | Alta | EP010 | Exponer endpoint para registrar inscripciones | Como developer, quiero exponer POST /api/enrollments para permitir el registro de nuevas inscripciones en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/enrollments con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea una nueva inscripción y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST con datos faltantes (ej. falta el ID del participante)<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las omisiones.<br><br>**Escenario 3: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un participante que ya cuenta con una inscripción activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS012** | Developer | Alta | EP010 | Exponer endpoint para actualizar inscripciones | Como developer, quiero exponer PUT /api/enrollments/{id} para permitir la actualización de inscripciones existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/enrollments/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el registro y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para una inscripción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS013** | Developer | Alta | EP010 | Exponer endpoint para eliminar inscripciones | Como developer, quiero exponer DELETE /api/enrollments/{id} para permitir la eliminación de inscripciones existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/enrollments/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se borra la inscripción y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS014** | Developer | Alta | EP010 | Exponer endpoint para listar inscripciones | Como developer, quiero exponer GET /api/enrollments para permitir la obtención de una lista de inscripciones en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/enrollments<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de inscripciones. |
-| **TS015** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una inscripción | Como developer, quiero exponer GET /api/enrollments/{id} para permitir la obtención de los detalles de una inscripción específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/enrollments/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS016** | Developer | Alta | EP010 | Exponer endpoint para registrar asistencias de clase | Como developer, quiero exponer POST /api/class-attendances para permitir el registro de asistencias a clases en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/class-attendances con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo registro y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST omitiendo datos críticos (ej. ID del participante)<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request.<br><br>**Escenario 3: Error por duplicado**<br>**Dado** que un cliente envía una solicitud POST para un participante que ya tiene asistencia marcada<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS017** | Developer | Alta | EP010 | Exponer endpoint para actualizar asistencias de clase | Como developer, quiero exponer PUT /api/class-attendances/{id} para permitir la actualización de registros de asistencia en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/class-attendances/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la participación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS018** | Developer | Alta | EP010 | Exponer endpoint para eliminar asistencias de clase | Como developer, quiero exponer DELETE /api/class-attendances/{id} para permitir la eliminación de registros de asistencia en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/class-attendances/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS019** | Developer | Alta | EP010 | Exponer endpoint para listar asistencias de clase | Como developer, quiero exponer GET /api/class-attendances para permitir la obtención de una lista de registros de asistencia en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/class-attendances<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con la lista de participaciones.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET sin información almacenada previamente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
-| **TS020** | Developer | Alta | EP010 | Exponer endpoint para detalles de asistencia de clase | Como developer, quiero exponer GET /api/class-attendances/{id} para permitir la obtención de los detalles de un registro de asistencia específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/class-attendances/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS021** | Developer | Alta | EP010 | Exponer endpoint para registrar periodos académicos | Como developer, quiero exponer POST /api/academic-periods para permitir el registro de nuevos periodos académicos en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/academic-periods con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo periodo y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inconsistentes**<br>**Dado** que un cliente envía una solicitud POST con incongruencias de tiempo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request.<br><br>**Escenario 3: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un periodo que ya existe<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS022** | Developer | Alta | EP010 | Exponer endpoint para actualizar periodos académicos | Como developer, quiero exponer PUT /api/academic-periods/{id} para permitir la actualización de periodos académicos en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/academic-periods/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el periodo y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS023** | Developer | Alta | EP010 | Exponer endpoint para eliminar periodos académicos | Como developer, quiero exponer DELETE /api/academic-periods/{id} para permitir la eliminación de periodos académicos en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/academic-periods/{id} para un periodo existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS024** | Developer | Alta | EP010 | Exponer endpoint para listar periodos académicos | Como developer, quiero exponer GET /api/academic-periods para permitir la obtención de una lista de periodos académicos en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/academic-periods<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de periodos. |
-| **TS025** | Developer | Alta | EP010 | Exponer endpoint para detalles de periodo académico | Como developer, quiero exponer GET /api/academic-periods/{id} para permitir la obtención de los detalles de un periodo específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/academic-periods/{id} para un periodo existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un ciclo inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS026** | Developer | Alta | EP010 | Exponer endpoint para registrar salones de clase | Como developer, quiero exponer POST /api/classrooms para permitir el registro de nuevos salones de clase en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/classrooms con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo salón de clase y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST con parámetros faltantes o capacidad negativa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando los errores correspondientes. |
-| **TS027** | Developer | Alta | EP010 | Exponer endpoint para actualizar salones de clase | Como developer, quiero exponer PUT /api/classrooms/{id} para permitir la actualización de salones de clase existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/classrooms/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el salón de clase y se devuelve un estado 200 OK con los detalles modificados.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS028** | Developer | Alta | EP010 | Exponer endpoint para eliminar salones de clase | Como developer, quiero exponer DELETE /api/classrooms/{id} para permitir la eliminación de salones de clase existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/classrooms/{id} para un salón existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS029** | Developer | Alta | EP010 | Exponer endpoint para listar salones de clase | Como developer, quiero exponer GET /api/classrooms para permitir la obtención de una lista de salones de clase en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/classrooms<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de salones de clase.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET cuando no hay salones registrados<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
-| **TS030** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un salón de clase | Como developer, quiero exponer GET /api/classrooms/{id} para permitir la obtención de los detalles de un salón de clase específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/classrooms/{id} para un salón existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles del salón.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un salón inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS031** | Developer | Alta | EP010 | Exponer endpoint para registrar cursos | Como developer, quiero exponer POST /api/courses para permitir el registro de nuevos cursos en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/courses con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo curso y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un curso que ya cuenta con un registro idéntico<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS032** | Developer | Alta | EP010 | Exponer endpoint para actualizar cursos | Como developer, quiero exponer PUT /api/courses/{id} para permitir la actualización de cursos existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/courses/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualizan los datos del curso y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un registro de curso inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS033** | Developer | Alta | EP010 | Exponer endpoint para eliminar cursos | Como developer, quiero exponer DELETE /api/courses/{id} para permitir la eliminación de cursos existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/courses/{id} para un curso existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para un registro inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS034** | Developer | Alta | EP010 | Exponer endpoint para listar cursos | Como developer, quiero exponer GET /api/courses para permitir la obtención de una lista de cursos en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/courses<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de cursos. |
-| **TS035** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un curso | Como developer, quiero exponer GET /api/courses/{id} para permitir la obtención de los detalles de un curso específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/courses/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un curso inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS036** | Developer | Alta | EP010 | Exponer endpoint para registrar horarios | Como developer, quiero exponer POST /api/schedules para permitir el registro de nuevos horarios en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/schedules con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea la programación y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto de horario**<br>**Dado** que un cliente envía una solicitud POST con horas que se superponen con otras sesiones<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS037** | Developer | Alta | EP010 | Exponer endpoint para actualizar horarios | Como developer, quiero exponer PUT /api/schedules/{id} para permitir la actualización de horarios existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/schedules/{id} con parámetros de tiempo válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la programación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para un horario inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS038** | Developer | Alta | EP010 | Exponer endpoint para eliminar horarios | Como developer, quiero exponer DELETE /api/schedules/{id} para permitir la eliminación de horarios existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/schedules/{id} para una programación activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se retira el horario y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una programación inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS039** | Developer | Alta | EP010 | Exponer endpoint para listar horarios | Como developer, quiero exponer GET /api/schedules para permitir la obtención de una lista de horarios en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/schedules<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de las programaciones registradas. |
-| **TS040** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de un horario | Como developer, quiero exponer GET /api/schedules/{id} para permitir la obtención de los detalles de un horario específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/schedules/{id} para un horario activo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles requeridos.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una programación inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS041** | Developer | Alta | EP010 | Exponer endpoint para registrar cuentas de cobro | Como developer, quiero exponer POST /api/billing-accounts para permitir el registro de nuevas cuentas de cobro en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/billing-accounts con parámetros financieros válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea un nuevo perfil de facturación y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por conflicto**<br>**Dado** que un cliente envía una solicitud POST para un registro que ya posee un perfil de cobro asignado<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS042** | Developer | Alta | EP010 | Exponer endpoint para actualizar cuentas de cobro | Como developer, quiero exponer PUT /api/billing-accounts/{id} para permitir la actualización de cuentas de cobro existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/billing-accounts/{id} con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil de facturación y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS043** | Developer | Alta | EP010 | Exponer endpoint para eliminar cuentas de cobro | Como developer, quiero exponer DELETE /api/billing-accounts/{id} para permitir la eliminación de cuentas de cobro existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/billing-accounts/{id} para una cuenta activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se borra el registro financiero y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS044** | Developer | Alta | EP010 | Exponer endpoint para listar cuentas de cobro | Como developer, quiero exponer GET /api/billing-accounts para permitir la obtención de una lista de cuentas de cobro en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/billing-accounts<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con el listado financiero. |
-| **TS045** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una cuenta de cobro | Como developer, quiero exponer GET /api/billing-accounts/{id} para permitir la obtención de los detalles de una cuenta de cobro específica en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/billing-accounts/{id} para un perfil activo<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los parámetros financieros del perfil.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una cuenta inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS046** | Developer | Alta | EP010 | Exponer endpoint para asignar boletas de pago | Como developer, quiero exponer POST /api/billing-accounts/invoices para permitir la asignación de boletas de pago a las cuentas de cobro en el sistema. | **Escenario 1: Asignación exitosa**<br>**Dado** que un cliente envía una solicitud POST con los datos de cobro válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** la boleta se vincula correctamente y se devuelve un estado 201 Created con sus detalles. |
-| **TS047** | Developer | Alta | EP010 | Exponer endpoint para actualizar boletas asignadas | Como developer, quiero exponer PUT /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la actualización de boletas de pago asignadas a una cuenta en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT con montos y estados financieros válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el comprobante y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud PUT con identificadores financieros incorrectos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS048** | Developer | Alta | EP010 | Exponer endpoint para listar boletas asignadas | Como developer, quiero exponer GET /api/billing-accounts/{id}/invoices para permitir la obtención de boletas de pago asignadas a una cuenta. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET dirigida a una cuenta financiera activa<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista que detalla todos los comprobantes asignados. |
-| **TS049** | Developer | Alta | EP010 | Exponer endpoint para eliminar boletas asignadas | Como developer, quiero exponer DELETE /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la eliminación de boletas asignadas a una cuenta. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE con identificadores válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** el comprobante se desvincula de la cuenta y se devuelve un estado 204 No Content. |
-| **TS050** | Developer | Alta | EP010 | Exponer endpoint para registrar transacciones | Como developer, quiero exponer POST /api/transactions para permitir el registro de nuevas transacciones en el sistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST /api/transactions con montos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se consolida el movimiento contable y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud POST omitiendo datos contables como el monto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las faltas detectadas. |
-| **TS051** | Developer | Alta | EP010 | Exponer endpoint para actualizar transacciones | Como developer, quiero exponer PUT /api/transactions/{id} para permitir la actualización de transacciones financieras existentes en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT /api/transactions/{id} con datos contables válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la transacción y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por datos inválidos**<br>**Dado** que un cliente envía una solicitud PUT con montos negativos o información faltante<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 400 Bad Request indicando las fallas. |
-| **TS052** | Developer | Alta | EP010 | Exponer endpoint para eliminar transacciones | Como developer, quiero exponer DELETE /api/transactions/{id} para permitir la eliminación de transacciones existentes en el sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE /api/transactions/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se elimina el registro financiero y se devuelve un estado 204 No Content.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud DELETE para una transacción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS053** | Developer | Alta | EP010 | Exponer endpoint para listar transacciones | Como developer, quiero exponer GET /api/transactions para permitir la obtención de una lista de movimientos contables en el sistema. | **Escenario 1: Listado exitoso**<br>**Dado** que un cliente envía una solicitud GET /api/transactions<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con una lista de transacciones.<br><br>**Escenario 2: Listado vacío**<br>**Dado** que un cliente envía una solicitud GET cuando no hay registros financieros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con un arreglo vacío. |
-| **TS054** | Developer | Alta | EP010 | Exponer endpoint para obtener detalles de una transacción | Como developer, quiero exponer GET /api/transactions/{id} para permitir la obtención de los detalles de un movimiento contable específico en el sistema. | **Escenario 1: Obtención exitosa**<br>**Dado** que un cliente envía una solicitud GET /api/transactions/{id} para un registro existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con los detalles.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para una transacción inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS055** | Developer | Alta | EP010 | Exponer endpoint para generar reportes financieros | Como developer, quiero exponer GET /api/reports/financial para permitir la generación de reportes contables en el sistema. | **Escenario 1: Generación exitosa**<br>**Dado** que un cliente envía una solicitud GET con un rango de fechas válido<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se genera el reporte y se devuelve un estado 200 OK con el archivo exportado.<br><br>**Escenario 2: Error por falta de datos**<br>**Dado** que un cliente solicita un reporte en un periodo sin registros<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 204 No Content indicando la ausencia de datos. |
-| **TS056** | Developer | Alta | EP010 | Exponer endpoint para visualizar horarios de un profesor | Como developer, quiero exponer GET /api/teachers/{id}/schedules para permitir la visualización de los horarios asignados a un docente específico. | **Escenario 1: Visualización exitosa**<br>**Dado** que un cliente envía una solicitud GET para un perfil docente existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 200 OK con la lista de sus programaciones.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente envía una solicitud GET para un perfil docente inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS057** | Developer | Alta | EP010 | Exponer endpoint para reprogramar una sesión de clases | Como developer, quiero exponer PUT /api/schedules/{id}/reschedule para permitir la reprogramación de una sesión en el sistema. | **Escenario 1: Reprogramación exitosa**<br>**Dado** que un cliente envía una solicitud PUT con una nueva fecha y hora válidas<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza la sesión y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por cruce de horarios**<br>**Dado** que un cliente envía una solicitud PUT que genera un conflicto temporal<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS058** | Developer | Alta | EP010 | Exponer endpoint para registrar cuenta de usuario | Como developer, quiero exponer POST /api/auth/sign-up para permitir la creación segura de nuevas cuentas en el ecosistema. | **Escenario 1: Registro exitoso**<br>**Dado** que un cliente envía una solicitud POST con datos válidos<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se crea la cuenta, se cifra la credencial y se devuelve un estado 201 Created.<br><br>**Escenario 2: Error por duplicidad**<br>**Dado** que un cliente intenta registrar un correo ya existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 409 Conflict. |
-| **TS059** | Developer | Alta | EP010 | Exponer endpoint para actualizar cuenta de usuario | Como developer, quiero exponer PUT /api/users/{id} para permitir la actualización de perfiles de cuenta en el sistema. | **Escenario 1: Actualización exitosa**<br>**Dado** que un cliente envía una solicitud PUT con información válida<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se actualiza el perfil y se devuelve un estado 200 OK.<br><br>**Escenario 2: Error por no encontrado**<br>**Dado** que un cliente intenta modificar un perfil inexistente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se devuelve un estado 404 Not Found. |
-| **TS060** | Developer | Alta | EP010 | Exponer endpoint para eliminar cuenta de usuario | Como developer, quiero exponer DELETE /api/users/{id} para retirar cuentas de usuario del sistema. | **Escenario 1: Eliminación exitosa**<br>**Dado** que un cliente envía una solicitud DELETE para un usuario existente<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** se retira la cuenta y se devuelve un estado 204 No Content. |
-| **TS061** | Developer | Alta | EP010 | Exponer endpoint para activar cuenta de usuario | Como developer, quiero exponer POST /api/users/{id}/activate para gestionar la activación mediante validación. | **Escenario 1: Activación exitosa**<br>**Dado** que un cliente envía el token o código correcto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** el estado de la cuenta cambia a activa y devuelve 200 OK.<br><br>**Escenario 2: Error por cuenta ya activa**<br>**Dado** que un cliente solicita activar un perfil previamente validado<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** devuelve un estado 400 Bad Request. |
-| **TS062** | Developer | Alta | EP010 | Exponer endpoint para reenviar código de verificación | Como developer, quiero exponer POST /api/users/{id}/resend-verification para asegurar que los usuarios reciban sus credenciales de validación. | **Escenario 1: Reenvío exitoso**<br>**Dado** que un cliente solicita un nuevo código para una cuenta pendiente<br>**Cuando** el servidor procesa la orden<br>**Entonces** dispara el evento de mensajería y devuelve 200 OK.<br><br>**Escenario 2: Error por cuenta verificada**<br>**Dado** que un cliente solicita código para un perfil validado<br>**Cuando** el servidor procesa la orden<br>**Entonces** devuelve un estado 400 Bad Request. |
-| **TS063** | Developer | Alta | EP010 | Exponer endpoint para cambiar contraseña con código | Como developer, quiero exponer POST /api/users/{id}/change-password para facilitar la recuperación de acceso. | **Escenario 1: Cambio exitoso**<br>**Dado** que un cliente envía un código válido y una credencial nueva segura<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** actualiza la seguridad de la cuenta y retorna 200 OK.<br><br>**Escenario 2: Error por código inválido**<br>**Dado** que un cliente envía un código expirado o incorrecto<br>**Cuando** el servidor procesa la solicitud<br>**Entonces** bloquea la acción y devuelve un estado 400 Bad Request. |
-| **TS064** | Developer | Alta | EP010 | Exponer endpoint para iniciar sesión | Como developer, quiero exponer POST /api/auth/login para gestionar la autenticación y emisión de tokens. | **Escenario 1: Inicio exitoso**<br>**Dado** que un cliente envía credenciales correctas de una cuenta activa<br>**Cuando** el servidor las valida<br>**Entonces** retorna 200 OK junto con un token JWT firmado.<br><br>**Escenario 2: Error de autenticación**<br>**Dado** que un cliente envía credenciales incorrectas<br>**Cuando** el servidor las procesa<br>**Entonces** rechaza el acceso devolviendo 401 Unauthorized. |
-| **TS065** | Developer | Alta | EP010 | Exponer endpoint para validación de recursos | Como developer, quiero exponer HEAD /api/resource/{id} para permitir comprobaciones rápidas de existencia. | **Escenario 1: Verificación exitosa**<br>**Dado** que un cliente solicita validación de un elemento existente<br>**Cuando** el servidor la procesa<br>**Entonces** devuelve 200 OK sin cuerpo de respuesta.<br><br>**Escenario 2: Recurso ausente**<br>**Dado** que un cliente consulta un identificador inexistente<br>**Cuando** el servidor responde<br>**Entonces** emite 404 Not Found. |
-| **TS066** | Developer | Alta | EP010 | Exponer endpoint para manejo de CORS | Como developer, quiero exponer OPTIONS /api/resource para garantizar la seguridad transversal y comunicación entre orígenes. | **Escenario 1: Resolución de políticas**<br>**Dado** que un cliente emite una consulta de preflight<br>**Cuando** el servidor evalúa los orígenes permitidos<br>**Entonces** devuelve 204 No Content junto a los headers de autorización HTTP. |
-| **EP011** | Equipo de Desarrollo | Media | — | Investigación y Prototipado | Como equipo de desarrollo, quiero realizar investigación y prototipado para explorar nuevas tecnologías y enfoques que puedan mejorar la arquitectura de la solución propuesta. | — |
-| **SS001** | Equipo de Desarrollo | Media | EP011 | Investigación de la integración de pasarelas globales | Como equipo de desarrollo, quiero investigar la documentación de plataformas de pagos globales (ej. Stripe) para comprender su ciclo de integración técnica. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo revisa las guías de integración de la pasarela<br>**Cuando** documentan los flujos de cobro y webhooks requeridos<br>**Entonces** se genera un informe técnico detallando su viabilidad para la facturación. |
-| **SS002** | Equipo de Desarrollo | Media | EP011 | Investigación de la integración de servicios de correo | Como equipo de desarrollo, quiero explorar los protocolos SMTP y APIs de servicios como Gmail para garantizar el envío de códigos de verificación. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo estudia el motor de plantillas y autenticación del proveedor<br>**Cuando** se realizan pruebas de concepto aisladas de envío<br>**Entonces** se establece un estándar seguro para la mensajería del sistema. |
-| **SS003** | Equipo de Desarrollo | Media | EP011 | Investigación de métodos de cobro local | Como equipo de desarrollo, quiero analizar pasarelas de recaudo regional (ej. PagoEfectivo) para ofrecer alternativas en los cobros de cuentas y servicios. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo accede a los manuales de desarrollador del proveedor local<br>**Cuando** evalúan el flujo de generación de códigos de pago CIP<br>**Entonces** definen la estructura necesaria en el modelo financiero del sistema. |
-| **SS004** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de PDF y Excel | Como equipo de desarrollo, quiero evaluar el rendimiento de librerías exportadoras para soportar la generación de reportes financieros. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo implementa un entorno de pruebas con datos ficticios<br>**Cuando** procesan exportaciones masivas en formatos estáticos y hojas de cálculo<br>**Entonces** seleccionan la librería con mejor latencia y soporte de estilos. |
-| **SS005** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de gráficos | Como equipo de desarrollo, quiero probar bibliotecas de generación de gráficos para seleccionar las más adecuadas para la plataforma. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo de desarrollo investiga bibliotecas populares para la generación de gráficos<br>**Cuando** revisan reseñas, comparativas y documentación<br>**Entonces** crean una lista de posibles bibliotecas a evaluar. |
-| **SS006** | Equipo de Desarrollo | Media | EP011 | Probar bibliotecas de generación de códigos QR | Como equipo de desarrollo, quiero probar bibliotecas de generación de códigos QR para seleccionar las más adecuadas para la plataforma. | **Escenario 1: Análisis completado**<br>**Dado** que el equipo de desarrollo investiga bibliotecas populares para la generación de códigos QR<br>**Cuando** revisan reseñas, comparativas y documentación<br>**Entonces** crean una lista de posibles bibliotecas a evaluar. |
+<div style="font-size:55%">
+<table>
+<thead>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Title</th>
+<th>Description</th>
+<th>Acceptance Criteria</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EP001</td>
+<td>Administrador</td>
+<td>Manejo de la Institución y Miembros</td>
+<td>Como administrador, quiero gestionar la información de la academia y sus miembros docentes para mantener datos actualizados y facilitar la administración.</td>
+<td>— (Épica, no aplica)</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US001</td>
+<td>Administrador</td>
+<td>Registro de Academia</td>
+<td>Como administrador, quiero registrar una nueva academia para poder gestionar sus miembros.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador cuenta con los permisos necesarios de registro<br>Cuando envía los datos correspondientes de una nueva academia en formato válido<br>Entonces el sistema registra la institución exitosamente en la base de datos y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador cuenta con los permisos necesarios de registro<br>Cuando envía información incompleta o con datos inválidos sobre la nueva academia<br>Entonces el sistema rechaza el proceso e indica los errores específicos encontrados.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>US002</td>
+<td>Administrador</td>
+<td>Actualización de Academia</td>
+<td>Como administrador, quiero actualizar la información de una academia existente para mantener los datos al día.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona una institución previamente registrada<br>Cuando modifica y envía los datos con nueva información válida<br>Entonces el sistema procesa la modificación y actualiza el registro institucional.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona una institución previamente registrada<br>Cuando envía los datos omitiendo información obligatoria<br>Entonces el sistema deniega la actualización y muestra un indicador de campos faltantes.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>US003</td>
+<td>Administrador</td>
+<td>Eliminación de Academia</td>
+<td>Como administrador, quiero eliminar una academia existente para deshacerme de una institución que ya no gestiono.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador solicita la eliminación de una academia existente<br>Cuando confirma definitivamente la orden de eliminación del registro<br>Entonces el sistema borra la institución del ecosistema y de los registros principales.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador solicita la eliminación de una academia existente<br>Cuando declina u omite la orden definitiva de eliminación<br>Entonces el sistema suspende la acción y conserva la institución sin alteraciones.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>US004</td>
+<td>Administrador</td>
+<td>Registro de Profesor</td>
+<td>Como administrador, quiero registrar un nuevo profesor para poder asignarlo a clases y gestionar su información.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador solicita el registro de un nuevo docente<br>Cuando envía las credenciales y datos válidos exigidos para el profesor<br>Entonces el sistema añade al profesor a la academia y confirma la creación del perfil.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador solicita el registro de un nuevo docente<br>Cuando envía los datos con información incorrecta o ya existente<br>Entonces el sistema bloquea el registro y notifica la incongruencia en los datos aportados.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>US005</td>
+<td>Administrador</td>
+<td>Actualización de Profesor</td>
+<td>Como administrador, quiero actualizar la información de un profesor existente para mantener los datos actualizados.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona el perfil de un docente existente<br>Cuando modifica y envía los datos requeridos con información válida<br>Entonces el sistema procesa los cambios y refleja la información actualizada del profesor.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona el perfil de un docente existente<br>Cuando envía los datos con información en formato inválido<br>Entonces el sistema rechaza los cambios e indica las fallas específicas en la información enviada.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>US006</td>
+<td>Administrador</td>
+<td>Eliminación de Profesor</td>
+<td>Como administrador, quiero eliminar un profesor existente para deshacerme de un docente que ya no forma parte de la academia.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con el perfil de un profesor registrado<br>Cuando confirma la orden explícita de eliminación de dicho usuario<br>Entonces el sistema retira al docente de la academia de manera exitosa.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con el perfil de un profesor registrado<br>Cuando declina la orden explícita de eliminación antes de que sea procesada<br>Entonces el sistema conserva la cuenta del docente activa y sin modificaciones.</td>
+<td>Alta</td>
+<td>EP001</td>
+</tr>
+<tr>
+<td>EP002</td>
+<td>Administrador</td>
+<td>Gestión de Matrículas</td>
+<td>Como administrador, quiero gestionar las inscripciones en la plataforma para asegurar que los usuarios estén correctamente registrados en los cursos.</td>
+<td>— (Épica, no aplica)</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US007</td>
+<td>Administrador</td>
+<td>Registro de Inscripción</td>
+<td>Como administrador, quiero registrar una inscripción en un periodo académico para habilitar el acceso a las clases correspondientes.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos válidos para una nueva inscripción en un periodo activo<br>Entonces el sistema registra la inscripción correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos de inscripción con información incompleta o referenciando cursos no disponibles<br>Entonces el sistema rechaza el registro y notifica los campos incorrectos.</td>
+<td>Alta</td>
+<td>EP002</td>
+</tr>
+<tr>
+<td>US008</td>
+<td>Administrador</td>
+<td>Actualización de Inscripción</td>
+<td>Como administrador, quiero actualizar la información de una inscripción existente para corregir datos o cambiar el estado del registro.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un registro de inscripción existente<br>Cuando modifica y envía los datos con información válida<br>Entonces el sistema actualiza el registro correctamente y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un registro de inscripción existente<br>Cuando envía modificaciones con información inválida o periodos inexistentes<br>Entonces el sistema rechaza los cambios e indica las fallas específicas encontradas.</td>
+<td>Alta</td>
+<td>EP002</td>
+</tr>
+<tr>
+<td>US009</td>
+<td>Administrador</td>
+<td>Cancelación de Inscripción</td>
+<td>Como administrador, quiero cancelar una inscripción activa para gestionar bajas o cambios en el registro del ciclo académico.</td>
+<td><b>Escenario 1: Cancelación exitosa</b><br>Dado que un administrador interactúa con un registro de inscripción activo<br>Cuando confirma la orden explícita de cancelación<br>Entonces el sistema anula la inscripción y actualiza su estado en la base de datos de manera exitosa.<br><br><b>Escenario 2: Declinación de cancelación</b><br>Dado que un administrador interactúa con un registro de inscripción activo<br>Cuando declina u omite la orden de cancelación antes de su procesamiento<br>Entonces el sistema conserva la inscripción activa y sin aplicar modificaciones.</td>
+<td>Alta</td>
+<td>EP002</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EP003</td>
+<td>Profesor</td>
+<td>Registro de Asistencia</td>
+<td>Como profesor, quiero registrar la asistencia en cada clase para llevar un control preciso y facilitar la gestión académica.</td>
+<td>— (Épica, no aplica)</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US010</td>
+<td>Profesor</td>
+<td>Registro de Asistencia</td>
+<td>Como profesor, quiero registrar la asistencia en mis clases para llevar un control preciso y facilitar la gestión académica.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un profesor cuenta con una sesión de clase asignada<br>Cuando marca el registro de participación y envía la información validada<br>Entonces el sistema guarda la asistencia correctamente y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un profesor cuenta con una sesión de clase asignada<br>Cuando intenta enviar el registro vacío sin indicar la participación en la sesión<br>Entonces el sistema rechaza la acción y solicita que se registre al menos un marcador de presencia.</td>
+<td>Alta</td>
+<td>EP003</td>
+</tr>
+<tr>
+<td>US011</td>
+<td>Profesor</td>
+<td>Actualización de Asistencia</td>
+<td>Como profesor, quiero actualizar los registros de asistencia para corregir errores o reflejar cambios en la participación real.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un profesor revisa un registro de asistencia previo<br>Cuando modifica y envía las participaciones actualizadas<br>Entonces el sistema guarda los cambios y confirma la actualización.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un profesor revisa un registro de asistencia previo<br>Cuando intenta enviar modificaciones sin realizar alteraciones a la información original<br>Entonces el sistema deniega la acción indicando que no hay cambios nuevos para procesar.</td>
+<td>Alta</td>
+<td>EP003</td>
+</tr>
+<tr>
+<td>US012</td>
+<td>Profesor</td>
+<td>Visualización de Reportes de Asistencia</td>
+<td>Como profesor, quiero visualizar reportes de asistencia para analizar patrones y tomar decisiones informadas sobre la gestión académica.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un profesor requiere un informe de participaciones<br>Cuando solicita el reporte enviando los parámetros de un periodo válido<br>Entonces el sistema procesa los datos y retorna el informe de asistencia correspondiente.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un profesor requiere un informe de participaciones<br>Cuando solicita el reporte de un periodo que aún no cuenta con datos registrados<br>Entonces el sistema detiene la generación y notifica que no existe información disponible para ese rango.</td>
+<td>Media</td>
+<td>EP003</td>
+</tr>
+<tr>
+<td>EP004</td>
+<td>Administrador</td>
+<td>Gestión de Horarios</td>
+<td>Como administrador, quiero gestionar los horarios de clases y asignar salones para optimizar el uso de los recursos y facilitar la planificación académica.</td>
+<td>— (Épica, no aplica)</td>
+<td>Media</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US013</td>
+<td>Administrador</td>
+<td>Creación de Periodo Académico</td>
+<td>Como administrador, quiero crear un nuevo periodo académico para organizar las clases y registros correspondientes.</td>
+<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos válidos para un nuevo periodo académico<br>Entonces el sistema registra el periodo correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en la creación</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía datos con fechas inconsistentes o incompletas<br>Entonces el sistema rechaza la creación e indica los campos incorrectos.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US014</td>
+<td>Administrador</td>
+<td>Actualización de Periodo Académico</td>
+<td>Como administrador, quiero actualizar la información de un periodo académico existente para mantener los datos vigentes.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un periodo registrado<br>Cuando envía las modificaciones con información válida<br>Entonces el sistema actualiza el registro del periodo y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un periodo registrado<br>Cuando envía modificaciones con información inválida o fechas que se solapan<br>Entonces el sistema rechaza los cambios e informa los errores.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US015</td>
+<td>Administrador</td>
+<td>Eliminación de Periodo Académico</td>
+<td>Como administrador, quiero eliminar un periodo académico existente para retirar aquellos que ya no son relevantes en el sistema.</td>
+<td><b>Escenario 1: Elminación exitosa</b><br>Dado que un administrador solicita eliminar un periodo académico<br>Cuando confirma explícitamente la acción de eliminación<br>Entonces el sistema elimina el periodo y emite un mensaje de éxito.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador solicita eliminar un periodo académico<br>Cuando declina la acción antes de que sea procesada<br>Entonces el sistema conserva el periodo sin aplicar modificaciones.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US016</td>
+<td>Administrador</td>
+<td>Creación de Salones de Clase</td>
+<td>Como administrador, quiero crear nuevos salones de clase para organizar los espacios físicos disponibles en la institución.</td>
+<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador cuenta con los permisos requeridos para gestionar espacios<br>Cuando envía los datos válidos de un nuevo salón de clase<br>Entonces el sistema registra el salón exitosamente en la base de datos.<br><br><b>Escenario 2: Error en la creación</b><br>Dado que un administrador cuenta con los permisos requeridos para gestionar espacios<br>Cuando envía los datos de un salón con información inválida o capacidad negativa<br>Entonces el sistema rechaza el registro e informa los campos incorrectos.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US017</td>
+<td>Administrador</td>
+<td>Actualización de Salones de Clase</td>
+<td>Como administrador, quiero actualizar la información de un salón de clase existente para mantener los datos de infraestructura al día.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un salón de clase registrado<br>Cuando modifica y envía los datos con información válida<br>Entonces el sistema procesa la modificación y actualiza el registro correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un salón de clase registrado<br>Cuando envía modificaciones omitiendo campos obligatorios<br>Entonces el sistema rechaza los cambios e indica la información faltante.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US018</td>
+<td>Administrador</td>
+<td>Eliminación de Salones de Clase</td>
+<td>Como administrador, quiero eliminar un salón de clase existente para retirar espacios físicos que ya no están operativos en la institución.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador requiere eliminar un salón de clase<br>Cuando confirma definitivamente la orden de eliminación<br>Entonces el sistema borra el salón de los registros permanentemente.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador requiere eliminar un salón de clase<br>Cuando declina la orden de eliminación antes de ser procesada<br>Entonces el sistema conserva el salón sin realizar modificaciones.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US019</td>
+<td>Administrador</td>
+<td>Creación de Horarios</td>
+<td>Como administrador, quiero crear horarios de clase para organizar las sesiones académicas y asignar a los docentes correspondientes.</td>
+<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador organiza la programación académica<br>Cuando envía los datos válidos para un nuevo horario sin solapamientos<br>Entonces el sistema genera el horario exitosamente en la base de datos.<br><br><b>Escenario 2: Error por conflicto de horarios</b><br>Dado que un administrador organiza la programación académica<br>Cuando envía los datos de un horario que presenta cruces con otros registros de profesores o salones<br>Entonces el sistema rechaza la creación y notifica el conflicto específico detectado.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US020</td>
+<td>Administrador</td>
+<td>Actualización de Horarios</td>
+<td>Como administrador, quiero actualizar un horario existente para ajustarlo ante imprevistos o cambios de planificación institucional.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador accede a un horario previamente establecido<br>Cuando envía nuevos datos válidos que no generan conflicto con otras sesiones<br>Entonces el sistema procesa los cambios y actualiza la programación del horario.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador accede a un horario previamente establecido<br>Cuando envía nuevos datos que generan un cruce de horarios<br>Entonces el sistema bloquea la actualización y muestra un mensaje advirtiendo el conflicto.</td>
+<td>Media</td>
+<td>EP004</td>
+</tr>
+<tr>
+<td>US021</td>
+<td>Administrador</td>
+<td>Eliminación de Horarios</td>
+<td>Como administrador, quiero eliminar un horario existente para retirar una programación que ya no se ejecutará.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador gestiona los horarios activos<br>Cuando emite la orden definitiva de eliminar un horario específico<br>Entonces el sistema retira la programación de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador gestiona los horarios activos<br>Cuando declina o cancela la eliminación del horario<br>Entonces el sistema mantiene el horario intacto sin aplicar modificaciones.</td>
+<td>Media</td>
+<td>EP004</td>
+<tr>
+<td>EP005</td>
+<td>Administrador</td>
+<td>Gestión de Boletas</td>
+<td>Como administrador, quiero gestionar la emisión y seguimiento de las boletas de pago para asegurar que los usuarios cumplan con sus obligaciones financieras.</td>
+<td>— (Épica, no aplica)</td>
+<td>Media</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US022</td>
+<td>Administrador</td>
+<td>Generación de Boletas de Pago</td>
+<td>Como administrador, quiero generar boletas de pago para las inscripciones registradas para facilitar el proceso de cobro y seguimiento financiero.</td>
+<td><b>Escenario 1: Generación exitosa</b><br>Dado que un administrador gestiona la facturación de las inscripciones<br>Cuando envía los parámetros requeridos para emitir un comprobante<br>Entonces el sistema genera la boleta de pago correctamente y confirma la operación.<br><br><b>Escenario 2: Error en la generación</b><br>Dado que un administrador gestiona la facturación de las inscripciones<br>Cuando solicita emitir un comprobante para una cuenta inactiva o con datos faltantes<br>Entonces el sistema rechaza la solicitud e indica el motivo del fallo.</td>
+<td>Media</td>
+<td>EP005</td>
+</tr>
+<tr>
+<td>US023</td>
+<td>Administrador</td>
+<td>Actualización de Boletas de Pago</td>
+<td>Como administrador, quiero actualizar la información de una boleta de pago existente para corregir errores o reflejar cambios en los montos.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador accede a un registro de cobro existente<br>Cuando envía modificaciones válidas sobre los montos o su estado<br>Entonces el sistema procesa y actualiza la boleta correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador accede a un registro de cobro existente<br>Cuando envía datos con valores financieros inválidos o montos negativos<br>Entonces el sistema bloquea el cambio y notifica la incongruencia en los valores.</td>
+<td>Media</td>
+<td>EP005</td>
+</tr>
+<tr>
+<td>US024</td>
+<td>Administrador</td>
+<td>Eliminación de Boletas de Pago</td>
+<td>Como administrador, quiero eliminar una boleta de pago existente para deshacerme de un registro incorrecto o duplicado.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con una boleta previamente generada<br>Cuando emite la orden definitiva para su eliminación<br>Entonces el sistema borra el registro financiero exitosamente de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con una boleta previamente generada<br>Cuando declina u omite la orden de borrado<br>Entonces el sistema conserva el comprobante sin aplicar modificaciones.</td>
+<td>Media</td>
+<td>EP005</td>
+</tr>
+<tr>
+<td>EP006</td>
+<td>Administrador</td>
+<td>Gestión Financiera y Contable</td>
+<td>Como administrador, quiero gestionar los ingresos y egresos de la academia para mantener un control financiero adecuado y generar reportes contables.</td>
+<td>— (Épica, no aplica)</td>
+<td>Media</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US025</td>
+<td>Administrador</td>
+<td>Registro de Ingreso/Egreso</td>
+<td>Como administrador, quiero registrar ingresos y egresos financieros para mantener un control adecuado de la economía de la institución.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador gestiona las finanzas operativas<br>Cuando envía los datos válidos de una nueva transacción contable<br>Entonces el sistema registra el movimiento y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador gestiona las finanzas operativas<br>Cuando envía una transacción con valores negativos o parámetros incompletos<br>Entonces el sistema rechaza el registro y detalla los campos erróneos.</td>
+<td>Media</td>
+<td>EP006</td>
+</tr>
+<tr>
+<td>US026</td>
+<td>Administrador</td>
+<td>Actualización de Ingreso/Egreso</td>
+<td>Como administrador, quiero actualizar la información de un ingreso o egreso existente para corregir información contable.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador interactúa con una transacción registrada<br>Cuando envía modificaciones con montos y justificaciones válidas<br>Entonces el sistema actualiza el registro contable de manera exitosa.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador interactúa con una transacción registrada<br>Cuando omite información obligatoria o provee datos inconsistentes<br>Entonces el sistema deniega el cambio e indica la información faltante.</td>
+<td>Media</td>
+<td>EP006</td>
+</tr>
+<tr>
+<td>US027</td>
+<td>Administrador</td>
+<td>Eliminación de Ingreso/Egreso</td>
+<td>Como administrador, quiero eliminar un registro de ingreso o egreso existente para retirar información duplicada o incorrecta.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con un movimiento contable<br>Cuando confirma la instrucción irrevocable de eliminación<br>Entonces el sistema borra permanentemente el registro financiero.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con un movimiento contable<br>Cuando cancela o declina la orden antes de su confirmación<br>Entonces el sistema mantiene la transacción sin alteraciones.</td>
+<td>Media</td>
+<td>EP006</td>
+</tr>
+<tr>
+<td>US028</td>
+<td>Administrador</td>
+<td>Visualización de Resumen de Finanzas</td>
+<td>Como administrador, quiero visualizar un resumen de finanzas para evaluar el estado económico de la institución de forma rápida.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un administrador solicita la vista general de la economía institucional<br>Cuando el sistema procesa una consulta en un periodo con transacciones activas<br>Entonces retorna los indicadores financieros y métricas correspondientes.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un administrador solicita la vista general de la economía institucional<br>Cuando ocurre un problema en la disponibilidad o consulta de los datos<br>Entonces el sistema notifica que los registros no pueden ser cargados temporalmente.</td>
+<td>Media</td>
+<td>EP006</td>
+</tr>
+<tr>
+<td>US029</td>
+<td>Administrador</td>
+<td>Generación de Reportes Financieros</td>
+<td>Como administrador, quiero generar reportes financieros detallados para analizar la situación económica y tomar decisiones estratégicas.</td>
+<td><b>Escenario 1: Generación exitosa</b><br>Dado que un administrador solicita un informe contable de operaciones<br>Cuando envía parámetros con un periodo de fechas válido<br>Entonces el sistema genera y retorna el reporte con los datos financieros estructurados.<br><br><b>Escenario 2: Error por periodo sin registros</b><br>Dado que un administrador solicita un informe contable de operaciones<br>Cuando especifica un rango de fechas que carece por completo de transacciones<br>Entonces el sistema detiene la operación e indica que no hay información disponible para exportar.</td>
+<td>Media</td>
+<td>EP006</td>
+</tr>
+<tr>
+<td>EP007</td>
+<td>Profesor</td>
+<td>Control de Horarios</td>
+<td>Como profesor, quiero visualizar y gestionar mi horario de clases para organizar mejor mi tiempo y prepararme adecuadamente para cada sesión.</td>
+<td>— (Épica, no aplica)</td>
+<td>Media</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US030</td>
+<td>Profesor</td>
+<td>Visualización de Horario de Clases</td>
+<td>Como profesor, quiero visualizar mi horario asignado para organizar mi tiempo y preparar cada sesión.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un profesor accede a su programación académica<br>Cuando el sistema procesa la consulta para un periodo activo<br>Entonces retorna el horario con las clases asignadas y los detalles correspondientes.<br><br><b>Escenario 2: Error en la visualización</b><br>Dado que un profesor accede a su programación académica<br>Cuando ocurre un problema en la disponibilidad de los datos<br>Entonces el sistema emite una notificación de indisponibilidad temporal.</td>
+<td>Media</td>
+<td>EP007</td>
+</tr>
+<tr>
+<td>US031</td>
+<td>Profesor</td>
+<td>Reprogramación de Clase</td>
+<td>Como profesor, quiero reprogramar una clase para ajustar la programación ante imprevistos institucionales.</td>
+<td><b>Escenario 1: Reprogramación exitosa</b><br>Dado que un profesor requiere ajustar la fecha de una sesión<br>Cuando envía los nuevos parámetros sin generar un conflicto de horarios<br>Entonces el sistema procesa el cambio y actualiza el cronograma exitosamente.<br><br><b>Escenario 2: Error en la reprogramación</b><br>Dado que un profesor requiere ajustar la fecha de una sesión<br>Cuando envía información que provoca cruces con otros registros<br>Entonces el sistema deniega el ajuste e informa sobre el conflicto detectado.</td>
+<td>Media</td>
+<td>EP007</td>
+</tr>
+<tr>
+<td>EP008</td>
+<td>Usuario</td>
+<td>Gestión de Cuentas y Autenticación</td>
+<td>Como usuario, quiero gestionar la cuenta y autenticación para acceder de manera segura a la plataforma y proteger la información personal.</td>
+<td>— (Épica, no aplica)</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td>US032</td>
+<td>Usuario</td>
+<td>Registro de Cuenta</td>
+<td>Como usuario, quiero registrarme en la plataforma para acceder a los servicios ofrecidos.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un usuario solicita registro en el ecosistema<br>Cuando envía los datos válidos obligatorios<br>Entonces el sistema crea la cuenta correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un usuario solicita registro en el ecosistema<br>Cuando envía los datos con información incompleta o formatos inválidos<br>Entonces el sistema rechaza la solicitud e indica los parámetros incorrectos.</td>
+<td>Alta</td>
+<td>EP008</td>
+</tr>
+<tr>
+<td>US033</td>
+<td>Usuario</td>
+<td>Activación de Cuenta</td>
+<td>Como usuario, quiero activar la cuenta después del registro para validar la identidad y utilizar los servicios.</td>
+<td><b>Escenario 1: Activación exitosa</b><br>Dado que un usuario cuenta con una solicitud de validación pendiente<br>Cuando envía el código de verificación válido<br>Entonces el sistema activa la cuenta correctamente.<br><br><b>Escenario 2: Error en la activación</b><br>Dado que un usuario cuenta con una solicitud de validación pendiente<br>Cuando envía un código de verificación inválido o expirado<br>Entonces el sistema deniega la acción y notifica la invalidez del código.</td>
+<td>Alta</td>
+<td>EP008</td>
+</tr>
+<tr>
+<td>US034</td>
+<td>Usuario</td>
+<td>Inicio de Sesión</td>
+<td>Como usuario, quiero autenticarme en la plataforma para acceder al perfil y gestionar los servicios.</td>
+<td><b>Escenario 1: Inicio exitoso</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales válidas de una cuenta activa<br>Entonces el sistema permite el acceso y carga el perfil.<br><br><b>Escenario 2: Error de credenciales</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales incorrectas<br>Entonces el sistema rechaza el acceso y notifica el error.<br><br><b>Escenario 3: Cuenta inactiva</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales válidas pero la cuenta carece de activación previa<br>Entonces el sistema bloquea el acceso y requiere la validación obligatoria.</td>
+<td>Alta</td>
+<td>EP008</td>
+<tr>
+<td>EP009</td>
+<td>Visitante</td>
+<td>Navegación por el Sitio Web Estático</td>
+<td>Como visitante, quiero explorar el portal público para obtener información sobre la plataforma y los servicios antes de registrarme.</td>
+<td>— (Épica, no aplica)</td>
+<td>Baja</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SWS001</td>
+<td>Visitante</td>
+<td>Visualización de Propósito Principal (Hero)</td>
+<td>Como visitante del segmento administrador, quiero visualizar la información principal para entender el propósito y beneficios del sistema.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante interactúa con el portal público<br>Cuando solicita el acceso inicial<br>Entonces el sistema presenta el propósito general y las opciones de interacción.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS002</td>
+<td>Visitante</td>
+<td>Visualización de Funcionalidades (Features)</td>
+<td>Como visitante del segmento administrador, quiero visualizar las funcionalidades clave para conocer las capacidades de la plataforma.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las capacidades del sistema<br>Entonces el sistema expone la lista de funcionalidades disponibles.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS003</td>
+<td>Visitante</td>
+<td>Visualización del Funcionamiento (How It Works)</td>
+<td>Como visitante del segmento administrador, quiero entender el proceso de uso para evaluar la simplicidad de la plataforma.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta el flujo de trabajo<br>Entonces el sistema detalla los pasos secuenciales de operación.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS004</td>
+<td>Visitante</td>
+<td>Visualización de Detalles (About The Product)</td>
+<td>Como visitante del segmento administrador, quiero conocer más sobre los beneficios específicos del producto.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando solicita la descripción del sistema<br>Entonces el sistema expone las características y beneficios a profundidad.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS005</td>
+<td>Visitante</td>
+<td>Visualización de Casos de Éxito (Testimonials)</td>
+<td>Como visitante del segmento administrador, quiero visualizar testimonios para validar la efectividad de la plataforma.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las referencias de terceros<br>Entonces el sistema lista las experiencias previas de otros usuarios.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS006</td>
+<td>Visitante</td>
+<td>Visualización de la Empresa (About Us)</td>
+<td>Como visitante del segmento administrador, quiero conocer la misión de la empresa para generar confianza.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la información corporativa<br>Entonces el sistema expone la misión, visión y valores de la entidad.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS007</td>
+<td>Visitante</td>
+<td>Visualización del Equipo (About The Team)</td>
+<td>Como visitante del segmento administrador, quiero conocer al equipo detrás de la plataforma para validar su credibilidad.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la estructura corporativa<br>Entonces el sistema expone los perfiles y roles de los miembros.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS008</td>
+<td>Visitante</td>
+<td>Visualización de Planes (Pricing)</td>
+<td>Como visitante del segmento administrador, quiero conocer los planes disponibles para evaluar los costos del servicio.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la oferta comercial<br>Entonces el sistema presenta los planes, costos y características comparativas.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS009</td>
+<td>Visitante</td>
+<td>Visualización de Ayuda (FAQ)</td>
+<td>Como visitante del segmento administrador, quiero encontrar respuestas a dudas comunes para resolver incertidumbres.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la sección de soporte informativo<br>Entonces el sistema expone el listado de preguntas frecuentes y sus respuestas.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS010</td>
+<td>Visitante</td>
+<td>Visualización de Contacto (Contact)</td>
+<td>Como visitante del segmento administrador, quiero obtener los canales de comunicación para solicitar soporte directo.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando requiere asistencia adicional<br>Entonces el sistema expone los medios de contacto y opciones de solicitud de ayuda.</td>
+<td>Baja</td>
+<td>EP009</td>
+</tr>
+<tr>
+<td>SWS011</td>
+<td>Visitante</td>
+<td>Visualización de Referencias Legales (Footer)</td>
+<td>Como visitante del segmento administrador, quiero acceder a políticas y redes sociales para verificar la legalidad y presencia digital.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las referencias al pie del sitio<br>Entonces el sistema proporciona los enlaces legales y corporativos correspondientes.</td>
+<td>Baja</td>
+<td>EP009</td>
+<tr>
+<td>EP010</td>
+<td>Developer</td>
+<td>Servicios Técnicos y APIs REST</td>
+<td>Como developer, quiero implementar servicios técnicos y APIs REST para facilitar la integración con otros sistemas y asegurar la escalabilidad de la plataforma.</td>
+<td>— (Épica, no aplica)</td>
+<td>Alta</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TS001</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar academias</td>
+<td>Como developer, quiero exponer POST /api/academies para permitir el registro de nuevas academias en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/academies con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea una nueva academia y se devuelve un estado 201 Created con los detalles correspondientes.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST /api/academies con datos inválidos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request con un mensaje indicando los campos incorrectos.<br><br><b>Escenario 3: Error por academia duplicada</b><br>Dado que un cliente envía una solicitud POST /api/academies para una academia que ya existe<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict indicando que la academia ya está registrada.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS002</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar academias</td>
+<td>Como developer, quiero exponer PUT /api/academies/{id} para permitir la actualización de academias existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/academies/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la academia y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud PUT /api/academies/{id} omitiendo campos obligatorios<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por no encontrada</b><br>Dado que un cliente envía una solicitud PUT para una academia inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found indicando que no fue encontrada.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS004</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar academias</td>
+<td>Como developer, quiero exponer GET /api/academies para permitir la obtención de una lista de academias en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/academies<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de academias.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET /api/academies cuando no hay registros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista vacía.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS005</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de una academia</td>
+<td>Como developer, quiero exponer GET /api/academies/{id} para permitir la obtención de los detalles de una academia específica en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/academies/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles solicitados.<br><br><b>Escenario 2: Error por no encontrada</b><br>Dado que un cliente envía una solicitud GET para una academia inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS006</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar administrador</td>
+<td>Como developer, quiero exponer POST /api/admins para permitir el registro de nuevos administradores en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/admins con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea el administrador y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST /api/admins con datos inválidos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por duplicado</b><br>Dado que un cliente envía una solicitud POST para un administrador existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS007</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar administrador</td>
+<td>Como developer, quiero exponer PUT /api/admins/{id} para permitir la actualización de administradores existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/admins/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS008</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar administrador</td>
+<td>Como developer, quiero exponer DELETE /api/admins/{id} para permitir la eliminación de administradores existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/admins/{id} para un perfil existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el perfil y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS009</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar administradores</td>
+<td>Como developer, quiero exponer GET /api/admins para permitir la obtención de una lista de administradores en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/admins<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de perfiles.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS010</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de un administrador</td>
+<td>Como developer, quiero exponer GET /api/admins/{id} para permitir la obtención de los detalles de un administrador específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/admins/{id} para un perfil existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS011</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar inscripciones</td>
+<td>Como developer, quiero exponer POST /api/enrollments para permitir el registro de nuevas inscripciones en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/enrollments con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea una nueva inscripción y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST con datos faltantes (ej. falta el ID del participante)<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las omisiones.<br><br><b>Escenario 3: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un participante que ya cuenta con una inscripción activa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS012</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar inscripciones</td>
+<td>Como developer, quiero exponer PUT /api/enrollments/{id} para permitir la actualización de inscripciones existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/enrollments/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el registro y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para una inscripción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS013</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar inscripciones</td>
+<td>Como developer, quiero exponer DELETE /api/enrollments/{id} para permitir la eliminación de inscripciones existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/enrollments/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se borra la inscripción y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS014</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar inscripciones</td>
+<td>Como developer, quiero exponer GET /api/enrollments para permitir la obtención de una lista de inscripciones en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/enrollments<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de inscripciones.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS015</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de una inscripción</td>
+<td>Como developer, quiero exponer GET /api/enrollments/{id} para permitir la obtención de los detalles de una inscripción específica en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/enrollments/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS016</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar asistencias de clase</td>
+<td>Como developer, quiero exponer POST /api/class-attendances para permitir el registro de asistencias a clases en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/class-attendances con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo registro y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST omitiendo datos críticos (ej. ID del participante)<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por duplicado</b><br>Dado que un cliente envía una solicitud POST para un participante que ya tiene asistencia marcada<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS017</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar asistencias de clase</td>
+<td>Como developer, quiero exponer PUT /api/class-attendances/{id} para permitir la actualización de registros de asistencia en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/class-attendances/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la participación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS018</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar asistencias de clase</td>
+<td>Como developer, quiero exponer DELETE /api/class-attendances/{id} para permitir la eliminación de registros de asistencia en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/class-attendances/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS019</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar asistencias de clase</td>
+<td>Como developer, quiero exponer GET /api/class-attendances para permitir la obtención de una lista de registros de asistencia en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/class-attendances<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con la lista de participaciones.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET sin información almacenada previamente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS020</td>
+<td>Developer</td>
+<td>Exponer endpoint para detalles de asistencia de clase</td>
+<td>Como developer, quiero exponer GET /api/class-attendances/{id} para permitir la obtención de los detalles de un registro de asistencia específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/class-attendances/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+<tr>
+<td>TS021</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar periodos académicos</td>
+<td>Como developer, quiero exponer POST /api/academic-periods para permitir el registro de nuevos periodos académicos en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/academic-periods con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo periodo y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inconsistentes</b><br>Dado que un cliente envía una solicitud POST con incongruencias de tiempo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un periodo que ya existe<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS022</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar periodos académicos</td>
+<td>Como developer, quiero exponer PUT /api/academic-periods/{id} para permitir la actualización de periodos académicos en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/academic-periods/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el periodo y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS023</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar periodos académicos</td>
+<td>Como developer, quiero exponer DELETE /api/academic-periods/{id} para permitir la eliminación de periodos académicos en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/academic-periods/{id} para un periodo existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS024</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar periodos académicos</td>
+<td>Como developer, quiero exponer GET /api/academic-periods para permitir la obtención de una lista de periodos académicos en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/academic-periods<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de periodos.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS025</td>
+<td>Developer</td>
+<td>Exponer endpoint para detalles de periodo académico</td>
+<td>Como developer, quiero exponer GET /api/academic-periods/{id} para permitir la obtención de los detalles de un periodo específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/academic-periods/{id} para un periodo existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS026</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar salones de clase</td>
+<td>Como developer, quiero exponer POST /api/classrooms para permitir el registro de nuevos salones de clase en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/classrooms con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo salón de clase y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST con parámetros faltantes o capacidad negativa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando los errores correspondientes.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS027</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar salones de clase</td>
+<td>Como developer, quiero exponer PUT /api/classrooms/{id} para permitir la actualización de salones de clase existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/classrooms/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el salón de clase y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS028</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar salones de clase</td>
+<td>Como developer, quiero exponer DELETE /api/classrooms/{id} para permitir la eliminación de salones de clase existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/classrooms/{id} para un salón existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS029</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar salones de clase</td>
+<td>Como developer, quiero exponer GET /api/classrooms para permitir la obtención de una lista de salones de clase en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/classrooms<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de salones de clase.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET cuando no hay salones registrados<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS030</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de un salón de clase</td>
+<td>Como developer, quiero exponer GET /api/classrooms/{id} para permitir la obtención de los detalles de un salón de clase específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/classrooms/{id} para un salón existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles del salón.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS031</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar cursos</td>
+<td>Como developer, quiero exponer POST /api/courses para permitir el registro de nuevos cursos en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/courses con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo curso y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un curso que ya cuenta con un registro idéntico<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS032</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar cursos</td>
+<td>Como developer, quiero exponer PUT /api/courses/{id} para permitir la actualización de cursos existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/courses/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualizan los datos del curso y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un registro de curso inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS033</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar cursos</td>
+<td>Como developer, quiero exponer DELETE /api/courses/{id} para permitir la eliminación de cursos existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/courses/{id} para un curso existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS034</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar cursos</td>
+<td>Como developer, quiero exponer GET /api/courses para permitir la obtención de una lista de cursos en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/courses<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de cursos.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS035</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de un curso</td>
+<td>Como developer, quiero exponer GET /api/courses/{id} para permitir la obtención de los detalles de un curso específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/courses/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un curso inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS036</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar horarios</td>
+<td>Como developer, quiero exponer POST /api/schedules para permitir el registro de nuevos horarios en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/schedules con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea la programación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto de horario</b><br>Dado que un cliente envía una solicitud POST con horas que se superponen con otras sesiones<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS037</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar horarios</td>
+<td>Como developer, quiero exponer PUT /api/schedules/{id} para permitir la actualización de horarios existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/schedules/{id} con parámetros de tiempo válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la programación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un horario inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS038</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar horarios</td>
+<td>Como developer, quiero exponer DELETE /api/schedules/{id} para permitir la eliminación de horarios existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/schedules/{id} para una programación activa<br>Cuando el servidor procesa la solicitud<br>Entonces se retira el horario y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una programación inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS039</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar horarios</td>
+<td>Como developer, quiero exponer GET /api/schedules para permitir la obtención de una lista de horarios en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/schedules<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de las programaciones registradas.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS040</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de un horario</td>
+<td>Como developer, quiero exponer GET /api/schedules/{id} para permitir la obtención de los detalles de un horario específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/schedules/{id} para un horario activo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles requeridos.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una programación inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Title</th>
+<th>Description</th>
+<th>Acceptance Criteria</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TS041</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar cuentas de cobro</td>
+<td>Como developer, quiero exponer POST /api/billing-accounts para permitir el registro de nuevas cuentas de cobro en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/billing-accounts con parámetros financieros válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo perfil de facturación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un registro que ya posee un perfil de cobro asignado<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS042</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar cuentas de cobro</td>
+<td>Como developer, quiero exponer PUT /api/billing-accounts/{id} para permitir la actualización de cuentas de cobro existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/billing-accounts/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil de facturación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS043</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar cuentas de cobro</td>
+<td>Como developer, quiero exponer DELETE /api/billing-accounts/{id} para permitir la eliminación de cuentas de cobro existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/billing-accounts/{id} para una cuenta activa<br>Cuando el servidor procesa la solicitud<br>Entonces se borra el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS044</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar cuentas de cobro</td>
+<td>Como developer, quiero exponer GET /api/billing-accounts para permitir la obtención de una lista de cuentas de cobro en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/billing-accounts<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con el listado financiero.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS045</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de una cuenta de cobro</td>
+<td>Como developer, quiero exponer GET /api/billing-accounts/{id} para permitir la obtención de los detalles de una cuenta de cobro específica en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/billing-accounts/{id} para un perfil activo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los parámetros financieros del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS046</td>
+<td>Developer</td>
+<td>Exponer endpoint para asignar boletas de pago</td>
+<td>Como developer, quiero exponer POST /api/billing-accounts/invoices para permitir la asignación de boletas de pago a las cuentas de cobro en el sistema.</td>
+<td><b>Escenario 1: Asignación exitosa</b><br>Dado que un cliente envía una solicitud POST con los datos de cobro válidos<br>Cuando el servidor procesa la solicitud<br>Entonces la boleta se vincula correctamente y se devuelve un estado 201 Created con sus detalles.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS047</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar boletas asignadas</td>
+<td>Como developer, quiero exponer PUT /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la actualización de boletas de pago asignadas a una cuenta en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT con montos y estados financieros válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el comprobante y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT con identificadores financieros incorrectos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS048</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar boletas asignadas</td>
+<td>Como developer, quiero exponer GET /api/billing-accounts/{id}/invoices para permitir la obtención de boletas de pago asignadas a una cuenta.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET dirigida a una cuenta financiera activa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista que detalla todos los comprobantes asignados.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS049</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar boletas asignadas</td>
+<td>Como developer, quiero exponer DELETE /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la eliminación de boletas asignadas a una cuenta.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE con identificadores válidos<br>Cuando el servidor procesa la solicitud<br>Entonces el comprobante se desvincula de la cuenta y se devuelve un estado 204 No Content.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS050</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar transacciones</td>
+<td>Como developer, quiero exponer POST /api/transactions para permitir el registro de nuevas transacciones en el sistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/transactions con montos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se consolida el movimiento contable y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST omitiendo datos contables como el monto<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las faltas detectadas.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS051</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar transacciones</td>
+<td>Como developer, quiero exponer PUT /api/transactions/{id} para permitir la actualización de transacciones financieras existentes en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/transactions/{id} con datos contables válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la transacción y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud PUT con montos negativos o información faltante<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS052</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar transacciones</td>
+<td>Como developer, quiero exponer DELETE /api/transactions/{id} para permitir la eliminación de transacciones existentes en el sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/transactions/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una transacción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS053</td>
+<td>Developer</td>
+<td>Exponer endpoint para listar transacciones</td>
+<td>Como developer, quiero exponer GET /api/transactions para permitir la obtención de una lista de movimientos contables en el sistema.</td>
+<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/transactions<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de transacciones.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET cuando no hay registros financieros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS054</td>
+<td>Developer</td>
+<td>Exponer endpoint para obtener detalles de una transacción</td>
+<td>Como developer, quiero exponer GET /api/transactions/{id} para permitir la obtención de los detalles de un movimiento contable específico en el sistema.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/transactions/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una transacción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS055</td>
+<td>Developer</td>
+<td>Exponer endpoint para generar reportes financieros</td>
+<td>Como developer, quiero exponer GET /api/reports/financial para permitir la generación de reportes contables en el sistema.</td>
+<td><b>Escenario 1: Generación exitosa</b><br>Dado que un cliente envía una solicitud GET con un rango de fechas válido<br>Cuando el servidor procesa la solicitud<br>Entonces se genera el reporte y se devuelve un estado 200 OK con el archivo exportado.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un cliente solicita un reporte en un periodo sin registros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 204 No Content indicando la ausencia de datos.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS056</td>
+<td>Developer</td>
+<td>Exponer endpoint para visualizar horarios de un profesor</td>
+<td>Como developer, quiero exponer GET /api/teachers/{id}/schedules para permitir la visualización de los horarios asignados a un docente específico.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un cliente envía una solicitud GET para un perfil docente existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con la lista de sus programaciones.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un perfil docente inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS057</td>
+<td>Developer</td>
+<td>Exponer endpoint para reprogramar una sesión de clases</td>
+<td>Como developer, quiero exponer PUT /api/schedules/{id}/reschedule para permitir la reprogramación de una sesión en el sistema.</td>
+<td><b>Escenario 1: Reprogramación exitosa</b><br>Dado que un cliente envía una solicitud PUT con una nueva fecha y hora válidas<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la sesión y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por cruce de horarios</b><br>Dado que un cliente envía una solicitud PUT que genera un conflicto temporal<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS058</td>
+<td>Developer</td>
+<td>Exponer endpoint para registrar cuenta de usuario</td>
+<td>Como developer, quiero exponer POST /api/auth/sign-up para permitir la creación segura de nuevas cuentas en el ecosistema.</td>
+<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea la cuenta, se cifra la credencial y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por duplicidad</b><br>Dado que un cliente intenta registrar un correo ya existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS059</td>
+<td>Developer</td>
+<td>Exponer endpoint para actualizar cuenta de usuario</td>
+<td>Como developer, quiero exponer PUT /api/users/{id} para permitir la actualización de perfiles de cuenta en el sistema.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT con información válida<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente intenta modificar un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS060</td>
+<td>Developer</td>
+<td>Exponer endpoint para eliminar cuenta de usuario</td>
+<td>Como developer, quiero exponer DELETE /api/users/{id} para retirar cuentas de usuario del sistema.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE para un usuario existente<br>Cuando el servidor procesa la solicitud<br>Entonces se retira la cuenta y se devuelve un estado 204 No Content.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS061</td>
+<td>Developer</td>
+<td>Exponer endpoint para activar cuenta de usuario</td>
+<td>Como developer, quiero exponer POST /api/users/{id}/activate para gestionar la activación mediante validación.</td>
+<td><b>Escenario 1: Activación exitosa</b><br>Dado que un cliente envía el token o código correcto<br>Cuando el servidor procesa la solicitud<br>Entonces el estado de la cuenta cambia a activa y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta ya activa</b><br>Dado que un cliente solicita activar un perfil previamente validado<br>Cuando el servidor procesa la solicitud<br>Entonces devuelve un estado 400 Bad Request.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS062</td>
+<td>Developer</td>
+<td>Exponer endpoint para reenviar código de verificación</td>
+<td>Como developer, quiero exponer POST /api/users/{id}/resend-verification para asegurar que los usuarios reciban sus credenciales de validación.</td>
+<td><b>Escenario 1: Reenvío exitoso</b><br>Dado que un cliente solicita un nuevo código para una cuenta pendiente<br>Cuando el servidor procesa la orden<br>Entonces dispara el evento de mensajería y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta verificada</b><br>Dado que un cliente solicita código para un perfil validado<br>Cuando el servidor procesa la orden<br>Entonces devuelve un estado 400 Bad Request.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS063</td>
+<td>Developer</td>
+<td>Exponer endpoint para cambiar contraseña con código</td>
+<td>Como developer, quiero exponer POST /api/users/{id}/change-password para facilitar la recuperación de acceso.</td>
+<td><b>Escenario 1: Cambio exitoso</b><br>Dado que un cliente envía un código válido y una credencial nueva segura<br>Cuando el servidor procesa la solicitud<br>Entonces actualiza la seguridad de la cuenta y retorna 200 OK.<br><br><b>Escenario 2: Error por código inválido</b><br>Dado que un cliente envía un código expirado o incorrecto<br>Cuando el servidor procesa la solicitud<br>Entonces bloquea la acción y devuelve un estado 400 Bad Request.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS064</td>
+<td>Developer</td>
+<td>Exponer endpoint para iniciar sesión</td>
+<td>Como developer, quiero exponer POST /api/auth/login para gestionar la autenticación y emisión de tokens.</td>
+<td><b>Escenario 1: Inicio exitoso</b><br>Dado que un cliente envía credenciales correctas de una cuenta activa<br>Cuando el servidor las valida<br>Entonces retorna 200 OK junto con un token JWT firmado.<br><br><b>Escenario 2: Error de autenticación</b><br>Dado que un cliente envía credenciales incorrectas<br>Cuando el servidor las procesa<br>Entonces rechaza el acceso devolviendo 401 Unauthorized.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS065</td>
+<td>Developer</td>
+<td>Exponer endpoint para validación de recursos</td>
+<td>Como developer, quiero exponer HEAD /api/resource/{id} para permitir comprobaciones rápidas de existencia.</td>
+<td><b>Escenario 1: Verificación exitosa</b><br>Dado que un cliente solicita validación de un elemento existente<br>Cuando el servidor la procesa<br>Entonces devuelve 200 OK sin cuerpo de respuesta.<br><br><b>Escenario 2: Recurso ausente</b><br>Dado que un cliente consulta un identificador inexistente<br>Cuando el servidor responde<br>Entonces emite 404 Not Found.</td>
+<td>Alta</td>
+<td>EP010</td>
+</tr>
+<tr>
+<td>TS066</td>
+<td>Developer</td>
+<td>Exponer endpoint para manejo de CORS</td>
+<td>Como developer, quiero exponer OPTIONS /api/resource para garantizar la seguridad transversal y comunicación entre orígenes.</td>
+<td><b>Escenario 1: Resolución de políticas</b><br>Dado que un cliente emite una consulta de preflight<br>Cuando el servidor evalúa los orígenes permitidos<br>Entonces devuelve 204 No Content junto a los headers de autorización HTTP.</td>
+<td>Alta</td>
+<td>EP010</td>
+<tr>
+<td>EP011</td>
+<td>Equipo de Desarrollo</td>
+<td>Investigación y Prototipado</td>
+<td>Como equipo de desarrollo, quiero realizar investigación y prototipado para explorar nuevas tecnologías y enfoques que puedan mejorar la arquitectura de la solución propuesta.</td>
+<td>— (Épica, no aplica)</td>
+<td>Media</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SS001</td>
+<td>Equipo de Desarrollo</td>
+<td>Investigación de la integración de pasarelas globales</td>
+<td>Como equipo de desarrollo, quiero investigar la documentación de plataformas de pagos globales (ej. Stripe) para comprender su ciclo de integración técnica.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo revisa las guías de integración de la pasarela<br>Cuando documentan los flujos de cobro y webhooks requeridos<br>Entonces se genera un informe técnico detallando su viabilidad para la facturación.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+<tr>
+<td>SS002</td>
+<td>Equipo de Desarrollo</td>
+<td>Investigación de la integración de servicios de correo</td>
+<td>Como equipo de desarrollo, quiero explorar los protocolos SMTP y APIs de servicios como Gmail para garantizar el envío de códigos de verificación.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo estudia el motor de plantillas y autenticación del proveedor<br>Cuando se realizan pruebas de concepto aisladas de envío<br>Entonces se establece un estándar seguro para la mensajería del sistema.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+<tr>
+<td>SS003</td>
+<td>Equipo de Desarrollo</td>
+<td>Investigación de métodos de cobro local</td>
+<td>Como equipo de desarrollo, quiero analizar pasarelas de recaudo regional (ej. PagoEfectivo) para ofrecer alternativas en los cobros de cuentas y servicios.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo accede a los manuales de desarrollador del proveedor local<br>Cuando evalúan el flujo de generación de códigos de pago CIP<br>Entonces definen la estructura necesaria en el modelo financiero del sistema.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+<tr>
+<td>SS004</td>
+<td>Equipo de Desarrollo</td>
+<td>Probar bibliotecas de generación de PDF y Excel</td>
+<td>Como equipo de desarrollo, quiero evaluar el rendimiento de librerías exportadoras para soportar la generación de reportes financieros.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo implementa un entorno de pruebas con datos ficticios<br>Cuando procesan exportaciones masivas en formatos estáticos y hojas de cálculo<br>Entonces seleccionan la librería con mejor latencia y soporte de estilos.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+<tr>
+<td>SS005</td>
+<td>Equipo de Desarrollo</td>
+<td>Probar bibliotecas de generación de gráficos</td>
+<td>Como equipo de desarrollo, quiero probar bibliotecas de generación de gráficos para seleccionar las más adecuadas para la plataforma.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo de desarrollo investiga bibliotecas populares para la generación de gráficos<br>Cuando revisan reseñas, comparativas y documentación<br>Entonces crean una lista de posibles bibliotecas a evaluar.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+<tr>
+<td>SS006</td>
+<td>Equipo de Desarrollo</td>
+<td>Probar bibliotecas de generación de códigos QR</td>
+<td>Como equipo de desarrollo, quiero probar bibliotecas de generación de códigos QR para seleccionar las más adecuadas para la plataforma.</td>
+<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo de desarrollo investiga bibliotecas populares para la generación de códigos QR<br>Cuando revisan reseñas, comparativas y documentación<br>Entonces crean una lista de posibles bibliotecas a evaluar.</td>
+<td>Media</td>
+<td>EP011</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 ## 3.3. Product Backlog
