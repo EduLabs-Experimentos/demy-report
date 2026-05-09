@@ -5658,6 +5658,7 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
       </tr>
     </thead>
     <tbody>
+      <!-- BLOQUE DE TU AMIGO (ENROLLMENT) -->
       <tr>
         <td>EduLabs-Experimentos/demy-backend</td>
         <td>feature/enrollment</td>
@@ -5693,6 +5694,61 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
           error handling scenarios.
         </td>
         <td>08/05/2026</td>
+      </tr>
+      <!-- TU BLOQUE (ATTENDANCE) -->
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>f8bdb56</td>
+        <td>test(attendance): implement cucumber step definitions for student attendance features</td>
+        <td>
+          Implementation of Gherkin steps to connect the feature files with the 
+          attendance registration logic.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>249b496</td>
+        <td>test(attendance): add integration tests for ClassAttendanceRepository persistence and cascades</td>
+        <td>
+          Verification of database persistence and relationship cascading for 
+          attendance records.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>ad3a2fc</td>
+        <td>test(attendance): add unit tests for ClassSessionId value object invariants</td>
+        <td>
+          Validation of business rules and invariants for the ClassSessionId 
+          value object.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>cb281c9</td>
+        <td>test(attendance): add unit tests for AttendanceInput value object and DNI validation</td>
+        <td>
+          Unit tests for DNI formatting and input validation for attendance entries.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>1467349</td>
+        <td>test(attendance): implement unit tests for aggregate and creation command rules</td>
+        <td>
+          Testing of command-driven logic for aggregate creation and attendance 
+          business constraints.
+        </td>
+        <td>09/05/2026</td>
       </tr>
     </tbody>
   </table>
