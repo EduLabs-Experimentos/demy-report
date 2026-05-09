@@ -5896,7 +5896,7 @@ class EnrollmentCommandServiceImplTest {
 }
 
 ```
-![Boundede-Enrollment1](./assets/test/enrollment1)
+![Boundede-Enrollment1](./assets/test/enrollment1.png)
 
 
 ### 6.1.2. Core Integration Tests
@@ -6044,7 +6044,7 @@ class EnrollmentsControllerIntegrationTest {
     }
 }
 ```
-![Boundede-Enrollment1](./assets/test/enrollment2)
+![Boundede-Enrollment1](./assets/test/enrollment2.png)
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -6082,7 +6082,7 @@ Feature: Registrar matrícula de un estudiante
 
 ```
 
-![Boundede-Enrollment1](./assets/test/enrollment3)
+![Boundede-Enrollment1](./assets/test/enrollment3.png)
 
 ### 6.1.4. Core System Tests
 
