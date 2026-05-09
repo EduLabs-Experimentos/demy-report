@@ -4185,7 +4185,7 @@ Basado en las convenciones de la comunidad de JUnit y Spring, se adoptan las sig
 
 Nombres y sintaxis:
 - Los nombres de las clases de prueba deben terminar en `Test` (ej. `UserServiceTest`).
-- Nombrar los métodos de prueba describiendo el comportamiento esperado y el estado inicial. Se recomienda el formato `should_ExpectedBehavior_When_StateUnderTest` (ej. `should_ReturnUser_When_IdExists()`).
+- Nombrar los métodos de prueba describiendo el comportamiento esperado y el estado inicial. Se recomienda el formato `should_ExpectedBehavior_When_StateUnde rTest` (ej. `should_ReturnUser_When_IdExists()`).
 
 Estructura y organización:
 - Estructurar el cuerpo de la prueba utilizando el patrón **AAA** (Arrange, Act, Assert), separando visualmente cada bloque con un salto de línea.
@@ -5658,6 +5658,7 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
       </tr>
     </thead>
     <tbody>
+      <!-- BLOQUE DE TU AMIGO (ENROLLMENT) -->
       <tr>
         <td>EduLabs-Experimentos/demy-backend</td>
         <td>feature/enrollment</td>
@@ -5693,6 +5694,117 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
           error handling scenarios.
         </td>
         <td>08/05/2026</td>
+      </tr>
+      <!-- BLOQUE DE ATTENDANCE -->
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>f8bdb56</td>
+        <td>test(attendance): implement cucumber step definitions for student attendance features</td>
+        <td>
+          Implementation of Gherkin steps to connect the feature files with the 
+          attendance registration logic.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>249b496</td>
+        <td>test(attendance): add integration tests for ClassAttendanceRepository persistence and cascades</td>
+        <td>
+          Verification of database persistence and relationship cascading for 
+          attendance records.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>ad3a2fc</td>
+        <td>test(attendance): add unit tests for ClassSessionId value object invariants</td>
+        <td>
+          Validation of business rules and invariants for the ClassSessionId 
+          value object.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>cb281c9</td>
+        <td>test(attendance): add unit tests for AttendanceInput value object and DNI validation</td>
+        <td>
+          Unit tests for DNI formatting and input validation for attendance entries.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>1467349</td>
+        <td>test(attendance): implement unit tests for aggregate and creation command rules</td>
+        <td>
+          Testing of command-driven logic for aggregate creation and attendance 
+          business constraints.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <!-- TU BLOQUE (BILLING) -->
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>b11faae</td>
+        <td>test(billing): implement cucumber step definitions for billing account acceptance tests</td>
+        <td>
+          Developed step definitions to automate acceptance criteria for 
+          billing account creation and management.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>8c84aee</td>
+        <td>test(billing): add Gherkin feature files for billing account and invoice management</td>
+        <td>
+          Defined executable specifications using Gherkin for billing 
+          processes and invoice generation workflows.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>c880552</td>
+        <td>test(billing): add integration tests for BillingAccountRepository validating JPA mapping and cascades</td>
+        <td>
+          Integrated tests to validate database schema mapping and 
+          cascading operations for BillingAccount entities.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>1f8f570</td>
+        <td>test(billing): implement unit tests for BillingAccountCommandServiceImpl with ExternallamService mock</td>
+        <td>
+          Unit testing the command service logic by mocking external 
+          IAM service dependencies.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>1232a3f</td>
+        <td>test(billing): implement core entities unit tests for BillingAccount using AAA pattern</td>
+        <td>
+          Core entity validation using the Arrange-Act-Assert pattern 
+          to ensure internal state consistency.
+        </td>
+        <td>09/05/2026</td>
       </tr>
     </tbody>
   </table>
