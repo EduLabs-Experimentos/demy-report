@@ -5644,11 +5644,445 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 ## 6.1. Testing Suites & Validation
 
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Commit Id</th>
+        <th>Commit Message</th>
+        <th>Commit Message Body</th>
+        <th>Commited on (Date)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>d42d51e</td>
+        <td>test: add unit tests for EnrollmentCommandServiceImpl</td>
+        <td>
+          Added unit test coverage for EnrollmentCommandServiceImpl,
+          including validation of enrollment creation, duplicate enrollment
+          handling, and exception scenarios.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>aa6ec2d</td>
+        <td>test: add integration tests for EnrollmentsController</td>
+        <td>
+          Implemented integration tests for EnrollmentsController endpoints
+          to verify HTTP responses, request validation, and persistence flow
+          using MockMvc.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>f22094e</td>
+        <td>test: add BDD feature and step definitions for enrollment</td>
+        <td>
+          Added BDD feature files and step definitions for enrollment
+          workflows, covering successful enrollment registration and
+          error handling scenarios.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ### 6.1.1. Core Entities Unit Tests
+
+##### Enrollment Bounded - Gestion de Matriculas
+
+```
+@ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
+class EnrollmentCommandServiceImplTest {
+
+    @Mock
+    private EnrollmentRepository enrollmentRepository;
+
+    @Mock
+    private StudentRepository studentRepository;
+
+    @Mock
+    private ExternalSchedulingService externalSchedulingService;
+
+    @Mock
+    private ExternalIamService externalIamService;
+
+    @InjectMocks
+    private EnrollmentCommandServiceImpl enrollmentCommandService;
+
+
+    private static final Long   STUDENT_ID  = 1L;
+    private static final Long   PERIOD_ID   = 10L;
+    private static final Long   SCHEDULE_ID = 100L;
+    private static final Long   ACADEMY_ID  = 5L;
+    private static final Long   ENROLLMENT_ID = 999L;
+
+    private StudentId  studentId;
+    private PeriodId   periodId;
+    private ScheduleId scheduleId;
+    private AcademyId  academyId;
+    private Money      money;
+
+    private CreateEnrollmentCommand createCommand;
+    private UpdateEnrollmentCommand updateCommand;
+    private DeleteEnrollmentCommand deleteCommand;
+
+    private Enrollment enrollment;
+    private Student    student;
+
+    @BeforeEach
+    void setUp() {
+        studentId  = new StudentId(STUDENT_ID);
+        periodId   = new PeriodId(PERIOD_ID);
+        scheduleId = new ScheduleId(SCHEDULE_ID);
+        academyId  = new AcademyId(ACADEMY_ID);
+        money      = new Money(new BigDecimal("500.00"), Currency.getInstance("PEN"));
+
+        createCommand = new CreateEnrollmentCommand(
+                studentId, periodId, scheduleId, money, PaymentStatus.PENDING
+        );
+
+        updateCommand = new UpdateEnrollmentCommand(
+                ENROLLMENT_ID,
+                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
+                EnrollmentStatus.ACTIVE,
+                PaymentStatus.PAID
+        );
+
+        deleteCommand = new DeleteEnrollmentCommand(ENROLLMENT_ID);
+
+        // Enrollment creado via factory (ACTIVE, monto válido)
+        enrollment = Enrollment.createEnrollmentActive(
+                studentId, periodId, scheduleId, academyId, money, PaymentStatus.PENDING
+        );
+
+        student = mock(Student.class);
+        when(student.getDni()).thenReturn(new DniNumber("12345678"));
+    }
+    
+
+    @Test
+    @DisplayName("US007 — Crear matrícula exitosamente retorna el ID generado")
+    void handle_CreateEnrollment_Success_ReturnsId() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId)).thenReturn(Optional.empty());
+        when(studentRepository.findById(STUDENT_ID)).thenReturn(Optional.of(student));
+        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> {
+            Enrollment e = inv.getArgument(0);
+            return e;
+        });
+
+        // Act
+        Long result = enrollmentCommandService.handle(createCommand);
+
+        // Assert
+        verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
+    }
+
+    @Test
+    @DisplayName("US007 — Crear matrícula duplicada lanza EnrollmentAlreadyExistsException")
+    void handle_CreateEnrollment_DuplicateEnrollment_ThrowsAlreadyExistsException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId))
+                .thenReturn(Optional.of(enrollment));
+
+        // Act & Assert
+        assertThatThrownBy(() -> enrollmentCommandService.handle(createCommand))
+                .isInstanceOf(EnrollmentAlreadyExistsException.class);
+
+        verify(enrollmentRepository, never()).save(any());
+    }
+
+    @Test
+    @DisplayName("US009 — Eliminar matrícula existente en academia correcta llama deleteById")
+    void handle_DeleteEnrollment_Success_CallsDeleteById() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+        // Act
+        enrollmentCommandService.handle(deleteCommand);
+
+        // Assert
+        verify(enrollmentRepository, times(1)).deleteById(ENROLLMENT_ID);
+    }
+
+    @Test
+    @DisplayName("US009 — Eliminar matrícula inexistente lanza EnrollmentNotFoundException")
+    void handle_DeleteEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+                .isInstanceOf(EnrollmentNotFoundException.class);
+
+        verify(enrollmentRepository, never()).deleteById(any());
+    }
+
+    @Test
+    @DisplayName("US009 — Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException")
+    void handle_DeleteEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+        // Act & Assert
+        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+                .isInstanceOf(EnrollmentNotFoundException.class);
+    }
+
+    @Test
+    @DisplayName("US008 — Actualizar matrícula existente retorna Optional con matrícula actualizada")
+    void handle_UpdateEnrollment_Success_ReturnsUpdatedEnrollment() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        // Act
+        Optional<Enrollment> result = enrollmentCommandService.handle(updateCommand);
+
+        // Assert
+        assertThat(result).isPresent();
+        assertThat(result.get().getEnrollmentStatus()).isEqualTo(EnrollmentStatus.ACTIVE);
+        assertThat(result.get().getPaymentStatus()).isEqualTo(PaymentStatus.PAID);
+        verify(enrollmentRepository, times(1)).save(enrollment);
+    }
+
+    @Test
+    @DisplayName("US008 — Actualizar matrícula inexistente lanza EnrollmentNotFoundException")
+    void handle_UpdateEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
+                .isInstanceOf(EnrollmentNotFoundException.class);
+    }
+
+    @Test
+    @DisplayName("US008 — Actualizar matrícula de academia diferente lanza EnrollmentNotFoundException")
+    void handle_UpdateEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+        // Act & Assert
+        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
+                .isInstanceOf(EnrollmentNotFoundException.class);
+    }
+
+}
+
+```
+![Boundede-Enrollment1](./assets/test/enrollment1)
+
 
 ### 6.1.2. Core Integration Tests
 
+##### Enrollment Management API
+
+```
+
+@WebMvcTest(controllers = EnrollmentsController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class EnrollmentsControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private EnrollmentCommandService enrollmentCommandService;
+
+    @MockitoBean
+    private EnrollmentQueryService enrollmentQueryService;
+
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+
+    private static final Long ENROLLMENT_ID = 1L;
+    private static final Long STUDENT_ID    = 10L;
+    private static final Long PERIOD_ID     = 20L;
+    private static final Long SCHEDULE_ID   = 30L;
+    private static final Long ACADEMY_ID    = 5L;
+
+    private Enrollment sampleEnrollment;
+
+    @BeforeEach
+    void setUp() {
+        sampleEnrollment = Enrollment.createEnrollmentActive(
+                new StudentId(STUDENT_ID),
+                new PeriodId(PERIOD_ID),
+                new ScheduleId(SCHEDULE_ID),
+                new AcademyId(ACADEMY_ID),
+                new Money(new BigDecimal("500.00"), Currency.getInstance("PEN")),
+                PaymentStatus.PENDING
+        );
+    }
+
+    @Test
+    @DisplayName("TS011 — POST /enrollments con datos válidos retorna 201 Created")
+    void createEnrollment_ValidRequest_Returns201() throws Exception {
+        // Arrange
+        CreateEnrollmentResource resource = new CreateEnrollmentResource(
+                STUDENT_ID, PERIOD_ID, SCHEDULE_ID, "500.00", "PEN", "PENDING"
+        );
+        when(enrollmentCommandService.handle(any(CreateEnrollmentCommand.class)))
+                .thenReturn(ENROLLMENT_ID);
+        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+                .thenReturn(Optional.of(sampleEnrollment));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/enrollments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"))
+                .andExpect(jsonPath("$.paymentStatus").value("PENDING"));
+
+    }
+
+
+
+    @Test
+    @DisplayName("TS015 — GET /enrollments/{id} con ID existente retorna 200")
+    void getEnrollmentById_ExistingId_Returns200() throws Exception {
+        // Arrange
+        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+                .thenReturn(Optional.of(sampleEnrollment));
+
+        // Act & Assert
+        mockMvc.perform(get("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"));
+    }
+
+    @Test
+    @DisplayName("TS015 — GET /enrollments/{id} con ID inexistente retorna 404")
+    void getEnrollmentById_NonExistingId_Returns404() throws Exception {
+        // Arrange
+        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(get("/api/v1/enrollments/{id}", 9999L))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("TS012 — PUT /enrollments/{id} con datos válidos retorna 200")
+    void updateEnrollment_ValidRequest_Returns200() throws Exception {
+        // Arrange
+        UpdateEnrollmentResource resource = new UpdateEnrollmentResource(
+                "600.00", "PEN", "ACTIVE", "PAID"
+        );
+        Enrollment updated = sampleEnrollment.updateInformation(
+                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
+                EnrollmentStatus.ACTIVE,
+                PaymentStatus.PAID
+        );
+        when(enrollmentCommandService.handle(any(UpdateEnrollmentCommand.class)))
+                .thenReturn(Optional.of(updated));
+
+        // Act & Assert
+        mockMvc.perform(put("/api/v1/enrollments/{id}", ENROLLMENT_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.paymentStatus").value("PAID"));
+    }
+
+
+    @Test
+    @DisplayName("TS013 — DELETE /enrollments/{id} exitoso retorna 200 con mensaje")
+    void deleteEnrollment_ExistingId_Returns200WithMessage() throws Exception {
+        // Arrange
+        doNothing().when(enrollmentCommandService).handle(any(DeleteEnrollmentCommand.class));
+
+        // Act & Assert
+        mockMvc.perform(delete("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("successfully deleted")));
+    }
+}
+```
+![Boundede-Enrollment1](./assets/test/enrollment2)
+
 ### 6.1.3. Core Behavior-Driven Development
+
+##### Registro de matricula
+
+```
+Feature: Registrar matrícula de un estudiante
+  Para que se almacenen sus datos y se acceda a funcionalidades adicionales
+  Como administrativo
+  Quiero registrar alumnos en la aplicación web
+
+  Scenario Outline: Registro de matrícula
+    Given existe un Student con id <studentId>
+    And existe un AcademicPeriod con id <academicPeriodId>
+    And existe un WeeklySchedule con id <weeklyScheduleId>
+    And existe un Academy con id <academyId>
+    When intento registrar la matrícula con amount <amount> y currency <currency>
+    Then debe crearse una Enrollment con
+      | studentId        | <studentId>        |
+      | academicPeriodId | <academicPeriodId> |
+      | weeklyScheduleId | <weeklyScheduleId> |
+      | academyId        | <academyId>        |
+      | amount           | <amount>           |
+      | currency         | <currency>         |
+      | status           | <status>           |
+
+    And el mensaje final es "<message>"
+
+    Examples:
+      | studentId | academicPeriodId | academyId | weeklyScheduleId | amount  | currency | status | message     |
+      | 5         | 7                | 2         | 1                | 1500.00 | PEN      | ACTIVE | Test Passed |
+      | 6         | 8                | 2         | 2                | -500.00 | PEN      | ACTIVE | Error       |
+      | 7         | 9                | 3         | 1                | 1200.00 | PEN      | ACTIVE | Test Passed |
+
+
+```
+
+![Boundede-Enrollment1](./assets/test/enrollment3)
 
 ### 6.1.4. Core System Tests
 
