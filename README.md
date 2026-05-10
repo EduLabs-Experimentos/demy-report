@@ -6442,9 +6442,683 @@ class EnrollmentCommandServiceImplTest {
 
 ### 6.1.2. Core Integration Tests
 
+##### IAM Bounded - Identity and Access Management
 
+**Prueba 1: Inicio de sesión con credenciales válidas retorna 200**
 
+*User Story relacionada*: US034 - Inicio de Sesión
 
+```
+@WebMvcTest(controllers = AuthenticationController.class,
+        excludeAutoConfiguration = {
+                HibernateJpaAutoConfiguration.class,
+                JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class AuthenticationControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private UserCommandService userCommandService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    private User mockUser;
+    private static final Long USER_ID = 1L;
+    private static final String USER_EMAIL = "user@example.com";
+    private static final String TOKEN = "jwt-token-abc123";
+
+    @BeforeEach
+    void setUp() {
+        mockUser = mock(User.class);
+        when(mockUser.getId()).thenReturn(USER_ID);
+        when(mockUser.getEmailAddress()).thenReturn(new EmailAddress(USER_EMAIL));
+        when(mockUser.getRoles()).thenReturn(Set.of(Role.getDefaultRole()));
+        when(mockUser.getTenantId()).thenReturn(new TenantId(1L));
+    }
+
+    @Test
+    @DisplayName("Should return 200 OK with token when credentials are valid")
+    void signInWithValidCredentialsReturns200() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "correctPassword"}""";
+        when(userCommandService.handle(any(SignInCommand.class)))
+                .thenReturn(Optional.of(ImmutablePair.of(mockUser, TOKEN)));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-in")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.token").value(TOKEN));
+    }
+```
+
+*Resumen de prueba*: Verifica el flujo de inicio de sesión (sign-in) cuando el usuario proporciona credenciales válidas. El test arrange crea un mock de User con datos válidos y un token JWT, configura el servicio para retornar el par usuario-token, luego act envía un POST al endpoint /api/v1/authentication/sign-in con email y contraseña correctos, y assert verifica que el código de estado sea 200, que el id no sea null, el email coincida y el token sea el esperado. Esta prueba valida el caso de éxito de autenticación.
+
+![Bounded-IAM-Int1](./assets/test/iam_integration1.png)
+
+---
+
+**Prueba 2: Inicio de sesión con credenciales inválidas retorna 404**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+    @Test
+    @DisplayName("Should return 404 Not Found when credentials are invalid")
+    void signInWithInvalidCredentialsReturns404() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "wrongPassword"}""";
+        when(userCommandService.handle(any(SignInCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-in")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isNotFound());
+    }
+```
+
+*Resumen de prueba*: Valida que el sistema retorne 404 cuando el usuario proporciona credenciales incorrectas durante el inicio de sesión. El test arrange configura el servicio para retornar Optional.empty() indicando que las credenciales son inválidas, luego act envía un POST con password incorrecto, y assert verifica que el código de estado sea 404 Not Found. Esta prueba asegura que usuarios no autenticados no puedan acceder al sistema.
+
+![Bounded-IAM-Int2](./assets/test/iam_integration2.png)
+
+---
+
+**Prueba 3: Registro de usuario exitoso retorna 201 Created**
+
+*User Story relacionada*: US032 - Registro de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 201 Created with user data when sign-up is successful")
+    void signUpSuccessfulReturns201() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "securePass123", "roles": ["ROLE_USER"]}""";
+        when(userCommandService.handle(any(SignUpCommand.class)))
+                .thenReturn(Optional.of(mockUser));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-up")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.roles[0]").value("ROLE_USER"))
+                .andExpect(jsonPath("$.tenantId").value(1));
+    }
+```
+
+*Resumen de prueba*: Verifica el flujo de registro (sign-up) cuando el usuario se registra exitosamente. El test arrange configura el servicio para retornar el mock del usuario creado, luego act envía un POST al endpoint /api/v1/authentication/sign-up con datos válidos, y assert verifica código 201, que el id no sea null, el email coincida, el rol sea ROLE_USER y el tenantId sea 1. Esta prueba valida la creación exitosa de cuentas.
+
+![Bounded-IAM-Int3](./assets/test/iam_integration3.png)
+
+---
+
+**Prueba 4: Registro con email duplicado retorna 400 Bad Request**
+
+*User Story relacionada*: US032 - Registro de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 400 Bad Request when email is already registered")
+    void signUpWithDuplicateEmailReturns400() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "securePass123", "roles": ["ROLE_USER"]}""";
+        when(userCommandService.handle(any(SignUpCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-up")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isBadRequest());
+    }
+```
+
+*Resumen de prueba*: Comprueba que el sistema retorne 400 cuando se intenta registrar con un email que ya existe en la base de datos. El test arrange configura el servicio para retornar Optional.empty() indicando email duplicado, luego act envía un POST con el mismo email, y assert verifica código 400 Bad Request. Esta prueba garantiza la integridad de datos evitando registros duplicados.
+
+![Bounded-IAM-Int4](./assets/test/iam_integration4.png)
+
+---
+
+**Prueba 5: Verificación con código válido retorna 200 con token**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 200 OK with token when verification code is valid")
+    void verifyWithValidCodeReturns200() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"email": "user@example.com", "code": "123456"}""";
+        when(userCommandService.handle(any(VerifyUserCommand.class)))
+                .thenReturn(Optional.of(ImmutablePair.of(mockUser, TOKEN)));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/verify")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.token").value(TOKEN));
+    }
+```
+
+*Resumen de prueba*: Valida el flujo de verificación de cuenta cuando el usuario proporciona un código de verificación válido. El test arrange configura el servicio para retornar el par usuario-token con el código correcto, luego act envía un POST al endpoint /api/v1/authentication/verify con el código "123456", y assert verifica código 200, id no null, email correcto y token devuelto. Esta prueba confirma la activación correcta de cuentas.
+
+![Bounded-IAM-Int5](./assets/test/iam_integration5.png)
+
+---
+
+**Prueba 6: Verificación con código inválido o expirado retorna 400**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 400 Bad Request when verification code is invalid or expired")
+    void verifyWithInvalidCodeReturns400() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"email": "user@example.com", "code": "000000"}""";
+        when(userCommandService.handle(any(VerifyUserCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/verify")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isBadRequest());
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace la verificación cuando el código proporcionado es inválido o ha expirado. El test arrange configura el servicio para retornar Optional.empty() indicando código inválido, luego act envía un POST con el código "000000", y assert verifica código 400 Bad Request. Esta prueba protege contra ataques de fuerza bruta al sistema de verificación.
+
+![Bounded-IAM-Int6](./assets/test/iam_integration6.png)
+
+---
+
+##### Institution Bounded - Gestión de la Institución
+
+**Prueba 1: Registro de administrador con datos válidos retorna 201**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+@WebMvcTest(controllers = AdministratorsController.class,
+        excludeAutoConfiguration = {
+                HibernateJpaAutoConfiguration.class,
+                JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class InstitutionControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private AdministratorCommandService administratorCommandService;
+
+    @MockitoBean
+    private AdministratorQueryService administratorQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private static final Long ADMIN_ID = 1L;
+    private static final Long ACADEMY_ID = 5L;
+    private static final Long USER_ID = 100L;
+
+    private Administrator mockAdministrator;
+
+    @BeforeEach
+    void setUp() {
+        mockAdministrator = mock(Administrator.class);
+        when(mockAdministrator.getId()).thenReturn(ADMIN_ID);
+        when(mockAdministrator.getPersonName()).thenReturn(new PersonName("Carlos", "Admin"));
+        when(mockAdministrator.getPhoneNumber()).thenReturn(new PhoneNumber("+51", "987654321"));
+        when(mockAdministrator.getDniNumber()).thenReturn(new DniNumber("72326006"));
+        when(mockAdministrator.getAcademyId()).thenReturn(new AcademyId(ACADEMY_ID));
+        when(mockAdministrator.getUserId()).thenReturn(new UserId(USER_ID));
+    }
+
+    @Test
+    @DisplayName("TI001 — POST /api/v1/administrators con datos válidos retorna 201 Created")
+    void registerAdministrator_ValidData_Returns201() throws Exception {
+        // Arrange
+        RegisterAdministratorResource resource = new RegisterAdministratorResource(
+                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+        );
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.of(mockAdministrator));
+
+        // Act
+        mockMvc.perform(post("/api/v1/administrators")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    }
+```
+
+*Resumen de prueba*: Valida el flujo de registro de un administrador cuando se envían datos válidos. El test arrange configura el mock del administrador con datos específicos, el servicio retorna Optional con el admin mockeado, luego act envía POST a /api/v1/administrators con los datos del recurso, y assert verifica código 201 y que el nombre del administrador sea "Carlos". Esta prueba confirma el registro exitoso de administradores.
+
+![Bounded-Institution-Int1](./assets/test/institution_integration1.png)
+
+---
+
+**Prueba 2: Registro de administrador cuando servicio retorna vacío retorna 400**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+    @Test
+    @DisplayName("TI002 — POST /api/v1/administrators cuando servicio retorna vacío retorna 400")
+    void registerAdministrator_ServiceReturnsEmpty_Returns400() throws Exception {
+        // Arrange
+        RegisterAdministratorResource resource = new RegisterAdministratorResource(
+                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+        );
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act
+        mockMvc.perform(post("/api/v1/administrators")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isBadRequest());
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema retorne 400 cuando el servicio de comando de administrador retorna Optional.empty(), indicando un error en el registro. El test arrange configura el servicio para retornar vacío, luego act envía POST con datos válidos, y assert verifica código 400 Bad Request. Esta prueba asegura el manejo correcto de errores de validación.
+
+![Bounded-Institution-Int2](./assets/test/institution_integration2.png)
+
+---
+
+**Prueba 3: Obtener administrador actual cuando existe retorna 200**
+
+*User Story relacionada*: US005 - Actualización de Profesor
+
+```
+    @Test
+    @DisplayName("TI003 — GET /api/v1/administrators/me cuando existe retorna 200 con datos del admin")
+    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
+        // Arrange
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(mockAdministrator));
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(new EmailAddress("carlos@academy.com")));
+
+        // Act
+        mockMvc.perform(get("/api/v1/administrators/me"))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    }
+```
+
+*Resumen de prueba*: Valida que el endpoint GET /api/v1/administrators/me retorne los datos del administrador cuando este existe. El test arrange configura el query service para retornar el administrador mockeado y su email, luego act envía GET a /api/v1/administrators/me, y assert verifica código 200 y que el nombre sea "Carlos". Esta prueba permite a los usuarios ver su propio perfil de administrador.
+
+![Bounded-Institution-Int3](./assets/test/institution_integration3.png)
+
+---
+
+**Prueba 4: Obtener administrador actual cuando no existe retorna 404**
+
+*User Story relacionada*: US005 - Actualización de Profesor
+
+```
+    @Test
+    @DisplayName("TI004 — GET /api/v1/administrators/me cuando no existe retorna 404")
+    void getCurrentAdministrator_WhenNotExists_Returns404() throws Exception {
+        // Arrange
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.empty());
+
+        // Act
+        mockMvc.perform(get("/api/v1/administrators/me"))
+
+        // Assert
+                .andExpect(status().isNotFound());
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema retorne 404 cuando se consulta el administrador actual y este no existe. El test arrange configura el query service para retornar Optional.empty(), luego act envía GET a /api/v1/administrators/me, y assert verifica código 404 Not Found. Esta prueba maneja correctamente el caso de usuarios sin perfil de administrador.
+
+![Bounded-Institution-Int4](./assets/test/institution_integration4.png)
+
+---
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Prueba 1: Creación de WeeklySchedule con nombre válido retorna 201**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+@WebMvcTest(controllers = WeeklySchedulesController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class WeeklySchedulesControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private WeeklyScheduleCommandService weeklyScheduleCommandService;
+
+    @MockitoBean
+    private WeeklyScheduleQueryService weeklyScheduleQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    @MockitoBean
+    private WeeklyScheduleResourceFromEntityAssembler weeklyScheduleResourceFromEntityAssembler;
+
+    @MockitoBean
+    private ScheduleResourceFromEntityAssembler scheduleResourceFromEntityAssembler;
+
+    @MockitoBean
+    private TeacherQueryService teacherQueryService;
+
+    @MockitoBean
+    private ExternalEnrollmentService externalEnrollmentService;
+
+    private static final Long WEEKLY_SCHEDULE_ID = 1L;
+    private static final Long CLASS_SESSION_ID = 50L;
+    private static final AcademyId ACADEMY_ID = new AcademyId(1L);
+
+    private WeeklySchedule sampleWeeklySchedule;
+
+    @BeforeEach
+    void setUp() {
+        sampleWeeklySchedule = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        sampleWeeklySchedule.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        when(weeklyScheduleResourceFromEntityAssembler.toResourceFromEntity(any(WeeklySchedule.class)))
+                .thenAnswer(inv -> {
+                    WeeklySchedule ws = inv.getArgument(0);
+                    return new WeeklyScheduleResource(ws.getId(), ws.getName(), List.of());
+                });
+    }
+
+    @Test
+    @DisplayName("TS001 — POST /api/v1/schedules con nombre válido retorna 201 Created")
+    void createSchedule_ValidName_Returns201() throws Exception {
+        // Arrange
+        CreateWeeklyScheduleResource resource = new CreateWeeklyScheduleResource("Semana 1");
+
+        when(weeklyScheduleCommandService.handle(any(CreateWeeklyScheduleCommand.class)))
+                .thenReturn(WEEKLY_SCHEDULE_ID);
+        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
+                .thenReturn(Optional.of(sampleWeeklySchedule));
+
+        // Act
+        mockMvc.perform(post("/api/v1/schedules")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value("Semana 1"));
+    }
+```
+
+*Resumen de prueba*: Verifica que el endpoint POST /api/v1/schedules cree un WeeklySchedule exitosamente cuando se envía un nombre válido. El test arrange configura los mocks del command y query services para retornar el ID del schedule y el schedule de ejemplo, luego act envía un POST con un JSON conteniendo el nombre "Semana 1", y assert verifica código 201 Created y que el nombre en la respuesta sea "Semana 1". Esta prueba valida el flujo de creación de horarios.
+
+![Bounded-Scheduling-Int1](./assets/test/scheduling_integration1.png)
+
+---
+
+**Prueba 2: Obtener Schedule por ID existente retorna 200**
+
+*User Story relacionada*: US014 - Actualización de Periodo Académico
+
+```
+    @Test
+    @DisplayName("TS002 — GET /api/v1/schedules/{id} con ID existente retorna 200")
+    void getScheduleById_ExistingId_Returns200() throws Exception {
+        // Arrange
+        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
+                .thenReturn(Optional.of(sampleWeeklySchedule));
+
+        // Act
+        mockMvc.perform(get("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Semana 1"));
+    }
+```
+
+*Resumen de prueba*: Valida que el endpoint GET /api/v1/schedules/{id} retorne el schedule correcto cuando el ID existe. El test arrange configura el mock del query service para retornar el schedule de ejemplo con ID 1, luego act envía un GET a /api/v1/schedules/1, y assert verifica código 200 y que el nombre sea "Semana 1". Esta prueba asegura la correcta recuperación de horarios por ID.
+
+![Bounded-Scheduling-Int2](./assets/test/scheduling_integration2.png)
+
+---
+
+**Prueba 3: Obtener Schedule por ID inexistente retorna 404**
+
+*User Story relacionada*: US014 - Actualización de Periodo Académico
+
+```
+    @Test
+    @DisplayName("TS002 — GET /api/v1/schedules/{id} con ID inexistente retorna 404")
+    void getScheduleById_NonExistingId_Returns404() throws Exception {
+        // Arrange
+        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
+                .thenReturn(Optional.empty());
+
+        // Act
+        mockMvc.perform(get("/api/v1/schedules/{scheduleId}", 9999L))
+
+        // Assert
+                .andExpect(status().isNotFound());
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema responda con 404 cuando se solicita un schedule con un ID que no existe. El test arrange configura el mock para retornar Optional.empty(), luego act envía un GET a /api/v1/schedules/9999, y assert confirma código 404 Not Found. Esta prueba garantiza el manejo correcto de casos donde el recurso solicitado no existe.
+
+![Bounded-Scheduling-Int3](./assets/test/scheduling_integration3.png)
+
+---
+
+**Prueba 4: Obtener todos los schedules retorna lista**
+
+*User Story relacionada*: US015 - Eliminación de Periodo Académico
+
+```
+    @Test
+    @DisplayName("TS003 — GET /api/v1/schedules retorna lista de horarios")
+    void getAllSchedules_ReturnsScheduleList() throws Exception {
+        // Arrange
+        when(weeklyScheduleQueryService.handle(any(GetAllWeeklySchedulesQuery.class)))
+                .thenReturn(List.of(sampleWeeklySchedule));
+
+        // Act
+        mockMvc.perform(get("/api/v1/schedules"))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$[0].name").value("Semana 1"));
+    }
+```
+
+*Resumen de prueba*: Comprueba que el endpoint GET /api/v1/schedules retorne una lista de todos los schedules disponibles. El test arrange configura el mock del query service para retornar una lista conteniendo el schedule de ejemplo, luego act envía un GET a /api/v1/schedules sin ID, y assert verifica código 200, que la respuesta sea un array y que el primer elemento tenga el nombre "Semana 1". Esta prueba valida la funcionalidad de listado de horarios.
+
+![Bounded-Scheduling-Int4](./assets/test/scheduling_integration4.png)
+
+---
+
+**Prueba 5: Actualización de schedule con nombre válido retorna 200**
+
+*User Story relacionada*: US017 - Actualización de Salones de Clase
+
+```
+    @Test
+    @DisplayName("TS004 — PUT /api/v1/schedules/{id} con nombre válido retorna 200")
+    void updateSchedule_ValidName_Returns200() throws Exception {
+        // Arrange
+        UpdateWeeklyScheduleNameResource resource = new UpdateWeeklyScheduleNameResource("Semana Renombrada");
+        WeeklySchedule updated = new WeeklySchedule("Semana Renombrada", ACADEMY_ID);
+
+        when(weeklyScheduleCommandService.handle(any(UpdateWeeklyScheduleNameCommand.class)))
+                .thenReturn(Optional.of(updated));
+
+        // Act
+        mockMvc.perform(put("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Semana Renombrada"));
+    }
+```
+
+*Resumen de prueba*: Valida que el endpoint PUT /api/v1/schedules/{id} actualice correctamente un schedule cuando se envía un nuevo nombre válido. El test arrange crea un schedule actualizado "Semana Renombrada" y configura el mock para retornarlo, luego act envía un PUT con el nuevo nombre, y assert verifica código 200 y que el nombre en la respuesta sea "Semana Renombrada". Esta prueba verifica la funcionalidad de actualización de horarios.
+
+![Bounded-Scheduling-Int5](./assets/test/scheduling_integration5.png)
+
+---
+
+**Prueba 6: Eliminación de schedule exitoso retorna 200 con mensaje**
+
+*User Story relacionada*: US018 - Eliminación de Salones de Clase
+
+```
+    @Test
+    @DisplayName("TS005 — DELETE /api/v1/schedules/{id} exitoso retorna 200 con mensaje")
+    void deleteSchedule_ExistingId_Returns200WithMessage() throws Exception {
+        // Arrange
+        doNothing().when(weeklyScheduleCommandService).handle(any(DeleteWeeklyScheduleCommand.class));
+
+        // Act
+        mockMvc.perform(delete("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.message").value("Schedule deleted successfully"));
+    }
+```
+
+*Resumen de prueba*: Verifica que la eliminación de un schedule retorne código 200 y un mensaje de confirmación. El test arrange configura el mock del command service para no hacer nada (doNothing), luego act envía un DELETE a /api/v1/schedules/1, y assert verifica código 200 y que el mensaje en el response sea "Schedule deleted successfully". Esta prueba asegura la correcta eliminación de horarios.
+
+![Bounded-Scheduling-Int6](./assets/test/scheduling_integration6.png)
+
+---
+
+**Prueba 7: Adición de class-session a WeeklySchedule retorna 200**
+
+*User Story relacionada*: US020 - Actualización de Horarios
+
+```
+    @Test
+    @DisplayName("TS006 — POST /api/v1/schedules/{id}/class-sessions agrega sesión exitosamente")
+    void addClassSession_ValidData_Returns200() throws Exception {
+        // Arrange
+        AddScheduleToWeeklyResource resource = new AddScheduleToWeeklyResource(
+                "08:00", "10:00", "MONDAY", 100L, 200L, "Carlos", "Perez"
+        );
+        WeeklySchedule withSession = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        withSession.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        when(weeklyScheduleCommandService.handle(any(AddScheduleToWeeklyCommand.class)))
+                .thenReturn(Optional.of(withSession));
+
+        // Act
+        mockMvc.perform(post("/api/v1/schedules/{scheduleId}/class-sessions", WEEKLY_SCHEDULE_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isOk());
+    }
+```
+
+*Resumen de prueba*: Valida que se puedan agregar class-sessions a un WeeklySchedule a través del endpoint POST. El test arrange crea un WeeklySchedule con una sesión y configura el mock para retornarlo, luego act envía un POST con los datos de la sesión (hora, día, IDs), y assert verifica código 200. Esta prueba verifica la adición de sesiones a horarios semanales.
+
+![Bounded-Scheduling-Int7](./assets/test/scheduling_integration7.png)
+
+---
+
+**Prueba 8: Eliminación de class-session retorna 200**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+    @Test
+    @DisplayName("TS008 — DELETE /api/v1/schedules/{id}/class-sessions/{classSessionId} elimina sesión exitosamente")
+    void removeClassSession_ValidIds_Returns200() throws Exception {
+        // Arrange
+        WeeklySchedule emptySchedule = new WeeklySchedule("Semana 1", ACADEMY_ID);
+
+        when(weeklyScheduleCommandService.handle(any(RemoveScheduleFromWeeklyCommand.class)))
+                .thenReturn(Optional.of(emptySchedule));
+
+        // Act
+        mockMvc.perform(delete("/api/v1/schedules/{scheduleId}/class-sessions/{classSessionId}",
+                        WEEKLY_SCHEDULE_ID, CLASS_SESSION_ID))
+
+        // Assert
+                .andExpect(status().isOk());
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de una class-session de un WeeklySchedule funcione correctamente. El test arrange crea un WeeklySchedule vacío y configura el mock para retornarlo, luego act envía un DELETE a /api/v1/schedules/1/class-sessions/50, y assert verifica código 200. Esta prueba garantiza la remoción de sesiones específicas de horarios.
+
+![Bounded-Scheduling-Int8](./assets/test/scheduling_integration8.png)
+
+---
 
 ##### Enrollment Management API
 
