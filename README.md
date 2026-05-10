@@ -6088,86 +6088,163 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ![Bounded-IAM4](./assets/test/iam4.png)
 
+---
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Asociación y desasociación de academia en Administrator**
+**Prueba 1: Creación de Academy mediante Constructor y Command**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
 @Test
-    @DisplayName("Should associate academy once and throw on reassignment")
-    void shouldAssociateAndDisassociateAcademy() {
-        // Arrange
-        Administrator admin = new Administrator(
-                new PersonName("Carlos", "Garcia"),
-                new PhoneNumber("+51", "955444333"),
-                new DniNumber("11223344"),
-                new UserId(300L)
-        );
-        AcademyId academy1 = new AcademyId(10L);
+@DisplayName("Should correctly create an academy using the main constructor and command")
+void shouldCreateAcademySuccessfully() {
+    // Arrange
+    AcademyName name = new AcademyName("Instituto Nistra");
+    AcademyDescription description = new AcademyDescription("Academia dedicada a la formación tecnológica.");
+    StreetAddress address = new StreetAddress("Av. Arequipa 1234", "Miraflores", "Lima", "Lima");
+    EmailAddress email = new EmailAddress("info@nistra.com");
+    PhoneNumber phone = new PhoneNumber("+51", "987654321");
+    Ruc ruc = new Ruc("10456789123");
 
-        // Act
-        admin.associateAcademy(academy1);
+    // Act
+    Academy academy = new Academy(name, description, address, email, phone, ruc);
 
-        // Assert
-        assertEquals(10L, admin.getAcademyId().academyId());
+    // Assert
+    assertNotNull(academy);
+    assertEquals("Instituto Nistra", academy.getAcademyName().name());
+    assertEquals("10456789123", academy.getRuc().ruc());
+    assertNull(academy.getAdministratorId());
+}
 
-        // Arrange
-        AcademyId academy2 = new AcademyId(20L);
-
-        // Act & Assert
-        assertThrows(IllegalStateException.class, () -> admin.associateAcademy(academy2));
-
-        // Act
-        admin.disassociateAcademy(academy1);
-
-        // Assert
-        assertNull(admin.getAcademyId().academyId());
-    }
 ```
+*Resumen de prueba*: Verifica la correcta instanciación del agregado Academy. El test arrange define los objetos de valor necesarios (nombre, dirección, RUC, etc.), el act ejecuta el constructor principal y el assert valida que la entidad no sea nula, que los datos coincidan con los ingresados y que inicialmente no posea un administrador asignado. Esto asegura que el registro base de la institución cumpla con la integridad de datos requerida en la US001.
 
-*Resumen de prueba*: Verifica que un administrador pueda asociarse a una academia una sola vez y que no pueda reasociarse a otra. El test arrange crea un administrador, luego act intenta asociarlo a una academia con ID 10, y assert confirma que la asociación fue exitosa. Posteriormente, arrange una segunda academia con ID 20, act intenta asociar a esta nueva academia, y assert verifica que se lanza IllegalStateException. Finalmente, act llama a disassociateAcademy para desasociar, y assert confirma que el academyId queda en null. Esta prueba garantiza la integridad de la relación uno-a-uno entre administrador y academia.
+**Prueba 2: Asignación única de Administrador en Academy**
 
-![Bounded-Institution1](./assets/test/institution1.png)
+*User Story relacionada*: US001 - Registro de Academia
 
----
+```
+@Test
+@DisplayName("Should allow assigning an administrator only once and throw on reassignment")
+void shouldAssignAdministratorOnce() {
+    // Arrange
+    Academy academy = new Academy(new AcademyName("Test"), new AcademyDescription("Desc"), 
+                        new StreetAddress("S/N", "D", "P", "D"), new EmailAddress("t@a.com"), 
+                        new PhoneNumber("+51", "911"), new Ruc("10765432109"));
+    AdministratorId admin1 = new AdministratorId(1L);
+    AdministratorId admin2 = new AdministratorId(2L);
 
-**Prueba 2: Creación de Teacher desde RegisterTeacherCommand**
+    // Act
+    academy.assignAdministrator(admin1);
 
-*User Story relacionada*: US004 - Registro de Profesor
+    // Assert
+    assertTrue(academy.getAdministratorId().isAssigned());
+    assertEquals(1L, academy.getAdministratorId().administratorId());
+
+    // Act & Assert (Reassignment)
+    assertThrows(IllegalStateException.class, () -> academy.assignAdministrator(admin2));
+}
+```
+*Resumen de prueba*: Garantiza que una academia solo pueda tener un administrador vinculado. En el arrange se crea la academia y dos IDs de administrador; el primer act realiza la asignación exitosa validada por el assert. El segundo bloque de act & assert comprueba que intentar asignar un segundo administrador dispara una IllegalStateException, protegiendo la regla de negocio de la US001.
+
+**Prueba 3: Registro de Administrador y generación de Eventos de Dominio**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should register administrator and add a domain event")
+void shouldRegisterAdministratorAndAddEvent() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    Long expectedAcademyId = 5L;
+    Long expectedUserId = 10L;
+
+    // Act
+    admin.registerAdministrator(expectedAcademyId, expectedUserId);
+
+    // Assert
+    Collection<Object> events = admin.getDomainEvents();
+    assertEquals(1, events.size());
+    AdministratorRegisteredEvent event = (AdministratorRegisteredEvent) events.iterator().next();
+    assertEquals(expectedAcademyId, event.getAcademyId());
+    assertEquals(expectedUserId, event.getUserId());
+}
+
+```
+*Resumen de prueba*: Valida el proceso de registro del administrador y la comunicación mediante eventos. El arrange inicializa el agregado con sus Value Objects (nombre, DNI, etc.), el act ejecuta el método de registro vinculando la academia, y el assert verifica que se haya disparado el evento AdministratorRegisteredEvent. Esto asegura que otros contextos puedan reaccionar al registro del administrador según la US032 y US001.
+
+
+**Prueba 4: Asociación y Desasociación de Academia en Administrator**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should associate and disassociate academy successfully")
+void shouldHandleAcademyAssociation() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    AcademyId academyId = new AcademyId(5L);
+
+    // Act (Associate)
+    admin.associateAcademy(academyId);
+    // Assert
+    assertEquals(5L, admin.getAcademyId().academyId());
+
+    // Act (Disassociate)
+    admin.disassociateAcademy(academyId);
+    // Assert
+    assertTrue(admin.getAcademyId().academyId() == null || admin.getAcademyId().academyId() == 0L);
+}
+
+```
+*Resumen de prueba*: Comprueba la flexibilidad del administrador para vincularse o desvincularse de una institución. El arrange prepara el administrador y el ID de la academia, el primer act/assert verifica la asociación correcta, y el segundo bloque act/assert asegura que tras la desasociación, el campo AcademyId quede limpio o en estado inicial, garantizando la gestión correcta de miembros.
+
+**Prueba 5: Creación de Teacher desde Command**
+
+*User story relacionada:  US004 - Registro de Profesor*
 
 ```
 @Test
 @DisplayName("Should create teacher from command with all fields set")
 void shouldCreateTeacherFromCommand() {
-// Arrange
-RegisterTeacherCommand command = new RegisterTeacherCommand(
-new PersonName("Ana", "Torres"),
-new EmailAddress("ana.torres@academy.com"),
-new PhoneNumber("+51", "977666555")
-);
-UserId userId = new UserId(400L);
-AcademyId academyId = new AcademyId(5L);
+    // Arrange
+    RegisterTeacherCommand command = new RegisterTeacherCommand(
+        new PersonName("Ana", "Torres"),
+        new EmailAddress("ana.torres@academy.com"),
+        new PhoneNumber("+51", "977666555")
+    );
+    UserId userId = new UserId(400L);
+    AcademyId academyId = new AcademyId(5L);
 
-        // Act
-        Teacher teacher = new Teacher(command, userId, academyId);
+    // Act
+    Teacher teacher = new Teacher(command, userId, academyId);
 
-        // Assert
-        assertNotNull(teacher);
-        assertEquals("Ana", teacher.getPersonName().firstName());
-        assertEquals("Torres", teacher.getPersonName().lastName());
-        assertEquals("+51", teacher.getPhoneNumber().countryCode());
-        assertEquals("977666555", teacher.getPhoneNumber().phone());
-        assertEquals(400L, teacher.getUserId().userId());
-        assertEquals(5L, teacher.getAcademyId().academyId());
-    }
+    // Assert
+    assertNotNull(teacher);
+    assertEquals("Ana", teacher.getPersonName().firstName());
+    assertEquals(400L, teacher.getUserId().userId());
+    assertEquals(5L, teacher.getAcademyId().academyId());
+}
 ```
+*Resumen de prueba*: Valida la creación de la entidad docente para la US004. El arrange crea el comando de registro con los datos de "Ana Torres", el act instancia al Teacher usando dicho comando y los IDs correspondientes, y el assert confirma que todos los atributos (nombre, userId, academyId) se mapearon correctamente desde el comando al agregado.
 
-*Resumen de prueba*: Valida que se pueda crear un objeto Teacher correctamente usando el comando RegisterTeacherCommand. El test arrange crea un comando con nombre "Ana Torres", email y teléfono, además de userId y academyId, luego act crea un nuevo Teacher usando ese comando, y assert verifica que todos los campos fueron asignados correctamente: nombre, apellido, código de país, teléfono, userId y academyId. Esta prueba asegura que la construcción de entidades Teacher desde comandos de aplicación funcione correctamente.
+A continuación se presenta capturas de la correcta ejecución de las pruebas del bounded  context de Institution
 
-![Bounded-Institution2](./assets/test/institution2.png)
+**Administrator**
+![Bounded-Institution-Administrator](./assets/test/admin-unit-tests.png)
+
+
+**Academy**
+![Bounded-Institution-Academy](./assets/test/academy-unit-tests.png)
+
+
+**Teacher**
+![Bounded-Institution-Teacher](./assets/test/teacher-unit-test.png)
+
 
 
 ##### Scheduling Bounded - Gestión de Horarios
