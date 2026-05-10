@@ -6134,7 +6134,436 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 6.1.1. Core Entities Unit Tests
 
-##### Enrollment Bounded - Gestion de Matriculas
+##### IAM Bounded - Identity and Access Management
+
+**Prueba 1: Activación de usuario con código de verificación válido**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+@Test
+    @DisplayName("Should activate user when verified with valid code")
+    void shouldActivateUserWhenVerifiedWithValidCode() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode code = new VerificationCode("123456", LocalDateTime.now().plusMinutes(10));
+        User user = new User(email, "passwordHash", code);
+
+        // Act
+        user.verifyUser("123456");
+
+        // Assert
+        assertEquals(VerificationStatus.VERIFIED, user.getVerificationStatus());
+        assertEquals(AccountStatus.ACTIVE, user.getAccountStatus());
+        assertNull(user.getVerificationCode().code(), "Verification code should be cleared after successful verification");
+    }
+```
+
+*Resumen de prueba*: Valida que un usuario pueda activarse exitosamente cuando proporciona un código de verificación válido. El test arrange crea un usuario con email y código de verificación, luego act llama al método verifyUser() con el código válido, y finally assert verifica que el estado de verificación sea VERIFIED, el estado de la cuenta sea ACTIVE y que el código de verificación sea清除 (null) después de la activación exitosa. Esta prueba garantiza que el flujo de activación de cuenta funcione correctamente y que los usuarios puedan validar su identidad.
+
+![Bounded-IAM1](./assets/test/iam1.png)
+
+---
+
+**Prueba 2: Rechazo de verificación con código inválido o expirado**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+@Test
+    @DisplayName("Should reject verification when code is invalid or expired")
+    void shouldRejectVerificationWhenCodeIsInvalidOrExpired() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode mockCode = mock(VerificationCode.class);
+        when(mockCode.matches("badCode")).thenReturn(false);
+        User user = new User(email, "passwordHash", mockCode);
+
+        // Act
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> user.verifyUser("badCode"));
+
+        // Assert
+        verify(mockCode).matches("badCode");
+        assertEquals(VerificationStatus.NOT_VERIFIED, user.getVerificationStatus(),
+                "User must remain NOT_VERIFIED after failed verification");
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace correctamente la verificación cuando el código proporcionado es inválido o ha expirado. El test arrange crea un usuario con un mock de VerificationCode que retorna false para el código "badCode", luego act intenta verificar con ese código inválido, y assert confirma que se lanza IllegalArgumentException y que el usuario permanece en estado NOT_VERIFIED. Esta prueba asegura que usuarios maliciosos no puedan activar cuentas con códigos no válidos.
+
+![Bounded-IAM2](./assets/test/iam2.png)
+
+---
+
+**Prueba 3: Rechazo de código de restablecimiento de contraseña inválido**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+@Test
+    @DisplayName("Should reject password reset code when invalid")
+    void shouldRejectPasswordResetCodeWhenInvalid() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode mockCode = mock(VerificationCode.class);
+        when(mockCode.matches("wrongResetCode")).thenReturn(false);
+        User user = new User(email, "oldPasswordHash", mockCode);
+
+        // Act
+        assertThrows(IllegalArgumentException.class,
+                () -> user.verifyPasswordResetCode("wrongResetCode"));
+
+        // Assert
+        verify(mockCode).matches("wrongResetCode");
+    }
+```
+
+*Resumen de prueba*: Comprueba que el sistema rechace códigos de restablecimiento de contraseña inválidos. El test arrange crea un usuario con un mock de VerificationCode que retorna false para el código "wrongResetCode", luego act intenta verificar el código de restablecimiento, y assert confirma que se lanza IllegalArgumentException y que se llamó al método matches con el código incorrecto. Esta prueba protege contra ataques de fuerza bruta al sistema de recuperación de contraseña.
+
+![Bounded-IAM3](./assets/test/iam3.png)
+
+---
+
+**Prueba 4: Ciclo completo de restablecimiento de contraseña**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+@Test
+    @DisplayName("Should complete full password reset cycle")
+    void shouldCompleteFullPasswordResetCycle() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        User user = new User(email, "oldPasswordHash",
+                new VerificationCode(null, null));
+
+        // Act
+        user.assignNewPasswordVerificationCode("user@example.com", "resetCode", 10);
+        user.verifyPasswordResetCode("resetCode");
+        user.resetPassword("newPasswordHash");
+
+        // Assert
+        assertEquals("newPasswordHash", user.getPassword());
+        assertNull(user.getVerificationCode().code(),
+                "Verification code should be cleared after successful reset");
+    }
+```
+
+*Resumen de prueba*: Valida el flujo completo de restablecimiento de contraseña: asignación de código, verificación y reseteo. El test arrange crea un usuario con código null, luego act realiza tres pasos: asignar nuevo código de verificación, verificar ese código, y finalmente restablecer la contraseña, y assert confirma que la nueva contraseña es "newPasswordHash" y que el código de verificación queda en null después del proceso exitoso. Esta prueba garantiza que el flujo completo de recuperación de contraseña funcione end-to-end.
+
+![Bounded-IAM4](./assets/test/iam4.png)
+
+
+##### Institution Bounded - Gestión de la Institución
+
+**Prueba 1: Asociación y desasociación de academia en Administrator**
+
+*User Story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+    @DisplayName("Should associate academy once and throw on reassignment")
+    void shouldAssociateAndDisassociateAcademy() {
+        // Arrange
+        Administrator admin = new Administrator(
+                new PersonName("Carlos", "Garcia"),
+                new PhoneNumber("+51", "955444333"),
+                new DniNumber("11223344"),
+                new UserId(300L)
+        );
+        AcademyId academy1 = new AcademyId(10L);
+
+        // Act
+        admin.associateAcademy(academy1);
+
+        // Assert
+        assertEquals(10L, admin.getAcademyId().academyId());
+
+        // Arrange
+        AcademyId academy2 = new AcademyId(20L);
+
+        // Act & Assert
+        assertThrows(IllegalStateException.class, () -> admin.associateAcademy(academy2));
+
+        // Act
+        admin.disassociateAcademy(academy1);
+
+        // Assert
+        assertNull(admin.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Verifica que un administrador pueda asociarse a una academia una sola vez y que no pueda reasociarse a otra. El test arrange crea un administrador, luego act intenta asociarlo a una academia con ID 10, y assert confirma que la asociación fue exitosa. Posteriormente, arrange una segunda academia con ID 20, act intenta asociar a esta nueva academia, y assert verifica que se lanza IllegalStateException. Finalmente, act llama a disassociateAcademy para desasociar, y assert confirma que el academyId queda en null. Esta prueba garantiza la integridad de la relación uno-a-uno entre administrador y academia.
+
+![Bounded-Institution1](./assets/test/institution1.png)
+
+---
+
+**Prueba 2: Creación de Teacher desde RegisterTeacherCommand**
+
+*User Story relacionada*: US004 - Registro de Profesor
+
+```
+@Test
+@DisplayName("Should create teacher from command with all fields set")
+void shouldCreateTeacherFromCommand() {
+// Arrange
+RegisterTeacherCommand command = new RegisterTeacherCommand(
+new PersonName("Ana", "Torres"),
+new EmailAddress("ana.torres@academy.com"),
+new PhoneNumber("+51", "977666555")
+);
+UserId userId = new UserId(400L);
+AcademyId academyId = new AcademyId(5L);
+
+        // Act
+        Teacher teacher = new Teacher(command, userId, academyId);
+
+        // Assert
+        assertNotNull(teacher);
+        assertEquals("Ana", teacher.getPersonName().firstName());
+        assertEquals("Torres", teacher.getPersonName().lastName());
+        assertEquals("+51", teacher.getPhoneNumber().countryCode());
+        assertEquals("977666555", teacher.getPhoneNumber().phone());
+        assertEquals(400L, teacher.getUserId().userId());
+        assertEquals(5L, teacher.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Valida que se pueda crear un objeto Teacher correctamente usando el comando RegisterTeacherCommand. El test arrange crea un comando con nombre "Ana Torres", email y teléfono, además de userId y academyId, luego act crea un nuevo Teacher usando ese comando, y assert verifica que todos los campos fueron asignados correctamente: nombre, apellido, código de país, teléfono, userId y academyId. Esta prueba asegura que la construcción de entidades Teacher desde comandos de aplicación funcione correctamente.
+
+![Bounded-Institution2](./assets/test/institution2.png)
+
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Prueba 1: Creación de Course desde CreateCourseCommand**
+
+*User Story relacionada*: US016 - Creación de Salones de Clase
+
+```
+ @Test
+    @DisplayName("Should construct Course using CreateCourseCommand and AcademyId with all fields correctly set")
+    void shouldCreateCourseFromCommand() {
+        // Arrange
+        CreateCourseCommand command = new CreateCourseCommand("Mathematics", "MATH-101", "Basic algebra and geometry");
+        AcademyId academyId = new AcademyId(1L);
+
+        // Act
+        Course course = new Course(command, academyId);
+
+        // Assert
+        assertNotNull(course);
+        assertEquals("Mathematics", course.getName());
+        assertEquals("MATH-101", course.getCode());
+        assertEquals("Basic algebra and geometry", course.getDescription());
+        assertEquals(1L, course.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Verifica que se pueda crear un objeto Course correctamente usando CreateCourseCommand y AcademyId. El test arrange crea un comando con nombre "Mathematics", código "MATH-101" y descripción, además de un AcademyId, luego act crea un nuevo Course usando esos datos, y assert verifica que todos los campos fueron asignados correctamente: nombre, código, descripción y academyId. Esta prueba asegura que la construcción de entidades Course desde comandos de aplicación funcione correctamente.
+
+![Bounded-Scheduling1](./assets/test/scheduling1.png)
+
+---
+
+**Prueba 2: Actualización de Course mediante UpdateCourseCommand**
+
+*User Story relacionada*: US017 - Actualización de Salones de Clase
+
+```
+@Test
+    @DisplayName("Should update all fields via UpdateCourseCommand and return the same instance")
+    void shouldUpdateCourseViaCommand() {
+        // Arrange
+        Course course = new Course("Mathematics", "MATH-101", "Basic algebra", new AcademyId(1L));
+        UpdateCourseCommand command = new UpdateCourseCommand(10L, "Advanced Mathematics", "MATH-201", "Linear algebra and calculus");
+
+        // Act
+        Course updated = course.updateCourse(command);
+
+        // Assert
+        assertSame(course, updated, "updateCourse should return the same instance");
+        assertEquals("Advanced Mathematics", course.getName());
+        assertEquals("MATH-201", course.getCode());
+        assertEquals("Linear algebra and calculus", course.getDescription());
+    }
+```
+
+*Resumen de prueba*: Valida que el método updateCourse() actualice todos los campos del Course y retorne la misma instancia. El test arrange crea un Course inicial con datos de "Mathematics", luego arrange un UpdateCourseCommand con nuevos datos ("Advanced Mathematics", "MATH-201", etc.), luego act llama a updateCourse, y assert verifica dos cosas: que retorna la misma instancia (comportamiento in-place) y que los campos fueron actualizados correctamente. Esta prueba garantiza que la actualización de cursos sea correcta y eficiente.
+
+![Bounded-Scheduling2](./assets/test/scheduling2.png)
+
+---
+
+**Prueba 3: Creación de WeeklySchedule desde CreateWeeklyScheduleCommand**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+@Test
+    @DisplayName("Should construct WeeklySchedule via CreateWeeklyScheduleCommand")
+    void shouldCreateWeeklyScheduleFromCommand() {
+        // Arrange
+        CreateWeeklyScheduleCommand command = new CreateWeeklyScheduleCommand("Semana Intensiva");
+
+        // Act
+        WeeklySchedule schedule = new WeeklySchedule(command, ACADEMY_ID);
+
+        // Assert
+        assertEquals("Semana Intensiva", schedule.getName());
+        assertEquals(1L, schedule.getAcademyId().academyId());
+        assertNotNull(schedule.getSchedules());
+        assertTrue(schedule.getSchedules().isEmpty());
+    }
+```
+
+*Resumen de prueba*: Comprueba que se pueda crear un WeeklySchedule desde CreateWeeklyScheduleCommand. El test arrange crea un comando con nombre "Semana Intensiva" y un ACADEMY_ID, luego act crea un WeeklySchedule usando esos datos, y assert verifica que el nombre sea correcto, el academyId sea 1L, la lista de schedules no sea null y esté vacía. Esta prueba asegura que la construcción de horarios semanales desde comandos funcione correctamente.
+
+![Bounded-Scheduling3](./assets/test/scheduling3.png)
+
+---
+
+**Prueba 4: Adición de Schedule y verificación de asociación bidireccional**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+@Test
+    @DisplayName("Should add a schedule and verify bidirectional association is correctly set")
+    void shouldAddScheduleAndSetBidirectionalAssociation() {
+        // Arrange
+        WeeklySchedule weekly = new WeeklySchedule("Semana 1", ACADEMY_ID);
+
+        // Act
+        weekly.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        // Assert
+        assertEquals(1, weekly.getSchedules().size());
+        Schedule added = weekly.getSchedules().get(0);
+        assertNotNull(added);
+        assertEquals(LocalTime.of(8, 0), added.getTimeRange().startTime());
+        assertEquals(LocalTime.of(10, 0), added.getTimeRange().endTime());
+        assertEquals(DayOfWeek.MONDAY, added.getDayOfWeek());
+        assertEquals(100L, added.getCourseId().id());
+        assertEquals(200L, added.getClassroomId().id());
+        assertEquals(300L, added.getTeacherId().userId());
+        assertSame(weekly, added.getWeeklySchedule(), "Schedule must reference back to the WeeklySchedule");
+    }
+```
+
+*Resumen de prueba*: Verifica que al añadir un Schedule al WeeklySchedule se establezca correctamente la asociación bidireccional. El test arrange crea un WeeklySchedule "Semana 1", luego act añade un schedule con hora de inicio "08:00", fin "10:00", día MONDAY, y IDs de curso, aula y profesor, y assert verifica tanto los datos del schedule añadido (hora, día, IDs) como la asociación bidireccional confirmando que el schedule referencia de vuelta al weeklySchedule. Esta prueba es crucial para asegurar la integridad de las relaciones en el modelo de dominio.
+
+![Bounded-Scheduling4](./assets/test/scheduling4.png)
+
+---
+
+**Prueba 5: Eliminación de Schedule por su ID**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+    @Test
+    @DisplayName("Should remove an existing schedule by its ID")
+    void shouldRemoveExistingScheduleById() {
+        // Arrange
+        WeeklySchedule weekly = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        weekly.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 101L, 201L, 301L);
+        weekly.addSchedule("10:00", "12:00", DayOfWeek.WEDNESDAY, 102L, 202L, 302L);
+        setScheduleId(weekly.getSchedules().get(0), 1L);
+        setScheduleId(weekly.getSchedules().get(1), 2L);
+
+        Long idToRemove = 1L;
+
+        // Act
+        weekly.removeSchedule(idToRemove);
+
+        // Assert
+        assertEquals(1, weekly.getSchedules().size());
+        assertEquals(DayOfWeek.WEDNESDAY, weekly.getSchedules().get(0).getDayOfWeek());
+    }
+```
+
+*Resumen de prueba*: Valida que se pueda eliminar un Schedule específico de un WeeklySchedule usando su ID. El test arrange crea un WeeklySchedule con dos horarios (Monday 8-10 y Wednesday 10-12), les asigna IDs 1 y 2 respectivamente, luego act llama a removeSchedule con ID 1, y assert verifica que solo quede un schedule (el del miércoles) y que sea el correcto. Esta prueba garantiza que la eliminación de horarios funcione correctamente.
+
+![Bounded-Scheduling5](./assets/test/scheduling5.png)
+
+---
+
+**Prueba 6: Detección de conflicto entre Schedule que se solapan**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+    @Test
+    @DisplayName("Should detect conflict when two schedules overlap on same day and classroom")
+    void shouldDetectConflictWithAnotherSchedule() {
+        // Arrange
+        Schedule schedule1 = new Schedule("08:00", "10:00", DayOfWeek.MONDAY, 1L, 1L, 1L);
+        Schedule schedule2 = new Schedule("09:00", "11:00", DayOfWeek.MONDAY, 2L, 1L, 2L);
+
+        // Act
+        boolean conflict = schedule1.conflictsWith(schedule2);
+
+        // Assert
+        assertTrue(conflict, "Schedules with overlapping time ranges on same classroom and day should conflict");
+    }
+```
+
+*Resumen de prueba*: Verifica que el método conflictsWith() detecte correctamente cuando dos horarios se solapan en el mismo día y aula. El test arrange crea dos schedules que overlapped en tiempo (8-10 y 9-11) en el mismo día (MONDAY) y misma aula (1L), luego act llama a conflictsWith() en el primer schedule pasando el segundo como argumento, y assert confirma que retorna true. Esta prueba es esencial para evitar double-booking de aulas.
+
+![Bounded-Scheduling6](./assets/test/scheduling6.png)
+
+---
+
+**Prueba 7: No detección de conflicto para días o aulas diferentes**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+    @Test
+    @DisplayName("Should not detect conflict for different classroom or day")
+    void shouldNotConflictWhenDifferentDayOrClassroom() {
+        // Arrange
+        Schedule mondaySchedule = new Schedule("08:00", "10:00", DayOfWeek.MONDAY, 1L, 1L, 1L);
+        Schedule tuesdaySchedule = new Schedule("08:00", "10:00", DayOfWeek.TUESDAY, 1L, 1L, 1L);
+        Schedule differentClassroom = new Schedule("09:00", "11:00", DayOfWeek.MONDAY, 1L, 2L, 1L);
+
+        // Act & Assert
+        assertFalse(mondaySchedule.conflictsWith(tuesdaySchedule));
+        assertFalse(mondaySchedule.conflictsWith(differentClassroom));
+    }
+```
+
+*Resumen de prueba*: Confirma que no se detecten conflictos cuando los horarios son en días diferentes o en aulas diferentes. El test arrange crea tres schedules: uno el lunes, otro el martes mismo horario, y otro el lunes mismo día pero diferente aula, luego act verifica que no hay conflicto entre el schedule del lunes y el del martes, ni entre el lunes y el de diferente aula. Esta prueba asegura que el sistema no falsee positivos en la detección de conflictos.
+
+![Bounded-Scheduling7](./assets/test/scheduling7.png)
+
+---
+
+**Prueba 8: Excepción al crear TimeRange con tiempos inválidos**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+@Test
+@DisplayName("Should throw exception when creating TimeRange with invalid times")
+void shouldThrowExceptionForInvalidTimeRange() {
+// Arrange, Act & Assert
+IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+() -> new TimeRange(LocalTime.of(10, 0), LocalTime.of(9, 0)));
+
+        assertEquals("Start time must be before end time", exception.getMessage());
+    }
+```
+
+*Resumen de prueba*: Verifica que se lance IllegalArgumentException cuando se intenta crear un TimeRange con hora de inicio mayor que la hora de fin. El test arrange usa assertThrows para capturar la excepción, luego act intenta crear un TimeRange con startTime 10:00 y endTime 9:00 (inválido), y assert verifica que el mensaje de la excepción sea "Start time must be before end time". Esta prueba garantiza la validación de invariantes de dominio.
+
+![Bounded-Scheduling8](./assets/test/scheduling8.png)
+
+
+##### Enrollment Bounded - Gestión de Matrículas
 
 ```
 @ExtendWith(MockitoExtension.class)
@@ -6335,6 +6764,580 @@ class EnrollmentCommandServiceImplTest {
 
 ### 6.1.2. Core Integration Tests
 
+##### IAM Bounded - Identity and Access Management
+
+**Prueba 1: Inicio de sesión con credenciales válidas retorna 200**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+@WebMvcTest(controllers = AuthenticationController.class,
+        excludeAutoConfiguration = {
+                HibernateJpaAutoConfiguration.class,
+                JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class AuthenticationControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private UserCommandService userCommandService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    private User mockUser;
+    private static final Long USER_ID = 1L;
+    private static final String USER_EMAIL = "user@example.com";
+    private static final String TOKEN = "jwt-token-abc123";
+
+    @BeforeEach
+    void setUp() {
+        mockUser = mock(User.class);
+        when(mockUser.getId()).thenReturn(USER_ID);
+        when(mockUser.getEmailAddress()).thenReturn(new EmailAddress(USER_EMAIL));
+        when(mockUser.getRoles()).thenReturn(Set.of(Role.getDefaultRole()));
+        when(mockUser.getTenantId()).thenReturn(new TenantId(1L));
+    }
+
+    @Test
+    @DisplayName("Should return 200 OK with token when credentials are valid")
+    void signInWithValidCredentialsReturns200() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "correctPassword"}""";
+        when(userCommandService.handle(any(SignInCommand.class)))
+                .thenReturn(Optional.of(ImmutablePair.of(mockUser, TOKEN)));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-in")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.token").value(TOKEN));
+    }
+```
+
+*Resumen de prueba*: Verifica el flujo de inicio de sesión (sign-in) cuando el usuario proporciona credenciales válidas. El test arrange crea un mock de User con datos válidos y un token JWT, configura el servicio para retornar el par usuario-token, luego act envía un POST al endpoint /api/v1/authentication/sign-in con email y contraseña correctos, y assert verifica que el código de estado sea 200, que el id no sea null, el email coincida y el token sea el esperado. Esta prueba valida el caso de éxito de autenticación.
+
+![Bounded-IAM-Int1](./assets/test/iam_integration1.png)
+
+---
+
+**Prueba 2: Inicio de sesión con credenciales inválidas retorna 404**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+    @Test
+    @DisplayName("Should return 404 Not Found when credentials are invalid")
+    void signInWithInvalidCredentialsReturns404() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "wrongPassword"}""";
+        when(userCommandService.handle(any(SignInCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-in")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isNotFound());
+    }
+```
+
+*Resumen de prueba*: Valida que el sistema retorne 404 cuando el usuario proporciona credenciales incorrectas durante el inicio de sesión. El test arrange configura el servicio para retornar Optional.empty() indicando que las credenciales son inválidas, luego act envía un POST con password incorrecto, y assert verifica que el código de estado sea 404 Not Found. Esta prueba asegura que usuarios no autenticados no puedan acceder al sistema.
+
+![Bounded-IAM-Int2](./assets/test/iam_integration2.png)
+
+---
+
+**Prueba 3: Registro de usuario exitoso retorna 201 Created**
+
+*User Story relacionada*: US032 - Registro de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 201 Created with user data when sign-up is successful")
+    void signUpSuccessfulReturns201() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "securePass123", "roles": ["ROLE_USER"]}""";
+        when(userCommandService.handle(any(SignUpCommand.class)))
+                .thenReturn(Optional.of(mockUser));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-up")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.roles[0]").value("ROLE_USER"))
+                .andExpect(jsonPath("$.tenantId").value(1));
+    }
+```
+
+*Resumen de prueba*: Verifica el flujo de registro (sign-up) cuando el usuario se registra exitosamente. El test arrange configura el servicio para retornar el mock del usuario creado, luego act envía un POST al endpoint /api/v1/authentication/sign-up con datos válidos, y assert verifica código 201, que el id no sea null, el email coincida, el rol sea ROLE_USER y el tenantId sea 1. Esta prueba valida la creación exitosa de cuentas.
+
+![Bounded-IAM-Int3](./assets/test/iam_integration3.png)
+
+---
+
+**Prueba 4: Registro con email duplicado retorna 400 Bad Request**
+
+*User Story relacionada*: US032 - Registro de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 400 Bad Request when email is already registered")
+    void signUpWithDuplicateEmailReturns400() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"emailAddress": "user@example.com", "password": "securePass123", "roles": ["ROLE_USER"]}""";
+        when(userCommandService.handle(any(SignUpCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/sign-up")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isBadRequest());
+    }
+```
+
+*Resumen de prueba*: Comprueba que el sistema retorne 400 cuando se intenta registrar con un email que ya existe en la base de datos. El test arrange configura el servicio para retornar Optional.empty() indicando email duplicado, luego act envía un POST con el mismo email, y assert verifica código 400 Bad Request. Esta prueba garantiza la integridad de datos evitando registros duplicados.
+
+![Bounded-IAM-Int4](./assets/test/iam_integration4.png)
+
+---
+
+**Prueba 5: Verificación con código válido retorna 200 con token**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 200 OK with token when verification code is valid")
+    void verifyWithValidCodeReturns200() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"email": "user@example.com", "code": "123456"}""";
+        when(userCommandService.handle(any(VerifyUserCommand.class)))
+                .thenReturn(Optional.of(ImmutablePair.of(mockUser, TOKEN)));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/verify")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(notNullValue()))
+                .andExpect(jsonPath("$.emailAddress").value(USER_EMAIL))
+                .andExpect(jsonPath("$.token").value(TOKEN));
+    }
+```
+
+*Resumen de prueba*: Valida el flujo de verificación de cuenta cuando el usuario proporciona un código de verificación válido. El test arrange configura el servicio para retornar el par usuario-token con el código correcto, luego act envía un POST al endpoint /api/v1/authentication/verify con el código "123456", y assert verifica código 200, id no null, email correcto y token devuelto. Esta prueba confirma la activación correcta de cuentas.
+
+![Bounded-IAM-Int5](./assets/test/iam_integration5.png)
+
+---
+
+**Prueba 6: Verificación con código inválido o expirado retorna 400**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+    @Test
+    @DisplayName("Should return 400 Bad Request when verification code is invalid or expired")
+    void verifyWithInvalidCodeReturns400() throws Exception {
+        // Arrange
+        String requestBody = """
+                {"email": "user@example.com", "code": "000000"}""";
+        when(userCommandService.handle(any(VerifyUserCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/authentication/verify")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(requestBody))
+                .andExpect(status().isBadRequest());
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace la verificación cuando el código proporcionado es inválido o ha expirado. El test arrange configura el servicio para retornar Optional.empty() indicando código inválido, luego act envía un POST con el código "000000", y assert verifica código 400 Bad Request. Esta prueba protege contra ataques de fuerza bruta al sistema de verificación.
+
+![Bounded-IAM-Int6](./assets/test/iam_integration6.png)
+
+---
+
+##### Institution Bounded - Gestión de la Institución
+
+**Prueba 1: Registro de administrador con datos válidos retorna 201**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+@WebMvcTest(controllers = AdministratorsController.class,
+        excludeAutoConfiguration = {
+                HibernateJpaAutoConfiguration.class,
+                JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class InstitutionControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private AdministratorCommandService administratorCommandService;
+
+    @MockitoBean
+    private AdministratorQueryService administratorQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private static final Long ADMIN_ID = 1L;
+    private static final Long ACADEMY_ID = 5L;
+    private static final Long USER_ID = 100L;
+
+    private Administrator mockAdministrator;
+
+    @BeforeEach
+    void setUp() {
+        mockAdministrator = mock(Administrator.class);
+        when(mockAdministrator.getId()).thenReturn(ADMIN_ID);
+        when(mockAdministrator.getPersonName()).thenReturn(new PersonName("Carlos", "Admin"));
+        when(mockAdministrator.getPhoneNumber()).thenReturn(new PhoneNumber("+51", "987654321"));
+        when(mockAdministrator.getDniNumber()).thenReturn(new DniNumber("72326006"));
+        when(mockAdministrator.getAcademyId()).thenReturn(new AcademyId(ACADEMY_ID));
+        when(mockAdministrator.getUserId()).thenReturn(new UserId(USER_ID));
+    }
+
+    @Test
+    @DisplayName("TI001 — POST /api/v1/administrators con datos válidos retorna 201 Created")
+    void registerAdministrator_ValidData_Returns201() throws Exception {
+        // Arrange
+        RegisterAdministratorResource resource = new RegisterAdministratorResource(
+                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+        );
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.of(mockAdministrator));
+
+        // Act
+        mockMvc.perform(post("/api/v1/administrators")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    }
+```
+
+*Resumen de prueba*: Valida el flujo de registro de un administrador cuando se envían datos válidos. El test arrange configura el mock del administrador con datos específicos, el servicio retorna Optional con el admin mockeado, luego act envía POST a /api/v1/administrators con los datos del recurso, y assert verifica código 201 y que el nombre del administrador sea "Carlos". Esta prueba confirma el registro exitoso de administradores.
+
+![Bounded-Institution-Int1](./assets/test/institution_integration1.png)
+
+---
+
+**Prueba 2: Registro de administrador cuando servicio retorna vacío retorna 400**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+    @Test
+    @DisplayName("TI002 — POST /api/v1/administrators cuando servicio retorna vacío retorna 400")
+    void registerAdministrator_ServiceReturnsEmpty_Returns400() throws Exception {
+        // Arrange
+        RegisterAdministratorResource resource = new RegisterAdministratorResource(
+                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+        );
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.empty());
+
+        // Act
+        mockMvc.perform(post("/api/v1/administrators")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isBadRequest());
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema retorne 400 cuando el servicio de comando de administrador retorna Optional.empty(), indicando un error en el registro. El test arrange configura el servicio para retornar vacío, luego act envía POST con datos válidos, y assert verifica código 400 Bad Request. Esta prueba asegura el manejo correcto de errores de validación.
+
+![Bounded-Institution-Int2](./assets/test/institution_integration2.png)
+
+---
+
+**Prueba 3: Obtener administrador actual cuando existe retorna 200**
+
+*User Story relacionada*: US005 - Actualización de Profesor
+
+```
+    @Test
+    @DisplayName("TI003 — GET /api/v1/administrators/me cuando existe retorna 200 con datos del admin")
+    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
+        // Arrange
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(mockAdministrator));
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(new EmailAddress("carlos@academy.com")));
+
+        // Act
+        mockMvc.perform(get("/api/v1/administrators/me"))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    }
+```
+
+*Resumen de prueba*: Valida que el endpoint GET /api/v1/administrators/me retorne los datos del administrador cuando este existe. El test arrange configura el query service para retornar el administrador mockeado y su email, luego act envía GET a /api/v1/administrators/me, y assert verifica código 200 y que el nombre sea "Carlos". Esta prueba permite a los usuarios ver su propio perfil de administrador.
+
+![Bounded-Institution-Int3](./assets/test/institution_integration3.png)
+
+---
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Prueba 1: Creación de WeeklySchedule con nombre válido retorna 201**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+@WebMvcTest(controllers = WeeklySchedulesController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class WeeklySchedulesControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private WeeklyScheduleCommandService weeklyScheduleCommandService;
+
+    @MockitoBean
+    private WeeklyScheduleQueryService weeklyScheduleQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    @MockitoBean
+    private WeeklyScheduleResourceFromEntityAssembler weeklyScheduleResourceFromEntityAssembler;
+
+    @MockitoBean
+    private ScheduleResourceFromEntityAssembler scheduleResourceFromEntityAssembler;
+
+    @MockitoBean
+    private TeacherQueryService teacherQueryService;
+
+    @MockitoBean
+    private ExternalEnrollmentService externalEnrollmentService;
+
+    private static final Long WEEKLY_SCHEDULE_ID = 1L;
+    private static final Long CLASS_SESSION_ID = 50L;
+    private static final AcademyId ACADEMY_ID = new AcademyId(1L);
+
+    private WeeklySchedule sampleWeeklySchedule;
+
+    @BeforeEach
+    void setUp() {
+        sampleWeeklySchedule = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        sampleWeeklySchedule.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        when(weeklyScheduleResourceFromEntityAssembler.toResourceFromEntity(any(WeeklySchedule.class)))
+                .thenAnswer(inv -> {
+                    WeeklySchedule ws = inv.getArgument(0);
+                    return new WeeklyScheduleResource(ws.getId(), ws.getName(), List.of());
+                });
+    }
+
+    @Test
+    @DisplayName("TS001 — POST /api/v1/schedules con nombre válido retorna 201 Created")
+    void createSchedule_ValidName_Returns201() throws Exception {
+        // Arrange
+        CreateWeeklyScheduleResource resource = new CreateWeeklyScheduleResource("Semana 1");
+
+        when(weeklyScheduleCommandService.handle(any(CreateWeeklyScheduleCommand.class)))
+                .thenReturn(WEEKLY_SCHEDULE_ID);
+        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
+                .thenReturn(Optional.of(sampleWeeklySchedule));
+
+        // Act
+        mockMvc.perform(post("/api/v1/schedules")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value("Semana 1"));
+    }
+```
+
+*Resumen de prueba*: Verifica que el endpoint POST /api/v1/schedules cree un WeeklySchedule exitosamente cuando se envía un nombre válido. El test arrange configura los mocks del command y query services para retornar el ID del schedule y el schedule de ejemplo, luego act envía un POST con un JSON conteniendo el nombre "Semana 1", y assert verifica código 201 Created y que el nombre en la respuesta sea "Semana 1". Esta prueba valida el flujo de creación de horarios.
+
+![Bounded-Scheduling-Int1](./assets/test/scheduling_integration1.png)
+
+
+---
+
+**Prueba 2: Obtener todos los schedules retorna lista**
+
+*User Story relacionada*: US015 - Eliminación de Periodo Académico
+
+```
+    @Test
+    @DisplayName("TS003 — GET /api/v1/schedules retorna lista de horarios")
+    void getAllSchedules_ReturnsScheduleList() throws Exception {
+        // Arrange
+        when(weeklyScheduleQueryService.handle(any(GetAllWeeklySchedulesQuery.class)))
+                .thenReturn(List.of(sampleWeeklySchedule));
+
+        // Act
+        mockMvc.perform(get("/api/v1/schedules"))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$[0].name").value("Semana 1"));
+    }
+```
+
+*Resumen de prueba*: Comprueba que el endpoint GET /api/v1/schedules retorne una lista de todos los schedules disponibles. El test arrange configura el mock del query service para retornar una lista conteniendo el schedule de ejemplo, luego act envía un GET a /api/v1/schedules sin ID, y assert verifica código 200, que la respuesta sea un array y que el primer elemento tenga el nombre "Semana 1". Esta prueba valida la funcionalidad de listado de horarios.
+
+![Bounded-Scheduling-Int4](./assets/test/scheduling_integration2.png)
+
+---
+
+**Prueba 3: Actualización de schedule con nombre válido retorna 200**
+
+*User Story relacionada*: US017 - Actualización de Salones de Clase
+
+```
+    @Test
+    @DisplayName("TS004 — PUT /api/v1/schedules/{id} con nombre válido retorna 200")
+    void updateSchedule_ValidName_Returns200() throws Exception {
+        // Arrange
+        UpdateWeeklyScheduleNameResource resource = new UpdateWeeklyScheduleNameResource("Semana Renombrada");
+        WeeklySchedule updated = new WeeklySchedule("Semana Renombrada", ACADEMY_ID);
+
+        when(weeklyScheduleCommandService.handle(any(UpdateWeeklyScheduleNameCommand.class)))
+                .thenReturn(Optional.of(updated));
+
+        // Act
+        mockMvc.perform(put("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Semana Renombrada"));
+    }
+```
+
+*Resumen de prueba*: Valida que el endpoint PUT /api/v1/schedules/{id} actualice correctamente un schedule cuando se envía un nuevo nombre válido. El test arrange crea un schedule actualizado "Semana Renombrada" y configura el mock para retornarlo, luego act envía un PUT con el nuevo nombre, y assert verifica código 200 y que el nombre en la respuesta sea "Semana Renombrada". Esta prueba verifica la funcionalidad de actualización de horarios.
+
+![Bounded-Scheduling-Int5](./assets/test/scheduling_integration3.png)
+
+---
+
+**Prueba 4: Adición de class-session a WeeklySchedule retorna 200**
+
+*User Story relacionada*: US020 - Actualización de Horarios
+
+```
+    @Test
+    @DisplayName("TS006 — POST /api/v1/schedules/{id}/class-sessions agrega sesión exitosamente")
+    void addClassSession_ValidData_Returns200() throws Exception {
+        // Arrange
+        AddScheduleToWeeklyResource resource = new AddScheduleToWeeklyResource(
+                "08:00", "10:00", "MONDAY", 100L, 200L, "Carlos", "Perez"
+        );
+        WeeklySchedule withSession = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        withSession.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        when(weeklyScheduleCommandService.handle(any(AddScheduleToWeeklyCommand.class)))
+                .thenReturn(Optional.of(withSession));
+
+        // Act
+        mockMvc.perform(post("/api/v1/schedules/{scheduleId}/class-sessions", WEEKLY_SCHEDULE_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+
+        // Assert
+                .andExpect(status().isOk());
+    }
+```
+
+*Resumen de prueba*: Valida que se puedan agregar class-sessions a un WeeklySchedule a través del endpoint POST. El test arrange crea un WeeklySchedule con una sesión y configura el mock para retornarlo, luego act envía un POST con los datos de la sesión (hora, día, IDs), y assert verifica código 200. Esta prueba verifica la adición de sesiones a horarios semanales.
+
+![Bounded-Scheduling-Int7](./assets/test/scheduling_integration4.png)
+
+---
+
+**Prueba 5: Eliminación de class-session retorna 200**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+    @Test
+    @DisplayName("TS008 — DELETE /api/v1/schedules/{id}/class-sessions/{classSessionId} elimina sesión exitosamente")
+    void removeClassSession_ValidIds_Returns200() throws Exception {
+        // Arrange
+        WeeklySchedule emptySchedule = new WeeklySchedule("Semana 1", ACADEMY_ID);
+
+        when(weeklyScheduleCommandService.handle(any(RemoveScheduleFromWeeklyCommand.class)))
+                .thenReturn(Optional.of(emptySchedule));
+
+        // Act
+        mockMvc.perform(delete("/api/v1/schedules/{scheduleId}/class-sessions/{classSessionId}",
+                        WEEKLY_SCHEDULE_ID, CLASS_SESSION_ID))
+
+        // Assert
+                .andExpect(status().isOk());
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de una class-session de un WeeklySchedule funcione correctamente. El test arrange crea un WeeklySchedule vacío y configura el mock para retornarlo, luego act envía un DELETE a /api/v1/schedules/1/class-sessions/50, y assert verifica código 200. Esta prueba garantiza la remoción de sesiones específicas de horarios.
+
+![Bounded-Scheduling-Int8](./assets/test/scheduling_integration5.png)
+
+---
+
 ##### Enrollment Management API
 
 ```
@@ -6482,43 +7485,207 @@ class EnrollmentsControllerIntegrationTest {
 
 ### 6.1.3. Core Behavior-Driven Development
 
-##### Registro de matricula
+##### IAM Bounded - Identity and Access Management
+
+**Escenario 1: Registro exitoso de nuevo usuario**
+
+*User Story relacionada*: US032 - Registro de Cuenta
 
 ```
-Feature: Registrar matrícula de un estudiante
-  Para que se almacenen sus datos y se acceda a funcionalidades adicionales
-  Como administrativo
-  Quiero registrar alumnos en la aplicación web
+Feature: Autenticación de usuarios en plataforma DEMY
+  Como usuario de la plataforma
+  Quiero poder registrarme, iniciar sesión y verificar mi cuenta
+  Para acceder a las funcionalidades del sistema
 
-  Scenario Outline: Registro de matrícula
-    Given existe un Student con id <studentId>
-    And existe un AcademicPeriod con id <academicPeriodId>
-    And existe un WeeklySchedule con id <weeklyScheduleId>
-    And existe un Academy con id <academyId>
-    When intento registrar la matrícula con amount <amount> y currency <currency>
-    Then debe crearse una Enrollment con
-      | studentId        | <studentId>        |
-      | academicPeriodId | <academicPeriodId> |
-      | weeklyScheduleId | <weeklyScheduleId> |
-      | academyId        | <academyId>        |
-      | amount           | <amount>           |
-      | currency         | <currency>         |
-      | status           | <status>           |
-
-    And el mensaje final es "<message>"
-
-    Examples:
-      | studentId | academicPeriodId | academyId | weeklyScheduleId | amount  | currency | status | message     |
-      | 5         | 7                | 2         | 1                | 1500.00 | PEN      | ACTIVE | Test Passed |
-      | 6         | 8                | 2         | 2                | -500.00 | PEN      | ACTIVE | Error       |
-      | 7         | 9                | 3         | 1                | 1200.00 | PEN      | ACTIVE | Test Passed |
-
-
+  # Escenario 1: Registro exitoso de nuevo usuario
+  Scenario: Registro de nuevo usuario con credenciales válidas
+    Given un email "nuevo@test.com" no registrado en el sistema
+    When creo un nuevo usuario con email "nuevo@test.com" y password "Password123"
+    Then el usuario queda registrado con estado "PENDING"
+    And se genera un código de verificación de 6 dígitos
+    And el resultado de la operación es exitoso
 ```
 
-![Boundede-Enrollment1](./assets/test/enrollment3.png)
+*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo usuario en la plataforma DEMY. Given establece que el email "nuevo@test.com" no está registrado en el sistema, When cuando el usuario crea una cuenta con ese email y password "Password123", Then entonces el usuario queda registrado con estado PENDING (pendiente de verificación), se genera un código de verificación de 6 dígitos, y la operación es exitosa. Este escenario valida el registro básico de usuarios sin duplicados.
 
-### 6.1.4. Core System Tests
+![Bounded-IAM-BDD1](./assets/test/iam_bdd1.png)
+
+---
+
+**Escenario 2: Inicio de sesión exitoso**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+  # Escenario 2: Inicio de sesión exitoso
+  Scenario: Inicio de sesión con credenciales correctas
+    Given existe un usuario "test@test.com" con password "Password123" en estado "VERIFIED"
+    When inicio sesión con email "test@test.com" y password "Password123"
+    Then obtengo un token JWT como respuesta
+    And el estado HTTP de la respuesta es 200
+    And el usuario existe en el sistema
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de inicio de sesión (sign-in) cuando el usuario proporciona credenciales correctas. Given establece que existe un usuario verificado con email y password válidos, When cuando el usuario inicia sesión con esas credenciales, Then entonces obtiene un token JWT como respuesta, el código HTTP es 200, y el usuario existe en el sistema. Este escenario valida la autenticación exitosa de usuarios.
+
+![Bounded-IAM-BDD2](./assets/test/iam_bdd2.png)
+
+---
+
+**Escenario 3: Verificación de cuenta con código incorrecto**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+  # Escenario 3: Verificación de cuenta con código incorrecto
+  Scenario: Verificación falla con código de verificación inválido
+    Given existe un usuario "usuario@test.com" con código de verificación "123456" no verificado
+    When intento verificar la cuenta con código "999999"
+    Then la verificación falla
+    And el estado HTTP de la respuesta es 400
+    And el usuario permanece en estado "PENDING"
+```
+
+*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando un usuario intenta verificar su cuenta con un código incorrecto. Given establece que existe un usuario con código de verificación "123456" que aún no está verificado, When cuando el usuario intenta verificar con el código "999999" (incorrecto), Then entonces la verificación falla, el código HTTP es 400, y el usuario permanece en estado PENDING. Este escenario valida el rechazo de códigos de verificación inválidos.
+
+---
+
+##### Institution Bounded - Gestión de la Institución
+
+**Escenario 1: Registro exitoso de administrador**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+Feature: Gestión de administradores y academias
+  Como administrativo de una academia
+  Quiero poder registrar administradores y academias
+  Para gestionar la estructura institucional
+
+  # Escenario 1: Registro exitoso de administrador
+  Scenario: Registrar administrador con datos válidos
+    Given no existe administrador con DNI "87654321" en el sistema
+    When registro un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50
+    Then el administrador queda registrado exitosamente
+    And el código de estado HTTP del administrador es 201
+    And se devuelve el recurso del administrador creado
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo administrador en el sistema. Given establece que no existe un administrador con el DNI "87654321", When cuando se registra un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50, Then entonces el administrador queda registrado exitosamente, el código HTTP es 201, y se devuelve el recurso del administrador creado. Este escenario valida el registro correcto de administradores.
+
+![Bounded-Institution-BDD1](./assets/test/institution_bdd1.png)
+
+---
+
+**Escenario 2: Registro de academia con email duplicado**
+
+*User Story relacionada*: US001 - Registro de Academia
+
+```
+  # Escenario 2: Registro de academia con email duplicado
+  Scenario: No permite registrar academia con email ya existente
+    Given ya existe una academia con email "academia@test.com" en el sistema
+    When registro una nueva academia con nombre "Mi Academia", email "academia@test.com", teléfono "+51 999888777", RUC "12345678901" y administrador ID 5
+    Then la operación falla con error de "email duplicado"
+    And el código de estado HTTP de la academia es 400
+    And se devuelve mensaje de error
+```
+
+*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando se intenta registrar una academia con un email que ya existe en el sistema. Given establece que ya existe una academia con email "academia@test.com", When cuando se intenta registrar una nueva academia con ese mismo email, Then entonces la operación falla con error de email duplicado, el código HTTP es 400, y se devuelve mensaje de error. Este escenario valida la integridad de datos evitando emails duplicados.
+
+![Bounded-Institution-BDD2](./assets/test/institution_bdd2.png)
+
+---
+
+**Escenario 3: Asociación de administrador con academia**
+
+*User Story relacionada*: US002 - Actualización de Academia
+
+```
+  # Escenario 3: Asociación de administrador con academia
+  Scenario: Asociar administrador a academia exitosamente
+    Given existe un administrador "Carlos" "Admin" sin asociación a academia
+    And existe una academia "Mi Academia" sin administrador asignado
+    When asociar el administrador a la academia
+    Then el administrador queda asociado a la academia
+    And la academia tiene el administrador asignado
+    And el código de estado HTTP de la academia es 200
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de asociación de un administrador a una academia. Given establece que existe un administrador "Carlos Admin" sin asociación a academia y una academia "Mi Academia" sin administrador asignado, When cuando se asocia el administrador a la academia, Then entonces el administrador queda asociado a la academia, la academia tiene el administrador asignado, y el código HTTP es 200. Este escenario valida la relación entre administradores y academias.
+
+![Bounded-Institution-BDD3](./assets/test/institution_bdd3.png)
+
+---
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Escenario 1: Creación exitosa de horario semanal**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+Feature: Gestión de horarios semanales
+  Como administrativo de una academia
+  Quiero poder crear y gestionar horarios semanales con sesiones de clase
+  Para organizar la planificación académica
+
+  # Escenario 1: Creación exitosa de horario semanal
+  Scenario: Crear horario semanal con nombre único
+    Given no existe un schedule con nombre "Semana 1" para la academia con ID 1
+    When creo un horario semanal con nombre "Semana 1" para la academia con ID 1
+    Then el horario queda creado exitosamente
+    And se devuelve un ID de horario
+    And el estado HTTP de la respuesta es 201
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de creación de un nuevo horario semanal. Given establece que no existe un schedule con nombre "Semana 1" para la academia con ID 1, When cuando se crea un horario semanal con nombre "Semana 1" para esa academia, Then entonces el horario queda creado exitosamente, se devuelve un ID de horario, y el código HTTP es 201. Este escenario valida la creación correcta de horarios.
+
+![Bounded-Scheduling-BDD1](./assets/test/scheduling_bdd1.png)
+
+---
+
+**Escenario 2: Agregar sesión de clase al horario**
+
+*User Story relacionada*: US020 - Actualización de Horarios
+
+```
+  # Escenario 2: Agregar sesión de clase al horario
+  Scenario: Agregar sesión de clase al horario existente
+    Given existe un horario semanal con ID 1 para la academia con ID 1
+    When agrego una sesión de clase con inicio "08:00", fin "10:00", día "MONDAY", curso ID 10, salón ID 20, profesor "Carlos" "Pérez"
+    Then la sesión queda agregada al horario exitosamente
+    And el horario tiene al menos una sesión
+    And el estado HTTP de la respuesta es 200
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de agregar una sesión de clase a un horario semanal existente. Given establece que existe un horario semanal con ID 1 para la academia con ID 1, When cuando se agrega una sesión de clase con inicio "08:00", fin "10:00", día "MONDAY", curso ID 10, salón ID 20, profesor "Carlos Pérez", Then entonces la sesión queda agregada al horario exitosamente, el horario tiene al menos una sesión, y el código HTTP es 200. Este escenario valida la adición de sesiones a horarios.
+
+![Bounded-Scheduling-BDD2](./assets/test/scheduling_bdd2.png)
+
+---
+
+**Escenario 3: Eliminación exitosa de horario**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+  # Escenario 3: Eliminación exitosa de horario
+  Scenario: Eliminar horario semanal existente
+    Given existe un horario semanal con ID 5 para la academia con ID 1
+    When elimino el horario semanal con ID 5
+    Then el horario es eliminado exitosamente
+    And el estado HTTP de la respuesta es 200
+    And el mensaje de respuesta es "Schedule deleted successfully"
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de eliminación de un horario semanal. Given establece que existe un horario semanal con ID 5 para la academia con ID 1, When cuando se elimina el horario semanal con ID 5, Then entonces el horario es eliminado exitosamente, el código HTTP es 200, y el mensaje de respuesta es "Schedule deleted successfully". Este escenario valida la eliminación correcta de horarios.
+
+![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
+
+---
+
+##### Enrollment Management API
 
 <hr class="page-break">
 
