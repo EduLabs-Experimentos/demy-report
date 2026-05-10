@@ -8044,9 +8044,6 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
-
-### 6.1.4. Core System Tests
-
 ##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
 
 ```
@@ -8152,6 +8149,11 @@ Característica: Gestión de Matrículas
 *Resumen de prueba*: Este conjunto de escenarios BDD describe los flujos de registro, actualización y eliminación de matrículas en el sistema. Given establece que el administrador ha iniciado sesión, existen estudiantes, periodos y horarios disponibles, y se tienen los permisos necesarios de gestión. When cubre acciones como completar el formulario con datos válidos, hacer clic en los botones de acción (Registrar Matrícula, Guardar Cambios, Cancelar, Eliminar) y confirmar operaciones. Then verifica que el sistema registra, actualiza o elimina la inscripción correctamente, que el formulario se limpia tras una operación exitosa, que se muestran mensajes de error ante fallos del servidor, y que el estado del ViewModel refleja el resultado esperado en cada caso. Estos escenarios validan el comportamiento completo del módulo de gestión de matrículas para las historias de usuario US007, US008 y US009.
 
 ![Bounded-Enrollment](./assets/test/enrollment4.png)
+
+
+### 6.1.4. Core System Tests
+
+
 
 
 ---
