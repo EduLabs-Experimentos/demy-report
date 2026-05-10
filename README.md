@@ -5628,7 +5628,7 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 *Última actualización: Mayo 2026*
 
-## 5.2.5. Implemented Native-Mobile Application Evidence
+### 5.2.5. Implemented Native-Mobile Application Evidence
 
 #### Administrador Mobile Application
 
