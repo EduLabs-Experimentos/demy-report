@@ -6896,19 +6896,129 @@ class AuthenticationControllerIntegrationTest {
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Registro de administrador con datos válidos retorna 201**
+**Prueba 1: Integración de endpoints REST para la gestión de Academias**
 
-*User Story relacionada*: US006 - Registro de Administrador
+*Technical Story relacionada*: TS001 - Exponer endpoint para registrar academias / TS005 - Exponer endpoint para obtener detalles de una academia
+
 
 ```
-@WebMvcTest(controllers = AdministratorsController.class,
+@WebMvcTest(controllers = AcademiesController.class,
         excludeAutoConfiguration = {
-                HibernateJpaAutoConfiguration.class,
-                JpaRepositoriesAutoConfiguration.class
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
         })
 @ActiveProfiles("test")
 @AutoConfigureMockMvc(addFilters = false)
-class InstitutionControllerIntegrationTest {
+class AcademiesControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private AcademyCommandService academyCommandService;
+
+    @MockitoBean
+    private AcademyQueryService academyQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Academy sampleAcademy;
+
+    @BeforeEach
+    void setUp() {
+        sampleAcademy = new Academy(
+                new AcademyName("Nistra Academy"),
+                new AcademyDescription("Academia de tecnología"),
+                new StreetAddress("Av. Primavera 123", "Surco", "Lima", "Lima"),
+                new EmailAddress("contacto@nistra.com"),
+                new PhoneNumber("+51", "987654321"),
+                new Ruc("10456789123")
+        );
+        sampleAcademy.assignAdministrator(new AdministratorId(1L));
+    }
+
+    @Test
+    @DisplayName("POST /academies con datos válidos retorna 201 Created")
+    void registerAcademy_ValidRequest_Returns201() throws Exception {
+        RegisterAcademyResource resource = new RegisterAcademyResource(
+                "Nistra Academy", "Academia de tecnología", "Av. Primavera 123",
+                "Surco", "Lima", "Lima", "contacto@nistra.com",
+                "+51", "987654321", "10456789123", 1L
+        );
+
+        when(academyCommandService.handle(any(RegisterAcademyCommand.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(post("/api/v1/academies")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.ruc").value("10456789123"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 200 y los datos de la academia")
+    void getCurrentAcademy_WhenExists_Returns200() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 404 cuando no hay academia asociada")
+    void getCurrentAcademy_WhenNotExists_Returns404() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("HEAD /academies/{id} retorna 200 si la academia existe")
+    void checkAcademyExists_WhenExists_Returns200() throws Exception {
+        Long academyId = 1L;
+        when(academyQueryService.handle(any(ExistsAcademyByIdQuery.class)))
+                .thenReturn(true);
+
+        mockMvc.perform(head("/api/v1/academies/{id}", academyId))
+                .andExpect(status().isOk());
+    }
+}
+```
+
+*Resumen de prueba*: Valida la correcta exposición y funcionamiento de los endpoints REST para las academias utilizando MockMvc. Se verifica que el registro (POST) retorne un estado HTTP 201 Created y que la respuesta contenga los datos mapeados correctamente según la historia técnica TS001. Asimismo, se comprueba que las consultas (GET y HEAD) devuelvan 200 OK con los datos correctos o 404 Not Found cuando el recurso solicitado no existe, mockeando adecuadamente la capa de aplicación.
+
+![Bounded-Institution-Int1](./assets/test/academy-integration-test.png)
+
+---
+
+**Prueba 2: Integración de endpoints REST para la gestión de Administradores**
+
+*Technical Story relacionada:*: TS006 - Exponer endpoint para registrar administrador / TS010 - Exponer endpoint para obtener detalles de un administrador
+
+```
+    @WebMvcTest(controllers = AdministratorsController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class AdministratorsControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -6926,109 +7036,182 @@ class InstitutionControllerIntegrationTest {
     private LocalizationService localizationService;
 
     @MockitoBean
-    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
 
-    private static final Long ADMIN_ID = 1L;
-    private static final Long ACADEMY_ID = 5L;
-    private static final Long USER_ID = 100L;
-
-    private Administrator mockAdministrator;
+    private Administrator sampleAdministrator;
+    private EmailAddress sampleEmail;
 
     @BeforeEach
     void setUp() {
-        mockAdministrator = mock(Administrator.class);
-        when(mockAdministrator.getId()).thenReturn(ADMIN_ID);
-        when(mockAdministrator.getPersonName()).thenReturn(new PersonName("Carlos", "Admin"));
-        when(mockAdministrator.getPhoneNumber()).thenReturn(new PhoneNumber("+51", "987654321"));
-        when(mockAdministrator.getDniNumber()).thenReturn(new DniNumber("72326006"));
-        when(mockAdministrator.getAcademyId()).thenReturn(new AcademyId(ACADEMY_ID));
-        when(mockAdministrator.getUserId()).thenReturn(new UserId(USER_ID));
+        sampleAdministrator = new Administrator(
+                new PersonName("Diego", "Vilca"),
+                new PhoneNumber("+51", "999888777"),
+                new DniNumber("76543210"),
+                new UserId(10L)
+        );
+        sampleEmail = new EmailAddress("diego.admin@nistra.com");
     }
 
     @Test
-    @DisplayName("TI001 — POST /api/v1/administrators con datos válidos retorna 201 Created")
-    void registerAdministrator_ValidData_Returns201() throws Exception {
-        // Arrange
+    @DisplayName("POST /administrators con datos válidos retorna 201 Created")
+    void registerAdministrator_ValidRequest_Returns201() throws Exception {
         RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+                "Diego", "Vilca", "+51", "999888777", "76543210", 10L
         );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
-                .thenReturn(Optional.of(mockAdministrator));
 
-        // Act
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
         mockMvc.perform(post("/api/v1/administrators")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"));
     }
-```
 
-*Resumen de prueba*: Valida el flujo de registro de un administrador cuando se envían datos válidos. El test arrange configura el mock del administrador con datos específicos, el servicio retorna Optional con el admin mockeado, luego act envía POST a /api/v1/administrators con los datos del recurso, y assert verifica código 201 y que el nombre del administrador sea "Carlos". Esta prueba confirma el registro exitoso de administradores.
-
-![Bounded-Institution-Int1](./assets/test/institution_integration1.png)
-
----
-
-**Prueba 2: Registro de administrador cuando servicio retorna vacío retorna 400**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
     @Test
-    @DisplayName("TI002 — POST /api/v1/administrators cuando servicio retorna vacío retorna 400")
-    void registerAdministrator_ServiceReturnsEmpty_Returns400() throws Exception {
-        // Arrange
-        RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
-        );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+    @DisplayName("GET /administrators/me retorna 200 y junta datos de admin y de usuario (email)")
+    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"))
+                .andExpect(jsonPath("$.emailAddress").value("diego.admin@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /administrators/me retorna 404 si el administrador no tiene email asociado")
+    void getCurrentAdministrator_WhenNoEmailFound_Returns404() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
                 .thenReturn(Optional.empty());
 
-        // Act
-        mockMvc.perform(post("/api/v1/administrators")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
-                .andExpect(status().isBadRequest());
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isNotFound());
     }
+}
 ```
 
-*Resumen de prueba*: Verifica que el sistema retorne 400 cuando el servicio de comando de administrador retorna Optional.empty(), indicando un error en el registro. El test arrange configura el servicio para retornar vacío, luego act envía POST con datos válidos, y assert verifica código 400 Bad Request. Esta prueba asegura el manejo correcto de errores de validación.
+*Resumen de prueba*: Evalúa la integración del controlador REST AdministratorsController. Verifica el flujo de creación mediante el método POST, confirmando el estado HTTP 201 Created en la respuesta (TS006). Adicionalmente, comprueba el endpoint GET /me (TS010), el cual requiere la orquestación de dos consultas (la obtención del perfil local y del email a través de la integración IAM). El test garantiza que se retorne exitosamente los datos combinados con un 200 OK o que arroje un 404 Not Found si el perfil carece de una identidad externa asociada.
 
-![Bounded-Institution-Int2](./assets/test/institution_integration2.png)
+![Bounded-Institution-Int2](./assets/test/admin-integration-test.png)
 
 ---
 
-**Prueba 3: Obtener administrador actual cuando existe retorna 200**
+**Prueba 3: Integración de endpoints REST para la gestión de Profesores**
 
-*User Story relacionada*: US005 - Actualización de Profesor
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-    @Test
-    @DisplayName("TI003 — GET /api/v1/administrators/me cuando existe retorna 200 con datos del admin")
-    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
-        // Arrange
-        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
-                .thenReturn(Optional.of(mockAdministrator));
-        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
-                .thenReturn(Optional.of(new EmailAddress("carlos@academy.com")));
+    @WebMvcTest(controllers = TeachersController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class TeachersControllerIntegrationTest {
 
-        // Act
-        mockMvc.perform(get("/api/v1/administrators/me"))
+    @Autowired
+    private MockMvc mockMvc;
 
-        // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private TeacherCommandService teacherCommandService;
+
+    @MockitoBean
+    private TeacherQueryService teacherQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Teacher sampleTeacher;
+    private EmailAddress sampleEmail;
+
+    @BeforeEach
+    void setUp() {
+        PersonName personName = new PersonName("Lucia", "Vargas");
+        PhoneNumber phoneNumber = new PhoneNumber("+51", "911222333");
+        EmailAddress emailAddress = new EmailAddress("lucia.vargas@academy.com");
+
+        RegisterTeacherCommand command = new RegisterTeacherCommand(personName, emailAddress, phoneNumber);
+
+        sampleTeacher = new Teacher(command, new UserId(20L), new AcademyId(5L));
+        sampleEmail = emailAddress;
     }
+
+    @Test
+    @DisplayName("POST /teachers con datos válidos retorna 201 Created y junta el correo")
+    void registerTeacher_ValidRequest_Returns201() throws Exception {
+        RegisterTeacherResource resource = new RegisterTeacherResource(
+                "Lucia", "Vargas", "lucia.vargas@academy.com", "+51", "911222333"
+        );
+
+        when(teacherCommandService.handle(any(RegisterTeacherCommand.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(post("/api/v1/teachers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"))
+                .andExpect(jsonPath("$.academyId").value(5L));
+    }
+
+    @Test
+    @DisplayName("GET /teachers retorna 200 y una lista de profesores con sus correos")
+    void getAllTeachers_Returns200AndList() throws Exception {
+        when(teacherQueryService.handle(any(GetAllTeachersQuery.class)))
+                .thenReturn(List.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].firstName").value("Lucia"))
+                .andExpect(jsonPath("$[0].emailAddress").value("lucia.vargas@academy.com"));
+    }
+
+    @Test
+    @DisplayName("GET /teachers/me retorna 200 y los datos del profesor logueado")
+    void getCurrentTeacher_WhenExists_Returns200() throws Exception {
+        when(teacherQueryService.handle(any(GetCurrentTeacherQuery.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.userId").value(20L))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"));
+    }
+}
 ```
 
-*Resumen de prueba*: Valida que el endpoint GET /api/v1/administrators/me retorne los datos del administrador cuando este existe. El test arrange configura el query service para retornar el administrador mockeado y su email, luego act envía GET a /api/v1/administrators/me, y assert verifica código 200 y que el nombre sea "Carlos". Esta prueba permite a los usuarios ver su propio perfil de administrador.
+*Resumen de prueba*:Asegura la correcta implementación de la API REST para la gestión de docentes. Comprueba el endpoint de registro de la US004 (POST), validando que la creación retorne 201 Created junto con la recuperación cruzada del correo electrónico en la respuesta final. Adicionalmente, verifica las operaciones de lectura (GET), comprobando tanto el listado general como la obtención del perfil actual del profesor. El test confirma que se procese y devuelva correctamente una estructura JSON validada mediante jsonPath simulando el comportamiento de los servicios internos.
 
-![Bounded-Institution-Int3](./assets/test/institution_integration3.png)
+![Bounded-Institution-Int3](./assets/test/teacher-integration-test.png)
 
 ---
 
