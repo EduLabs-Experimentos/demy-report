@@ -8283,6 +8283,72 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
+#### Accounting & Finance
+
+**Prueba 1: Registro exitoso de ingreso financiero**
+
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
+
+```
+Scenario: US025 - Registro exitoso de ingreso financiero
+    Given existe una academia financiera con id 5
+    When registro una transaccion financiera con tipo "income", categoria "student enrollment", metodo "cash", monto 150.00 y moneda PEN
+    Then debe crearse una transaccion con tipo "INCOME", categoria "STUDENT_ENROLLMENT", metodo "CASH", monto 150.00 y moneda "PEN"
+    And el mensaje final de finance es "Test Passed"
+```
+
+*Resumen de prueba:* Evalúa el flujo principal de creación mediante BDD. El paso Given establece la precondición (contexto de academia existente). El When dispara la acción del administrador (registrar ingreso de 150.00 PEN). Los pasos Then validan que los textos en lenguaje natural se transformen y guarden correctamente como Value Objects del dominio (enums como INCOME o CASH), asegurando que el estado final sea exitoso.
+
+![Bounded-Finance](./assets/test/finance_bdd1.png)
+
+**Prueba 2: Actualización exitosa de egreso financiero**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+Scenario: US026 - Actualizacion exitosa de egreso financiero
+    Given existe una academia financiera con id 5
+    And existe una transaccion financiera registrada con id 1
+    When actualizo la transaccion financiera con tipo "expense", categoria "office supplies", metodo "debit card", monto 80.00 y moneda PEN
+    Then debe actualizarse la transaccion con tipo "EXPENSE", categoria "OFFICE_SUPPLIES", metodo "DEBIT_CARD", monto 80.00 y moneda "PEN"
+    And el mensaje final de finance es "Test Passed"
+```
+
+*Resumen de prueba:* Comprueba la capacidad del sistema para modificar datos contables desde la perspectiva del usuario. Los pasos Given preparan el entorno con un registro existente. El When aplica los cambios simulando la corrección de un ingreso a un egreso (Expense). Los Then verifican que la entidad actualice sus atributos correctamente en la capa de aplicación y el flujo de prueba termine sin errores.
+
+![Bounded-Finance](./assets/test/finance_bdd2.png)
+
+**Prueba 3: Eliminación exitosa de ingreso o egreso financiero**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+Scenario: US027 - Eliminacion exitosa de ingreso o egreso financiero
+    Given existe una academia financiera con id 5
+    And existe una transaccion financiera registrada con id 1
+    When elimino la transaccion financiera
+    Then la transaccion financiera debe eliminarse correctamente
+    And el mensaje final de finance es "Test Passed"
+```
+
+*Resumen de prueba:* Asegura que la anulación de registros se procese adecuadamente cumpliendo los criterios de aceptación. El escenario inicia con las condiciones dadas (Given). Al ejecutar la eliminación simple (When), el sistema pasa por la aserción (Then) donde los Step Definitions validan con el mock del repositorio que la entidad fue efectivamente borrada.
+
+![Bounded-Finance](./assets/test/finance_bdd3.png)
+
+**Prueba 4: Registro rechazado por monto negativo**
+
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
+
+```
+Scenario: US025 - Registro rechazado por monto negativo
+    Given existe una academia financiera con id 5
+    When registro una transaccion financiera con tipo "income", categoria "student enrollment", metodo "cash", monto -50.00 y moneda PEN
+    Then el mensaje final de finance es "Error"
+```
+
+*Resumen de prueba:* Valida las reglas e invariantes del dominio frente a errores del usuario. Si un administrador intenta registrar un monto inválido como -50.00 PEN (When), el código subyacente (el Value Object Money) lanzará una excepción. El test atrapa esto y verifica que el resultado devuelto al flujo sea explícitamente un "Error" (Then), protegiendo la base de datos de anomalías matemáticas.
+
+![Bounded-Finance](./assets/test/finance_bdd4.png)
 
 ### 6.1.4. Core System Tests
 
