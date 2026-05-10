@@ -8044,6 +8044,8 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
+---
+
 ##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
 
 ```
@@ -8153,6 +8155,123 @@ Característica: Gestión de Matrículas
 
 ### 6.1.4. Core System Tests
 
+Para garantizar la integridad del sistema en un entorno web real, hemos implementado pruebas de extremo a extremo (E2E) utilizando **Cypress**. Estas pruebas simulan el comportamiento de un usuario final navegando en la aplicación Angular, interactuando con los formularios y validando que las peticiones al backend (Spring Boot) persistan correctamente en la base de datos real.
+
+
+
+
+##### Institution Frontend Web
+
+**Prueba 1: Flujo de Onboarding Completo (Administrador y Academia)**
+
+*User Story relacionada*: US001 - Registro de Academia / US032 - Registro de Cuenta
+
+```
+describe('E2E Puro: Flujo de Onboarding Real', () => {
+  // Arrange
+  const timestamp = Date.now().toString();
+  const uniqueEmail = `admin_${timestamp}@nistra.com`;
+  const uniqueDni = timestamp.slice(-8);
+  const uniqueRuc = `10${timestamp.slice(-9)}`;
+
+  beforeEach(() => {
+    // Registro e Inicio de sesión mediante API para asegurar estado limpio
+    cy.request({
+      method: 'POST',
+      url: 'http://localhost:8080/api/v1/authentication/sign-up',
+      body: { emailAddress: uniqueEmail, password: 'Password123!', termsAndConditions: true }
+    }).then(() => {
+      cy.request({
+        method: 'POST',
+        url: 'http://localhost:8080/api/v1/authentication/sign-in',
+        body: { emailAddress: uniqueEmail, password: 'Password123!' }
+      }).then((signInRes) => {
+        cy.window().then((win) => {
+          win.localStorage.setItem('token', signInRes.body.token);
+          win.localStorage.setItem('userId', signInRes.body.id.toString());
+        });
+      });
+    });
+    cy.visit('http://localhost:4200/complete-account');
+  });
+
+  it('Debería crear el administrador y la academia en la BD real con datos dinámicos', () => {
+    // Act: Registro de Administrador
+    cy.get('#firstName').type('Admin');
+    cy.get('#lastName').type('Dinamico');
+    cy.get('#dniNumber').type(uniqueDni);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert
+    cy.wait(500); // Espera de persistencia
+    cy.url().should('include', '/setup-academy');
+
+    // Act: Registro de Academia
+    cy.get('#academyName').type(`Academia ${timestamp}`);
+    cy.get('#ruc').type(uniqueRuc);
+    cy.get('#emailAddress').type(`contacto_${timestamp}@demy.com`);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert final
+    cy.url().should('include', '/home');
+  });
+});
+```
+
+*Resumen de prueba*: Valida el flujo crítico de "Onboarding" desde la creación de la cuenta hasta la configuración inicial de la institución. El test utiliza datos dinámicos (timestamps) para generar correos, DNIs y RUCs únicos en cada ejecución, evitando colisiones en la base de datos. Se verifica que tras completar el perfil de administrador (TS006), el sistema redirija correctamente a la configuración de la academia (US001) y, finalmente, al dashboard principal.
+
+![Onboarding System Test](./assets/test/onboarding-system-test.png)
+
+
+**Prueba 2: Gestión de Profesores y Validaciones de Interfaz**
+
+*User Story relacionada*: US004 - Registro de Profesor
+
+```
+describe('E2E: Gestión de Profesores (Teacher)', () => {
+  beforeEach(() => {
+    // Login inicial
+    cy.visit('http://localhost:4200/sign-in');
+    cy.get('#email').type('diegovilcatut@gmail.com');
+    cy.get('#password').type('Sofiamia');
+    cy.get('.submit-button').click();
+    cy.url().should('include', '/home');
+    cy.visit('http://localhost:4200/teachers');
+  });
+
+  it('Debería registrar un nuevo profesor y mostrarlo en la tabla', () => {
+    // Arrange
+    const timestamp = Date.now().toString();
+    const uniqueEmail = `carlos_${timestamp}@nistra.com`;
+    const uniquePhone = `9${timestamp.slice(-8)}`;
+
+    // Act
+    cy.get('#teacher-firstName').type('Carlos');
+    cy.get('#teacher-lastName').type('Mendoza');
+    cy.get('#teacher-emailAddress').type(uniqueEmail);
+    cy.get('#teacher-phone').type(uniquePhone);
+    cy.get('.teacher-form__submit').click();
+
+    // Assert
+    cy.get('.teacher-roster').should('contain.text', 'Carlos Mendoza');
+    cy.get('.teacher-roster').should('contain.text', uniqueEmail);
+  });
+
+  it('Debería mostrar errores de validación si los datos son inválidos', () => {
+    // Act
+    cy.get('#teacher-firstName').type('Carlos123');
+    cy.get('#teacher-emailAddress').type('correo-sin-arroba');
+    cy.get('#teacher-phone').type('123');
+
+    // Assert: Verificación de Feedback Visual (Clases CSS y Mensajes)
+    cy.get('#teacher-firstName').should('have.class', 'teacher-form__input--invalid');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Solo letras y espacios');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Email inválido');
+  });
+});
+```
+
+![Teacher System Test](./assets//test/teacher-system-test.png)
 
 
 
