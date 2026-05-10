@@ -6201,6 +6201,99 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 6.1.1. Core Entities Unit Tests
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Creación de ClassAttendance desde Command**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should accept today's date and create the aggregate successfully")
+void shouldAcceptTodayDate() {
+    // Act
+    ClassAttendance attendance = new ClassAttendance(ACADEMY_ID, buildCommand());
+ 
+    // Assert
+    assertThat(attendance.getDate()).isEqualTo(LocalDate.now());
+    assertThat(attendance.getAcademyId()).isEqualTo(ACADEMY_ID);
+    assertThat(attendance.getAttendance()).hasSize(2);
+}
+```
+ 
+*Resumen de prueba*: Valida que el sistema pueda transformar los datos de entrada del profesor en un registro persistible. El arrange usa el método `buildCommand()` que construye un `CreateClassAttendanceCommand` con dos estudiantes (uno `ABSENT` y uno `PRESENT`) para la fecha de hoy, el act instancia el agregado `ClassAttendance`, y el assert confirma que la fecha, el ID de academia y la cantidad de registros son correctos. Esta prueba garantiza que el flujo de creación de asistencia funcione correctamente.
+ 
+![Bounded-Attendance-Unit1](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 2: Actualización de estado de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to PRESENT")
+void shouldUpdateRecordStatusSuccessfully() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.PRESENT);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.PRESENT);
+}
+```
+ 
+*Resumen de prueba*: Cumple con el criterio de corregir errores o reflejar cambios en la participación real. El test dispone de un agregado (preparado en `@BeforeEach`) con el estudiante `DNI_ABSENT` (`"87654321"`) en estado `ABSENT`, el act llama a `updateRecordStatus()` cambiando el estado a `PRESENT`, y el assert recupera el registro por DNI y confirma que el estado fue actualizado. Esta prueba asegura que el docente pueda corregir la asistencia de un alumno durante la sesión.
+ 
+![Bounded-Attendance-Unit2](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 3: Actualización de estado a EXCUSED**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to EXCUSED")
+void shouldUpdateRecordStatusToExcused() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.EXCUSED);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.EXCUSED);
+}
+```
+ 
+*Resumen de prueba*: Verifica la flexibilidad del sistema para manejar casos excepcionales como ausencias justificadas. Análoga a la prueba anterior pero con el estado `EXCUSED`, confirma que el dominio soporte múltiples transiciones de estado más allá del binario ausente/presente. El assert valida que el registro refleje el estado `EXCUSED`, cubriendo el caso de uso de ausencia por motivo justificado que muchas academias requieren.
+ 
+![Bounded-Attendance-Unit3](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 4: Rechazo de actualización para DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should throw IllegalArgumentException when updating a non-enrolled DNI")
+void shouldThrowWhenUpdatingNonExistentDni() {
+    // Act & Assert
+    assertThatThrownBy(() -> classAttendance.updateRecordStatus(DNI_UNKNOWN, AttendanceStatus.PRESENT))
+            .isInstanceOf(IllegalArgumentException.class);
+}
+```
+ 
+*Resumen de prueba*: Valida el escenario de error donde se intenta registrar la asistencia de alguien ajeno a la sesión. El test intenta actualizar el estado del `DNI_UNKNOWN` (`"00000001"`) que no existe en el agregado, y el assert confirma que se lanza una `IllegalArgumentException`. Esta prueba es fundamental para mantener la integridad de los registros de asistencia impidiendo modificaciones sobre estudiantes no matriculados en la sesión.
+ 
+![Bounded-Attendance-Unit4](./assets/test/attendance1.png)
+ 
+---
+
+
 ##### IAM Bounded - Identity and Access Management
 
 **Prueba 1: Activación de usuario con código de verificación válido**
