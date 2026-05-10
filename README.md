@@ -5812,7 +5812,436 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 ### 6.1.1. Core Entities Unit Tests
 
-##### Enrollment Bounded - Gestion de Matriculas
+##### IAM Bounded - Identity and Access Management
+
+**Prueba 1: Activación de usuario con código de verificación válido**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+@Test
+    @DisplayName("Should activate user when verified with valid code")
+    void shouldActivateUserWhenVerifiedWithValidCode() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode code = new VerificationCode("123456", LocalDateTime.now().plusMinutes(10));
+        User user = new User(email, "passwordHash", code);
+
+        // Act
+        user.verifyUser("123456");
+
+        // Assert
+        assertEquals(VerificationStatus.VERIFIED, user.getVerificationStatus());
+        assertEquals(AccountStatus.ACTIVE, user.getAccountStatus());
+        assertNull(user.getVerificationCode().code(), "Verification code should be cleared after successful verification");
+    }
+```
+
+*Resumen de prueba*: Valida que un usuario pueda activarse exitosamente cuando proporciona un código de verificación válido. El test arrange crea un usuario con email y código de verificación, luego act llama al método verifyUser() con el código válido, y finally assert verifica que el estado de verificación sea VERIFIED, el estado de la cuenta sea ACTIVE y que el código de verificación sea清除 (null) después de la activación exitosa. Esta prueba garantiza que el flujo de activación de cuenta funcione correctamente y que los usuarios puedan validar su identidad.
+
+![Bounded-IAM1](./assets/test/iam1.png)
+
+---
+
+**Prueba 2: Rechazo de verificación con código inválido o expirado**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+@Test
+    @DisplayName("Should reject verification when code is invalid or expired")
+    void shouldRejectVerificationWhenCodeIsInvalidOrExpired() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode mockCode = mock(VerificationCode.class);
+        when(mockCode.matches("badCode")).thenReturn(false);
+        User user = new User(email, "passwordHash", mockCode);
+
+        // Act
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> user.verifyUser("badCode"));
+
+        // Assert
+        verify(mockCode).matches("badCode");
+        assertEquals(VerificationStatus.NOT_VERIFIED, user.getVerificationStatus(),
+                "User must remain NOT_VERIFIED after failed verification");
+    }
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace correctamente la verificación cuando el código proporcionado es inválido o ha expirado. El test arrange crea un usuario con un mock de VerificationCode que retorna false para el código "badCode", luego act intenta verificar con ese código inválido, y assert confirma que se lanza IllegalArgumentException y que el usuario permanece en estado NOT_VERIFIED. Esta prueba asegura que usuarios maliciosos no puedan activar cuentas con códigos no válidos.
+
+![Bounded-IAM2](./assets/test/iam2.png)
+
+---
+
+**Prueba 3: Rechazo de código de restablecimiento de contraseña inválido**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+@Test
+    @DisplayName("Should reject password reset code when invalid")
+    void shouldRejectPasswordResetCodeWhenInvalid() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        VerificationCode mockCode = mock(VerificationCode.class);
+        when(mockCode.matches("wrongResetCode")).thenReturn(false);
+        User user = new User(email, "oldPasswordHash", mockCode);
+
+        // Act
+        assertThrows(IllegalArgumentException.class,
+                () -> user.verifyPasswordResetCode("wrongResetCode"));
+
+        // Assert
+        verify(mockCode).matches("wrongResetCode");
+    }
+```
+
+*Resumen de prueba*: Comprueba que el sistema rechace códigos de restablecimiento de contraseña inválidos. El test arrange crea un usuario con un mock de VerificationCode que retorna false para el código "wrongResetCode", luego act intenta verificar el código de restablecimiento, y assert confirma que se lanza IllegalArgumentException y que se llamó al método matches con el código incorrecto. Esta prueba protege contra ataques de fuerza bruta al sistema de recuperación de contraseña.
+
+![Bounded-IAM3](./assets/test/iam3.png)
+
+---
+
+**Prueba 4: Ciclo completo de restablecimiento de contraseña**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+@Test
+    @DisplayName("Should complete full password reset cycle")
+    void shouldCompleteFullPasswordResetCycle() {
+        // Arrange
+        EmailAddress email = new EmailAddress("user@example.com");
+        User user = new User(email, "oldPasswordHash",
+                new VerificationCode(null, null));
+
+        // Act
+        user.assignNewPasswordVerificationCode("user@example.com", "resetCode", 10);
+        user.verifyPasswordResetCode("resetCode");
+        user.resetPassword("newPasswordHash");
+
+        // Assert
+        assertEquals("newPasswordHash", user.getPassword());
+        assertNull(user.getVerificationCode().code(),
+                "Verification code should be cleared after successful reset");
+    }
+```
+
+*Resumen de prueba*: Valida el flujo completo de restablecimiento de contraseña: asignación de código, verificación y reseteo. El test arrange crea un usuario con código null, luego act realiza tres pasos: asignar nuevo código de verificación, verificar ese código, y finalmente restablecer la contraseña, y assert confirma que la nueva contraseña es "newPasswordHash" y que el código de verificación queda en null después del proceso exitoso. Esta prueba garantiza que el flujo completo de recuperación de contraseña funcione end-to-end.
+
+![Bounded-IAM4](./assets/test/iam4.png)
+
+
+##### Institution Bounded - Gestión de la Institución
+
+**Prueba 1: Asociación y desasociación de academia en Administrator**
+
+*User Story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+    @DisplayName("Should associate academy once and throw on reassignment")
+    void shouldAssociateAndDisassociateAcademy() {
+        // Arrange
+        Administrator admin = new Administrator(
+                new PersonName("Carlos", "Garcia"),
+                new PhoneNumber("+51", "955444333"),
+                new DniNumber("11223344"),
+                new UserId(300L)
+        );
+        AcademyId academy1 = new AcademyId(10L);
+
+        // Act
+        admin.associateAcademy(academy1);
+
+        // Assert
+        assertEquals(10L, admin.getAcademyId().academyId());
+
+        // Arrange
+        AcademyId academy2 = new AcademyId(20L);
+
+        // Act & Assert
+        assertThrows(IllegalStateException.class, () -> admin.associateAcademy(academy2));
+
+        // Act
+        admin.disassociateAcademy(academy1);
+
+        // Assert
+        assertNull(admin.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Verifica que un administrador pueda asociarse a una academia una sola vez y que no pueda reasociarse a otra. El test arrange crea un administrador, luego act intenta asociarlo a una academia con ID 10, y assert confirma que la asociación fue exitosa. Posteriormente, arrange una segunda academia con ID 20, act intenta asociar a esta nueva academia, y assert verifica que se lanza IllegalStateException. Finalmente, act llama a disassociateAcademy para desasociar, y assert confirma que el academyId queda en null. Esta prueba garantiza la integridad de la relación uno-a-uno entre administrador y academia.
+
+![Bounded-Institution1](./assets/test/institution1.png)
+
+---
+
+**Prueba 2: Creación de Teacher desde RegisterTeacherCommand**
+
+*User Story relacionada*: US004 - Registro de Profesor
+
+```
+@Test
+@DisplayName("Should create teacher from command with all fields set")
+void shouldCreateTeacherFromCommand() {
+// Arrange
+RegisterTeacherCommand command = new RegisterTeacherCommand(
+new PersonName("Ana", "Torres"),
+new EmailAddress("ana.torres@academy.com"),
+new PhoneNumber("+51", "977666555")
+);
+UserId userId = new UserId(400L);
+AcademyId academyId = new AcademyId(5L);
+
+        // Act
+        Teacher teacher = new Teacher(command, userId, academyId);
+
+        // Assert
+        assertNotNull(teacher);
+        assertEquals("Ana", teacher.getPersonName().firstName());
+        assertEquals("Torres", teacher.getPersonName().lastName());
+        assertEquals("+51", teacher.getPhoneNumber().countryCode());
+        assertEquals("977666555", teacher.getPhoneNumber().phone());
+        assertEquals(400L, teacher.getUserId().userId());
+        assertEquals(5L, teacher.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Valida que se pueda crear un objeto Teacher correctamente usando el comando RegisterTeacherCommand. El test arrange crea un comando con nombre "Ana Torres", email y teléfono, además de userId y academyId, luego act crea un nuevo Teacher usando ese comando, y assert verifica que todos los campos fueron asignados correctamente: nombre, apellido, código de país, teléfono, userId y academyId. Esta prueba asegura que la construcción de entidades Teacher desde comandos de aplicación funcione correctamente.
+
+![Bounded-Institution2](./assets/test/institution2.png)
+
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Prueba 1: Creación de Course desde CreateCourseCommand**
+
+*User Story relacionada*: US016 - Creación de Salones de Clase
+
+```
+ @Test
+    @DisplayName("Should construct Course using CreateCourseCommand and AcademyId with all fields correctly set")
+    void shouldCreateCourseFromCommand() {
+        // Arrange
+        CreateCourseCommand command = new CreateCourseCommand("Mathematics", "MATH-101", "Basic algebra and geometry");
+        AcademyId academyId = new AcademyId(1L);
+
+        // Act
+        Course course = new Course(command, academyId);
+
+        // Assert
+        assertNotNull(course);
+        assertEquals("Mathematics", course.getName());
+        assertEquals("MATH-101", course.getCode());
+        assertEquals("Basic algebra and geometry", course.getDescription());
+        assertEquals(1L, course.getAcademyId().academyId());
+    }
+```
+
+*Resumen de prueba*: Verifica que se pueda crear un objeto Course correctamente usando CreateCourseCommand y AcademyId. El test arrange crea un comando con nombre "Mathematics", código "MATH-101" y descripción, además de un AcademyId, luego act crea un nuevo Course usando esos datos, y assert verifica que todos los campos fueron asignados correctamente: nombre, código, descripción y academyId. Esta prueba asegura que la construcción de entidades Course desde comandos de aplicación funcione correctamente.
+
+![Bounded-Scheduling1](./assets/test/scheduling1.png)
+
+---
+
+**Prueba 2: Actualización de Course mediante UpdateCourseCommand**
+
+*User Story relacionada*: US017 - Actualización de Salones de Clase
+
+```
+@Test
+    @DisplayName("Should update all fields via UpdateCourseCommand and return the same instance")
+    void shouldUpdateCourseViaCommand() {
+        // Arrange
+        Course course = new Course("Mathematics", "MATH-101", "Basic algebra", new AcademyId(1L));
+        UpdateCourseCommand command = new UpdateCourseCommand(10L, "Advanced Mathematics", "MATH-201", "Linear algebra and calculus");
+
+        // Act
+        Course updated = course.updateCourse(command);
+
+        // Assert
+        assertSame(course, updated, "updateCourse should return the same instance");
+        assertEquals("Advanced Mathematics", course.getName());
+        assertEquals("MATH-201", course.getCode());
+        assertEquals("Linear algebra and calculus", course.getDescription());
+    }
+```
+
+*Resumen de prueba*: Valida que el método updateCourse() actualice todos los campos del Course y retorne la misma instancia. El test arrange crea un Course inicial con datos de "Mathematics", luego arrange un UpdateCourseCommand con nuevos datos ("Advanced Mathematics", "MATH-201", etc.), luego act llama a updateCourse, y assert verifica dos cosas: que retorna la misma instancia (comportamiento in-place) y que los campos fueron actualizados correctamente. Esta prueba garantiza que la actualización de cursos sea correcta y eficiente.
+
+![Bounded-Scheduling2](./assets/test/scheduling2.png)
+
+---
+
+**Prueba 3: Creación de WeeklySchedule desde CreateWeeklyScheduleCommand**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+@Test
+    @DisplayName("Should construct WeeklySchedule via CreateWeeklyScheduleCommand")
+    void shouldCreateWeeklyScheduleFromCommand() {
+        // Arrange
+        CreateWeeklyScheduleCommand command = new CreateWeeklyScheduleCommand("Semana Intensiva");
+
+        // Act
+        WeeklySchedule schedule = new WeeklySchedule(command, ACADEMY_ID);
+
+        // Assert
+        assertEquals("Semana Intensiva", schedule.getName());
+        assertEquals(1L, schedule.getAcademyId().academyId());
+        assertNotNull(schedule.getSchedules());
+        assertTrue(schedule.getSchedules().isEmpty());
+    }
+```
+
+*Resumen de prueba*: Comprueba que se pueda crear un WeeklySchedule desde CreateWeeklyScheduleCommand. El test arrange crea un comando con nombre "Semana Intensiva" y un ACADEMY_ID, luego act crea un WeeklySchedule usando esos datos, y assert verifica que el nombre sea correcto, el academyId sea 1L, la lista de schedules no sea null y esté vacía. Esta prueba asegura que la construcción de horarios semanales desde comandos funcione correctamente.
+
+![Bounded-Scheduling3](./assets/test/scheduling3.png)
+
+---
+
+**Prueba 4: Adición de Schedule y verificación de asociación bidireccional**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+@Test
+    @DisplayName("Should add a schedule and verify bidirectional association is correctly set")
+    void shouldAddScheduleAndSetBidirectionalAssociation() {
+        // Arrange
+        WeeklySchedule weekly = new WeeklySchedule("Semana 1", ACADEMY_ID);
+
+        // Act
+        weekly.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 100L, 200L, 300L);
+
+        // Assert
+        assertEquals(1, weekly.getSchedules().size());
+        Schedule added = weekly.getSchedules().get(0);
+        assertNotNull(added);
+        assertEquals(LocalTime.of(8, 0), added.getTimeRange().startTime());
+        assertEquals(LocalTime.of(10, 0), added.getTimeRange().endTime());
+        assertEquals(DayOfWeek.MONDAY, added.getDayOfWeek());
+        assertEquals(100L, added.getCourseId().id());
+        assertEquals(200L, added.getClassroomId().id());
+        assertEquals(300L, added.getTeacherId().userId());
+        assertSame(weekly, added.getWeeklySchedule(), "Schedule must reference back to the WeeklySchedule");
+    }
+```
+
+*Resumen de prueba*: Verifica que al añadir un Schedule al WeeklySchedule se establezca correctamente la asociación bidireccional. El test arrange crea un WeeklySchedule "Semana 1", luego act añade un schedule con hora de inicio "08:00", fin "10:00", día MONDAY, y IDs de curso, aula y profesor, y assert verifica tanto los datos del schedule añadido (hora, día, IDs) como la asociación bidireccional confirmando que el schedule referencia de vuelta al weeklySchedule. Esta prueba es crucial para asegurar la integridad de las relaciones en el modelo de dominio.
+
+![Bounded-Scheduling4](./assets/test/scheduling4.png)
+
+---
+
+**Prueba 5: Eliminación de Schedule por su ID**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+    @Test
+    @DisplayName("Should remove an existing schedule by its ID")
+    void shouldRemoveExistingScheduleById() {
+        // Arrange
+        WeeklySchedule weekly = new WeeklySchedule("Semana 1", ACADEMY_ID);
+        weekly.addSchedule("08:00", "10:00", DayOfWeek.MONDAY, 101L, 201L, 301L);
+        weekly.addSchedule("10:00", "12:00", DayOfWeek.WEDNESDAY, 102L, 202L, 302L);
+        setScheduleId(weekly.getSchedules().get(0), 1L);
+        setScheduleId(weekly.getSchedules().get(1), 2L);
+
+        Long idToRemove = 1L;
+
+        // Act
+        weekly.removeSchedule(idToRemove);
+
+        // Assert
+        assertEquals(1, weekly.getSchedules().size());
+        assertEquals(DayOfWeek.WEDNESDAY, weekly.getSchedules().get(0).getDayOfWeek());
+    }
+```
+
+*Resumen de prueba*: Valida que se pueda eliminar un Schedule específico de un WeeklySchedule usando su ID. El test arrange crea un WeeklySchedule con dos horarios (Monday 8-10 y Wednesday 10-12), les asigna IDs 1 y 2 respectivamente, luego act llama a removeSchedule con ID 1, y assert verifica que solo quede un schedule (el del miércoles) y que sea el correcto. Esta prueba garantiza que la eliminación de horarios funcione correctamente.
+
+![Bounded-Scheduling5](./assets/test/scheduling5.png)
+
+---
+
+**Prueba 6: Detección de conflicto entre Schedule que se solapan**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+    @Test
+    @DisplayName("Should detect conflict when two schedules overlap on same day and classroom")
+    void shouldDetectConflictWithAnotherSchedule() {
+        // Arrange
+        Schedule schedule1 = new Schedule("08:00", "10:00", DayOfWeek.MONDAY, 1L, 1L, 1L);
+        Schedule schedule2 = new Schedule("09:00", "11:00", DayOfWeek.MONDAY, 2L, 1L, 2L);
+
+        // Act
+        boolean conflict = schedule1.conflictsWith(schedule2);
+
+        // Assert
+        assertTrue(conflict, "Schedules with overlapping time ranges on same classroom and day should conflict");
+    }
+```
+
+*Resumen de prueba*: Verifica que el método conflictsWith() detecte correctamente cuando dos horarios se solapan en el mismo día y aula. El test arrange crea dos schedules que overlapped en tiempo (8-10 y 9-11) en el mismo día (MONDAY) y misma aula (1L), luego act llama a conflictsWith() en el primer schedule pasando el segundo como argumento, y assert confirma que retorna true. Esta prueba es esencial para evitar double-booking de aulas.
+
+![Bounded-Scheduling6](./assets/test/scheduling6.png)
+
+---
+
+**Prueba 7: No detección de conflicto para días o aulas diferentes**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+    @Test
+    @DisplayName("Should not detect conflict for different classroom or day")
+    void shouldNotConflictWhenDifferentDayOrClassroom() {
+        // Arrange
+        Schedule mondaySchedule = new Schedule("08:00", "10:00", DayOfWeek.MONDAY, 1L, 1L, 1L);
+        Schedule tuesdaySchedule = new Schedule("08:00", "10:00", DayOfWeek.TUESDAY, 1L, 1L, 1L);
+        Schedule differentClassroom = new Schedule("09:00", "11:00", DayOfWeek.MONDAY, 1L, 2L, 1L);
+
+        // Act & Assert
+        assertFalse(mondaySchedule.conflictsWith(tuesdaySchedule));
+        assertFalse(mondaySchedule.conflictsWith(differentClassroom));
+    }
+```
+
+*Resumen de prueba*: Confirma que no se detecten conflictos cuando los horarios son en días diferentes o en aulas diferentes. El test arrange crea tres schedules: uno el lunes, otro el martes mismo horario, y otro el lunes mismo día pero diferente aula, luego act verifica que no hay conflicto entre el schedule del lunes y el del martes, ni entre el lunes y el de diferente aula. Esta prueba asegura que el sistema no falsee positivos en la detección de conflictos.
+
+![Bounded-Scheduling7](./assets/test/scheduling7.png)
+
+---
+
+**Prueba 8: Excepción al crear TimeRange con tiempos inválidos**
+
+*User Story relacionada*: US019 - Creación de Horarios
+
+```
+@Test
+@DisplayName("Should throw exception when creating TimeRange with invalid times")
+void shouldThrowExceptionForInvalidTimeRange() {
+// Arrange, Act & Assert
+IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+() -> new TimeRange(LocalTime.of(10, 0), LocalTime.of(9, 0)));
+
+        assertEquals("Start time must be before end time", exception.getMessage());
+    }
+```
+
+*Resumen de prueba*: Verifica que se lance IllegalArgumentException cuando se intenta crear un TimeRange con hora de inicio mayor que la hora de fin. El test arrange usa assertThrows para capturar la excepción, luego act intenta crear un TimeRange con startTime 10:00 y endTime 9:00 (inválido), y assert verifica que el mensaje de la excepción sea "Start time must be before end time". Esta prueba garantiza la validación de invariantes de dominio.
+
+![Bounded-Scheduling8](./assets/test/scheduling8.png)
+
+
+##### Enrollment Bounded - Gestión de Matrículas
 
 ```
 @ExtendWith(MockitoExtension.class)
@@ -6012,6 +6441,10 @@ class EnrollmentCommandServiceImplTest {
 
 
 ### 6.1.2. Core Integration Tests
+
+
+
+
 
 ##### Enrollment Management API
 
