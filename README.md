@@ -5854,11 +5854,109 @@ El proyecto `demy-backend` está organizado bajo el paquete base `com.nistra.dem
 - Logs de auditoría automáticos via `AuditableAbstractAggregateRoot` y `AuditableModel`
 ---
 
-### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+## 5.2.6. RESTful API Documentation
+ 
+En esta sección se presentan las evidencias de funcionamiento de los principales endpoints del backend desplegado en Railway, verificando su correcto comportamiento mediante Swagger UI. Se documentan las pruebas realizadas para la creación, autenticación y gestión de usuarios dentro del sistema Demy, incluyendo las respuestas del servidor y el flujo completo de validación por correo electrónico.
+ 
+### 1) Comprobación en Swagger de los endpoints
+ 
+Se accede a `/swagger-ui/index.html` para revisar que los controladores y endpoints se encuentren correctamente documentados y operativos.
+ 
+![Swagger UI Overview](./assets/images/photos/i1.png)
 
-### 5.2.7. RESTful API documentation
+### 2) Crear una cuenta en Demy (registro inicial)
+ 
+Desde el endpoint `/auth/signup`, se realiza el registro de un nuevo usuario proporcionando los datos básicos.
 
-### 5.2.8. Team Collaboration Insights
+![Sign Up Request](./assets/images/photos/i2.png)
+ 
+![Sign Up Response Success](./assets/images/photos/i2-1.png)
+
+### 3) Revisión de correo electrónico para verificación
+ 
+Se comprueba el correo electrónico asociado a la cuenta creada, donde se recibe el código de verificación y un enlace directo a la Landing Page.
+
+![Verification Email Received](./assets/images/photos/i3.png)
+ 
+![Verification Email Content Details](./assets/images/photos/i3-1.png)
+
+### 4) Verificar el código de confirmación
+ 
+Utilizando el endpoint `/auth/verify`, se ingresa el código recibido para validar la cuenta.
+ 
+![Account Verification Process](./assets/images/photos/i4.png)
+
+### 5) Ingreso a Demy con credenciales (Sign In)
+ 
+Se utiliza el endpoint `/auth/signin` para autenticarse con el correo y contraseña previamente registrados.
+ 
+![Sign In Request](./assets/images/photos/i5.png)
+ 
+![Sign In Response with Token](./assets/images/photos/i5-1.png)
+
+### 6) Uso del token de autenticación
+ 
+Se copia el token JWT obtenido tras el inicio de sesión para acceder a los endpoints protegidos.
+ 
+![JWT Token Authorization Swagger](./assets/images/photos/i6.png)
+
+### 7) Creación de usuario administrador
+ 
+Con el token de autenticación, se ejecuta el endpoint `/users` para crear un usuario con rol administrador.
+ 
+![Create Administrator Request](./assets/images/photos/i7.png)
+ 
+![Create Administrator Response](./assets/images/photos/i7-1.png)
+
+### 8) Creación de academia asociada al administrador
+ 
+Desde el endpoint `/academies`, se crea una nueva academia vinculada al usuario administrador.
+ 
+![Create Academy Request](./assets/images/photos/i8.png)
+ 
+![Create Academy Response Success](./assets/images/photos/i8-1.png)
+
+### 9) Envío de código a una nueva cuenta tipo Teacher
+ 
+Se crea un nuevo usuario con rol Teacher y se envía su código de verificación al correo registrado.
+ 
+![Teacher Registration Request](./assets/images/photos/i9.png)
+ 
+![Teacher Registration Response](./assets/images/photos/i9-1.png)
+
+### 10) Recepción del código de verificación del nuevo usuario
+ 
+Se muestra el correo recibido por el nuevo usuario Teacher con su código de verificación.
+ 
+![Teacher Verification Email](./assets/images/photos/i10.png)
+
+### 11) Autenticación del nuevo usuario Teacher
+ 
+El nuevo usuario Teacher ingresa sus credenciales en `/auth/signin` y obtiene su token de autenticación.
+ 
+![Teacher Sign In Request](./assets/images/photos/i11.png)
+ 
+![Teacher Sign In Token Success](./assets/images/photos/i11-1.png)
+
+### 12) Visualización de profesores en la academia
+ 
+Mediante el endpoint `/teachers`, se listan todos los profesores registrados en la academia, confirmando la correcta integración del flujo.
+
+![List Teachers Response Evidence](./assets/images/photos/i12.png)
+ 
+### Tabla de documentación
+ 
+| Endpoint | Acción (HTTP) | Path | Parámetros | Descripción | Ejemplo de Request | Ejemplo de Response | URL |
+|---|---|---|---|---|---|---|---|
+| Sign-up | POST | `/api/v1/authentication/sign-up` | Headers: Content-Type: application/json | Registra un nuevo usuario en el sistema. | `{"firstName":"Ana", "lastName":"Rojas", "email":"ana@demo.com", "password":"Secret123"}` | `201 Created: {"userId":"usr_1", "email":"ana@demo.com", "createdAt":"2025-10-08T12:00:00Z"}` | https://demy-api-production.up.railway.app/api/v1/authentication/sign-up |
+| Sign-in | POST | `/api/v1/authentication/sign-in` | Headers: Content-Type: application/json | Autentica un usuario registrado. | `{"email":"ana@demo.com","password":"Secret123"}` | `200 OK: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI...","expiresIn":"86400"}` | https://demy-api-production.up.railway.app/api/v1/authentication/sign-in |
+| Verify Account | POST | `/api/v1/authentication/verify` | Headers: Content-Type: application/json | Verifica la cuenta del usuario mediante código. | `{"email":"ana@demo.com","verificationCode":"123456"}` | `200 OK: {"message":"Account verified successfully"}` | https://demy-api-production.up.railway.app/api/v1/authentication/verify |
+| Resend Code | POST | `/api/v1/authentication/resend-code` | Headers: Content-Type: application/json | Reenvía el código de verificación al correo registrado. | `{"email":"ana@demo.com"}` | `200 OK: {"message":"Verification code resent successfully"}` | https://demy-api-production.up.railway.app/api/v1/authentication/resend-code |
+| Create Academy | POST | `/api/v1/academies` | Headers: Authorization: Bearer `<token>` | Crea una nueva academia vinculada a un administrador. | `{"name":"Academia Innovate","description":"Formación digital moderna"}` | `201 Created: {"academyId":"acd_101", "name":"Academia Innovate","createdAt":"2025-10-08T13:00:00Z"}` | https://demy-api-production.up.railway.app/api/v1/academies |
+| Create Administrator | POST | `/api/v1/administrators` | Headers: Authorization: Bearer `<token>` | Registra un usuario con rol administrador. | `{"userId":"usr_1","academyId":"acd_101"}` | `201 Created: {"adminId":"adm_1","linkedAcademy":"acd_101"}` | https://demy-api-production.up.railway.app/api/v1/administrators |
+| Get Teachers | GET | `/api/v1/teachers` | Headers: Authorization: Bearer `<token>` | Obtiene el listado de profesores registrados en la academia. | — | `200 OK: [{"teacherId":"tch_1","name":"Carlos Pérez","email":"carlos@academy.com"}]` | https://demy-api-production.up.railway.app/api/v1/teachers |
+
+### 5.2.7. Team Collaboration Insights
 
 ## 5.3. Video About-the-Product
 
