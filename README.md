@@ -8227,6 +8227,9 @@ describe('E2E Puro: Flujo de Onboarding Real', () => {
 
 *User Story relacionada*: US004 - Registro de Profesor
 
+**Resumen del Flujo Evaluado:**
+Este test E2E evalua el proceso del registro completo de un profesor, desde lo que manda el frontend hasta la base de datos y luego mostrarlo en la lista de profesores
+
 ```
 describe('E2E: Gestión de Profesores (Teacher)', () => {
   beforeEach(() => {
