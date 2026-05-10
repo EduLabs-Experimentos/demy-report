@@ -5628,7 +5628,231 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 *Última actualización: Mayo 2026*
 
-### 5.2.5. Implemented Native-Mobile Application Evidence
+## 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+ 
+El backend de la aplicación Demy se implementó utilizando **Spring Boot 3.x** como framework principal, siguiendo una arquitectura basada en **Domain-Driven Design (DDD)** con Bounded Contexts claramente definidos (IAM, Institution Management, Attendance, Billing), principios de **Clean Architecture** y separación por capas (domain, application, infrastructure, interfaces) para garantizar escalabilidad y mantenibilidad.
+ 
+### Estructura del Proyecto
+ 
+![Estructura_Proyecto](./assets/images/photos/proyect_structure.png)
+El proyecto `demy-backend` está organizado bajo el paquete base `com.nistra.demy.platform`, con los siguientes Bounded Contexts principales:
+ 
+- **Shared Kernel** — Value Objects reutilizables (`DniNumber`, `AcademyId`, `StudentId`, `Money`, `PersonName`, `EmailAddress`, `PhoneNumber`, `StreetAddress`), auditoría base (`AuditableAbstractAggregateRoot`, `AuditableModel`), manejo de excepciones de dominio e internacionalización (i18n EN/ES).
+- **IAM (Identity & Access Management)** — Registro, autenticación JWT, verificación OTP por correo, gestión de roles y seguridad con Spring Security.
+- **Institution Management** — Gestión de academias, administradores y profesores.
+- **Attendance** — Registro y actualización de asistencia por sesión de clase.
+- **Billing** — Cuentas de facturación, asignación y gestión del ciclo de vida de facturas.
+### Evidencia de Desarrollo
+ 
+| Repository | Branch | Commit ID | Commit Message | Commit Body | Committed On |
+|---|---|---|---|---|---|
+| demy-api | main | 2d43aa7 | merge: integrate develop into main | — | 31/08/2025 |
+| demy-api | main | f333a73 | chore: initial commit | — | 30/08/2025 |
+| demy-api | main | d4c8047 | build(pom): update project description and add new dependencies | — | 30/08/2025 |
+| demy-api | main | 555d3ba | build(pom): add JWT and Spring Security dependencies | — | 30/08/2025 |
+| demy-api | main | da75f11 | build(pom): add Spring Boot Mail and Thymeleaf dependencies | — | 30/08/2025 |
+| demy-api | main | 1da81d9 | build(pom): update springdoc-openapi-starter-webmvc-ui version to 2.8.11 | — | 30/08/2025 |
+| demy-api | main | 2b23af5 | build(properties): update application properties for Demy Platform configuration | — | 30/08/2025 |
+| demy-api | main | 9dc3ee0 | feat(shared): add AuditableAbstractAggregateRoot class for auditing support | — | 30/08/2025 |
+| demy-api | main | e439a49 | feat(shared): add AuditableModel base class for entity auditing | — | 30/08/2025 |
+| demy-api | main | caf15cf | feat(shared): add MessageResource record to encapsulate messages | — | 30/08/2025 |
+| demy-api | main | 898d68f | feat(shared): add OpenApiConfiguration class for API documentation setup | — | 30/08/2025 |
+| demy-api | main | 3dc3e6d | feat(shared): implement SnakeCaseWithPluralizedTablePhysicalNamingStrategy for entity naming | — | 30/08/2025 |
+| demy-api | main | 1851145 | merge: integrate feature/initial-structure into develop | — | 30/08/2025 |
+| demy-api | main | 305c86b | feat(shared): add AcademyId value object for unique academy identification | — | 30/08/2025 |
+| demy-api | main | d025f48 | feat(shared): add AccountStatus enum for user account state management | — | 30/08/2025 |
+| demy-api | main | 2246809 | feat(shared): add DniNumber value object for DNI number validation and encapsulation | — | 30/08/2025 |
+| demy-api | main | 5472479 | feat(shared): add EmailAddress value object for email validation and encapsulation | — | 30/08/2025 |
+| demy-api | main | 496f0d6 | feat(shared): add PersonName value object for full name validation and encapsulation | — | 30/08/2025 |
+| demy-api | main | e78cfa1 | feat(shared): add PhoneNumber value object for phone number validation and formatting | — | 30/08/2025 |
+| demy-api | main | 397505b | feat(shared): add StreetAddress value object for address encapsulation and validation | — | 30/08/2025 |
+| demy-api | main | 0c8b0ce | feat(shared): add DomainException class for handling domain-specific exceptions | — | 30/08/2025 |
+| demy-api | main | af6ed28 | feat(shared): add LocalizationService interface for resolving localized messages | — | 30/08/2025 |
+| demy-api | main | d938b9f | feat(i18n): add MessageSourceLocalizationService interface extending LocalizationService | — | 30/08/2025 |
+| demy-api | main | db1581d | feat(i18n): add LocalizationConfiguration for locale resolution setup | — | 30/08/2025 |
+| demy-api | main | 53a0859 | feat(i18n): implement LocalizationServiceImpl for message retrieval and domain exception code mapping | — | 30/08/2025 |
+| demy-api | main | c354bb1 | feat(email): add TemplatedEmailService interface for sending templated emails | — | 30/08/2025 |
+| demy-api | main | 4b23b6d | feat(email): implement EmailServiceImpl for sending templated emails | — | 30/08/2025 |
+| demy-api | main | 40cc6dd | feat(error): add ErrorResource for structured error responses | — | 30/08/2025 |
+| demy-api | main | 9c1599c | feat(error): create ErrorResourceFromExceptionAssembler for error resource transformation | — | 30/08/2025 |
+| demy-api | main | 80c637e | feat(exception): implement GlobalExceptionHandler for centralized exception handling | — | 30/08/2025 |
+| demy-api | main | 619241cf | feat(properties): add JWT, mail sender, verification, and internationalization properties | — | 31/08/2025 |
+| demy-api | main | 020bf7e | feat(application): enable asynchronous processing and JPA auditing | — | 31/08/2025 |
+| demy-api | main | a28fdd7 | feat(properties): add Spring DataSource and internationalization configurations | — | 31/08/2025 |
+| demy-api | main | ef523b9 | feat(user): implement User aggregate with verification and tenant association features | — | 31/08/2025 |
+| demy-api | main | f9aa382 | feat(role): add Role entity with validation and default role functionality | — | 31/08/2025 |
+| demy-api | main | b189aaf | feat(role): add Roles enum for user access levels | — | 31/08/2025 |
+| demy-api | main | da098c9 | feat(tenant): add TenantId value object with validation and uniqueness constraint | — | 31/08/2025 |
+| demy-api | main | 4afb664 | feat(user): add UserResource record for user data representation | — | 31/08/2025 |
+| demy-api | main | e3e6d85 | feat(verification): add VerificationStatus enum for user verification states | — | 31/08/2025 |
+| demy-api | main | ed824c7 | feat(role): add RoleResource record for role data representation | — | 31/08/2025 |
+| demy-api | main | 88f6029 | feat(user): add AuthenticatedUserResource record for authenticated user data representation | — | 31/08/2025 |
+| demy-api | main | e81485e | feat(tenant): add AssignUserTenantId record for user-tenant association | — | 31/08/2025 |
+| demy-api | main | a5a9faa | feat(query): add GetAuthenticatedUserTenantIdQuery record for retrieving authenticated user tenant ID | — | 31/08/2025 |
+| demy-api | main | 6d64d1e | feat(verification): add ResendVerificationCodeCommand for resending verification codes | — | 31/08/2025 |
+| demy-api | main | 104e584 | feat(verification): add ResendVerificationCodeResource for email validation | — | 31/08/2025 |
+| demy-api | main | f1e5505 | feat(user): add SignUpResource record for user registration data | — | 31/08/2025 |
+| demy-api | main | e214ef9 | feat(authentication): add SignInResource record for user sign-in data | — | 31/08/2025 |
+| demy-api | main | 732412b | feat(authentication): add SignInCommand record for user sign-in input | — | 31/08/2025 |
+| demy-api | main | 4f30506 | feat(user): add SignUpCommand record for user registration input | — | 31/08/2025 |
+| demy-api | main | 92e15d3 | feat(verification): add VerificationCode record for handling verification codes | — | 31/08/2025 |
+| demy-api | main | 2db71d1 | feat(verification): add VerifyUserCommand record for user verification input | — | 31/08/2025 |
+| demy-api | main | dfdc03b | feat(verification): add VerifyUserResource record for user verification data | — | 31/08/2025 |
+| demy-api | main | ce8112c | feat(roles): add SeedRolesCommand record for seeding role data | — | 31/08/2025 |
+| demy-api | main | fe9d95b | feat(user): add UserQueryService interface for handling user queries | — | 31/08/2025 |
+| demy-api | main | c25e69a | feat(user): add UserCommandService interface for handling user commands | — | 31/08/2025 |
+| demy-api | main | d0d46ee | feat(user): add UserRepository interface for user data persistence | — | 31/08/2025 |
+| demy-api | main | 7f887c4 | feat(roles): add RoleRepository interface for role data persistence | — | 31/08/2025 |
+| demy-api | main | 0a6d131 | feat(user): add UserResourceFromEntityAssembler for transforming User entities to User resources | — | 31/08/2025 |
+| demy-api | main | 5957669 | feat(user): add VerifyUserCommandFromResourceAssembler for transforming VerifyUserResource to VerifyUserCommand | — | 31/08/2025 |
+| demy-api | main | 4d877c0 | feat(user): add SignInCommandFromResourceAssembler for transforming SignInResource to SignInCommand | — | 31/08/2025 |
+| demy-api | main | 5265630 | feat(user): add SignUpCommandFromResourceAssembler for transforming SignUpResource to SignUpCommand | — | 31/08/2025 |
+| demy-api | main | 1cd46ac | feat(roles): add RoleCommandService interface for handling role commands | — | 31/08/2025 |
+| demy-api | main | 102f35f | feat(roles): add RoleResourceFromEntityAssembler for transforming Role entities to Role resources | — | 31/08/2025 |
+| demy-api | main | 7a6eb6e | feat(user): add AuthenticatedUserResourceFromEntityAssembler for transforming User entities to AuthenticatedUser resources | — | 31/08/2025 |
+| demy-api | main | f9bff05 | feat(user): implement UserQueryService for handling authenticated user queries | — | 31/08/2025 |
+| demy-api | main | fe1b5fc | feat(user): implement UserCommandService for handling user commands | — | 31/08/2025 |
+| demy-api | main | 58d8a35 | feat(verification): add VerificationService interface for code generation and verification | — | 31/08/2025 |
+| demy-api | main | 390f738 | feat(identity): add IdentityService interface for user identity management | — | 31/08/2025 |
+| demy-api | main | ecd5b5f | feat(hashing): add HashingService interface for password encoding and verification | — | 31/08/2025 |
+| demy-api | main | 51161f4 | feat(email): add EmailService interface for sending verification and password reset emails | — | 31/08/2025 |
+| demy-api | main | de31a87 | feat(token): add TokenService interface for token generation and validation | — | 31/08/2025 |
+| demy-api | main | ba09f4b | feat(role): implement RoleCommandService for role seeding functionality | — | 31/08/2025 |
+| demy-api | main | 516161b | feat(security): add WebSecurityConfiguration for authentication and authorization setup | — | 31/08/2025 |
+| demy-api | main | 4f08dd3 | feat(user): implement UserDetailsImpl for user authentication details | — | 31/08/2025 |
+| demy-api | main | cbbe6a4 | feat(user): implement UserDetailsService for loading user details by username | — | 31/08/2025 |
+| demy-api | main | 210c25a | feat(authentication): add UsernamePasswordAuthenticationTokenBuilder for token creation | — | 31/08/2025 |
+| demy-api | main | 9d02afc | feat(security): add UnauthorizedRequestHandlerEntryPoint for handling unauthorized requests | — | 31/08/2025 |
+| demy-api | main | 5e3d1ed | feat(hashing): add BCryptHashingService interface for password encoding | — | 31/08/2025 |
+| demy-api | main | bdd2379 | feat(hashing): implement HashingServiceImpl for password encoding and matching | — | 31/08/2025 |
+| demy-api | main | 57ead44 | feat(tokens): add BearerTokenService interface for token generation and retrieval | — | 31/08/2025 |
+| demy-api | main | 71e77a0 | feat(tokens): implement TokenServiceImpl for JWT token generation and validation | — | 31/08/2025 |
+| demy-api | main | 465138 | feat(verification): add OtpSecureVerificationService interface for OTP verification | — | 31/08/2025 |
+| demy-api | main | 115634db | feat(verification): add VerificationProperties class for OTP configuration | — | 31/08/2025 |
+| demy-api | main | d009b31 | feat(verification): implement VerificationServiceImpl for OTP code generation and verification | — | 31/08/2025 |
+| demy-api | main | 09eed09 | feat(email): add UserNotificationEmailService interface for user notification email handling | — | 31/08/2025 |
+| demy-api | main | a7f927e | feat(email): implement NotificationEmailServiceImpl for sending verification and password reset emails | — | 31/08/2025 |
+| demy-api | main | 64e9457 | feat(verification): add ResendVerificationCodeCommandFromResourceAssembler for command transformation | — | 31/08/2025 |
+| demy-api | main | f776a8c | feat(authorization): implement BearerAuthorizationRequestFilter for token validation and user authentication | — | 31/08/2025 |
+| demy-api | main | dcd b341 | feat(event): implement ApplicationReadyEventHandler for role seeding verification | — | 31/08/2025 |
+| demy-api | main | 2a7143b | feat(iam): add IamContextFacade interface for fetching authenticated user tenant ID | — | 31/08/2025 |
+| demy-api | main | a4b5192 | feat(iam): add SpringSecurityCurrentUserProvider interface extending IdentityService | — | 31/08/2025 |
+| demy-api | main | 6deebb3 | feat(iam): implement CurrentUserProviderImpl for user details retrieval | — | 31/08/2025 |
+| demy-api | main | b1e3db7 | feat(iam): implement IamContextFacadeImpl for fetching authenticated user tenant ID | — | 31/08/2025 |
+| demy-api | main | fd8de7e | feat(verification): add UserVerificationCodeAssignedEvent for handling verification code assignments | — | 31/08/2025 |
+| demy-api | main | 778dbfb | feat(verification): implement UserVerificationCodeAssignedEventHandler for processing verification code events | — | 31/08/2025 |
+| demy-api | main | 2b3a7ad | feat(tenancy): add TenantAssignmentException for handling null tenant ID scenarios | — | 31/08/2025 |
+| demy-api | main | 1dc998b | feat(exceptions): add UserNotFoundException for handling user retrieval errors | — | 31/08/2025 |
+| demy-api | main | 83c775b | feat(event-handling): implement AdministratorRegisteredEventHandler for processing administrator registration events | — | 31/08/2025 |
+| demy-api | main | ba1572a | feat(authentication): implement AuthenticationController for user sign-in, sign-up, verification, and code resending | — | 31/08/2025 |
+| demy-api | main | 3afd3d5 | feat(internationalization): add configuration for message caching duration | — | 31/08/2025 |
+| demy-api | main | 4d0a3a9 | merge: integrate feature/identity-access-management into develop | — | 31/08/2025 |
+| demy-api | main | b370 9af | feat(administrator): implement Administrator aggregate with registration and disassociation methods | — | 31/08/2025 |
+| demy-api | main | 3ba118b | feat(institution): add AdministratorId value object for unique administrator identification | — | 31/08/2025 |
+| demy-api | main | d46afb1 | feat(institution): add RUC value object for unique taxpayer identification in Peru | — | 31/08/2025 |
+| demy-api | main | 481366 | feat(institution): add UserId value object for user identification | — | 31/08/2025 |
+| demy-api | main | 8d73839 | feat(institution): add AcademyDescription value object for academy description management | — | 31/08/2025 |
+| demy-api | main | 996a3d8 | feat(institution): add AcademyName value object for academy name management | — | 31/08/2025 |
+| demy-api | main | d1c6d65 | feat(institution): add Teacher aggregate for managing teacher information | — | 31/08/2025 |
+| demy-api | main | 2e1ca42 | feat(institution): add Academy aggregate for managing academy information | — | 31/08/2025 |
+| demy-api | main | 92d0507 | feat(institution): add AcademyQueryService interface for querying academy information | — | 31/08/2025 |
+| demy-api | main | bd09856 | feat(institution): add AcademyCommandService interface for handling academy commands | — | 31/08/2025 |
+| demy-api | main | feee347 | feat(institution): add AcademyRepository interface for managing Academy entities | — | 31/08/2025 |
+| demy-api | main | d4d758b | feat(institution): add AdministratorRepository interface for managing Administrator entities | — | 31/08/2025 |
+| demy-api | main | 371566 | feat(institution): add AdministratorQueryService interface for querying Administrator information | — | 31/08/2025 |
+| demy-api | main | bf700ef | feat(institution): add AdministratorCommandService interface for handling administrator registration commands | — | 31/08/2025 |
+| demy-api | main | 877791 | feat(institution): add AssignAdministratorToAcademyCommand for assigning administrators to academies | — | 31/08/2025 |
+| demy-api | main | a0ef705 | feat(institution): add GetAcademyByIdQuery for retrieving academy details by ID | — | 31/08/2025 |
+| demy-api | main | dfb4d6b | feat(institution): add GetAdministratorByDniNumberQuery for retrieving administrator details by DNI number | — | 31/08/2025 |
+| demy-api | main | 6554a61 | feat(institution): add GetAllTeachersQuery for retrieving all teacher details | — | 31/08/2025 |
+| demy-api | main | 1c00c83 | feat(institution): add RegisterAcademyCommand for registering new academies | — | 31/08/2025 |
+| demy-api | main | 444d57f | feat(institution): add RegisterAdministratorCommand for registering new administrators | — | 31/08/2025 |
+| demy-api | main | 6736c7f | feat(institution): add TeacherRepository for managing Teacher entities | — | 31/08/2025 |
+| demy-api | main | f8b9f11 | feat(institution): add TeacherQueryService interface for handling teacher queries | — | 31/08/2025 |
+| demy-api | main | 554672 | feat(institution): add RegisterAdministratorResource for validating administrator registration data | — | 31/08/2025 |
+| demy-api | main | 69db01e | feat(institution): add RegisterAcademyResource for validating academy registration data | — | 31/08/2025 |
+| demy-api | main | 233304ec | feat(institution): add AcademyResource for transferring academy data | — | 31/08/2025 |
+| demy-api | main | 3dceaf3 | feat(institution): add AdministratorResource for transferring administrator data | — | 31/08/2025 |
+| demy-api | main | b8b559c | feat(institution): add TeacherResource for transferring teacher data | — | 31/08/2025 |
+| demy-api | main | cca8217 | feat(institution): add AcademyQueryServiceImpl for handling academy retrieval queries | — | 31/08/2025 |
+| demy-api | main | ad0d53b | feat(institution): add AcademyCommandServiceImpl for handling academy registration commands | — | 31/08/2025 |
+| demy-api | main | 76ac639 | feat(institution): add AdministratorCommandServiceImpl for handling administrator registration commands | — | 31/08/2025 |
+| demy-api | main | be8eae6 | feat(institution): add AdministratorQueryServiceImpl for handling administrator retrieval queries | — | 31/08/2025 |
+| demy-api | main | f975ec2 | feat(institution): add TeacherQueryServiceImpl for handling teacher retrieval queries | — | 31/08/2025 |
+| demy-api | main | d39dcae | feat(institution): add AdministratorRegisteredEvent for handling administrator registration events | — | 31/08/2025 |
+| demy-api | main | 7e4cfd0 | feat(institution): add TeacherResourceFromEntityAssembler for transforming Teacher entities to resources | — | 31/08/2025 |
+| demy-api | main | 5a0be87 | feat(institution): add AcademyResourceFromEntityAssembler for transforming Academy entities to resources | — | 31/08/2025 |
+| demy-api | main | dbed47f | feat(institution): add AdministratorResourceFromEntityAssembler for transforming Administrator entities to resources | — | 31/08/2025 |
+| demy-api | main | 0c91f7f | feat(institution): add RegisterAdministratorCommandFromResourceAssembler for transforming RegisterAdministratorResource to RegisterAdministratorCommand | — | 31/08/2025 |
+| demy-api | main | 3c82740 | feat(institution): add RegisterAcademyCommandFromResourceAssembler for transforming RegisterAcademyResource to RegisterAcademyCommand | — | 31/08/2025 |
+| demy-api | main | f3d69a4 | feat(institution): add ExternalIamService for fetching current AcademyId from IamContextFacade | — | 31/08/2025 |
+| demy-api | main | ffa1d1d | feat(institution): add TeachersController and AcademiesController for managing teachers and academies | — | 31/08/2025 |
+| demy-api | main | 984 0ef4 | feat(institution): add AdministratorsController for managing administrator registrations | — | 31/08/2025 |
+| demy-api | main | f158303 | merge: integrate feature/institution-management into develop | — | 31/08/2025 |
+| demy-api | main | 3e4ba6a | feat(institution): add AdministratorAlreadyExistsException for handling duplicate administrators | — | 31/08/2025 |
+| demy-api | main | 258 47a3 | feat(institution): add TeachersController for managing teacher resources | — | 31/08/2025 |
+| demy-api | main | 8a8a1e2 | feat(i18n): add message properties for error handling in multiple languages for shared kernel | — | 31/08/2025 |
+| demy-api | main | 665d102 | feat(i18n): add user not found message properties in English and Spanish for IAM | — | 31/08/2025 |
+| demy-api | main | f2df5ae | feat(i18n): add administrator registration messages in English and Spanish for Institution Management | — | 31/08/2025 |
+| demy-api | main | 48e671f | merge: add i18n support for bounded contexts | — | 31/08/2025 |
+| demy-api | main | f2b9d15 | docs(class-diagram): add domain model diagram for Institution Management context | — | 31/08/2025 |
+| demy-api | main | 9281481 | docs(readme): add initial project documentation for Demy API | — | 31/08/2025 |
+| demy-api | main | db9c9c7 | docs(contributing): add Spanish collaboration guide for project contributors | — | 31/08/2025 |
+| demy-api | main | da18aa3 | docs(contributing): add collaboration guide for project contributors | — | 31/08/2025 |
+| demy-api | main | cdc3bdc | docs(changelog): add initial changelog file following KeepAChangelog conventions | — | 31/08/2025 |
+| demy-api | main | 06f73fa | chore: add .gitkeep files to maintain empty directories | — | 31/08/2025 |
+| demy-api | main | f319fc3 | docs(security): add security policy document outlining vulnerability reporting and supported versions | — | 31/08/2025 |
+| demy-api | main | 319dd85 | docs(issues): add bug report template for backend RESTful API issues | — | 31/08/2025 |
+| demy-api | main | 0a6e6a9 | docs(issues): add feature request template for backend RESTful API enhancements | — | 31/08/2025 |
+| demy-api | main | e3fd2c3 | docs(issues): add performance issue report template for tracking scalability problems | — | 31/08/2025 |
+| demy-api | main | 0854a14 | docs(issues): add template for documenting refactor and technical debt | — | 31/08/2025 |
+| demy-api | main | 10e94d3 | docs(issues): add security report template for reporting vulnerabilities | — | 31/08/2025 |
+| demy-api | main | 7dddc60 | docs(issues): add API proposal template for contract changes | — | 31/08/2025 |
+| demy-api | main | d51cb3e | docs(issues): add template for improving technical documentation | — | 31/08/2025 |
+| demy-api | main | 09d2046 | docs(issues): add template for general issues | — | 31/08/2025 |
+| demy-api | main | cbd33a7 | docs(config): add configuration for issue templates and contact links | — | 31/08/2025 |
+| demy-api | main | a475de7 | docs(pr-template): add pull request template for consistent submissions | — | 31/08/2025 |
+| demy-api | main | afa4bf7 | merge: update project documentation | — | 31/08/2025 |
+ 
+### Implementación de Endpoints Principales
+ 
+#### 1. Autenticación (`/api/v1/authentication`)
+- `POST /api/v1/authentication/sign-up` — Registro de nuevos usuarios
+- `POST /api/v1/authentication/sign-in` — Inicio de sesión con JWT
+- `POST /api/v1/authentication/verify` — Verificación de cuenta mediante código OTP
+- `POST /api/v1/authentication/resend-code` — Reenvío del código de verificación
+#### 2. Administradores (`/api/v1/administrators`)
+- `POST /api/v1/administrators` — Registro de usuario con rol administrador
+#### 3. Academias (`/api/v1/academies`)
+- `POST /api/v1/academies` — Creación de academia vinculada al administrador
+#### 4. Profesores (`/api/v1/teachers`)
+- `GET /api/v1/teachers` — Listado de profesores registrados en la academia
+### Tecnologías y Características Técnicas
+ 
+- **Spring Boot 3.x** como framework principal
+- **Spring Data JPA** con Hibernate para interacción con base de datos
+- **Spring Security** para autenticación y autorización
+- **JWT (JSON Web Token)** para autenticación stateless
+- **OTP (One-Time Password)** para verificación de cuentas por correo electrónico
+- **Thymeleaf** para plantillas de correo electrónico
+- **Spring Boot Mail** para envío de notificaciones
+- **BCrypt** para hashing seguro de contraseñas
+- **PostgreSQL** como base de datos principal (Railway)
+- **Springdoc OpenAPI 2.8.11** para documentación automática (Swagger UI)
+- **Internacionalización (i18n)** con soporte en inglés y español
+- **Domain-Driven Design (DDD)** con Bounded Contexts, Aggregates, Value Objects, Domain Events y CQRS
+### Características de Seguridad
+ 
+- Autenticación stateless mediante Bearer JWT
+- Verificación de cuenta obligatoria mediante código OTP enviado al correo
+- Hashing seguro de contraseñas con BCrypt
+- Filtro de autorización `BearerAuthorizationRequestFilter` para validación de tokens en cada request
+- `UnauthorizedRequestHandlerEntryPoint` para manejo centralizado de accesos no autorizados
+- Roles y permisos gestionados mediante Spring Security (`WebSecurityConfiguration`)
+- Manejo centralizado de excepciones con `GlobalExceptionHandler`
+- Multi-tenancy: cada recurso está asociado a un `AcademyId` (tenant) mediante `IamContextFacade`
+- Logs de auditoría automáticos via `AuditableAbstractAggregateRoot` y `AuditableModel`
+---
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
