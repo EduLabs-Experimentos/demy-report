@@ -8227,6 +8227,9 @@ describe('E2E Puro: Flujo de Onboarding Real', () => {
 
 *User Story relacionada*: US004 - Registro de Profesor
 
+**Resumen del Flujo Evaluado:**
+Este test E2E evalua el proceso del registro completo de un profesor, desde lo que manda el frontend hasta la base de datos y luego mostrarlo en la lista de profesores
+
 ```
 describe('E2E: Gestión de Profesores (Teacher)', () => {
   beforeEach(() => {
@@ -8274,6 +8277,71 @@ describe('E2E: Gestión de Profesores (Teacher)', () => {
 ![Teacher System Test](./assets//test/teacher-system-test.png)
 
 
+##### Institution Mobile Application
+
+
+```
+@RunWith(AndroidJUnit4::class)
+class RegisterTeacherE2ETest {
+
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
+
+    @Test
+    fun deberiaRegistrarProfesorYMostrarloEnLaLista() {
+        // Arrange
+        val timestamp = System.currentTimeMillis().toString()
+        val uniqueEmail = "carlos_$timestamp@nistra.com"
+
+        // Esperamos a que el Splash Screen termine
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("input-email-login").fetchSemanticsNodes().isNotEmpty()
+        }
+
+        // Act
+
+        // Iniciar sesión
+        composeTestRule.onNodeWithTag("input-email-login").performTextInput("diegovilcatut@gmail.com")
+        composeTestRule.onNodeWithTag("input-password-login").performTextInput("Sofiamia")
+        composeTestRule.onNodeWithTag("btn-submit-login").performScrollTo().performClick()
+
+        // Esperar navegación y entrar a Profesores
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("btn-submit-login").fetchSemanticsNodes().isEmpty()
+        }
+        composeTestRule.onNodeWithText("Teachers", ignoreCase = true).performClick()
+
+        // Registrar al profesor
+        composeTestRule.onNodeWithTag("teacher-firstName").performTextInput("Carlos")
+        composeTestRule.onNodeWithTag("teacher-lastName").performTextInput("Mendoza")
+        composeTestRule.onNodeWithTag("teacher-email").performTextInput(uniqueEmail)
+        composeTestRule.onNodeWithTag("teacher-submit-button").performClick()
+
+        // ASSERT (Verificación de resultados)
+
+        // Esperamos a que la red responda y validamos la UI
+        composeTestRule.waitUntil(timeoutMillis = 5000) {
+            composeTestRule.onAllNodesWithText(uniqueEmail).fetchSemanticsNodes().isNotEmpty()
+        }
+        composeTestRule.onNodeWithText(uniqueEmail).assertIsDisplayed()
+    }
+}
+```
+
+![Register teacher mobile test e23](./assets/test/teacher-mobile-e2e.png)
+
+**Comparativa de Pruebas E2E: Web (Cypress) vs. Móvil (Compose Testing)**
+
+Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en su implementación:
+
+1. **Identificación de elementos:** * **Web:** Busca elementos usando el HTML de la página (como IDs o clases CSS).
+   * **Móvil:** Usa el "Árbol Semántico" de Android, identificando componentes por etiquetas de prueba (`TestTags`) o por el texto que el usuario ve en pantalla.
+
+2. **Manejo de esperas:** * **Web:** Cypress espera automáticamente a que los elementos aparezcan antes de fallar.
+   * **Móvil:** Compose Testing no espera por defecto. Es necesario usar comandos manuales (`waitUntil`) para darle tiempo a la aplicación de cargar datos del servidor o cambiar de pantalla.
+
+3. **Conexión con el servidor:** * **Web:** Es común interceptar y simular las respuestas del backend (`cy.intercept`) para aislar el frontend.
+   * **Móvil:** Se realizó una prueba **E2E Real**. El emulador se comunica directamente con el servidor de Spring Boot, guardando la información en la base de datos física.
 
 ---
 
