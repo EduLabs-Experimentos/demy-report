@@ -5628,7 +5628,240 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 *Última actualización: Mayo 2026*
 
-## 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+## 5.2.5. Implemented Native-Mobile Application Evidence
+
+#### Administrador Mobile Application
+
+A continuación se describen brevemente las vistas capturadas de la aplicación completa. Las pantallas mantienen una línea visual limpia, con jerarquías claras, tarjetas, tipografía legible y acciones rápidas bien diferenciadas.
+
+##### Dashboard — Vista principal del administrador
+
+Acceso rápido a métricas, navegación y tarjetas principales del sistema.
+
+![Bounded-MB1](./assets/MobileApplication/Admin/mb1.png)
+
+##### Students — Gestión de estudiantes
+
+Listado general con información esencial del estudiante y accesos a edición.
+
+![Bounded-MB2](./assets/MobileApplication/Admin/mb2.png)
+
+##### Teachers — Gestión de docentes
+
+Registro, búsqueda y administración de profesores.
+
+![Bounded-MB3](./assets/MobileApplication/Admin/mb3.png)
+
+##### Courses — Gestión de cursos
+
+Visualización y edición de cursos con nombre, código y descripción.
+
+![Bounded-MB4](./assets/MobileApplication/Admin/mb4.png)
+
+##### Classrooms — Gestión de aulas
+
+Administración de aulas, capacidad y ubicación.
+
+![Bounded-MB5](./assets/MobileApplication/Admin/mb5.png)
+
+##### Schedules — Vista semanal de horarios
+
+Visualización organizada de sesiones por calendario.
+
+![Bounded-MB6](./assets/MobileApplication/Admin/mb6.png)
+
+##### Schedules — Sesiones detalladas
+
+Vista complementaria del horario semanal con sesiones más específicas.
+
+![Bounded-MB7](./assets/MobileApplication/Admin/mb7.png)
+
+##### Enrollment — Gestión de matrículas
+
+Registro y administración de matrículas del estudiante.
+
+![Bounded-MB8](./assets/MobileApplication/Admin/mb8.png)
+
+##### Periods — Gestión de periodos académicos
+
+Formulario para crear y editar periodos con validaciones básicas.
+
+![Bounded-MB9](./assets/MobileApplication/Admin/mb9.png)
+
+##### Billing — Gestión de cuentas de cobro
+
+Pantalla que consolida datos de facturación por estudiante.
+
+![Bounded-MB10](./assets/MobileApplication/Admin/mb10.png)
+
+##### Finance — Resumen financiero general
+
+Vista con indicadores contables y transacciones.
+
+![Bounded-MB11](./assets/MobileApplication/Admin/mb11.png)
+
+##### Finance — Detalle extendido
+
+Detalle y distribución del estado financiero.
+
+![Bounded-MB12](./assets/MobileApplication/Admin/mb12.png)
+
+##### Accounting — Gestión contable
+
+Opciones de consulta y administración de reportes contables.
+
+![Bounded-MB13](./assets/MobileApplication/Admin/mb13.png)
+
+##### Settings — Configuración general
+
+Preferencias del administrador con opciones de personalización.
+
+![Bounded-MB14](./assets/MobileApplication/Admin/mb14.png)
+
+##### Settings — Vista extendida
+
+Más opciones dentro del módulo de configuración.
+
+![Bounded-MB15](./assets/MobileApplication/Admin/mb15.png)
+
+##### Profile — Información del administrador
+
+Datos personales del usuario con accesos directos a edición.
+
+![Bounded-MB16](./assets/MobileApplication/Admin/mb16.png)
+
+##### Help — Centro de ayuda
+
+Acceso a documentación, soporte y preguntas frecuentes.
+
+![Bounded-MB17](./assets/MobileApplication/Admin/mb17.png)
+
+##### Help — Vista extendida
+
+Sección adicional del módulo de soporte.
+
+![Bounded-MB18](./assets/MobileApplication/Admin/mb18.png)
+
+##### Privacy — Políticas de privacidad
+
+Sección dedicada al manejo de datos personales del usuario.
+
+![Bounded-MB19](./assets/MobileApplication/Admin/mb19.png)
+
+##### Terms — Términos y condiciones
+
+Documento con las normas de uso de la plataforma.
+
+![Bounded-MB20](./assets/MobileApplication/Admin/mb20.png)
+
+
+#### Teacher Mobile Application
+
+Evidencia de la funcionalidad clave y la interfaz de usuario del aplicativo móvil diseñado para que los profesores visualicen sus horarios por dia de la semana, reprogramen clases y registren asistencia de los estudiantes.
+
+##### Splash Screen — Visualización de Marca
+
+Muestra el logo y el nombre de la aplicación durante el inicio, permitiendo que los recursos se carguen en segundo plano.
+
+![Bounded-MB1](./assets/MobileApplication/Teacher/mb1.jpg)
+
+##### Sign In — Inicio de Sesión del Profesor
+
+Interfaz de inicio de sesión donde el profesor ingresa su correo electrónico y contraseña registradas por el administrador para acceder a las funcionalidades de la aplicación móvil. Incluye la opción para recuperar la contraseña y enlaces a los términos y condiciones.
+
+![Bounded-MB2](./assets/MobileApplication/Teacher/mb2.jpg)
+
+##### Terms and Conditions — Detalles Legales y de Uso
+
+Pantalla que detalla los términos de uso y las políticas de la plataforma, incluyendo la aceptación de los mismos, la descripción del servicio, las responsabilidades del usuario y las condiciones de uso aceptable.
+
+![Bounded-MB3](./assets/MobileApplication/Teacher/mb3.jpg)
+
+##### Privacy Policy — Recolección y Uso de Datos
+
+Detalle de la información que la aplicación recopila de los usuarios y las entidades, y el uso que se le da a esta información.
+
+![Bounded-MB4](./assets/MobileApplication/Teacher/mb4.jpg)
+
+##### Forgot Password — Verificación de Correo Electrónico
+
+Pantalla que permite a los profesores recuperar su acceso en caso de olvidar su contraseña. Se solicita el correo electrónico asociado a la cuenta para enviar un código de verificación y proceder con el restablecimiento seguro de la clave.
+
+![Bounded-MB5](./assets/MobileApplication/Teacher/mb5.jpg)
+
+##### Home — Vista Principal y Horario del Profesor
+
+Pantalla de inicio que ofrece acceso rápido a módulos clave como Registro de Asistencia, Horario de Clases y Notificaciones. Muestra inmediatamente el horario del día con la hora y ubicación, cumpliendo el objetivo principal de la aplicación.
+
+![Bounded-MB6](./assets/MobileApplication/Teacher/mb6.jpg)
+
+##### Profile — Gestión de Cuenta y Detalles Personales
+
+Muestra los datos básicos del profesor logueado: nombre completo, correo electrónico y número de teléfono. Esta sección permite al usuario ver su información de contacto y proporciona acceso directo a la función de Reset Password para mantener la seguridad de la cuenta.
+
+![Bounded-MB7](./assets/MobileApplication/Teacher/mb7.jpg)
+
+##### Settings — Opciones de Configuración y Cierre de Sesión
+
+Pantalla que consolida opciones esenciales para el usuario. Ofrece acceso rápido a los documentos legales (Terms and Conditions y Privacy Policy) y la funcionalidad clave de Cerrar Sesión para finalizar la sesión del profesor de forma segura.
+
+![Bounded-MB8](./assets/MobileApplication/Teacher/mb8.jpg)
+
+##### Take Attendance Pop-up — Ventana de Registro de Asistencia
+
+Ventana emergente que aparece al hacer clic sobre una clase específica en el Home. Ofrece al profesor la acción directa de Tomar Asistencia, siendo el punto de entrada al registro de la asistencia de los estudiantes para esa sesión.
+
+![Bounded-MB9](./assets/MobileApplication/Teacher/mb9.jpg)
+
+##### Take Attendance — Registro de Asistencia
+
+Pantalla final que muestra el listado de estudiantes inscritos en la sesión seleccionada y permite al profesor marcar el estado de asistencia de cada uno con las etiquetas: P (Presente), E (Excusado) o A (Ausente). Una vez completado el registro, el botón Save Attendance guarda la información en el sistema.
+
+![Bounded-MB10](./assets/MobileApplication/Teacher/mb10.jpg)
+
+##### Attendance Report — Reporte de Asistencia
+
+Módulo que permite al profesor consultar las métricas de asistencia de los estudiantes por rango de fechas y curso. Muestra el porcentaje consolidado de estudiantes, desglosado por Presentes (P), Excusados (E) y Ausentes (A).
+
+![Bounded-MB11](./assets/MobileApplication/Teacher/mb11.jpg)
+
+##### Date Picker — Selector de Fechas del Calendario de Reporte de Asistencia
+
+Componente de interfaz de usuario que se despliega al seleccionar la fecha de inicio o fin dentro del Reporte de Asistencia. Permite al profesor elegir de manera intuitiva el rango de fechas que desea consultar, mostrando el mes y el día específico seleccionado.
+
+![Bounded-MB12](./assets/MobileApplication/Teacher/mb12.jpg)
+
+##### Notifications — Historial de Alertas y Novedades
+
+Pantalla dedicada a mostrar todas las notificaciones del sistema, alertas sobre reprogramación de clases y alertas generales del sistema. En este caso, muestra un mensaje de bienvenida confirmando que el profesor puede comenzar a gestionar sus horarios y asistencia.
+
+![Bounded-MB13](./assets/MobileApplication/Teacher/mb13.jpg)
+
+##### Teaching Schedule — Horario Semanal
+
+Pantalla central que permite al profesor visualizar su horario clase por clase, organizado por día de la semana. Muestra los detalles de cada clase programada y ofrece la opción de reprogramación de clases mediante el ícono de calendario rojo.
+
+![Bounded-MB14](./assets/MobileApplication/Teacher/mb14.jpg)
+
+##### Teaching Reschedule — Reprogramación de Clase
+
+Pantalla que se activa al seleccionar el ícono de calendario en el horario. Permite al profesor modificar los parámetros de la clase seleccionada. El profesor puede ajustar el Día de la Semana, la Hora de Inicio y la Hora de Fin, mientras que la información del curso y la ubicación permanecen inalterables.
+
+![Bounded-MB15](./assets/MobileApplication/Teacher/mb15.jpg)
+
+##### Select Day — Componente de Selección de Día para Reprogramación de Clase
+
+Ventana de diálogo que se despliega al seleccionar el campo Day of Week. Permite al profesor elegir de una lista el día de la semana al cual moverá la clase reprogramada, incluyendo todos los días, lo cual es crucial para la funcionalidad de gestión de horario.
+
+![Bounded-MB16](./assets/MobileApplication/Teacher/mb16.jpg)
+
+##### Time Picker — Selector de Hora para Reprogramación de Clase
+
+Ventana de diálogo que se despliega al seleccionar los campos Start Time o End Time dentro del formulario de Reprogramación de Clase. Este componente de reloj analógico permite al profesor ajustar la hora de inicio o fin de la clase reprogramada de forma precisa, eligiendo entre las opciones AM y PM.
+
+![Bounded-MB17](./assets/MobileApplication/Teacher/mb17.jpg)
+
+## 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
  
 El backend de la aplicación Demy se implementó utilizando **Spring Boot 3.x** como framework principal, siguiendo una arquitectura basada en **Domain-Driven Design (DDD)** con Bounded Contexts claramente definidos (IAM, Institution Management, Attendance, Billing), principios de **Clean Architecture** y separación por capas (domain, application, infrastructure, interfaces) para garantizar escalabilidad y mantenibilidad.
  
@@ -5854,7 +6087,7 @@ El proyecto `demy-backend` está organizado bajo el paquete base `com.nistra.dem
 - Logs de auditoría automáticos via `AuditableAbstractAggregateRoot` y `AuditableModel`
 ---
 
-## 5.2.6. RESTful API Documentation
+## 5.2.7. RESTful API Documentation
  
 En esta sección se presentan las evidencias de funcionamiento de los principales endpoints del backend desplegado en Railway, verificando su correcto comportamiento mediante Swagger UI. Se documentan las pruebas realizadas para la creación, autenticación y gestión de usuarios dentro del sistema Demy, incluyendo las respuestas del servidor y el flujo completo de validación por correo electrónico.
  
@@ -5956,7 +6189,7 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 | Create Administrator | POST | `/api/v1/administrators` | Headers: Authorization: Bearer `<token>` | Registra un usuario con rol administrador. | `{"userId":"usr_1","academyId":"acd_101"}` | `201 Created: {"adminId":"adm_1","linkedAcademy":"acd_101"}` | https://demy-api-production.up.railway.app/api/v1/administrators |
 | Get Teachers | GET | `/api/v1/teachers` | Headers: Authorization: Bearer `<token>` | Obtiene el listado de profesores registrados en la academia. | — | `200 OK: [{"teacherId":"tch_1","name":"Carlos Pérez","email":"carlos@academy.com"}]` | https://demy-api-production.up.railway.app/api/v1/teachers |
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 ## 5.3. Video About-the-Product
 
