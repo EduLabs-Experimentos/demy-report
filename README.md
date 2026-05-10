@@ -5837,7 +5837,7 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
     }
 ```
 
-*Resumen de prueba*: Valida que un usuario pueda activarse exitosamente cuando proporciona un código de verificación válido. El test arrange crea un usuario con email y código de verificación, luego act llama al método verifyUser() con el código válido, y finally assert verifica que el estado de verificación sea VERIFIED, el estado de la cuenta sea ACTIVE y que el código de verificación sea清除 (null) después de la activación exitosa. Esta prueba garantiza que el flujo de activación de cuenta funcione correctamente y que los usuarios puedan validar su identidad.
+*Resumen de prueba*: Valida que un usuario pueda activarse exitosamente cuando proporciona un código de verificación válido. El test arrange crea un usuario con email y código de verificación, luego act llama al método verifyUser() con el código válido, y finally assert verifica que el estado de verificación sea VERIFIED, el estado de la cuenta sea ACTIVE y que el código de verificación sea (null) después de la activación exitosa. Esta prueba garantiza que el flujo de activación de cuenta funcione correctamente y que los usuarios puedan validar su identidad.
 
 ![Bounded-IAM1](./assets/test/iam1.png)
 
