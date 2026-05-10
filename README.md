@@ -6199,207 +6199,6 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ## 6.1. Testing Suites & Validation
 
-
-<div style="font-size:80%; overflow-x:auto;">
-  <table border="1" cellspacing="0" cellpadding="5">
-    <thead>
-      <tr>
-        <th>Repository</th>
-        <th>Branch</th>
-        <th>Commit Id</th>
-        <th>Commit Message</th>
-        <th>Commit Message Body</th>
-        <th>Commited on (Date)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/enrollment</td>
-        <td>d42d51e</td>
-        <td>test: add unit tests for EnrollmentCommandServiceImpl</td>
-        <td>
-          Added unit test coverage for EnrollmentCommandServiceImpl,
-          including validation of enrollment creation, duplicate enrollment
-          handling, and exception scenarios.
-        </td>
-        <td>08/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/enrollment</td>
-        <td>aa6ec2d</td>
-        <td>test: add integration tests for EnrollmentsController</td>
-        <td>
-          Implemented integration tests for EnrollmentsController endpoints
-          to verify HTTP responses, request validation, and persistence flow
-          using MockMvc.
-        </td>
-        <td>08/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/enrollment</td>
-        <td>f22094e</td>
-        <td>test: add BDD feature and step definitions for enrollment</td>
-        <td>
-          Added BDD feature files and step definitions for enrollment
-          workflows, covering successful enrollment registration and
-          error handling scenarios.
-        </td>
-        <td>08/05/2026</td>
-      </tr>
-      <!-- BLOQUE DE ATTENDANCE -->
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/attendance</td>
-        <td>f8bdb56</td>
-        <td>test(attendance): implement cucumber step definitions for student attendance features</td>
-        <td>
-          Implementation of Gherkin steps to connect the feature files with the 
-          attendance registration logic.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/attendance</td>
-        <td>249b496</td>
-        <td>test(attendance): add integration tests for ClassAttendanceRepository persistence and cascades</td>
-        <td>
-          Verification of database persistence and relationship cascading for 
-          attendance records.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/attendance</td>
-        <td>ad3a2fc</td>
-        <td>test(attendance): add unit tests for ClassSessionId value object invariants</td>
-        <td>
-          Validation of business rules and invariants for the ClassSessionId 
-          value object.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/attendance</td>
-        <td>cb281c9</td>
-        <td>test(attendance): add unit tests for AttendanceInput value object and DNI validation</td>
-        <td>
-          Unit tests for DNI formatting and input validation for attendance entries.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/attendance</td>
-        <td>1467349</td>
-        <td>test(attendance): implement unit tests for aggregate and creation command rules</td>
-        <td>
-          Testing of command-driven logic for aggregate creation and attendance 
-          business constraints.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <!-- TU BLOQUE (BILLING) -->
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/billing-management</td>
-        <td>b11faae</td>
-        <td>test(billing): implement cucumber step definitions for billing account acceptance tests</td>
-        <td>
-          Developed step definitions to automate acceptance criteria for 
-          billing account creation and management.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/billing-management</td>
-        <td>8c84aee</td>
-        <td>test(billing): add Gherkin feature files for billing account and invoice management</td>
-        <td>
-          Defined executable specifications using Gherkin for billing 
-          processes and invoice generation workflows.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/billing-management</td>
-        <td>c880552</td>
-        <td>test(billing): add integration tests for BillingAccountRepository validating JPA mapping and cascades</td>
-        <td>
-          Integrated tests to validate database schema mapping and 
-          cascading operations for BillingAccount entities.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/billing-management</td>
-        <td>1f8f570</td>
-        <td>test(billing): implement unit tests for BillingAccountCommandServiceImpl with ExternallamService mock</td>
-        <td>
-          Unit testing the command service logic by mocking external 
-          IAM service dependencies.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-        <td>EduLabs-Experimentos/demy-backend</td>
-        <td>feature/billing-management</td>
-        <td>1232a3f</td>
-        <td>test(billing): implement core entities unit tests for BillingAccount using AAA pattern</td>
-        <td>
-          Core entity validation using the Arrange-Act-Assert pattern 
-          to ensure internal state consistency.
-        </td>
-        <td>09/05/2026</td>
-      </tr>
-      <tr>
-      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
-      <td>feature/enrollment</td>
-      <td>4a19f9b</td>
-      <td>test: add cucumber runner for enrollment tests</td>
-      <td>
-        Added Cucumber test runner configuration for executing
-        enrollment acceptance tests and integrating feature files
-        with the automated testing workflow.
-      </td>
-      <td>10/05/2026</td>
-      </tr>
-    <tr>
-      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
-      <td>feature/enrollment</td>
-      <td>363e561</td>
-      <td>test: add enrollment step definitions for US007, US008 and US009</td>
-      <td>
-        Implemented step definitions for enrollment-related user stories
-        US007, US008, and US009, connecting Gherkin scenarios with
-        enrollment domain logic and validations.
-      </td>
-      <td>10/05/2026</td>
-    </tr>
-    <tr>
-      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
-      <td>feature/enrollment</td>
-      <td>4f9b0a4</td>
-      <td>test: add enrollment management feature file</td>
-      <td>
-        Added Gherkin feature specifications for enrollment management
-        workflows, including enrollment registration, validation,
-        and management scenarios.
-      </td>
-      <td>10/05/2026</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
 ### 6.1.1. Core Entities Unit Tests
 
 ##### IAM Bounded - Identity and Access Management
@@ -6522,86 +6321,163 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ![Bounded-IAM4](./assets/test/iam4.png)
 
+---
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Asociación y desasociación de academia en Administrator**
+**Prueba 1: Creación de Academy mediante Constructor y Command**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
 @Test
-    @DisplayName("Should associate academy once and throw on reassignment")
-    void shouldAssociateAndDisassociateAcademy() {
-        // Arrange
-        Administrator admin = new Administrator(
-                new PersonName("Carlos", "Garcia"),
-                new PhoneNumber("+51", "955444333"),
-                new DniNumber("11223344"),
-                new UserId(300L)
-        );
-        AcademyId academy1 = new AcademyId(10L);
+@DisplayName("Should correctly create an academy using the main constructor and command")
+void shouldCreateAcademySuccessfully() {
+    // Arrange
+    AcademyName name = new AcademyName("Instituto Nistra");
+    AcademyDescription description = new AcademyDescription("Academia dedicada a la formación tecnológica.");
+    StreetAddress address = new StreetAddress("Av. Arequipa 1234", "Miraflores", "Lima", "Lima");
+    EmailAddress email = new EmailAddress("info@nistra.com");
+    PhoneNumber phone = new PhoneNumber("+51", "987654321");
+    Ruc ruc = new Ruc("10456789123");
 
-        // Act
-        admin.associateAcademy(academy1);
+    // Act
+    Academy academy = new Academy(name, description, address, email, phone, ruc);
 
-        // Assert
-        assertEquals(10L, admin.getAcademyId().academyId());
+    // Assert
+    assertNotNull(academy);
+    assertEquals("Instituto Nistra", academy.getAcademyName().name());
+    assertEquals("10456789123", academy.getRuc().ruc());
+    assertNull(academy.getAdministratorId());
+}
 
-        // Arrange
-        AcademyId academy2 = new AcademyId(20L);
-
-        // Act & Assert
-        assertThrows(IllegalStateException.class, () -> admin.associateAcademy(academy2));
-
-        // Act
-        admin.disassociateAcademy(academy1);
-
-        // Assert
-        assertNull(admin.getAcademyId().academyId());
-    }
 ```
+*Resumen de prueba*: Verifica la correcta instanciación del agregado Academy. El test arrange define los objetos de valor necesarios (nombre, dirección, RUC, etc.), el act ejecuta el constructor principal y el assert valida que la entidad no sea nula, que los datos coincidan con los ingresados y que inicialmente no posea un administrador asignado. Esto asegura que el registro base de la institución cumpla con la integridad de datos requerida en la US001.
 
-*Resumen de prueba*: Verifica que un administrador pueda asociarse a una academia una sola vez y que no pueda reasociarse a otra. El test arrange crea un administrador, luego act intenta asociarlo a una academia con ID 10, y assert confirma que la asociación fue exitosa. Posteriormente, arrange una segunda academia con ID 20, act intenta asociar a esta nueva academia, y assert verifica que se lanza IllegalStateException. Finalmente, act llama a disassociateAcademy para desasociar, y assert confirma que el academyId queda en null. Esta prueba garantiza la integridad de la relación uno-a-uno entre administrador y academia.
+**Prueba 2: Asignación única de Administrador en Academy**
 
-![Bounded-Institution1](./assets/test/institution1.png)
+*User Story relacionada*: US001 - Registro de Academia
 
----
+```
+@Test
+@DisplayName("Should allow assigning an administrator only once and throw on reassignment")
+void shouldAssignAdministratorOnce() {
+    // Arrange
+    Academy academy = new Academy(new AcademyName("Test"), new AcademyDescription("Desc"), 
+                        new StreetAddress("S/N", "D", "P", "D"), new EmailAddress("t@a.com"), 
+                        new PhoneNumber("+51", "911"), new Ruc("10765432109"));
+    AdministratorId admin1 = new AdministratorId(1L);
+    AdministratorId admin2 = new AdministratorId(2L);
 
-**Prueba 2: Creación de Teacher desde RegisterTeacherCommand**
+    // Act
+    academy.assignAdministrator(admin1);
 
-*User Story relacionada*: US004 - Registro de Profesor
+    // Assert
+    assertTrue(academy.getAdministratorId().isAssigned());
+    assertEquals(1L, academy.getAdministratorId().administratorId());
+
+    // Act & Assert (Reassignment)
+    assertThrows(IllegalStateException.class, () -> academy.assignAdministrator(admin2));
+}
+```
+*Resumen de prueba*: Garantiza que una academia solo pueda tener un administrador vinculado. En el arrange se crea la academia y dos IDs de administrador; el primer act realiza la asignación exitosa validada por el assert. El segundo bloque de act & assert comprueba que intentar asignar un segundo administrador dispara una IllegalStateException, protegiendo la regla de negocio de la US001.
+
+**Prueba 3: Registro de Administrador y generación de Eventos de Dominio**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should register administrator and add a domain event")
+void shouldRegisterAdministratorAndAddEvent() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    Long expectedAcademyId = 5L;
+    Long expectedUserId = 10L;
+
+    // Act
+    admin.registerAdministrator(expectedAcademyId, expectedUserId);
+
+    // Assert
+    Collection<Object> events = admin.getDomainEvents();
+    assertEquals(1, events.size());
+    AdministratorRegisteredEvent event = (AdministratorRegisteredEvent) events.iterator().next();
+    assertEquals(expectedAcademyId, event.getAcademyId());
+    assertEquals(expectedUserId, event.getUserId());
+}
+
+```
+*Resumen de prueba*: Valida el proceso de registro del administrador y la comunicación mediante eventos. El arrange inicializa el agregado con sus Value Objects (nombre, DNI, etc.), el act ejecuta el método de registro vinculando la academia, y el assert verifica que se haya disparado el evento AdministratorRegisteredEvent. Esto asegura que otros contextos puedan reaccionar al registro del administrador según la US032 y US001.
+
+
+**Prueba 4: Asociación y Desasociación de Academia en Administrator**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should associate and disassociate academy successfully")
+void shouldHandleAcademyAssociation() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    AcademyId academyId = new AcademyId(5L);
+
+    // Act (Associate)
+    admin.associateAcademy(academyId);
+    // Assert
+    assertEquals(5L, admin.getAcademyId().academyId());
+
+    // Act (Disassociate)
+    admin.disassociateAcademy(academyId);
+    // Assert
+    assertTrue(admin.getAcademyId().academyId() == null || admin.getAcademyId().academyId() == 0L);
+}
+
+```
+*Resumen de prueba*: Comprueba la flexibilidad del administrador para vincularse o desvincularse de una institución. El arrange prepara el administrador y el ID de la academia, el primer act/assert verifica la asociación correcta, y el segundo bloque act/assert asegura que tras la desasociación, el campo AcademyId quede limpio o en estado inicial, garantizando la gestión correcta de miembros.
+
+**Prueba 5: Creación de Teacher desde Command**
+
+*User story relacionada:  US004 - Registro de Profesor*
 
 ```
 @Test
 @DisplayName("Should create teacher from command with all fields set")
 void shouldCreateTeacherFromCommand() {
-// Arrange
-RegisterTeacherCommand command = new RegisterTeacherCommand(
-new PersonName("Ana", "Torres"),
-new EmailAddress("ana.torres@academy.com"),
-new PhoneNumber("+51", "977666555")
-);
-UserId userId = new UserId(400L);
-AcademyId academyId = new AcademyId(5L);
+    // Arrange
+    RegisterTeacherCommand command = new RegisterTeacherCommand(
+        new PersonName("Ana", "Torres"),
+        new EmailAddress("ana.torres@academy.com"),
+        new PhoneNumber("+51", "977666555")
+    );
+    UserId userId = new UserId(400L);
+    AcademyId academyId = new AcademyId(5L);
 
-        // Act
-        Teacher teacher = new Teacher(command, userId, academyId);
+    // Act
+    Teacher teacher = new Teacher(command, userId, academyId);
 
-        // Assert
-        assertNotNull(teacher);
-        assertEquals("Ana", teacher.getPersonName().firstName());
-        assertEquals("Torres", teacher.getPersonName().lastName());
-        assertEquals("+51", teacher.getPhoneNumber().countryCode());
-        assertEquals("977666555", teacher.getPhoneNumber().phone());
-        assertEquals(400L, teacher.getUserId().userId());
-        assertEquals(5L, teacher.getAcademyId().academyId());
-    }
+    // Assert
+    assertNotNull(teacher);
+    assertEquals("Ana", teacher.getPersonName().firstName());
+    assertEquals(400L, teacher.getUserId().userId());
+    assertEquals(5L, teacher.getAcademyId().academyId());
+}
 ```
+*Resumen de prueba*: Valida la creación de la entidad docente para la US004. El arrange crea el comando de registro con los datos de "Ana Torres", el act instancia al Teacher usando dicho comando y los IDs correspondientes, y el assert confirma que todos los atributos (nombre, userId, academyId) se mapearon correctamente desde el comando al agregado.
 
-*Resumen de prueba*: Valida que se pueda crear un objeto Teacher correctamente usando el comando RegisterTeacherCommand. El test arrange crea un comando con nombre "Ana Torres", email y teléfono, además de userId y academyId, luego act crea un nuevo Teacher usando ese comando, y assert verifica que todos los campos fueron asignados correctamente: nombre, apellido, código de país, teléfono, userId y academyId. Esta prueba asegura que la construcción de entidades Teacher desde comandos de aplicación funcione correctamente.
+A continuación se presenta capturas de la correcta ejecución de las pruebas del bounded  context de Institution
 
-![Bounded-Institution2](./assets/test/institution2.png)
+**Administrator**
+![Bounded-Institution-Administrator](./assets/test/admin-unit-tests.png)
+
+
+**Academy**
+![Bounded-Institution-Academy](./assets/test/academy-unit-tests.png)
+
+
+**Teacher**
+![Bounded-Institution-Teacher](./assets/test/teacher-unit-test.png)
+
 
 
 ##### Scheduling Bounded - Gestión de Horarios
@@ -7253,19 +7129,129 @@ class AuthenticationControllerIntegrationTest {
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Registro de administrador con datos válidos retorna 201**
+**Prueba 1: Integración de endpoints REST para la gestión de Academias**
 
-*User Story relacionada*: US006 - Registro de Administrador
+*Technical Story relacionada*: TS001 - Exponer endpoint para registrar academias / TS005 - Exponer endpoint para obtener detalles de una academia
+
 
 ```
-@WebMvcTest(controllers = AdministratorsController.class,
+@WebMvcTest(controllers = AcademiesController.class,
         excludeAutoConfiguration = {
-                HibernateJpaAutoConfiguration.class,
-                JpaRepositoriesAutoConfiguration.class
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
         })
 @ActiveProfiles("test")
 @AutoConfigureMockMvc(addFilters = false)
-class InstitutionControllerIntegrationTest {
+class AcademiesControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private AcademyCommandService academyCommandService;
+
+    @MockitoBean
+    private AcademyQueryService academyQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Academy sampleAcademy;
+
+    @BeforeEach
+    void setUp() {
+        sampleAcademy = new Academy(
+                new AcademyName("Nistra Academy"),
+                new AcademyDescription("Academia de tecnología"),
+                new StreetAddress("Av. Primavera 123", "Surco", "Lima", "Lima"),
+                new EmailAddress("contacto@nistra.com"),
+                new PhoneNumber("+51", "987654321"),
+                new Ruc("10456789123")
+        );
+        sampleAcademy.assignAdministrator(new AdministratorId(1L));
+    }
+
+    @Test
+    @DisplayName("POST /academies con datos válidos retorna 201 Created")
+    void registerAcademy_ValidRequest_Returns201() throws Exception {
+        RegisterAcademyResource resource = new RegisterAcademyResource(
+                "Nistra Academy", "Academia de tecnología", "Av. Primavera 123",
+                "Surco", "Lima", "Lima", "contacto@nistra.com",
+                "+51", "987654321", "10456789123", 1L
+        );
+
+        when(academyCommandService.handle(any(RegisterAcademyCommand.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(post("/api/v1/academies")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.ruc").value("10456789123"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 200 y los datos de la academia")
+    void getCurrentAcademy_WhenExists_Returns200() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 404 cuando no hay academia asociada")
+    void getCurrentAcademy_WhenNotExists_Returns404() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("HEAD /academies/{id} retorna 200 si la academia existe")
+    void checkAcademyExists_WhenExists_Returns200() throws Exception {
+        Long academyId = 1L;
+        when(academyQueryService.handle(any(ExistsAcademyByIdQuery.class)))
+                .thenReturn(true);
+
+        mockMvc.perform(head("/api/v1/academies/{id}", academyId))
+                .andExpect(status().isOk());
+    }
+}
+```
+
+*Resumen de prueba*: Valida la correcta exposición y funcionamiento de los endpoints REST para las academias utilizando MockMvc. Se verifica que el registro (POST) retorne un estado HTTP 201 Created y que la respuesta contenga los datos mapeados correctamente según la historia técnica TS001. Asimismo, se comprueba que las consultas (GET y HEAD) devuelvan 200 OK con los datos correctos o 404 Not Found cuando el recurso solicitado no existe, mockeando adecuadamente la capa de aplicación.
+
+![Bounded-Institution-Int1](./assets/test/academy-integration-test.png)
+
+---
+
+**Prueba 2: Integración de endpoints REST para la gestión de Administradores**
+
+*Technical Story relacionada:*: TS006 - Exponer endpoint para registrar administrador / TS010 - Exponer endpoint para obtener detalles de un administrador
+
+```
+    @WebMvcTest(controllers = AdministratorsController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class AdministratorsControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -7283,109 +7269,182 @@ class InstitutionControllerIntegrationTest {
     private LocalizationService localizationService;
 
     @MockitoBean
-    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
 
-    private static final Long ADMIN_ID = 1L;
-    private static final Long ACADEMY_ID = 5L;
-    private static final Long USER_ID = 100L;
-
-    private Administrator mockAdministrator;
+    private Administrator sampleAdministrator;
+    private EmailAddress sampleEmail;
 
     @BeforeEach
     void setUp() {
-        mockAdministrator = mock(Administrator.class);
-        when(mockAdministrator.getId()).thenReturn(ADMIN_ID);
-        when(mockAdministrator.getPersonName()).thenReturn(new PersonName("Carlos", "Admin"));
-        when(mockAdministrator.getPhoneNumber()).thenReturn(new PhoneNumber("+51", "987654321"));
-        when(mockAdministrator.getDniNumber()).thenReturn(new DniNumber("72326006"));
-        when(mockAdministrator.getAcademyId()).thenReturn(new AcademyId(ACADEMY_ID));
-        when(mockAdministrator.getUserId()).thenReturn(new UserId(USER_ID));
+        sampleAdministrator = new Administrator(
+                new PersonName("Diego", "Vilca"),
+                new PhoneNumber("+51", "999888777"),
+                new DniNumber("76543210"),
+                new UserId(10L)
+        );
+        sampleEmail = new EmailAddress("diego.admin@nistra.com");
     }
 
     @Test
-    @DisplayName("TI001 — POST /api/v1/administrators con datos válidos retorna 201 Created")
-    void registerAdministrator_ValidData_Returns201() throws Exception {
-        // Arrange
+    @DisplayName("POST /administrators con datos válidos retorna 201 Created")
+    void registerAdministrator_ValidRequest_Returns201() throws Exception {
         RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+                "Diego", "Vilca", "+51", "999888777", "76543210", 10L
         );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
-                .thenReturn(Optional.of(mockAdministrator));
 
-        // Act
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
         mockMvc.perform(post("/api/v1/administrators")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"));
     }
-```
 
-*Resumen de prueba*: Valida el flujo de registro de un administrador cuando se envían datos válidos. El test arrange configura el mock del administrador con datos específicos, el servicio retorna Optional con el admin mockeado, luego act envía POST a /api/v1/administrators con los datos del recurso, y assert verifica código 201 y que el nombre del administrador sea "Carlos". Esta prueba confirma el registro exitoso de administradores.
-
-![Bounded-Institution-Int1](./assets/test/institution_integration1.png)
-
----
-
-**Prueba 2: Registro de administrador cuando servicio retorna vacío retorna 400**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
     @Test
-    @DisplayName("TI002 — POST /api/v1/administrators cuando servicio retorna vacío retorna 400")
-    void registerAdministrator_ServiceReturnsEmpty_Returns400() throws Exception {
-        // Arrange
-        RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
-        );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+    @DisplayName("GET /administrators/me retorna 200 y junta datos de admin y de usuario (email)")
+    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"))
+                .andExpect(jsonPath("$.emailAddress").value("diego.admin@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /administrators/me retorna 404 si el administrador no tiene email asociado")
+    void getCurrentAdministrator_WhenNoEmailFound_Returns404() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
                 .thenReturn(Optional.empty());
 
-        // Act
-        mockMvc.perform(post("/api/v1/administrators")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
-                .andExpect(status().isBadRequest());
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isNotFound());
     }
+}
 ```
 
-*Resumen de prueba*: Verifica que el sistema retorne 400 cuando el servicio de comando de administrador retorna Optional.empty(), indicando un error en el registro. El test arrange configura el servicio para retornar vacío, luego act envía POST con datos válidos, y assert verifica código 400 Bad Request. Esta prueba asegura el manejo correcto de errores de validación.
+*Resumen de prueba*: Evalúa la integración del controlador REST AdministratorsController. Verifica el flujo de creación mediante el método POST, confirmando el estado HTTP 201 Created en la respuesta (TS006). Adicionalmente, comprueba el endpoint GET /me (TS010), el cual requiere la orquestación de dos consultas (la obtención del perfil local y del email a través de la integración IAM). El test garantiza que se retorne exitosamente los datos combinados con un 200 OK o que arroje un 404 Not Found si el perfil carece de una identidad externa asociada.
 
-![Bounded-Institution-Int2](./assets/test/institution_integration2.png)
+![Bounded-Institution-Int2](./assets/test/admin-integration-test.png)
 
 ---
 
-**Prueba 3: Obtener administrador actual cuando existe retorna 200**
+**Prueba 3: Integración de endpoints REST para la gestión de Profesores**
 
-*User Story relacionada*: US005 - Actualización de Profesor
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-    @Test
-    @DisplayName("TI003 — GET /api/v1/administrators/me cuando existe retorna 200 con datos del admin")
-    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
-        // Arrange
-        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
-                .thenReturn(Optional.of(mockAdministrator));
-        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
-                .thenReturn(Optional.of(new EmailAddress("carlos@academy.com")));
+    @WebMvcTest(controllers = TeachersController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class TeachersControllerIntegrationTest {
 
-        // Act
-        mockMvc.perform(get("/api/v1/administrators/me"))
+    @Autowired
+    private MockMvc mockMvc;
 
-        // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private TeacherCommandService teacherCommandService;
+
+    @MockitoBean
+    private TeacherQueryService teacherQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Teacher sampleTeacher;
+    private EmailAddress sampleEmail;
+
+    @BeforeEach
+    void setUp() {
+        PersonName personName = new PersonName("Lucia", "Vargas");
+        PhoneNumber phoneNumber = new PhoneNumber("+51", "911222333");
+        EmailAddress emailAddress = new EmailAddress("lucia.vargas@academy.com");
+
+        RegisterTeacherCommand command = new RegisterTeacherCommand(personName, emailAddress, phoneNumber);
+
+        sampleTeacher = new Teacher(command, new UserId(20L), new AcademyId(5L));
+        sampleEmail = emailAddress;
     }
+
+    @Test
+    @DisplayName("POST /teachers con datos válidos retorna 201 Created y junta el correo")
+    void registerTeacher_ValidRequest_Returns201() throws Exception {
+        RegisterTeacherResource resource = new RegisterTeacherResource(
+                "Lucia", "Vargas", "lucia.vargas@academy.com", "+51", "911222333"
+        );
+
+        when(teacherCommandService.handle(any(RegisterTeacherCommand.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(post("/api/v1/teachers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"))
+                .andExpect(jsonPath("$.academyId").value(5L));
+    }
+
+    @Test
+    @DisplayName("GET /teachers retorna 200 y una lista de profesores con sus correos")
+    void getAllTeachers_Returns200AndList() throws Exception {
+        when(teacherQueryService.handle(any(GetAllTeachersQuery.class)))
+                .thenReturn(List.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].firstName").value("Lucia"))
+                .andExpect(jsonPath("$[0].emailAddress").value("lucia.vargas@academy.com"));
+    }
+
+    @Test
+    @DisplayName("GET /teachers/me retorna 200 y los datos del profesor logueado")
+    void getCurrentTeacher_WhenExists_Returns200() throws Exception {
+        when(teacherQueryService.handle(any(GetCurrentTeacherQuery.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.userId").value(20L))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"));
+    }
+}
 ```
 
-*Resumen de prueba*: Valida que el endpoint GET /api/v1/administrators/me retorne los datos del administrador cuando este existe. El test arrange configura el query service para retornar el administrador mockeado y su email, luego act envía GET a /api/v1/administrators/me, y assert verifica código 200 y que el nombre sea "Carlos". Esta prueba permite a los usuarios ver su propio perfil de administrador.
+*Resumen de prueba*:Asegura la correcta implementación de la API REST para la gestión de docentes. Comprueba el endpoint de registro de la US004 (POST), validando que la creación retorne 201 Created junto con la recuperación cruzada del correo electrónico en la respuesta final. Adicionalmente, verifica las operaciones de lectura (GET), comprobando tanto el listado general como la obtención del perfil actual del profesor. El test confirma que se procese y devuelva correctamente una estructura JSON validada mediante jsonPath simulando el comportamiento de los servicios internos.
 
-![Bounded-Institution-Int3](./assets/test/institution_integration3.png)
+![Bounded-Institution-Int3](./assets/test/teacher-integration-test.png)
 
 ---
 
@@ -7820,69 +7879,103 @@ Feature: Autenticación de usuarios en plataforma DEMY
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Escenario 1: Registro exitoso de administrador**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
-Feature: Gestión de administradores y academias
-  Como administrativo de una academia
-  Quiero poder registrar administradores y academias
-  Para gestionar la estructura institucional
-
-  # Escenario 1: Registro exitoso de administrador
-  Scenario: Registrar administrador con datos válidos
-    Given no existe administrador con DNI "87654321" en el sistema
-    When registro un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50
-    Then el administrador queda registrado exitosamente
-    And el código de estado HTTP del administrador es 201
-    And se devuelve el recurso del administrador creado
-```
-
-*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo administrador en el sistema. Given establece que no existe un administrador con el DNI "87654321", When cuando se registra un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50, Then entonces el administrador queda registrado exitosamente, el código HTTP es 201, y se devuelve el recurso del administrador creado. Este escenario valida el registro correcto de administradores.
-
-![Bounded-Institution-BDD1](./assets/test/institution_bdd1.png)
-
----
-
-**Escenario 2: Registro de academia con email duplicado**
+**Escenario 1: Validación de reglas de negocio en el Registro de Academia**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
-  # Escenario 2: Registro de academia con email duplicado
-  Scenario: No permite registrar academia con email ya existente
-    Given ya existe una academia con email "academia@test.com" en el sistema
-    When registro una nueva academia con nombre "Mi Academia", email "academia@test.com", teléfono "+51 999888777", RUC "12345678901" y administrador ID 5
-    Then la operación falla con error de "email duplicado"
-    And el código de estado HTTP de la academia es 400
-    And se devuelve mensaje de error
+Feature: Registro de Academia
+  Para gestionar la información de la academia y sus miembros
+  Como administrador
+  Quiero registrar una nueva academia en la plataforma
+
+  Scenario Outline: Validacion de las reglas de negocio al registrar una academia
+    Given un administrador con id <adminId>
+    When intento registrar una academia con nombre "<nombre>", ruc "<ruc>" y correo "<email>"
+    Then el registro de la academia debe validarse con
+      | academyName  | <nombre>  |
+      | ruc          | <ruc>     |
+      | emailAddress | <email>   |
+    And el resultado de la creacion es "<mensaje>"
+
+    Examples:
+      | adminId | nombre         | ruc         | email               | mensaje     |
+      | 10      | Nistra Academy | 10456789123 | contacto@nistra.com | Test Passed |
+      | 10      |                | 10456789123 | contacto@nistra.com | Error       |
+      | 15      | Demy Code      |             | admin@demy.com      | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando se intenta registrar una academia con un email que ya existe en el sistema. Given establece que ya existe una academia con email "academia@test.com", When cuando se intenta registrar una nueva academia con ese mismo email, Then entonces la operación falla con error de email duplicado, el código HTTP es 400, y se devuelve mensaje de error. Este escenario valida la integridad de datos evitando emails duplicados.
+*Resumen de prueba*: Define los escenarios de aceptación para la US001. Se utiliza un Scenario Outline para validar que el sistema acepte registros completos ("Nistra Academy") y rechace aquellos con datos críticos faltantes, como el nombre de la academia o el número de RUC. El paso Then asegura que los Value Objects del dominio (AcademyName, Ruc, EmailAddress) se formen correctamente antes de persistir la entidad.
 
-![Bounded-Institution-BDD2](./assets/test/institution_bdd2.png)
+![Bounded-Institution-BDD1](./assets/test/academy-bdd-test.png)
 
 ---
 
-**Escenario 3: Asociación de administrador con academia**
+**Escenario 2: Validación de reglas de negocio en el Registro de Profesor**
 
-*User Story relacionada*: US002 - Actualización de Academia
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-  # Escenario 3: Asociación de administrador con academia
-  Scenario: Asociar administrador a academia exitosamente
-    Given existe un administrador "Carlos" "Admin" sin asociación a academia
-    And existe una academia "Mi Academia" sin administrador asignado
-    When asociar el administrador a la academia
-    Then el administrador queda asociado a la academia
-    And la academia tiene el administrador asignado
-    And el código de estado HTTP de la academia es 200
+  Feature: Registro de Profesor
+  Para asignar clases y gestionar la parte académica
+  Como administrador
+  Quiero registrar un nuevo profesor en mi academia
+
+  Scenario Outline: Validar reglas de negocio al registrar un profesor
+    Given un userId <userId> asignado por el sistema de usuarios y un academyId <academyId>
+    When intento registrar un profesor con nombre "<nombre>", apellido "<apellido>", correo "<correo>" y celular "<telefono>"
+    Then el registro del profesor debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+      | academyId | <academyId>|
+    And el resultado del registro de profesor es "<mensaje>"
+
+    Examples:
+      | userId | academyId | nombre | apellido | correo               | telefono  | mensaje     |
+      | 20     | 5         | Lucia  | Vargas   | lucia@academy.com    | 911222333 | Test Passed |
+      | 21     | 5         |        | Vargas   | lucia@academy.com    | 911222333 | Error       |
+      | -1     | 5         | Mario  | Lopez    | mario@academy.com    | 988777666 | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el flujo de asociación de un administrador a una academia. Given establece que existe un administrador "Carlos Admin" sin asociación a academia y una academia "Mi Academia" sin administrador asignado, When cuando se asocia el administrador a la academia, Then entonces el administrador queda asociado a la academia, la academia tiene el administrador asignado, y el código HTTP es 200. Este escenario valida la relación entre administradores y academias.
+*Resumen de prueba*: Verifica los criterios de aceptación de la US004 para la incorporación de docentes. La prueba valida la integridad referencial (que el userId y academyId sean válidos y positivos) y la obligatoriedad de los campos de identidad. Los ejemplos fallidos demuestran que el sistema bloquea el registro si el nombre está vacío o si el ID de usuario es inválido, garantizando que cada profesor esté correctamente vinculado a una cuenta y a una academia.
 
-![Bounded-Institution-BDD3](./assets/test/institution_bdd3.png)
+![Bounded-Institution-BDD2](./assets/test/profesor-bdd-test.png)
+
+---
+
+**Escenario 3: Validación de reglas de negocio en el Registro de Administrador**
+
+*Technical Story relacionada*: TS006 - Exponer endpoint para registrar administrador
+
+```
+ Feature: Registro de Administrador
+  Para gestionar la institución y sus miembros
+  Como dueño del sistema
+  Quiero registrar un administrador
+
+  Scenario Outline: Validar reglas de negocio al registrar un administrador
+    When intento registrar un administrador con nombre "<nombre>", apellido "<apellido>", dni "<dni>", celular "<telefono>" y userId <userId>
+    Then el registro del administrador debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | dni       | <dni>      |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+    And el resultado del registro de admin es "<mensaje>"
+
+    Examples:
+      | nombre | apellido | dni      | telefono  | userId | mensaje     |
+      | Diego  | Vilca    | 76543210 | 999888777 | 10     | Test Passed |
+      |        | Vilca    | 76543210 | 999888777 | 10     | Error       |
+      | Salim  | Ramirez  | 123      | 999888777 | 15     | Error       |
+      | Paul   | Sulca    | 12345678 | 987654321 | -5     | Error       |
+```
+
+*Resumen de prueba*: Valida la lógica de negocio para el registro de administradores (TS006). Se enfoca en la validación de formatos de identidad, como el DNI (que debe tener la longitud correcta) y el userId (que debe ser positivo). Los escenarios de prueba aseguran que el sistema rechace identidades incompletas o formatos numéricos inválidos antes de permitir que un usuario asuma el rol de administrador en el sistema.
+
+![Bounded-Institution-BDD3](./assets/test/admin-bdd-test.png)
 
 ---
 
@@ -7951,8 +8044,7 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
-
-### 6.1.4. Core System Tests
+---
 
 ##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
 
@@ -8059,6 +8151,128 @@ Característica: Gestión de Matrículas
 *Resumen de prueba*: Este conjunto de escenarios BDD describe los flujos de registro, actualización y eliminación de matrículas en el sistema. Given establece que el administrador ha iniciado sesión, existen estudiantes, periodos y horarios disponibles, y se tienen los permisos necesarios de gestión. When cubre acciones como completar el formulario con datos válidos, hacer clic en los botones de acción (Registrar Matrícula, Guardar Cambios, Cancelar, Eliminar) y confirmar operaciones. Then verifica que el sistema registra, actualiza o elimina la inscripción correctamente, que el formulario se limpia tras una operación exitosa, que se muestran mensajes de error ante fallos del servidor, y que el estado del ViewModel refleja el resultado esperado en cada caso. Estos escenarios validan el comportamiento completo del módulo de gestión de matrículas para las historias de usuario US007, US008 y US009.
 
 ![Bounded-Enrollment](./assets/test/enrollment4.png)
+
+
+### 6.1.4. Core System Tests
+
+Para garantizar la integridad del sistema en un entorno web real, hemos implementado pruebas de extremo a extremo (E2E) utilizando **Cypress**. Estas pruebas simulan el comportamiento de un usuario final navegando en la aplicación Angular, interactuando con los formularios y validando que las peticiones al backend (Spring Boot) persistan correctamente en la base de datos real.
+
+
+
+
+##### Institution Frontend Web
+
+**Prueba 1: Flujo de Onboarding Completo (Administrador y Academia)**
+
+*User Story relacionada*: US001 - Registro de Academia / US032 - Registro de Cuenta
+
+```
+describe('E2E Puro: Flujo de Onboarding Real', () => {
+  // Arrange
+  const timestamp = Date.now().toString();
+  const uniqueEmail = `admin_${timestamp}@nistra.com`;
+  const uniqueDni = timestamp.slice(-8);
+  const uniqueRuc = `10${timestamp.slice(-9)}`;
+
+  beforeEach(() => {
+    // Registro e Inicio de sesión mediante API para asegurar estado limpio
+    cy.request({
+      method: 'POST',
+      url: 'http://localhost:8080/api/v1/authentication/sign-up',
+      body: { emailAddress: uniqueEmail, password: 'Password123!', termsAndConditions: true }
+    }).then(() => {
+      cy.request({
+        method: 'POST',
+        url: 'http://localhost:8080/api/v1/authentication/sign-in',
+        body: { emailAddress: uniqueEmail, password: 'Password123!' }
+      }).then((signInRes) => {
+        cy.window().then((win) => {
+          win.localStorage.setItem('token', signInRes.body.token);
+          win.localStorage.setItem('userId', signInRes.body.id.toString());
+        });
+      });
+    });
+    cy.visit('http://localhost:4200/complete-account');
+  });
+
+  it('Debería crear el administrador y la academia en la BD real con datos dinámicos', () => {
+    // Act: Registro de Administrador
+    cy.get('#firstName').type('Admin');
+    cy.get('#lastName').type('Dinamico');
+    cy.get('#dniNumber').type(uniqueDni);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert
+    cy.wait(500); // Espera de persistencia
+    cy.url().should('include', '/setup-academy');
+
+    // Act: Registro de Academia
+    cy.get('#academyName').type(`Academia ${timestamp}`);
+    cy.get('#ruc').type(uniqueRuc);
+    cy.get('#emailAddress').type(`contacto_${timestamp}@demy.com`);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert final
+    cy.url().should('include', '/home');
+  });
+});
+```
+
+*Resumen de prueba*: Valida el flujo crítico de "Onboarding" desde la creación de la cuenta hasta la configuración inicial de la institución. El test utiliza datos dinámicos (timestamps) para generar correos, DNIs y RUCs únicos en cada ejecución, evitando colisiones en la base de datos. Se verifica que tras completar el perfil de administrador (TS006), el sistema redirija correctamente a la configuración de la academia (US001) y, finalmente, al dashboard principal.
+
+![Onboarding System Test](./assets/test/onboarding-system-test.png)
+
+
+**Prueba 2: Gestión de Profesores y Validaciones de Interfaz**
+
+*User Story relacionada*: US004 - Registro de Profesor
+
+```
+describe('E2E: Gestión de Profesores (Teacher)', () => {
+  beforeEach(() => {
+    // Login inicial
+    cy.visit('http://localhost:4200/sign-in');
+    cy.get('#email').type('diegovilcatut@gmail.com');
+    cy.get('#password').type('Sofiamia');
+    cy.get('.submit-button').click();
+    cy.url().should('include', '/home');
+    cy.visit('http://localhost:4200/teachers');
+  });
+
+  it('Debería registrar un nuevo profesor y mostrarlo en la tabla', () => {
+    // Arrange
+    const timestamp = Date.now().toString();
+    const uniqueEmail = `carlos_${timestamp}@nistra.com`;
+    const uniquePhone = `9${timestamp.slice(-8)}`;
+
+    // Act
+    cy.get('#teacher-firstName').type('Carlos');
+    cy.get('#teacher-lastName').type('Mendoza');
+    cy.get('#teacher-emailAddress').type(uniqueEmail);
+    cy.get('#teacher-phone').type(uniquePhone);
+    cy.get('.teacher-form__submit').click();
+
+    // Assert
+    cy.get('.teacher-roster').should('contain.text', 'Carlos Mendoza');
+    cy.get('.teacher-roster').should('contain.text', uniqueEmail);
+  });
+
+  it('Debería mostrar errores de validación si los datos son inválidos', () => {
+    // Act
+    cy.get('#teacher-firstName').type('Carlos123');
+    cy.get('#teacher-emailAddress').type('correo-sin-arroba');
+    cy.get('#teacher-phone').type('123');
+
+    // Assert: Verificación de Feedback Visual (Clases CSS y Mensajes)
+    cy.get('#teacher-firstName').should('have.class', 'teacher-form__input--invalid');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Solo letras y espacios');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Email inválido');
+  });
+});
+```
+
+![Teacher System Test](./assets//test/teacher-system-test.png)
+
 
 
 ---
