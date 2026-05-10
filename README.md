@@ -6163,6 +6163,177 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
       </td>
       <td>10/05/2026</td>
     </tr>
+    <!--  Acounting  -->
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5c92a0f</td>
+      <td>test(finance): add unit test for successful transaction registration</td>
+      <td>
+        Verifies that TransactionCommandServiceImpl correctly handles a RegisterTransactionCommand by persisting the transaction when valid data and a current academy context are provided.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>17e44f6</td>
+      <td>test(finance): verify registration fails when no academy context exists</td>
+      <td>
+        Ensures that a RuntimeException is thrown with the message "No academy found" if the ExternalIamService cannot provide a valid academy ID during the registration process.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>c4600de</td>
+      <td>test(finance): add unit test for successful transaction update</td>
+      <td>
+        Validates that an existing transaction can be updated with new values (amount, category, method) and that the changes are correctly saved to the repository.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>fe661ca</td>
+      <td>test(finance): verify update fails for non-existent transaction</td>
+      <td>
+        Ensures that trying to update a transaction ID that does not exist in the database triggers a RuntimeException with the appropriate error message.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>7af2f3e</td>
+      <td>test(finance): prevent updating transactions from other academies</td>
+      <td>
+        Security test case to verify that a user cannot update a transaction that belongs to a different AcademyId than the one currently in session.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>433691c</td>
+      <td>test(finance): add unit test for successful transaction deletion</td>
+      <td>
+        Confirms that the service correctly calls the repository's delete method when a valid transaction ID belonging to the current academy is provided.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>855f2b1</td>
+      <td>test(finance): verify delete fails for non-existent transaction</td>
+      <td>
+        Validates that the system handles attempts to delete missing records by throwing a RuntimeException, preventing silent failures.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5145623</td>
+      <td>test(finance): prevent deleting transactions from other academies</td>
+      <td>
+        Security test case to ensure that transactions belonging to other academies are protected from deletion by unauthorized academy contexts.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>84adcfe</td>
+      <td>test(finance): add integration test for transaction registration endpoint</td>
+      <td>
+          Verifies that POST /api/v1/transactions returns 201 Created and the correct JSON representation when provided with a valid RegisterTransactionResource.      
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>b24fcd8</td>
+      <td>test(finance): verify get transaction by id returns 200 OK</td>
+      <td>
+          Ensures that GET /api/v1/transactions/{id} correctly retrieves a transaction and maps it to the expected resource format when the ID exists in the system.      
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5123427</td>
+      <td>test(finance): verify get transaction by id returns 404 for missing recordst</td>
+      <td>
+          Validates that the controller responds with a 404 Not Found status when a client requests a transaction ID that does not exist in the database.     
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>25e1097</td>
+      <td>test(finance): add integration test for fetching all transactions</td>
+      <td>
+          Tests the GET /api/v1/transactions endpoint to ensure it returns a 200 OK status and a list containing the registered financial movements.    
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>21d1ca1</td>
+      <td>test(finance): verify transaction update endpoint returns 200 OK</td>
+      <td>
+          Confirms that PUT /api/v1/transactions/{id} successfully processes an UpdateTransactionResource, returning the updated transaction data and an OK status.    
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>e8f961a</td>
+      <td>test(finance): add integration test for transaction deletion</td>
+      <td>
+          Verifies that DELETE /api/v1/transactions/{id} correctly triggers the deletion command and returns a 204 No Content status upon successful execution.   
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>e639eb0</td>
+      <td>test(finance): add cucumber feature for financial transaction management</td>
+      <td>
+          Defines acceptance criteria for US025, US026, and US027.
+          Includes scenarios for:
+            - Successful registration of income (US025).
+            - Successful update of expenses (US026).
+            - Successful deletion of transactions (US027).
+            - Validation error for negative amounts in registration. 
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>85c3a29</td>
+      <td>test(finance): implement cucumber step definitions for transaction management</td>
+      <td>
+          Provides the glue code for financial transaction acceptance tests.
+          Implements:
+            - Step definitions for registration, update, and deletion.
+            - Mocking logic for TransactionRepository and ExternalIamService.
+            - Assertions for verifying transaction state and repository interactions.
+            - Error handling for scenario validation (e.g., negative amounts).
+      </td>
+      <td>10/05/2026</td>
+    </tr>
     </tbody>
   </table>
 </div>
