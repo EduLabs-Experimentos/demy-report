@@ -7646,69 +7646,103 @@ Feature: Autenticación de usuarios en plataforma DEMY
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Escenario 1: Registro exitoso de administrador**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
-Feature: Gestión de administradores y academias
-  Como administrativo de una academia
-  Quiero poder registrar administradores y academias
-  Para gestionar la estructura institucional
-
-  # Escenario 1: Registro exitoso de administrador
-  Scenario: Registrar administrador con datos válidos
-    Given no existe administrador con DNI "87654321" en el sistema
-    When registro un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50
-    Then el administrador queda registrado exitosamente
-    And el código de estado HTTP del administrador es 201
-    And se devuelve el recurso del administrador creado
-```
-
-*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo administrador en el sistema. Given establece que no existe un administrador con el DNI "87654321", When cuando se registra un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50, Then entonces el administrador queda registrado exitosamente, el código HTTP es 201, y se devuelve el recurso del administrador creado. Este escenario valida el registro correcto de administradores.
-
-![Bounded-Institution-BDD1](./assets/test/institution_bdd1.png)
-
----
-
-**Escenario 2: Registro de academia con email duplicado**
+**Escenario 1: Validación de reglas de negocio en el Registro de Academia**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
-  # Escenario 2: Registro de academia con email duplicado
-  Scenario: No permite registrar academia con email ya existente
-    Given ya existe una academia con email "academia@test.com" en el sistema
-    When registro una nueva academia con nombre "Mi Academia", email "academia@test.com", teléfono "+51 999888777", RUC "12345678901" y administrador ID 5
-    Then la operación falla con error de "email duplicado"
-    And el código de estado HTTP de la academia es 400
-    And se devuelve mensaje de error
+Feature: Registro de Academia
+  Para gestionar la información de la academia y sus miembros
+  Como administrador
+  Quiero registrar una nueva academia en la plataforma
+
+  Scenario Outline: Validacion de las reglas de negocio al registrar una academia
+    Given un administrador con id <adminId>
+    When intento registrar una academia con nombre "<nombre>", ruc "<ruc>" y correo "<email>"
+    Then el registro de la academia debe validarse con
+      | academyName  | <nombre>  |
+      | ruc          | <ruc>     |
+      | emailAddress | <email>   |
+    And el resultado de la creacion es "<mensaje>"
+
+    Examples:
+      | adminId | nombre         | ruc         | email               | mensaje     |
+      | 10      | Nistra Academy | 10456789123 | contacto@nistra.com | Test Passed |
+      | 10      |                | 10456789123 | contacto@nistra.com | Error       |
+      | 15      | Demy Code      |             | admin@demy.com      | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando se intenta registrar una academia con un email que ya existe en el sistema. Given establece que ya existe una academia con email "academia@test.com", When cuando se intenta registrar una nueva academia con ese mismo email, Then entonces la operación falla con error de email duplicado, el código HTTP es 400, y se devuelve mensaje de error. Este escenario valida la integridad de datos evitando emails duplicados.
+*Resumen de prueba*: Define los escenarios de aceptación para la US001. Se utiliza un Scenario Outline para validar que el sistema acepte registros completos ("Nistra Academy") y rechace aquellos con datos críticos faltantes, como el nombre de la academia o el número de RUC. El paso Then asegura que los Value Objects del dominio (AcademyName, Ruc, EmailAddress) se formen correctamente antes de persistir la entidad.
 
-![Bounded-Institution-BDD2](./assets/test/institution_bdd2.png)
+![Bounded-Institution-BDD1](./assets/test/academy-bdd-test.png)
 
 ---
 
-**Escenario 3: Asociación de administrador con academia**
+**Escenario 2: Validación de reglas de negocio en el Registro de Profesor**
 
-*User Story relacionada*: US002 - Actualización de Academia
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-  # Escenario 3: Asociación de administrador con academia
-  Scenario: Asociar administrador a academia exitosamente
-    Given existe un administrador "Carlos" "Admin" sin asociación a academia
-    And existe una academia "Mi Academia" sin administrador asignado
-    When asociar el administrador a la academia
-    Then el administrador queda asociado a la academia
-    And la academia tiene el administrador asignado
-    And el código de estado HTTP de la academia es 200
+  Feature: Registro de Profesor
+  Para asignar clases y gestionar la parte académica
+  Como administrador
+  Quiero registrar un nuevo profesor en mi academia
+
+  Scenario Outline: Validar reglas de negocio al registrar un profesor
+    Given un userId <userId> asignado por el sistema de usuarios y un academyId <academyId>
+    When intento registrar un profesor con nombre "<nombre>", apellido "<apellido>", correo "<correo>" y celular "<telefono>"
+    Then el registro del profesor debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+      | academyId | <academyId>|
+    And el resultado del registro de profesor es "<mensaje>"
+
+    Examples:
+      | userId | academyId | nombre | apellido | correo               | telefono  | mensaje     |
+      | 20     | 5         | Lucia  | Vargas   | lucia@academy.com    | 911222333 | Test Passed |
+      | 21     | 5         |        | Vargas   | lucia@academy.com    | 911222333 | Error       |
+      | -1     | 5         | Mario  | Lopez    | mario@academy.com    | 988777666 | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el flujo de asociación de un administrador a una academia. Given establece que existe un administrador "Carlos Admin" sin asociación a academia y una academia "Mi Academia" sin administrador asignado, When cuando se asocia el administrador a la academia, Then entonces el administrador queda asociado a la academia, la academia tiene el administrador asignado, y el código HTTP es 200. Este escenario valida la relación entre administradores y academias.
+*Resumen de prueba*: Verifica los criterios de aceptación de la US004 para la incorporación de docentes. La prueba valida la integridad referencial (que el userId y academyId sean válidos y positivos) y la obligatoriedad de los campos de identidad. Los ejemplos fallidos demuestran que el sistema bloquea el registro si el nombre está vacío o si el ID de usuario es inválido, garantizando que cada profesor esté correctamente vinculado a una cuenta y a una academia.
 
-![Bounded-Institution-BDD3](./assets/test/institution_bdd3.png)
+![Bounded-Institution-BDD2](./assets/test/profesor-bdd-test.png)
+
+---
+
+**Escenario 3: Validación de reglas de negocio en el Registro de Administrador**
+
+*Technical Story relacionada*: TS006 - Exponer endpoint para registrar administrador
+
+```
+ Feature: Registro de Administrador
+  Para gestionar la institución y sus miembros
+  Como dueño del sistema
+  Quiero registrar un administrador
+
+  Scenario Outline: Validar reglas de negocio al registrar un administrador
+    When intento registrar un administrador con nombre "<nombre>", apellido "<apellido>", dni "<dni>", celular "<telefono>" y userId <userId>
+    Then el registro del administrador debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | dni       | <dni>      |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+    And el resultado del registro de admin es "<mensaje>"
+
+    Examples:
+      | nombre | apellido | dni      | telefono  | userId | mensaje     |
+      | Diego  | Vilca    | 76543210 | 999888777 | 10     | Test Passed |
+      |        | Vilca    | 76543210 | 999888777 | 10     | Error       |
+      | Salim  | Ramirez  | 123      | 999888777 | 15     | Error       |
+      | Paul   | Sulca    | 12345678 | 987654321 | -5     | Error       |
+```
+
+*Resumen de prueba*: Valida la lógica de negocio para el registro de administradores (TS006). Se enfoca en la validación de formatos de identidad, como el DNI (que debe tener la longitud correcta) y el userId (que debe ser positivo). Los escenarios de prueba aseguran que el sistema rechace identidades incompletas o formatos numéricos inválidos antes de permitir que un usuario asuma el rol de administrador en el sistema.
+
+![Bounded-Institution-BDD3](./assets/test/admin-bdd-test.png)
 
 ---
 
