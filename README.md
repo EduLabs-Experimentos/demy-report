@@ -6799,32 +6799,6 @@ class InstitutionControllerIntegrationTest {
 
 ---
 
-**Prueba 4: Obtener administrador actual cuando no existe retorna 404**
-
-*User Story relacionada*: US005 - Actualización de Profesor
-
-```
-    @Test
-    @DisplayName("TI004 — GET /api/v1/administrators/me cuando no existe retorna 404")
-    void getCurrentAdministrator_WhenNotExists_Returns404() throws Exception {
-        // Arrange
-        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
-                .thenReturn(Optional.empty());
-
-        // Act
-        mockMvc.perform(get("/api/v1/administrators/me"))
-
-        // Assert
-                .andExpect(status().isNotFound());
-    }
-```
-
-*Resumen de prueba*: Verifica que el sistema retorne 404 cuando se consulta el administrador actual y este no existe. El test arrange configura el query service para retornar Optional.empty(), luego act envía GET a /api/v1/administrators/me, y assert verifica código 404 Not Found. Esta prueba maneja correctamente el caso de usuarios sin perfil de administrador.
-
-![Bounded-Institution-Int4](./assets/test/institution_integration4.png)
-
----
-
 ##### Scheduling Bounded - Gestión de Horarios
 
 **Prueba 1: Creación de WeeklySchedule con nombre válido retorna 201**
@@ -6915,62 +6889,10 @@ class WeeklySchedulesControllerIntegrationTest {
 
 ![Bounded-Scheduling-Int1](./assets/test/scheduling_integration1.png)
 
----
-
-**Prueba 2: Obtener Schedule por ID existente retorna 200**
-
-*User Story relacionada*: US014 - Actualización de Periodo Académico
-
-```
-    @Test
-    @DisplayName("TS002 — GET /api/v1/schedules/{id} con ID existente retorna 200")
-    void getScheduleById_ExistingId_Returns200() throws Exception {
-        // Arrange
-        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
-                .thenReturn(Optional.of(sampleWeeklySchedule));
-
-        // Act
-        mockMvc.perform(get("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID))
-
-        // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Semana 1"));
-    }
-```
-
-*Resumen de prueba*: Valida que el endpoint GET /api/v1/schedules/{id} retorne el schedule correcto cuando el ID existe. El test arrange configura el mock del query service para retornar el schedule de ejemplo con ID 1, luego act envía un GET a /api/v1/schedules/1, y assert verifica código 200 y que el nombre sea "Semana 1". Esta prueba asegura la correcta recuperación de horarios por ID.
-
-![Bounded-Scheduling-Int2](./assets/test/scheduling_integration2.png)
 
 ---
 
-**Prueba 3: Obtener Schedule por ID inexistente retorna 404**
-
-*User Story relacionada*: US014 - Actualización de Periodo Académico
-
-```
-    @Test
-    @DisplayName("TS002 — GET /api/v1/schedules/{id} con ID inexistente retorna 404")
-    void getScheduleById_NonExistingId_Returns404() throws Exception {
-        // Arrange
-        when(weeklyScheduleQueryService.handle(any(GetWeeklyScheduleByIdQuery.class)))
-                .thenReturn(Optional.empty());
-
-        // Act
-        mockMvc.perform(get("/api/v1/schedules/{scheduleId}", 9999L))
-
-        // Assert
-                .andExpect(status().isNotFound());
-    }
-```
-
-*Resumen de prueba*: Verifica que el sistema responda con 404 cuando se solicita un schedule con un ID que no existe. El test arrange configura el mock para retornar Optional.empty(), luego act envía un GET a /api/v1/schedules/9999, y assert confirma código 404 Not Found. Esta prueba garantiza el manejo correcto de casos donde el recurso solicitado no existe.
-
-![Bounded-Scheduling-Int3](./assets/test/scheduling_integration3.png)
-
----
-
-**Prueba 4: Obtener todos los schedules retorna lista**
+**Prueba 2: Obtener todos los schedules retorna lista**
 
 *User Story relacionada*: US015 - Eliminación de Periodo Académico
 
@@ -6994,11 +6916,11 @@ class WeeklySchedulesControllerIntegrationTest {
 
 *Resumen de prueba*: Comprueba que el endpoint GET /api/v1/schedules retorne una lista de todos los schedules disponibles. El test arrange configura el mock del query service para retornar una lista conteniendo el schedule de ejemplo, luego act envía un GET a /api/v1/schedules sin ID, y assert verifica código 200, que la respuesta sea un array y que el primer elemento tenga el nombre "Semana 1". Esta prueba valida la funcionalidad de listado de horarios.
 
-![Bounded-Scheduling-Int4](./assets/test/scheduling_integration4.png)
+![Bounded-Scheduling-Int4](./assets/test/scheduling_integration2.png)
 
 ---
 
-**Prueba 5: Actualización de schedule con nombre válido retorna 200**
+**Prueba 3: Actualización de schedule con nombre válido retorna 200**
 
 *User Story relacionada*: US017 - Actualización de Salones de Clase
 
@@ -7026,37 +6948,11 @@ class WeeklySchedulesControllerIntegrationTest {
 
 *Resumen de prueba*: Valida que el endpoint PUT /api/v1/schedules/{id} actualice correctamente un schedule cuando se envía un nuevo nombre válido. El test arrange crea un schedule actualizado "Semana Renombrada" y configura el mock para retornarlo, luego act envía un PUT con el nuevo nombre, y assert verifica código 200 y que el nombre en la respuesta sea "Semana Renombrada". Esta prueba verifica la funcionalidad de actualización de horarios.
 
-![Bounded-Scheduling-Int5](./assets/test/scheduling_integration5.png)
+![Bounded-Scheduling-Int5](./assets/test/scheduling_integration3.png)
 
 ---
 
-**Prueba 6: Eliminación de schedule exitoso retorna 200 con mensaje**
-
-*User Story relacionada*: US018 - Eliminación de Salones de Clase
-
-```
-    @Test
-    @DisplayName("TS005 — DELETE /api/v1/schedules/{id} exitoso retorna 200 con mensaje")
-    void deleteSchedule_ExistingId_Returns200WithMessage() throws Exception {
-        // Arrange
-        doNothing().when(weeklyScheduleCommandService).handle(any(DeleteWeeklyScheduleCommand.class));
-
-        // Act
-        mockMvc.perform(delete("/api/v1/schedules/{scheduleId}", WEEKLY_SCHEDULE_ID))
-
-        // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message").value("Schedule deleted successfully"));
-    }
-```
-
-*Resumen de prueba*: Verifica que la eliminación de un schedule retorne código 200 y un mensaje de confirmación. El test arrange configura el mock del command service para no hacer nada (doNothing), luego act envía un DELETE a /api/v1/schedules/1, y assert verifica código 200 y que el mensaje en el response sea "Schedule deleted successfully". Esta prueba asegura la correcta eliminación de horarios.
-
-![Bounded-Scheduling-Int6](./assets/test/scheduling_integration6.png)
-
----
-
-**Prueba 7: Adición de class-session a WeeklySchedule retorna 200**
+**Prueba 4: Adición de class-session a WeeklySchedule retorna 200**
 
 *User Story relacionada*: US020 - Actualización de Horarios
 
@@ -7086,11 +6982,11 @@ class WeeklySchedulesControllerIntegrationTest {
 
 *Resumen de prueba*: Valida que se puedan agregar class-sessions a un WeeklySchedule a través del endpoint POST. El test arrange crea un WeeklySchedule con una sesión y configura el mock para retornarlo, luego act envía un POST con los datos de la sesión (hora, día, IDs), y assert verifica código 200. Esta prueba verifica la adición de sesiones a horarios semanales.
 
-![Bounded-Scheduling-Int7](./assets/test/scheduling_integration7.png)
+![Bounded-Scheduling-Int7](./assets/test/scheduling_integration4.png)
 
 ---
 
-**Prueba 8: Eliminación de class-session retorna 200**
+**Prueba 5: Eliminación de class-session retorna 200**
 
 *User Story relacionada*: US021 - Eliminación de Horarios
 
@@ -7116,7 +7012,7 @@ class WeeklySchedulesControllerIntegrationTest {
 
 *Resumen de prueba*: Verifica que la eliminación de una class-session de un WeeklySchedule funcione correctamente. El test arrange crea un WeeklySchedule vacío y configura el mock para retornarlo, luego act envía un DELETE a /api/v1/schedules/1/class-sessions/50, y assert verifica código 200. Esta prueba garantiza la remoción de sesiones específicas de horarios.
 
-![Bounded-Scheduling-Int8](./assets/test/scheduling_integration8.png)
+![Bounded-Scheduling-Int8](./assets/test/scheduling_integration5.png)
 
 ---
 
@@ -7267,43 +7163,207 @@ class EnrollmentsControllerIntegrationTest {
 
 ### 6.1.3. Core Behavior-Driven Development
 
-##### Registro de matricula
+##### IAM Bounded - Identity and Access Management
+
+**Escenario 1: Registro exitoso de nuevo usuario**
+
+*User Story relacionada*: US032 - Registro de Cuenta
 
 ```
-Feature: Registrar matrícula de un estudiante
-  Para que se almacenen sus datos y se acceda a funcionalidades adicionales
-  Como administrativo
-  Quiero registrar alumnos en la aplicación web
+Feature: Autenticación de usuarios en plataforma DEMY
+  Como usuario de la plataforma
+  Quiero poder registrarme, iniciar sesión y verificar mi cuenta
+  Para acceder a las funcionalidades del sistema
 
-  Scenario Outline: Registro de matrícula
-    Given existe un Student con id <studentId>
-    And existe un AcademicPeriod con id <academicPeriodId>
-    And existe un WeeklySchedule con id <weeklyScheduleId>
-    And existe un Academy con id <academyId>
-    When intento registrar la matrícula con amount <amount> y currency <currency>
-    Then debe crearse una Enrollment con
-      | studentId        | <studentId>        |
-      | academicPeriodId | <academicPeriodId> |
-      | weeklyScheduleId | <weeklyScheduleId> |
-      | academyId        | <academyId>        |
-      | amount           | <amount>           |
-      | currency         | <currency>         |
-      | status           | <status>           |
-
-    And el mensaje final es "<message>"
-
-    Examples:
-      | studentId | academicPeriodId | academyId | weeklyScheduleId | amount  | currency | status | message     |
-      | 5         | 7                | 2         | 1                | 1500.00 | PEN      | ACTIVE | Test Passed |
-      | 6         | 8                | 2         | 2                | -500.00 | PEN      | ACTIVE | Error       |
-      | 7         | 9                | 3         | 1                | 1200.00 | PEN      | ACTIVE | Test Passed |
-
-
+  # Escenario 1: Registro exitoso de nuevo usuario
+  Scenario: Registro de nuevo usuario con credenciales válidas
+    Given un email "nuevo@test.com" no registrado en el sistema
+    When creo un nuevo usuario con email "nuevo@test.com" y password "Password123"
+    Then el usuario queda registrado con estado "PENDING"
+    And se genera un código de verificación de 6 dígitos
+    And el resultado de la operación es exitoso
 ```
 
-![Boundede-Enrollment1](./assets/test/enrollment3.png)
+*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo usuario en la plataforma DEMY. Given establece que el email "nuevo@test.com" no está registrado en el sistema, When cuando el usuario crea una cuenta con ese email y password "Password123", Then entonces el usuario queda registrado con estado PENDING (pendiente de verificación), se genera un código de verificación de 6 dígitos, y la operación es exitosa. Este escenario valida el registro básico de usuarios sin duplicados.
 
-### 6.1.4. Core System Tests
+![Bounded-IAM-BDD1](./assets/test/iam_bdd1.png)
+
+---
+
+**Escenario 2: Inicio de sesión exitoso**
+
+*User Story relacionada*: US034 - Inicio de Sesión
+
+```
+  # Escenario 2: Inicio de sesión exitoso
+  Scenario: Inicio de sesión con credenciales correctas
+    Given existe un usuario "test@test.com" con password "Password123" en estado "VERIFIED"
+    When inicio sesión con email "test@test.com" y password "Password123"
+    Then obtengo un token JWT como respuesta
+    And el estado HTTP de la respuesta es 200
+    And el usuario existe en el sistema
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de inicio de sesión (sign-in) cuando el usuario proporciona credenciales correctas. Given establece que existe un usuario verificado con email y password válidos, When cuando el usuario inicia sesión con esas credenciales, Then entonces obtiene un token JWT como respuesta, el código HTTP es 200, y el usuario existe en el sistema. Este escenario valida la autenticación exitosa de usuarios.
+
+![Bounded-IAM-BDD2](./assets/test/iam_bdd2.png)
+
+---
+
+**Escenario 3: Verificación de cuenta con código incorrecto**
+
+*User Story relacionada*: US033 - Activación de Cuenta
+
+```
+  # Escenario 3: Verificación de cuenta con código incorrecto
+  Scenario: Verificación falla con código de verificación inválido
+    Given existe un usuario "usuario@test.com" con código de verificación "123456" no verificado
+    When intento verificar la cuenta con código "999999"
+    Then la verificación falla
+    And el estado HTTP de la respuesta es 400
+    And el usuario permanece en estado "PENDING"
+```
+
+*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando un usuario intenta verificar su cuenta con un código incorrecto. Given establece que existe un usuario con código de verificación "123456" que aún no está verificado, When cuando el usuario intenta verificar con el código "999999" (incorrecto), Then entonces la verificación falla, el código HTTP es 400, y el usuario permanece en estado PENDING. Este escenario valida el rechazo de códigos de verificación inválidos.
+
+---
+
+##### Institution Bounded - Gestión de la Institución
+
+**Escenario 1: Registro exitoso de administrador**
+
+*User Story relacionada*: US006 - Registro de Administrador
+
+```
+Feature: Gestión de administradores y academias
+  Como administrativo de una academia
+  Quiero poder registrar administradores y academias
+  Para gestionar la estructura institucional
+
+  # Escenario 1: Registro exitoso de administrador
+  Scenario: Registrar administrador con datos válidos
+    Given no existe administrador con DNI "87654321" en el sistema
+    When registro un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50
+    Then el administrador queda registrado exitosamente
+    And el código de estado HTTP del administrador es 201
+    And se devuelve el recurso del administrador creado
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo administrador en el sistema. Given establece que no existe un administrador con el DNI "87654321", When cuando se registra un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50, Then entonces el administrador queda registrado exitosamente, el código HTTP es 201, y se devuelve el recurso del administrador creado. Este escenario valida el registro correcto de administradores.
+
+![Bounded-Institution-BDD1](./assets/test/institution_bdd1.png)
+
+---
+
+**Escenario 2: Registro de academia con email duplicado**
+
+*User Story relacionada*: US001 - Registro de Academia
+
+```
+  # Escenario 2: Registro de academia con email duplicado
+  Scenario: No permite registrar academia con email ya existente
+    Given ya existe una academia con email "academia@test.com" en el sistema
+    When registro una nueva academia con nombre "Mi Academia", email "academia@test.com", teléfono "+51 999888777", RUC "12345678901" y administrador ID 5
+    Then la operación falla con error de "email duplicado"
+    And el código de estado HTTP de la academia es 400
+    And se devuelve mensaje de error
+```
+
+*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando se intenta registrar una academia con un email que ya existe en el sistema. Given establece que ya existe una academia con email "academia@test.com", When cuando se intenta registrar una nueva academia con ese mismo email, Then entonces la operación falla con error de email duplicado, el código HTTP es 400, y se devuelve mensaje de error. Este escenario valida la integridad de datos evitando emails duplicados.
+
+![Bounded-Institution-BDD2](./assets/test/institution_bdd2.png)
+
+---
+
+**Escenario 3: Asociación de administrador con academia**
+
+*User Story relacionada*: US002 - Actualización de Academia
+
+```
+  # Escenario 3: Asociación de administrador con academia
+  Scenario: Asociar administrador a academia exitosamente
+    Given existe un administrador "Carlos" "Admin" sin asociación a academia
+    And existe una academia "Mi Academia" sin administrador asignado
+    When asociar el administrador a la academia
+    Then el administrador queda asociado a la academia
+    And la academia tiene el administrador asignado
+    And el código de estado HTTP de la academia es 200
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de asociación de un administrador a una academia. Given establece que existe un administrador "Carlos Admin" sin asociación a academia y una academia "Mi Academia" sin administrador asignado, When cuando se asocia el administrador a la academia, Then entonces el administrador queda asociado a la academia, la academia tiene el administrador asignado, y el código HTTP es 200. Este escenario valida la relación entre administradores y academias.
+
+![Bounded-Institution-BDD3](./assets/test/institution_bdd3.png)
+
+---
+
+##### Scheduling Bounded - Gestión de Horarios
+
+**Escenario 1: Creación exitosa de horario semanal**
+
+*User Story relacionada*: US013 - Creación de Periodo Académico
+
+```
+Feature: Gestión de horarios semanales
+  Como administrativo de una academia
+  Quiero poder crear y gestionar horarios semanales con sesiones de clase
+  Para organizar la planificación académica
+
+  # Escenario 1: Creación exitosa de horario semanal
+  Scenario: Crear horario semanal con nombre único
+    Given no existe un schedule con nombre "Semana 1" para la academia con ID 1
+    When creo un horario semanal con nombre "Semana 1" para la academia con ID 1
+    Then el horario queda creado exitosamente
+    And se devuelve un ID de horario
+    And el estado HTTP de la respuesta es 201
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de creación de un nuevo horario semanal. Given establece que no existe un schedule con nombre "Semana 1" para la academia con ID 1, When cuando se crea un horario semanal con nombre "Semana 1" para esa academia, Then entonces el horario queda creado exitosamente, se devuelve un ID de horario, y el código HTTP es 201. Este escenario valida la creación correcta de horarios.
+
+![Bounded-Scheduling-BDD1](./assets/test/scheduling_bdd1.png)
+
+---
+
+**Escenario 2: Agregar sesión de clase al horario**
+
+*User Story relacionada*: US020 - Actualización de Horarios
+
+```
+  # Escenario 2: Agregar sesión de clase al horario
+  Scenario: Agregar sesión de clase al horario existente
+    Given existe un horario semanal con ID 1 para la academia con ID 1
+    When agrego una sesión de clase con inicio "08:00", fin "10:00", día "MONDAY", curso ID 10, salón ID 20, profesor "Carlos" "Pérez"
+    Then la sesión queda agregada al horario exitosamente
+    And el horario tiene al menos una sesión
+    And el estado HTTP de la respuesta es 200
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de agregar una sesión de clase a un horario semanal existente. Given establece que existe un horario semanal con ID 1 para la academia con ID 1, When cuando se agrega una sesión de clase con inicio "08:00", fin "10:00", día "MONDAY", curso ID 10, salón ID 20, profesor "Carlos Pérez", Then entonces la sesión queda agregada al horario exitosamente, el horario tiene al menos una sesión, y el código HTTP es 200. Este escenario valida la adición de sesiones a horarios.
+
+![Bounded-Scheduling-BDD2](./assets/test/scheduling_bdd2.png)
+
+---
+
+**Escenario 3: Eliminación exitosa de horario**
+
+*User Story relacionada*: US021 - Eliminación de Horarios
+
+```
+  # Escenario 3: Eliminación exitosa de horario
+  Scenario: Eliminar horario semanal existente
+    Given existe un horario semanal con ID 5 para la academia con ID 1
+    When elimino el horario semanal con ID 5
+    Then el horario es eliminado exitosamente
+    And el estado HTTP de la respuesta es 200
+    And el mensaje de respuesta es "Schedule deleted successfully"
+```
+
+*Resumen de prueba*: Este escenario BDD describe el flujo de eliminación de un horario semanal. Given establece que existe un horario semanal con ID 5 para la academia con ID 1, When cuando se elimina el horario semanal con ID 5, Then entonces el horario es eliminado exitosamente, el código HTTP es 200, y el mensaje de respuesta es "Schedule deleted successfully". Este escenario valida la eliminación correcta de horarios.
+
+![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
+
+---
+
+##### Enrollment Management API
 
 <hr class="page-break">
 
