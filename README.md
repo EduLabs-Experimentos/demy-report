@@ -6967,6 +6967,238 @@ class EnrollmentCommandServiceImplTest {
 ```
 ![Boundede-Enrollment1](./assets/test/enrollment1.png)
 
+##### Accounting & Finance Bounded Context - Gestión de Transacciones Financieras
+
+**Prueba 1: Registro exitoso de transacción guardada en repositorio**
+
+*User Story relacionada*: US025 - Registro de Ingresos y Egresos Financieros
+
+```
+@Test
+    @DisplayName("US025 - Registrar ingreso/egreso exitosamente guarda la transaccion")
+    void handle_RegisterTransaction_Success_SavesTransaction() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.save(any(Transaction.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        // Act
+        Optional<Transaction> result = transactionCommandService.handle(registerCommand);
+
+        // Assert
+        assertThat(result)
+                .as("El servicio debe retornar una transaccion registrada cuando los datos contables son validos")
+                .isPresent();
+        assertThat(result.get().getTransactionType())
+                .as("La transaccion registrada debe conservar el tipo INCOME")
+                .isEqualTo(TransactionType.INCOME);
+        assertThat(result.get().getTransactionCategory())
+                .as("La transaccion registrada debe conservar la categoria STUDENT_ENROLLMENT")
+                .isEqualTo(TransactionCategory.STUDENT_ENROLLMENT);
+        assertThat(result.get().getTransactionMethod())
+                .as("La transaccion registrada debe conservar el metodo BANK_TRANSFER")
+                .isEqualTo(TransactionMethod.BANK_TRANSFER);
+        verify(transactionRepository, times(1)).save(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Verifica que el servicio registre correctamente una nueva transacción. El test arrange simula que existe una academia en sesión y que el repositorio guardará la entidad. Luego, act ejecuta el comando de registro, y assert valida que el resultado contenga los datos correctos (tipo INCOME, categoría y método) y que el método save del repositorio haya sido invocado exactamente una vez. Esta prueba asegura el flujo exitoso de registro de un movimiento financiero.
+
+![Bounded-Finance](./assets/test/finance1.png)
+
+**Prueba 2: Rechazo de registro cuando no existe academia actual**
+
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
+
+```
+@Test
+    @DisplayName("US025 - Registrar transaccion sin academia actual lanza RuntimeException")
+    void handle_RegisterTransaction_NoAcademy_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(registerCommand))
+                .as("El servicio debe rechazar el registro si no existe una academia actual")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("No academy found");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Valida que el sistema impida registrar una transacción si no hay un contexto de academia válido. El test arrange simula que no se encuentra el ID de la academia actual. El test act & assert verifica que al ejecutar el comando se lance una RuntimeException con el mensaje "No academy found", y asegura que nunca se llame al método save del repositorio. Esto garantiza la integridad de los datos por inquilino (tenant).
+
+![Bounded-Finance](./assets/test/finance2.png)
+
+**Prueba 3: Actualización exitosa de transacción existente**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar ingreso/egreso existente retorna transaccion actualizada")
+    void handle_UpdateTransaction_Success_ReturnsUpdatedTransaction() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+        when(transactionRepository.save(any(Transaction.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        // Act
+        Optional<Transaction> result = transactionCommandService.handle(updateCommand);
+
+        // Assert
+        assertThat(result)
+                .as("El servicio debe retornar la transaccion actualizada cuando pertenece a la academia actual")
+                .isPresent();
+        assertThat(result.get().getTransactionType())
+                .as("La actualizacion debe cambiar el tipo de transaccion a EXPENSE")
+                .isEqualTo(TransactionType.EXPENSE);
+        assertThat(result.get().getTransactionCategory())
+                .as("La actualizacion debe cambiar la categoria a OFFICE_SUPPLIES")
+                .isEqualTo(TransactionCategory.OFFICE_SUPPLIES);
+        assertThat(result.get().getTransactionMethod())
+                .as("La actualizacion debe cambiar el metodo a DEBIT_CARD")
+                .isEqualTo(TransactionMethod.DEBIT_CARD);
+        assertThat(result.get().getAmount())
+                .as("La actualizacion debe cambiar el monto de la transaccion")
+                .isEqualTo(expenseAmount);
+        verify(transactionRepository, times(1)).save(transaction);
+    }
+```
+
+*Resumen de prueba:* Comprueba que se puedan modificar los datos de un ingreso o egreso previamente registrado. El test arrange configura los mocks para devolver la academia actual y la transacción a actualizar. El test act procesa el comando de actualización, y assert confirma que los campos cambiaron exitosamente (tipo EXPENSE, nueva categoría, método y monto), validando además que los cambios se persistieron con save.
+
+![Bounded-Finance](./assets/test/finance3.png)
+
+**Prueba 4: Excepción al actualizar una transacción inexistente**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar transaccion inexistente lanza RuntimeException")
+    void handle_UpdateTransaction_NotFound_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(updateCommand))
+                .as("El servicio debe rechazar la actualizacion si la transaccion no existe")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction not found with id: 1");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Verifica el manejo de errores cuando se intenta modificar un registro que no está en la base de datos. El test arrange simula que la búsqueda en el repositorio devuelve vacío. El test act & assert confirma que se lanza una RuntimeException notificando que la transacción no fue encontrada y se asegura de que el método save no sea ejecutado, previniendo actualizaciones erróneas.
+
+![Bounded-Finance](./assets/test/finance4.png)
+
+**Prueba 5: Protección contra la actualización de transacciones de otras academias**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar transaccion de otra academia lanza RuntimeException")
+    void handle_UpdateTransaction_DifferentAcademy_ThrowsRuntimeException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(updateCommand))
+                .as("El servicio debe impedir actualizar una transaccion de otra academia")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction does not belong to the current academy");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Garantiza la seguridad y aislamiento de datos entre distintas academias. El test arrange simula que el usuario actual pertenece a una academia diferente (ID 99L) a la de la transacción. El test act & assert comprueba que se lance una excepción impidiendo la operación por falta de permisos, confirmando que no se ejecute el guardado.
+
+![Bounded-Finance](./assets/test/finance5.png)
+
+**Prueba 6: Eliminación exitosa de una transacción**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar ingreso/egreso existente llama delete")
+    void handle_DeleteTransaction_Success_CallsDelete() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act
+        transactionCommandService.handle(deleteCommand);
+
+        // Assert
+        verify(transactionRepository, times(1)).delete(transaction);
+    }
+```
+
+*Resumen de prueba:* Valida el flujo correcto ("Happy Path") para la eliminación de registros. El test arrange configura los mocks para encontrar la transacción dentro del contexto de la academia correcta. El test act procesa el comando de eliminación, y assert usa Mockito verify para confirmar que el método delete del repositorio fue invocado exactamente una vez con la entidad correcta.
+
+![Bounded-Finance](./assets/test/finance6.png)
+
+**Prueba 7: Excepción al intentar eliminar una transacción inexistente**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar transaccion inexistente lanza RuntimeException")
+    void handle_DeleteTransaction_NotFound_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(deleteCommand))
+                .as("El servicio debe rechazar la eliminacion si la transaccion no existe")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction not found with id: 1");
+
+        verify(transactionRepository, never()).delete(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Evalúa la respuesta del sistema al pedir borrar un ID no registrado. El test arrange prepara al repositorio para retornar vacío. El test act & assert corrobora que se levante la excepción adecuada por "no encontrado", y verifica que no haya interacciones innecesarias con la acción delete de la base de datos.
+
+![Bounded-Finance](./assets/test/finance7.png)
+
+**Prueba 8: Protección contra la eliminación de transacciones ajenas**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar transaccion de otra academia lanza RuntimeException")
+    void handle_DeleteTransaction_DifferentAcademy_ThrowsRuntimeException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(deleteCommand))
+                .as("El servicio debe impedir eliminar una transaccion de otra academia")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction does not belong to the current academy");
+
+        verify(transactionRepository, never()).delete(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Refuerza la seguridad verificando que un usuario no pueda borrar registros contables de otra organización. El test arrange simula un choque de IDs de academias (la de la sesión vs la de la transacción). El test act & assert confirma el rechazo de la solicitud lanzando una excepción y asegurando que la transacción permanezca intacta (sin invocar a delete).
+
+![Bounded-Finance](./assets/test/finance8.png)
 
 ### 6.1.2. Core Integration Tests
 
@@ -7688,6 +7920,168 @@ class EnrollmentsControllerIntegrationTest {
 }
 ```
 ![Boundede-Enrollment1](./assets/test/enrollment2.png)
+
+#### Accounting & Finance
+
+**Prueba 1: Registro exitoso de transacción vía API (HTTP 201)**
+
+*Test Scenario relacionado:* TS050 - POST /transactions
+
+```
+@Test
+    @DisplayName("TS050 - POST /transactions con datos validos retorna 201 Created")
+    void registerTransaction_ValidRequest_Returns201() throws Exception {
+        // Arrange
+        RegisterTransactionResource resource = new RegisterTransactionResource(
+                "income", "student enrollment", "cash", new BigDecimal("150.00"),
+                "PEN", "Pago de matricula", LocalDate.of(2026, 5, 9)
+        );
+        when(transactionCommandService.handle(any(RegisterTransactionCommand.class)))
+                .thenReturn(Optional.of(sampleTransaction));
+
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/transactions")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.transactionType").value("INCOME"))
+                .andExpect(jsonPath("$.transactionCategory").value("STUDENT_ENROLLMENT"))
+                .andExpect(jsonPath("$.transactionMethod").value("CASH"))
+                .andExpect(jsonPath("$.amount").value(150.00))
+                .andExpect(jsonPath("$.currency").value("PEN"));
+
+        verify(transactionCommandService, times(1)).handle(any(RegisterTransactionCommand.class));
+    }
+```
+
+*Resumen de prueba:* Verifica que el endpoint POST procese correctamente una solicitud de registro. El test arrange crea un RegisterTransactionResource y mockea el servicio de comandos para simular un guardado exitoso. El test act & assert utiliza MockMvc para enviar un JSON al controlador, confirmando que la respuesta HTTP sea 201 (Created) y que los datos del JSON de respuesta coincidan con la transacción creada. Garantiza que la capa de interfaz exponga la creación correctamente.
+
+![Boundede-Enrollment1](./assets/test/finance1_integration.png)
+
+**Prueba 2: Obtención de transacción existente por ID (HTTP 200)**
+
+*Test Scenario relacionado:* TS054 - GET /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS054 - GET /transactions/{id} con ID existente retorna 200 OK")
+    void getTransactionById_ExistingId_Returns200() throws Exception {
+        // Arrange
+        when(transactionQueryService.handle(any(GetTransactionByIdQuery.class)))
+                .thenReturn(Optional.of(sampleTransaction));
+
+        // Act & Assert
+        mockMvc.perform(get("/api/v1/transactions/{id}", TRANSACTION_ID))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.transactionType").value("INCOME"))
+                .andExpect(jsonPath("$.transactionCategory").value("STUDENT_ENROLLMENT"))
+                .andExpect(jsonPath("$.currency").value("PEN"));
+    }
+```
+
+*Resumen de prueba:* Valida que el endpoint GET recupere una transacción específica. El test arrange mockea el transactionQueryService para que retorne la transacción de prueba. El test act & assert realiza la petición GET con un ID válido, verificando que el código de estado sea 200 (OK) y que el cuerpo de la respuesta contenga los valores mapeados correctamente en formato JSON.
+
+![Boundede-Enrollment1](./assets/test/finance2_integration.png)
+
+**Prueba 3: Manejo de error al consultar transacción inexistente (HTTP 404)**
+
+*Test Scenario relacionado:* TS054 - GET /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS054 - GET /transactions/{id} con ID inexistente retorna 404 Not Found")
+    void getTransactionById_NonExistingId_Returns404() throws Exception {
+        // Arrange
+        when(transactionQueryService.handle(any(GetTransactionByIdQuery.class)))
+                .thenReturn(Optional.empty());
+
+        // Act & Assert
+        mockMvc.perform(get("/api/v1/transactions/{id}", 9999L))
+                .andExpect(status().isNotFound());
+    }
+```
+
+*Resumen de prueba:* Asegura que el controlador maneje adecuadamente las consultas de recursos que no existen. El test arrange configura el mock del servicio de consultas para devolver un Optional.empty(). El test act & assert ejecuta la petición GET con un ID simulado (9999L) y verifica que el sistema responda con un HTTP 404 (Not Found), cumpliendo con los estándares REST.
+
+![Boundede-Enrollment1](./assets/test/finance3_integration.png)
+
+**Prueba 4: Listado general de transacciones (HTTP 200)**
+
+*Test Scenario relacionado:* TS053 - GET /transactions
+
+```
+@Test
+    @DisplayName("TS053 - GET /transactions retorna lista de movimientos contables")
+    void getAllTransactions_ReturnsTransactionList() throws Exception {
+        // Arrange
+        when(transactionQueryService.handle(any(GetAllTransactionsQuery.class)))
+                .thenReturn(List.of(sampleTransaction));
+
+        // Act & Assert
+        mockMvc.perform(get("/api/v1/transactions"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].transactionType").value("INCOME"));
+    }
+```
+
+*Resumen de prueba:* Comprueba que el endpoint devuelva una colección de registros financieros. El test arrange instruye al servicio para devolver una lista que contiene el registro de prueba. El test act & assert llama a la ruta raíz de transacciones por GET, validando un estado 200 (OK) y comprobando mediante JsonPath que la respuesta es un arreglo (array) con un tamaño de 1 y los datos correspondientes.
+
+![Boundede-Enrollment1](./assets/test/finance4_integration.png)
+
+**Prueba 5: Actualización exitosa vía API (HTTP 200)**
+
+*Test Scenario relacionado:* TS051 - PUT /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS051 - PUT /transactions/{id} con datos validos retorna 200 OK")
+    void updateTransaction_ValidRequest_Returns200() throws Exception {
+        // Arrange
+        UpdateTransactionResource resource = new UpdateTransactionResource(
+                "expense", "office supplies", "debit card", new BigDecimal("80.00"),
+                "PEN", "Compra de utiles de oficina", LocalDate.of(2026, 5, 10)
+        );
+        sampleTransaction.updateTransaction(...);
+        when(transactionCommandService.handle(any(UpdateTransactionCommand.class)))
+                .thenReturn(Optional.of(sampleTransaction));
+
+        // Act & Assert
+        mockMvc.perform(put("/api/v1/transactions/{id}", TRANSACTION_ID)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.transactionType").value("EXPENSE"))
+                .andExpect(jsonPath("$.amount").value(80.00));
+    }
+```
+
+*Resumen de prueba:* Verifica la correcta modificación de un recurso a través del método PUT. El test arrange prepara un recurso con los datos nuevos (egreso por 80.00) y mockea la respuesta del servicio de comandos. El test act & assert envía la petición PUT, garantizando que el controlador responda con 200 (OK) y serialice el recurso actualizado reflejando los cambios.
+
+![Boundede-Enrollment1](./assets/test/finance5_integration.png)
+
+**Prueba 6: Eliminación exitosa vía API (HTTP 204)**
+
+*Test Scenario relacionado:* TS052 - DELETE /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS052 - DELETE /transactions/{id} exitoso retorna 204 No Content")
+    void deleteTransaction_ExistingId_Returns204() throws Exception {
+        // Arrange
+        doNothing().when(transactionCommandService).handle(any(DeleteTransactionCommand.class));
+
+        // Act & Assert
+        mockMvc.perform(delete("/api/v1/transactions/{id}", TRANSACTION_ID))
+                .andExpect(status().isNoContent());
+
+        verify(transactionCommandService, times(1)).handle(any(DeleteTransactionCommand.class));
+    }
+```
+
+*Resumen de prueba:* Confirma el flujo de borrado de recursos según el estándar REST. El test arrange usa doNothing() ya que el método del servicio no retorna valor. El test act & assert ejecuta la petición DELETE y valida que devuelva el código HTTP 204 (No Content), verificando además que el comando fue enviado correctamente a la capa de aplicación.
+
+![Boundede-Enrollment1](./assets/test/finance6_integration.png)
 
 ### 6.1.3. Core Behavior-Driven Development
 
