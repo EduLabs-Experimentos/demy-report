@@ -700,7 +700,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 5. ¿Qué tan valioso sería que recibas alertas (notificaciones) sobre cambios de horario o asistencia irregular, y demás?
 6. ¿Estarías dispuesto a aprender a usar una nueva herramienta si mejora tu gestión (organización)?
 
-## 2.2.2. Registro de entrevistas
+### 2.2.2. Registro de entrevistas
 
 ---
 
