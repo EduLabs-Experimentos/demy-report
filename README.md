@@ -6201,6 +6201,99 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 6.1.1. Core Entities Unit Tests
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Creación de ClassAttendance desde Command**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should accept today's date and create the aggregate successfully")
+void shouldAcceptTodayDate() {
+    // Act
+    ClassAttendance attendance = new ClassAttendance(ACADEMY_ID, buildCommand());
+ 
+    // Assert
+    assertThat(attendance.getDate()).isEqualTo(LocalDate.now());
+    assertThat(attendance.getAcademyId()).isEqualTo(ACADEMY_ID);
+    assertThat(attendance.getAttendance()).hasSize(2);
+}
+```
+ 
+*Resumen de prueba*: Valida que el sistema pueda transformar los datos de entrada del profesor en un registro persistible. El arrange usa el método `buildCommand()` que construye un `CreateClassAttendanceCommand` con dos estudiantes (uno `ABSENT` y uno `PRESENT`) para la fecha de hoy, el act instancia el agregado `ClassAttendance`, y el assert confirma que la fecha, el ID de academia y la cantidad de registros son correctos. Esta prueba garantiza que el flujo de creación de asistencia funcione correctamente.
+ 
+![Bounded-Attendance-Unit1](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 2: Actualización de estado de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to PRESENT")
+void shouldUpdateRecordStatusSuccessfully() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.PRESENT);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.PRESENT);
+}
+```
+ 
+*Resumen de prueba*: Cumple con el criterio de corregir errores o reflejar cambios en la participación real. El test dispone de un agregado (preparado en `@BeforeEach`) con el estudiante `DNI_ABSENT` (`"87654321"`) en estado `ABSENT`, el act llama a `updateRecordStatus()` cambiando el estado a `PRESENT`, y el assert recupera el registro por DNI y confirma que el estado fue actualizado. Esta prueba asegura que el docente pueda corregir la asistencia de un alumno durante la sesión.
+ 
+![Bounded-Attendance-Unit2](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 3: Actualización de estado a EXCUSED**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to EXCUSED")
+void shouldUpdateRecordStatusToExcused() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.EXCUSED);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.EXCUSED);
+}
+```
+ 
+*Resumen de prueba*: Verifica la flexibilidad del sistema para manejar casos excepcionales como ausencias justificadas. Análoga a la prueba anterior pero con el estado `EXCUSED`, confirma que el dominio soporte múltiples transiciones de estado más allá del binario ausente/presente. El assert valida que el registro refleje el estado `EXCUSED`, cubriendo el caso de uso de ausencia por motivo justificado que muchas academias requieren.
+ 
+![Bounded-Attendance-Unit3](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 4: Rechazo de actualización para DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should throw IllegalArgumentException when updating a non-enrolled DNI")
+void shouldThrowWhenUpdatingNonExistentDni() {
+    // Act & Assert
+    assertThatThrownBy(() -> classAttendance.updateRecordStatus(DNI_UNKNOWN, AttendanceStatus.PRESENT))
+            .isInstanceOf(IllegalArgumentException.class);
+}
+```
+ 
+*Resumen de prueba*: Valida el escenario de error donde se intenta registrar la asistencia de alguien ajeno a la sesión. El test intenta actualizar el estado del `DNI_UNKNOWN` (`"00000001"`) que no existe en el agregado, y el assert confirma que se lanza una `IllegalArgumentException`. Esta prueba es fundamental para mantener la integridad de los registros de asistencia impidiendo modificaciones sobre estudiantes no matriculados en la sesión.
+ 
+![Bounded-Attendance-Unit4](./assets/test/attendance1.png)
+ 
+---
+
+
 ##### IAM Bounded - Identity and Access Management
 
 **Prueba 1: Activación de usuario con código de verificación válido**
@@ -6907,6 +7000,130 @@ class EnrollmentCommandServiceImplTest {
 
 
 ### 6.1.2. Core Integration Tests
+
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Integración del repositorio JPA para la gestión de Asistencia**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia / US011 - Actualización de Asistencia
+ 
+```java
+@DataJpaTest
+@ActiveProfiles("test")
+@DisplayName("ClassAttendanceRepository Integration Tests")
+class ClassAttendanceRepositoryTest {
+ 
+    @Autowired
+    private TestEntityManager entityManager;
+ 
+    @Autowired
+    private ClassAttendanceRepository repository;
+ 
+    @Test
+    @DisplayName("should persist and load ClassAttendance with embedded Value Objects")
+    void shouldPersistAndLoadWithEmbeddedValueObjects() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_1,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        ClassAttendance loaded = found.get();
+        assertThat(loaded.getClassSessionId()).isEqualTo(SESSION_1);
+        assertThat(loaded.getDate()).isEqualTo(LocalDate.now());
+        assertThat(loaded.getAcademyId()).isEqualTo(ACADEMY_ID);
+    }
+ 
+    @Test
+    @DisplayName("should cascade and persist AttendanceRecords when saving the Aggregate")
+    void shouldCascadeAttendanceRecordsOnSave() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_2,
+                List.of(
+                        new AttendanceInput(DNI_1, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_2, AttendanceStatus.ABSENT),
+                        new AttendanceInput(DNI_3, AttendanceStatus.EXCUSED)
+                )
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findByIdAndAcademyId(saved.getId(), ACADEMY_ID);
+ 
+        // Assert
+        assertThat(found).isPresent();
+        List<AttendanceRecord> records = found.get().getAttendance();
+        assertThat(records).hasSize(3);
+        assertThat(records)
+                .extracting(r -> r.getDni().dniNumber())
+                .containsExactlyInAnyOrder("11111111", "22222222", "33333333");
+    }
+ 
+    @Test
+    @DisplayName("should remove orphaned AttendanceRecords due to orphanRemoval = true")
+    void shouldRemoveOrphanedRecords() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(SESSION_3,
+                List.of(
+                        new AttendanceInput(DNI_4, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_5, AttendanceStatus.ABSENT)
+                )
+        );
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        ClassAttendance loaded = repository.findById(saved.getId()).orElseThrow();
+        loaded.getAttendance().removeIf(r -> r.getDni().equals(DNI_4));
+        repository.save(loaded);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Assert
+        ClassAttendance reloaded = repository.findById(saved.getId()).orElseThrow();
+        assertThat(reloaded.getAttendance()).hasSize(1);
+        assertThat(reloaded.getAttendance().get(0).getDni()).isEqualTo(DNI_5);
+    }
+ 
+    @Test
+    @DisplayName("should detect duplicate attendance for the same academy, session, and date")
+    void shouldDetectDuplicateAttendance() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_4,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+        repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        boolean exists = repository.existsByAcademyIdAndClassSessionIdAndDate(
+                ACADEMY_ID, SESSION_4, LocalDate.now());
+ 
+        // Assert
+        assertThat(exists).isTrue();
+    }
+}
+```
+ 
+*Resumen de prueba*: Valida la exposición de los servicios que el profesor consume desde el frontend para gestionar la asistencia, verificando la capa de persistencia completa. Usando `@DataJpaTest` con base de datos H2 en memoria y el patrón `entityManager.flush()` + `entityManager.clear()` para forzar un round-trip real a la BD descartando la caché de primer nivel, se verifican cuatro comportamientos críticos: la persistencia correcta del agregado con sus Value Objects embebidos, el cascade de los `AttendanceRecord` al guardar el padre, la eliminación de registros huérfanos por `orphanRemoval=true`, y la detección de asistencias duplicadas por academia, sesión y fecha.
+ 
+![Bounded-Attendance-Integration](./assets/test/attendance2.png)
 
 ##### IAM Bounded - Identity and Access Management
 
@@ -7812,9 +8029,86 @@ class EnrollmentsControllerIntegrationTest {
 
 ### 6.1.3. Core Behavior-Driven Development
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Feature y Step Definitions**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+# src/test/resources/features/attendance.feature
+@attendance
+Feature: Mark student attendance in a class session
+ 
+  Background:
+    Given an academy with ID 1 and a class session with ID 1 exists for today's date
+    And the following students are enrolled in the session:
+      | dni      | initialStatus |
+      | 12345678 | ABSENT        |
+      | 87654321 | ABSENT        |
+```
+ 
+Los step definitions correspondientes en `AttendanceSteps.java` usan `@SpringBootTest` con el repositorio JPA real en perfil H2, lo que permite validar la integración completa del dominio con la persistencia. El `@Before` de Cucumber limpia la tabla antes de cada escenario garantizando aislamiento. La excepción en el step `@When` se captura en un try-catch para poder ser asertada en el step `@Then` correspondiente, evitando que cruce los límites del step definition y falle el runner.
+ 
+---
+ 
+**Escenario 1: Actualización exitosa de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to PRESENT
+    Given the student with DNI "12345678" has status "ABSENT"
+    When the teacher marks the student with DNI "12345678" as "PRESENT"
+    Then the attendance record for DNI "12345678" should have status "PRESENT"
+```
+ 
+*Resumen de prueba*: Cubre el camino feliz del registro de asistencia. Given confirma que el estudiante "12345678" existe en el agregado con estado `ABSENT` (pre-condición establecida por el Background), When el docente lo marca como `PRESENT` (el step actualiza el agregado y lo persiste), Then el step recarga el agregado desde la BD real mediante `findByIdAndAcademyId` y verifica que el estado persiste correctamente como `PRESENT`. La prueba valida el flujo completo de dominio y persistencia.
+ 
+![Bounded-Attendance-BDD1](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 2: Actualización exitosa de ABSENT a EXCUSED**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to EXCUSED
+    Given the student with DNI "87654321" has status "ABSENT"
+    When the teacher marks the student with DNI "87654321" as "EXCUSED"
+    Then the attendance record for DNI "87654321" should have status "EXCUSED"
+```
+ 
+*Resumen de prueba*: Valida que el sistema soporte el estado de ausencia justificada `EXCUSED` en el flujo completo con persistencia real. Given el estudiante "87654321" está en estado `ABSENT`, When el profesor lo marca como `EXCUSED` y el agregado se guarda en BD, Then el step recarga el registro y verifica que el estado es `EXCUSED`. Este escenario asegura que todos los estados del dominio sean tratados de forma consistente por la capa de persistencia JPA.
+ 
+![Bounded-Attendance-BDD2](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 3: Error al marcar asistencia de DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @error-path
+  Scenario: Attempt to update attendance for a non-enrolled DNI
+    Given the student with DNI "00000001" is not enrolled in the session
+    When the teacher marks the student with DNI "00000001" as "PRESENT"
+    Then an error should be raised indicating that the DNI was not found
+```
+ 
+*Resumen de prueba*: Cubre el camino de error protegiendo la integridad del registro de asistencia. Given verifica que el DNI "00000001" no existe en la colección `getAttendance()` del agregado, When el step intenta `updateRecordStatus()` y captura la excepción en el try-catch sin relanzarla, Then el step verifica que `capturedException` es una `IllegalArgumentException` cuyo mensaje contiene "does not exist". El manejo explícito de la excepción en el step del When es clave para que Cucumber pueda evaluar el Then sin interrumpir el escenario.
+ 
+![Bounded-Attendance-BDD3](./assets/test/attendance3.png)
+ 
+---
+
 ##### IAM Bounded - Identity and Access Management
 
-**Escenario 1: Registro exitoso de nuevo usuario**
+**Escenario 1: Registro exitoso de nuevo usua rio**
 
 *User Story relacionada*: US032 - Registro de Cuenta
 
