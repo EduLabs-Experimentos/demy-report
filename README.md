@@ -702,67 +702,173 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 
 ### 2.2.2. Registro de entrevistas
 
-...
+---
 
+#### Segmento: Administrativo - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Salim Ramirez |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 00:00 - 07:42 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista1.png) |
+| **Resumen** | El administrativo de la Academia Enigmas (Lima) gestiona actualmente los procesos de matrícula, asistencia y pagos mediante hojas de Excel separadas, registros físicos y archivos no integrados, lo que genera desorganización, falta de sincronización y pérdida de información. Esta situación provoca errores frecuentes, como datos desactualizados o dificultades para encontrar información histórica, además de demoras al consultar asistencia o estado de pagos, especialmente cuando hay errores en los registros. Como consecuencia, se pierde tiempo operativo y se afecta la imagen de la academia frente a los padres de familia. Por ello, se plantea la necesidad de una plataforma centralizada, simple e intuitiva, que permita búsquedas por DNI, control de asistencia en tiempo real, gestión de pagos y alertas automáticas, con el objetivo de mejorar el orden, la trazabilidad y reducir el trabajo manual basado en Excel. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Alison Rivera |
+| **Edad** | 21 |
+| **Sexo** | Femenino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 07:43 - 12:39 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista2.png) |
+| **Resumen** | La administrativa de una academia en Lima realiza la gestión de matrículas, asistencia y pagos utilizando principalmente hojas de Excel independientes y registros en papel, los cuales no están integrados entre sí. Esto ocasiona desorden en la información, falta de actualización entre archivos y riesgo constante de pérdida de datos. Además, suele haber dificultades para ubicar información específica, lo que retrasa la atención de consultas sobre asistencia o pagos y genera errores en los registros. Como resultado, se pierde eficiencia en las tareas diarias y se debilita la percepción de organización frente a los padres de familia. Por ello, se considera necesario implementar una plataforma centralizada, fácil de usar, que permita buscar alumnos por DNI, registrar asistencia en tiempo real, gestionar pagos y emitir alertas automáticas, con el fin de mejorar el control y reducir el trabajo manual. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Femenino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 12:40 - 17:36 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista3.png) |
+| **Resumen** | La administrativa de la Academia Enigmas (Ica) gestiona actualmente los procesos de matrícula, asistencia y pagos de forma manual y desintegrada, utilizando principalmente hojas de Excel, registros en papel y fichas físicas, lo que genera duplicidad de datos, errores de digitación y pérdida de información. El acceso a la información es lento y poco eficiente, dificultando consultas frecuentes como asistencia o pagos pendientes, lo que afecta tanto la operación interna como la percepción de los padres. Esta desorganización provoca pérdida de tiempo operativo y problemas de control financiero y académico. Por ello, se requiere una solución digital centralizada con buscador por DNI, registro de asistencia, control de pagos y alertas automáticas, priorizando la simplicidad, rapidez y trazabilidad total, con alta disposición de ella a adoptarla. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Carlos Guerra |
+| **Edad** | 24 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Profesor de Academia |
+| **Fecha de entrevista** | 05 de mayo de 2025 |
+| **Timing** | 17:37 - 22:59 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista4.jpg) |
+| **Resumen** | El profesor de una academia en Lima gestiona actualmente el control de asistencia y el seguimiento de alumnos de forma manual, utilizando principalmente registros en Excel y anotaciones en papel, los cuales no se encuentran integrados ni actualizados en tiempo real. Esto provoca desorden en la información, posibles errores en el registro de asistencia y dificultades para consultar datos de los estudiantes. Además, el acceso a la información suele ser lento, lo que retrasa la coordinación con la administración y afecta la eficiencia del proceso académico. Como consecuencia, se pierde tiempo en tareas operativas y se reduce el control sobre el desempeño de los alumnos. Por ello, se propone la implementación de una plataforma digital centralizada que permita registrar asistencia en tiempo real, consultar información por alumno mediante DNI y mejorar la organización general, priorizando la rapidez, simplicidad y trazabilidad de los datos. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Luis de la Cruz Herrera |
+| **Edad** | 26 |
+| **Sexo** | Masculino |
+| **Distrito** | La Molina |
+| **Ocupación** | Docente de Círculos de estudio en la Universidad Agraria |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 23:00 - 35:16 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista5.png) |
+| **Resumen** | El entrevistado es un docente con experiencia en diversas academias y actualmente dicta clases en círculos de estudio en la UNALM. En su rutina diaria, enfrenta desafíos relacionados con la gestión manual de horarios pues usa herramientas como Excel, actividades que le consumen una gran cantidad de tiempo y afectan su eficiencia. Usa principalmente su laptop y su celular para organizarse, sin herramientas digitales especializadas, lo que le complica su trabajo. Al conocer la propuesta de nuestra startup, mostró una percepción positiva ante la posibilidad de contar con una herramienta que centralice y automatice estos procesos. Reconoce que una solución tecnológica podría mejorar su organización, reducir su carga administrativa y permitirle enfocarse más en la enseñanza. Se mostró dispuesto a adoptar nuevas herramientas que respondan a sus necesidades y faciliten su trabajo diario como docente, herramientas las cuales pueda usar desde su celular o su laptop. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 35:16 - 40:44 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista6.png) |
+| **Resumen** | La entrevistada señaló que actualmente la gestión académica y administrativa en academias suele depender de registros manuales y herramientas dispersas, lo que dificulta el control eficiente de asistencia, pagos y seguimiento de alumnos. Considera importante implementar una plataforma digital centralizada que permita optimizar estos procesos, mejorar la organización y reducir errores operativos. Además, destacó la necesidad de que la herramienta sea intuitiva, rápida y accesible desde distintos dispositivos para facilitar su adopción por parte de profesores y administrativos. |
 ### 2.2.3. Análisis de entrevistas
 
-Las entrevistas se realizaron entre el 2 y el 3 de septiembre de 2025 a un total de nueve participantes: tres docentes, tres
-administrativos/coordinadores de academias preuniversitarias y tres alumnos de las mismas en Lima, Ica y Trujillo. El objetivo fue entender sus contextos
-operativos, frustraciones actuales y validar hipótesis sobre posibles soluciones digitales.
+Las entrevistas se realizaron durante mayo de 2025 a un total de seis participantes: tres administrativos/coordinadores de academias y tres docentes de academias y círculos de estudio en Lima e Ica. El objetivo fue comprender sus procesos actuales de gestión, identificar problemas frecuentes en la administración académica y validar la necesidad de una solución digital centralizada.
 
 ---
 
-**Segmento: Docentes de academias**
+#### Segmento: Docentes de academias
 
 **Total entrevistados:** 3  
-**Edades:** 21, 25, 25 años  
-**Distritos:** La Molina, Santa Anita, San Juan de Lurigancho  
-**Instituciones:** CEPRE Agraria, Círculos de estudio UNALM, Academia ADUNI  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 24, 26 y 28 años  
+**Distritos:** Lima, La Molina e Ica  
+**Instituciones:** Academias preuniversitarias y círculos de estudio universitarios  
+**Fechas:** 05 y 08 de mayo de 2025  
 
-**Características objetivas**  
-* Usan Excel o Google Forms para registrar notas y asistencias: **3/3 (100%)**  
-* Prefieren gestionar tareas desde celulares o laptops: **3/3 (100%)**  
-* Los cambios de aula u horarios se gestionan por WhatsApp o encuestas improvisadas: **3/3 (100%)**
-* No utilizan plataformas centralizadas ni automatizadas: **3/3 (100%)**  
+#### Características objetivas
 
-**Características subjetivas**  
-* Encuentran incómodo el uso de Excel en celular: **2/3 (66%)**  
-* Consideran que el trabajo administrativo les resta tiempo valioso de enseñanza: **3/3 (100%)**  
-* Ven con buenos ojos una solución intuitiva y fácil de usar: **3/3 (100%)**  
-* Quieren acceso a la plataforma desde múltiples dispositivos, especialmente celular: **3/3 (100%)**  
-* Notificaciones de cambios de horario son altamente valoradas: **2/3 (66%)**  
-* Disposición a adoptar nuevas herramientas si mejoran su productividad: **3/3 (100%)**  
+- Utilizan Excel, registros manuales o herramientas improvisadas para gestionar asistencia y horarios: **3/3 (100%)**
+- Usan principalmente laptop y celular para organizar sus actividades académicas: **3/3 (100%)**
+- No cuentan con una plataforma centralizada para el seguimiento de alumnos y asistencia: **3/3 (100%)**
+- La coordinación académica y cambios operativos suelen manejarse manualmente: **3/3 (100%)**
+- Necesitan consultar información de estudiantes de manera rápida y ordenada: **2/3 (66%)**
+
+#### Características subjetivas
+
+- Consideran que las tareas administrativas consumen demasiado tiempo: **3/3 (100%)**
+- Perciben desorganización y dificultad para acceder a información actualizada: **3/3 (100%)**
+- Valoran una plataforma simple, rápida e intuitiva: **3/3 (100%)**
+- Desean acceso desde múltiples dispositivos, especialmente celulares: **3/3 (100%)**
+- Consideran importante automatizar procesos académicos y administrativos: **3/3 (100%)**
+- Están dispuestos a adoptar nuevas herramientas tecnológicas si mejoran su productividad: **3/3 (100%)**
 
 ---
 
-**Segmento: Administrativos de academias**
+#### Segmento: Administrativos de academias
 
 **Total entrevistados:** 3  
-**Edades:** 28, 42, 58 años  
-**Distritos:** Ica (todos)  
-**Instituciones:** Enigmas, academias escolares particulares  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 21, 28 y 28 años  
+**Distritos:** Lima e Ica  
+**Instituciones:** Academia Enigmas y academias particulares  
+**Fechas:** 08 de mayo de 2025  
 
-**Características objetivas** 
+#### Características objetivas
 
-- Utilizan Excel y registros manuales para manejar pagos, matrículas, asistencia y horarios: **3/3 (100%)**  
-- Consultan frecuentemente asistencia, notas y estado de pagos: **3/3 (100%)**  
-- Dependen de múltiples hojas y archivos, dificultando la trazabilidad: **3/3 (100%)** 
+- Utilizan hojas de Excel, registros físicos y archivos separados para gestionar matrículas, pagos y asistencia: **3/3 (100%)**
+- Consultan constantemente información de asistencia, historial y estado de pagos: **3/3 (100%)**
+- Trabajan con información desintegrada y poco sincronizada: **3/3 (100%)**
+- Presentan problemas frecuentes de duplicidad de datos y errores manuales: **2/3 (66%)**
+- Carecen de herramientas digitales centralizadas para la gestión académica: **3/3 (100%)**
 
-**Características subjetivas**  
+#### Características subjetivas
 
-- Consideran sus métodos actuales ineficientes y repetitivos: **3/3 (100%)**  
-- Señalan consecuencias negativas como pérdida de tiempo y mala atención a padres: **3/3 (100%)**  
-- Alertas para pagos vencidos son altamente valoradas: **3/3 (100%)**  
-- Desean funcionalidades como búsqueda rápida por nombre o DNI: **2/3 (66%)**  
-- Esperan una solución intuitiva, accesible y asequible: **3/3 (100%)**  
-- Disposición a adoptar nuevas plataformas si mejoran su gestión: **3/3 (100%)** 
+- Consideran que sus procesos actuales son desordenados e ineficientes: **3/3 (100%)**
+- Señalan pérdida de tiempo operativo debido a la gestión manual: **3/3 (100%)**
+- Consideran importante mejorar la atención y organización frente a padres de familia: **3/3 (100%)**
+- Valoran funcionalidades como búsqueda por DNI y control en tiempo real: **3/3 (100%)**
+- Consideran útiles las alertas automáticas para pagos y seguimiento: **3/3 (100%)**
+- Esperan una solución intuitiva, accesible y fácil de implementar: **3/3 (100%)**
+- Muestran alta disposición para adoptar una plataforma digital centralizada: **3/3 (100%)**
 
 ---
 
-**Conclusión general**
-Este análisis refleja claramente patrones de uso, frustraciones comunes y criterios clave que deben guiar el diseño del sistema. La coincidencia en prioridades entre ambos segmentos refuerza la necesidad de una plataforma web centralizada, móvil, intuitiva y orientada a mejorar la eficiencia operativa diaria.
+#### Conclusión general
+
+El análisis de entrevistas evidencia una problemática común tanto en docentes como en administrativos: la dependencia de procesos manuales, hojas de Excel y registros físicos genera desorganización, pérdida de tiempo, errores frecuentes y dificultades para acceder a información actualizada. Además, la falta de integración entre asistencia, pagos, matrículas y seguimiento académico afecta la eficiencia operativa y la percepción de organización frente a alumnos y padres de familia.
+
+Ambos segmentos coinciden en la necesidad de implementar una plataforma web centralizada, intuitiva y accesible desde celulares y laptops, que permita automatizar tareas académicas y administrativas, registrar asistencia en tiempo real, gestionar pagos, realizar búsquedas rápidas por DNI y mejorar la trazabilidad de la información. Estos hallazgos validan la propuesta de desarrollar una solución digital enfocada en optimizar la gestión integral de academias preuniversitarias.
 
 ## 2.3. Needfinding
 
