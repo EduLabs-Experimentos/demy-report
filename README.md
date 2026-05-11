@@ -9086,23 +9086,201 @@ Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en s
 
 # Capítulo VII: DevOPS Practices
 
+En el presente proyecto de software, hemos implementado una cultura DevOps orientada a la automatización de procesos, garantizando que el código integrado sea confiable y que las entregas de valor a los usuarios finales sean rápidas y seguras. Para ello, hemos diseñado *pipelines* independientes tanto para el Backend (RESTful API) como para el Frontend (Web Application).
+
 ## 7.1. Continuous Integration
 
 ### 7.1.1. Tools and Practices
 
+La Integración Continua (CI) es nuestra primera línea de defensa para mantener la calidad del código. Permite que múltiples desarrolladores integren sus cambios frecuentemente en un repositorio compartido, detectando errores de forma temprana mediante la ejecución automática de pruebas.
+
+**Herramientas Principales:**
+* **GitHub Actions:** Orquestador central de nuestros *workflows*. Actúa de forma nativa con el repositorio y permite ejecutar flujos condicionales basados en eventos (Push y Pull Requests).
+* **Maven y Java 21 (Backend):** Utilizamos Maven como gestor de dependencias y automatizador de tareas para compilar el proyecto en Spring Boot y ejecutar la suite de pruebas unitarias y de integración.
+* **pnpm y Node.js 24 (Frontend):** Gestor de paquetes estricto y rápido que asegura la instalación reproducible de las dependencias de Angular 21.
+* **Cypress (Frontend):** Framework de pruebas End-to-End (E2E) que permite simular el comportamiento real del usuario interactuando con la interfaz y validando la conexión con el entorno de producción del backend.
+
+**Prácticas Implementadas:**
+* **Validación de Pull Requests (PR):** La rama `main` está protegida. Todo nuevo código debe integrarse a través de un PR que dispara automáticamente las pruebas. Si el *pipeline* falla, se bloquea la fusión del código.
+* **Pruebas de Aceptación Automatizadas:** Las pruebas E2E de Cypress validan los escenarios To-Be definidos en el comportamiento del usuario.
+
 ### 7.1.2. Build & Test Suite Pipeline Components
+
+Nuestros componentes de CI están definidos en los archivos YAML dentro del directorio `.github/workflows/`. Cada componente tiene responsabilidades aisladas.
+
+```
+name: Backend CI/CD Pipeline
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    name: 🧪 Build & Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Tests with Maven
+        run: mvn clean test
+```
+
+**Componentes del Backend:**
+El *job* `build-and-test` se ejecuta en un entorno `ubuntu-latest`.
+1.  **Checkout:** Descarga el código fuente del repositorio.
+2.  **Setup Java JDK:** Configura la máquina virtual de Java en su versión 21 (distribución Temurin) y habilita la caché de Maven para acelerar futuras ejecuciones.
+3.  **Ejecución de Pruebas:** Corre el comando `mvn clean test`, el cual compila la aplicación y verifica que todas las reglas de negocio (Unit Tests) e integraciones funcionen correctamente. Si una prueba falla, el proceso se aborta.
+
+```
+jobs:
+  build-and-test:
+    name: 🧪 Build & E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+          run_install: false
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Cypress Binary
+        run: pnpm exec cypress install
+      - name: Run Cypress E2E Tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: pnpm exec ng serve --configuration production
+          wait-on: 'http://localhost:4200'
+
+```
+
+**Componentes del Frontend:**
+1.  **Setup Node y pnpm:** Se configura rigurosamente el entorno con Node 24 y pnpm v10, respetando el script `preinstall` del proyecto.
+2.  **Preparación de Cypress:** Se descargan las dependencias y el binario del motor de navegación de Cypress.
+3.  **Run Cypress E2E Tests:** GitHub Actions levanta el servidor de Angular temporalmente (`ng serve`) y espera a que el puerto 4200 responda. Una vez activo, Cypress ejecuta la suite de pruebas contra el sistema.
+
+**Evidencia**:  
+
+![CI evidencia](./assets/images/ci-cd/ci-evidence.png)
 
 ## 7.2. Continuous Delivery
 
 ### 7.2.1. Tools and Practices
 
+La Entrega Continua (CDelivery) es la práctica de asegurar que el código validado por la fase de CI se empaquete y esté en un estado listo para ser desplegado en cualquier momento.
+
+**Herramientas y Prácticas:**
+* **Angular Compiler (Frontend):** Transpila el código TypeScript a JavaScript optimizado y minificado, generando artefactos estáticos (HTML, CSS, JS).
+* **GitHub Artifacts:** Sistema de almacenamiento temporal que guarda los archivos estáticos generados para pasarlos a la siguiente etapa del *pipeline*.
+* **Railway Build System (Backend):** A diferencia de estrategias manuales con Docker Hub, utilizamos la plataforma Railway que cuenta con "Nixpacks" integrados. Esta herramienta analiza el código fuente, detecta que es un proyecto Java/Maven, y construye automáticamente la imagen de contenedor (Docker) optimizada de forma transparente en la nube.
+
 ### 7.2.2. Stages Deployment Pipeline Componentes
+
+En esta etapa, el *pipeline* prepara los paquetes finales. 
+
+```
+# Compilamos Angular
+      - name: Build Angular App
+        run: pnpm run build --base-href /demy-admin-web/
+
+      # Truco para que Angular (SPA) funcione en GitHub Pages sin dar error 404
+      - name: Add SPA fallback
+        run: cp dist/demy-web-app/browser/index.html dist/demy-web-app/browser/404.html
+
+      # Preparamos el paquete para el despliegue
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/demy-web-app/browser
+
+```
+
+**Preparación del Frontend:**
+Dentro del mismo *job* de pruebas del Frontend, si Cypress finaliza con éxito, se ejecutan los siguientes pasos:
+1.  **Construcción de la SPA:** Se ejecuta `pnpm run build --base-href /demy-admin-web/`, optimizando los recursos para el entorno de producción.
+2.  **SPA Fallback:** Se copia el archivo `index.html` y se renombra a `404.html`. Este truco técnico es vital para que el enrutador nativo de Angular funcione correctamente en un servidor estático.
+3.  **Carga de Artefactos:** Se empaqueta el directorio `dist/demy-web-app/browser` utilizando `actions/upload-pages-artifact@v3`, dejándolo disponible para la fase de despliegue.
+
+**Evidencia**:  
+
+![Delivery evidencia](./assets/images/ci-cd/delivery-evidence.png)
 
 ## 7.3. Continuous deployment
 
 ### 7.3.1. Tools and Practices
 
+El Despliegue Continuo (CDeployment) es la etapa final donde los artefactos generados se liberan automáticamente al entorno de producción real, quedando disponibles para los usuarios finales sin intervención manual.
+
+**Herramientas y Prácticas:**
+* **Railway CLI (Backend):** Interfaz de línea de comandos que permite enviar instrucciones directas a la plataforma Cloud de Railway desde GitHub Actions.
+* **GitHub Pages (Frontend):** Servicio de alojamiento estático integrado nativamente en GitHub, ideal para Single Page Applications (SPA).
+* **Gestión de Secretos:** Uso de `GitHub Secrets` para almacenar tokens de acceso a infraestructuras externas, aplicando el principio de seguridad de no exponer credenciales en el código fuente.
+* **Despliegue Condicional:** Se implementó una regla en el *pipeline* (`if: github.event_name == 'push'`) que garantiza que los despliegues a producción **solo** ocurran cuando el código se integra oficialmente a la rama `main`, previniendo despliegues accidentales desde Pull Requests.
+
 ### 7.3.2. Production Deployment Pipeline Components
+
+El *job* final, denominado `deploy`, tiene la directiva `needs: build-and-test`, estableciendo una dependencia estricta: producción no se toca si las pruebas no pasan.
+
+```
+deploy:
+    name: 🚀 Deploy to Railway
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Railway CLI
+        run: npm i -g @railway/cli
+      - name: Deploy to Railway
+        run: railway up --service "demy-experimentos-backend" --detach
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+```
+
+**Despliegue de la RESTful API (Backend):**
+1.  **Instalación CLI:** Se instala la herramienta de línea de comandos de Railway mediante npm.
+2.  **Ejecución de Despliegue:** Se ejecuta el comando `railway up --service "demy-experimentos-backend" --detach`. Este comando utiliza el secreto `RAILWAY_TOKEN` para autenticarse, inyecta el código validado en el servicio específico y dispara el sistema de auto-construcción de Railway. El parámetro `--detach` permite que GitHub Actions finalice su tarea mientras Railway se encarga de reiniciar el servidor sin tiempo de inactividad visible.
+
+```
+deploy:
+    name: 🚀 Deploy to GitHub Pages
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
+
+**Despliegue de la Web Application (Frontend):**
+1.  **Entorno de Github Pages:** Se configura el *job* para interactuar con el entorno protegido de `github-pages`.
+2.  **Acción de Despliegue:** Utiliza la acción nativa `actions/deploy-pages@v4`. Esta acción toma el artefacto subido en la fase 7.2 (la carpeta compilada de Angular) y la publica en los servidores de GitHub, proveyendo un enlace público inmediato y cerrando el ciclo de vida del desarrollo.
+
+**Evidencia**:  
+
+![Continuous deployment evidencia](./assets/images/ci-cd/cd-evidence.png)
 
 
 
