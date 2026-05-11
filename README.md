@@ -702,67 +702,173 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 
 ### 2.2.2. Registro de entrevistas
 
-...
+---
 
+#### Segmento: Administrativo - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Salim Ramirez |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 00:00 - 07:42 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista1.png) |
+| **Resumen** | El administrativo de la Academia Enigmas (Lima) gestiona actualmente los procesos de matrícula, asistencia y pagos mediante hojas de Excel separadas, registros físicos y archivos no integrados, lo que genera desorganización, falta de sincronización y pérdida de información. Esta situación provoca errores frecuentes, como datos desactualizados o dificultades para encontrar información histórica, además de demoras al consultar asistencia o estado de pagos, especialmente cuando hay errores en los registros. Como consecuencia, se pierde tiempo operativo y se afecta la imagen de la academia frente a los padres de familia. Por ello, se plantea la necesidad de una plataforma centralizada, simple e intuitiva, que permita búsquedas por DNI, control de asistencia en tiempo real, gestión de pagos y alertas automáticas, con el objetivo de mejorar el orden, la trazabilidad y reducir el trabajo manual basado en Excel. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Alison Rivera |
+| **Edad** | 21 |
+| **Sexo** | Femenino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 07:43 - 12:39 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista2.png) |
+| **Resumen** | La administrativa de una academia en Lima realiza la gestión de matrículas, asistencia y pagos utilizando principalmente hojas de Excel independientes y registros en papel, los cuales no están integrados entre sí. Esto ocasiona desorden en la información, falta de actualización entre archivos y riesgo constante de pérdida de datos. Además, suele haber dificultades para ubicar información específica, lo que retrasa la atención de consultas sobre asistencia o pagos y genera errores en los registros. Como resultado, se pierde eficiencia en las tareas diarias y se debilita la percepción de organización frente a los padres de familia. Por ello, se considera necesario implementar una plataforma centralizada, fácil de usar, que permita buscar alumnos por DNI, registrar asistencia en tiempo real, gestionar pagos y emitir alertas automáticas, con el fin de mejorar el control y reducir el trabajo manual. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Femenino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 12:40 - 17:36 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista3.png) |
+| **Resumen** | La administrativa de la Academia Enigmas (Ica) gestiona actualmente los procesos de matrícula, asistencia y pagos de forma manual y desintegrada, utilizando principalmente hojas de Excel, registros en papel y fichas físicas, lo que genera duplicidad de datos, errores de digitación y pérdida de información. El acceso a la información es lento y poco eficiente, dificultando consultas frecuentes como asistencia o pagos pendientes, lo que afecta tanto la operación interna como la percepción de los padres. Esta desorganización provoca pérdida de tiempo operativo y problemas de control financiero y académico. Por ello, se requiere una solución digital centralizada con buscador por DNI, registro de asistencia, control de pagos y alertas automáticas, priorizando la simplicidad, rapidez y trazabilidad total, con alta disposición de ella a adoptarla. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Carlos Guerra |
+| **Edad** | 24 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Profesor de Academia |
+| **Fecha de entrevista** | 05 de mayo de 2025 |
+| **Timing** | 17:37 - 22:59 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista4.jpg) |
+| **Resumen** | El profesor de una academia en Lima gestiona actualmente el control de asistencia y el seguimiento de alumnos de forma manual, utilizando principalmente registros en Excel y anotaciones en papel, los cuales no se encuentran integrados ni actualizados en tiempo real. Esto provoca desorden en la información, posibles errores en el registro de asistencia y dificultades para consultar datos de los estudiantes. Además, el acceso a la información suele ser lento, lo que retrasa la coordinación con la administración y afecta la eficiencia del proceso académico. Como consecuencia, se pierde tiempo en tareas operativas y se reduce el control sobre el desempeño de los alumnos. Por ello, se propone la implementación de una plataforma digital centralizada que permita registrar asistencia en tiempo real, consultar información por alumno mediante DNI y mejorar la organización general, priorizando la rapidez, simplicidad y trazabilidad de los datos. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Luis de la Cruz Herrera |
+| **Edad** | 26 |
+| **Sexo** | Masculino |
+| **Distrito** | La Molina |
+| **Ocupación** | Docente de Círculos de estudio en la Universidad Agraria |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 23:00 - 35:16 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista5.png) |
+| **Resumen** | El entrevistado es un docente con experiencia en diversas academias y actualmente dicta clases en círculos de estudio en la UNALM. En su rutina diaria, enfrenta desafíos relacionados con la gestión manual de horarios pues usa herramientas como Excel, actividades que le consumen una gran cantidad de tiempo y afectan su eficiencia. Usa principalmente su laptop y su celular para organizarse, sin herramientas digitales especializadas, lo que le complica su trabajo. Al conocer la propuesta de nuestra startup, mostró una percepción positiva ante la posibilidad de contar con una herramienta que centralice y automatice estos procesos. Reconoce que una solución tecnológica podría mejorar su organización, reducir su carga administrativa y permitirle enfocarse más en la enseñanza. Se mostró dispuesto a adoptar nuevas herramientas que respondan a sus necesidades y faciliten su trabajo diario como docente, herramientas las cuales pueda usar desde su celular o su laptop. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 35:16 - 40:44 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista6.png) |
+| **Resumen** | La entrevistada señaló que actualmente la gestión académica y administrativa en academias suele depender de registros manuales y herramientas dispersas, lo que dificulta el control eficiente de asistencia, pagos y seguimiento de alumnos. Considera importante implementar una plataforma digital centralizada que permita optimizar estos procesos, mejorar la organización y reducir errores operativos. Además, destacó la necesidad de que la herramienta sea intuitiva, rápida y accesible desde distintos dispositivos para facilitar su adopción por parte de profesores y administrativos. |
 ### 2.2.3. Análisis de entrevistas
 
-Las entrevistas se realizaron entre el 2 y el 3 de septiembre de 2025 a un total de nueve participantes: tres docentes, tres
-administrativos/coordinadores de academias preuniversitarias y tres alumnos de las mismas en Lima, Ica y Trujillo. El objetivo fue entender sus contextos
-operativos, frustraciones actuales y validar hipótesis sobre posibles soluciones digitales.
+Las entrevistas se realizaron durante mayo de 2025 a un total de seis participantes: tres administrativos/coordinadores de academias y tres docentes de academias y círculos de estudio en Lima e Ica. El objetivo fue comprender sus procesos actuales de gestión, identificar problemas frecuentes en la administración académica y validar la necesidad de una solución digital centralizada.
 
 ---
 
-**Segmento: Docentes de academias**
+#### Segmento: Docentes de academias
 
 **Total entrevistados:** 3  
-**Edades:** 21, 25, 25 años  
-**Distritos:** La Molina, Santa Anita, San Juan de Lurigancho  
-**Instituciones:** CEPRE Agraria, Círculos de estudio UNALM, Academia ADUNI  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 24, 26 y 28 años  
+**Distritos:** Lima, La Molina e Ica  
+**Instituciones:** Academias preuniversitarias y círculos de estudio universitarios  
+**Fechas:** 05 y 08 de mayo de 2025  
 
-**Características objetivas**  
-* Usan Excel o Google Forms para registrar notas y asistencias: **3/3 (100%)**  
-* Prefieren gestionar tareas desde celulares o laptops: **3/3 (100%)**  
-* Los cambios de aula u horarios se gestionan por WhatsApp o encuestas improvisadas: **3/3 (100%)**
-* No utilizan plataformas centralizadas ni automatizadas: **3/3 (100%)**  
+#### Características objetivas
 
-**Características subjetivas**  
-* Encuentran incómodo el uso de Excel en celular: **2/3 (66%)**  
-* Consideran que el trabajo administrativo les resta tiempo valioso de enseñanza: **3/3 (100%)**  
-* Ven con buenos ojos una solución intuitiva y fácil de usar: **3/3 (100%)**  
-* Quieren acceso a la plataforma desde múltiples dispositivos, especialmente celular: **3/3 (100%)**  
-* Notificaciones de cambios de horario son altamente valoradas: **2/3 (66%)**  
-* Disposición a adoptar nuevas herramientas si mejoran su productividad: **3/3 (100%)**  
+- Utilizan Excel, registros manuales o herramientas improvisadas para gestionar asistencia y horarios: **3/3 (100%)**
+- Usan principalmente laptop y celular para organizar sus actividades académicas: **3/3 (100%)**
+- No cuentan con una plataforma centralizada para el seguimiento de alumnos y asistencia: **3/3 (100%)**
+- La coordinación académica y cambios operativos suelen manejarse manualmente: **3/3 (100%)**
+- Necesitan consultar información de estudiantes de manera rápida y ordenada: **2/3 (66%)**
+
+#### Características subjetivas
+
+- Consideran que las tareas administrativas consumen demasiado tiempo: **3/3 (100%)**
+- Perciben desorganización y dificultad para acceder a información actualizada: **3/3 (100%)**
+- Valoran una plataforma simple, rápida e intuitiva: **3/3 (100%)**
+- Desean acceso desde múltiples dispositivos, especialmente celulares: **3/3 (100%)**
+- Consideran importante automatizar procesos académicos y administrativos: **3/3 (100%)**
+- Están dispuestos a adoptar nuevas herramientas tecnológicas si mejoran su productividad: **3/3 (100%)**
 
 ---
 
-**Segmento: Administrativos de academias**
+#### Segmento: Administrativos de academias
 
 **Total entrevistados:** 3  
-**Edades:** 28, 42, 58 años  
-**Distritos:** Ica (todos)  
-**Instituciones:** Enigmas, academias escolares particulares  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 21, 28 y 28 años  
+**Distritos:** Lima e Ica  
+**Instituciones:** Academia Enigmas y academias particulares  
+**Fechas:** 08 de mayo de 2025  
 
-**Características objetivas** 
+#### Características objetivas
 
-- Utilizan Excel y registros manuales para manejar pagos, matrículas, asistencia y horarios: **3/3 (100%)**  
-- Consultan frecuentemente asistencia, notas y estado de pagos: **3/3 (100%)**  
-- Dependen de múltiples hojas y archivos, dificultando la trazabilidad: **3/3 (100%)** 
+- Utilizan hojas de Excel, registros físicos y archivos separados para gestionar matrículas, pagos y asistencia: **3/3 (100%)**
+- Consultan constantemente información de asistencia, historial y estado de pagos: **3/3 (100%)**
+- Trabajan con información desintegrada y poco sincronizada: **3/3 (100%)**
+- Presentan problemas frecuentes de duplicidad de datos y errores manuales: **2/3 (66%)**
+- Carecen de herramientas digitales centralizadas para la gestión académica: **3/3 (100%)**
 
-**Características subjetivas**  
+#### Características subjetivas
 
-- Consideran sus métodos actuales ineficientes y repetitivos: **3/3 (100%)**  
-- Señalan consecuencias negativas como pérdida de tiempo y mala atención a padres: **3/3 (100%)**  
-- Alertas para pagos vencidos son altamente valoradas: **3/3 (100%)**  
-- Desean funcionalidades como búsqueda rápida por nombre o DNI: **2/3 (66%)**  
-- Esperan una solución intuitiva, accesible y asequible: **3/3 (100%)**  
-- Disposición a adoptar nuevas plataformas si mejoran su gestión: **3/3 (100%)** 
+- Consideran que sus procesos actuales son desordenados e ineficientes: **3/3 (100%)**
+- Señalan pérdida de tiempo operativo debido a la gestión manual: **3/3 (100%)**
+- Consideran importante mejorar la atención y organización frente a padres de familia: **3/3 (100%)**
+- Valoran funcionalidades como búsqueda por DNI y control en tiempo real: **3/3 (100%)**
+- Consideran útiles las alertas automáticas para pagos y seguimiento: **3/3 (100%)**
+- Esperan una solución intuitiva, accesible y fácil de implementar: **3/3 (100%)**
+- Muestran alta disposición para adoptar una plataforma digital centralizada: **3/3 (100%)**
 
 ---
 
-**Conclusión general**
-Este análisis refleja claramente patrones de uso, frustraciones comunes y criterios clave que deben guiar el diseño del sistema. La coincidencia en prioridades entre ambos segmentos refuerza la necesidad de una plataforma web centralizada, móvil, intuitiva y orientada a mejorar la eficiencia operativa diaria.
+#### Conclusión general
+
+El análisis de entrevistas evidencia una problemática común tanto en docentes como en administrativos: la dependencia de procesos manuales, hojas de Excel y registros físicos genera desorganización, pérdida de tiempo, errores frecuentes y dificultades para acceder a información actualizada. Además, la falta de integración entre asistencia, pagos, matrículas y seguimiento académico afecta la eficiencia operativa y la percepción de organización frente a alumnos y padres de familia.
+
+Ambos segmentos coinciden en la necesidad de implementar una plataforma web centralizada, intuitiva y accesible desde celulares y laptops, que permita automatizar tareas académicas y administrativas, registrar asistencia en tiempo real, gestionar pagos, realizar búsquedas rápidas por DNI y mejorar la trazabilidad de la información. Estos hallazgos validan la propuesta de desarrollar una solución digital enfocada en optimizar la gestión integral de academias preuniversitarias.
 
 ## 2.3. Needfinding
 
@@ -5583,6 +5689,32 @@ Queda habilitado el despliegue continuo; cada push a la rama configurada desenca
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+A continuación se presenta capturas de la evidencia de nuestro web application desarrollado
+
+![Web Imagen 1](./assets/images/WebApplication/web-1.png)
+
+![Web Imagen 2](./assets/images/WebApplication/web-2.png)
+
+![Web Imagen 3](./assets/images/WebApplication/web-3.png)
+
+![Web Imagen 4](./assets/images/WebApplication/web-4.png)
+
+![Web Imagen 5](./assets/images/WebApplication/web-5.png)
+
+![Web Imagen 6](./assets/images/WebApplication/web-6.png)
+
+![Web Imagen 7](./assets/images/WebApplication/web-7.png)
+
+![Web Imagen 8](./assets/images/WebApplication/web-8.png)
+
+![Web Imagen 9](./assets/images/WebApplication/web-9.png)
+
+![Web Imagen 10](./assets/images/WebApplication/web-10.png)
+
+![Web Imagen 11](./assets/images/WebApplication/web-11.png)
+
+
+
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
 **1. Aceptación de los Términos**
@@ -5628,7 +5760,240 @@ Para consultas sobre estos términos o sobre nuestros servicios, contáctenos en
 
 *Última actualización: Mayo 2026*
 
-## 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.5. Implemented Native-Mobile Application Evidence
+
+#### Administrador Mobile Application
+
+A continuación se describen brevemente las vistas capturadas de la aplicación completa. Las pantallas mantienen una línea visual limpia, con jerarquías claras, tarjetas, tipografía legible y acciones rápidas bien diferenciadas.
+
+##### Dashboard — Vista principal del administrador
+
+Acceso rápido a métricas, navegación y tarjetas principales del sistema.
+
+![Bounded-MB1](./assets/MobileApplication/Admin/mb1.png)
+
+##### Students — Gestión de estudiantes
+
+Listado general con información esencial del estudiante y accesos a edición.
+
+![Bounded-MB2](./assets/MobileApplication/Admin/mb2.png)
+
+##### Teachers — Gestión de docentes
+
+Registro, búsqueda y administración de profesores.
+
+![Bounded-MB3](./assets/MobileApplication/Admin/mb3.png)
+
+##### Courses — Gestión de cursos
+
+Visualización y edición de cursos con nombre, código y descripción.
+
+![Bounded-MB4](./assets/MobileApplication/Admin/mb4.png)
+
+##### Classrooms — Gestión de aulas
+
+Administración de aulas, capacidad y ubicación.
+
+![Bounded-MB5](./assets/MobileApplication/Admin/mb5.png)
+
+##### Schedules — Vista semanal de horarios
+
+Visualización organizada de sesiones por calendario.
+
+![Bounded-MB6](./assets/MobileApplication/Admin/mb6.png)
+
+##### Schedules — Sesiones detalladas
+
+Vista complementaria del horario semanal con sesiones más específicas.
+
+![Bounded-MB7](./assets/MobileApplication/Admin/mb7.png)
+
+##### Enrollment — Gestión de matrículas
+
+Registro y administración de matrículas del estudiante.
+
+![Bounded-MB8](./assets/MobileApplication/Admin/mb8.png)
+
+##### Periods — Gestión de periodos académicos
+
+Formulario para crear y editar periodos con validaciones básicas.
+
+![Bounded-MB9](./assets/MobileApplication/Admin/mb9.png)
+
+##### Billing — Gestión de cuentas de cobro
+
+Pantalla que consolida datos de facturación por estudiante.
+
+![Bounded-MB10](./assets/MobileApplication/Admin/mb10.png)
+
+##### Finance — Resumen financiero general
+
+Vista con indicadores contables y transacciones.
+
+![Bounded-MB11](./assets/MobileApplication/Admin/mb11.png)
+
+##### Finance — Detalle extendido
+
+Detalle y distribución del estado financiero.
+
+![Bounded-MB12](./assets/MobileApplication/Admin/mb12.png)
+
+##### Accounting — Gestión contable
+
+Opciones de consulta y administración de reportes contables.
+
+![Bounded-MB13](./assets/MobileApplication/Admin/mb13.png)
+
+##### Settings — Configuración general
+
+Preferencias del administrador con opciones de personalización.
+
+![Bounded-MB14](./assets/MobileApplication/Admin/mb14.png)
+
+##### Settings — Vista extendida
+
+Más opciones dentro del módulo de configuración.
+
+![Bounded-MB15](./assets/MobileApplication/Admin/mb15.png)
+
+##### Profile — Información del administrador
+
+Datos personales del usuario con accesos directos a edición.
+
+![Bounded-MB16](./assets/MobileApplication/Admin/mb16.png)
+
+##### Help — Centro de ayuda
+
+Acceso a documentación, soporte y preguntas frecuentes.
+
+![Bounded-MB17](./assets/MobileApplication/Admin/mb17.png)
+
+##### Help — Vista extendida
+
+Sección adicional del módulo de soporte.
+
+![Bounded-MB18](./assets/MobileApplication/Admin/mb18.png)
+
+##### Privacy — Políticas de privacidad
+
+Sección dedicada al manejo de datos personales del usuario.
+
+![Bounded-MB19](./assets/MobileApplication/Admin/mb19.png)
+
+##### Terms — Términos y condiciones
+
+Documento con las normas de uso de la plataforma.
+
+![Bounded-MB20](./assets/MobileApplication/Admin/mb20.png)
+
+
+#### Teacher Mobile Application
+
+Evidencia de la funcionalidad clave y la interfaz de usuario del aplicativo móvil diseñado para que los profesores visualicen sus horarios por dia de la semana, reprogramen clases y registren asistencia de los estudiantes.
+
+##### Splash Screen — Visualización de Marca
+
+Muestra el logo y el nombre de la aplicación durante el inicio, permitiendo que los recursos se carguen en segundo plano.
+
+![Bounded-MB1](./assets/MobileApplication/Teacher/mb1.jpg)
+
+##### Sign In — Inicio de Sesión del Profesor
+
+Interfaz de inicio de sesión donde el profesor ingresa su correo electrónico y contraseña registradas por el administrador para acceder a las funcionalidades de la aplicación móvil. Incluye la opción para recuperar la contraseña y enlaces a los términos y condiciones.
+
+![Bounded-MB2](./assets/MobileApplication/Teacher/mb2.jpg)
+
+##### Terms and Conditions — Detalles Legales y de Uso
+
+Pantalla que detalla los términos de uso y las políticas de la plataforma, incluyendo la aceptación de los mismos, la descripción del servicio, las responsabilidades del usuario y las condiciones de uso aceptable.
+
+![Bounded-MB3](./assets/MobileApplication/Teacher/mb3.jpg)
+
+##### Privacy Policy — Recolección y Uso de Datos
+
+Detalle de la información que la aplicación recopila de los usuarios y las entidades, y el uso que se le da a esta información.
+
+![Bounded-MB4](./assets/MobileApplication/Teacher/mb4.jpg)
+
+##### Forgot Password — Verificación de Correo Electrónico
+
+Pantalla que permite a los profesores recuperar su acceso en caso de olvidar su contraseña. Se solicita el correo electrónico asociado a la cuenta para enviar un código de verificación y proceder con el restablecimiento seguro de la clave.
+
+![Bounded-MB5](./assets/MobileApplication/Teacher/mb5.jpg)
+
+##### Home — Vista Principal y Horario del Profesor
+
+Pantalla de inicio que ofrece acceso rápido a módulos clave como Registro de Asistencia, Horario de Clases y Notificaciones. Muestra inmediatamente el horario del día con la hora y ubicación, cumpliendo el objetivo principal de la aplicación.
+
+![Bounded-MB6](./assets/MobileApplication/Teacher/mb6.jpg)
+
+##### Profile — Gestión de Cuenta y Detalles Personales
+
+Muestra los datos básicos del profesor logueado: nombre completo, correo electrónico y número de teléfono. Esta sección permite al usuario ver su información de contacto y proporciona acceso directo a la función de Reset Password para mantener la seguridad de la cuenta.
+
+![Bounded-MB7](./assets/MobileApplication/Teacher/mb7.jpg)
+
+##### Settings — Opciones de Configuración y Cierre de Sesión
+
+Pantalla que consolida opciones esenciales para el usuario. Ofrece acceso rápido a los documentos legales (Terms and Conditions y Privacy Policy) y la funcionalidad clave de Cerrar Sesión para finalizar la sesión del profesor de forma segura.
+
+![Bounded-MB8](./assets/MobileApplication/Teacher/mb8.jpg)
+
+##### Take Attendance Pop-up — Ventana de Registro de Asistencia
+
+Ventana emergente que aparece al hacer clic sobre una clase específica en el Home. Ofrece al profesor la acción directa de Tomar Asistencia, siendo el punto de entrada al registro de la asistencia de los estudiantes para esa sesión.
+
+![Bounded-MB9](./assets/MobileApplication/Teacher/mb9.jpg)
+
+##### Take Attendance — Registro de Asistencia
+
+Pantalla final que muestra el listado de estudiantes inscritos en la sesión seleccionada y permite al profesor marcar el estado de asistencia de cada uno con las etiquetas: P (Presente), E (Excusado) o A (Ausente). Una vez completado el registro, el botón Save Attendance guarda la información en el sistema.
+
+![Bounded-MB10](./assets/MobileApplication/Teacher/mb10.jpg)
+
+##### Attendance Report — Reporte de Asistencia
+
+Módulo que permite al profesor consultar las métricas de asistencia de los estudiantes por rango de fechas y curso. Muestra el porcentaje consolidado de estudiantes, desglosado por Presentes (P), Excusados (E) y Ausentes (A).
+
+![Bounded-MB11](./assets/MobileApplication/Teacher/mb11.jpg)
+
+##### Date Picker — Selector de Fechas del Calendario de Reporte de Asistencia
+
+Componente de interfaz de usuario que se despliega al seleccionar la fecha de inicio o fin dentro del Reporte de Asistencia. Permite al profesor elegir de manera intuitiva el rango de fechas que desea consultar, mostrando el mes y el día específico seleccionado.
+
+![Bounded-MB12](./assets/MobileApplication/Teacher/mb12.jpg)
+
+##### Notifications — Historial de Alertas y Novedades
+
+Pantalla dedicada a mostrar todas las notificaciones del sistema, alertas sobre reprogramación de clases y alertas generales del sistema. En este caso, muestra un mensaje de bienvenida confirmando que el profesor puede comenzar a gestionar sus horarios y asistencia.
+
+![Bounded-MB13](./assets/MobileApplication/Teacher/mb13.jpg)
+
+##### Teaching Schedule — Horario Semanal
+
+Pantalla central que permite al profesor visualizar su horario clase por clase, organizado por día de la semana. Muestra los detalles de cada clase programada y ofrece la opción de reprogramación de clases mediante el ícono de calendario rojo.
+
+![Bounded-MB14](./assets/MobileApplication/Teacher/mb14.jpg)
+
+##### Teaching Reschedule — Reprogramación de Clase
+
+Pantalla que se activa al seleccionar el ícono de calendario en el horario. Permite al profesor modificar los parámetros de la clase seleccionada. El profesor puede ajustar el Día de la Semana, la Hora de Inicio y la Hora de Fin, mientras que la información del curso y la ubicación permanecen inalterables.
+
+![Bounded-MB15](./assets/MobileApplication/Teacher/mb15.jpg)
+
+##### Select Day — Componente de Selección de Día para Reprogramación de Clase
+
+Ventana de diálogo que se despliega al seleccionar el campo Day of Week. Permite al profesor elegir de una lista el día de la semana al cual moverá la clase reprogramada, incluyendo todos los días, lo cual es crucial para la funcionalidad de gestión de horario.
+
+![Bounded-MB16](./assets/MobileApplication/Teacher/mb16.jpg)
+
+##### Time Picker — Selector de Hora para Reprogramación de Clase
+
+Ventana de diálogo que se despliega al seleccionar los campos Start Time o End Time dentro del formulario de Reprogramación de Clase. Este componente de reloj analógico permite al profesor ajustar la hora de inicio o fin de la clase reprogramada de forma precisa, eligiendo entre las opciones AM y PM.
+
+![Bounded-MB17](./assets/MobileApplication/Teacher/mb17.jpg)
+
+## 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
  
 El backend de la aplicación Demy se implementó utilizando **Spring Boot 3.x** como framework principal, siguiendo una arquitectura basada en **Domain-Driven Design (DDD)** con Bounded Contexts claramente definidos (IAM, Institution Management, Attendance, Billing), principios de **Clean Architecture** y separación por capas (domain, application, infrastructure, interfaces) para garantizar escalabilidad y mantenibilidad.
  
@@ -5854,7 +6219,7 @@ El proyecto `demy-backend` está organizado bajo el paquete base `com.nistra.dem
 - Logs de auditoría automáticos via `AuditableAbstractAggregateRoot` y `AuditableModel`
 ---
 
-## 5.2.6. RESTful API Documentation
+## 5.2.7. RESTful API Documentation
  
 En esta sección se presentan las evidencias de funcionamiento de los principales endpoints del backend desplegado en Railway, verificando su correcto comportamiento mediante Swagger UI. Se documentan las pruebas realizadas para la creación, autenticación y gestión de usuarios dentro del sistema Demy, incluyendo las respuestas del servidor y el flujo completo de validación por correo electrónico.
  
@@ -5956,7 +6321,7 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 | Create Administrator | POST | `/api/v1/administrators` | Headers: Authorization: Bearer `<token>` | Registra un usuario con rol administrador. | `{"userId":"usr_1","academyId":"acd_101"}` | `201 Created: {"adminId":"adm_1","linkedAcademy":"acd_101"}` | https://demy-api-production.up.railway.app/api/v1/administrators |
 | Get Teachers | GET | `/api/v1/teachers` | Headers: Authorization: Bearer `<token>` | Obtiene el listado de profesores registrados en la academia. | — | `200 OK: [{"teacherId":"tch_1","name":"Carlos Pérez","email":"carlos@academy.com"}]` | https://demy-api-production.up.railway.app/api/v1/teachers |
 
-### 5.2.7. Team Collaboration Insights
+### 5.2.8. Team Collaboration Insights
 
 ## 5.3. Video About-the-Product
 
@@ -5966,6 +6331,7 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ## 6.1. Testing Suites & Validation
 
+<<<<<<< HEAD
 
 <div style="font-size:80%; overflow-x:auto;">
   <table border="1" cellspacing="0" cellpadding="5">
@@ -6340,6 +6706,233 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 6.1.1. Core Entities Unit Tests
 
+#### Billing Bounded - Gestión de Facturación
+ 
+**Prueba 1: Creación de BillingAccount con estado ACTIVE y lista de facturas vacía**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should create BillingAccount with ACTIVE status and empty invoice list")
+void shouldCreateWithActiveStatusAndEmptyInvoices() {
+    // Assert
+    assertThat(account.getStudentId()).isEqualTo(STUDENT_ID);
+    assertThat(account.getDniNumber()).isEqualTo(DNI);
+    assertThat(account.getAcademyId()).isEqualTo(ACADEMY_ID);
+    assertThat(account.getInvoices()).isEmpty();
+}
+```
+ 
+*Resumen de prueba*: Es el paso previo necesario para habilitar el seguimiento financiero del estudiante. El `@BeforeEach` crea el agregado `BillingAccount` usando un `CreateBillingAccountCommand` con `STUDENT_ID` (10L), `DNI` ("12345678") y `ACADEMY_ID` (1L). El assert confirma que todos los atributos de identidad fueron asignados correctamente y que la lista de facturas inicia vacía, asegurando la integridad del estado inicial del agregado.
+ 
+![Bounded-Billing-Unit1](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 2: Asignación exitosa de factura**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should add an invoice to the account when command is valid")
+void shouldAssignInvoiceSuccessfully() {
+    // Arrange
+    AssignInvoiceToBillingAccountCommand cmd = buildAssignCommand(1L);
+ 
+    // Act
+    account.assignInvoice(cmd);
+ 
+    // Assert
+    assertThat(account.getInvoices()).hasSize(1);
+    Invoice invoice = account.getInvoices().get(0);
+    assertThat(invoice.getInvoiceType()).isEqualTo(InvoiceType.STUDENT_MONTHLY_FEE);
+    assertThat(invoice.getStatus()).isEqualTo(InvoiceStatus.PENDING);
+    assertThat(invoice.getDescription()).isEqualTo("Monthly fee - May 2026");
+}
+```
+ 
+*Resumen de prueba*: Valida el escenario de generación de comprobantes para inscripciones activas. El arrange construye el comando de asignación con tipo `STUDENT_MONTHLY_FEE`, monto S/. 150.00 en PEN y descripción "Monthly fee - May 2026", el act llama a `assignInvoice()`, y el assert confirma que la lista tiene exactamente una factura en estado `PENDING` con todos los atributos correctamente asignados.
+ 
+![Bounded-Billing-Unit2](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 3: Marcado de factura como pagada**
+ 
+*User Story relacionada*: US023 - Actualización de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should change invoice status to PAID")
+void shouldMarkInvoiceAsPaidSuccessfully() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+ 
+    // Act
+    account.markInvoiceAsPaid(1L);
+ 
+    // Assert
+    assertThat(invoice.getStatus()).isEqualTo(InvoiceStatus.PAID);
+}
+```
+ 
+*Resumen de prueba*: Verifica la transición de estado fundamental para el control de ingresos. El arrange asigna una factura y le inyecta un ID de valor 1L vía reflection (necesario porque la BD asigna el ID real en producción), el act llama a `markInvoiceAsPaid(1L)`, y el assert confirma que el estado del objeto en memoria cambió a `PAID`. Esta prueba garantiza que el flujo de cobro sea correcto a nivel de dominio antes de integrar con la persistencia.
+ 
+![Bounded-Billing-Unit3](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 4: Eliminación exitosa de factura PENDING**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should remove a PENDING invoice from the account")
+void shouldDeletePendingInvoiceSuccessfully() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+ 
+    // Act
+    account.deleteInvoice(1L);
+ 
+    // Assert
+    assertThat(account.getInvoices()).isEmpty();
+}
+```
+ 
+*Resumen de prueba*: Cumple con la necesidad de corregir registros duplicados o erróneos antes del cobro. El arrange asigna una factura `PENDING` e inyecta su ID vía reflection, el act llama a `deleteInvoice(1L)`, y el assert confirma que la lista de facturas del agregado queda vacía. Esta prueba garantiza que el administrador pueda remover facturas generadas por error antes de que sean procesadas financieramente.
+ 
+![Bounded-Billing-Unit4](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 5: Rechazo de eliminación de factura PAID**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should throw IllegalStateException when trying to delete a PAID invoice")
+void shouldThrowWhenDeletingPaidInvoice() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+    account.markInvoiceAsPaid(1L);
+ 
+    // Act & Assert
+    assertThatThrownBy(() -> account.deleteInvoice(1L))
+            .isInstanceOf(IllegalStateException.class)
+            .hasMessageContaining("Cannot delete a paid invoice");
+}
+```
+ 
+*Resumen de prueba*: Valida la regla de integridad que impide alterar el historial contable ya consolidado. El arrange asigna una factura, inyecta su ID y la marca como `PAID`, luego el act intenta eliminarla. El assert confirma que se lanza una `IllegalStateException` con el mensaje "Cannot delete a paid invoice", protegiendo la integridad financiera e impidiendo que se modifique el historial de cobros ya registrados.
+ 
+![Bounded-Billing-Unit5](./assets/test/billing1.png)
+ 
+---
+
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Creación de ClassAttendance desde Command**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should accept today's date and create the aggregate successfully")
+void shouldAcceptTodayDate() {
+    // Act
+    ClassAttendance attendance = new ClassAttendance(ACADEMY_ID, buildCommand());
+ 
+    // Assert
+    assertThat(attendance.getDate()).isEqualTo(LocalDate.now());
+    assertThat(attendance.getAcademyId()).isEqualTo(ACADEMY_ID);
+    assertThat(attendance.getAttendance()).hasSize(2);
+}
+```
+ 
+*Resumen de prueba*: Valida que el sistema pueda transformar los datos de entrada del profesor en un registro persistible. El arrange usa el método `buildCommand()` que construye un `CreateClassAttendanceCommand` con dos estudiantes (uno `ABSENT` y uno `PRESENT`) para la fecha de hoy, el act instancia el agregado `ClassAttendance`, y el assert confirma que la fecha, el ID de academia y la cantidad de registros son correctos. Esta prueba garantiza que el flujo de creación de asistencia funcione correctamente.
+ 
+![Bounded-Attendance-Unit1](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 2: Actualización de estado de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to PRESENT")
+void shouldUpdateRecordStatusSuccessfully() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.PRESENT);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.PRESENT);
+}
+```
+ 
+*Resumen de prueba*: Cumple con el criterio de corregir errores o reflejar cambios en la participación real. El test dispone de un agregado (preparado en `@BeforeEach`) con el estudiante `DNI_ABSENT` (`"87654321"`) en estado `ABSENT`, el act llama a `updateRecordStatus()` cambiando el estado a `PRESENT`, y el assert recupera el registro por DNI y confirma que el estado fue actualizado. Esta prueba asegura que el docente pueda corregir la asistencia de un alumno durante la sesión.
+ 
+![Bounded-Attendance-Unit2](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 3: Actualización de estado a EXCUSED**
+ 
+*User Story relacionada*: US011 - Actualización de Asistencia
+ 
+```java
+@Test
+@DisplayName("should update record status successfully from ABSENT to EXCUSED")
+void shouldUpdateRecordStatusToExcused() {
+    // Act
+    classAttendance.updateRecordStatus(DNI_ABSENT, AttendanceStatus.EXCUSED);
+ 
+    // Assert
+    AttendanceRecord updated = classAttendance.getRecordByDniOrThrow(DNI_ABSENT);
+    assertThat(updated.getStatus()).isEqualTo(AttendanceStatus.EXCUSED);
+}
+```
+ 
+*Resumen de prueba*: Verifica la flexibilidad del sistema para manejar casos excepcionales como ausencias justificadas. Análoga a la prueba anterior pero con el estado `EXCUSED`, confirma que el dominio soporte múltiples transiciones de estado más allá del binario ausente/presente. El assert valida que el registro refleje el estado `EXCUSED`, cubriendo el caso de uso de ausencia por motivo justificado que muchas academias requieren.
+ 
+![Bounded-Attendance-Unit3](./assets/test/attendance1.png)
+ 
+---
+ 
+**Prueba 4: Rechazo de actualización para DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```java
+@Test
+@DisplayName("should throw IllegalArgumentException when updating a non-enrolled DNI")
+void shouldThrowWhenUpdatingNonExistentDni() {
+    // Act & Assert
+    assertThatThrownBy(() -> classAttendance.updateRecordStatus(DNI_UNKNOWN, AttendanceStatus.PRESENT))
+            .isInstanceOf(IllegalArgumentException.class);
+}
+```
+ 
+*Resumen de prueba*: Valida el escenario de error donde se intenta registrar la asistencia de alguien ajeno a la sesión. El test intenta actualizar el estado del `DNI_UNKNOWN` (`"00000001"`) que no existe en el agregado, y el assert confirma que se lanza una `IllegalArgumentException`. Esta prueba es fundamental para mantener la integridad de los registros de asistencia impidiendo modificaciones sobre estudiantes no matriculados en la sesión.
+ 
+![Bounded-Attendance-Unit4](./assets/test/attendance1.png)
+ 
+---
+
+
 ##### IAM Bounded - Identity and Access Management
 
 **Prueba 1: Activación de usuario con código de verificación válido**
@@ -6460,86 +7053,163 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ![Bounded-IAM4](./assets/test/iam4.png)
 
+---
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Asociación y desasociación de academia en Administrator**
+**Prueba 1: Creación de Academy mediante Constructor y Command**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
 @Test
-    @DisplayName("Should associate academy once and throw on reassignment")
-    void shouldAssociateAndDisassociateAcademy() {
-        // Arrange
-        Administrator admin = new Administrator(
-                new PersonName("Carlos", "Garcia"),
-                new PhoneNumber("+51", "955444333"),
-                new DniNumber("11223344"),
-                new UserId(300L)
-        );
-        AcademyId academy1 = new AcademyId(10L);
+@DisplayName("Should correctly create an academy using the main constructor and command")
+void shouldCreateAcademySuccessfully() {
+    // Arrange
+    AcademyName name = new AcademyName("Instituto Nistra");
+    AcademyDescription description = new AcademyDescription("Academia dedicada a la formación tecnológica.");
+    StreetAddress address = new StreetAddress("Av. Arequipa 1234", "Miraflores", "Lima", "Lima");
+    EmailAddress email = new EmailAddress("info@nistra.com");
+    PhoneNumber phone = new PhoneNumber("+51", "987654321");
+    Ruc ruc = new Ruc("10456789123");
 
-        // Act
-        admin.associateAcademy(academy1);
+    // Act
+    Academy academy = new Academy(name, description, address, email, phone, ruc);
 
-        // Assert
-        assertEquals(10L, admin.getAcademyId().academyId());
+    // Assert
+    assertNotNull(academy);
+    assertEquals("Instituto Nistra", academy.getAcademyName().name());
+    assertEquals("10456789123", academy.getRuc().ruc());
+    assertNull(academy.getAdministratorId());
+}
 
-        // Arrange
-        AcademyId academy2 = new AcademyId(20L);
-
-        // Act & Assert
-        assertThrows(IllegalStateException.class, () -> admin.associateAcademy(academy2));
-
-        // Act
-        admin.disassociateAcademy(academy1);
-
-        // Assert
-        assertNull(admin.getAcademyId().academyId());
-    }
 ```
+*Resumen de prueba*: Verifica la correcta instanciación del agregado Academy. El test arrange define los objetos de valor necesarios (nombre, dirección, RUC, etc.), el act ejecuta el constructor principal y el assert valida que la entidad no sea nula, que los datos coincidan con los ingresados y que inicialmente no posea un administrador asignado. Esto asegura que el registro base de la institución cumpla con la integridad de datos requerida en la US001.
 
-*Resumen de prueba*: Verifica que un administrador pueda asociarse a una academia una sola vez y que no pueda reasociarse a otra. El test arrange crea un administrador, luego act intenta asociarlo a una academia con ID 10, y assert confirma que la asociación fue exitosa. Posteriormente, arrange una segunda academia con ID 20, act intenta asociar a esta nueva academia, y assert verifica que se lanza IllegalStateException. Finalmente, act llama a disassociateAcademy para desasociar, y assert confirma que el academyId queda en null. Esta prueba garantiza la integridad de la relación uno-a-uno entre administrador y academia.
+**Prueba 2: Asignación única de Administrador en Academy**
 
-![Bounded-Institution1](./assets/test/institution1.png)
+*User Story relacionada*: US001 - Registro de Academia
 
----
+```
+@Test
+@DisplayName("Should allow assigning an administrator only once and throw on reassignment")
+void shouldAssignAdministratorOnce() {
+    // Arrange
+    Academy academy = new Academy(new AcademyName("Test"), new AcademyDescription("Desc"), 
+                        new StreetAddress("S/N", "D", "P", "D"), new EmailAddress("t@a.com"), 
+                        new PhoneNumber("+51", "911"), new Ruc("10765432109"));
+    AdministratorId admin1 = new AdministratorId(1L);
+    AdministratorId admin2 = new AdministratorId(2L);
 
-**Prueba 2: Creación de Teacher desde RegisterTeacherCommand**
+    // Act
+    academy.assignAdministrator(admin1);
 
-*User Story relacionada*: US004 - Registro de Profesor
+    // Assert
+    assertTrue(academy.getAdministratorId().isAssigned());
+    assertEquals(1L, academy.getAdministratorId().administratorId());
+
+    // Act & Assert (Reassignment)
+    assertThrows(IllegalStateException.class, () -> academy.assignAdministrator(admin2));
+}
+```
+*Resumen de prueba*: Garantiza que una academia solo pueda tener un administrador vinculado. En el arrange se crea la academia y dos IDs de administrador; el primer act realiza la asignación exitosa validada por el assert. El segundo bloque de act & assert comprueba que intentar asignar un segundo administrador dispara una IllegalStateException, protegiendo la regla de negocio de la US001.
+
+**Prueba 3: Registro de Administrador y generación de Eventos de Dominio**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should register administrator and add a domain event")
+void shouldRegisterAdministratorAndAddEvent() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    Long expectedAcademyId = 5L;
+    Long expectedUserId = 10L;
+
+    // Act
+    admin.registerAdministrator(expectedAcademyId, expectedUserId);
+
+    // Assert
+    Collection<Object> events = admin.getDomainEvents();
+    assertEquals(1, events.size());
+    AdministratorRegisteredEvent event = (AdministratorRegisteredEvent) events.iterator().next();
+    assertEquals(expectedAcademyId, event.getAcademyId());
+    assertEquals(expectedUserId, event.getUserId());
+}
+
+```
+*Resumen de prueba*: Valida el proceso de registro del administrador y la comunicación mediante eventos. El arrange inicializa el agregado con sus Value Objects (nombre, DNI, etc.), el act ejecuta el método de registro vinculando la academia, y el assert verifica que se haya disparado el evento AdministratorRegisteredEvent. Esto asegura que otros contextos puedan reaccionar al registro del administrador según la US032 y US001.
+
+
+**Prueba 4: Asociación y Desasociación de Academia en Administrator**
+
+*User story relacionada*: US001 - Registro de Academia
+
+```
+@Test
+@DisplayName("Should associate and disassociate academy successfully")
+void shouldHandleAcademyAssociation() {
+    // Arrange
+    Administrator admin = new Administrator(personName, phoneNumber, dniNumber, userId);
+    AcademyId academyId = new AcademyId(5L);
+
+    // Act (Associate)
+    admin.associateAcademy(academyId);
+    // Assert
+    assertEquals(5L, admin.getAcademyId().academyId());
+
+    // Act (Disassociate)
+    admin.disassociateAcademy(academyId);
+    // Assert
+    assertTrue(admin.getAcademyId().academyId() == null || admin.getAcademyId().academyId() == 0L);
+}
+
+```
+*Resumen de prueba*: Comprueba la flexibilidad del administrador para vincularse o desvincularse de una institución. El arrange prepara el administrador y el ID de la academia, el primer act/assert verifica la asociación correcta, y el segundo bloque act/assert asegura que tras la desasociación, el campo AcademyId quede limpio o en estado inicial, garantizando la gestión correcta de miembros.
+
+**Prueba 5: Creación de Teacher desde Command**
+
+*User story relacionada:  US004 - Registro de Profesor*
 
 ```
 @Test
 @DisplayName("Should create teacher from command with all fields set")
 void shouldCreateTeacherFromCommand() {
-// Arrange
-RegisterTeacherCommand command = new RegisterTeacherCommand(
-new PersonName("Ana", "Torres"),
-new EmailAddress("ana.torres@academy.com"),
-new PhoneNumber("+51", "977666555")
-);
-UserId userId = new UserId(400L);
-AcademyId academyId = new AcademyId(5L);
+    // Arrange
+    RegisterTeacherCommand command = new RegisterTeacherCommand(
+        new PersonName("Ana", "Torres"),
+        new EmailAddress("ana.torres@academy.com"),
+        new PhoneNumber("+51", "977666555")
+    );
+    UserId userId = new UserId(400L);
+    AcademyId academyId = new AcademyId(5L);
 
-        // Act
-        Teacher teacher = new Teacher(command, userId, academyId);
+    // Act
+    Teacher teacher = new Teacher(command, userId, academyId);
 
-        // Assert
-        assertNotNull(teacher);
-        assertEquals("Ana", teacher.getPersonName().firstName());
-        assertEquals("Torres", teacher.getPersonName().lastName());
-        assertEquals("+51", teacher.getPhoneNumber().countryCode());
-        assertEquals("977666555", teacher.getPhoneNumber().phone());
-        assertEquals(400L, teacher.getUserId().userId());
-        assertEquals(5L, teacher.getAcademyId().academyId());
-    }
+    // Assert
+    assertNotNull(teacher);
+    assertEquals("Ana", teacher.getPersonName().firstName());
+    assertEquals(400L, teacher.getUserId().userId());
+    assertEquals(5L, teacher.getAcademyId().academyId());
+}
 ```
+*Resumen de prueba*: Valida la creación de la entidad docente para la US004. El arrange crea el comando de registro con los datos de "Ana Torres", el act instancia al Teacher usando dicho comando y los IDs correspondientes, y el assert confirma que todos los atributos (nombre, userId, academyId) se mapearon correctamente desde el comando al agregado.
 
-*Resumen de prueba*: Valida que se pueda crear un objeto Teacher correctamente usando el comando RegisterTeacherCommand. El test arrange crea un comando con nombre "Ana Torres", email y teléfono, además de userId y academyId, luego act crea un nuevo Teacher usando ese comando, y assert verifica que todos los campos fueron asignados correctamente: nombre, apellido, código de país, teléfono, userId y academyId. Esta prueba asegura que la construcción de entidades Teacher desde comandos de aplicación funcione correctamente.
+A continuación se presenta capturas de la correcta ejecución de las pruebas del bounded  context de Institution
 
-![Bounded-Institution2](./assets/test/institution2.png)
+**Administrator**
+![Bounded-Institution-Administrator](./assets/test/admin-unit-tests.png)
+
+
+**Academy**
+![Bounded-Institution-Academy](./assets/test/academy-unit-tests.png)
+
+
+**Teacher**
+![Bounded-Institution-Teacher](./assets/test/teacher-unit-test.png)
+
 
 
 ##### Scheduling Bounded - Gestión de Horarios
@@ -7202,6 +7872,130 @@ class EnrollmentCommandServiceImplTest {
 
 ### 6.1.2. Core Integration Tests
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Integración del repositorio JPA para la gestión de Asistencia**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia / US011 - Actualización de Asistencia
+ 
+```java
+@DataJpaTest
+@ActiveProfiles("test")
+@DisplayName("ClassAttendanceRepository Integration Tests")
+class ClassAttendanceRepositoryTest {
+ 
+    @Autowired
+    private TestEntityManager entityManager;
+ 
+    @Autowired
+    private ClassAttendanceRepository repository;
+ 
+    @Test
+    @DisplayName("should persist and load ClassAttendance with embedded Value Objects")
+    void shouldPersistAndLoadWithEmbeddedValueObjects() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_1,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        ClassAttendance loaded = found.get();
+        assertThat(loaded.getClassSessionId()).isEqualTo(SESSION_1);
+        assertThat(loaded.getDate()).isEqualTo(LocalDate.now());
+        assertThat(loaded.getAcademyId()).isEqualTo(ACADEMY_ID);
+    }
+ 
+    @Test
+    @DisplayName("should cascade and persist AttendanceRecords when saving the Aggregate")
+    void shouldCascadeAttendanceRecordsOnSave() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_2,
+                List.of(
+                        new AttendanceInput(DNI_1, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_2, AttendanceStatus.ABSENT),
+                        new AttendanceInput(DNI_3, AttendanceStatus.EXCUSED)
+                )
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findByIdAndAcademyId(saved.getId(), ACADEMY_ID);
+ 
+        // Assert
+        assertThat(found).isPresent();
+        List<AttendanceRecord> records = found.get().getAttendance();
+        assertThat(records).hasSize(3);
+        assertThat(records)
+                .extracting(r -> r.getDni().dniNumber())
+                .containsExactlyInAnyOrder("11111111", "22222222", "33333333");
+    }
+ 
+    @Test
+    @DisplayName("should remove orphaned AttendanceRecords due to orphanRemoval = true")
+    void shouldRemoveOrphanedRecords() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(SESSION_3,
+                List.of(
+                        new AttendanceInput(DNI_4, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_5, AttendanceStatus.ABSENT)
+                )
+        );
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        ClassAttendance loaded = repository.findById(saved.getId()).orElseThrow();
+        loaded.getAttendance().removeIf(r -> r.getDni().equals(DNI_4));
+        repository.save(loaded);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Assert
+        ClassAttendance reloaded = repository.findById(saved.getId()).orElseThrow();
+        assertThat(reloaded.getAttendance()).hasSize(1);
+        assertThat(reloaded.getAttendance().get(0).getDni()).isEqualTo(DNI_5);
+    }
+ 
+    @Test
+    @DisplayName("should detect duplicate attendance for the same academy, session, and date")
+    void shouldDetectDuplicateAttendance() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_4,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+        repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        boolean exists = repository.existsByAcademyIdAndClassSessionIdAndDate(
+                ACADEMY_ID, SESSION_4, LocalDate.now());
+ 
+        // Assert
+        assertThat(exists).isTrue();
+    }
+}
+```
+ 
+*Resumen de prueba*: Valida la exposición de los servicios que el profesor consume desde el frontend para gestionar la asistencia, verificando la capa de persistencia completa. Usando `@DataJpaTest` con base de datos H2 en memoria y el patrón `entityManager.flush()` + `entityManager.clear()` para forzar un round-trip real a la BD descartando la caché de primer nivel, se verifican cuatro comportamientos críticos: la persistencia correcta del agregado con sus Value Objects embebidos, el cascade de los `AttendanceRecord` al guardar el padre, la eliminación de registros huérfanos por `orphanRemoval=true`, y la detección de asistencias duplicadas por academia, sesión y fecha.
+ 
+![Bounded-Attendance-Integration](./assets/test/attendance2.png)
+
 ##### IAM Bounded - Identity and Access Management
 
 **Prueba 1: Inicio de sesión con credenciales válidas retorna 200**
@@ -7421,21 +8215,242 @@ class AuthenticationControllerIntegrationTest {
 
 ---
 
+##### Billing Bounded - Gestión de Facturación
+ 
+**Prueba 1: Integración del repositorio JPA para la gestión de Facturación**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago / US024 - Eliminación de Boletas de Pago
+ 
+```java
+@DataJpaTest
+@ActiveProfiles("test")
+@DisplayName("BillingAccountRepository Integration Tests")
+class BillingAccountRepositoryTest {
+ 
+    @Autowired
+    private TestEntityManager entityManager;
+ 
+    @Autowired
+    private BillingAccountRepository repository;
+ 
+    @Test
+    @DisplayName("should persist and reload BillingAccount with embedded Value Objects")
+    void shouldPersistAndLoadWithEmbeddedValueObjects() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+ 
+        // Act
+        BillingAccount saved = repository.save(account);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<BillingAccount> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        BillingAccount loaded = found.get();
+        assertThat(loaded.getStudentId()).isEqualTo(STUDENT_A);
+        assertThat(loaded.getDniNumber()).isEqualTo(DNI_A);
+        assertThat(loaded.getAcademyId()).isEqualTo(ACADEMY_1);
+    }
+ 
+    @Test
+    @DisplayName("should cascade and persist Invoices when saving the BillingAccount")
+    void shouldCascadeInvoicesOnSave() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+        BillingAccount saved = repository.save(account);
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        repository.save(saved);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        Optional<BillingAccount> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        assertThat(found.get().getInvoices()).hasSize(2);
+    }
+ 
+    @Test
+    @DisplayName("should delete orphaned Invoice when removed from the aggregate (orphanRemoval=true)")
+    void shouldRemoveOrphanedInvoice() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+        BillingAccount saved = repository.save(account);
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        repository.save(saved);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        BillingAccount loaded = repository.findById(saved.getId()).orElseThrow();
+        Long invoiceIdToRemove = loaded.getInvoices().get(0).getId();
+        loaded.deleteInvoice(invoiceIdToRemove);
+        repository.save(loaded);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Assert
+        BillingAccount reloaded = repository.findById(saved.getId()).orElseThrow();
+        assertThat(reloaded.getInvoices()).hasSize(1);
+        assertThat(reloaded.getInvoices().get(0).getId()).isNotEqualTo(invoiceIdToRemove);
+    }
+ 
+    @Test
+    @DisplayName("should return all BillingAccounts belonging to the given AcademyId")
+    void shouldFindAllByAcademyId() {
+        // Arrange
+        repository.save(buildAccount(STUDENT_A, DNI_A, ACADEMY_1));
+        repository.save(buildAccount(STUDENT_B, DNI_B, ACADEMY_1));
+        repository.save(buildAccount(new StudentId(30L), new DniNumber("11111111"), ACADEMY_2));
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        List<BillingAccount> results = repository.findAllByAcademyId(ACADEMY_1);
+ 
+        // Assert
+        assertThat(results).hasSize(2);
+        assertThat(results).allMatch(a -> a.getAcademyId().equals(ACADEMY_1));
+    }
+}
+```
+ 
+*Resumen de prueba*: Asegura que los endpoints de facturación respondan correctamente a las peticiones del administrador, validando la capa de persistencia completa. Al igual que en Attendance, se usa `@DataJpaTest` con H2 y el patrón flush/clear para forzar round-trips reales. Se verifican cuatro comportamientos: la persistencia del agregado con Value Objects embebidos (`StudentId`, `DniNumber`, `AcademyId`), el cascade de las entidades `Invoice` al guardar la cuenta padre, la eliminación correcta de facturas huérfanas disparada por `orphanRemoval=true` en JPA, y el filtrado de cuentas por `AcademyId` que descarta registros de otras academias.
+ 
+![Bounded-Billing-Integration](./assets/test/billing2.png)
+ 
+---
+
 ##### Institution Bounded - Gestión de la Institución
 
-**Prueba 1: Registro de administrador con datos válidos retorna 201**
+**Prueba 1: Integración de endpoints REST para la gestión de Academias**
 
-*User Story relacionada*: US006 - Registro de Administrador
+*Technical Story relacionada*: TS001 - Exponer endpoint para registrar academias / TS005 - Exponer endpoint para obtener detalles de una academia
+
 
 ```
-@WebMvcTest(controllers = AdministratorsController.class,
+@WebMvcTest(controllers = AcademiesController.class,
         excludeAutoConfiguration = {
-                HibernateJpaAutoConfiguration.class,
-                JpaRepositoriesAutoConfiguration.class
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
         })
 @ActiveProfiles("test")
 @AutoConfigureMockMvc(addFilters = false)
-class InstitutionControllerIntegrationTest {
+class AcademiesControllerIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private AcademyCommandService academyCommandService;
+
+    @MockitoBean
+    private AcademyQueryService academyQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Academy sampleAcademy;
+
+    @BeforeEach
+    void setUp() {
+        sampleAcademy = new Academy(
+                new AcademyName("Nistra Academy"),
+                new AcademyDescription("Academia de tecnología"),
+                new StreetAddress("Av. Primavera 123", "Surco", "Lima", "Lima"),
+                new EmailAddress("contacto@nistra.com"),
+                new PhoneNumber("+51", "987654321"),
+                new Ruc("10456789123")
+        );
+        sampleAcademy.assignAdministrator(new AdministratorId(1L));
+    }
+
+    @Test
+    @DisplayName("POST /academies con datos válidos retorna 201 Created")
+    void registerAcademy_ValidRequest_Returns201() throws Exception {
+        RegisterAcademyResource resource = new RegisterAcademyResource(
+                "Nistra Academy", "Academia de tecnología", "Av. Primavera 123",
+                "Surco", "Lima", "Lima", "contacto@nistra.com",
+                "+51", "987654321", "10456789123", 1L
+        );
+
+        when(academyCommandService.handle(any(RegisterAcademyCommand.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(post("/api/v1/academies")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.ruc").value("10456789123"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 200 y los datos de la academia")
+    void getCurrentAcademy_WhenExists_Returns200() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.of(sampleAcademy));
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.academyName").value("Nistra Academy"))
+                .andExpect(jsonPath("$.emailAddress").value("contacto@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /academies/current retorna 404 cuando no hay academia asociada")
+    void getCurrentAcademy_WhenNotExists_Returns404() throws Exception {
+        when(academyQueryService.handle(any(GetCurrentAcademyQuery.class)))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/v1/academies/current"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("HEAD /academies/{id} retorna 200 si la academia existe")
+    void checkAcademyExists_WhenExists_Returns200() throws Exception {
+        Long academyId = 1L;
+        when(academyQueryService.handle(any(ExistsAcademyByIdQuery.class)))
+                .thenReturn(true);
+
+        mockMvc.perform(head("/api/v1/academies/{id}", academyId))
+                .andExpect(status().isOk());
+    }
+}
+```
+
+*Resumen de prueba*: Valida la correcta exposición y funcionamiento de los endpoints REST para las academias utilizando MockMvc. Se verifica que el registro (POST) retorne un estado HTTP 201 Created y que la respuesta contenga los datos mapeados correctamente según la historia técnica TS001. Asimismo, se comprueba que las consultas (GET y HEAD) devuelvan 200 OK con los datos correctos o 404 Not Found cuando el recurso solicitado no existe, mockeando adecuadamente la capa de aplicación.
+
+![Bounded-Institution-Int1](./assets/test/academy-integration-test.png)
+
+---
+
+**Prueba 2: Integración de endpoints REST para la gestión de Administradores**
+
+*Technical Story relacionada:*: TS006 - Exponer endpoint para registrar administrador / TS010 - Exponer endpoint para obtener detalles de un administrador
+
+```
+    @WebMvcTest(controllers = AdministratorsController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class AdministratorsControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -7453,109 +8468,182 @@ class InstitutionControllerIntegrationTest {
     private LocalizationService localizationService;
 
     @MockitoBean
-    private JpaMetamodelMappingContext jpaMetamodelMappingContext;
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
 
-    private static final Long ADMIN_ID = 1L;
-    private static final Long ACADEMY_ID = 5L;
-    private static final Long USER_ID = 100L;
-
-    private Administrator mockAdministrator;
+    private Administrator sampleAdministrator;
+    private EmailAddress sampleEmail;
 
     @BeforeEach
     void setUp() {
-        mockAdministrator = mock(Administrator.class);
-        when(mockAdministrator.getId()).thenReturn(ADMIN_ID);
-        when(mockAdministrator.getPersonName()).thenReturn(new PersonName("Carlos", "Admin"));
-        when(mockAdministrator.getPhoneNumber()).thenReturn(new PhoneNumber("+51", "987654321"));
-        when(mockAdministrator.getDniNumber()).thenReturn(new DniNumber("72326006"));
-        when(mockAdministrator.getAcademyId()).thenReturn(new AcademyId(ACADEMY_ID));
-        when(mockAdministrator.getUserId()).thenReturn(new UserId(USER_ID));
+        sampleAdministrator = new Administrator(
+                new PersonName("Diego", "Vilca"),
+                new PhoneNumber("+51", "999888777"),
+                new DniNumber("76543210"),
+                new UserId(10L)
+        );
+        sampleEmail = new EmailAddress("diego.admin@nistra.com");
     }
 
     @Test
-    @DisplayName("TI001 — POST /api/v1/administrators con datos válidos retorna 201 Created")
-    void registerAdministrator_ValidData_Returns201() throws Exception {
-        // Arrange
+    @DisplayName("POST /administrators con datos válidos retorna 201 Created")
+    void registerAdministrator_ValidRequest_Returns201() throws Exception {
         RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
+                "Diego", "Vilca", "+51", "999888777", "76543210", 10L
         );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
-                .thenReturn(Optional.of(mockAdministrator));
 
-        // Act
+        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
         mockMvc.perform(post("/api/v1/administrators")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"));
     }
-```
 
-*Resumen de prueba*: Valida el flujo de registro de un administrador cuando se envían datos válidos. El test arrange configura el mock del administrador con datos específicos, el servicio retorna Optional con el admin mockeado, luego act envía POST a /api/v1/administrators con los datos del recurso, y assert verifica código 201 y que el nombre del administrador sea "Carlos". Esta prueba confirma el registro exitoso de administradores.
-
-![Bounded-Institution-Int1](./assets/test/institution_integration1.png)
-
----
-
-**Prueba 2: Registro de administrador cuando servicio retorna vacío retorna 400**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
     @Test
-    @DisplayName("TI002 — POST /api/v1/administrators cuando servicio retorna vacío retorna 400")
-    void registerAdministrator_ServiceReturnsEmpty_Returns400() throws Exception {
-        // Arrange
-        RegisterAdministratorResource resource = new RegisterAdministratorResource(
-                "Juan", "Admin", "+51", "999888777", "12345678", USER_ID
-        );
-        when(administratorCommandService.handle(any(RegisterAdministratorCommand.class)))
+    @DisplayName("GET /administrators/me retorna 200 y junta datos de admin y de usuario (email)")
+    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Diego"))
+                .andExpect(jsonPath("$.dniNumber").value("76543210"))
+                .andExpect(jsonPath("$.emailAddress").value("diego.admin@nistra.com"));
+    }
+
+    @Test
+    @DisplayName("GET /administrators/me retorna 404 si el administrador no tiene email asociado")
+    void getCurrentAdministrator_WhenNoEmailFound_Returns404() throws Exception {
+        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
+                .thenReturn(Optional.of(sampleAdministrator));
+
+        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
                 .thenReturn(Optional.empty());
 
-        // Act
-        mockMvc.perform(post("/api/v1/administrators")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(resource)))
-
-        // Assert
-                .andExpect(status().isBadRequest());
+        mockMvc.perform(get("/api/v1/administrators/me"))
+                .andExpect(status().isNotFound());
     }
+}
 ```
 
-*Resumen de prueba*: Verifica que el sistema retorne 400 cuando el servicio de comando de administrador retorna Optional.empty(), indicando un error en el registro. El test arrange configura el servicio para retornar vacío, luego act envía POST con datos válidos, y assert verifica código 400 Bad Request. Esta prueba asegura el manejo correcto de errores de validación.
+*Resumen de prueba*: Evalúa la integración del controlador REST AdministratorsController. Verifica el flujo de creación mediante el método POST, confirmando el estado HTTP 201 Created en la respuesta (TS006). Adicionalmente, comprueba el endpoint GET /me (TS010), el cual requiere la orquestación de dos consultas (la obtención del perfil local y del email a través de la integración IAM). El test garantiza que se retorne exitosamente los datos combinados con un 200 OK o que arroje un 404 Not Found si el perfil carece de una identidad externa asociada.
 
-![Bounded-Institution-Int2](./assets/test/institution_integration2.png)
+![Bounded-Institution-Int2](./assets/test/admin-integration-test.png)
 
 ---
 
-**Prueba 3: Obtener administrador actual cuando existe retorna 200**
+**Prueba 3: Integración de endpoints REST para la gestión de Profesores**
 
-*User Story relacionada*: US005 - Actualización de Profesor
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-    @Test
-    @DisplayName("TI003 — GET /api/v1/administrators/me cuando existe retorna 200 con datos del admin")
-    void getCurrentAdministrator_WhenExists_Returns200() throws Exception {
-        // Arrange
-        when(administratorQueryService.handle(any(GetCurrentAdministratorQuery.class)))
-                .thenReturn(Optional.of(mockAdministrator));
-        when(administratorQueryService.handle(any(GetAdministratorEmailAddressByUserIdQuery.class)))
-                .thenReturn(Optional.of(new EmailAddress("carlos@academy.com")));
+    @WebMvcTest(controllers = TeachersController.class,
+        excludeAutoConfiguration = {
+                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
+                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
+        })
+@ActiveProfiles("test")
+@AutoConfigureMockMvc(addFilters = false)
+class TeachersControllerIntegrationTest {
 
-        // Act
-        mockMvc.perform(get("/api/v1/administrators/me"))
+    @Autowired
+    private MockMvc mockMvc;
 
-        // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value("Carlos"));
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @MockitoBean
+    private TeacherCommandService teacherCommandService;
+
+    @MockitoBean
+    private TeacherQueryService teacherQueryService;
+
+    @MockitoBean
+    private LocalizationService localizationService;
+
+    @MockitoBean
+    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+
+    private Teacher sampleTeacher;
+    private EmailAddress sampleEmail;
+
+    @BeforeEach
+    void setUp() {
+        PersonName personName = new PersonName("Lucia", "Vargas");
+        PhoneNumber phoneNumber = new PhoneNumber("+51", "911222333");
+        EmailAddress emailAddress = new EmailAddress("lucia.vargas@academy.com");
+
+        RegisterTeacherCommand command = new RegisterTeacherCommand(personName, emailAddress, phoneNumber);
+
+        sampleTeacher = new Teacher(command, new UserId(20L), new AcademyId(5L));
+        sampleEmail = emailAddress;
     }
+
+    @Test
+    @DisplayName("POST /teachers con datos válidos retorna 201 Created y junta el correo")
+    void registerTeacher_ValidRequest_Returns201() throws Exception {
+        RegisterTeacherResource resource = new RegisterTeacherResource(
+                "Lucia", "Vargas", "lucia.vargas@academy.com", "+51", "911222333"
+        );
+
+        when(teacherCommandService.handle(any(RegisterTeacherCommand.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(post("/api/v1/teachers")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(resource)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"))
+                .andExpect(jsonPath("$.academyId").value(5L));
+    }
+
+    @Test
+    @DisplayName("GET /teachers retorna 200 y una lista de profesores con sus correos")
+    void getAllTeachers_Returns200AndList() throws Exception {
+        when(teacherQueryService.handle(any(GetAllTeachersQuery.class)))
+                .thenReturn(List.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].firstName").value("Lucia"))
+                .andExpect(jsonPath("$[0].emailAddress").value("lucia.vargas@academy.com"));
+    }
+
+    @Test
+    @DisplayName("GET /teachers/me retorna 200 y los datos del profesor logueado")
+    void getCurrentTeacher_WhenExists_Returns200() throws Exception {
+        when(teacherQueryService.handle(any(GetCurrentTeacherQuery.class)))
+                .thenReturn(Optional.of(sampleTeacher));
+
+        when(teacherQueryService.handle(any(GetTeacherEmailAddressByUserIdQuery.class)))
+                .thenReturn(Optional.of(sampleEmail));
+
+        mockMvc.perform(get("/api/v1/teachers/me"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName").value("Lucia"))
+                .andExpect(jsonPath("$.userId").value(20L))
+                .andExpect(jsonPath("$.emailAddress").value("lucia.vargas@academy.com"));
+    }
+}
 ```
 
-*Resumen de prueba*: Valida que el endpoint GET /api/v1/administrators/me retorne los datos del administrador cuando este existe. El test arrange configura el query service para retornar el administrador mockeado y su email, luego act envía GET a /api/v1/administrators/me, y assert verifica código 200 y que el nombre sea "Carlos". Esta prueba permite a los usuarios ver su propio perfil de administrador.
+*Resumen de prueba*:Asegura la correcta implementación de la API REST para la gestión de docentes. Comprueba el endpoint de registro de la US004 (POST), validando que la creación retorne 201 Created junto con la recuperación cruzada del correo electrónico en la respuesta final. Adicionalmente, verifica las operaciones de lectura (GET), comprobando tanto el listado general como la obtención del perfil actual del profesor. El test confirma que se procese y devuelva correctamente una estructura JSON validada mediante jsonPath simulando el comportamiento de los servicios internos.
 
-![Bounded-Institution-Int3](./assets/test/institution_integration3.png)
+![Bounded-Institution-Int3](./assets/test/teacher-integration-test.png)
 
 ---
 
@@ -8085,9 +9173,86 @@ class EnrollmentsControllerIntegrationTest {
 
 ### 6.1.3. Core Behavior-Driven Development
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Feature y Step Definitions**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+# src/test/resources/features/attendance.feature
+@attendance
+Feature: Mark student attendance in a class session
+ 
+  Background:
+    Given an academy with ID 1 and a class session with ID 1 exists for today's date
+    And the following students are enrolled in the session:
+      | dni      | initialStatus |
+      | 12345678 | ABSENT        |
+      | 87654321 | ABSENT        |
+```
+ 
+Los step definitions correspondientes en `AttendanceSteps.java` usan `@SpringBootTest` con el repositorio JPA real en perfil H2, lo que permite validar la integración completa del dominio con la persistencia. El `@Before` de Cucumber limpia la tabla antes de cada escenario garantizando aislamiento. La excepción en el step `@When` se captura en un try-catch para poder ser asertada en el step `@Then` correspondiente, evitando que cruce los límites del step definition y falle el runner.
+ 
+---
+ 
+**Escenario 1: Actualización exitosa de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to PRESENT
+    Given the student with DNI "12345678" has status "ABSENT"
+    When the teacher marks the student with DNI "12345678" as "PRESENT"
+    Then the attendance record for DNI "12345678" should have status "PRESENT"
+```
+ 
+*Resumen de prueba*: Cubre el camino feliz del registro de asistencia. Given confirma que el estudiante "12345678" existe en el agregado con estado `ABSENT` (pre-condición establecida por el Background), When el docente lo marca como `PRESENT` (el step actualiza el agregado y lo persiste), Then el step recarga el agregado desde la BD real mediante `findByIdAndAcademyId` y verifica que el estado persiste correctamente como `PRESENT`. La prueba valida el flujo completo de dominio y persistencia.
+ 
+![Bounded-Attendance-BDD1](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 2: Actualización exitosa de ABSENT a EXCUSED**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to EXCUSED
+    Given the student with DNI "87654321" has status "ABSENT"
+    When the teacher marks the student with DNI "87654321" as "EXCUSED"
+    Then the attendance record for DNI "87654321" should have status "EXCUSED"
+```
+ 
+*Resumen de prueba*: Valida que el sistema soporte el estado de ausencia justificada `EXCUSED` en el flujo completo con persistencia real. Given el estudiante "87654321" está en estado `ABSENT`, When el profesor lo marca como `EXCUSED` y el agregado se guarda en BD, Then el step recarga el registro y verifica que el estado es `EXCUSED`. Este escenario asegura que todos los estados del dominio sean tratados de forma consistente por la capa de persistencia JPA.
+ 
+![Bounded-Attendance-BDD2](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 3: Error al marcar asistencia de DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @error-path
+  Scenario: Attempt to update attendance for a non-enrolled DNI
+    Given the student with DNI "00000001" is not enrolled in the session
+    When the teacher marks the student with DNI "00000001" as "PRESENT"
+    Then an error should be raised indicating that the DNI was not found
+```
+ 
+*Resumen de prueba*: Cubre el camino de error protegiendo la integridad del registro de asistencia. Given verifica que el DNI "00000001" no existe en la colección `getAttendance()` del agregado, When el step intenta `updateRecordStatus()` y captura la excepción en el try-catch sin relanzarla, Then el step verifica que `capturedException` es una `IllegalArgumentException` cuyo mensaje contiene "does not exist". El manejo explícito de la excepción en el step del When es clave para que Cucumber pueda evaluar el Then sin interrumpir el escenario.
+ 
+![Bounded-Attendance-BDD3](./assets/test/attendance3.png)
+ 
+---
+
 ##### IAM Bounded - Identity and Access Management
 
-**Escenario 1: Registro exitoso de nuevo usuario**
+**Escenario 1: Registro exitoso de nuevo usua rio**
 
 *User Story relacionada*: US032 - Registro de Cuenta
 
@@ -8152,70 +9317,194 @@ Feature: Autenticación de usuarios en plataforma DEMY
 
 ##### Institution Bounded - Gestión de la Institución
 
-**Escenario 1: Registro exitoso de administrador**
-
-*User Story relacionada*: US006 - Registro de Administrador
-
-```
-Feature: Gestión de administradores y academias
-  Como administrativo de una academia
-  Quiero poder registrar administradores y academias
-  Para gestionar la estructura institucional
-
-  # Escenario 1: Registro exitoso de administrador
-  Scenario: Registrar administrador con datos válidos
-    Given no existe administrador con DNI "87654321" en el sistema
-    When registro un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50
-    Then el administrador queda registrado exitosamente
-    And el código de estado HTTP del administrador es 201
-    And se devuelve el recurso del administrador creado
-```
-
-*Resumen de prueba*: Este escenario BDD describe el flujo de registro de un nuevo administrador en el sistema. Given establece que no existe un administrador con el DNI "87654321", When cuando se registra un administrador con nombre "Juan", apellido "Pérez", país "+51", teléfono "999111222", DNI "87654321" y userId 50, Then entonces el administrador queda registrado exitosamente, el código HTTP es 201, y se devuelve el recurso del administrador creado. Este escenario valida el registro correcto de administradores.
-
-![Bounded-Institution-BDD1](./assets/test/institution_bdd1.png)
-
----
-
-**Escenario 2: Registro de academia con email duplicado**
+**Escenario 1: Validación de reglas de negocio en el Registro de Academia**
 
 *User Story relacionada*: US001 - Registro de Academia
 
 ```
-  # Escenario 2: Registro de academia con email duplicado
-  Scenario: No permite registrar academia con email ya existente
-    Given ya existe una academia con email "academia@test.com" en el sistema
-    When registro una nueva academia con nombre "Mi Academia", email "academia@test.com", teléfono "+51 999888777", RUC "12345678901" y administrador ID 5
-    Then la operación falla con error de "email duplicado"
-    And el código de estado HTTP de la academia es 400
-    And se devuelve mensaje de error
+Feature: Registro de Academia
+  Para gestionar la información de la academia y sus miembros
+  Como administrador
+  Quiero registrar una nueva academia en la plataforma
+
+  Scenario Outline: Validacion de las reglas de negocio al registrar una academia
+    Given un administrador con id <adminId>
+    When intento registrar una academia con nombre "<nombre>", ruc "<ruc>" y correo "<email>"
+    Then el registro de la academia debe validarse con
+      | academyName  | <nombre>  |
+      | ruc          | <ruc>     |
+      | emailAddress | <email>   |
+    And el resultado de la creacion es "<mensaje>"
+
+    Examples:
+      | adminId | nombre         | ruc         | email               | mensaje     |
+      | 10      | Nistra Academy | 10456789123 | contacto@nistra.com | Test Passed |
+      | 10      |                | 10456789123 | contacto@nistra.com | Error       |
+      | 15      | Demy Code      |             | admin@demy.com      | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el comportamiento cuando se intenta registrar una academia con un email que ya existe en el sistema. Given establece que ya existe una academia con email "academia@test.com", When cuando se intenta registrar una nueva academia con ese mismo email, Then entonces la operación falla con error de email duplicado, el código HTTP es 400, y se devuelve mensaje de error. Este escenario valida la integridad de datos evitando emails duplicados.
+*Resumen de prueba*: Define los escenarios de aceptación para la US001. Se utiliza un Scenario Outline para validar que el sistema acepte registros completos ("Nistra Academy") y rechace aquellos con datos críticos faltantes, como el nombre de la academia o el número de RUC. El paso Then asegura que los Value Objects del dominio (AcademyName, Ruc, EmailAddress) se formen correctamente antes de persistir la entidad.
 
-![Bounded-Institution-BDD2](./assets/test/institution_bdd2.png)
+![Bounded-Institution-BDD1](./assets/test/academy-bdd-test.png)
 
 ---
 
-**Escenario 3: Asociación de administrador con academia**
+**Escenario 2: Validación de reglas de negocio en el Registro de Profesor**
 
-*User Story relacionada*: US002 - Actualización de Academia
+*User Story relacionada*: US004 - Registro de Profesor
 
 ```
-  # Escenario 3: Asociación de administrador con academia
-  Scenario: Asociar administrador a academia exitosamente
-    Given existe un administrador "Carlos" "Admin" sin asociación a academia
-    And existe una academia "Mi Academia" sin administrador asignado
-    When asociar el administrador a la academia
-    Then el administrador queda asociado a la academia
-    And la academia tiene el administrador asignado
-    And el código de estado HTTP de la academia es 200
+  Feature: Registro de Profesor
+  Para asignar clases y gestionar la parte académica
+  Como administrador
+  Quiero registrar un nuevo profesor en mi academia
+
+  Scenario Outline: Validar reglas de negocio al registrar un profesor
+    Given un userId <userId> asignado por el sistema de usuarios y un academyId <academyId>
+    When intento registrar un profesor con nombre "<nombre>", apellido "<apellido>", correo "<correo>" y celular "<telefono>"
+    Then el registro del profesor debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+      | academyId | <academyId>|
+    And el resultado del registro de profesor es "<mensaje>"
+
+    Examples:
+      | userId | academyId | nombre | apellido | correo               | telefono  | mensaje     |
+      | 20     | 5         | Lucia  | Vargas   | lucia@academy.com    | 911222333 | Test Passed |
+      | 21     | 5         |        | Vargas   | lucia@academy.com    | 911222333 | Error       |
+      | -1     | 5         | Mario  | Lopez    | mario@academy.com    | 988777666 | Error       |
 ```
 
-*Resumen de prueba*: Este escenario BDD describe el flujo de asociación de un administrador a una academia. Given establece que existe un administrador "Carlos Admin" sin asociación a academia y una academia "Mi Academia" sin administrador asignado, When cuando se asocia el administrador a la academia, Then entonces el administrador queda asociado a la academia, la academia tiene el administrador asignado, y el código HTTP es 200. Este escenario valida la relación entre administradores y academias.
+*Resumen de prueba*: Verifica los criterios de aceptación de la US004 para la incorporación de docentes. La prueba valida la integridad referencial (que el userId y academyId sean válidos y positivos) y la obligatoriedad de los campos de identidad. Los ejemplos fallidos demuestran que el sistema bloquea el registro si el nombre está vacío o si el ID de usuario es inválido, garantizando que cada profesor esté correctamente vinculado a una cuenta y a una academia.
 
-![Bounded-Institution-BDD3](./assets/test/institution_bdd3.png)
+![Bounded-Institution-BDD2](./assets/test/profesor-bdd-test.png)
 
+---
+
+**Escenario 3: Validación de reglas de negocio en el Registro de Administrador**
+
+*Technical Story relacionada*: TS006 - Exponer endpoint para registrar administrador
+
+```
+ Feature: Registro de Administrador
+  Para gestionar la institución y sus miembros
+  Como dueño del sistema
+  Quiero registrar un administrador
+
+  Scenario Outline: Validar reglas de negocio al registrar un administrador
+    When intento registrar un administrador con nombre "<nombre>", apellido "<apellido>", dni "<dni>", celular "<telefono>" y userId <userId>
+    Then el registro del administrador debe validarse con
+      | firstName | <nombre>   |
+      | lastName  | <apellido> |
+      | dni       | <dni>      |
+      | phone     | <telefono> |
+      | userId    | <userId>   |
+    And el resultado del registro de admin es "<mensaje>"
+
+    Examples:
+      | nombre | apellido | dni      | telefono  | userId | mensaje     |
+      | Diego  | Vilca    | 76543210 | 999888777 | 10     | Test Passed |
+      |        | Vilca    | 76543210 | 999888777 | 10     | Error       |
+      | Salim  | Ramirez  | 123      | 999888777 | 15     | Error       |
+      | Paul   | Sulca    | 12345678 | 987654321 | -5     | Error       |
+```
+
+*Resumen de prueba*: Valida la lógica de negocio para el registro de administradores (TS006). Se enfoca en la validación de formatos de identidad, como el DNI (que debe tener la longitud correcta) y el userId (que debe ser positivo). Los escenarios de prueba aseguran que el sistema rechace identidades incompletas o formatos numéricos inválidos antes de permitir que un usuario asuma el rol de administrador en el sistema.
+
+![Bounded-Institution-BDD3](./assets/test/admin-bdd-test.png)
+
+---
+
+##### Billing Bounded - Gestión de Facturación
+ 
+**Feature y Step Definitions**
+ 
+*User Story relacionada*: US022, US023 y US024
+ 
+```gherkin
+# src/test/resources/features/billing.feature
+@billing
+Feature: Manage billing accounts and invoices for enrolled students
+ 
+  Background:
+    Given a billing account exists for student with DNI "12345678" in academy with ID 1
+```
+ 
+Los step definitions en `BillingAccountSteps.java` usan `@SpringBootTest` con repositorio JPA real en perfil H2. El Background crea y persiste la cuenta en BD antes de cada escenario. Los steps Given adicionales crean y persisten facturas capturando el ID generado por la BD (`lastInvoiceId`), necesario para las operaciones de pago y eliminación. Las excepciones en steps `@When` se capturan en try-catch para ser asertadas en los steps `@Then` de camino de error.
+ 
+---
+ 
+**Escenario 1: Asignación exitosa de factura a una cuenta de facturación**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Assign a new invoice to a billing account
+    When the admin assigns an invoice of type "STUDENT_MONTHLY_FEE" with amount 150.00 and description "Monthly fee May 2026"
+    Then the billing account should have 1 invoice with status "PENDING"
+```
+ 
+*Resumen de prueba*: Valida el ciclo de inicio de la gestión financiera con persistencia real. El Background crea la cuenta en BD, When el administrador asigna una factura de tipo `STUDENT_MONTHLY_FEE` por S/. 150.00 (el step llama a `assignInvoice()` y guarda con el repositorio), Then el step recarga la cuenta desde BD y confirma que tiene exactamente 1 factura en estado `PENDING`. La carga desde BD valida que la relación `@OneToMany` con cascade persiste correctamente.
+ 
+![Bounded-Billing-BDD1](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 2: Marcado de factura como pagada**
+ 
+*User Story relacionada*: US023 - Actualización de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Mark an existing invoice as paid
+    Given the billing account has a PENDING invoice with description "Enrollment fee"
+    When the admin marks the invoice as paid
+    Then the invoice status should be "PAID"
+```
+ 
+*Resumen de prueba*: Valida el ciclo de vida de una factura desde su creación hasta el pago en un flujo con BD real. El Given adicional crea la factura, la persiste y captura el `lastInvoiceId` generado por H2. When el step llama a `markInvoiceAsPaid(lastInvoiceId)` y guarda el agregado, Then el step busca la factura específica por `findInvoiceById(lastInvoiceId)` en la cuenta recargada desde BD y verifica que su estado es `PAID`. Clave para el control de ingresos de la academia.
+ 
+![Bounded-Billing-BDD2](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 3: Eliminación exitosa de factura PENDING**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Delete a pending invoice from a billing account
+    Given the billing account has a PENDING invoice with description "One-time payment"
+    When the admin deletes the invoice
+    Then the billing account should have 0 invoices
+```
+ 
+*Resumen de prueba*: Verifica que el sistema permita eliminar facturas `PENDING` con persistencia completa. El Given persiste la factura y captura su ID, el When invoca `deleteInvoice(lastInvoiceId)` y guarda el agregado (disparando `orphanRemoval=true` en JPA que borra el registro huérfano de la BD), y el Then recarga la cuenta desde BD y verifica que el conteo de facturas es 0. Este escenario cubre el caso de facturas generadas por error antes del cobro.
+ 
+![Bounded-Billing-BDD3](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 4: Rechazo de eliminación de factura PAID**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```gherkin
+  @error-path
+  Scenario: Attempt to delete a paid invoice
+    Given the billing account has a PAID invoice with description "Already paid fee"
+    When the admin deletes the invoice
+    Then an error should be raised indicating the invoice cannot be deleted
+```
+ 
+*Resumen de prueba*: Garantiza que la regla de negocio que protege el historial contable consolidado funcione en el flujo completo con persistencia real. El Given crea la factura como `PENDING`, la persiste, la marca como `PAID` y guarda nuevamente. When el step intenta `deleteInvoice(lastInvoiceId)` y captura la excepción en try-catch, Then el step verifica que `capturedException` es una `IllegalStateException` con mensaje "Cannot delete a paid invoice". La prueba garantiza que ningún dato financiero ya pagado pueda ser eliminado desde ningún punto del sistema.
+ 
+![Bounded-Billing-BDD4](./assets/test/billing3.png)
+ 
 ---
 
 ##### Scheduling Bounded - Gestión de Horarios
@@ -8283,6 +9572,7 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
+<<<<<<< HEAD
 #### Accounting & Finance
 
 **Prueba 1: Registro exitoso de ingreso financiero**
@@ -8351,6 +9641,9 @@ Scenario: US025 - Registro rechazado por monto negativo
 ![Bounded-Finance](./assets/test/finance_bdd4.png)
 
 ### 6.1.4. Core System Tests
+=======
+---
+>>>>>>> develop
 
 ##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
 
@@ -8459,6 +9752,196 @@ Característica: Gestión de Matrículas
 ![Bounded-Enrollment](./assets/test/enrollment4.png)
 
 
+### 6.1.4. Core System Tests
+
+Para garantizar la integridad del sistema en un entorno web real, hemos implementado pruebas de extremo a extremo (E2E) utilizando **Cypress**. Estas pruebas simulan el comportamiento de un usuario final navegando en la aplicación Angular, interactuando con los formularios y validando que las peticiones al backend (Spring Boot) persistan correctamente en la base de datos real.
+
+
+
+
+##### Institution Frontend Web
+
+**Prueba 1: Flujo de Onboarding Completo (Administrador y Academia)**
+
+*User Story relacionada*: US001 - Registro de Academia / US032 - Registro de Cuenta
+
+```
+describe('E2E Puro: Flujo de Onboarding Real', () => {
+  // Arrange
+  const timestamp = Date.now().toString();
+  const uniqueEmail = `admin_${timestamp}@nistra.com`;
+  const uniqueDni = timestamp.slice(-8);
+  const uniqueRuc = `10${timestamp.slice(-9)}`;
+
+  beforeEach(() => {
+    // Registro e Inicio de sesión mediante API para asegurar estado limpio
+    cy.request({
+      method: 'POST',
+      url: 'http://localhost:8080/api/v1/authentication/sign-up',
+      body: { emailAddress: uniqueEmail, password: 'Password123!', termsAndConditions: true }
+    }).then(() => {
+      cy.request({
+        method: 'POST',
+        url: 'http://localhost:8080/api/v1/authentication/sign-in',
+        body: { emailAddress: uniqueEmail, password: 'Password123!' }
+      }).then((signInRes) => {
+        cy.window().then((win) => {
+          win.localStorage.setItem('token', signInRes.body.token);
+          win.localStorage.setItem('userId', signInRes.body.id.toString());
+        });
+      });
+    });
+    cy.visit('http://localhost:4200/complete-account');
+  });
+
+  it('Debería crear el administrador y la academia en la BD real con datos dinámicos', () => {
+    // Act: Registro de Administrador
+    cy.get('#firstName').type('Admin');
+    cy.get('#lastName').type('Dinamico');
+    cy.get('#dniNumber').type(uniqueDni);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert
+    cy.wait(500); // Espera de persistencia
+    cy.url().should('include', '/setup-academy');
+
+    // Act: Registro de Academia
+    cy.get('#academyName').type(`Academia ${timestamp}`);
+    cy.get('#ruc').type(uniqueRuc);
+    cy.get('#emailAddress').type(`contacto_${timestamp}@demy.com`);
+    cy.get('.submit-button').click({ force: true });
+
+    // Assert final
+    cy.url().should('include', '/home');
+  });
+});
+```
+
+*Resumen de prueba*: Valida el flujo crítico de "Onboarding" desde la creación de la cuenta hasta la configuración inicial de la institución. El test utiliza datos dinámicos (timestamps) para generar correos, DNIs y RUCs únicos en cada ejecución, evitando colisiones en la base de datos. Se verifica que tras completar el perfil de administrador (TS006), el sistema redirija correctamente a la configuración de la academia (US001) y, finalmente, al dashboard principal.
+
+![Onboarding System Test](./assets/test/onboarding-system-test.png)
+
+
+**Prueba 2: Gestión de Profesores y Validaciones de Interfaz**
+
+*User Story relacionada*: US004 - Registro de Profesor
+
+**Resumen del Flujo Evaluado:**
+Este test E2E evalua el proceso del registro completo de un profesor, desde lo que manda el frontend hasta la base de datos y luego mostrarlo en la lista de profesores
+
+```
+describe('E2E: Gestión de Profesores (Teacher)', () => {
+  beforeEach(() => {
+    // Login inicial
+    cy.visit('http://localhost:4200/sign-in');
+    cy.get('#email').type('diegovilcatut@gmail.com');
+    cy.get('#password').type('Sofiamia');
+    cy.get('.submit-button').click();
+    cy.url().should('include', '/home');
+    cy.visit('http://localhost:4200/teachers');
+  });
+
+  it('Debería registrar un nuevo profesor y mostrarlo en la tabla', () => {
+    // Arrange
+    const timestamp = Date.now().toString();
+    const uniqueEmail = `carlos_${timestamp}@nistra.com`;
+    const uniquePhone = `9${timestamp.slice(-8)}`;
+
+    // Act
+    cy.get('#teacher-firstName').type('Carlos');
+    cy.get('#teacher-lastName').type('Mendoza');
+    cy.get('#teacher-emailAddress').type(uniqueEmail);
+    cy.get('#teacher-phone').type(uniquePhone);
+    cy.get('.teacher-form__submit').click();
+
+    // Assert
+    cy.get('.teacher-roster').should('contain.text', 'Carlos Mendoza');
+    cy.get('.teacher-roster').should('contain.text', uniqueEmail);
+  });
+
+  it('Debería mostrar errores de validación si los datos son inválidos', () => {
+    // Act
+    cy.get('#teacher-firstName').type('Carlos123');
+    cy.get('#teacher-emailAddress').type('correo-sin-arroba');
+    cy.get('#teacher-phone').type('123');
+
+    // Assert: Verificación de Feedback Visual (Clases CSS y Mensajes)
+    cy.get('#teacher-firstName').should('have.class', 'teacher-form__input--invalid');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Solo letras y espacios');
+    cy.get('.teacher-form__error-text').should('contain.text', 'Email inválido');
+  });
+});
+```
+
+![Teacher System Test](./assets//test/teacher-system-test.png)
+
+
+##### Institution Mobile Application
+
+
+```
+@RunWith(AndroidJUnit4::class)
+class RegisterTeacherE2ETest {
+
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
+
+    @Test
+    fun deberiaRegistrarProfesorYMostrarloEnLaLista() {
+        // Arrange
+        val timestamp = System.currentTimeMillis().toString()
+        val uniqueEmail = "carlos_$timestamp@nistra.com"
+
+        // Esperamos a que el Splash Screen termine
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("input-email-login").fetchSemanticsNodes().isNotEmpty()
+        }
+
+        // Act
+
+        // Iniciar sesión
+        composeTestRule.onNodeWithTag("input-email-login").performTextInput("diegovilcatut@gmail.com")
+        composeTestRule.onNodeWithTag("input-password-login").performTextInput("Sofiamia")
+        composeTestRule.onNodeWithTag("btn-submit-login").performScrollTo().performClick()
+
+        // Esperar navegación y entrar a Profesores
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("btn-submit-login").fetchSemanticsNodes().isEmpty()
+        }
+        composeTestRule.onNodeWithText("Teachers", ignoreCase = true).performClick()
+
+        // Registrar al profesor
+        composeTestRule.onNodeWithTag("teacher-firstName").performTextInput("Carlos")
+        composeTestRule.onNodeWithTag("teacher-lastName").performTextInput("Mendoza")
+        composeTestRule.onNodeWithTag("teacher-email").performTextInput(uniqueEmail)
+        composeTestRule.onNodeWithTag("teacher-submit-button").performClick()
+
+        // ASSERT (Verificación de resultados)
+
+        // Esperamos a que la red responda y validamos la UI
+        composeTestRule.waitUntil(timeoutMillis = 5000) {
+            composeTestRule.onAllNodesWithText(uniqueEmail).fetchSemanticsNodes().isNotEmpty()
+        }
+        composeTestRule.onNodeWithText(uniqueEmail).assertIsDisplayed()
+    }
+}
+```
+
+![Register teacher mobile test e23](./assets/test/teacher-mobile-e2e.png)
+
+**Comparativa de Pruebas E2E: Web (Cypress) vs. Móvil (Compose Testing)**
+
+Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en su implementación:
+
+1. **Identificación de elementos:** * **Web:** Busca elementos usando el HTML de la página (como IDs o clases CSS).
+   * **Móvil:** Usa el "Árbol Semántico" de Android, identificando componentes por etiquetas de prueba (`TestTags`) o por el texto que el usuario ve en pantalla.
+
+2. **Manejo de esperas:** * **Web:** Cypress espera automáticamente a que los elementos aparezcan antes de fallar.
+   * **Móvil:** Compose Testing no espera por defecto. Es necesario usar comandos manuales (`waitUntil`) para darle tiempo a la aplicación de cargar datos del servidor o cambiar de pantalla.
+
+3. **Conexión con el servidor:** * **Web:** Es común interceptar y simular las respuestas del backend (`cy.intercept`) para aislar el frontend.
+   * **Móvil:** Se realizó una prueba **E2E Real**. El emulador se comunica directamente con el servidor de Spring Boot, guardando la información en la base de datos física.
+
 ---
 
 ##### Enrollment Management API
@@ -8467,23 +9950,201 @@ Característica: Gestión de Matrículas
 
 # Capítulo VII: DevOPS Practices
 
+En el presente proyecto de software, hemos implementado una cultura DevOps orientada a la automatización de procesos, garantizando que el código integrado sea confiable y que las entregas de valor a los usuarios finales sean rápidas y seguras. Para ello, hemos diseñado *pipelines* independientes tanto para el Backend (RESTful API) como para el Frontend (Web Application).
+
 ## 7.1. Continuous Integration
 
 ### 7.1.1. Tools and Practices
 
+La Integración Continua (CI) es nuestra primera línea de defensa para mantener la calidad del código. Permite que múltiples desarrolladores integren sus cambios frecuentemente en un repositorio compartido, detectando errores de forma temprana mediante la ejecución automática de pruebas.
+
+**Herramientas Principales:**
+* **GitHub Actions:** Orquestador central de nuestros *workflows*. Actúa de forma nativa con el repositorio y permite ejecutar flujos condicionales basados en eventos (Push y Pull Requests).
+* **Maven y Java 21 (Backend):** Utilizamos Maven como gestor de dependencias y automatizador de tareas para compilar el proyecto en Spring Boot y ejecutar la suite de pruebas unitarias y de integración.
+* **pnpm y Node.js 24 (Frontend):** Gestor de paquetes estricto y rápido que asegura la instalación reproducible de las dependencias de Angular 21.
+* **Cypress (Frontend):** Framework de pruebas End-to-End (E2E) que permite simular el comportamiento real del usuario interactuando con la interfaz y validando la conexión con el entorno de producción del backend.
+
+**Prácticas Implementadas:**
+* **Validación de Pull Requests (PR):** La rama `main` está protegida. Todo nuevo código debe integrarse a través de un PR que dispara automáticamente las pruebas. Si el *pipeline* falla, se bloquea la fusión del código.
+* **Pruebas de Aceptación Automatizadas:** Las pruebas E2E de Cypress validan los escenarios To-Be definidos en el comportamiento del usuario.
+
 ### 7.1.2. Build & Test Suite Pipeline Components
+
+Nuestros componentes de CI están definidos en los archivos YAML dentro del directorio `.github/workflows/`. Cada componente tiene responsabilidades aisladas.
+
+```
+name: Backend CI/CD Pipeline
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    name: 🧪 Build & Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Tests with Maven
+        run: mvn clean test
+```
+
+**Componentes del Backend:**
+El *job* `build-and-test` se ejecuta en un entorno `ubuntu-latest`.
+1.  **Checkout:** Descarga el código fuente del repositorio.
+2.  **Setup Java JDK:** Configura la máquina virtual de Java en su versión 21 (distribución Temurin) y habilita la caché de Maven para acelerar futuras ejecuciones.
+3.  **Ejecución de Pruebas:** Corre el comando `mvn clean test`, el cual compila la aplicación y verifica que todas las reglas de negocio (Unit Tests) e integraciones funcionen correctamente. Si una prueba falla, el proceso se aborta.
+
+```
+jobs:
+  build-and-test:
+    name: 🧪 Build & E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+          run_install: false
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Cypress Binary
+        run: pnpm exec cypress install
+      - name: Run Cypress E2E Tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: pnpm exec ng serve --configuration production
+          wait-on: 'http://localhost:4200'
+
+```
+
+**Componentes del Frontend:**
+1.  **Setup Node y pnpm:** Se configura rigurosamente el entorno con Node 24 y pnpm v10, respetando el script `preinstall` del proyecto.
+2.  **Preparación de Cypress:** Se descargan las dependencias y el binario del motor de navegación de Cypress.
+3.  **Run Cypress E2E Tests:** GitHub Actions levanta el servidor de Angular temporalmente (`ng serve`) y espera a que el puerto 4200 responda. Una vez activo, Cypress ejecuta la suite de pruebas contra el sistema.
+
+**Evidencia**:  
+
+![CI evidencia](./assets/images/ci-cd/ci-evidence.png)
 
 ## 7.2. Continuous Delivery
 
 ### 7.2.1. Tools and Practices
 
+La Entrega Continua (CDelivery) es la práctica de asegurar que el código validado por la fase de CI se empaquete y esté en un estado listo para ser desplegado en cualquier momento.
+
+**Herramientas y Prácticas:**
+* **Angular Compiler (Frontend):** Transpila el código TypeScript a JavaScript optimizado y minificado, generando artefactos estáticos (HTML, CSS, JS).
+* **GitHub Artifacts:** Sistema de almacenamiento temporal que guarda los archivos estáticos generados para pasarlos a la siguiente etapa del *pipeline*.
+* **Railway Build System (Backend):** A diferencia de estrategias manuales con Docker Hub, utilizamos la plataforma Railway que cuenta con "Nixpacks" integrados. Esta herramienta analiza el código fuente, detecta que es un proyecto Java/Maven, y construye automáticamente la imagen de contenedor (Docker) optimizada de forma transparente en la nube.
+
 ### 7.2.2. Stages Deployment Pipeline Componentes
+
+En esta etapa, el *pipeline* prepara los paquetes finales. 
+
+```
+# Compilamos Angular
+      - name: Build Angular App
+        run: pnpm run build --base-href /demy-admin-web/
+
+      # Truco para que Angular (SPA) funcione en GitHub Pages sin dar error 404
+      - name: Add SPA fallback
+        run: cp dist/demy-web-app/browser/index.html dist/demy-web-app/browser/404.html
+
+      # Preparamos el paquete para el despliegue
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/demy-web-app/browser
+
+```
+
+**Preparación del Frontend:**
+Dentro del mismo *job* de pruebas del Frontend, si Cypress finaliza con éxito, se ejecutan los siguientes pasos:
+1.  **Construcción de la SPA:** Se ejecuta `pnpm run build --base-href /demy-admin-web/`, optimizando los recursos para el entorno de producción.
+2.  **SPA Fallback:** Se copia el archivo `index.html` y se renombra a `404.html`. Este truco técnico es vital para que el enrutador nativo de Angular funcione correctamente en un servidor estático.
+3.  **Carga de Artefactos:** Se empaqueta el directorio `dist/demy-web-app/browser` utilizando `actions/upload-pages-artifact@v3`, dejándolo disponible para la fase de despliegue.
+
+**Evidencia**:  
+
+![Delivery evidencia](./assets/images/ci-cd/delivery-evidence.png)
 
 ## 7.3. Continuous deployment
 
 ### 7.3.1. Tools and Practices
 
+El Despliegue Continuo (CDeployment) es la etapa final donde los artefactos generados se liberan automáticamente al entorno de producción real, quedando disponibles para los usuarios finales sin intervención manual.
+
+**Herramientas y Prácticas:**
+* **Railway CLI (Backend):** Interfaz de línea de comandos que permite enviar instrucciones directas a la plataforma Cloud de Railway desde GitHub Actions.
+* **GitHub Pages (Frontend):** Servicio de alojamiento estático integrado nativamente en GitHub, ideal para Single Page Applications (SPA).
+* **Gestión de Secretos:** Uso de `GitHub Secrets` para almacenar tokens de acceso a infraestructuras externas, aplicando el principio de seguridad de no exponer credenciales en el código fuente.
+* **Despliegue Condicional:** Se implementó una regla en el *pipeline* (`if: github.event_name == 'push'`) que garantiza que los despliegues a producción **solo** ocurran cuando el código se integra oficialmente a la rama `main`, previniendo despliegues accidentales desde Pull Requests.
+
 ### 7.3.2. Production Deployment Pipeline Components
+
+El *job* final, denominado `deploy`, tiene la directiva `needs: build-and-test`, estableciendo una dependencia estricta: producción no se toca si las pruebas no pasan.
+
+```
+deploy:
+    name: 🚀 Deploy to Railway
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Railway CLI
+        run: npm i -g @railway/cli
+      - name: Deploy to Railway
+        run: railway up --service "demy-experimentos-backend" --detach
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+```
+
+**Despliegue de la RESTful API (Backend):**
+1.  **Instalación CLI:** Se instala la herramienta de línea de comandos de Railway mediante npm.
+2.  **Ejecución de Despliegue:** Se ejecuta el comando `railway up --service "demy-experimentos-backend" --detach`. Este comando utiliza el secreto `RAILWAY_TOKEN` para autenticarse, inyecta el código validado en el servicio específico y dispara el sistema de auto-construcción de Railway. El parámetro `--detach` permite que GitHub Actions finalice su tarea mientras Railway se encarga de reiniciar el servidor sin tiempo de inactividad visible.
+
+```
+deploy:
+    name: 🚀 Deploy to GitHub Pages
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
+
+**Despliegue de la Web Application (Frontend):**
+1.  **Entorno de Github Pages:** Se configura el *job* para interactuar con el entorno protegido de `github-pages`.
+2.  **Acción de Despliegue:** Utiliza la acción nativa `actions/deploy-pages@v4`. Esta acción toma el artefacto subido en la fase 7.2 (la carpeta compilada de Angular) y la publica en los servidores de GitHub, proveyendo un enlace público inmediato y cerrando el ciclo de vida del desarrollo.
+
+**Evidencia**:  
+
+![Continuous deployment evidencia](./assets/images/ci-cd/cd-evidence.png)
 
 
 
