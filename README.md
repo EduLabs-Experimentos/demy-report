@@ -6201,6 +6201,140 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 6.1.1. Core Entities Unit Tests
 
+#### Billing Bounded - Gestión de Facturación
+ 
+**Prueba 1: Creación de BillingAccount con estado ACTIVE y lista de facturas vacía**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should create BillingAccount with ACTIVE status and empty invoice list")
+void shouldCreateWithActiveStatusAndEmptyInvoices() {
+    // Assert
+    assertThat(account.getStudentId()).isEqualTo(STUDENT_ID);
+    assertThat(account.getDniNumber()).isEqualTo(DNI);
+    assertThat(account.getAcademyId()).isEqualTo(ACADEMY_ID);
+    assertThat(account.getInvoices()).isEmpty();
+}
+```
+ 
+*Resumen de prueba*: Es el paso previo necesario para habilitar el seguimiento financiero del estudiante. El `@BeforeEach` crea el agregado `BillingAccount` usando un `CreateBillingAccountCommand` con `STUDENT_ID` (10L), `DNI` ("12345678") y `ACADEMY_ID` (1L). El assert confirma que todos los atributos de identidad fueron asignados correctamente y que la lista de facturas inicia vacía, asegurando la integridad del estado inicial del agregado.
+ 
+![Bounded-Billing-Unit1](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 2: Asignación exitosa de factura**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should add an invoice to the account when command is valid")
+void shouldAssignInvoiceSuccessfully() {
+    // Arrange
+    AssignInvoiceToBillingAccountCommand cmd = buildAssignCommand(1L);
+ 
+    // Act
+    account.assignInvoice(cmd);
+ 
+    // Assert
+    assertThat(account.getInvoices()).hasSize(1);
+    Invoice invoice = account.getInvoices().get(0);
+    assertThat(invoice.getInvoiceType()).isEqualTo(InvoiceType.STUDENT_MONTHLY_FEE);
+    assertThat(invoice.getStatus()).isEqualTo(InvoiceStatus.PENDING);
+    assertThat(invoice.getDescription()).isEqualTo("Monthly fee - May 2026");
+}
+```
+ 
+*Resumen de prueba*: Valida el escenario de generación de comprobantes para inscripciones activas. El arrange construye el comando de asignación con tipo `STUDENT_MONTHLY_FEE`, monto S/. 150.00 en PEN y descripción "Monthly fee - May 2026", el act llama a `assignInvoice()`, y el assert confirma que la lista tiene exactamente una factura en estado `PENDING` con todos los atributos correctamente asignados.
+ 
+![Bounded-Billing-Unit2](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 3: Marcado de factura como pagada**
+ 
+*User Story relacionada*: US023 - Actualización de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should change invoice status to PAID")
+void shouldMarkInvoiceAsPaidSuccessfully() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+ 
+    // Act
+    account.markInvoiceAsPaid(1L);
+ 
+    // Assert
+    assertThat(invoice.getStatus()).isEqualTo(InvoiceStatus.PAID);
+}
+```
+ 
+*Resumen de prueba*: Verifica la transición de estado fundamental para el control de ingresos. El arrange asigna una factura y le inyecta un ID de valor 1L vía reflection (necesario porque la BD asigna el ID real en producción), el act llama a `markInvoiceAsPaid(1L)`, y el assert confirma que el estado del objeto en memoria cambió a `PAID`. Esta prueba garantiza que el flujo de cobro sea correcto a nivel de dominio antes de integrar con la persistencia.
+ 
+![Bounded-Billing-Unit3](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 4: Eliminación exitosa de factura PENDING**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should remove a PENDING invoice from the account")
+void shouldDeletePendingInvoiceSuccessfully() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+ 
+    // Act
+    account.deleteInvoice(1L);
+ 
+    // Assert
+    assertThat(account.getInvoices()).isEmpty();
+}
+```
+ 
+*Resumen de prueba*: Cumple con la necesidad de corregir registros duplicados o erróneos antes del cobro. El arrange asigna una factura `PENDING` e inyecta su ID vía reflection, el act llama a `deleteInvoice(1L)`, y el assert confirma que la lista de facturas del agregado queda vacía. Esta prueba garantiza que el administrador pueda remover facturas generadas por error antes de que sean procesadas financieramente.
+ 
+![Bounded-Billing-Unit4](./assets/test/billing1.png)
+ 
+---
+ 
+**Prueba 5: Rechazo de eliminación de factura PAID**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```java
+@Test
+@DisplayName("should throw IllegalStateException when trying to delete a PAID invoice")
+void shouldThrowWhenDeletingPaidInvoice() {
+    // Arrange
+    account.assignInvoice(buildAssignCommand(1L));
+    Invoice invoice = account.getInvoices().get(0);
+    setInvoiceId(invoice, 1L);
+    account.markInvoiceAsPaid(1L);
+ 
+    // Act & Assert
+    assertThatThrownBy(() -> account.deleteInvoice(1L))
+            .isInstanceOf(IllegalStateException.class)
+            .hasMessageContaining("Cannot delete a paid invoice");
+}
+```
+ 
+*Resumen de prueba*: Valida la regla de integridad que impide alterar el historial contable ya consolidado. El arrange asigna una factura, inyecta su ID y la marca como `PAID`, luego el act intenta eliminarla. El assert confirma que se lanza una `IllegalStateException` con el mensaje "Cannot delete a paid invoice", protegiendo la integridad financiera e impidiendo que se modifique el historial de cobros ya registrados.
+ 
+![Bounded-Billing-Unit5](./assets/test/billing1.png)
+ 
+---
+
 ##### Attendance Bounded - Gestión de Asistencia
  
 **Prueba 1: Creación de ClassAttendance desde Command**
@@ -7344,6 +7478,117 @@ class AuthenticationControllerIntegrationTest {
 
 ---
 
+##### Billing Bounded - Gestión de Facturación
+ 
+**Prueba 1: Integración del repositorio JPA para la gestión de Facturación**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago / US024 - Eliminación de Boletas de Pago
+ 
+```java
+@DataJpaTest
+@ActiveProfiles("test")
+@DisplayName("BillingAccountRepository Integration Tests")
+class BillingAccountRepositoryTest {
+ 
+    @Autowired
+    private TestEntityManager entityManager;
+ 
+    @Autowired
+    private BillingAccountRepository repository;
+ 
+    @Test
+    @DisplayName("should persist and reload BillingAccount with embedded Value Objects")
+    void shouldPersistAndLoadWithEmbeddedValueObjects() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+ 
+        // Act
+        BillingAccount saved = repository.save(account);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<BillingAccount> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        BillingAccount loaded = found.get();
+        assertThat(loaded.getStudentId()).isEqualTo(STUDENT_A);
+        assertThat(loaded.getDniNumber()).isEqualTo(DNI_A);
+        assertThat(loaded.getAcademyId()).isEqualTo(ACADEMY_1);
+    }
+ 
+    @Test
+    @DisplayName("should cascade and persist Invoices when saving the BillingAccount")
+    void shouldCascadeInvoicesOnSave() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+        BillingAccount saved = repository.save(account);
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        repository.save(saved);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        Optional<BillingAccount> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        assertThat(found.get().getInvoices()).hasSize(2);
+    }
+ 
+    @Test
+    @DisplayName("should delete orphaned Invoice when removed from the aggregate (orphanRemoval=true)")
+    void shouldRemoveOrphanedInvoice() {
+        // Arrange
+        BillingAccount account = buildAccount(STUDENT_A, DNI_A, ACADEMY_1);
+        BillingAccount saved = repository.save(account);
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        saved.assignInvoice(buildAssignCmd(saved.getId()));
+        repository.save(saved);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        BillingAccount loaded = repository.findById(saved.getId()).orElseThrow();
+        Long invoiceIdToRemove = loaded.getInvoices().get(0).getId();
+        loaded.deleteInvoice(invoiceIdToRemove);
+        repository.save(loaded);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Assert
+        BillingAccount reloaded = repository.findById(saved.getId()).orElseThrow();
+        assertThat(reloaded.getInvoices()).hasSize(1);
+        assertThat(reloaded.getInvoices().get(0).getId()).isNotEqualTo(invoiceIdToRemove);
+    }
+ 
+    @Test
+    @DisplayName("should return all BillingAccounts belonging to the given AcademyId")
+    void shouldFindAllByAcademyId() {
+        // Arrange
+        repository.save(buildAccount(STUDENT_A, DNI_A, ACADEMY_1));
+        repository.save(buildAccount(STUDENT_B, DNI_B, ACADEMY_1));
+        repository.save(buildAccount(new StudentId(30L), new DniNumber("11111111"), ACADEMY_2));
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        List<BillingAccount> results = repository.findAllByAcademyId(ACADEMY_1);
+ 
+        // Assert
+        assertThat(results).hasSize(2);
+        assertThat(results).allMatch(a -> a.getAcademyId().equals(ACADEMY_1));
+    }
+}
+```
+ 
+*Resumen de prueba*: Asegura que los endpoints de facturación respondan correctamente a las peticiones del administrador, validando la capa de persistencia completa. Al igual que en Attendance, se usa `@DataJpaTest` con H2 y el patrón flush/clear para forzar round-trips reales. Se verifican cuatro comportamientos: la persistencia del agregado con Value Objects embebidos (`StudentId`, `DniNumber`, `AcademyId`), el cascade de las entidades `Invoice` al guardar la cuenta padre, la eliminación correcta de facturas huérfanas disparada por `orphanRemoval=true` en JPA, y el filtrado de cuentas por `AcademyId` que descarta registros de otras academias.
+ 
+![Bounded-Billing-Integration](./assets/test/billing2.png)
+ 
+---
+
 ##### Institution Bounded - Gestión de la Institución
 
 **Prueba 1: Integración de endpoints REST para la gestión de Academias**
@@ -8271,6 +8516,96 @@ Feature: Registro de Academia
 
 ![Bounded-Institution-BDD3](./assets/test/admin-bdd-test.png)
 
+---
+
+##### Billing Bounded - Gestión de Facturación
+ 
+**Feature y Step Definitions**
+ 
+*User Story relacionada*: US022, US023 y US024
+ 
+```gherkin
+# src/test/resources/features/billing.feature
+@billing
+Feature: Manage billing accounts and invoices for enrolled students
+ 
+  Background:
+    Given a billing account exists for student with DNI "12345678" in academy with ID 1
+```
+ 
+Los step definitions en `BillingAccountSteps.java` usan `@SpringBootTest` con repositorio JPA real en perfil H2. El Background crea y persiste la cuenta en BD antes de cada escenario. Los steps Given adicionales crean y persisten facturas capturando el ID generado por la BD (`lastInvoiceId`), necesario para las operaciones de pago y eliminación. Las excepciones en steps `@When` se capturan en try-catch para ser asertadas en los steps `@Then` de camino de error.
+ 
+---
+ 
+**Escenario 1: Asignación exitosa de factura a una cuenta de facturación**
+ 
+*User Story relacionada*: US022 - Generación de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Assign a new invoice to a billing account
+    When the admin assigns an invoice of type "STUDENT_MONTHLY_FEE" with amount 150.00 and description "Monthly fee May 2026"
+    Then the billing account should have 1 invoice with status "PENDING"
+```
+ 
+*Resumen de prueba*: Valida el ciclo de inicio de la gestión financiera con persistencia real. El Background crea la cuenta en BD, When el administrador asigna una factura de tipo `STUDENT_MONTHLY_FEE` por S/. 150.00 (el step llama a `assignInvoice()` y guarda con el repositorio), Then el step recarga la cuenta desde BD y confirma que tiene exactamente 1 factura en estado `PENDING`. La carga desde BD valida que la relación `@OneToMany` con cascade persiste correctamente.
+ 
+![Bounded-Billing-BDD1](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 2: Marcado de factura como pagada**
+ 
+*User Story relacionada*: US023 - Actualización de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Mark an existing invoice as paid
+    Given the billing account has a PENDING invoice with description "Enrollment fee"
+    When the admin marks the invoice as paid
+    Then the invoice status should be "PAID"
+```
+ 
+*Resumen de prueba*: Valida el ciclo de vida de una factura desde su creación hasta el pago en un flujo con BD real. El Given adicional crea la factura, la persiste y captura el `lastInvoiceId` generado por H2. When el step llama a `markInvoiceAsPaid(lastInvoiceId)` y guarda el agregado, Then el step busca la factura específica por `findInvoiceById(lastInvoiceId)` en la cuenta recargada desde BD y verifica que su estado es `PAID`. Clave para el control de ingresos de la academia.
+ 
+![Bounded-Billing-BDD2](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 3: Eliminación exitosa de factura PENDING**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```gherkin
+  @happy-path
+  Scenario: Delete a pending invoice from a billing account
+    Given the billing account has a PENDING invoice with description "One-time payment"
+    When the admin deletes the invoice
+    Then the billing account should have 0 invoices
+```
+ 
+*Resumen de prueba*: Verifica que el sistema permita eliminar facturas `PENDING` con persistencia completa. El Given persiste la factura y captura su ID, el When invoca `deleteInvoice(lastInvoiceId)` y guarda el agregado (disparando `orphanRemoval=true` en JPA que borra el registro huérfano de la BD), y el Then recarga la cuenta desde BD y verifica que el conteo de facturas es 0. Este escenario cubre el caso de facturas generadas por error antes del cobro.
+ 
+![Bounded-Billing-BDD3](./assets/test/billing3.png)
+ 
+---
+ 
+**Escenario 4: Rechazo de eliminación de factura PAID**
+ 
+*User Story relacionada*: US024 - Eliminación de Boletas de Pago
+ 
+```gherkin
+  @error-path
+  Scenario: Attempt to delete a paid invoice
+    Given the billing account has a PAID invoice with description "Already paid fee"
+    When the admin deletes the invoice
+    Then an error should be raised indicating the invoice cannot be deleted
+```
+ 
+*Resumen de prueba*: Garantiza que la regla de negocio que protege el historial contable consolidado funcione en el flujo completo con persistencia real. El Given crea la factura como `PENDING`, la persiste, la marca como `PAID` y guarda nuevamente. When el step intenta `deleteInvoice(lastInvoiceId)` y captura la excepción en try-catch, Then el step verifica que `capturedException` es una `IllegalStateException` con mensaje "Cannot delete a paid invoice". La prueba garantiza que ningún dato financiero ya pagado pueda ser eliminado desde ningún punto del sistema.
+ 
+![Bounded-Billing-BDD4](./assets/test/billing3.png)
+ 
 ---
 
 ##### Scheduling Bounded - Gestión de Horarios
