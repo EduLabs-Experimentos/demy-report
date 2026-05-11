@@ -7441,201 +7441,175 @@ IllegalArgumentException exception = assertThrows(IllegalArgumentException.class
 
 ##### Enrollment Bounded - Gestión de Matrículas
 
-```
-@ExtendWith(MockitoExtension.class)
-@MockitoSettings(strictness = Strictness.LENIENT)
-class EnrollmentCommandServiceImplTest {
+## Pruebas Unitarias — EnrollmentCommandServiceImpl
 
-    @Mock
-    private EnrollmentRepository enrollmentRepository;
+---
 
-    @Mock
-    private StudentRepository studentRepository;
+**Prueba 1: Crear matrícula exitosamente retorna el ID generado**
 
-    @Mock
-    private ExternalSchedulingService externalSchedulingService;
+*User Story relacionada*: US007 — Matrícula de Alumno
 
-    @Mock
-    private ExternalIamService externalIamService;
+```java
+@Test
+@DisplayName("US007 — Crear matrícula exitosamente retorna el ID generado")
+void handle_CreateEnrollment_Success_ReturnsId() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+    when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId)).thenReturn(Optional.empty());
+    when(studentRepository.findById(STUDENT_ID)).thenReturn(Optional.of(student));
+    when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> {
+        Enrollment e = inv.getArgument(0);
+        return e;
+    });
 
-    @InjectMocks
-    private EnrollmentCommandServiceImpl enrollmentCommandService;
+    // Act
+    Long result = enrollmentCommandService.handle(createCommand);
 
-
-    private static final Long   STUDENT_ID  = 1L;
-    private static final Long   PERIOD_ID   = 10L;
-    private static final Long   SCHEDULE_ID = 100L;
-    private static final Long   ACADEMY_ID  = 5L;
-    private static final Long   ENROLLMENT_ID = 999L;
-
-    private StudentId  studentId;
-    private PeriodId   periodId;
-    private ScheduleId scheduleId;
-    private AcademyId  academyId;
-    private Money      money;
-
-    private CreateEnrollmentCommand createCommand;
-    private UpdateEnrollmentCommand updateCommand;
-    private DeleteEnrollmentCommand deleteCommand;
-
-    private Enrollment enrollment;
-    private Student    student;
-
-    @BeforeEach
-    void setUp() {
-        studentId  = new StudentId(STUDENT_ID);
-        periodId   = new PeriodId(PERIOD_ID);
-        scheduleId = new ScheduleId(SCHEDULE_ID);
-        academyId  = new AcademyId(ACADEMY_ID);
-        money      = new Money(new BigDecimal("500.00"), Currency.getInstance("PEN"));
-
-        createCommand = new CreateEnrollmentCommand(
-                studentId, periodId, scheduleId, money, PaymentStatus.PENDING
-        );
-
-        updateCommand = new UpdateEnrollmentCommand(
-                ENROLLMENT_ID,
-                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
-                EnrollmentStatus.ACTIVE,
-                PaymentStatus.PAID
-        );
-
-        deleteCommand = new DeleteEnrollmentCommand(ENROLLMENT_ID);
-
-        // Enrollment creado via factory (ACTIVE, monto válido)
-        enrollment = Enrollment.createEnrollmentActive(
-                studentId, periodId, scheduleId, academyId, money, PaymentStatus.PENDING
-        );
-
-        student = mock(Student.class);
-        when(student.getDni()).thenReturn(new DniNumber("12345678"));
-    }
-    
-
-    @Test
-    @DisplayName("US007 — Crear matrícula exitosamente retorna el ID generado")
-    void handle_CreateEnrollment_Success_ReturnsId() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
-        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId)).thenReturn(Optional.empty());
-        when(studentRepository.findById(STUDENT_ID)).thenReturn(Optional.of(student));
-        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> {
-            Enrollment e = inv.getArgument(0);
-            return e;
-        });
-
-        // Act
-        Long result = enrollmentCommandService.handle(createCommand);
-
-        // Assert
-        verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
-    }
-
-    @Test
-    @DisplayName("US007 — Crear matrícula duplicada lanza EnrollmentAlreadyExistsException")
-    void handle_CreateEnrollment_DuplicateEnrollment_ThrowsAlreadyExistsException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
-        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId))
-                .thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(createCommand))
-                .isInstanceOf(EnrollmentAlreadyExistsException.class);
-
-        verify(enrollmentRepository, never()).save(any());
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula existente en academia correcta llama deleteById")
-    void handle_DeleteEnrollment_Success_CallsDeleteById() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act
-        enrollmentCommandService.handle(deleteCommand);
-
-        // Assert
-        verify(enrollmentRepository, times(1)).deleteById(ENROLLMENT_ID);
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula inexistente lanza EnrollmentNotFoundException")
-    void handle_DeleteEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-
-        verify(enrollmentRepository, never()).deleteById(any());
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException")
-    void handle_DeleteEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        AcademyId otherAcademy = new AcademyId(99L);
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula existente retorna Optional con matrícula actualizada")
-    void handle_UpdateEnrollment_Success_ReturnsUpdatedEnrollment() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> inv.getArgument(0));
-
-        // Act
-        Optional<Enrollment> result = enrollmentCommandService.handle(updateCommand);
-
-        // Assert
-        assertThat(result).isPresent();
-        assertThat(result.get().getEnrollmentStatus()).isEqualTo(EnrollmentStatus.ACTIVE);
-        assertThat(result.get().getPaymentStatus()).isEqualTo(PaymentStatus.PAID);
-        verify(enrollmentRepository, times(1)).save(enrollment);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula inexistente lanza EnrollmentNotFoundException")
-    void handle_UpdateEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula de academia diferente lanza EnrollmentNotFoundException")
-    void handle_UpdateEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        AcademyId otherAcademy = new AcademyId(99L);
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
+    // Assert
+    verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
 }
-
 ```
-![Boundede-Enrollment1](./assets/test/enrollment1.png)
+
+*Resumen de prueba*: Verifica que la creación de una matrícula válida invoque correctamente el repositorio y retorne un ID. El test arrange configura los mocks para que el servicio IAM retorne un `academyId` válido, el servicio de scheduling confirme el horario, no exista duplicado en el repositorio y el `save` devuelva el enrollment. El act ejecuta el comando de creación y el assert verifica que `save` fue llamado exactamente una vez. Esta prueba garantiza el flujo exitoso de registro de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 2: Crear matrícula duplicada lanza EnrollmentAlreadyExistsException**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```java
+@Test
+@DisplayName("US007 — Crear matrícula duplicada lanza EnrollmentAlreadyExistsException")
+void handle_CreateEnrollment_DuplicateEnrollment_ThrowsAlreadyExistsException() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+    when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId))
+            .thenReturn(Optional.of(enrollment));
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(createCommand))
+            .isInstanceOf(EnrollmentAlreadyExistsException.class);
+
+    verify(enrollmentRepository, never()).save(any());
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace la creación de una matrícula cuando ya existe una activa para el mismo estudiante y periodo. El test arrange configura el repositorio para retornar un enrollment existente ante la búsqueda por `studentId` y `periodId`. El act & assert comprueba que se lanza `EnrollmentAlreadyExistsException` y que el método `save` nunca es invocado. Esta prueba garantiza la integridad de datos evitando matrículas duplicadas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 3: Eliminar matrícula existente en academia correcta llama deleteById**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula existente en academia correcta llama deleteById")
+void handle_DeleteEnrollment_Success_CallsDeleteById() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+    // Act
+    enrollmentCommandService.handle(deleteCommand);
+
+    // Assert
+    verify(enrollmentRepository, times(1)).deleteById(ENROLLMENT_ID);
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de una matrícula existente perteneciente a la academia correcta invoque `deleteById` en el repositorio. El test arrange configura el IAM para retornar el `academyId` correcto y el repositorio para encontrar el enrollment por ID. El act ejecuta el comando de eliminación y el assert verifica que `deleteById` fue llamado exactamente una vez con el ID correspondiente. Esta prueba garantiza el flujo exitoso de cancelación de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 4: Eliminar matrícula inexistente lanza EnrollmentNotFoundException**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula inexistente lanza EnrollmentNotFoundException")
+void handle_DeleteEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+            .isInstanceOf(EnrollmentNotFoundException.class);
+
+    verify(enrollmentRepository, never()).deleteById(any());
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema lance `EnrollmentNotFoundException` al intentar eliminar una matrícula que no existe en el repositorio. El test arrange configura el repositorio para retornar `Optional.empty()` ante la búsqueda por ID. El act & assert comprueba que se lanza la excepción correcta y que `deleteById` nunca es invocado. Esta prueba garantiza el manejo correcto de recursos inexistentes en la cancelación de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 5: Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException")
+void handle_DeleteEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
+    // Arrange
+    AcademyId otherAcademy = new AcademyId(99L);
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+            .isInstanceOf(EnrollmentNotFoundException.class);
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema impida eliminar una matrícula que pertenece a una academia distinta a la del contexto actual. El test arrange configura el IAM para retornar un `academyId` diferente (99L) al de la matrícula registrada (5L). El act & assert comprueba que se lanza `EnrollmentNotFoundException` al detectar la discrepancia de academia. Esta prueba garantiza el aislamiento de datos entre academias.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 6: Actualizar matrícula existente retorna Optional con matrícula actualizada**
+
+*User Story relacionada*: US008 — Actualización de Matrícula
+
+```java
+@Test
+@DisplayName("US008 — Actualizar matrícula existente retorna Optional con matrícula actualizada")
+void handle_UpdateEnrollment_Success_ReturnsUpdatedEnrollment() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+    when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> inv.getArgument(0));
+
+    // Act
+    Optional<Enrollment> result = enrollmentCommandService.handle(updateCommand);
+
+    // Assert
+    assertThat(result).isPresent();
+    assertThat(result.get().getEnrollmentStatus()).isEqualTo(EnrollmentStatus.ACTIVE);
+    assertThat(result.get().getPaymentStatus()).isEqualTo(PaymentStatus.PAID);
+    verify(enrollmentRepository, times(1)).save(enrollment);
+}
+```
+
+*Resumen de prueba*: Verifica que la actualización de una matrícula existente retorne un `Optional` con los datos correctamente modificados. El test arrange configura el IAM con el academy correcto, el repositorio para encontrar el enrollment y el `save` para devolver el mismo objeto. El act ejecuta el comando de actualización y el assert verifica que el resultado esté presente, con `enrollmentStatus` ACTIVE y `paymentStatus` PAID. Esta prueba garantiza la correcta modificación de matrículas activas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
 
 ##### Accounting & Finance Bounded Context - Gestión de Transacciones Financieras
 
@@ -8864,150 +8838,153 @@ class WeeklySchedulesControllerIntegrationTest {
 
 ---
 
-##### Enrollment Management API
+##### Enrollment Bounded - Gestion Matriculas 
 
-```
+*Prueba 1: Creación de matricula retorna 201
 
-@WebMvcTest(controllers = EnrollmentsController.class,
-        excludeAutoConfiguration = {
-                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
-                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
-        })
-@ActiveProfiles("test")
-@AutoConfigureMockMvc(addFilters = false)
-class EnrollmentsControllerIntegrationTest {
+*User Story relacionada*: US011 — Creación de Matrículas
 
-    @Autowired
-    private MockMvc mockMvc;
+```java
+@Test
+@DisplayName("TS011 — POST /enrollments con datos válidos retorna 201 Created")
+void createEnrollment_ValidRequest_Returns201() throws Exception {
+    // Arrange
+    CreateEnrollmentResource resource = new CreateEnrollmentResource(
+            STUDENT_ID, PERIOD_ID, SCHEDULE_ID, "500.00", "PEN", "PENDING"
+    );
+    when(enrollmentCommandService.handle(any(CreateEnrollmentCommand.class)))
+            .thenReturn(ENROLLMENT_ID);
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.of(sampleEnrollment));
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @MockitoBean
-    private EnrollmentCommandService enrollmentCommandService;
-
-    @MockitoBean
-    private EnrollmentQueryService enrollmentQueryService;
-
-
-    @MockitoBean
-    private LocalizationService localizationService;
-
-    @MockitoBean
-    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
-
-
-    private static final Long ENROLLMENT_ID = 1L;
-    private static final Long STUDENT_ID    = 10L;
-    private static final Long PERIOD_ID     = 20L;
-    private static final Long SCHEDULE_ID   = 30L;
-    private static final Long ACADEMY_ID    = 5L;
-
-    private Enrollment sampleEnrollment;
-
-    @BeforeEach
-    void setUp() {
-        sampleEnrollment = Enrollment.createEnrollmentActive(
-                new StudentId(STUDENT_ID),
-                new PeriodId(PERIOD_ID),
-                new ScheduleId(SCHEDULE_ID),
-                new AcademyId(ACADEMY_ID),
-                new Money(new BigDecimal("500.00"), Currency.getInstance("PEN")),
-                PaymentStatus.PENDING
-        );
-    }
-
-    @Test
-    @DisplayName("TS011 — POST /enrollments con datos válidos retorna 201 Created")
-    void createEnrollment_ValidRequest_Returns201() throws Exception {
-        // Arrange
-        CreateEnrollmentResource resource = new CreateEnrollmentResource(
-                STUDENT_ID, PERIOD_ID, SCHEDULE_ID, "500.00", "PEN", "PENDING"
-        );
-        when(enrollmentCommandService.handle(any(CreateEnrollmentCommand.class)))
-                .thenReturn(ENROLLMENT_ID);
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
-                .thenReturn(Optional.of(sampleEnrollment));
-
-        // Act & Assert
-        mockMvc.perform(post("/api/v1/enrollments")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(resource)))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
-                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
-                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"))
-                .andExpect(jsonPath("$.paymentStatus").value("PENDING"));
-
-    }
-
-
-
-    @Test
-    @DisplayName("TS015 — GET /enrollments/{id} con ID existente retorna 200")
-    void getEnrollmentById_ExistingId_Returns200() throws Exception {
-        // Arrange
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
-                .thenReturn(Optional.of(sampleEnrollment));
-
-        // Act & Assert
-        mockMvc.perform(get("/api/v1/enrollments/{id}", ENROLLMENT_ID))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
-                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
-                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"));
-    }
-
-    @Test
-    @DisplayName("TS015 — GET /enrollments/{id} con ID inexistente retorna 404")
-    void getEnrollmentById_NonExistingId_Returns404() throws Exception {
-        // Arrange
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
-                .thenReturn(Optional.empty());
-
-        // Act & Assert
-        mockMvc.perform(get("/api/v1/enrollments/{id}", 9999L))
-                .andExpect(status().isNotFound());
-    }
-
-    @Test
-    @DisplayName("TS012 — PUT /enrollments/{id} con datos válidos retorna 200")
-    void updateEnrollment_ValidRequest_Returns200() throws Exception {
-        // Arrange
-        UpdateEnrollmentResource resource = new UpdateEnrollmentResource(
-                "600.00", "PEN", "ACTIVE", "PAID"
-        );
-        Enrollment updated = sampleEnrollment.updateInformation(
-                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
-                EnrollmentStatus.ACTIVE,
-                PaymentStatus.PAID
-        );
-        when(enrollmentCommandService.handle(any(UpdateEnrollmentCommand.class)))
-                .thenReturn(Optional.of(updated));
-
-        // Act & Assert
-        mockMvc.perform(put("/api/v1/enrollments/{id}", ENROLLMENT_ID)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(resource)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.paymentStatus").value("PAID"));
-    }
-
-
-    @Test
-    @DisplayName("TS013 — DELETE /enrollments/{id} exitoso retorna 200 con mensaje")
-    void deleteEnrollment_ExistingId_Returns200WithMessage() throws Exception {
-        // Arrange
-        doNothing().when(enrollmentCommandService).handle(any(DeleteEnrollmentCommand.class));
-
-        // Act & Assert
-        mockMvc.perform(delete("/api/v1/enrollments/{id}", ENROLLMENT_ID))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("successfully deleted")));
-    }
+    // Act & Assert
+    mockMvc.perform(post("/api/v1/enrollments")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(resource)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+            .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+            .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"))
+            .andExpect(jsonPath("$.paymentStatus").value("PENDING"));
 }
 ```
-![Boundede-Enrollment1](./assets/test/enrollment2.png)
+
+*Resumen de prueba*: Verifica que la creación de un enrollment con datos válidos retorne 201 Created. El test arrange construye un `CreateEnrollmentResource` con datos válidos y configura los mocks del command y query service, luego act envía un POST a `/api/v1/enrollments` con el body en JSON, y assert verifica el código 201 junto con los campos `studentId`, `periodId`, `enrollmentStatus` y `paymentStatus` en el response. Esta prueba garantiza el correcto registro de nuevas matrículas.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+---
+
+*Prueba 2: Obtención de matricula por ID existente retorna 200
+
+*User Story relacionada*: US007 — Gestion de matricula
+
+
+```java
+@Test
+@DisplayName("TS015 — GET /enrollments/{id} con ID existente retorna 200")
+void getEnrollmentById_ExistingId_Returns200() throws Exception {
+    // Arrange
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.of(sampleEnrollment));
+
+    // Act & Assert
+    mockMvc.perform(get("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+            .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+            .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"));
+}
+```
+
+*Resumen de prueba*: Verifica que la consulta de un enrollment con un ID existente retorne 200 OK con los datos correctos. El test arrange configura el mock del query service para retornar el enrollment de muestra, luego act envía un GET a `/api/v1/enrollments/1`, y assert verifica el código 200 junto con los campos `studentId`, `periodId` y `enrollmentStatus`. Esta prueba garantiza la correcta recuperación de matrículas existentes.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+---
+
+*Prueba 3: Obtención de matricula por ID inexistente retorna 404
+
+*User Story relacionada*: US008 — Listado de matricula
+
+
+```java
+@Test
+@DisplayName("TS015 — GET /enrollments/{id} con ID inexistente retorna 404")
+void getEnrollmentById_NonExistingId_Returns404() throws Exception {
+    // Arrange
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.empty());
+
+    // Act & Assert
+    mockMvc.perform(get("/api/v1/enrollments/{id}", 9999L))
+            .andExpect(status().isNotFound());
+}
+```
+
+*Resumen de prueba*: Verifica que la consulta de un enrollment con un ID que no existe retorne 404 Not Found. El test arrange configura el mock del query service para retornar un `Optional.empty()`, luego act envía un GET a `/api/v1/enrollments/9999`, y assert verifica el código 404. Esta prueba garantiza el manejo correcto de recursos inexistentes.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+---
+
+*Prueba 4: Actualización de matricula retorna 200*
+
+*User Story relacionada*: US008 — Actualizacion de matricula*
+
+
+```java
+@Test
+@DisplayName("TS012 — PUT /enrollments/{id} con datos válidos retorna 200")
+void updateEnrollment_ValidRequest_Returns200() throws Exception {
+    // Arrange
+    UpdateEnrollmentResource resource = new UpdateEnrollmentResource(
+            "600.00", "PEN", "ACTIVE", "PAID"
+    );
+    Enrollment updated = sampleEnrollment.updateInformation(
+            new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
+            EnrollmentStatus.ACTIVE,
+            PaymentStatus.PAID
+    );
+    when(enrollmentCommandService.handle(any(UpdateEnrollmentCommand.class)))
+            .thenReturn(Optional.of(updated));
+
+    // Act & Assert
+    mockMvc.perform(put("/api/v1/enrollments/{id}", ENROLLMENT_ID)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(resource)))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.paymentStatus").value("PAID"));
+}
+```
+
+*Resumen de prueba*: Verifica que la actualización de un enrollment con datos válidos retorne 200 OK con la información actualizada. El test arrange crea un `UpdateEnrollmentResource` con monto y estado actualizados, y configura el mock del command service para retornar el enrollment modificado, luego act envía un PUT a `/api/v1/enrollments/1`, y assert verifica el código 200 y que `paymentStatus` sea `PAID`. Esta prueba garantiza la correcta modificación de matrículas existentes.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+---
+
+*Prueba 5: Eliminación de enrollment retorna 200 con mensaje*
+
+*User Story relacionada*: US009 — Eliminacion de matricula
+
+
+```java
+@Test
+@DisplayName("TS013 — DELETE /enrollments/{id} exitoso retorna 200 con mensaje")
+void deleteEnrollment_ExistingId_Returns200WithMessage() throws Exception {
+    // Arrange
+    doNothing().when(enrollmentCommandService).handle(any(DeleteEnrollmentCommand.class));
+
+    // Act & Assert
+    mockMvc.perform(delete("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+            .andExpect(status().isOk())
+            .andExpect(content().string(containsString("successfully deleted")));
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de un enrollment existente retorne 200 OK junto con un mensaje de confirmación. El test arrange configura el mock del command service para no ejecutar ninguna acción (`doNothing`), luego act envía un DELETE a `/api/v1/enrollments/1`, y assert verifica el código 200 y que el body contenga el texto `"successfully deleted"`. Esta prueba garantiza que la eliminación de matrículas comunique correctamente el resultado al cliente.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
 
 #### Accounting & Finance
 
@@ -9572,7 +9549,7 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
-<<<<<<< HEAD
+
 #### Accounting & Finance
 
 **Prueba 1: Registro exitoso de ingreso financiero**
@@ -9640,123 +9617,53 @@ Scenario: US025 - Registro rechazado por monto negativo
 
 ![Bounded-Finance](./assets/test/finance_bdd4.png)
 
-### 6.1.4. Core System Tests
-=======
----
->>>>>>> develop
 
-##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
+##### Enrollment Bounded
+
+*User Story relacionada*: US007 - Registro de matricula
 
 ```
-Característica: Gestión de Matrículas
-  Como administrador
-  Quiero gestionar las inscripciones en la plataforma
-  Para asegurar que los usuarios estén correctamente registrados en los cursos
+Feature: Registrar matrícula de un estudiante
+  Para que se almacenen sus datos y se acceda a funcionalidades adicionales
+  Como administrativo
+  Quiero registrar alumnos en la aplicación web
 
-  Antecedentes:
-    Dado que el administrador ha iniciado sesión en la plataforma
-    Y que existen estudiantes, periodos y horarios disponibles en el sistema
+  Scenario Outline: Registro de matrícula
+    Given existe un Student con id <studentId>
+    And existe un AcademicPeriod con id <academicPeriodId>
+    And existe un WeeklySchedule con id <weeklyScheduleId>
+    And existe un Academy con id <academyId>
+    When intento registrar la matrícula con amount <amount> y currency <currency>
+    Then debe crearse una Enrollment con
+      | studentId        | <studentId>        |
+      | academicPeriodId | <academicPeriodId> |
+      | weeklyScheduleId | <weeklyScheduleId> |
+      | academyId        | <academyId>        |
+      | amount           | <amount>           |
+      | currency         | <currency>         |
+      | status           | <status>           |
 
-  # ─────────────────────────────────────────────
-  # US007 - Registro de Inscripción
-  # ─────────────────────────────────────────────
+    And el mensaje final es "<message>"
 
-  Esquema del escenario: US007 - Escenario 1 - Registro exitoso de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Cuando completa el formulario con los datos válidos de la inscripción
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | 1         | 1        | 1          | 350.00 | PEN      | PENDING       |
-    Y hace clic en el botón "Registrar Matrícula"
-    Entonces el sistema registra la inscripción correctamente
-    Y el formulario se limpia exitosamente
-    Y el estado "isFormSuccess" es verdadero
+    Examples:
+      | studentId | academicPeriodId | academyId | weeklyScheduleId | amount  | currency | status | message     |
+      | 5         | 7                | 2         | 1                | 1500.00 | PEN      | ACTIVE | Test Passed |
+      | 6         | 8                | 2         | 2                | -500.00 | PEN      | ACTIVE | Error       |
+      | 7         | 9                | 3         | 1                | 1200.00 | PEN      | ACTIVE | Test Passed |
 
-  Esquema del escenario: US007 - Escenario 2 - Error en el registro por datos incompletos
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Cuando intenta guardar la inscripción sin completar los campos obligatorios
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | null      | null     | null       |        | PEN      |               |
-    Entonces el botón "Registrar Matrícula" permanece deshabilitado
-    Y el sistema no envía ninguna solicitud de registro
-
-  Escenario: US007 - Escenario 3 - Error del servidor al registrar inscripción duplicada
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y el servidor responde con un error de conflicto al crear la matrícula
-    Cuando completa el formulario con datos de un estudiante ya inscrito
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | 1         | 1        | 1          | 350.00 | PEN      | PENDING       |
-    Y hace clic en el botón "Registrar Matrícula"
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-
-  # ─────────────────────────────────────────────
-  # US008 - Actualización de Inscripción
-  # ─────────────────────────────────────────────
-
-  Escenario: US008 - Escenario 1 - Actualización exitosa de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y modifica los campos de la inscripción con información válida
-      | amount | currency | paymentStatus | enrollmentStatus |
-      | 400.00 | PEN      | PAID          | ACTIVE           |
-    Y hace clic en el botón "Guardar Cambios"
-    Entonces el sistema actualiza la inscripción correctamente
-    Y el estado "isFormSuccess" es verdadero
-    Y la lista de matrículas se recarga
-
-  Escenario: US008 - Escenario 2 - Error al actualizar con datos inválidos
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y el servidor responde con un error al intentar actualizar
-    Y hace clic en el botón "Guardar Cambios"
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-    Y la inscripción no es modificada
-
-  Escenario: US008 - Escenario 3 - Cancelación de la edición
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y hace clic en el botón "Cancelar"
-    Entonces el formulario se limpia exitosamente
-    Y el campo "enrollmentToEdit" queda en nulo
-    Y no se realiza ninguna llamada al servidor
-
-  # ─────────────────────────────────────────────
-  # US009 - Cancelación de Inscripción
-  # ─────────────────────────────────────────────
-
-  Escenario: US009 - Escenario 1 - Eliminación exitosa de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción activa con id 5
-    Cuando hace clic en el botón eliminar de esa inscripción
-    Y confirma la acción de eliminación
-    Entonces el sistema elimina la inscripción correctamente
-    Y la lista de matrículas se recarga sin la inscripción eliminada
-
-  Escenario: US009 - Escenario 2 - Error del servidor al eliminar inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción activa con id 5
-    Y el servidor responde con un error al intentar eliminar
-    Cuando hace clic en el botón eliminar de esa inscripción
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-    Y la lista de matrículas no se modifica
 
 ```
 
-*Resumen de prueba*: Este conjunto de escenarios BDD describe los flujos de registro, actualización y eliminación de matrículas en el sistema. Given establece que el administrador ha iniciado sesión, existen estudiantes, periodos y horarios disponibles, y se tienen los permisos necesarios de gestión. When cubre acciones como completar el formulario con datos válidos, hacer clic en los botones de acción (Registrar Matrícula, Guardar Cambios, Cancelar, Eliminar) y confirmar operaciones. Then verifica que el sistema registra, actualiza o elimina la inscripción correctamente, que el formulario se limpia tras una operación exitosa, que se muestran mensajes de error ante fallos del servidor, y que el estado del ViewModel refleja el resultado esperado en cada caso. Estos escenarios validan el comportamiento completo del módulo de gestión de matrículas para las historias de usuario US007, US008 y US009.
+*Resumen de prueba:* Esta prueba garantiza que el sistema rechace montos inválidos y registre correctamente las matrículas con datos consistentes.
 
-![Bounded-Enrollment](./assets/test/enrollment4.png)
+
+![Boundede-Enrollment1](./assets/test/enrollment3.png)
+
 
 
 ### 6.1.4. Core System Tests
 
 Para garantizar la integridad del sistema en un entorno web real, hemos implementado pruebas de extremo a extremo (E2E) utilizando **Cypress**. Estas pruebas simulan el comportamiento de un usuario final navegando en la aplicación Angular, interactuando con los formularios y validando que las peticiones al backend (Spring Boot) persistan correctamente en la base de datos real.
-
-
 
 
 ##### Institution Frontend Web
@@ -9876,6 +9783,203 @@ describe('E2E: Gestión de Profesores (Teacher)', () => {
 ![Teacher System Test](./assets//test/teacher-system-test.png)
 
 
+#### Enrollment Mobile Application
+
+---
+
+**Prueba 1: Registro exitoso de inscripción**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@When("completa el formulario con los datos válidos de la inscripción")
+fun completaFormularioConDatosValidos(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el sistema registra la inscripción correctamente")
+fun sistemaRegistraInscripcionCorrectamente() = runTest(testDispatcher) {
+    verify(createEnrollmentUseCase, atLeastOnce()).invoke(any())
+}
+
+@Then("el formulario se limpia exitosamente")
+fun formularioSeLimpia() {
+    val formData = viewModel.formData.value
+    assertNull("studentId debe ser null", formData.studentId)
+    assertNull("periodId debe ser null",  formData.periodId)
+    assertNull("scheduleId debe ser null", formData.scheduleId)
+    assertEquals("", formData.amount)
+    assertEquals("PEN", formData.currency)
+    assertEquals("", formData.paymentStatus)
+}
+
+@Then("el estado {string} es verdadero")
+fun estadoEsVerdadero(estado: String) {
+    val state = viewModel.uiState.value
+    when (estado) {
+        "isFormSuccess" -> assertTrue("isFormSuccess debe ser true", state.isFormSuccess)
+        else            -> throw IllegalArgumentException("Estado desconocido: $estado")
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el registro de una matrícula con datos completos y válidos se procese correctamente. El given establece que el administrador tiene permisos y los datos auxiliares están disponibles, el when construye un `EnrollmentFormData` con `studentId=1`, `periodId=1`, `scheduleId=1`, `amount=350.00` y `paymentStatus=PENDING` y ejecuta `onSaveEnrollmentClick`, y el then verifica que `createEnrollmentUseCase` fue invocado, el formulario queda limpio y `isFormSuccess` es verdadero. Esta prueba garantiza el flujo exitoso de alta de matrículas en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 2: Error en el registro por datos incompletos**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@Cuando("intenta guardar la inscripción sin completar los campos obligatorios")
+fun intentaGuardarSinCamposObligatorios(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el botón {string} permanece deshabilitado")
+fun botonPermaneceDeshabilitado(boton: String) {
+    val formData = viewModel.formData.value
+    assertFalse(
+        "El formulario no debe ser válido cuando faltan campos obligatorios",
+        formData.isFormValid
+    )
+}
+
+@Then("el sistema no envía ninguna solicitud de registro")
+fun sistemaNoCreaInscripcion() = runTest(testDispatcher) {
+    verify(createEnrollmentUseCase, never()).invoke(any())
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema impida el envío del formulario cuando los campos obligatorios están vacíos o nulos. El when construye un `EnrollmentFormData` con `studentId=null`, `periodId=null`, `scheduleId=null` y `paymentStatus` vacío, y el then verifica que `isFormValid` es falso y que `createEnrollmentUseCase` nunca fue invocado. Esta prueba garantiza la validación de campos requeridos antes del registro en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 3: Error del servidor al registrar inscripción duplicada**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@Given("el servidor responde con un error de conflicto al crear la matrícula")
+fun servidorRespondeConflictoAlCrear() = runTest(testDispatcher) {
+    whenever(createEnrollmentUseCase(any()))
+        .thenReturn(Result.failure(Exception("409 - Ya existe una inscripción para este estudiante en el periodo seleccionado.")))
+}
+
+@Given("completa el formulario con datos de un estudiante ya inscrito")
+fun completaFormularioConEstudianteYaInscrito(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Given("el sistema muestra un mensaje de error al administrador")
+fun sistemaMuestraMensajeError() {
+    val state = viewModel.uiState.value
+    assertNotNull("errorMessage debe contener un mensaje", state.errorMessage)
+    assertTrue("El mensaje de error no debe estar vacío", state.errorMessage!!.isNotBlank())
+}
+
+@Then("el estado {string} es falso")
+fun estadoEsFalso(estado: String) {
+    val state = viewModel.uiState.value
+    when (estado) {
+        "isLoading" -> assertFalse("isLoading debe ser false", state.isLoading)
+        else        -> throw IllegalArgumentException("Estado desconocido: $estado")
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema maneje correctamente un error 409 de conflicto cuando se intenta registrar una matrícula duplicada. El given configura el mock de `createEnrollmentUseCase` para retornar un `Result.failure` con excepción 409, el when completa el formulario con datos de un estudiante ya inscrito y ejecuta `onSaveEnrollmentClick`, y el then verifica que `errorMessage` no es nulo ni vacío y que `isLoading` es falso. Esta prueba garantiza el manejo adecuado de duplicados en el registro de matrículas desde la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 4: Actualización exitosa de inscripción**
+
+*User Story relacionada*: US008 — Actualización de Matrícula
+
+```kotlin
+@When("selecciona la inscripción para editar")
+fun seleccionaInscripcionParaEditar() {
+    val enrollment = sampleEnrollments.first { it.id == 10L }
+    viewModel.onEnrollmentSelectedForEdit(enrollment)
+}
+
+@When("modifica los campos de la inscripción con información válida")
+fun modificaCamposConInformacionValida(dataTable: DataTable) = runTest(testDispatcher) {
+    val row = dataTable.asMaps().first()
+    val updatedEnrollment = sampleEnrollments.first { it.id == 10L }.copy(
+        amount           = row["amount"] ?: "350.00",
+        currency         = row["currency"] ?: "PEN",
+        paymentStatus    = PaymentStatus.valueOf(row["paymentStatus"] ?: "PENDING"),
+        enrollmentStatus = EnrollmentStatus.valueOf(row["enrollmentStatus"] ?: "ACTIVE")
+    )
+    whenever(updateEnrollmentUseCase(any())).thenReturn(Result.success(updatedEnrollment))
+    val updatedList = sampleEnrollments.map {
+        if (it.id == 10L) updatedEnrollment else it
+    }
+    whenever(getAllEnrollmentsUseCase()).thenReturn(Result.success(updatedList))
+
+    val formData = EnrollmentFormData(
+        studentId        = updatedEnrollment.studentId,
+        periodId         = updatedEnrollment.periodId,
+        scheduleId       = updatedEnrollment.scheduleId,
+        amount           = updatedEnrollment.amount,
+        currency         = updatedEnrollment.currency,
+        paymentStatus    = updatedEnrollment.paymentStatus.name,
+        enrollmentStatus = updatedEnrollment.enrollmentStatus?.name ?: "ACTIVE"
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el sistema actualiza la inscripción correctamente")
+fun sistemaActualizaInscripcionCorrectamente() = runTest(testDispatcher) {
+    verify(updateEnrollmentUseCase, atLeastOnce()).invoke(any())
+}
+
+@Then("la lista de matrículas se recarga")
+fun listaMatriculasSeRecarga() = runTest(testDispatcher) {
+    verify(getAllEnrollmentsUseCase, atLeastOnce()).invoke()
+}
+```
+
+*Resumen de prueba*: Verifica que la edición de una matrícula existente con datos válidos se procese y refleje correctamente en el sistema. El when selecciona el enrollment con `id=10L` mediante `onEnrollmentSelectedForEdit`, construye el `EnrollmentFormData` actualizado con `amount=400.00`, `paymentStatus=PAID` y `enrollmentStatus=ACTIVE`, y configura el mock para retornar `Result.success`. El then verifica que `updateEnrollmentUseCase` fue invocado y que `getAllEnrollmentsUseCase` se llamó nuevamente para recargar la lista. Esta prueba garantiza el flujo completo de modificación de matrículas en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+
 ##### Institution Mobile Application
 
 
@@ -9944,9 +10048,7 @@ Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en s
 
 ---
 
-##### Enrollment Management API
 
-<hr class="page-break">
 
 # Capítulo VII: DevOPS Practices
 
