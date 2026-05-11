@@ -8029,9 +8029,86 @@ class EnrollmentsControllerIntegrationTest {
 
 ### 6.1.3. Core Behavior-Driven Development
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Feature y Step Definitions**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+# src/test/resources/features/attendance.feature
+@attendance
+Feature: Mark student attendance in a class session
+ 
+  Background:
+    Given an academy with ID 1 and a class session with ID 1 exists for today's date
+    And the following students are enrolled in the session:
+      | dni      | initialStatus |
+      | 12345678 | ABSENT        |
+      | 87654321 | ABSENT        |
+```
+ 
+Los step definitions correspondientes en `AttendanceSteps.java` usan `@SpringBootTest` con el repositorio JPA real en perfil H2, lo que permite validar la integración completa del dominio con la persistencia. El `@Before` de Cucumber limpia la tabla antes de cada escenario garantizando aislamiento. La excepción en el step `@When` se captura en un try-catch para poder ser asertada en el step `@Then` correspondiente, evitando que cruce los límites del step definition y falle el runner.
+ 
+---
+ 
+**Escenario 1: Actualización exitosa de ABSENT a PRESENT**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to PRESENT
+    Given the student with DNI "12345678" has status "ABSENT"
+    When the teacher marks the student with DNI "12345678" as "PRESENT"
+    Then the attendance record for DNI "12345678" should have status "PRESENT"
+```
+ 
+*Resumen de prueba*: Cubre el camino feliz del registro de asistencia. Given confirma que el estudiante "12345678" existe en el agregado con estado `ABSENT` (pre-condición establecida por el Background), When el docente lo marca como `PRESENT` (el step actualiza el agregado y lo persiste), Then el step recarga el agregado desde la BD real mediante `findByIdAndAcademyId` y verifica que el estado persiste correctamente como `PRESENT`. La prueba valida el flujo completo de dominio y persistencia.
+ 
+![Bounded-Attendance-BDD1](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 2: Actualización exitosa de ABSENT a EXCUSED**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @happy-path
+  Scenario: Update a student's attendance from ABSENT to EXCUSED
+    Given the student with DNI "87654321" has status "ABSENT"
+    When the teacher marks the student with DNI "87654321" as "EXCUSED"
+    Then the attendance record for DNI "87654321" should have status "EXCUSED"
+```
+ 
+*Resumen de prueba*: Valida que el sistema soporte el estado de ausencia justificada `EXCUSED` en el flujo completo con persistencia real. Given el estudiante "87654321" está en estado `ABSENT`, When el profesor lo marca como `EXCUSED` y el agregado se guarda en BD, Then el step recarga el registro y verifica que el estado es `EXCUSED`. Este escenario asegura que todos los estados del dominio sean tratados de forma consistente por la capa de persistencia JPA.
+ 
+![Bounded-Attendance-BDD2](./assets/test/attendance3.png)
+ 
+---
+ 
+**Escenario 3: Error al marcar asistencia de DNI no matriculado**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia
+ 
+```gherkin
+  @error-path
+  Scenario: Attempt to update attendance for a non-enrolled DNI
+    Given the student with DNI "00000001" is not enrolled in the session
+    When the teacher marks the student with DNI "00000001" as "PRESENT"
+    Then an error should be raised indicating that the DNI was not found
+```
+ 
+*Resumen de prueba*: Cubre el camino de error protegiendo la integridad del registro de asistencia. Given verifica que el DNI "00000001" no existe en la colección `getAttendance()` del agregado, When el step intenta `updateRecordStatus()` y captura la excepción en el try-catch sin relanzarla, Then el step verifica que `capturedException` es una `IllegalArgumentException` cuyo mensaje contiene "does not exist". El manejo explícito de la excepción en el step del When es clave para que Cucumber pueda evaluar el Then sin interrumpir el escenario.
+ 
+![Bounded-Attendance-BDD3](./assets/test/attendance3.png)
+ 
+---
+
 ##### IAM Bounded - Identity and Access Management
 
-**Escenario 1: Registro exitoso de nuevo usuario**
+**Escenario 1: Registro exitoso de nuevo usua rio**
 
 *User Story relacionada*: US032 - Registro de Cuenta
 
