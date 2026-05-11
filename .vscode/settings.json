@@ -1,0 +1,13 @@
+{
+  "markdown-pdf.format": "A4",
+  "markdown-pdf.margin.top": "25mm",
+  "markdown-pdf.margin.bottom": "25mm",
+  "markdown-pdf.margin.left": "25mm",
+  "markdown-pdf.margin.right": "25mm",
+  "markdown-pdf.styles": [
+    ".vscode/styles.css"
+  ],
+  "markdown-pdf.displayHeaderFooter": true,
+  "markdown-pdf.headerTemplate": "<div style=\"width:100%; box-sizing:border-box; padding-right:5mm; font-size:12pt; font-family: 'Times New Roman','TimesNewRomanPSMT','Times',serif; text-align:right;\"><span class='pageNumber'></span></div>",
+  "markdown-pdf.footerTemplate": "<span></span>"
+}
