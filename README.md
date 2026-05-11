@@ -7001,6 +7001,130 @@ class EnrollmentCommandServiceImplTest {
 
 ### 6.1.2. Core Integration Tests
 
+##### Attendance Bounded - Gestión de Asistencia
+ 
+**Prueba 1: Integración del repositorio JPA para la gestión de Asistencia**
+ 
+*User Story relacionada*: US010 - Registro de Asistencia / US011 - Actualización de Asistencia
+ 
+```java
+@DataJpaTest
+@ActiveProfiles("test")
+@DisplayName("ClassAttendanceRepository Integration Tests")
+class ClassAttendanceRepositoryTest {
+ 
+    @Autowired
+    private TestEntityManager entityManager;
+ 
+    @Autowired
+    private ClassAttendanceRepository repository;
+ 
+    @Test
+    @DisplayName("should persist and load ClassAttendance with embedded Value Objects")
+    void shouldPersistAndLoadWithEmbeddedValueObjects() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_1,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findById(saved.getId());
+ 
+        // Assert
+        assertThat(found).isPresent();
+        ClassAttendance loaded = found.get();
+        assertThat(loaded.getClassSessionId()).isEqualTo(SESSION_1);
+        assertThat(loaded.getDate()).isEqualTo(LocalDate.now());
+        assertThat(loaded.getAcademyId()).isEqualTo(ACADEMY_ID);
+    }
+ 
+    @Test
+    @DisplayName("should cascade and persist AttendanceRecords when saving the Aggregate")
+    void shouldCascadeAttendanceRecordsOnSave() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_2,
+                List.of(
+                        new AttendanceInput(DNI_1, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_2, AttendanceStatus.ABSENT),
+                        new AttendanceInput(DNI_3, AttendanceStatus.EXCUSED)
+                )
+        );
+ 
+        // Act
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        Optional<ClassAttendance> found = repository.findByIdAndAcademyId(saved.getId(), ACADEMY_ID);
+ 
+        // Assert
+        assertThat(found).isPresent();
+        List<AttendanceRecord> records = found.get().getAttendance();
+        assertThat(records).hasSize(3);
+        assertThat(records)
+                .extracting(r -> r.getDni().dniNumber())
+                .containsExactlyInAnyOrder("11111111", "22222222", "33333333");
+    }
+ 
+    @Test
+    @DisplayName("should remove orphaned AttendanceRecords due to orphanRemoval = true")
+    void shouldRemoveOrphanedRecords() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(SESSION_3,
+                List.of(
+                        new AttendanceInput(DNI_4, AttendanceStatus.PRESENT),
+                        new AttendanceInput(DNI_5, AttendanceStatus.ABSENT)
+                )
+        );
+        ClassAttendance saved = repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        ClassAttendance loaded = repository.findById(saved.getId()).orElseThrow();
+        loaded.getAttendance().removeIf(r -> r.getDni().equals(DNI_4));
+        repository.save(loaded);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Assert
+        ClassAttendance reloaded = repository.findById(saved.getId()).orElseThrow();
+        assertThat(reloaded.getAttendance()).hasSize(1);
+        assertThat(reloaded.getAttendance().get(0).getDni()).isEqualTo(DNI_5);
+    }
+ 
+    @Test
+    @DisplayName("should detect duplicate attendance for the same academy, session, and date")
+    void shouldDetectDuplicateAttendance() {
+        // Arrange
+        ClassAttendance attendance = buildAggregate(
+                SESSION_4,
+                List.of(new AttendanceInput(DNI_1, AttendanceStatus.PRESENT))
+        );
+        repository.save(attendance);
+        entityManager.flush();
+        entityManager.clear();
+ 
+        // Act
+        boolean exists = repository.existsByAcademyIdAndClassSessionIdAndDate(
+                ACADEMY_ID, SESSION_4, LocalDate.now());
+ 
+        // Assert
+        assertThat(exists).isTrue();
+    }
+}
+```
+ 
+*Resumen de prueba*: Valida la exposición de los servicios que el profesor consume desde el frontend para gestionar la asistencia, verificando la capa de persistencia completa. Usando `@DataJpaTest` con base de datos H2 en memoria y el patrón `entityManager.flush()` + `entityManager.clear()` para forzar un round-trip real a la BD descartando la caché de primer nivel, se verifican cuatro comportamientos críticos: la persistencia correcta del agregado con sus Value Objects embebidos, el cascade de los `AttendanceRecord` al guardar el padre, la eliminación de registros huérfanos por `orphanRemoval=true`, y la detección de asistencias duplicadas por academia, sesión y fecha.
+ 
+![Bounded-Attendance-Integration](./assets/test/attendance2.png)
+
 ##### IAM Bounded - Identity and Access Management
 
 **Prueba 1: Inicio de sesión con credenciales válidas retorna 200**
