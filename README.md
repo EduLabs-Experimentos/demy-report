@@ -9078,7 +9078,7 @@ describe('Billing Flow - Desktop', () => {
     cy.get('.cancel-button').click();
     cy.get('.confirm-dialog').should('not.exist');
     cy.get('.invoice-row').should('have.length', 1);
-  });
+  });//.
 });
 
 ```
