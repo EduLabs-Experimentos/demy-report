@@ -9678,9 +9678,6 @@ Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en s
 ### Billing Frontend Web
 *Prueba 1: Flujo de Gestión de Facturas (Web)* : User Story relacionada: US022, US023 y US024
 
-### Billing Frontend Web
-*Prueba 1: Flujo de Gestión de Facturas (Web)* : User Story relacionada: US022, US023 y US024
-
 ```
 describe('Billing Flow - Desktop', () => {
   const BASE_URL = 'http://localhost:4200';
