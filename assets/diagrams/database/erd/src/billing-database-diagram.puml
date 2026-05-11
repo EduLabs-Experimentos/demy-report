@@ -1,0 +1,29 @@
+@startuml Demy: Billing Database Diagram
+title Demy: Billing Database Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "billing_accounts" as billing_accounts {
+  *id : BIGINT <<PK>>
+  --
+  *studentId : BIGINT
+  *account_status : ENUM('ACTIVE','OVERDUE','SUSPENDED','CANCELLED')
+}
+
+entity "invoices" as invoices {
+  *id : BIGINT <<PK>>
+  --
+  *invoice_type : ENUM('ENROLLMENT','MONTHLY','OTHER')
+  *amount : DECIMAL(12,2)
+  *currency : VARCHAR(3)
+  *description : VARCHAR(255)
+  *issue_date : DATE
+  *due_date : DATE
+  *invoice_status : ENUM('PENDING','PAID','OVERDUE','CANCELLED')
+  *billing_accounts_id : BIGINT <<FK>>
+}
+
+billing_accounts ||--o{ invoices
+
+@enduml

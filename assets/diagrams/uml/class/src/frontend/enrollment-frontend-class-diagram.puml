@@ -1,0 +1,276 @@
+@startuml Demy: Enrollment Frontend Class Diagram
+title Demy: Enrollment Frontend Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #FAFAFA
+  BorderColor #757575
+  ArrowColor #424242
+}
+
+package "shared" {
+  package "components" {
+    class "BaseFormComponent" <<Component>> {
+      + isInvalidControl(form: FormGroup, controlName: string): boolean
+      + errorMessagesForControl(form: FormGroup, controlName: string): string
+      + errorMessageForControl(controlName: string, errorKey: string): string
+    }
+  }
+
+  package "services" {
+    abstract class "BaseService<T>" <<Service>> {
+      # resourceEndpoint: string
+      + getAll(): Observable<T[]>
+      + getById(id: string): Observable<T>
+      + create(entity: T): Observable<T>
+      + update(id: string, entity: T): Observable<T>
+      + delete(id: string): Observable<void>
+    }
+  }
+}
+
+package "enrollment" {
+
+  package "components" {
+    class "StudentCreateFormComponent" <<Component>> {
+      sexOptions: {value: string, viewValue: string}[]
+      @Input() student: Student
+      @Input() editMode: boolean
+      @Output() studentAddRequested: EventEmitter<Student>
+      @Output() studentUpdateRequested: EventEmitter<Student>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('studentForm') studentForm: NgForm
+      + constructor()
+      + resetEditState(): void
+      + isValid(): boolean
+      + isEditMode(): boolean
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "AcademicPeriodCreateFormComponent" <<Component>> {
+      @Input() academicPeriod: AcademicPeriod
+      @Input() editMode: boolean
+      @Output() academicPeriodAddRequested: EventEmitter<AcademicPeriod>
+      @Output() academicPeriodUpdateRequested: EventEmitter<AcademicPeriod>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('academicPeriodForm') academicPeriodForm: NgForm
+      + constructor()
+      + resetEditState(): void
+      + isValid(): boolean
+      + isEditMode(): boolean
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "EnrollmentsCreateFormComponent" <<Component>> {
+      enrollmentStatusOptions: {value: string, viewValue: string}[]
+      paymentStatusOptions: {value: string, viewValue: string}[]
+      studentOptions: Student[]
+      periodOptions: AcademicPeriod[]
+      studentService: StudentService
+      @Input() enrollment: Enrollment
+      @Input() editMode: boolean
+      @Output() enrollmentAddRequested: EventEmitter<Enrollment>
+      @Output() enrollmentUpdateRequested: EventEmitter<Enrollment>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('enrollmentForm') enrollmentForm: NgForm
+      + constructor(academicPeriodService: AcademicPeriodService, studentService: StudentService)
+      + ngOnInit(): void
+      + loadAcademicPeriods(): void
+      + resetEditState(): void
+      + isValid(): boolean
+      + isEditMode(): boolean
+      + onSubmit(): void
+      + onCancel(): void
+    }
+
+    class "StudentManagementComponent" <<Component>> {
+      studentData: Student
+      columnsToDisplay: string[]
+      paginator: MatPaginator
+      sort: MatSort
+      editMode: boolean
+      dataSource: MatTableDataSource<Student>
+      studentService: StudentService
+      + constructor()
+      + ngOnInit(): void
+      + ngAfterViewInit(): void
+      + onEditItem(item: Student): void
+      + onDeleteItem(item: Student): void
+      + onCancelRequested(): void
+      + onStudentAddRequested(student: Student): void
+      + onStudentUpdateRequested(student: Student): void
+      + resetEditStudentState(): void
+      + getAllStudents(): void
+      + createStudent(): void
+      + updateStudent(): void
+      + deleteStudent(id: string): void
+    }
+
+    class "EnrollmentsManagementComponent" <<Component>> {
+      enrollmentData: Enrollment
+      columnsToDisplay: string[]
+      paginator: MatPaginator
+      sort: MatSort
+      editMode: boolean
+      dataSource: MatTableDataSource<Enrollment>
+      studentMap: Map<string, string>
+      periodMap: Map<string, string>
+      enrollmentService: EnrollmentService
+      studentService: StudentService
+      academicPeriodService: AcademicPeriodService
+      + constructor()
+      + ngOnInit(): void
+      + ngAfterViewInit(): void
+      + onEditItem(item: Enrollment): void
+      + onDeleteItem(item: Enrollment): void
+      + onCancelRequested(): void
+      + onEnrollmentAddRequested(item: Enrollment): void
+      + onEnrollmentUpdateRequested(item: Enrollment): void
+      + resetEditEnrollmentState(): void
+      + getAllEnrollments(): void
+      + loadStudents(): void
+      + loadPeriods(): void
+      + createEnrollment(): void
+      + updateEnrollment(): void
+      + deleteEnrollment(id: string): void
+    }
+
+    class "AcademicPeriodManagementComponent" <<Component>> {
+      academicPeriodData: AcademicPeriod
+      columnsToDisplay: string[]
+      paginator: MatPaginator
+      sort: MatSort
+      editMode: boolean
+      dataSource: MatTableDataSource<AcademicPeriod>
+      academicPeriodService: AcademicPeriodService
+      + constructor()
+      + ngOnInit(): void
+      + ngAfterViewInit(): void
+      + onEditItem(item: AcademicPeriod): void
+      + onDeleteItem(item: AcademicPeriod): void
+      + onCancelRequested(): void
+      + onAcademicPeriodAddRequested(item: AcademicPeriod): void
+      + onAcademicPeriodUpdateRequested(item: AcademicPeriod): void
+      + resetEditAcademicPeriodState(): void
+      + getAllAcademicPeriods(): void
+      + createAcademicPeriod(): void
+      + updateAcademicPeriod(): void
+      + deleteAcademicPeriod(id: string): void
+    }
+  }
+
+  package "pages" {
+    interface "OnInit"
+    interface "AfterViewInit"
+  }
+
+  package "services" {
+    class "StudentService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+      + getByDni(dni: string): Observable<Student[]>
+    }
+
+    class "AcademicPeriodService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+    }
+
+    class "EnrollmentService" <<Service>> {
+      - resourceEndpoint: string
+      + constructor()
+    }
+  }
+
+  package "model" {
+    class "Enrollment" <<Entity>> {
+      - id: string
+      - studentId: string
+      - periodId: string
+      - amount: number
+      - enrollmentStatus: EnrollmentStatus
+      - paymentStatus: PaymentStatus
+      - createdAt: Date
+      + constructor(enrollment: {...})
+    }
+
+    class "AcademicPeriod" <<Entity>> {
+      - id: string
+      - name: string
+      - academyId: string
+      - startDate: Date
+      - endDate: Date
+      - isActive: boolean
+      + constructor(academicPeriod: {...})
+    }
+
+    class "Student" <<Entity>> {
+      - id: string
+      - firstName: string
+      - lastName: string
+      - dni: string
+      - sex: Sex
+      - birthDate: Date
+      - address: string
+      - phoneNumber: string
+      + constructor(student: {...})
+    }
+
+    enum "EnrollmentStatus" {
+      ACTIVE
+      CANCELLED
+      COMPLETED
+      DELETED
+    }
+
+    enum "PaymentStatus" {
+      PENDING
+      PAID
+      REFUNDED
+      PARTIAL
+    }
+
+    enum "Sex" {
+      MALE
+      FEMALE
+    }
+  }
+}
+
+' Inheritance
+StudentCreateFormComponent          ..|> BaseFormComponent
+AcademicPeriodCreateFormComponent   ..|> BaseFormComponent
+EnrollmentsCreateFormComponent      ..|> BaseFormComponent
+StudentService                      --|> "BaseService<T>"
+AcademicPeriodService               --|> "BaseService<T>"
+EnrollmentService                   --|> "BaseService<T>"
+
+' Containment - Management contains Create
+StudentManagementComponent          *-- StudentCreateFormComponent : contains >
+EnrollmentsManagementComponent      *-- EnrollmentsCreateFormComponent : contains >
+AcademicPeriodManagementComponent   *-- AcademicPeriodCreateFormComponent : contains >
+
+' Dependencies (services injected)
+StudentManagementComponent          ..> StudentService : injects
+EnrollmentsManagementComponent      ..> EnrollmentService : injects
+EnrollmentsManagementComponent      ..> StudentService : injects
+EnrollmentsManagementComponent      ..> AcademicPeriodService : injects
+AcademicPeriodManagementComponent   ..> AcademicPeriodService : injects
+EnrollmentsCreateFormComponent      ..> AcademicPeriodService : injects
+EnrollmentsCreateFormComponent      ..> StudentService : injects
+
+' Service - Entity
+StudentService                      ..> Student : manages
+AcademicPeriodService               ..> AcademicPeriod : manages
+EnrollmentService                   ..> Enrollment : manages
+
+' Entity - VO
+Enrollment                          --> EnrollmentStatus : has status
+Enrollment                          --> PaymentStatus : has status
+Enrollment                          ..> Student : enrolled
+Enrollment                          ..> AcademicPeriod : belongs to
+Student                             --> Sex : has sex
+
+@enduml

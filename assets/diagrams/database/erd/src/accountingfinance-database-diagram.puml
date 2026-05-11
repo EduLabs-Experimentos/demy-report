@@ -1,0 +1,30 @@
+@startuml Demy: Accounting & Finance Database Diagram
+title Demy: Accounting & Finance Database Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "transactions" as transactions {
+  *id : BIGINT <<PK>>
+  --
+  *transaction_type : ENUM('INCOME','EXPENSE')
+  *transaction_mategory : ENUM('ENROLLMENT','MONTHLY_FEE','SALARY','SUPPLIES','MAINTENANCE','OTHER')
+  *transaction_method : ENUM('CASH','CREDIT_CARD','DEBIT_CARD','BANK_TRANSFER','WALLET','OTHER')
+  *amount : DECIMAL(12,2)
+  *currency : VARCHAR(3)
+  *description : VARCHAR(255)
+  *transaction_date : DATE
+  *academy_id : BIGINT
+}
+
+entity "reports" as reports {
+  *id : BIGINT <<PK>>
+  --
+  *report_type : ENUM('INCOME','EXPENSE','BALANCE_SHEET','CASH_FLOW','OTHER')
+  *start_date : DATE
+  *end_date : DATE
+  *generated_date : DATE
+  *academy_id : BIGINT
+}
+
+@enduml

@@ -1,0 +1,181 @@
+@startuml Demy: Accounting & Finance Domain Layer Class Diagram
+
+title Demy: Accounting & Finance Domain Layer Class Diagram
+
+skinparam class {
+    BackgroundColor<<Aggregate Root>> #FFFFFF/B3E5FC
+    BackgroundColor<<Entity>> #FFFFFF/C8E6C9
+    BackgroundColor<<Value Object>> #FFFFFF/FFF9C4
+    BackgroundColor<<Domain Service>> #FFFFFF/FFCCBC
+    BorderColor #212121
+    ArrowColor #212121
+    FontSize 14
+}
+
+package "Accounting & Finance Context" {
+    package "Domain Layer" {
+        class "Transaction" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - transactionType : TransactionType
+            - transactionCategory : TransactionCategory
+            - transactionMethod : TransactionMethod
+            - amount : Money
+            - description : String
+            - transactionDate : LocalDate
+            - academyId : AcademyId
+            # Transaction()
+            + Transaction(transactionType : TransactionType,transactionCategory : TransactionCategory,
+              transactionMethod : TransactionMethod, amount : Money, description : String, transactionDate : LocalDate, academyId : AcademyId)
+            + Transaction(command : RegisterTransactionCommand)
+            + getTransactionDetails() : String
+        }
+
+        class "Report" <<(A, #27D3F5) Aggregate Root>> {
+            - id : Long
+            - reportType: ReportType
+            - reportPeriod : ReportPeriod
+            - generatedDate : LocalDate
+            - academyId : AcademyId
+            # Report()
+            + Report(reportType : ReportType, reportPeriod : ReportPeriod,
+            + Report(command : GenerateReportCommand)
+            + getSummary() : String
+            + exportToPDF() : byte[]
+            + exportToExcel() : byte[]
+            + sendToEmail(email : String) : void
+        }
+
+        class "TransactionType" <<(V, #FFD700) Value Object>> {
+            INCOME
+            EXPENSE
+            --
+            + isIncome() : boolean
+            + isExpense() : boolean
+        }
+
+        class "TransactionCategory" <<(V, #FFD700) Value Object>> {
+            ENROLLMENT
+            MONTHLY_FEE
+            SALARY
+            SUPPLIES
+            MAINTENANCE
+            OTHER
+            --
+            + isEnrollment() : boolean
+            + isMonthlyFee() : boolean
+            + isSalary() : boolean
+            + isSupplies() : boolean
+            + isMaintenance() : boolean
+            + isOther() : boolean
+        }
+
+        class "TransactionMethod" <<(V, #FFD700) Value Object>> {
+            CASH
+            CREDIT_CARD
+            DEBIT_CARD
+            BANK_TRANSFER
+            WALLET
+            OTHER
+            --
+            + isCash() : boolean
+            + isCreditCard() : boolean
+            + isDebitCard() : boolean
+            + isBankTransfer() : boolean
+            + isWallet() : boolean
+            + isOther() : boolean
+        }
+
+        class "ReportType" <<(V, #FFD700) Value Object>> {
+            INCOME
+            EXPENSE
+            BALANCE_SHEET
+            CASH_FLOW
+            OTHER
+            --
+            + isIncome() : boolean
+            + isExpense() : boolean
+            + isBalanceSheet() : boolean
+            + isCashFlow() : boolean
+            + isOther() : boolean
+        }
+
+        class "ReportPeriod" <<(V, #FFD700) Value Object>> {
+            - startDate : LocalDate
+            - endDate : LocalDate
+            + getDurationInDays() : int
+            + includes(date : LocalDate) : boolean
+        }
+
+        class "TransactionCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : RegisterTransactionCommand) : Optional<Transaction>
+            + handle(command : UpdateTransactionCommand) : Optional<Transaction>
+            + handle(command : DeleteTransactionCommand) : void
+        }
+
+        class "TransactionQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetTransactionByIdQuery) : Optional<Transaction>
+            + handle(query : GetTransactionsByDateRangeQuery) : List<Transaction>
+            + handle(query : GetTransactionsByTypeQuery) : List<Transaction>
+            + handle(query : GetTransactionsByCategoryQuery) : List<Transaction>
+            + handle(query : GetTransactionsByMethodQuery) : List<Transaction>
+            + handle(query : GetTotalAmountByTypeQuery) : Optional<Money>
+        }
+
+        class "ReportCommandService" <<(S, #FF8A65) Domain Service>> {
+            + handle(command : GenerateReportCommand) : Optional<Report>
+            + handle(command : SendReportByEmailCommand) : void
+            + handle(command : ExportReportToPDFCommand) : Optional<byte[]>
+            + handle(command : ExportReportToExcelCommand) : Optional<byte[]>
+            + handle(command : DeleteReportCommand) : void
+        }
+
+        class "ReportQueryService" <<(S, #FF8A65) Domain Service>> {
+            + handle(query : GetReportByIdQuery) : Optional<Report>
+            + handle(query : GetReportsByTypeQuery) : List<Report>
+            + handle(query : GetReportsByPeriodQuery) : List<Report>
+            + handle(query : GetAllReportsQuery) : List<Report>
+        }
+    }
+}
+
+package "Shared Kernel" {
+    package "Domain Layer" {
+        class "AcademyId" <<(V, #FFD700) Value Object>> {
+            - academyId : Long
+            # AcademyId()
+            + AcademyId(academyId : Long)
+            + getAcademyId() : Long
+        }
+
+        class "Money" <<(V, #FFD700) Value Object>> {
+            - amount : BigDecimal
+            - currency : Currency
+            # Money()
+            + Money(amount : BigDecimal, currency : Currency)
+            + {static} zero() : Money
+            + add(other : Money) : Money
+            + subtract(other : Money) : Money
+            + multiply(multiplier : int) : Money
+            + divide(divider : int) : Money
+            - scaleToCurrency(value : BigDecimal) : BigDecimal
+        }
+    }
+}
+
+' Billing Relationships
+Transaction "1" *-- "1" TransactionType : has >
+Transaction "1" *-- "1" TransactionCategory : has >
+Transaction "1" *-- "1" TransactionMethod : has >
+Report "1" *-- "1" ReportType : has >
+Report "1" *-- "1" ReportPeriod : has >
+TransactionCommandService ..> Transaction : manages >
+TransactionQueryService ..> Transaction : queries >
+ReportCommandService ..> Report : manages >
+ReportQueryService ..> Report : queries >
+
+' Relationships between contexts
+Transaction "1" ..> "1" AcademyId : belongs to >
+Transaction "1" ..> "1" Money : involves >
+Report "1" ..> "1" AcademyId : belongs to >
+
+@enduml

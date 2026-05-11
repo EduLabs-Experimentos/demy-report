@@ -1,0 +1,33 @@
+@startuml Demy: IAM Database Diagram
+title Demy: IAM Database Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "roles" as roles {
+  *id : BIGINT <<PK>>
+  --
+  *name : ENUM('ROLE_USER','ROLE_ADMINISTRATOR','ROLE_TEACHER')
+}
+
+entity "users" as users {
+  *id : BIGINT <<PK>>
+  --
+  *email_adress : VARCHAR(255)
+  *password : VARCHAR(120)
+  *verification_code : VARCHAR(20)
+  *verification_expires : DATETIME
+  *tenant_id : BIGINT
+  *verification_status : ENUM('NOT_VERIFIED','VERIFIED')
+  *account_status : ENUM('PENDING','ACTIVE','BLOCKED','DELETED')
+}
+
+entity "user_roles" as user_roles {
+  *user_id : INT <<FK>>
+  *role_id : INT <<FK>>
+}
+
+users     ||--o{ user_roles
+roles     ||--o{ user_roles
+
+@enduml

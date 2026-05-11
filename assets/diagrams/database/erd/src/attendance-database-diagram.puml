@@ -1,0 +1,25 @@
+@startuml Demy: Attendance Database Diagram
+title Demy: Attendance Database Diagram
+
+hide circle
+skinparam linetype ortho
+
+entity "class_attendances" as class_attendances {
+  *id : BIGINT <<PK>>
+  --
+  *classSessionId : BIGINT
+  *date : DATE
+  *academyId : BIGINT
+}
+
+entity "attendance_records" as attendance_records {
+  *id : BIGINT <<PK>>
+  --
+  *studentId : BIGINT
+  *status : ENUM('PRESENT','ABSENT','EXCLUDED')
+  *class_attendances_id : BIGINT <<FK>>
+}
+
+class_attendances ||--o{ attendance_records
+
+@enduml

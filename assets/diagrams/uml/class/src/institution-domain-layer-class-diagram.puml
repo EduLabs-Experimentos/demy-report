@@ -1,0 +1,242 @@
+@startuml Demy: Institution Domain Layer Class Diagram
+
+title Demy: Institution Domain Layer Class Diagram
+
+skinparam class {
+BackgroundColor<<Aggregate Root>> #FFFFFF/B3E5FC
+BackgroundColor<<Entity>> #FFFFFF/C8E6C9
+BackgroundColor<<Value Object>> #FFFFFF/FFF9C4
+BackgroundColor<<Domain Service>> #FFFFFF/FFCCBC
+BorderColor #212121
+ArrowColor #212121
+FontSize 14
+}
+
+package "Institution Context" {
+  package "Domain Layer" {
+
+    ' ===================== AGGREGATES =====================
+    class "Academy" <<(A, #27D3F5) Aggregate Root>> {
+      - id : Long
+      - administratorId : AdministratorId
+      - academyName : AcademyName
+      - academyDescription : AcademyDescription
+      - streetAddress : StreetAddress
+      - emailAddress : EmailAddress
+      - phoneNumber : PhoneNumber
+      - ruc : Ruc
+      # Academy()
+      + Academy(academyName : AcademyName, academyDescription : AcademyDescription, streetAddress : StreetAddress, emailAddress : EmailAddress, phoneNumber : PhoneNumber, ruc : Ruc)
+      + Academy(command : RegisterAcademyCommand)
+      + assignAdministrator(administratorId : AdministratorId) : void
+    }
+
+    class "Administrator" <<(A, #27D3F5) Aggregate Root>> {
+      - id : Long
+      - personName : PersonName
+      - phoneNumber : PhoneNumber
+      - dniNumber : DniNumber
+      - academyId : AcademyId
+      - userId : UserId
+      # Administrator()
+      + Administrator(personName : PersonName, phoneNumber : PhoneNumber, dniNumber : DniNumber, academyId : AcademyId, userId : UserId)
+      + Administrator(command : RegisterAdministratorCommand)
+      + registerAdministrator(academyId : Long, userId : Long) : void
+      + disassociateAcademy(academyId : AcademyId) : void
+    }
+
+    class "Teacher" <<(A, #27D3F5) Aggregate Root>> {
+      - id : Long
+      - personName : PersonName
+      - academyId : AcademyId
+      - userId : UserId
+      # Teacher()
+    }
+
+    ' ===================== COMMANDS =====================
+    class "RegisterAcademyCommand" <<(C, #BA68C8) Command>> {
+      + academyName : AcademyName
+      + academyDescription : AcademyDescription
+      + streetAddress : StreetAddress
+      + emailAddress : EmailAddress
+      + phoneNumber : PhoneNumber
+      + ruc : Ruc
+    }
+
+    class "AssignAdministratorToAcademyCommand" <<(C, #BA68C8) Command>> {
+      + academyId : AcademyId
+      + administratorId : AdministratorId
+    }
+
+    class "RegisterAdministratorCommand" <<(C, #BA68C8) Command>> {
+      + personName : PersonName
+      + phoneNumber : PhoneNumber
+      + dniNumber : DniNumber
+      + academyId : AcademyId
+      + userId : UserId
+    }
+
+    class "RegisterTeacherCommand" <<(C, #BA68C8) Command>> {
+    + personName : PersonName
+    + academyId : AcademyId
+    + userId : UserId
+    }
+
+
+    ' ===================== QUERIES =====================
+    class "GetAcademyByIdQuery" <<(Q, #C5E1A5) Query>> {
+      + academyId : Long
+    }
+
+    class "GetAdministratorByDniNumberQuery" <<(Q, #C5E1A5) Query>> {
+      + dniNumber : DniNumber
+    }
+
+    class "GetAllTeachersQuery" <<(Q, #C5E1A5) Query>> {
+    }
+
+    ' ===================== DOMAIN EVENT =====================
+    class "AdministratorRegisteredEvent" <<(E, #FFB74D) Domain Event>> {
+      + source : Object
+      + academyId : Long
+      + userId : Long
+      + AdministratorRegisteredEvent(source : Object, academyId : Long, userId : Long)
+    }
+
+    ' ===================== VALUE OBJECTS (LOCAL DEL BOUNDED) =====================
+    class "AcademyName" <<(V, #FFD700) Value Object>> {
+      - name : String
+    }
+
+    class "AcademyDescription" <<(V, #FFD700) Value Object>> {
+      - description : String
+    }
+
+    class "AdministratorId" <<(V, #FFD700) Value Object>> {
+      - administratorId : Long
+      + isAssigned() : boolean
+    }
+
+    class "Ruc" <<(V, #FFD700) Value Object>> {
+      - ruc : String
+    }
+
+    class "UserId" <<(V, #FFD700) Value Object>> {
+      - userId : Long
+    }
+
+    ' ===================== DOMAIN SERVICES =====================
+    class "AcademyCommandService" <<(S, #FF8A65) Domain Service>> {
+      + handle(command : RegisterAcademyCommand) : Optional<Academy>
+      + handle(command : AssignAdministratorToAcademyCommand) : void
+    }
+
+    class "AcademyQueryService" <<(S, #FF8A65) Domain Service>> {
+      + handle(query : GetAcademyByIdQuery) : Optional<Academy>
+    }
+
+    class "AdministratorCommandService" <<(S, #FF8A65) Domain Service>> {
+      + handle(command : RegisterAdministratorCommand) : Optional<Administrator>
+    }
+
+    class "AdministratorQueryService" <<(S, #FF8A65) Domain Service>> {
+      + handle(query : GetAdministratorByDniNumberQuery) : Optional<Administrator>
+    }
+
+    class "TeacherQueryService" <<(S, #FF8A65) Domain Service>> {
+      + handle(query : GetAllTeachersQuery) : List<Teacher>
+    }
+
+    class "TeacherCommandService" <<(S, #FF8A65) Domain Service>> {
+  + handle(command : RegisterTeacherCommand) : Optional<Teacher>
+    }
+
+  }
+}
+
+package "Shared Kernel" {
+  package "Domain Layer" {
+
+    class "AcademyId" <<(V, #FFD700) Value Object>> {
+      - academyId : Long
+    }
+
+    class "DniNumber" <<(V, #FFD700) Value Object>> {
+      - dniNumber : String
+    }
+
+    class "EmailAddress" <<(V, #FFD700) Value Object>> {
+      - email : String
+    }
+
+    class "PersonName" <<(V, #FFD700) Value Object>> {
+      - firstName : String
+      - lastName : String
+    }
+
+    class "PhoneNumber" <<(V, #FFD700) Value Object>> {
+      - countryCode : String
+      - phone : String
+    }
+
+    class "StreetAddress" <<(V, #FFD700) Value Object>> {
+      - street : String
+      - district : String
+      - province : String
+      - department : String
+    }
+  }
+}
+
+' ===================== RELATIONSHIPS =====================
+
+' --- VOs LOCALES (composición) ---
+Academy *-- AcademyName
+Academy *-- AcademyDescription
+Academy *-- AdministratorId
+Academy *-- Ruc
+Academy *-- UserId
+
+' --- VOs SHARED (referencias/uso) ---
+Academy ..> StreetAddress : uses >
+Academy ..> EmailAddress : uses >
+Academy ..> PhoneNumber : uses >
+
+Administrator ..> PersonName : uses >
+Administrator ..> PhoneNumber : uses >
+Administrator ..> DniNumber : uses >
+Administrator ..> AcademyId : belongs to >
+Administrator ..> UserId : uses >
+
+Teacher ..> PersonName : uses >
+Teacher ..> AcademyId : belongs to >
+Teacher ..> UserId : uses >
+
+' --- Commands / Queries / Event ---
+Academy ..> RegisterAcademyCommand : creates >
+Academy ..> AssignAdministratorToAcademyCommand : assigns >
+Administrator ..> RegisterAdministratorCommand : creates >
+Administrator ..> AdministratorRegisteredEvent : publishes >
+Teacher ..> RegisterTeacherCommand : creates >
+
+' --- Services -> Aggregates / Mensajes ---
+AcademyCommandService ..> Academy : manages >
+AcademyCommandService ..> RegisterAcademyCommand
+AcademyCommandService ..> AssignAdministratorToAcademyCommand
+
+AcademyQueryService ..> Academy : queries >
+AcademyQueryService ..> GetAcademyByIdQuery
+
+AdministratorCommandService ..> Administrator : manages >
+AdministratorCommandService ..> RegisterAdministratorCommand
+
+AdministratorQueryService ..> Administrator : queries >
+AdministratorQueryService ..> GetAdministratorByDniNumberQuery
+
+TeacherCommandService ..> Teacher : manages >
+TeacherCommandService ..> RegisterTeacherCommand
+
+TeacherQueryService ..> Teacher : queries >
+TeacherQueryService ..> GetAllTeachersQuery
+
+@enduml

@@ -1,0 +1,282 @@
+@startuml Demy: Relational Database Diagram
+title Demy: Relational Database Diagram
+
+hide circle
+skinparam linetype ortho
+skinparam packageStyle rectangle
+
+' ============================================================
+' IAM Context
+' ============================================================
+package "IAM" #E3F2FD {
+  entity "users" as users {
+    *id : BIGINT <<PK>>
+    --
+    *email_adress : VARCHAR(255)
+    *password : VARCHAR(120)
+    *verification_code : VARCHAR(20)
+    *verification_expires : DATETIME
+    *tenant_id : BIGINT
+    *verification_status : ENUM
+    *account_status : ENUM
+  }
+
+  entity "roles" as roles {
+    *id : BIGINT <<PK>>
+    --
+    *name : ENUM('ROLE_USER','ROLE_ADMINISTRATOR','ROLE_TEACHER')
+  }
+
+  entity "user_roles" as user_roles {
+    *user_id : INT <<FK>>
+    *role_id : INT <<FK>>
+  }
+}
+
+' ============================================================
+' Institution Context
+' ============================================================
+package "Institution" #E8F5E9 {
+  entity "academies" as academies {
+    *id : BIGINT <<PK>>
+    --
+    *academy_name : VARCHAR(80)
+    *academy_description : VARCHAR(255)
+    *street : VARCHAR(100)
+    *district : VARCHAR(50)
+    *province : VARCHAR(50)
+    *department : VARCHAR(50)
+    *email : VARCHAR(255)
+    *country_code : VARCHAR(5)
+    *phone : VARCHAR(15)
+    *ruc : CHAR(11)
+    *administrator_id : BIGINT
+  }
+
+  entity "administrators" as administrators {
+    *id : BIGINT <<PK>>
+    --
+    *first_name : VARCHAR(50)
+    *last_name : VARCHAR(50)
+    *country_code : VARCHAR(5)
+    *phone : VARCHAR(15)
+    *dni : CHAR(8)
+    *academy_id : BIGINT
+    *user_id : BIGINT <<FK>>
+    *academies_id : BIGINT <<FK>>
+  }
+
+  entity "teachers" as teachers {
+    *id : BIGINT <<PK>>
+    --
+    *first_name : VARCHAR(50)
+    *last_name : VARCHAR(50)
+    *academy_id : BIGINT
+    *user_id : BIGINT <<FK>>
+    *academies_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Scheduling Context
+' ============================================================
+package "Scheduling" #FFF3E0 {
+  entity "schedules" as schedules {
+    *id : BIGINT <<PK>>
+    --
+    *name : VARCHAR(100)
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "courses" as courses {
+    *id : BIGINT <<PK>>
+    --
+    *name : VARCHAR(100)
+    *course_code : VARCHAR(50) <<UK>>
+    *description : VARCHAR(255)
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "classrooms" as classrooms {
+    *id : BIGINT <<PK>>
+    --
+    *classroom_code : VARCHAR(50) <<UK>>
+    *capacity : INT
+    *campus : VARCHAR(100)
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "class_sessions" as class_sessions {
+    *id : BIGINT <<PK>>
+    --
+    *day_of_week : ENUM
+    *start_time : TIME
+    *end_time : TIME
+    *teacher_id : BIGINT <<FK>>
+    *classroom_id : BIGINT <<FK>>
+    *course_id : BIGINT <<FK>>
+    *schedule_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Enrollment Context
+' ============================================================
+package "Enrollment" #F3E5F5 {
+  entity "academic_periods" as academic_periods {
+    *id : BIGINT <<PK>>
+    --
+    *period_name : VARCHAR(100)
+    *start_date : DATE
+    *end_date : DATE
+    *is_active : BOOLEAN
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "students" as students {
+    *id : BIGINT <<PK>>
+    --
+    *first_name : VARCHAR(50)
+    *last_name : VARCHAR(50)
+    *dni : CHAR(8) <<UK>>
+    *sex : ENUM('MALE','FEMALE')
+    *birth_date : DATE
+    *address : VARCHAR(150)
+    *phone_number : VARCHAR(15)
+    *email : VARCHAR(255)
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "enrollments" as enrollments {
+    *id : BIGINT <<PK>>
+    --
+    *academic_period_id : BIGINT <<FK>>
+    *student_id : BIGINT <<FK>>
+    *schedule_id : BIGINT <<FK>>
+    *enrollment_status : ENUM
+    *amount : DECIMAL(12,2)
+    *currency : VARCHAR(3)
+    *academy_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Attendance Context
+' ============================================================
+package "Attendance" #FCE4EC {
+  entity "class_attendances" as class_attendances {
+    *id : BIGINT <<PK>>
+    --
+    *classSessionId : BIGINT <<FK>>
+    *date : DATE
+    *academyId : BIGINT <<FK>>
+  }
+
+  entity "attendance_records" as attendance_records {
+    *id : BIGINT <<PK>>
+    --
+    *studentId : BIGINT <<FK>>
+    *status : ENUM('PRESENT','ABSENT','EXCLUDED')
+    *class_attendances_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Billing Context
+' ============================================================
+package "Billing" #E0F7FA {
+  entity "billing_accounts" as billing_accounts {
+    *id : BIGINT <<PK>>
+    --
+    *studentId : BIGINT <<FK>>
+    *account_status : ENUM
+  }
+
+  entity "invoices" as invoices {
+    *id : BIGINT <<PK>>
+    --
+    *invoice_type : ENUM
+    *amount : DECIMAL(12,2)
+    *currency : VARCHAR(3)
+    *description : VARCHAR(255)
+    *issue_date : DATE
+    *due_date : DATE
+    *invoice_status : ENUM
+    *billing_accounts_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Accounting & Finance Context
+' ============================================================
+package "Accounting & Finance" #FFF9C4 {
+  entity "transactions" as transactions {
+    *id : BIGINT <<PK>>
+    --
+    *transaction_type : ENUM
+    *transaction_mategory : ENUM
+    *transaction_method : ENUM
+    *amount : DECIMAL(12,2)
+    *currency : VARCHAR(3)
+    *description : VARCHAR(255)
+    *transaction_date : DATE
+    *academy_id : BIGINT <<FK>>
+  }
+
+  entity "reports" as reports {
+    *id : BIGINT <<PK>>
+    --
+    *report_type : ENUM
+    *start_date : DATE
+    *end_date : DATE
+    *generated_date : DATE
+    *academy_id : BIGINT <<FK>>
+  }
+}
+
+' ============================================================
+' Relationships within and between contexts
+' ============================================================
+
+' IAM
+users     ||--o{ user_roles
+roles     ||--o{ user_roles
+
+' Institution
+academies      ||--o{ administrators
+academies      ||--o{ teachers
+users          ||--o| administrators : "user_id"
+users          ||--o| teachers       : "user_id"
+
+' Scheduling
+academies   ||--o{ schedules
+academies   ||--o{ courses
+academies   ||--o{ classrooms
+schedules   ||--o{ class_sessions
+courses     ||--o{ class_sessions
+classrooms  ||--o{ class_sessions
+teachers    ||--o{ class_sessions : "teacher_id"
+
+' Enrollment
+academies         ||--o{ academic_periods
+academies         ||--o{ students
+academies         ||--o{ enrollments
+academic_periods  ||--o{ enrollments
+students          ||--o{ enrollments
+schedules         ||--o{ enrollments : "schedule_id"
+
+' Attendance
+class_sessions    ||--o{ class_attendances : "classSessionId"
+academies         ||--o{ class_attendances : "academyId"
+class_attendances ||--o{ attendance_records
+students          ||--o{ attendance_records : "studentId"
+
+' Billing
+students         ||--o{ billing_accounts : "studentId"
+billing_accounts ||--o{ invoices
+
+' Accounting & Finance
+academies ||--o{ transactions
+academies ||--o{ reports
+
+@enduml
