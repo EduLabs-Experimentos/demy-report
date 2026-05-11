@@ -5689,6 +5689,32 @@ Queda habilitado el despliegue continuo; cada push a la rama configurada desenca
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+A continuación se presenta capturas de la evidencia de nuestro web application desarrollado
+
+![Web Imagen 1](./assets/images/WebApplication/web-1.png)
+
+![Web Imagen 2](./assets/images/WebApplication/web-2.png)
+
+![Web Imagen 3](./assets/images/WebApplication/web-3.png)
+
+![Web Imagen 4](./assets/images/WebApplication/web-4.png)
+
+![Web Imagen 5](./assets/images/WebApplication/web-5.png)
+
+![Web Imagen 6](./assets/images/WebApplication/web-6.png)
+
+![Web Imagen 7](./assets/images/WebApplication/web-7.png)
+
+![Web Imagen 8](./assets/images/WebApplication/web-8.png)
+
+![Web Imagen 9](./assets/images/WebApplication/web-9.png)
+
+![Web Imagen 10](./assets/images/WebApplication/web-10.png)
+
+![Web Imagen 11](./assets/images/WebApplication/web-11.png)
+
+
+
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
 **1. Aceptación de los Términos**
