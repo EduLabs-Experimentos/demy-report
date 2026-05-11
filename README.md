@@ -702,67 +702,173 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 
 ### 2.2.2. Registro de entrevistas
 
-...
+---
 
+#### Segmento: Administrativo - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Salim Ramirez |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 00:00 - 07:42 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista1.png) |
+| **Resumen** | El administrativo de la Academia Enigmas (Lima) gestiona actualmente los procesos de matrícula, asistencia y pagos mediante hojas de Excel separadas, registros físicos y archivos no integrados, lo que genera desorganización, falta de sincronización y pérdida de información. Esta situación provoca errores frecuentes, como datos desactualizados o dificultades para encontrar información histórica, además de demoras al consultar asistencia o estado de pagos, especialmente cuando hay errores en los registros. Como consecuencia, se pierde tiempo operativo y se afecta la imagen de la academia frente a los padres de familia. Por ello, se plantea la necesidad de una plataforma centralizada, simple e intuitiva, que permita búsquedas por DNI, control de asistencia en tiempo real, gestión de pagos y alertas automáticas, con el objetivo de mejorar el orden, la trazabilidad y reducir el trabajo manual basado en Excel. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Alison Rivera |
+| **Edad** | 21 |
+| **Sexo** | Femenino |
+| **Distrito** | Lima |
+| **Ocupación** | Coordinador de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 07:43 - 12:39 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista2.png) |
+| **Resumen** | La administrativa de una academia en Lima realiza la gestión de matrículas, asistencia y pagos utilizando principalmente hojas de Excel independientes y registros en papel, los cuales no están integrados entre sí. Esto ocasiona desorden en la información, falta de actualización entre archivos y riesgo constante de pérdida de datos. Además, suele haber dificultades para ubicar información específica, lo que retrasa la atención de consultas sobre asistencia o pagos y genera errores en los registros. Como resultado, se pierde eficiencia en las tareas diarias y se debilita la percepción de organización frente a los padres de familia. Por ello, se considera necesario implementar una plataforma centralizada, fácil de usar, que permita buscar alumnos por DNI, registrar asistencia en tiempo real, gestionar pagos y emitir alertas automáticas, con el fin de mejorar el control y reducir el trabajo manual. |
+
+---
+
+#### Segmento: Administrativo - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Femenino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 12:40 - 17:36 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista3.png) |
+| **Resumen** | La administrativa de la Academia Enigmas (Ica) gestiona actualmente los procesos de matrícula, asistencia y pagos de forma manual y desintegrada, utilizando principalmente hojas de Excel, registros en papel y fichas físicas, lo que genera duplicidad de datos, errores de digitación y pérdida de información. El acceso a la información es lento y poco eficiente, dificultando consultas frecuentes como asistencia o pagos pendientes, lo que afecta tanto la operación interna como la percepción de los padres. Esta desorganización provoca pérdida de tiempo operativo y problemas de control financiero y académico. Por ello, se requiere una solución digital centralizada con buscador por DNI, registro de asistencia, control de pagos y alertas automáticas, priorizando la simplicidad, rapidez y trazabilidad total, con alta disposición de ella a adoptarla. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Carlos Guerra |
+| **Edad** | 24 |
+| **Sexo** | Masculino |
+| **Distrito** | Lima |
+| **Ocupación** | Profesor de Academia |
+| **Fecha de entrevista** | 05 de mayo de 2025 |
+| **Timing** | 17:37 - 22:59 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista4.jpg) |
+| **Resumen** | El profesor de una academia en Lima gestiona actualmente el control de asistencia y el seguimiento de alumnos de forma manual, utilizando principalmente registros en Excel y anotaciones en papel, los cuales no se encuentran integrados ni actualizados en tiempo real. Esto provoca desorden en la información, posibles errores en el registro de asistencia y dificultades para consultar datos de los estudiantes. Además, el acceso a la información suele ser lento, lo que retrasa la coordinación con la administración y afecta la eficiencia del proceso académico. Como consecuencia, se pierde tiempo en tareas operativas y se reduce el control sobre el desempeño de los alumnos. Por ello, se propone la implementación de una plataforma digital centralizada que permita registrar asistencia en tiempo real, consultar información por alumno mediante DNI y mejorar la organización general, priorizando la rapidez, simplicidad y trazabilidad de los datos. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Luis de la Cruz Herrera |
+| **Edad** | 26 |
+| **Sexo** | Masculino |
+| **Distrito** | La Molina |
+| **Ocupación** | Docente de Círculos de estudio en la Universidad Agraria |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 23:00 - 35:16 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista5.png) |
+| **Resumen** | El entrevistado es un docente con experiencia en diversas academias y actualmente dicta clases en círculos de estudio en la UNALM. En su rutina diaria, enfrenta desafíos relacionados con la gestión manual de horarios pues usa herramientas como Excel, actividades que le consumen una gran cantidad de tiempo y afectan su eficiencia. Usa principalmente su laptop y su celular para organizarse, sin herramientas digitales especializadas, lo que le complica su trabajo. Al conocer la propuesta de nuestra startup, mostró una percepción positiva ante la posibilidad de contar con una herramienta que centralice y automatice estos procesos. Reconoce que una solución tecnológica podría mejorar su organización, reducir su carga administrativa y permitirle enfocarse más en la enseñanza. Se mostró dispuesto a adoptar nuevas herramientas que respondan a sus necesidades y faciliten su trabajo diario como docente, herramientas las cuales pueda usar desde su celular o su laptop. |
+
+---
+
+#### Segmento: Profesores - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Anjali Maro |
+| **Edad** | 28 |
+| **Sexo** | Masculino |
+| **Distrito** | Ica |
+| **Ocupación** | Coordinadora de Academia |
+| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Timing** | 35:16 - 40:44 |
+| **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
+| **Captura** | ![Captura](./assets/entrevista/Entrevista6.png) |
+| **Resumen** | La entrevistada señaló que actualmente la gestión académica y administrativa en academias suele depender de registros manuales y herramientas dispersas, lo que dificulta el control eficiente de asistencia, pagos y seguimiento de alumnos. Considera importante implementar una plataforma digital centralizada que permita optimizar estos procesos, mejorar la organización y reducir errores operativos. Además, destacó la necesidad de que la herramienta sea intuitiva, rápida y accesible desde distintos dispositivos para facilitar su adopción por parte de profesores y administrativos. |
 ### 2.2.3. Análisis de entrevistas
 
-Las entrevistas se realizaron entre el 2 y el 3 de septiembre de 2025 a un total de nueve participantes: tres docentes, tres
-administrativos/coordinadores de academias preuniversitarias y tres alumnos de las mismas en Lima, Ica y Trujillo. El objetivo fue entender sus contextos
-operativos, frustraciones actuales y validar hipótesis sobre posibles soluciones digitales.
+Las entrevistas se realizaron durante mayo de 2025 a un total de seis participantes: tres administrativos/coordinadores de academias y tres docentes de academias y círculos de estudio en Lima e Ica. El objetivo fue comprender sus procesos actuales de gestión, identificar problemas frecuentes en la administración académica y validar la necesidad de una solución digital centralizada.
 
 ---
 
-**Segmento: Docentes de academias**
+#### Segmento: Docentes de academias
 
 **Total entrevistados:** 3  
-**Edades:** 21, 25, 25 años  
-**Distritos:** La Molina, Santa Anita, San Juan de Lurigancho  
-**Instituciones:** CEPRE Agraria, Círculos de estudio UNALM, Academia ADUNI  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 24, 26 y 28 años  
+**Distritos:** Lima, La Molina e Ica  
+**Instituciones:** Academias preuniversitarias y círculos de estudio universitarios  
+**Fechas:** 05 y 08 de mayo de 2025  
 
-**Características objetivas**  
-* Usan Excel o Google Forms para registrar notas y asistencias: **3/3 (100%)**  
-* Prefieren gestionar tareas desde celulares o laptops: **3/3 (100%)**  
-* Los cambios de aula u horarios se gestionan por WhatsApp o encuestas improvisadas: **3/3 (100%)**
-* No utilizan plataformas centralizadas ni automatizadas: **3/3 (100%)**  
+#### Características objetivas
 
-**Características subjetivas**  
-* Encuentran incómodo el uso de Excel en celular: **2/3 (66%)**  
-* Consideran que el trabajo administrativo les resta tiempo valioso de enseñanza: **3/3 (100%)**  
-* Ven con buenos ojos una solución intuitiva y fácil de usar: **3/3 (100%)**  
-* Quieren acceso a la plataforma desde múltiples dispositivos, especialmente celular: **3/3 (100%)**  
-* Notificaciones de cambios de horario son altamente valoradas: **2/3 (66%)**  
-* Disposición a adoptar nuevas herramientas si mejoran su productividad: **3/3 (100%)**  
+- Utilizan Excel, registros manuales o herramientas improvisadas para gestionar asistencia y horarios: **3/3 (100%)**
+- Usan principalmente laptop y celular para organizar sus actividades académicas: **3/3 (100%)**
+- No cuentan con una plataforma centralizada para el seguimiento de alumnos y asistencia: **3/3 (100%)**
+- La coordinación académica y cambios operativos suelen manejarse manualmente: **3/3 (100%)**
+- Necesitan consultar información de estudiantes de manera rápida y ordenada: **2/3 (66%)**
+
+#### Características subjetivas
+
+- Consideran que las tareas administrativas consumen demasiado tiempo: **3/3 (100%)**
+- Perciben desorganización y dificultad para acceder a información actualizada: **3/3 (100%)**
+- Valoran una plataforma simple, rápida e intuitiva: **3/3 (100%)**
+- Desean acceso desde múltiples dispositivos, especialmente celulares: **3/3 (100%)**
+- Consideran importante automatizar procesos académicos y administrativos: **3/3 (100%)**
+- Están dispuestos a adoptar nuevas herramientas tecnológicas si mejoran su productividad: **3/3 (100%)**
 
 ---
 
-**Segmento: Administrativos de academias**
+#### Segmento: Administrativos de academias
 
 **Total entrevistados:** 3  
-**Edades:** 28, 42, 58 años  
-**Distritos:** Ica (todos)  
-**Instituciones:** Enigmas, academias escolares particulares  
-**Fechas:** 2 y 3 de septiembre de 2025  
+**Edades:** 21, 28 y 28 años  
+**Distritos:** Lima e Ica  
+**Instituciones:** Academia Enigmas y academias particulares  
+**Fechas:** 08 de mayo de 2025  
 
-**Características objetivas** 
+#### Características objetivas
 
-- Utilizan Excel y registros manuales para manejar pagos, matrículas, asistencia y horarios: **3/3 (100%)**  
-- Consultan frecuentemente asistencia, notas y estado de pagos: **3/3 (100%)**  
-- Dependen de múltiples hojas y archivos, dificultando la trazabilidad: **3/3 (100%)** 
+- Utilizan hojas de Excel, registros físicos y archivos separados para gestionar matrículas, pagos y asistencia: **3/3 (100%)**
+- Consultan constantemente información de asistencia, historial y estado de pagos: **3/3 (100%)**
+- Trabajan con información desintegrada y poco sincronizada: **3/3 (100%)**
+- Presentan problemas frecuentes de duplicidad de datos y errores manuales: **2/3 (66%)**
+- Carecen de herramientas digitales centralizadas para la gestión académica: **3/3 (100%)**
 
-**Características subjetivas**  
+#### Características subjetivas
 
-- Consideran sus métodos actuales ineficientes y repetitivos: **3/3 (100%)**  
-- Señalan consecuencias negativas como pérdida de tiempo y mala atención a padres: **3/3 (100%)**  
-- Alertas para pagos vencidos son altamente valoradas: **3/3 (100%)**  
-- Desean funcionalidades como búsqueda rápida por nombre o DNI: **2/3 (66%)**  
-- Esperan una solución intuitiva, accesible y asequible: **3/3 (100%)**  
-- Disposición a adoptar nuevas plataformas si mejoran su gestión: **3/3 (100%)** 
+- Consideran que sus procesos actuales son desordenados e ineficientes: **3/3 (100%)**
+- Señalan pérdida de tiempo operativo debido a la gestión manual: **3/3 (100%)**
+- Consideran importante mejorar la atención y organización frente a padres de familia: **3/3 (100%)**
+- Valoran funcionalidades como búsqueda por DNI y control en tiempo real: **3/3 (100%)**
+- Consideran útiles las alertas automáticas para pagos y seguimiento: **3/3 (100%)**
+- Esperan una solución intuitiva, accesible y fácil de implementar: **3/3 (100%)**
+- Muestran alta disposición para adoptar una plataforma digital centralizada: **3/3 (100%)**
 
 ---
 
-**Conclusión general**
-Este análisis refleja claramente patrones de uso, frustraciones comunes y criterios clave que deben guiar el diseño del sistema. La coincidencia en prioridades entre ambos segmentos refuerza la necesidad de una plataforma web centralizada, móvil, intuitiva y orientada a mejorar la eficiencia operativa diaria.
+#### Conclusión general
+
+El análisis de entrevistas evidencia una problemática común tanto en docentes como en administrativos: la dependencia de procesos manuales, hojas de Excel y registros físicos genera desorganización, pérdida de tiempo, errores frecuentes y dificultades para acceder a información actualizada. Además, la falta de integración entre asistencia, pagos, matrículas y seguimiento académico afecta la eficiencia operativa y la percepción de organización frente a alumnos y padres de familia.
+
+Ambos segmentos coinciden en la necesidad de implementar una plataforma web centralizada, intuitiva y accesible desde celulares y laptops, que permita automatizar tareas académicas y administrativas, registrar asistencia en tiempo real, gestionar pagos, realizar búsquedas rápidas por DNI y mejorar la trazabilidad de la información. Estos hallazgos validan la propuesta de desarrollar una solución digital enfocada en optimizar la gestión integral de academias preuniversitarias.
 
 ## 2.3. Needfinding
 
@@ -5583,6 +5689,32 @@ Queda habilitado el despliegue continuo; cada push a la rama configurada desenca
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+A continuación se presenta capturas de la evidencia de nuestro web application desarrollado
+
+![Web Imagen 1](./assets/images/WebApplication/web-1.png)
+
+![Web Imagen 2](./assets/images/WebApplication/web-2.png)
+
+![Web Imagen 3](./assets/images/WebApplication/web-3.png)
+
+![Web Imagen 4](./assets/images/WebApplication/web-4.png)
+
+![Web Imagen 5](./assets/images/WebApplication/web-5.png)
+
+![Web Imagen 6](./assets/images/WebApplication/web-6.png)
+
+![Web Imagen 7](./assets/images/WebApplication/web-7.png)
+
+![Web Imagen 8](./assets/images/WebApplication/web-8.png)
+
+![Web Imagen 9](./assets/images/WebApplication/web-9.png)
+
+![Web Imagen 10](./assets/images/WebApplication/web-10.png)
+
+![Web Imagen 11](./assets/images/WebApplication/web-11.png)
+
+
+
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
 **1. Aceptación de los Términos**
@@ -6198,6 +6330,379 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 # Capítulo VI: Product Verification & Validation
 
 ## 6.1. Testing Suites & Validation
+
+<<<<<<< HEAD
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Repository</th>
+        <th>Branch</th>
+        <th>Commit Id</th>
+        <th>Commit Message</th>
+        <th>Commit Message Body</th>
+        <th>Commited on (Date)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>d42d51e</td>
+        <td>test: add unit tests for EnrollmentCommandServiceImpl</td>
+        <td>
+          Added unit test coverage for EnrollmentCommandServiceImpl,
+          including validation of enrollment creation, duplicate enrollment
+          handling, and exception scenarios.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>aa6ec2d</td>
+        <td>test: add integration tests for EnrollmentsController</td>
+        <td>
+          Implemented integration tests for EnrollmentsController endpoints
+          to verify HTTP responses, request validation, and persistence flow
+          using MockMvc.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/enrollment</td>
+        <td>f22094e</td>
+        <td>test: add BDD feature and step definitions for enrollment</td>
+        <td>
+          Added BDD feature files and step definitions for enrollment
+          workflows, covering successful enrollment registration and
+          error handling scenarios.
+        </td>
+        <td>08/05/2026</td>
+      </tr>
+      <!-- BLOQUE DE ATTENDANCE -->
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>f8bdb56</td>
+        <td>test(attendance): implement cucumber step definitions for student attendance features</td>
+        <td>
+          Implementation of Gherkin steps to connect the feature files with the 
+          attendance registration logic.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>249b496</td>
+        <td>test(attendance): add integration tests for ClassAttendanceRepository persistence and cascades</td>
+        <td>
+          Verification of database persistence and relationship cascading for 
+          attendance records.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>ad3a2fc</td>
+        <td>test(attendance): add unit tests for ClassSessionId value object invariants</td>
+        <td>
+          Validation of business rules and invariants for the ClassSessionId 
+          value object.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>cb281c9</td>
+        <td>test(attendance): add unit tests for AttendanceInput value object and DNI validation</td>
+        <td>
+          Unit tests for DNI formatting and input validation for attendance entries.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/attendance</td>
+        <td>1467349</td>
+        <td>test(attendance): implement unit tests for aggregate and creation command rules</td>
+        <td>
+          Testing of command-driven logic for aggregate creation and attendance 
+          business constraints.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <!-- TU BLOQUE (BILLING) -->
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>b11faae</td>
+        <td>test(billing): implement cucumber step definitions for billing account acceptance tests</td>
+        <td>
+          Developed step definitions to automate acceptance criteria for 
+          billing account creation and management.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>8c84aee</td>
+        <td>test(billing): add Gherkin feature files for billing account and invoice management</td>
+        <td>
+          Defined executable specifications using Gherkin for billing 
+          processes and invoice generation workflows.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>c880552</td>
+        <td>test(billing): add integration tests for BillingAccountRepository validating JPA mapping and cascades</td>
+        <td>
+          Integrated tests to validate database schema mapping and 
+          cascading operations for BillingAccount entities.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>1f8f570</td>
+        <td>test(billing): implement unit tests for BillingAccountCommandServiceImpl with ExternallamService mock</td>
+        <td>
+          Unit testing the command service logic by mocking external 
+          IAM service dependencies.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+        <td>EduLabs-Experimentos/demy-backend</td>
+        <td>feature/billing-management</td>
+        <td>1232a3f</td>
+        <td>test(billing): implement core entities unit tests for BillingAccount using AAA pattern</td>
+        <td>
+          Core entity validation using the Arrange-Act-Assert pattern 
+          to ensure internal state consistency.
+        </td>
+        <td>09/05/2026</td>
+      </tr>
+      <tr>
+      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
+      <td>feature/enrollment</td>
+      <td>4a19f9b</td>
+      <td>test: add cucumber runner for enrollment tests</td>
+      <td>
+        Added Cucumber test runner configuration for executing
+        enrollment acceptance tests and integrating feature files
+        with the automated testing workflow.
+      </td>
+      <td>10/05/2026</td>
+      </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
+      <td>feature/enrollment</td>
+      <td>363e561</td>
+      <td>test: add enrollment step definitions for US007, US008 and US009</td>
+      <td>
+        Implemented step definitions for enrollment-related user stories
+        US007, US008, and US009, connecting Gherkin scenarios with
+        enrollment domain logic and validations.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-admin-mobile-application</td>
+      <td>feature/enrollment</td>
+      <td>4f9b0a4</td>
+      <td>test: add enrollment management feature file</td>
+      <td>
+        Added Gherkin feature specifications for enrollment management
+        workflows, including enrollment registration, validation,
+        and management scenarios.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <!--  Acounting  -->
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5c92a0f</td>
+      <td>test(finance): add unit test for successful transaction registration</td>
+      <td>
+        Verifies that TransactionCommandServiceImpl correctly handles a RegisterTransactionCommand by persisting the transaction when valid data and a current academy context are provided.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>17e44f6</td>
+      <td>test(finance): verify registration fails when no academy context exists</td>
+      <td>
+        Ensures that a RuntimeException is thrown with the message "No academy found" if the ExternalIamService cannot provide a valid academy ID during the registration process.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>c4600de</td>
+      <td>test(finance): add unit test for successful transaction update</td>
+      <td>
+        Validates that an existing transaction can be updated with new values (amount, category, method) and that the changes are correctly saved to the repository.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>fe661ca</td>
+      <td>test(finance): verify update fails for non-existent transaction</td>
+      <td>
+        Ensures that trying to update a transaction ID that does not exist in the database triggers a RuntimeException with the appropriate error message.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>7af2f3e</td>
+      <td>test(finance): prevent updating transactions from other academies</td>
+      <td>
+        Security test case to verify that a user cannot update a transaction that belongs to a different AcademyId than the one currently in session.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>433691c</td>
+      <td>test(finance): add unit test for successful transaction deletion</td>
+      <td>
+        Confirms that the service correctly calls the repository's delete method when a valid transaction ID belonging to the current academy is provided.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>855f2b1</td>
+      <td>test(finance): verify delete fails for non-existent transaction</td>
+      <td>
+        Validates that the system handles attempts to delete missing records by throwing a RuntimeException, preventing silent failures.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5145623</td>
+      <td>test(finance): prevent deleting transactions from other academies</td>
+      <td>
+        Security test case to ensure that transactions belonging to other academies are protected from deletion by unauthorized academy contexts.
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>84adcfe</td>
+      <td>test(finance): add integration test for transaction registration endpoint</td>
+      <td>
+          Verifies that POST /api/v1/transactions returns 201 Created and the correct JSON representation when provided with a valid RegisterTransactionResource.      
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>b24fcd8</td>
+      <td>test(finance): verify get transaction by id returns 200 OK</td>
+      <td>
+          Ensures that GET /api/v1/transactions/{id} correctly retrieves a transaction and maps it to the expected resource format when the ID exists in the system.      
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>5123427</td>
+      <td>test(finance): verify get transaction by id returns 404 for missing recordst</td>
+      <td>
+          Validates that the controller responds with a 404 Not Found status when a client requests a transaction ID that does not exist in the database.     
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>25e1097</td>
+      <td>test(finance): add integration test for fetching all transactions</td>
+      <td>
+          Tests the GET /api/v1/transactions endpoint to ensure it returns a 200 OK status and a list containing the registered financial movements.    
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>21d1ca1</td>
+      <td>test(finance): verify transaction update endpoint returns 200 OK</td>
+      <td>
+          Confirms that PUT /api/v1/transactions/{id} successfully processes an UpdateTransactionResource, returning the updated transaction data and an OK status.    
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>e8f961a</td>
+      <td>test(finance): add integration test for transaction deletion</td>
+      <td>
+          Verifies that DELETE /api/v1/transactions/{id} correctly triggers the deletion command and returns a 204 No Content status upon successful execution.   
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>e639eb0</td>
+      <td>test(finance): add cucumber feature for financial transaction management</td>
+      <td>
+          Defines acceptance criteria for US025, US026, and US027.
+          Includes scenarios for:
+            - Successful registration of income (US025).
+            - Successful update of expenses (US026).
+            - Successful deletion of transactions (US027).
+            - Validation error for negative amounts in registration. 
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    <tr>
+      <td>EduLabs-Experimentos/demy-backend</td>
+      <td>feature/pruebas-finance</td>
+      <td>85c3a29</td>
+      <td>test(finance): implement cucumber step definitions for transaction management</td>
+      <td>
+          Provides the glue code for financial transaction acceptance tests.
+          Implements:
+            - Step definitions for registration, update, and deletion.
+            - Mocking logic for TransactionRepository and ExternalIamService.
+            - Assertions for verifying transaction state and repository interactions.
+            - Error handling for scenario validation (e.g., negative amounts).
+      </td>
+      <td>10/05/2026</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 ### 6.1.1. Core Entities Unit Tests
 
@@ -6936,202 +7441,408 @@ IllegalArgumentException exception = assertThrows(IllegalArgumentException.class
 
 ##### Enrollment Bounded - Gestión de Matrículas
 
-```
-@ExtendWith(MockitoExtension.class)
-@MockitoSettings(strictness = Strictness.LENIENT)
-class EnrollmentCommandServiceImplTest {
+## Pruebas Unitarias — EnrollmentCommandServiceImpl
 
-    @Mock
-    private EnrollmentRepository enrollmentRepository;
+---
 
-    @Mock
-    private StudentRepository studentRepository;
+**Prueba 1: Crear matrícula exitosamente retorna el ID generado**
 
-    @Mock
-    private ExternalSchedulingService externalSchedulingService;
+*User Story relacionada*: US007 — Matrícula de Alumno
 
-    @Mock
-    private ExternalIamService externalIamService;
+```java
+@Test
+@DisplayName("US007 — Crear matrícula exitosamente retorna el ID generado")
+void handle_CreateEnrollment_Success_ReturnsId() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+    when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId)).thenReturn(Optional.empty());
+    when(studentRepository.findById(STUDENT_ID)).thenReturn(Optional.of(student));
+    when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> {
+        Enrollment e = inv.getArgument(0);
+        return e;
+    });
 
-    @InjectMocks
-    private EnrollmentCommandServiceImpl enrollmentCommandService;
+    // Act
+    Long result = enrollmentCommandService.handle(createCommand);
 
-
-    private static final Long   STUDENT_ID  = 1L;
-    private static final Long   PERIOD_ID   = 10L;
-    private static final Long   SCHEDULE_ID = 100L;
-    private static final Long   ACADEMY_ID  = 5L;
-    private static final Long   ENROLLMENT_ID = 999L;
-
-    private StudentId  studentId;
-    private PeriodId   periodId;
-    private ScheduleId scheduleId;
-    private AcademyId  academyId;
-    private Money      money;
-
-    private CreateEnrollmentCommand createCommand;
-    private UpdateEnrollmentCommand updateCommand;
-    private DeleteEnrollmentCommand deleteCommand;
-
-    private Enrollment enrollment;
-    private Student    student;
-
-    @BeforeEach
-    void setUp() {
-        studentId  = new StudentId(STUDENT_ID);
-        periodId   = new PeriodId(PERIOD_ID);
-        scheduleId = new ScheduleId(SCHEDULE_ID);
-        academyId  = new AcademyId(ACADEMY_ID);
-        money      = new Money(new BigDecimal("500.00"), Currency.getInstance("PEN"));
-
-        createCommand = new CreateEnrollmentCommand(
-                studentId, periodId, scheduleId, money, PaymentStatus.PENDING
-        );
-
-        updateCommand = new UpdateEnrollmentCommand(
-                ENROLLMENT_ID,
-                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
-                EnrollmentStatus.ACTIVE,
-                PaymentStatus.PAID
-        );
-
-        deleteCommand = new DeleteEnrollmentCommand(ENROLLMENT_ID);
-
-        // Enrollment creado via factory (ACTIVE, monto válido)
-        enrollment = Enrollment.createEnrollmentActive(
-                studentId, periodId, scheduleId, academyId, money, PaymentStatus.PENDING
-        );
-
-        student = mock(Student.class);
-        when(student.getDni()).thenReturn(new DniNumber("12345678"));
-    }
-    
-
-    @Test
-    @DisplayName("US007 — Crear matrícula exitosamente retorna el ID generado")
-    void handle_CreateEnrollment_Success_ReturnsId() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
-        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId)).thenReturn(Optional.empty());
-        when(studentRepository.findById(STUDENT_ID)).thenReturn(Optional.of(student));
-        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> {
-            Enrollment e = inv.getArgument(0);
-            return e;
-        });
-
-        // Act
-        Long result = enrollmentCommandService.handle(createCommand);
-
-        // Assert
-        verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
-    }
-
-    @Test
-    @DisplayName("US007 — Crear matrícula duplicada lanza EnrollmentAlreadyExistsException")
-    void handle_CreateEnrollment_DuplicateEnrollment_ThrowsAlreadyExistsException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
-        when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId))
-                .thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(createCommand))
-                .isInstanceOf(EnrollmentAlreadyExistsException.class);
-
-        verify(enrollmentRepository, never()).save(any());
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula existente en academia correcta llama deleteById")
-    void handle_DeleteEnrollment_Success_CallsDeleteById() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act
-        enrollmentCommandService.handle(deleteCommand);
-
-        // Assert
-        verify(enrollmentRepository, times(1)).deleteById(ENROLLMENT_ID);
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula inexistente lanza EnrollmentNotFoundException")
-    void handle_DeleteEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-
-        verify(enrollmentRepository, never()).deleteById(any());
-    }
-
-    @Test
-    @DisplayName("US009 — Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException")
-    void handle_DeleteEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        AcademyId otherAcademy = new AcademyId(99L);
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula existente retorna Optional con matrícula actualizada")
-    void handle_UpdateEnrollment_Success_ReturnsUpdatedEnrollment() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-        when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> inv.getArgument(0));
-
-        // Act
-        Optional<Enrollment> result = enrollmentCommandService.handle(updateCommand);
-
-        // Assert
-        assertThat(result).isPresent();
-        assertThat(result.get().getEnrollmentStatus()).isEqualTo(EnrollmentStatus.ACTIVE);
-        assertThat(result.get().getPaymentStatus()).isEqualTo(PaymentStatus.PAID);
-        verify(enrollmentRepository, times(1)).save(enrollment);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula inexistente lanza EnrollmentNotFoundException")
-    void handle_UpdateEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
-    @Test
-    @DisplayName("US008 — Actualizar matrícula de academia diferente lanza EnrollmentNotFoundException")
-    void handle_UpdateEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
-        // Arrange
-        AcademyId otherAcademy = new AcademyId(99L);
-        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
-        when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
-
-        // Act & Assert
-        assertThatThrownBy(() -> enrollmentCommandService.handle(updateCommand))
-                .isInstanceOf(EnrollmentNotFoundException.class);
-    }
-
+    // Assert
+    verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
 }
+```
+
+*Resumen de prueba*: Verifica que la creación de una matrícula válida invoque correctamente el repositorio y retorne un ID. El test arrange configura los mocks para que el servicio IAM retorne un `academyId` válido, el servicio de scheduling confirme el horario, no exista duplicado en el repositorio y el `save` devuelva el enrollment. El act ejecuta el comando de creación y el assert verifica que `save` fue llamado exactamente una vez. Esta prueba garantiza el flujo exitoso de registro de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 2: Crear matrícula duplicada lanza EnrollmentAlreadyExistsException**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```java
+@Test
+@DisplayName("US007 — Crear matrícula duplicada lanza EnrollmentAlreadyExistsException")
+void handle_CreateEnrollment_DuplicateEnrollment_ThrowsAlreadyExistsException() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(externalSchedulingService.fetchScheduleById(SCHEDULE_ID)).thenReturn(Optional.of(scheduleId));
+    when(enrollmentRepository.findByStudentIdAndPeriodId(studentId, periodId))
+            .thenReturn(Optional.of(enrollment));
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(createCommand))
+            .isInstanceOf(EnrollmentAlreadyExistsException.class);
+
+    verify(enrollmentRepository, never()).save(any());
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema rechace la creación de una matrícula cuando ya existe una activa para el mismo estudiante y periodo. El test arrange configura el repositorio para retornar un enrollment existente ante la búsqueda por `studentId` y `periodId`. El act & assert comprueba que se lanza `EnrollmentAlreadyExistsException` y que el método `save` nunca es invocado. Esta prueba garantiza la integridad de datos evitando matrículas duplicadas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 3: Eliminar matrícula existente en academia correcta llama deleteById**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula existente en academia correcta llama deleteById")
+void handle_DeleteEnrollment_Success_CallsDeleteById() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+    // Act
+    enrollmentCommandService.handle(deleteCommand);
+
+    // Assert
+    verify(enrollmentRepository, times(1)).deleteById(ENROLLMENT_ID);
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de una matrícula existente perteneciente a la academia correcta invoque `deleteById` en el repositorio. El test arrange configura el IAM para retornar el `academyId` correcto y el repositorio para encontrar el enrollment por ID. El act ejecuta el comando de eliminación y el assert verifica que `deleteById` fue llamado exactamente una vez con el ID correspondiente. Esta prueba garantiza el flujo exitoso de cancelación de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 4: Eliminar matrícula inexistente lanza EnrollmentNotFoundException**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula inexistente lanza EnrollmentNotFoundException")
+void handle_DeleteEnrollment_NotFound_ThrowsEnrollmentNotFoundException() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.empty());
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+            .isInstanceOf(EnrollmentNotFoundException.class);
+
+    verify(enrollmentRepository, never()).deleteById(any());
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema lance `EnrollmentNotFoundException` al intentar eliminar una matrícula que no existe en el repositorio. El test arrange configura el repositorio para retornar `Optional.empty()` ante la búsqueda por ID. El act & assert comprueba que se lanza la excepción correcta y que `deleteById` nunca es invocado. Esta prueba garantiza el manejo correcto de recursos inexistentes en la cancelación de matrículas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 5: Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException**
+
+*User Story relacionada*: US009 — Cancelación de Matrícula
+
+```java
+@Test
+@DisplayName("US009 — Eliminar matrícula de academia diferente lanza EnrollmentNotFoundException")
+void handle_DeleteEnrollment_DifferentAcademy_ThrowsEnrollmentNotFoundException() {
+    // Arrange
+    AcademyId otherAcademy = new AcademyId(99L);
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+
+    // Act & Assert
+    assertThatThrownBy(() -> enrollmentCommandService.handle(deleteCommand))
+            .isInstanceOf(EnrollmentNotFoundException.class);
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema impida eliminar una matrícula que pertenece a una academia distinta a la del contexto actual. El test arrange configura el IAM para retornar un `academyId` diferente (99L) al de la matrícula registrada (5L). El act & assert comprueba que se lanza `EnrollmentNotFoundException` al detectar la discrepancia de academia. Esta prueba garantiza el aislamiento de datos entre academias.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+---
+
+**Prueba 6: Actualizar matrícula existente retorna Optional con matrícula actualizada**
+
+*User Story relacionada*: US008 — Actualización de Matrícula
+
+```java
+@Test
+@DisplayName("US008 — Actualizar matrícula existente retorna Optional con matrícula actualizada")
+void handle_UpdateEnrollment_Success_ReturnsUpdatedEnrollment() {
+    // Arrange
+    when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+    when(enrollmentRepository.findById(ENROLLMENT_ID)).thenReturn(Optional.of(enrollment));
+    when(enrollmentRepository.save(any(Enrollment.class))).thenAnswer(inv -> inv.getArgument(0));
+
+    // Act
+    Optional<Enrollment> result = enrollmentCommandService.handle(updateCommand);
+
+    // Assert
+    assertThat(result).isPresent();
+    assertThat(result.get().getEnrollmentStatus()).isEqualTo(EnrollmentStatus.ACTIVE);
+    assertThat(result.get().getPaymentStatus()).isEqualTo(PaymentStatus.PAID);
+    verify(enrollmentRepository, times(1)).save(enrollment);
+}
+```
+
+*Resumen de prueba*: Verifica que la actualización de una matrícula existente retorne un `Optional` con los datos correctamente modificados. El test arrange configura el IAM con el academy correcto, el repositorio para encontrar el enrollment y el `save` para devolver el mismo objeto. El act ejecuta el comando de actualización y el assert verifica que el resultado esté presente, con `enrollmentStatus` ACTIVE y `paymentStatus` PAID. Esta prueba garantiza la correcta modificación de matrículas activas.
+
+![Bounded-Enrollment-Unit1](./assets/test/enrollment1.png)
+
+
+##### Accounting & Finance Bounded Context - Gestión de Transacciones Financieras
+
+**Prueba 1: Registro exitoso de transacción guardada en repositorio**
+
+*User Story relacionada*: US025 - Registro de Ingresos y Egresos Financieros
 
 ```
-![Boundede-Enrollment1](./assets/test/enrollment1.png)
+@Test
+    @DisplayName("US025 - Registrar ingreso/egreso exitosamente guarda la transaccion")
+    void handle_RegisterTransaction_Success_SavesTransaction() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.save(any(Transaction.class))).thenAnswer(inv -> inv.getArgument(0));
 
+        // Act
+        Optional<Transaction> result = transactionCommandService.handle(registerCommand);
+
+        // Assert
+        assertThat(result)
+                .as("El servicio debe retornar una transaccion registrada cuando los datos contables son validos")
+                .isPresent();
+        assertThat(result.get().getTransactionType())
+                .as("La transaccion registrada debe conservar el tipo INCOME")
+                .isEqualTo(TransactionType.INCOME);
+        assertThat(result.get().getTransactionCategory())
+                .as("La transaccion registrada debe conservar la categoria STUDENT_ENROLLMENT")
+                .isEqualTo(TransactionCategory.STUDENT_ENROLLMENT);
+        assertThat(result.get().getTransactionMethod())
+                .as("La transaccion registrada debe conservar el metodo BANK_TRANSFER")
+                .isEqualTo(TransactionMethod.BANK_TRANSFER);
+        verify(transactionRepository, times(1)).save(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Verifica que el servicio registre correctamente una nueva transacción. El test arrange simula que existe una academia en sesión y que el repositorio guardará la entidad. Luego, act ejecuta el comando de registro, y assert valida que el resultado contenga los datos correctos (tipo INCOME, categoría y método) y que el método save del repositorio haya sido invocado exactamente una vez. Esta prueba asegura el flujo exitoso de registro de un movimiento financiero.
+
+![Bounded-Finance](./assets/test/finance1.png)
+
+**Prueba 2: Rechazo de registro cuando no existe academia actual**
+
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
+
+```
+@Test
+    @DisplayName("US025 - Registrar transaccion sin academia actual lanza RuntimeException")
+    void handle_RegisterTransaction_NoAcademy_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(registerCommand))
+                .as("El servicio debe rechazar el registro si no existe una academia actual")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("No academy found");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Valida que el sistema impida registrar una transacción si no hay un contexto de academia válido. El test arrange simula que no se encuentra el ID de la academia actual. El test act & assert verifica que al ejecutar el comando se lance una RuntimeException con el mensaje "No academy found", y asegura que nunca se llame al método save del repositorio. Esto garantiza la integridad de los datos por inquilino (tenant).
+
+![Bounded-Finance](./assets/test/finance2.png)
+
+**Prueba 3: Actualización exitosa de transacción existente**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar ingreso/egreso existente retorna transaccion actualizada")
+    void handle_UpdateTransaction_Success_ReturnsUpdatedTransaction() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+        when(transactionRepository.save(any(Transaction.class))).thenAnswer(inv -> inv.getArgument(0));
+
+        // Act
+        Optional<Transaction> result = transactionCommandService.handle(updateCommand);
+
+        // Assert
+        assertThat(result)
+                .as("El servicio debe retornar la transaccion actualizada cuando pertenece a la academia actual")
+                .isPresent();
+        assertThat(result.get().getTransactionType())
+                .as("La actualizacion debe cambiar el tipo de transaccion a EXPENSE")
+                .isEqualTo(TransactionType.EXPENSE);
+        assertThat(result.get().getTransactionCategory())
+                .as("La actualizacion debe cambiar la categoria a OFFICE_SUPPLIES")
+                .isEqualTo(TransactionCategory.OFFICE_SUPPLIES);
+        assertThat(result.get().getTransactionMethod())
+                .as("La actualizacion debe cambiar el metodo a DEBIT_CARD")
+                .isEqualTo(TransactionMethod.DEBIT_CARD);
+        assertThat(result.get().getAmount())
+                .as("La actualizacion debe cambiar el monto de la transaccion")
+                .isEqualTo(expenseAmount);
+        verify(transactionRepository, times(1)).save(transaction);
+    }
+```
+
+*Resumen de prueba:* Comprueba que se puedan modificar los datos de un ingreso o egreso previamente registrado. El test arrange configura los mocks para devolver la academia actual y la transacción a actualizar. El test act procesa el comando de actualización, y assert confirma que los campos cambiaron exitosamente (tipo EXPENSE, nueva categoría, método y monto), validando además que los cambios se persistieron con save.
+
+![Bounded-Finance](./assets/test/finance3.png)
+
+**Prueba 4: Excepción al actualizar una transacción inexistente**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar transaccion inexistente lanza RuntimeException")
+    void handle_UpdateTransaction_NotFound_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(updateCommand))
+                .as("El servicio debe rechazar la actualizacion si la transaccion no existe")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction not found with id: 1");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Verifica el manejo de errores cuando se intenta modificar un registro que no está en la base de datos. El test arrange simula que la búsqueda en el repositorio devuelve vacío. El test act & assert confirma que se lanza una RuntimeException notificando que la transacción no fue encontrada y se asegura de que el método save no sea ejecutado, previniendo actualizaciones erróneas.
+
+![Bounded-Finance](./assets/test/finance4.png)
+
+**Prueba 5: Protección contra la actualización de transacciones de otras academias**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US026 - Actualizar transaccion de otra academia lanza RuntimeException")
+    void handle_UpdateTransaction_DifferentAcademy_ThrowsRuntimeException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(updateCommand))
+                .as("El servicio debe impedir actualizar una transaccion de otra academia")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction does not belong to the current academy");
+
+        verify(transactionRepository, never()).save(any());
+    }
+```
+
+*Resumen de prueba:* Garantiza la seguridad y aislamiento de datos entre distintas academias. El test arrange simula que el usuario actual pertenece a una academia diferente (ID 99L) a la de la transacción. El test act & assert comprueba que se lance una excepción impidiendo la operación por falta de permisos, confirmando que no se ejecute el guardado.
+
+![Bounded-Finance](./assets/test/finance5.png)
+
+**Prueba 6: Eliminación exitosa de una transacción**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar ingreso/egreso existente llama delete")
+    void handle_DeleteTransaction_Success_CallsDelete() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act
+        transactionCommandService.handle(deleteCommand);
+
+        // Assert
+        verify(transactionRepository, times(1)).delete(transaction);
+    }
+```
+
+*Resumen de prueba:* Valida el flujo correcto ("Happy Path") para la eliminación de registros. El test arrange configura los mocks para encontrar la transacción dentro del contexto de la academia correcta. El test act procesa el comando de eliminación, y assert usa Mockito verify para confirmar que el método delete del repositorio fue invocado exactamente una vez con la entidad correcta.
+
+![Bounded-Finance](./assets/test/finance6.png)
+
+**Prueba 7: Excepción al intentar eliminar una transacción inexistente**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar transaccion inexistente lanza RuntimeException")
+    void handle_DeleteTransaction_NotFound_ThrowsRuntimeException() {
+        // Arrange
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(academyId));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(deleteCommand))
+                .as("El servicio debe rechazar la eliminacion si la transaccion no existe")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction not found with id: 1");
+
+        verify(transactionRepository, never()).delete(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Evalúa la respuesta del sistema al pedir borrar un ID no registrado. El test arrange prepara al repositorio para retornar vacío. El test act & assert corrobora que se levante la excepción adecuada por "no encontrado", y verifica que no haya interacciones innecesarias con la acción delete de la base de datos.
+
+![Bounded-Finance](./assets/test/finance7.png)
+
+**Prueba 8: Protección contra la eliminación de transacciones ajenas**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+@Test
+    @DisplayName("US027 - Eliminar transaccion de otra academia lanza RuntimeException")
+    void handle_DeleteTransaction_DifferentAcademy_ThrowsRuntimeException() {
+        // Arrange
+        AcademyId otherAcademy = new AcademyId(99L);
+        when(externalIamService.fetchCurrentAcademyId()).thenReturn(Optional.of(otherAcademy));
+        when(transactionRepository.findById(TRANSACTION_ID)).thenReturn(Optional.of(transaction));
+
+        // Act & Assert
+        assertThatThrownBy(() -> transactionCommandService.handle(deleteCommand))
+                .as("El servicio debe impedir eliminar una transaccion de otra academia")
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("Transaction does not belong to the current academy");
+
+        verify(transactionRepository, never()).delete(any(Transaction.class));
+    }
+```
+
+*Resumen de prueba:* Refuerza la seguridad verificando que un usuario no pueda borrar registros contables de otra organización. El test arrange simula un choque de IDs de academias (la de la sesión vs la de la transacción). El test act & assert confirma el rechazo de la solicitud lanzando una excepción y asegurando que la transacción permanezca intacta (sin invocar a delete).
+
+![Bounded-Finance](./assets/test/finance8.png)
 
 ### 6.1.2. Core Integration Tests
 
@@ -8127,150 +8838,315 @@ class WeeklySchedulesControllerIntegrationTest {
 
 ---
 
-##### Enrollment Management API
+##### Enrollment Bounded - Gestion Matriculas 
 
+*Prueba 1: Creación de matricula retorna 201
+
+*User Story relacionada*: US011 — Creación de Matrículas
+
+```java
+@Test
+@DisplayName("TS011 — POST /enrollments con datos válidos retorna 201 Created")
+void createEnrollment_ValidRequest_Returns201() throws Exception {
+    // Arrange
+    CreateEnrollmentResource resource = new CreateEnrollmentResource(
+            STUDENT_ID, PERIOD_ID, SCHEDULE_ID, "500.00", "PEN", "PENDING"
+    );
+    when(enrollmentCommandService.handle(any(CreateEnrollmentCommand.class)))
+            .thenReturn(ENROLLMENT_ID);
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.of(sampleEnrollment));
+
+    // Act & Assert
+    mockMvc.perform(post("/api/v1/enrollments")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(resource)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+            .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+            .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"))
+            .andExpect(jsonPath("$.paymentStatus").value("PENDING"));
+}
 ```
 
-@WebMvcTest(controllers = EnrollmentsController.class,
-        excludeAutoConfiguration = {
-                org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class,
-                org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration.class
-        })
-@ActiveProfiles("test")
-@AutoConfigureMockMvc(addFilters = false)
-class EnrollmentsControllerIntegrationTest {
+*Resumen de prueba*: Verifica que la creación de un enrollment con datos válidos retorne 201 Created. El test arrange construye un `CreateEnrollmentResource` con datos válidos y configura los mocks del command y query service, luego act envía un POST a `/api/v1/enrollments` con el body en JSON, y assert verifica el código 201 junto con los campos `studentId`, `periodId`, `enrollmentStatus` y `paymentStatus` en el response. Esta prueba garantiza el correcto registro de nuevas matrículas.
 
-    @Autowired
-    private MockMvc mockMvc;
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
 
-    @Autowired
-    private ObjectMapper objectMapper;
+---
 
-    @MockitoBean
-    private EnrollmentCommandService enrollmentCommandService;
+*Prueba 2: Obtención de matricula por ID existente retorna 200
 
-    @MockitoBean
-    private EnrollmentQueryService enrollmentQueryService;
+*User Story relacionada*: US007 — Gestion de matricula
 
 
-    @MockitoBean
-    private LocalizationService localizationService;
+```java
+@Test
+@DisplayName("TS015 — GET /enrollments/{id} con ID existente retorna 200")
+void getEnrollmentById_ExistingId_Returns200() throws Exception {
+    // Arrange
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.of(sampleEnrollment));
 
-    @MockitoBean
-    private org.springframework.data.jpa.mapping.JpaMetamodelMappingContext jpaMetamodelMappingContext;
+    // Act & Assert
+    mockMvc.perform(get("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
+            .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
+            .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"));
+}
+```
+
+*Resumen de prueba*: Verifica que la consulta de un enrollment con un ID existente retorne 200 OK con los datos correctos. El test arrange configura el mock del query service para retornar el enrollment de muestra, luego act envía un GET a `/api/v1/enrollments/1`, y assert verifica el código 200 junto con los campos `studentId`, `periodId` y `enrollmentStatus`. Esta prueba garantiza la correcta recuperación de matrículas existentes.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+---
+
+*Prueba 3: Obtención de matricula por ID inexistente retorna 404
+
+*User Story relacionada*: US008 — Listado de matricula
 
 
-    private static final Long ENROLLMENT_ID = 1L;
-    private static final Long STUDENT_ID    = 10L;
-    private static final Long PERIOD_ID     = 20L;
-    private static final Long SCHEDULE_ID   = 30L;
-    private static final Long ACADEMY_ID    = 5L;
+```java
+@Test
+@DisplayName("TS015 — GET /enrollments/{id} con ID inexistente retorna 404")
+void getEnrollmentById_NonExistingId_Returns404() throws Exception {
+    // Arrange
+    when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+            .thenReturn(Optional.empty());
 
-    private Enrollment sampleEnrollment;
+    // Act & Assert
+    mockMvc.perform(get("/api/v1/enrollments/{id}", 9999L))
+            .andExpect(status().isNotFound());
+}
+```
 
-    @BeforeEach
-    void setUp() {
-        sampleEnrollment = Enrollment.createEnrollmentActive(
-                new StudentId(STUDENT_ID),
-                new PeriodId(PERIOD_ID),
-                new ScheduleId(SCHEDULE_ID),
-                new AcademyId(ACADEMY_ID),
-                new Money(new BigDecimal("500.00"), Currency.getInstance("PEN")),
-                PaymentStatus.PENDING
-        );
-    }
+*Resumen de prueba*: Verifica que la consulta de un enrollment con un ID que no existe retorne 404 Not Found. El test arrange configura el mock del query service para retornar un `Optional.empty()`, luego act envía un GET a `/api/v1/enrollments/9999`, y assert verifica el código 404. Esta prueba garantiza el manejo correcto de recursos inexistentes.
 
-    @Test
-    @DisplayName("TS011 — POST /enrollments con datos válidos retorna 201 Created")
-    void createEnrollment_ValidRequest_Returns201() throws Exception {
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+---
+
+*Prueba 4: Actualización de matricula retorna 200*
+
+*User Story relacionada*: US008 — Actualizacion de matricula*
+
+
+```java
+@Test
+@DisplayName("TS012 — PUT /enrollments/{id} con datos válidos retorna 200")
+void updateEnrollment_ValidRequest_Returns200() throws Exception {
+    // Arrange
+    UpdateEnrollmentResource resource = new UpdateEnrollmentResource(
+            "600.00", "PEN", "ACTIVE", "PAID"
+    );
+    Enrollment updated = sampleEnrollment.updateInformation(
+            new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
+            EnrollmentStatus.ACTIVE,
+            PaymentStatus.PAID
+    );
+    when(enrollmentCommandService.handle(any(UpdateEnrollmentCommand.class)))
+            .thenReturn(Optional.of(updated));
+
+    // Act & Assert
+    mockMvc.perform(put("/api/v1/enrollments/{id}", ENROLLMENT_ID)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(resource)))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.paymentStatus").value("PAID"));
+}
+```
+
+*Resumen de prueba*: Verifica que la actualización de un enrollment con datos válidos retorne 200 OK con la información actualizada. El test arrange crea un `UpdateEnrollmentResource` con monto y estado actualizados, y configura el mock del command service para retornar el enrollment modificado, luego act envía un PUT a `/api/v1/enrollments/1`, y assert verifica el código 200 y que `paymentStatus` sea `PAID`. Esta prueba garantiza la correcta modificación de matrículas existentes.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+---
+
+*Prueba 5: Eliminación de enrollment retorna 200 con mensaje*
+
+*User Story relacionada*: US009 — Eliminacion de matricula
+
+
+```java
+@Test
+@DisplayName("TS013 — DELETE /enrollments/{id} exitoso retorna 200 con mensaje")
+void deleteEnrollment_ExistingId_Returns200WithMessage() throws Exception {
+    // Arrange
+    doNothing().when(enrollmentCommandService).handle(any(DeleteEnrollmentCommand.class));
+
+    // Act & Assert
+    mockMvc.perform(delete("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+            .andExpect(status().isOk())
+            .andExpect(content().string(containsString("successfully deleted")));
+}
+```
+
+*Resumen de prueba*: Verifica que la eliminación de un enrollment existente retorne 200 OK junto con un mensaje de confirmación. El test arrange configura el mock del command service para no ejecutar ninguna acción (`doNothing`), luego act envía un DELETE a `/api/v1/enrollments/1`, y assert verifica el código 200 y que el body contenga el texto `"successfully deleted"`. Esta prueba garantiza que la eliminación de matrículas comunique correctamente el resultado al cliente.
+
+![Bounded-Enrollment-Int1](./assets/test/enrollment2.png)
+
+#### Accounting & Finance
+
+**Prueba 1: Registro exitoso de transacción vía API (HTTP 201)**
+
+*Test Scenario relacionado:* TS050 - POST /transactions
+
+```
+@Test
+    @DisplayName("TS050 - POST /transactions con datos validos retorna 201 Created")
+    void registerTransaction_ValidRequest_Returns201() throws Exception {
         // Arrange
-        CreateEnrollmentResource resource = new CreateEnrollmentResource(
-                STUDENT_ID, PERIOD_ID, SCHEDULE_ID, "500.00", "PEN", "PENDING"
+        RegisterTransactionResource resource = new RegisterTransactionResource(
+                "income", "student enrollment", "cash", new BigDecimal("150.00"),
+                "PEN", "Pago de matricula", LocalDate.of(2026, 5, 9)
         );
-        when(enrollmentCommandService.handle(any(CreateEnrollmentCommand.class)))
-                .thenReturn(ENROLLMENT_ID);
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
-                .thenReturn(Optional.of(sampleEnrollment));
+        when(transactionCommandService.handle(any(RegisterTransactionCommand.class)))
+                .thenReturn(Optional.of(sampleTransaction));
 
         // Act & Assert
-        mockMvc.perform(post("/api/v1/enrollments")
+        mockMvc.perform(post("/api/v1/transactions")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(resource)))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
-                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
-                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"))
-                .andExpect(jsonPath("$.paymentStatus").value("PENDING"));
+                .andExpect(jsonPath("$.transactionType").value("INCOME"))
+                .andExpect(jsonPath("$.transactionCategory").value("STUDENT_ENROLLMENT"))
+                .andExpect(jsonPath("$.transactionMethod").value("CASH"))
+                .andExpect(jsonPath("$.amount").value(150.00))
+                .andExpect(jsonPath("$.currency").value("PEN"));
 
+        verify(transactionCommandService, times(1)).handle(any(RegisterTransactionCommand.class));
     }
+```
 
+*Resumen de prueba:* Verifica que el endpoint POST procese correctamente una solicitud de registro. El test arrange crea un RegisterTransactionResource y mockea el servicio de comandos para simular un guardado exitoso. El test act & assert utiliza MockMvc para enviar un JSON al controlador, confirmando que la respuesta HTTP sea 201 (Created) y que los datos del JSON de respuesta coincidan con la transacción creada. Garantiza que la capa de interfaz exponga la creación correctamente.
 
+![Boundede-Enrollment1](./assets/test/finance1_integration.png)
 
-    @Test
-    @DisplayName("TS015 — GET /enrollments/{id} con ID existente retorna 200")
-    void getEnrollmentById_ExistingId_Returns200() throws Exception {
+**Prueba 2: Obtención de transacción existente por ID (HTTP 200)**
+
+*Test Scenario relacionado:* TS054 - GET /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS054 - GET /transactions/{id} con ID existente retorna 200 OK")
+    void getTransactionById_ExistingId_Returns200() throws Exception {
         // Arrange
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
-                .thenReturn(Optional.of(sampleEnrollment));
+        when(transactionQueryService.handle(any(GetTransactionByIdQuery.class)))
+                .thenReturn(Optional.of(sampleTransaction));
 
         // Act & Assert
-        mockMvc.perform(get("/api/v1/enrollments/{id}", ENROLLMENT_ID))
+        mockMvc.perform(get("/api/v1/transactions/{id}", TRANSACTION_ID))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.studentId").value(STUDENT_ID))
-                .andExpect(jsonPath("$.periodId").value(PERIOD_ID))
-                .andExpect(jsonPath("$.enrollmentStatus").value("ACTIVE"));
+                .andExpect(jsonPath("$.transactionType").value("INCOME"))
+                .andExpect(jsonPath("$.transactionCategory").value("STUDENT_ENROLLMENT"))
+                .andExpect(jsonPath("$.currency").value("PEN"));
     }
+```
 
-    @Test
-    @DisplayName("TS015 — GET /enrollments/{id} con ID inexistente retorna 404")
-    void getEnrollmentById_NonExistingId_Returns404() throws Exception {
+*Resumen de prueba:* Valida que el endpoint GET recupere una transacción específica. El test arrange mockea el transactionQueryService para que retorne la transacción de prueba. El test act & assert realiza la petición GET con un ID válido, verificando que el código de estado sea 200 (OK) y que el cuerpo de la respuesta contenga los valores mapeados correctamente en formato JSON.
+
+![Boundede-Enrollment1](./assets/test/finance2_integration.png)
+
+**Prueba 3: Manejo de error al consultar transacción inexistente (HTTP 404)**
+
+*Test Scenario relacionado:* TS054 - GET /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS054 - GET /transactions/{id} con ID inexistente retorna 404 Not Found")
+    void getTransactionById_NonExistingId_Returns404() throws Exception {
         // Arrange
-        when(enrollmentQueryService.handle(any(GetEnrollmentByIdQuery.class)))
+        when(transactionQueryService.handle(any(GetTransactionByIdQuery.class)))
                 .thenReturn(Optional.empty());
 
         // Act & Assert
-        mockMvc.perform(get("/api/v1/enrollments/{id}", 9999L))
+        mockMvc.perform(get("/api/v1/transactions/{id}", 9999L))
                 .andExpect(status().isNotFound());
     }
+```
 
-    @Test
-    @DisplayName("TS012 — PUT /enrollments/{id} con datos válidos retorna 200")
-    void updateEnrollment_ValidRequest_Returns200() throws Exception {
+*Resumen de prueba:* Asegura que el controlador maneje adecuadamente las consultas de recursos que no existen. El test arrange configura el mock del servicio de consultas para devolver un Optional.empty(). El test act & assert ejecuta la petición GET con un ID simulado (9999L) y verifica que el sistema responda con un HTTP 404 (Not Found), cumpliendo con los estándares REST.
+
+![Boundede-Enrollment1](./assets/test/finance3_integration.png)
+
+**Prueba 4: Listado general de transacciones (HTTP 200)**
+
+*Test Scenario relacionado:* TS053 - GET /transactions
+
+```
+@Test
+    @DisplayName("TS053 - GET /transactions retorna lista de movimientos contables")
+    void getAllTransactions_ReturnsTransactionList() throws Exception {
         // Arrange
-        UpdateEnrollmentResource resource = new UpdateEnrollmentResource(
-                "600.00", "PEN", "ACTIVE", "PAID"
-        );
-        Enrollment updated = sampleEnrollment.updateInformation(
-                new Money(new BigDecimal("600.00"), Currency.getInstance("PEN")),
-                EnrollmentStatus.ACTIVE,
-                PaymentStatus.PAID
-        );
-        when(enrollmentCommandService.handle(any(UpdateEnrollmentCommand.class)))
-                .thenReturn(Optional.of(updated));
+        when(transactionQueryService.handle(any(GetAllTransactionsQuery.class)))
+                .thenReturn(List.of(sampleTransaction));
 
         // Act & Assert
-        mockMvc.perform(put("/api/v1/enrollments/{id}", ENROLLMENT_ID)
+        mockMvc.perform(get("/api/v1/transactions"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].transactionType").value("INCOME"));
+    }
+```
+
+*Resumen de prueba:* Comprueba que el endpoint devuelva una colección de registros financieros. El test arrange instruye al servicio para devolver una lista que contiene el registro de prueba. El test act & assert llama a la ruta raíz de transacciones por GET, validando un estado 200 (OK) y comprobando mediante JsonPath que la respuesta es un arreglo (array) con un tamaño de 1 y los datos correspondientes.
+
+![Boundede-Enrollment1](./assets/test/finance4_integration.png)
+
+**Prueba 5: Actualización exitosa vía API (HTTP 200)**
+
+*Test Scenario relacionado:* TS051 - PUT /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS051 - PUT /transactions/{id} con datos validos retorna 200 OK")
+    void updateTransaction_ValidRequest_Returns200() throws Exception {
+        // Arrange
+        UpdateTransactionResource resource = new UpdateTransactionResource(
+                "expense", "office supplies", "debit card", new BigDecimal("80.00"),
+                "PEN", "Compra de utiles de oficina", LocalDate.of(2026, 5, 10)
+        );
+        sampleTransaction.updateTransaction(...);
+        when(transactionCommandService.handle(any(UpdateTransactionCommand.class)))
+                .thenReturn(Optional.of(sampleTransaction));
+
+        // Act & Assert
+        mockMvc.perform(put("/api/v1/transactions/{id}", TRANSACTION_ID)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(resource)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.paymentStatus").value("PAID"));
+                .andExpect(jsonPath("$.transactionType").value("EXPENSE"))
+                .andExpect(jsonPath("$.amount").value(80.00));
     }
+```
 
+*Resumen de prueba:* Verifica la correcta modificación de un recurso a través del método PUT. El test arrange prepara un recurso con los datos nuevos (egreso por 80.00) y mockea la respuesta del servicio de comandos. El test act & assert envía la petición PUT, garantizando que el controlador responda con 200 (OK) y serialice el recurso actualizado reflejando los cambios.
 
-    @Test
-    @DisplayName("TS013 — DELETE /enrollments/{id} exitoso retorna 200 con mensaje")
-    void deleteEnrollment_ExistingId_Returns200WithMessage() throws Exception {
+![Boundede-Enrollment1](./assets/test/finance5_integration.png)
+
+**Prueba 6: Eliminación exitosa vía API (HTTP 204)**
+
+*Test Scenario relacionado:* TS052 - DELETE /transactions/{id}
+
+```
+@Test
+    @DisplayName("TS052 - DELETE /transactions/{id} exitoso retorna 204 No Content")
+    void deleteTransaction_ExistingId_Returns204() throws Exception {
         // Arrange
-        doNothing().when(enrollmentCommandService).handle(any(DeleteEnrollmentCommand.class));
+        doNothing().when(transactionCommandService).handle(any(DeleteTransactionCommand.class));
 
         // Act & Assert
-        mockMvc.perform(delete("/api/v1/enrollments/{id}", ENROLLMENT_ID))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("successfully deleted")));
+        mockMvc.perform(delete("/api/v1/transactions/{id}", TRANSACTION_ID))
+                .andExpect(status().isNoContent());
+
+        verify(transactionCommandService, times(1)).handle(any(DeleteTransactionCommand.class));
     }
-}
 ```
-![Boundede-Enrollment1](./assets/test/enrollment2.png)
+
+*Resumen de prueba:* Confirma el flujo de borrado de recursos según el estándar REST. El test arrange usa doNothing() ya que el método del servicio no retorna valor. El test act & assert ejecuta la petición DELETE y valida que devuelva el código HTTP 204 (No Content), verificando además que el comando fue enviado correctamente a la capa de aplicación.
+
+![Boundede-Enrollment1](./assets/test/finance6_integration.png)
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -8673,120 +9549,121 @@ Feature: Gestión de horarios semanales
 
 ![Bounded-Scheduling-BDD3](./assets/test/scheduling_bdd3.png)
 
----
 
-##### Enrollment Bounded - Pruebas de Comportamiento (BDD) para la Gestión de Matrículas US007, US008 y US009
+#### Accounting & Finance
 
-```
-Característica: Gestión de Matrículas
-  Como administrador
-  Quiero gestionar las inscripciones en la plataforma
-  Para asegurar que los usuarios estén correctamente registrados en los cursos
+**Prueba 1: Registro exitoso de ingreso financiero**
 
-  Antecedentes:
-    Dado que el administrador ha iniciado sesión en la plataforma
-    Y que existen estudiantes, periodos y horarios disponibles en el sistema
-
-  # ─────────────────────────────────────────────
-  # US007 - Registro de Inscripción
-  # ─────────────────────────────────────────────
-
-  Esquema del escenario: US007 - Escenario 1 - Registro exitoso de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Cuando completa el formulario con los datos válidos de la inscripción
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | 1         | 1        | 1          | 350.00 | PEN      | PENDING       |
-    Y hace clic en el botón "Registrar Matrícula"
-    Entonces el sistema registra la inscripción correctamente
-    Y el formulario se limpia exitosamente
-    Y el estado "isFormSuccess" es verdadero
-
-  Esquema del escenario: US007 - Escenario 2 - Error en el registro por datos incompletos
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Cuando intenta guardar la inscripción sin completar los campos obligatorios
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | null      | null     | null       |        | PEN      |               |
-    Entonces el botón "Registrar Matrícula" permanece deshabilitado
-    Y el sistema no envía ninguna solicitud de registro
-
-  Escenario: US007 - Escenario 3 - Error del servidor al registrar inscripción duplicada
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y el servidor responde con un error de conflicto al crear la matrícula
-    Cuando completa el formulario con datos de un estudiante ya inscrito
-      | studentId | periodId | scheduleId | amount | currency | paymentStatus |
-      | 1         | 1        | 1          | 350.00 | PEN      | PENDING       |
-    Y hace clic en el botón "Registrar Matrícula"
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-
-  # ─────────────────────────────────────────────
-  # US008 - Actualización de Inscripción
-  # ─────────────────────────────────────────────
-
-  Escenario: US008 - Escenario 1 - Actualización exitosa de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y modifica los campos de la inscripción con información válida
-      | amount | currency | paymentStatus | enrollmentStatus |
-      | 400.00 | PEN      | PAID          | ACTIVE           |
-    Y hace clic en el botón "Guardar Cambios"
-    Entonces el sistema actualiza la inscripción correctamente
-    Y el estado "isFormSuccess" es verdadero
-    Y la lista de matrículas se recarga
-
-  Escenario: US008 - Escenario 2 - Error al actualizar con datos inválidos
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y el servidor responde con un error al intentar actualizar
-    Y hace clic en el botón "Guardar Cambios"
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-    Y la inscripción no es modificada
-
-  Escenario: US008 - Escenario 3 - Cancelación de la edición
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción previamente registrada con id 10
-    Cuando selecciona la inscripción para editar
-    Y hace clic en el botón "Cancelar"
-    Entonces el formulario se limpia exitosamente
-    Y el campo "enrollmentToEdit" queda en nulo
-    Y no se realiza ninguna llamada al servidor
-
-  # ─────────────────────────────────────────────
-  # US009 - Cancelación de Inscripción
-  # ─────────────────────────────────────────────
-
-  Escenario: US009 - Escenario 1 - Eliminación exitosa de inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción activa con id 5
-    Cuando hace clic en el botón eliminar de esa inscripción
-    Y confirma la acción de eliminación
-    Entonces el sistema elimina la inscripción correctamente
-    Y la lista de matrículas se recarga sin la inscripción eliminada
-
-  Escenario: US009 - Escenario 2 - Error del servidor al eliminar inscripción
-    Dado que el administrador tiene permisos de gestión de matrículas
-    Y existe una inscripción activa con id 5
-    Y el servidor responde con un error al intentar eliminar
-    Cuando hace clic en el botón eliminar de esa inscripción
-    Entonces el sistema muestra un mensaje de error al administrador
-    Y el estado "isLoading" es falso
-    Y la lista de matrículas no se modifica
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
 
 ```
+Scenario: US025 - Registro exitoso de ingreso financiero
+    Given existe una academia financiera con id 5
+    When registro una transaccion financiera con tipo "income", categoria "student enrollment", metodo "cash", monto 150.00 y moneda PEN
+    Then debe crearse una transaccion con tipo "INCOME", categoria "STUDENT_ENROLLMENT", metodo "CASH", monto 150.00 y moneda "PEN"
+    And el mensaje final de finance es "Test Passed"
+```
 
-*Resumen de prueba*: Este conjunto de escenarios BDD describe los flujos de registro, actualización y eliminación de matrículas en el sistema. Given establece que el administrador ha iniciado sesión, existen estudiantes, periodos y horarios disponibles, y se tienen los permisos necesarios de gestión. When cubre acciones como completar el formulario con datos válidos, hacer clic en los botones de acción (Registrar Matrícula, Guardar Cambios, Cancelar, Eliminar) y confirmar operaciones. Then verifica que el sistema registra, actualiza o elimina la inscripción correctamente, que el formulario se limpia tras una operación exitosa, que se muestran mensajes de error ante fallos del servidor, y que el estado del ViewModel refleja el resultado esperado en cada caso. Estos escenarios validan el comportamiento completo del módulo de gestión de matrículas para las historias de usuario US007, US008 y US009.
+*Resumen de prueba:* Evalúa el flujo principal de creación mediante BDD. El paso Given establece la precondición (contexto de academia existente). El When dispara la acción del administrador (registrar ingreso de 150.00 PEN). Los pasos Then validan que los textos en lenguaje natural se transformen y guarden correctamente como Value Objects del dominio (enums como INCOME o CASH), asegurando que el estado final sea exitoso.
 
-![Bounded-Enrollment](./assets/test/enrollment4.png)
+![Bounded-Finance](./assets/test/finance_bdd1.png)
+
+**Prueba 2: Actualización exitosa de egreso financiero**
+
+*User Story relacionada:* US026 - Actualización de Transacciones Financieras
+
+```
+Scenario: US026 - Actualizacion exitosa de egreso financiero
+    Given existe una academia financiera con id 5
+    And existe una transaccion financiera registrada con id 1
+    When actualizo la transaccion financiera con tipo "expense", categoria "office supplies", metodo "debit card", monto 80.00 y moneda PEN
+    Then debe actualizarse la transaccion con tipo "EXPENSE", categoria "OFFICE_SUPPLIES", metodo "DEBIT_CARD", monto 80.00 y moneda "PEN"
+    And el mensaje final de finance es "Test Passed"
+```
+
+*Resumen de prueba:* Comprueba la capacidad del sistema para modificar datos contables desde la perspectiva del usuario. Los pasos Given preparan el entorno con un registro existente. El When aplica los cambios simulando la corrección de un ingreso a un egreso (Expense). Los Then verifican que la entidad actualice sus atributos correctamente en la capa de aplicación y el flujo de prueba termine sin errores.
+
+![Bounded-Finance](./assets/test/finance_bdd2.png)
+
+**Prueba 3: Eliminación exitosa de ingreso o egreso financiero**
+
+*User Story relacionada:* US027 - Eliminación de Transacciones Financieras
+
+```
+Scenario: US027 - Eliminacion exitosa de ingreso o egreso financiero
+    Given existe una academia financiera con id 5
+    And existe una transaccion financiera registrada con id 1
+    When elimino la transaccion financiera
+    Then la transaccion financiera debe eliminarse correctamente
+    And el mensaje final de finance es "Test Passed"
+```
+
+*Resumen de prueba:* Asegura que la anulación de registros se procese adecuadamente cumpliendo los criterios de aceptación. El escenario inicia con las condiciones dadas (Given). Al ejecutar la eliminación simple (When), el sistema pasa por la aserción (Then) donde los Step Definitions validan con el mock del repositorio que la entidad fue efectivamente borrada.
+
+![Bounded-Finance](./assets/test/finance_bdd3.png)
+
+**Prueba 4: Registro rechazado por monto negativo**
+
+*User Story relacionada:* US025 - Registro de Ingresos y Egresos Financieros
+
+```
+Scenario: US025 - Registro rechazado por monto negativo
+    Given existe una academia financiera con id 5
+    When registro una transaccion financiera con tipo "income", categoria "student enrollment", metodo "cash", monto -50.00 y moneda PEN
+    Then el mensaje final de finance es "Error"
+```
+
+*Resumen de prueba:* Valida las reglas e invariantes del dominio frente a errores del usuario. Si un administrador intenta registrar un monto inválido como -50.00 PEN (When), el código subyacente (el Value Object Money) lanzará una excepción. El test atrapa esto y verifica que el resultado devuelto al flujo sea explícitamente un "Error" (Then), protegiendo la base de datos de anomalías matemáticas.
+
+![Bounded-Finance](./assets/test/finance_bdd4.png)
+
+
+##### Enrollment Bounded
+
+*User Story relacionada*: US007 - Registro de matricula
+
+```
+Feature: Registrar matrícula de un estudiante
+  Para que se almacenen sus datos y se acceda a funcionalidades adicionales
+  Como administrativo
+  Quiero registrar alumnos en la aplicación web
+
+  Scenario Outline: Registro de matrícula
+    Given existe un Student con id <studentId>
+    And existe un AcademicPeriod con id <academicPeriodId>
+    And existe un WeeklySchedule con id <weeklyScheduleId>
+    And existe un Academy con id <academyId>
+    When intento registrar la matrícula con amount <amount> y currency <currency>
+    Then debe crearse una Enrollment con
+      | studentId        | <studentId>        |
+      | academicPeriodId | <academicPeriodId> |
+      | weeklyScheduleId | <weeklyScheduleId> |
+      | academyId        | <academyId>        |
+      | amount           | <amount>           |
+      | currency         | <currency>         |
+      | status           | <status>           |
+
+    And el mensaje final es "<message>"
+
+    Examples:
+      | studentId | academicPeriodId | academyId | weeklyScheduleId | amount  | currency | status | message     |
+      | 5         | 7                | 2         | 1                | 1500.00 | PEN      | ACTIVE | Test Passed |
+      | 6         | 8                | 2         | 2                | -500.00 | PEN      | ACTIVE | Error       |
+      | 7         | 9                | 3         | 1                | 1200.00 | PEN      | ACTIVE | Test Passed |
+
+
+```
+
+*Resumen de prueba:* Esta prueba garantiza que el sistema rechace montos inválidos y registre correctamente las matrículas con datos consistentes.
+
+
+![Boundede-Enrollment1](./assets/test/enrollment3.png)
+
 
 
 ### 6.1.4. Core System Tests
 
 Para garantizar la integridad del sistema en un entorno web real, hemos implementado pruebas de extremo a extremo (E2E) utilizando **Cypress**. Estas pruebas simulan el comportamiento de un usuario final navegando en la aplicación Angular, interactuando con los formularios y validando que las peticiones al backend (Spring Boot) persistan correctamente en la base de datos real.
-
-
 
 
 ##### Institution Frontend Web
@@ -8856,6 +9733,9 @@ describe('E2E Puro: Flujo de Onboarding Real', () => {
 
 *User Story relacionada*: US004 - Registro de Profesor
 
+**Resumen del Flujo Evaluado:**
+Este test E2E evalua el proceso del registro completo de un profesor, desde lo que manda el frontend hasta la base de datos y luego mostrarlo en la lista de profesores
+
 ```
 describe('E2E: Gestión de Profesores (Teacher)', () => {
   beforeEach(() => {
@@ -8903,209 +9783,472 @@ describe('E2E: Gestión de Profesores (Teacher)', () => {
 ![Teacher System Test](./assets//test/teacher-system-test.png)
 
 
+#### Enrollment Mobile Application
+
+---
+
+**Prueba 1: Registro exitoso de inscripción**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@When("completa el formulario con los datos válidos de la inscripción")
+fun completaFormularioConDatosValidos(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el sistema registra la inscripción correctamente")
+fun sistemaRegistraInscripcionCorrectamente() = runTest(testDispatcher) {
+    verify(createEnrollmentUseCase, atLeastOnce()).invoke(any())
+}
+
+@Then("el formulario se limpia exitosamente")
+fun formularioSeLimpia() {
+    val formData = viewModel.formData.value
+    assertNull("studentId debe ser null", formData.studentId)
+    assertNull("periodId debe ser null",  formData.periodId)
+    assertNull("scheduleId debe ser null", formData.scheduleId)
+    assertEquals("", formData.amount)
+    assertEquals("PEN", formData.currency)
+    assertEquals("", formData.paymentStatus)
+}
+
+@Then("el estado {string} es verdadero")
+fun estadoEsVerdadero(estado: String) {
+    val state = viewModel.uiState.value
+    when (estado) {
+        "isFormSuccess" -> assertTrue("isFormSuccess debe ser true", state.isFormSuccess)
+        else            -> throw IllegalArgumentException("Estado desconocido: $estado")
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el registro de una matrícula con datos completos y válidos se procese correctamente. El given establece que el administrador tiene permisos y los datos auxiliares están disponibles, el when construye un `EnrollmentFormData` con `studentId=1`, `periodId=1`, `scheduleId=1`, `amount=350.00` y `paymentStatus=PENDING` y ejecuta `onSaveEnrollmentClick`, y el then verifica que `createEnrollmentUseCase` fue invocado, el formulario queda limpio y `isFormSuccess` es verdadero. Esta prueba garantiza el flujo exitoso de alta de matrículas en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 2: Error en el registro por datos incompletos**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@Cuando("intenta guardar la inscripción sin completar los campos obligatorios")
+fun intentaGuardarSinCamposObligatorios(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el botón {string} permanece deshabilitado")
+fun botonPermaneceDeshabilitado(boton: String) {
+    val formData = viewModel.formData.value
+    assertFalse(
+        "El formulario no debe ser válido cuando faltan campos obligatorios",
+        formData.isFormValid
+    )
+}
+
+@Then("el sistema no envía ninguna solicitud de registro")
+fun sistemaNoCreaInscripcion() = runTest(testDispatcher) {
+    verify(createEnrollmentUseCase, never()).invoke(any())
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema impida el envío del formulario cuando los campos obligatorios están vacíos o nulos. El when construye un `EnrollmentFormData` con `studentId=null`, `periodId=null`, `scheduleId=null` y `paymentStatus` vacío, y el then verifica que `isFormValid` es falso y que `createEnrollmentUseCase` nunca fue invocado. Esta prueba garantiza la validación de campos requeridos antes del registro en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 3: Error del servidor al registrar inscripción duplicada**
+
+*User Story relacionada*: US007 — Matrícula de Alumno
+
+```kotlin
+@Given("el servidor responde con un error de conflicto al crear la matrícula")
+fun servidorRespondeConflictoAlCrear() = runTest(testDispatcher) {
+    whenever(createEnrollmentUseCase(any()))
+        .thenReturn(Result.failure(Exception("409 - Ya existe una inscripción para este estudiante en el periodo seleccionado.")))
+}
+
+@Given("completa el formulario con datos de un estudiante ya inscrito")
+fun completaFormularioConEstudianteYaInscrito(dataTable: DataTable) {
+    val row = dataTable.asMaps().first()
+    val formData = EnrollmentFormData(
+        studentId     = row["studentId"]?.toLongOrNull(),
+        periodId      = row["periodId"]?.toLongOrNull(),
+        scheduleId    = row["scheduleId"]?.toLongOrNull(),
+        amount        = row["amount"] ?: "",
+        currency      = row["currency"] ?: "PEN",
+        paymentStatus = row["paymentStatus"] ?: ""
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Given("el sistema muestra un mensaje de error al administrador")
+fun sistemaMuestraMensajeError() {
+    val state = viewModel.uiState.value
+    assertNotNull("errorMessage debe contener un mensaje", state.errorMessage)
+    assertTrue("El mensaje de error no debe estar vacío", state.errorMessage!!.isNotBlank())
+}
+
+@Then("el estado {string} es falso")
+fun estadoEsFalso(estado: String) {
+    val state = viewModel.uiState.value
+    when (estado) {
+        "isLoading" -> assertFalse("isLoading debe ser false", state.isLoading)
+        else        -> throw IllegalArgumentException("Estado desconocido: $estado")
+    }
+}
+```
+
+*Resumen de prueba*: Verifica que el sistema maneje correctamente un error 409 de conflicto cuando se intenta registrar una matrícula duplicada. El given configura el mock de `createEnrollmentUseCase` para retornar un `Result.failure` con excepción 409, el when completa el formulario con datos de un estudiante ya inscrito y ejecuta `onSaveEnrollmentClick`, y el then verifica que `errorMessage` no es nulo ni vacío y que `isLoading` es falso. Esta prueba garantiza el manejo adecuado de duplicados en el registro de matrículas desde la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+---
+
+**Prueba 4: Actualización exitosa de inscripción**
+
+*User Story relacionada*: US008 — Actualización de Matrícula
+
+```kotlin
+@When("selecciona la inscripción para editar")
+fun seleccionaInscripcionParaEditar() {
+    val enrollment = sampleEnrollments.first { it.id == 10L }
+    viewModel.onEnrollmentSelectedForEdit(enrollment)
+}
+
+@When("modifica los campos de la inscripción con información válida")
+fun modificaCamposConInformacionValida(dataTable: DataTable) = runTest(testDispatcher) {
+    val row = dataTable.asMaps().first()
+    val updatedEnrollment = sampleEnrollments.first { it.id == 10L }.copy(
+        amount           = row["amount"] ?: "350.00",
+        currency         = row["currency"] ?: "PEN",
+        paymentStatus    = PaymentStatus.valueOf(row["paymentStatus"] ?: "PENDING"),
+        enrollmentStatus = EnrollmentStatus.valueOf(row["enrollmentStatus"] ?: "ACTIVE")
+    )
+    whenever(updateEnrollmentUseCase(any())).thenReturn(Result.success(updatedEnrollment))
+    val updatedList = sampleEnrollments.map {
+        if (it.id == 10L) updatedEnrollment else it
+    }
+    whenever(getAllEnrollmentsUseCase()).thenReturn(Result.success(updatedList))
+
+    val formData = EnrollmentFormData(
+        studentId        = updatedEnrollment.studentId,
+        periodId         = updatedEnrollment.periodId,
+        scheduleId       = updatedEnrollment.scheduleId,
+        amount           = updatedEnrollment.amount,
+        currency         = updatedEnrollment.currency,
+        paymentStatus    = updatedEnrollment.paymentStatus.name,
+        enrollmentStatus = updatedEnrollment.enrollmentStatus?.name ?: "ACTIVE"
+    )
+    viewModel.onEnrollmentFormChange(formData)
+}
+
+@Then("el sistema actualiza la inscripción correctamente")
+fun sistemaActualizaInscripcionCorrectamente() = runTest(testDispatcher) {
+    verify(updateEnrollmentUseCase, atLeastOnce()).invoke(any())
+}
+
+@Then("la lista de matrículas se recarga")
+fun listaMatriculasSeRecarga() = runTest(testDispatcher) {
+    verify(getAllEnrollmentsUseCase, atLeastOnce()).invoke()
+}
+```
+
+*Resumen de prueba*: Verifica que la edición de una matrícula existente con datos válidos se procese y refleje correctamente en el sistema. El when selecciona el enrollment con `id=10L` mediante `onEnrollmentSelectedForEdit`, construye el `EnrollmentFormData` actualizado con `amount=400.00`, `paymentStatus=PAID` y `enrollmentStatus=ACTIVE`, y configura el mock para retornar `Result.success`. El then verifica que `updateEnrollmentUseCase` fue invocado y que `getAllEnrollmentsUseCase` se llamó nuevamente para recargar la lista. Esta prueba garantiza el flujo completo de modificación de matrículas en la app móvil.
+
+![Bounded-Enrollment-BDD](./assets/test/enrollment4.png)
+
+
+##### Institution Mobile Application
+
+
+```
+@RunWith(AndroidJUnit4::class)
+class RegisterTeacherE2ETest {
+
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
+
+    @Test
+    fun deberiaRegistrarProfesorYMostrarloEnLaLista() {
+        // Arrange
+        val timestamp = System.currentTimeMillis().toString()
+        val uniqueEmail = "carlos_$timestamp@nistra.com"
+
+        // Esperamos a que el Splash Screen termine
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("input-email-login").fetchSemanticsNodes().isNotEmpty()
+        }
+
+        // Act
+
+        // Iniciar sesión
+        composeTestRule.onNodeWithTag("input-email-login").performTextInput("diegovilcatut@gmail.com")
+        composeTestRule.onNodeWithTag("input-password-login").performTextInput("Sofiamia")
+        composeTestRule.onNodeWithTag("btn-submit-login").performScrollTo().performClick()
+
+        // Esperar navegación y entrar a Profesores
+        composeTestRule.waitUntil(timeoutMillis = 8000) {
+            composeTestRule.onAllNodesWithTag("btn-submit-login").fetchSemanticsNodes().isEmpty()
+        }
+        composeTestRule.onNodeWithText("Teachers", ignoreCase = true).performClick()
+
+        // Registrar al profesor
+        composeTestRule.onNodeWithTag("teacher-firstName").performTextInput("Carlos")
+        composeTestRule.onNodeWithTag("teacher-lastName").performTextInput("Mendoza")
+        composeTestRule.onNodeWithTag("teacher-email").performTextInput(uniqueEmail)
+        composeTestRule.onNodeWithTag("teacher-submit-button").performClick()
+
+        // ASSERT (Verificación de resultados)
+
+        // Esperamos a que la red responda y validamos la UI
+        composeTestRule.waitUntil(timeoutMillis = 5000) {
+            composeTestRule.onAllNodesWithText(uniqueEmail).fetchSemanticsNodes().isNotEmpty()
+        }
+        composeTestRule.onNodeWithText(uniqueEmail).assertIsDisplayed()
+    }
+}
+```
+
+![Register teacher mobile test e23](./assets/test/teacher-mobile-e2e.png)
+
+**Comparativa de Pruebas E2E: Web (Cypress) vs. Móvil (Compose Testing)**
+
+Aunque ambas pruebas validan el mismo flujo, existen tres diferencias clave en su implementación:
+
+1. **Identificación de elementos:** * **Web:** Busca elementos usando el HTML de la página (como IDs o clases CSS).
+   * **Móvil:** Usa el "Árbol Semántico" de Android, identificando componentes por etiquetas de prueba (`TestTags`) o por el texto que el usuario ve en pantalla.
+
+2. **Manejo de esperas:** * **Web:** Cypress espera automáticamente a que los elementos aparezcan antes de fallar.
+   * **Móvil:** Compose Testing no espera por defecto. Es necesario usar comandos manuales (`waitUntil`) para darle tiempo a la aplicación de cargar datos del servidor o cambiar de pantalla.
+
+3. **Conexión con el servidor:** * **Web:** Es común interceptar y simular las respuestas del backend (`cy.intercept`) para aislar el frontend.
+   * **Móvil:** Se realizó una prueba **E2E Real**. El emulador se comunica directamente con el servidor de Spring Boot, guardando la información en la base de datos física.
 
 ---
 ### Billing Frontend Web
 *Prueba 1: Flujo de Gestión de Facturas (Web)* : User Story relacionada: US022, US023 y US024
 
-```
-describe('Billing Flow - Desktop', () => {
-  const BASE_URL = 'http://localhost:4200';
-  const API_URL  = 'http://localhost:8080/api/v1';
 
-  const timestamp = Date.now().toString();
-  const uniqueEmail = `admin_${timestamp}@nistra.com`;
-  let token: string;
-
-  const mockInvoice = {
-    id: 10,
-    invoiceType: 'STUDENT_MONTHLY_FEE',
-    amount: '500.00',
-    currency: 'PEN',
-    description: 'Pensión Mayo',
-    issueDate: '2026-05-01',
-    dueDate: '2026-05-31',
-    status: 'PENDING'
-  };
-
-  const mockAccount = {
-    id: 1,
-    studentId: 100,
-    dniNumber: '12345678',
-    academyId: 1,
-    invoices: [mockInvoice]
-  };
-
-  const mockAccountPaid = {
-    ...mockAccount,
-    invoices: [{ ...mockInvoice, status: 'PAID' }]
-  };
-
-  const mockAccountEmpty = {
-    ...mockAccount,
-    invoices: []
-  };
-
-  before(() => {
-    cy.request({
-      method: 'POST',
-      url: `${API_URL}/authentication/sign-up`,
-      body: {
-        emailAddress: uniqueEmail,
-        password: 'Password123!',
-        termsAndConditions: true
-      },
-      failOnStatusCode: false
-    }).then(() => {
-      cy.request({
-        method: 'POST',
-        url: `${API_URL}/authentication/sign-in`,
-        body: {
-          emailAddress: uniqueEmail,
-          password: 'Password123!'
-        }
-      }).then(res => {
-        token = res.body.token;
-      });
-    });
-  });
-
-  beforeEach(() => {
-    cy.intercept('GET', `${API_URL}/billing-accounts`, [mockAccount]).as('getAccounts');
-
-    cy.window().then(win => {
-      win.localStorage.setItem('token', token);
-    });
-
-    cy.visit(`${BASE_URL}/billing`);
-    cy.wait('@getAccounts');
-  });
-
-  it('searches by DNI and shows the billing account card', () => {
-    cy.get('#studentDni').type('12345678');
-    cy.get('.search-student-button').click();
-    cy.get('.billing-account-card').should('be.visible');
-    cy.get('.invoice-row').should('have.length', 1);
-    cy.get('.status-badge').should('contain', 'PENDING');
-  });
-
-  it('assigns a new invoice and receives HTTP 201', () => {
-    cy.intercept('POST', `${API_URL}/billing-accounts/*/invoices`, {
-      statusCode: 201,
-      body: {
-        ...mockAccount,
-        invoices: [
-          mockInvoice,
-          {
-            id: 11,
-            invoiceType: 'STUDENT_ENROLLMENT',
-            amount: '200.00',
-            currency: 'PEN',
-            description: 'Matrícula 2026',
-            issueDate: '2026-05-10',
-            dueDate: '2026-06-01',
-            status: 'PENDING'
-          }
-        ]
-      }
-    }).as('assignInvoice');
-
-    cy.get('#studentDni').type('12345678');
-    cy.get('.search-student-button').click();
-    cy.get('.billing-account-card').should('be.visible');
-
-    cy.get('#invoiceType').select('Matrícula');
-    cy.get('#invoiceAmount').type('200');
-    cy.get('#invoiceDescription').type('Matrícula 2026');
-    cy.get('#invoiceDueDate').type('2026-06-01');
-    cy.get('.assign-invoice-button').click();
-
-    cy.wait('@assignInvoice').its('response.statusCode').should('eq', 201);
-    cy.get('.success-message').should('be.visible');
-  });
-
-  it('marks an invoice as paid via confirm dialog and receives HTTP 200', () => {
-    const paidInvoice = { ...mockInvoice, status: 'PAID' };
-    cy.intercept('POST', `${API_URL}/billing-accounts/*/invoices/*/mark-as-paid`, {
-      statusCode: 200,
-      body: paidInvoice
-    }).as('markAsPaid');
-
-    cy.get('#studentDni').type('12345678');
-    cy.get('.search-student-button').click();
-    cy.get('.billing-account-card').should('be.visible');
-
-    cy.get('.mark-paid-button').first().click();
-    cy.get('.confirm-dialog').should('be.visible');
-    cy.get('.confirm-button').click();
-
-    cy.wait('@markAsPaid').its('response.statusCode').should('eq', 200);
-    cy.get('.success-message').should('be.visible');
-  });
-
-  it('deletes an invoice via confirm dialog and receives HTTP 204', () => {
-    cy.intercept('DELETE', `${API_URL}/billing-accounts/*/invoices/*`, {
-      statusCode: 204,
-      body: null
-    }).as('deleteInvoice');
-
-    cy.get('#studentDni').type('12345678');
-    cy.get('.search-student-button').click();
-    cy.get('.billing-account-card').should('be.visible');
-
-    cy.get('.delete-invoice-button').first().click();
-    cy.get('.confirm-dialog').should('be.visible');
-    cy.get('.confirm-button').click();
-
-    cy.wait('@deleteInvoice').its('response.statusCode').should('eq', 204);
-    cy.get('.success-message').should('be.visible');
-  });
-
-  it('shows error when DNI not found', () => {
-    cy.get('#studentDni').type('99999999');
-    cy.get('.search-student-button').click();
-    cy.get('.error-message').should('be.visible');
-    cy.get('.billing-account-card').should('not.exist');
-  });
-
-  it('cancels confirm dialog without performing action', () => {
-    cy.get('#studentDni').type('12345678');
-    cy.get('.search-student-button').click();
-    cy.get('.billing-account-card').should('be.visible');
-
-    cy.get('.delete-invoice-button').first().click();
-    cy.get('.confirm-dialog').should('be.visible');
-    cy.get('.cancel-button').click();
-    cy.get('.confirm-dialog').should('not.exist');
-    cy.get('.invoice-row').should('have.length', 1);
-  });//.
-});
-
-```
-![Billing Test](./assets/test/billing4.png)
-##### Enrollment Management API
-
-<hr class="page-break">
 
 # Capítulo VII: DevOPS Practices
+
+En el presente proyecto de software, hemos implementado una cultura DevOps orientada a la automatización de procesos, garantizando que el código integrado sea confiable y que las entregas de valor a los usuarios finales sean rápidas y seguras. Para ello, hemos diseñado *pipelines* independientes tanto para el Backend (RESTful API) como para el Frontend (Web Application).
 
 ## 7.1. Continuous Integration
 
 ### 7.1.1. Tools and Practices
 
+La Integración Continua (CI) es nuestra primera línea de defensa para mantener la calidad del código. Permite que múltiples desarrolladores integren sus cambios frecuentemente en un repositorio compartido, detectando errores de forma temprana mediante la ejecución automática de pruebas.
+
+**Herramientas Principales:**
+* **GitHub Actions:** Orquestador central de nuestros *workflows*. Actúa de forma nativa con el repositorio y permite ejecutar flujos condicionales basados en eventos (Push y Pull Requests).
+* **Maven y Java 21 (Backend):** Utilizamos Maven como gestor de dependencias y automatizador de tareas para compilar el proyecto en Spring Boot y ejecutar la suite de pruebas unitarias y de integración.
+* **pnpm y Node.js 24 (Frontend):** Gestor de paquetes estricto y rápido que asegura la instalación reproducible de las dependencias de Angular 21.
+* **Cypress (Frontend):** Framework de pruebas End-to-End (E2E) que permite simular el comportamiento real del usuario interactuando con la interfaz y validando la conexión con el entorno de producción del backend.
+
+**Prácticas Implementadas:**
+* **Validación de Pull Requests (PR):** La rama `main` está protegida. Todo nuevo código debe integrarse a través de un PR que dispara automáticamente las pruebas. Si el *pipeline* falla, se bloquea la fusión del código.
+* **Pruebas de Aceptación Automatizadas:** Las pruebas E2E de Cypress validan los escenarios To-Be definidos en el comportamiento del usuario.
+
 ### 7.1.2. Build & Test Suite Pipeline Components
+
+Nuestros componentes de CI están definidos en los archivos YAML dentro del directorio `.github/workflows/`. Cada componente tiene responsabilidades aisladas.
+
+```
+name: Backend CI/CD Pipeline
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    name: 🧪 Build & Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Tests with Maven
+        run: mvn clean test
+```
+
+**Componentes del Backend:**
+El *job* `build-and-test` se ejecuta en un entorno `ubuntu-latest`.
+1.  **Checkout:** Descarga el código fuente del repositorio.
+2.  **Setup Java JDK:** Configura la máquina virtual de Java en su versión 21 (distribución Temurin) y habilita la caché de Maven para acelerar futuras ejecuciones.
+3.  **Ejecución de Pruebas:** Corre el comando `mvn clean test`, el cual compila la aplicación y verifica que todas las reglas de negocio (Unit Tests) e integraciones funcionen correctamente. Si una prueba falla, el proceso se aborta.
+
+```
+jobs:
+  build-and-test:
+    name: 🧪 Build & E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+          run_install: false
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Cypress Binary
+        run: pnpm exec cypress install
+      - name: Run Cypress E2E Tests
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          start: pnpm exec ng serve --configuration production
+          wait-on: 'http://localhost:4200'
+
+```
+
+**Componentes del Frontend:**
+1.  **Setup Node y pnpm:** Se configura rigurosamente el entorno con Node 24 y pnpm v10, respetando el script `preinstall` del proyecto.
+2.  **Preparación de Cypress:** Se descargan las dependencias y el binario del motor de navegación de Cypress.
+3.  **Run Cypress E2E Tests:** GitHub Actions levanta el servidor de Angular temporalmente (`ng serve`) y espera a que el puerto 4200 responda. Una vez activo, Cypress ejecuta la suite de pruebas contra el sistema.
+
+**Evidencia**:  
+
+![CI evidencia](./assets/images/ci-cd/ci-evidence.png)
 
 ## 7.2. Continuous Delivery
 
 ### 7.2.1. Tools and Practices
 
+La Entrega Continua (CDelivery) es la práctica de asegurar que el código validado por la fase de CI se empaquete y esté en un estado listo para ser desplegado en cualquier momento.
+
+**Herramientas y Prácticas:**
+* **Angular Compiler (Frontend):** Transpila el código TypeScript a JavaScript optimizado y minificado, generando artefactos estáticos (HTML, CSS, JS).
+* **GitHub Artifacts:** Sistema de almacenamiento temporal que guarda los archivos estáticos generados para pasarlos a la siguiente etapa del *pipeline*.
+* **Railway Build System (Backend):** A diferencia de estrategias manuales con Docker Hub, utilizamos la plataforma Railway que cuenta con "Nixpacks" integrados. Esta herramienta analiza el código fuente, detecta que es un proyecto Java/Maven, y construye automáticamente la imagen de contenedor (Docker) optimizada de forma transparente en la nube.
+
 ### 7.2.2. Stages Deployment Pipeline Componentes
+
+En esta etapa, el *pipeline* prepara los paquetes finales. 
+
+```
+# Compilamos Angular
+      - name: Build Angular App
+        run: pnpm run build --base-href /demy-admin-web/
+
+      # Truco para que Angular (SPA) funcione en GitHub Pages sin dar error 404
+      - name: Add SPA fallback
+        run: cp dist/demy-web-app/browser/index.html dist/demy-web-app/browser/404.html
+
+      # Preparamos el paquete para el despliegue
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/demy-web-app/browser
+
+```
+
+**Preparación del Frontend:**
+Dentro del mismo *job* de pruebas del Frontend, si Cypress finaliza con éxito, se ejecutan los siguientes pasos:
+1.  **Construcción de la SPA:** Se ejecuta `pnpm run build --base-href /demy-admin-web/`, optimizando los recursos para el entorno de producción.
+2.  **SPA Fallback:** Se copia el archivo `index.html` y se renombra a `404.html`. Este truco técnico es vital para que el enrutador nativo de Angular funcione correctamente en un servidor estático.
+3.  **Carga de Artefactos:** Se empaqueta el directorio `dist/demy-web-app/browser` utilizando `actions/upload-pages-artifact@v3`, dejándolo disponible para la fase de despliegue.
+
+**Evidencia**:  
+
+![Delivery evidencia](./assets/images/ci-cd/delivery-evidence.png)
 
 ## 7.3. Continuous deployment
 
 ### 7.3.1. Tools and Practices
 
+El Despliegue Continuo (CDeployment) es la etapa final donde los artefactos generados se liberan automáticamente al entorno de producción real, quedando disponibles para los usuarios finales sin intervención manual.
+
+**Herramientas y Prácticas:**
+* **Railway CLI (Backend):** Interfaz de línea de comandos que permite enviar instrucciones directas a la plataforma Cloud de Railway desde GitHub Actions.
+* **GitHub Pages (Frontend):** Servicio de alojamiento estático integrado nativamente en GitHub, ideal para Single Page Applications (SPA).
+* **Gestión de Secretos:** Uso de `GitHub Secrets` para almacenar tokens de acceso a infraestructuras externas, aplicando el principio de seguridad de no exponer credenciales en el código fuente.
+* **Despliegue Condicional:** Se implementó una regla en el *pipeline* (`if: github.event_name == 'push'`) que garantiza que los despliegues a producción **solo** ocurran cuando el código se integra oficialmente a la rama `main`, previniendo despliegues accidentales desde Pull Requests.
+
 ### 7.3.2. Production Deployment Pipeline Components
+
+El *job* final, denominado `deploy`, tiene la directiva `needs: build-and-test`, estableciendo una dependencia estricta: producción no se toca si las pruebas no pasan.
+
+```
+deploy:
+    name: 🚀 Deploy to Railway
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Railway CLI
+        run: npm i -g @railway/cli
+      - name: Deploy to Railway
+        run: railway up --service "demy-experimentos-backend" --detach
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+```
+
+**Despliegue de la RESTful API (Backend):**
+1.  **Instalación CLI:** Se instala la herramienta de línea de comandos de Railway mediante npm.
+2.  **Ejecución de Despliegue:** Se ejecuta el comando `railway up --service "demy-experimentos-backend" --detach`. Este comando utiliza el secreto `RAILWAY_TOKEN` para autenticarse, inyecta el código validado en el servicio específico y dispara el sistema de auto-construcción de Railway. El parámetro `--detach` permite que GitHub Actions finalice su tarea mientras Railway se encarga de reiniciar el servidor sin tiempo de inactividad visible.
+
+```
+deploy:
+    name: 🚀 Deploy to GitHub Pages
+    needs: build-and-test
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
+
+**Despliegue de la Web Application (Frontend):**
+1.  **Entorno de Github Pages:** Se configura el *job* para interactuar con el entorno protegido de `github-pages`.
+2.  **Acción de Despliegue:** Utiliza la acción nativa `actions/deploy-pages@v4`. Esta acción toma el artefacto subido en la fase 7.2 (la carpeta compilada de Angular) y la publica en los servidores de GitHub, proveyendo un enlace público inmediato y cerrando el ciclo de vida del desarrollo.
+
+**Evidencia**:  
+
+![Continuous deployment evidencia](./assets/images/ci-cd/cd-evidence.png)
 
 
 
