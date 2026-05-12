@@ -40,13 +40,80 @@
 
 # Registro de Versiones del Informe
 
-| Versión | Fecha     | Autor         | Descripción de modificación                              |
-|---------|-----------|---------------|----------------------------------------------------------|
-| 1.0     | 3/05/2026 |  Diego Vilca  | Creación inicial de la estructura del informe            |
+| Versión | Fecha      | Autor               | Descripción de modificación                              |
+|---------|------------|---------------------|----------------------------------------------------------|
+| 1.0     | 3/05/2026  |  Diego Vilca        | Creación inicial de la estructura del informe            |
+| 2.0     | 4/05/2026  |  Diego Vilca        | Documentación del Chapter 2                              |
+| 3.0     | 6/05/2026  |  Rafael Dominguez   | Documentación del Chapter 3                              |
+| 4.0     | 7/05/2026  |  Daniel Crispin     | Documentación del Chapter 4                              |
+| 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
+| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                             |
+| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                             |
+
 
 <hr class="page-break">
 
 # Project Report Collaboration Insights
+
+En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
+
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [Ver en Github](https://github.com/EduLabs-Experimentos/demy-report)
+
+Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
+
+| Integrantes                        | Nombre en GitHub |
+|------------------------------------|------------------|
+| Crispin Ramos, Daniel Franco       | danielcr04       |
+| Dominguez Vargas, Rafael Alexander | Radv2005         |
+| Esteban Roman, Henry Kalet         | kalet123-commit  |
+| Julca Cruz, Renso Anthony          | rajc02           |
+| Vilca Saboya, Diego Alejandro      | diesoks          |
+
+Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
+
+- **main:** Rama principal que contiene la versión estable y consolidada del documento.
+- **develop:** Rama de integración utilizada para fusionar los cambios realizados en las ramas de características.
+- **feature/nombre-tarea-realizada:** Ramas feature que se crean en base a la tarea/punto del reporte que se está trabajando.
+- **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
+- **hotfix/urgent-fix:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
+
+## TB1
+
+**Tareas**
+
+Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes | Tarea asignada |
+| :--- | :--- |
+| Crispin Ramos, Daniel Franco | - Registro de entrevistas <br> - Pruebas para el bounded context de IAM y Scheduling <br> - Actualizar Lean UX Canvas <br> - Sprint Backlogs <br> - Codificación del web application |
+| Dominguez Vargas, Rafael | - Registro de entrevistas <br> - As-is Scenario Mapping <br> - To-be Scenario <br> - Domain Driven Software Architecture <br> - Product Backlog <br> - Pruebas para el bounded context de Enrollment <br> - Evidencia de las soluciones móviles |
+| Esteban Roman, Henry Kalet | - Crearle un logo a la startup <br> - Registro de entrevistas <br> - Impact mapping <br> - Software Oriented and Database Design <br> - Restful API Documentation <br> - Pruebas para el bounded context de attendance |
+| Julca, Renso | - Actualizar user stories <br> - Registro de entrevistas <br> - Acuerdo de Servicio - SaaS <br> - Desplegar Landing Page <br> - Pruebas para el bounded context de Finance <br> - Video About the Product |
+| Vilca Saboya, Diego Alejandro | - Actualizar perfil de integrantes <br> - Continuous Delivery, Continuous Deployment <br> - Pruebas para el bounded context de Institution <br> - Registro de entrevistas <br> - Product Design y codificación de la app web <br> - Software Configuration Management <br> - Team Collaboration Insights <br> - Continuous Integration |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.  
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/team-collaboration-insights/report/tb1/tb1-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/team-collaboration-insights/report/tb1/tb1-pulse.png)
+
+</div>
 
 <hr class="page-break">
 
@@ -179,36 +246,36 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
             <td style="padding: 10px;"><strong> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </strong></td>
             <td style="padding: 10px;">
                 <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.</p>
                 <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.</p>
                 <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                ...</p>
+                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.</p>
                 <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.</p>
                 <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
-                Como equipo,.....
+                Como equipo, concluimos que desarrollar software profesional implica mucho más que programar. Reafirmamos nuestra responsabilidad ética al manejar datos sensibles (identidades, dinero, asistencias) aplicando seguridad, transparencia en nuestros acuerdos (SaaS) y garantizando que el código y los despliegues sean confiables y trazables para evitar fallos que afecten al usuario final.
             </td>
         </tr>
                 <tr>
             <td style="padding: 10px;"><strong>  Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales .</strong></td>
             <td style="padding: 10px;">
                 <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).</p>
                 <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.</p>
                 <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                ...</p>
+                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.</p>
                 <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.</p>
                 <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
-                Logramos ....
+                Logramos comprender que nuestra startup tiene un impacto real en el entorno. Digitalizar matrículas, pagos y asistencias elimina el uso innecesario de papel (impacto ambiental), automatiza tareas pesadas permitiendo a las instituciones reducir costos (impacto económico) y hace que los usuarios finales ganen tiempo y comodidad en su día a día (impacto social).
             </td>
         </tr>
     </tbody>
@@ -233,12 +300,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-daniel.png" alt="daniel_photo"  width="520"></img>
+      <img src="assets/images/team-members/daniel.png" alt="daniel_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Daniel Crispin - U20221g120 </strong></p>
           <p align="justify">
-            .....
+            Estudiante de 7° ciclo. Conocimiento en bases de datos y gestión de proyectos. Experiencia en interfaces de usuario y soluciones para la administración educativa.
           </p>
     </td>
   </tr>
@@ -247,12 +314,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-rafael.png" alt="rafael_photo"  width="520"></img>
+      <img src="assets/images/team-members/rafael.png" alt="rafael_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Rafel Dominguez - U202312318</strong></p>
           <p align="justify">
-            .....
+             Estudiante de 7° ciclo. Conocimiento en bases de datos relacionales y validación de requisitos. Experiencia en análisis de necesidades de usuario y desarrollo frontend
           </p>
     </td>
   </tr>
@@ -261,12 +328,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="img/profile-photos/member-kalet.png" alt="kalet_photo"  width="520"></img>
+      <img src="assets/images/team-members/kalet.png" alt="kalet_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Henry Esteban - U202310210</strong></p>
           <p align="justify">
-            ....
+            Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales.
           </p>
     </td>
   </tr>
@@ -275,12 +342,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-renso.png" alt="renso_photo"  width="520"></img>
+      <img src="assets/images/team-members/renso.png" alt="renso_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Renso Julca - U202121579</strong></p>
           <p align="justify">
-             ...
+             Soy Renso Anthony Julca Cruz estudiante de Ingenieria de Software, actualmente curso el 7mo ciclo de esta carrera. Me gusta ser autodidacta para poder mejorar mis habilidades en el desarrollo de software, quisiera dedicarme a la parte de gestion bancaria, o la parte de data analyst.
           </p>
     </td>
   </tr>
@@ -288,12 +355,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-diego.png" alt="diego_photo"  width="520"></img>
+      <img src="assets/images/team-members/diego.jpeg" alt="diego_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Diego Vilca - u20231a778</strong></p>
           <p align="justify">
-             Mi nombre es Diego Vilca, tengo 20 años y actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
+             Hola soy Diego Vilca  y estudio la carrera de Ingeniería de Software en la UPC donde actualmente me encuentro en el 7mo ciclo. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
           </p>
     </td>
   </tr>
@@ -9878,7 +9945,132 @@ deploy:
 
 
 
+<hr class="page-break">
 
+# Conclusiones
+
+En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma Demy.
+
+## Conclusiones y recomendaciones
+
+Se identificaron las siguientes conclusiones y recomendaciones basadas en el desarrollo del proyecto:
+
+### Conclusiones
+
+El equipo concluyó que las academias educativas en el Perú enfrentan desafíos significativos en la gestión administrativa, lo que afecta su eficiencia operativa y la experiencia de estudiantes y docentes.
+La plataforma Demy, desarrollada por la startup EduLabs, aborda estas necesidades mediante una solución integral que automatiza procesos clave como matrícula, asistencia, asignación de horarios, control de inventarios y gestión de pagos.
+
+Mediante el uso de Demy, las academias pueden mejorar su eficiencia operativa, reducir errores administrativos y ofrecer una mejor experiencia a sus usuarios.
+
+Las hipótesis se consideran válidas, ya que se basan en entrevistas y validaciones con potenciales usuarios y expertos en el dominio educativo.
+Sin embargo, aún no se ha contrastado la solución con usuarios reales, lo que será un paso crucial en las siguientes fases del proyecto.
+A pesar de ello, la investigación y el diseño realizados proporcionan una base sólida para el desarrollo futuro de la plataforma.
+
+Se recomienda priorizar la implementación de las funcionalidades más críticas para las academias, como la gestión de matrículas y pagos, para maximizar el impacto inicial de la plataforma.
+
+Asimismo, se logro verificar la robustez de nuestras soluciones mediante las pruebas unitarias, integración,e2e y bdd.
+
+### Recomendaciones
+
+Es crucial preparar los escenarios de validación con usuarios reales para contrastar las hipótesis planteadas y asegurar que la solución propuesta realmente satisface las necesidades del mercado, así como identificar posibles mejoras o ajustes necesarios.
+
+Además, se recomienda mantener la coherencia visual y de experiencia de usuario en todas las plataformas (web y móvil) para garantizar una experiencia fluida y agradable para los usuarios.
+Estas acciones permitirán aumentar la adopción y satisfacción de los usuarios con la plataforma Demy y acercarse al objetivo de transformar la gestión administrativa de las academias educativas en el Perú.
+
+Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
+Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
+
+<hr class="page-break">
+
+# Bibliografía
+
+<p class="ref">
+  Brandemia. (2024).
+  <i>Arquetipos de marca: Los 12 perfiles de Jung</i>.
+  <a href="https://brandemia.org/arquetipos-de-marca">https://brandemia.org/arquetipos-de-marca</a>
+</p>
+
+<p class="ref">
+  Díaz-García, V., Montero-Navarro, A., Rodríguez-Sánchez, J.-L., &amp; Gallego-Losada, R. (2023).
+  Managing digital transformation: A case study in a higher education institution.
+  <i>Electronics, 12</i>(11), Artículo e2522.
+  <a href="https://doi.org/10.3390/electronics12112522">https://doi.org/10.3390/electronics12112522</a>
+</p>
+
+<p class="ref">
+  Holum Studio. (2022).
+  <i>7 Types of Logos for Your Brand and How to Use Them</i>.
+  <a href="https://www.holumstudio.com/resources/7-types-of-logos-for-your-brand-and-how-to-use-them">https://www.holumstudio.com/resources/7-types-of-logos-for-your-brand-and-how-to-use-them</a>
+</p>
+
+<p class="ref">
+  Instituto Nacional de Estadística e Informática (INEI). (2024).
+  <i>Encuesta Nacional de Uso del Tiempo (ENUT) 2024</i>.
+  Instituto Nacional de Estadística e Informática.
+  <a href="https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib2010/libro.pdf">https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib2010/libro.pdf</a>
+</p>
+
+<p class="ref">
+  Instituto Nacional de Estadística e Informática. (2024, 27 de junio).
+  <i>Las Tecnologías de Información y Comunicación en los Hogares: Ene-Feb-Mar 2024</i>.
+  INEI.
+  <a href="https://www.gob.pe/institucion/inei/informes-publicaciones/5702640-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2024">https://www.gob.pe/institucion/inei/informes-publicaciones/5702640-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2024</a>
+</p>
+
+<p class="ref">
+  Gan@Más. (2014, julio 24).
+  Docentes usan hasta el 29% de su tiempo en las tareas administrativas.
+  <i>Revista Gan@Más</i>.
+  <a href="https://revistaganamas.com.pe/docentes-utilizan-hasta-el-29-de-su-tiempo-en-las-tareas-administrativas/">https://revistaganamas.com.pe/docentes-utilizan-hasta-el-29-de-su-tiempo-en-las-tareas-administrativas/</a>
+</p>
+
+<p class="ref">
+  GRADE. (2023).
+  <i>Estado de la educación en el Perú</i>.
+  Grupo de Análisis para el Desarrollo.
+  <a href="https://repositorio.minedu.gob.pe/bitstream/handle/20.500.12799/5692/Estado%20de%20la%20educaci%C3%B3n%20en%20el%20Per%C3%BA.pdf?isAllowed=y&amp;sequence=1">https://repositorio.minedu.gob.pe/bitstream/handle/20.500.12799/5692/Estado%20de%20la%20educaci%C3%B3n%20en%20el%20Per%C3%BA.pdf?isAllowed=y&amp;sequence=1</a>
+</p>
+
+<p class="ref">
+  Ministerio de Educación del Perú. (2021).
+  <i>Encuesta Nacional de Estudiantes de Educación Superior Universitaria 2019: Principales resultados</i>.
+  MINEDU.
+  <a href="https://repositorio.minedu.gob.pe/handle/20.500.12799/7745">https://repositorio.minedu.gob.pe/handle/20.500.12799/7745</a>
+</p>
+
+<p class="ref">
+  Naranjo, J. E., Alban, J. S., Balseca, M. S., Bustamante Villagómez, D. F., Mancheno Falconi, M. G., &amp; Garcia, M. V. (2025).
+  Enhancing institutional sustainability through process optimization: A hybrid approach using FMEA and machine learning.
+  <i>Sustainability, 17</i>(4), Artículo e1357.
+  <a href="https://doi.org/10.3390/su17041357">https://doi.org/10.3390/su17041357</a>
+</p>
+
+<hr class="page-break">
+
+# Anexos
+
+en esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se proporciona información detallada sobre aspectos que no se abordaron en profundidad en las secciones anteriores, pero que son relevantes para una comprensión completa del proyecto.
+
+Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recursos que son de utilidad.
+
+## Anexo A: Código Fuente
+
+El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
+
+1. [Organización de GitHub](https://github.com/EduLabs-Experimentos)
+2. [Repositorio del reporte en GitHub](https://github.com/EduLabs-Experimentos/demy-report)
+3. [Repositorio de la aplicación mobile para Admins en Github](https://github.com/EduLabs-Experimentos/demy-admin-mobile-application)
+4. [Repositorio de la aplicación mobile para Profesores en Github](https://github.com/EduLabs-Experimentos/demy-teacher-mobile-application)
+
+Además, se incluye la evidencia de despliegue:
+
+**Enlace para acceder a la landing page:** [https://demy-edulabs.netlify.app/](https://demy-edulabs.netlify.app/)
+
+**Enlace para acceder a la RESTful API:** [https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html](https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html)
+
+**Enlace para acceder a la Web Application:** [https://edulabs-experimentos.github.io/demy-admin-web/sign-up](https://edulabs-experimentos.github.io/demy-admin-web/sign-up)
+
+<hr class="page-break">
 
 
 
