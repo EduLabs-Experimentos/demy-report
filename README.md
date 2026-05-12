@@ -10049,7 +10049,7 @@ Esto contribuirá a posicionar a Demy como una plataforma integral y líder en e
 
 # Anexos
 
-en esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se proporciona información detallada sobre aspectos que no se abordaron en profundidad en las secciones anteriores, pero que son relevantes para una comprensión completa del proyecto.
+En esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se proporciona información detallada sobre aspectos que no se abordaron en profundidad en las secciones anteriores, pero que son relevantes para una comprensión completa del proyecto.
 
 Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recursos que son de utilidad.
 
