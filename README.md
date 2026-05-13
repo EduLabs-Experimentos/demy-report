@@ -10278,7 +10278,8 @@ Además, se incluye la evidencia de despliegue:
 
 Usuario por defecto para iniciar sesión:
 
-email: diegovilcatut@gmail.com
+email: diegovilcatut@gmail.com  
+
 password: Sofiamia
 
 
