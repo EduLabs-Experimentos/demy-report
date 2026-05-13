@@ -6391,7 +6391,34 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 5.2.8. Team Collaboration Insights
 
+En esta sección se presenta los insights de nuestro equipo en las soluciones implementadas.
+
+**Backend**
+
+![Insights del backend](assets/images/team-collaboration-insights/report/insights-backend.png)
+
+**Frontend**
+![Insights del Frontend](assets/images/team-collaboration-insights/report/insights-frontend.png)
+
+**Aplicación Móvil para Admins**
+![Insights del mobile android native](/assets/images/team-collaboration-insights/report/inisghts-mobile-admin.png)
+
+**Aplicación Móvil para Profesores**
+![Insights del mobile multiplatform](/assets/images/team-collaboration-insights/report/insights-mobile-teacher.png)
+
+**Landing Page**
+![Insights de la landing page](/assets/images/team-collaboration-insights/report/insights-landing.png)
+
+Se puede observar una repartición en las diferentes implementaciones de las soluciones,donde el backend se concentra más en commits debido a las pruebas implementadas
+
 ## 5.3. Video About-the-Product
+
+En esta sección se presenta el video about the product de las soluciones desplegadas, donde se explica el flujo de la aplicación y se promociona su uso.
+
+![Video about the product](/assets/images/photos/about-the-product-video.png)
+
+Link: https://youtu.be/Ar2XDwMkPfU
+
 
 <hr class="page-break">
 
@@ -10057,10 +10084,10 @@ Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recu
 
 El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
 
-1. [Organización de GitHub](https://github.com/EduLabs-Experimentos)
-2. [Repositorio del reporte en GitHub](https://github.com/EduLabs-Experimentos/demy-report)
-3. [Repositorio de la aplicación mobile para Admins en Github](https://github.com/EduLabs-Experimentos/demy-admin-mobile-application)
-4. [Repositorio de la aplicación mobile para Profesores en Github](https://github.com/EduLabs-Experimentos/demy-teacher-mobile-application)
+Organización de GitHub: https://github.com/EduLabs-Experimentos
+Repositorio del reporte en GitHub: https://github.com/EduLabs-Experimentos/demy-report
+Repositorio de la aplicación mobile para Admins:https://github.com/EduLabs-Experimentos/demy-admin-mobile-application
+Repositorio de la aplicación mobile para Profesores:https://github.com/EduLabs-Experimentos/demy-teacher-mobile-application
 
 Además, se incluye la evidencia de despliegue:
 
@@ -10069,6 +10096,12 @@ Además, se incluye la evidencia de despliegue:
 **Enlace para acceder a la RESTful API:** [https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html](https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html)
 
 **Enlace para acceder a la Web Application:** [https://edulabs-experimentos.github.io/demy-admin-web/sign-up](https://edulabs-experimentos.github.io/demy-admin-web/sign-up)
+
+Usuario por defecto para iniciar sesión:
+
+email: diegovilcatut@gmail.com
+password: Sofiamia
+
 
 <hr class="page-break">
 
