@@ -34,7 +34,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Mayo 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
 
 <hr class="page-break">
 
@@ -47,9 +47,9 @@
 | 3.0     | 6/05/2026  |  Rafael Dominguez   | Documentación del Chapter 3                              |
 | 4.0     | 7/05/2026  |  Daniel Crispin     | Documentación del Chapter 4                              |
 | 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
-| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                             |
-| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                             |
-
+| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
+| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
+| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   | 
 
 <hr class="page-break">
 
