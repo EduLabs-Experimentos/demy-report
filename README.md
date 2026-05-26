@@ -34,7 +34,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Mayo 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
 
 <hr class="page-break">
 
@@ -47,9 +47,9 @@
 | 3.0     | 6/05/2026  |  Rafael Dominguez   | Documentación del Chapter 3                              |
 | 4.0     | 7/05/2026  |  Daniel Crispin     | Documentación del Chapter 4                              |
 | 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
-| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                             |
-| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                             |
-
+| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
+| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
+| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   | 
 
 <hr class="page-break">
 
@@ -214,6 +214,25 @@ Análisis de líneas de código añadidas por contribuyente.
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
     - [6.1.4. Core System Tests](#614-core-system-tests)
+  - [6.2. Static testing & Verification](#62-static-testing--verification)
+    - [6.2.1. Static Code Analysis ](#621-static-code-analysis)
+      - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
+      - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
+    - [6.2.2. Reviews ](#622-reviews)
+  - [6.3. Validation Interviews.](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
+    - [6.4.1. Auditoría realizada.](#641-auditoría-realizada)
+      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
+      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
+      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
+      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
+      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
+      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
   - [7.1. Continuous Integration](#71-continuous-integration)
@@ -225,6 +244,33 @@ Análisis de líneas de código añadidas por contribuyente.
   - [7.3. Continuous Deployment](#73-continuous-deployment)
     - [7.3.1. Tools and Practices](#731-tools-and-practices)
     - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
+  - [7.4. Continuous Monitoring ](#74-continuous-monitoring)
+    - [7.4.1. Tools and Practices](#741-tools-and-practices)
+    - [7.4.2. Monitoring Pipeline Components ](#742-monitoring-pipeline-components)
+    - [7.4.3. Alerting Pipeline Components ](#743-alerting-pipeline-components)
+    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+
+- [Capítulo VIII: Experiment-Driven Development ](#capítulo-viii-experiment-driven-development)
+  - [8.1. Experiment Planning ](#81-experiment-planning)
+    - [8.1.1. As-Is Summary](#811-as-is-summary)
+    - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
+    - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+    - [8.1.4. Question Backlog](#814-question-backlog)
+    - [8.1.5. Experiment Cards](#815-experiment-cards)
+  - [8.2. Experiment Design](#82-experiment-design)
+    - [8.2.1. Hypotheses](#821-hypotheses)
+    - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+    - [8.2.3. Measures](#823-measures)
+    - [8.2.4. Conditions](#824-conditions)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+    - [8.2.6. Methods Selection](#826-methods-selection)
+    - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
+    - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+  - [8.3. Experimentation ](#83-experimentation)
+    - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
+    - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+
+
 - [Conclusiones](#conclusiones)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
@@ -9951,6 +9997,33 @@ describe('Billing Flow - Desktop', () => {
 ```
 ![Billing Test](./assets/test/billing4.png)
 
+## 6.2. Static testing & Verification 
+
+### 6.2.1. Static Code Analysis 
+#### 6.2.1.1. Coding standard & Code conventions
+#### 6.2.1.2. Code Quality & Code Security
+### 6.2.2. Reviews 
+
+## 6.3. Validation Interviews
+### 6.3.1. Diseño de Entrevistas
+### 6.3.2. Registro de Entrevistas
+### 6.3.3. Evaluaciones según heurísticas
+
+## 6.4. Auditoría de Experiencias de Usuario
+### 6.4.1. Auditoría realizada
+#### 6.4.1.1. Información del grupo auditado
+#### 6.4.1.2. Cronograma de auditoría realizada
+#### 6.4.1.3. Contenido de auditoría realizada
+
+### 6.4.2. Auditoría recibida
+#### 6.4.2.1. Información del grupo auditor
+#### 6.4.2.2. Cronograma de auditoría recibida
+#### 6.4.2.3. Contenido de auditoría recibida
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+<hr class="page-break">
+
+
 # Capítulo VII: DevOPS Practices
 
 En el presente proyecto de software, hemos implementado una cultura DevOps orientada a la automatización de procesos, garantizando que el código integrado sea confiable y que las entregas de valor a los usuarios finales sean rápidas y seguras. Para ello, hemos diseñado *pipelines* independientes tanto para el Backend (RESTful API) como para el Frontend (Web Application).
@@ -10149,6 +10222,35 @@ deploy:
 
 ![Continuous deployment evidencia](./assets/images/ci-cd/cd-evidence.png)
 
+## 7.4. Continuous Monitoring 
+### 7.4.1. Tools and Practices
+### 7.4.2. Monitoring Pipeline Components
+### 7.4.3. Alerting Pipeline Components 
+### 7.4.4. Notification Pipeline Components
+
+<hr class="page-break">
+
+# Capítulo VIII: Experiment-Driven Development 
+## 8.1. Experiment Planning 
+### 8.1.1. As-Is Summary
+### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+### 8.1.3. Experiment-Ready Questions
+### 8.1.4. Question Backlog
+### 8.1.5. Experiment Cards
+
+## 8.2. Experiment Design 
+### 8.2.1. Hypotheses
+### 8.2.2. Domain Business Metrics 
+### 8.2.3. Measures
+### 8.2.4. Conditions
+### 8.2.5. Scale Calculations and Decisions
+### 8.2.6. Methods Selection
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+### 8.2.8. Web and Mobile Tracking Plan
+
+## 8.3. Experimentation 
+### 8.3.1. To-Be User Stories
+### 8.3.2. To-Be Product Backlog
 
 
 <hr class="page-break">
