@@ -10021,6 +10021,8 @@ describe('Billing Flow - Desktop', () => {
 #### 6.4.2.3. Contenido de auditoría recibida
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
+<hr class="page-break">
+
 
 # Capítulo VII: DevOPS Practices
 
@@ -10225,6 +10227,8 @@ deploy:
 ### 7.4.2. Monitoring Pipeline Components
 ### 7.4.3. Alerting Pipeline Components 
 ### 7.4.4. Notification Pipeline Components
+
+<hr class="page-break">
 
 # Capítulo VIII: Experiment-Driven Development 
 ## 8.1. Experiment Planning 
