@@ -2326,123 +2326,123 @@ La priorización se ha realizado considerando el valor que cada ítem aporta al 
 
 | # Orden | User Story ID | Título | Descripción | Story Points |
 |---------|--------------|--------|-------------|--------------|
-| 1 | US001 | Registro de Academia | Flujo principal del sistema; requiere validaciones de datos y persistencia en base de datos. | 5 |
-| 2 | TS006 | Exponer endpoint para registrar administrador | Endpoint POST con validaciones básicas y respuesta estándar. | 3 |
-| 3 | TS001 | Exponer endpoint para registrar academias | Endpoint POST con manejo de duplicados y validación de campos. | 3 |
-| 4 | US004 | Registro de Profesor | Implica creación de perfil docente con asignación a academia existente. | 5 |
-| 5 | US013 | Creación de Periodo Académico | Requiere validación de fechas y lógica de no solapamiento entre periodos. | 5 |
-| 6 | TS021 | Exponer endpoint para registrar periodos académicos | Endpoint POST con validación de consistencia temporal. | 3 |
-| 7 | US016 | Creación de Salones de Clase | Implica registro de espacio físico con capacidad y atributos de infraestructura. | 5 |
-| 8 | TS026 | Exponer endpoint para registrar salones de clase | Endpoint POST con validación de capacidad y campos requeridos. | 3 |
-| 9 | US019 | Creación de Horarios | Alta complejidad por detección de conflictos de horario entre docentes y salones. | 5 |
-| 10 | TS031 | Exponer endpoint para registrar cursos | Endpoint POST con manejo de duplicados por nombre o código. | 3 |
-| 11 | US007 | Matrícula de Alumno | Vincula alumno, periodo y curso; requiere validaciones de disponibilidad. | 5 |
-| 12 | TS011 | Exponer endpoint para registrar matrículas | Endpoint POST con control de conflictos de inscripción activa. | 3 |
-| 13 | US010 | Registro de Asistencia | Lógica simple de marcado por sesión con validación mínima. | 3 |
-| 14 | TS016 | Exponer endpoint para registrar asistencias de clase | Endpoint POST con control de duplicados por sesión y participante. | 2 |
-| 15 | US030 | Visualización de Horario de Clases | Consulta de datos filtrada por docente y periodo activo. | 3 |
-| 16 | TS036 | Exponer endpoint para registrar horarios | Endpoint POST con detección de solapamientos entre sesiones. | 3 |
-| 17 | US031 | Reprogramación de Clase | Requiere validación de nueva fecha sin conflictos y actualización del cronograma. | 5 |
-| 18 | TS055 | Exponer endpoint para reprogramar una sesión de clases | Endpoint PUT especializado con lógica de conflicto temporal. | 2 |
-| 19 | US022 | Generación de Boletas de Pago | Implica cálculo de montos, vinculación con inscripción y emisión de comprobante. | 5 |
-| 20 | TS041 | Exponer endpoint para registrar cuentas de cobro | Endpoint POST con validación financiera y control de duplicados. | 3 |
-| 21 | TS046 | Exponer endpoint para asignar boletas de pago | Endpoint POST de vinculación entre boleta y cuenta de cobro. | 2 |
-| 22 | US025 | Registro de Ingreso/Egreso | Requiere categorización de movimiento y validación de montos positivos. | 5 |
-| 23 | TS050 | Exponer endpoint para registrar transacciones | Endpoint POST con validación de monto y tipo de movimiento contable. | 3 |
-| 24 | US028 | Visualización de Resumen de Finanzas | Agregación de datos financieros con cálculo de indicadores por periodo. | 5 |
-| 25 | US029 | Generación de Reportes Financieros | Alta complejidad por procesamiento de datos, exportación y filtros por rango de fechas. | 8 |
-| 26 | TS053 | Exponer endpoint para generar reportes financieros | Endpoint GET con lógica de exportación y manejo de periodos sin datos. | 5 |
-| 27 | US032 | Registro de Cuenta | Creación de cuenta con validación de datos y confirmación de éxito. | 3 |
-| 28 | TS054 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de recurso no encontrado. | 3 |
-| 29 | TS056 | Exponer endpoint para visualizar horarios de un profesor | Endpoint GET filtrado por docente con validación de existencia. | 3 |
-| 30 | TS057 | Exponer endpoint para registrar cuenta de usuario | Endpoint POST con cifrado de credencial y control de duplicados por correo. | 2 |
-| 31 | TS060 | Exponer endpoint para activar cuenta de usuario | Endpoint POST con validación de token y cambio de estado de cuenta. | 3 |
-| 32 | TS061 | Exponer endpoint para reenviar código de verificación | Endpoint POST con disparo de evento de mensajería y control de estado. | 3 |
-| 33 | TS063 | Exponer endpoint para iniciar sesión | Endpoint POST con autenticación y emisión de token JWT. | 2 |
-| 34 | US002 | Actualización de Academia | Modificación de datos existentes con validación de campos obligatorios. | 2 |
-| 35 | US003 | Eliminación de Academia | Eliminación con confirmación explícita del administrador. | 2 |
-| 36 | TS002 | Exponer endpoint para actualizar academias | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 37 | TS003 | Exponer endpoint para eliminar academias | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 38 | TS004 | Exponer endpoint para listar academias | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 39 | TS005 | Exponer endpoint para obtener detalles de una academia | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 40 | US005 | Actualización de Profesor | Edición de perfil docente con validación de formato de datos. | 2 |
-| 41 | US006 | Eliminación de Profesor | Baja de docente con confirmación y limpieza del perfil. | 2 |
-| 42 | TS007 | Exponer endpoint para actualizar administrador | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 43 | TS008 | Exponer endpoint para eliminar administrador | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 44 | TS009 | Exponer endpoint para listar administradores | Endpoint GET que retorna lista de perfiles registrados. | 3 |
-| 45 | TS010 | Exponer endpoint para obtener detalles de un administrador | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 46 | US008 | Actualización de Matrícula | Edición de inscripción con validación de periodos y estados disponibles. | 5 |
-| 47 | US009 | Cancelación de Matrícula | Anulación de inscripción activa con actualización de estado. | 2 |
-| 48 | TS012 | Exponer endpoint para actualizar matrículas | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 49 | TS013 | Exponer endpoint para eliminar matrículas | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 50 | TS014 | Exponer endpoint para listar matrículas | Endpoint GET que retorna lista de inscripciones registradas. | 2 |
-| 51 | TS015 | Exponer endpoint para obtener detalles de una matrícula | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 52 | US011 | Actualización de Asistencia | Corrección de marcadores de presencia en sesión previa. | 3 |
-| 53 | US012 | Visualización de Reportes de Asistencia | Generación de informe filtrado por periodo con manejo de datos vacíos. | 5 |
-| 54 | TS017 | Exponer endpoint para actualizar asistencias de clase | Endpoint PUT con validación de cambios y manejo de no encontrado. | 3 |
-| 55 | TS018 | Exponer endpoint para eliminar asistencias de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 56 | TS019 | Exponer endpoint para listar asistencias de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 57 | TS020 | Exponer endpoint para obtener detalles de una asistencia de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 58 | US014 | Actualización de Periodo Académico | Edición de fechas con validación de no solapamiento. | 3 |
-| 59 | US015 | Eliminación de Periodo Académico | Baja de periodo con confirmación explícita del administrador. | 3 |
-| 60 | TS022 | Exponer endpoint para actualizar periodos académicos | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
-| 61 | TS023 | Exponer endpoint para eliminar periodos académicos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
-| 62 | TS024 | Exponer endpoint para listar periodos académicos | Endpoint GET que retorna lista de periodos registrados. | 2 |
-| 63 | TS025 | Exponer endpoint para obtener detalles de un periodo académico | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 64 | US017 | Actualización de Salones de Clase | Edición de atributos del salón con validación de campos obligatorios. | 3 |
-| 65 | US018 | Eliminación de Salones de Clase | Baja de espacio físico con confirmación del administrador. | 2 |
-| 66 | TS027 | Exponer endpoint para actualizar salones de clase | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 67 | TS028 | Exponer endpoint para eliminar salones de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 68 | TS029 | Exponer endpoint para listar salones de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 69 | TS030 | Exponer endpoint para obtener detalles de un salón de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 70 | US020 | Actualización de Horarios | Edición de programación con revalidación de conflictos entre sesiones. | 5 |
-| 71 | US021 | Eliminación de Horarios | Baja de programación con confirmación del administrador. | 2 |
-| 72 | TS032 | Exponer endpoint para actualizar cursos | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 73 | TS033 | Exponer endpoint para eliminar cursos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 74 | TS034 | Exponer endpoint para listar cursos | Endpoint GET que retorna lista de cursos registrados. | 2 |
-| 75 | TS035 | Exponer endpoint para obtener detalles de un curso | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 76 | TS037 | Exponer endpoint para actualizar horarios | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
-| 77 | TS038 | Exponer endpoint para eliminar horarios | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
-| 78 | TS039 | Exponer endpoint para listar horarios | Endpoint GET que retorna lista de programaciones registradas. | 2 |
-| 79 | TS040 | Exponer endpoint para obtener detalles de un horario | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 80 | US023 | Actualización de Boletas de Pago | Edición de montos y estado de comprobante con validación financiera. | 3 |
-| 81 | US024 | Eliminación de Boletas de Pago | Baja de comprobante duplicado o incorrecto con confirmación. | 1 |
-| 82 | TS042 | Exponer endpoint para actualizar cuentas de cobro | Endpoint PUT con validaciones financieras y manejo de no encontrado. | 5 |
-| 83 | TS043 | Exponer endpoint para eliminar cuentas de cobro | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 84 | TS044 | Exponer endpoint para listar cuentas de cobro | Endpoint GET que retorna listado financiero. | 2 |
-| 85 | TS045 | Exponer endpoint para obtener detalles de una cuenta de cobro | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 86 | TS047 | Exponer endpoint para actualizar boletas de pago asignadas a una cuenta de cobro | Endpoint PUT anidado con validación de IDs y manejo de no encontrado. | 3 |
-| 87 | TS048 | Exponer endpoint para listar boletas de pago asignadas a una cuenta de cobro | Endpoint GET anidado que retorna comprobantes vinculados. | 3 |
-| 88 | TS049 | Exponer endpoint para eliminar boletas de pago asignadas a una cuenta de cobro | Endpoint DELETE anidado con desvinculación y respuesta 204. | 2 |
-| 89 | US026 | Actualización de Ingreso/Egreso | Corrección de movimiento contable con validación de montos y justificación. | 3 |
-| 90 | US027 | Eliminación de Ingreso/Egreso | Baja de transacción duplicada o incorrecta con confirmación. | 2 |
-| 91 | TS051 | Exponer endpoint para actualizar transacciones | Endpoint PUT con validación de montos y manejo de datos inválidos. | 3 |
-| 92 | TS052 | Exponer endpoint para eliminar transacciones | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 93 | TS051 | Exponer endpoint para listar transacciones | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 94 | TS052 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 95 | TS058 | Exponer endpoint para actualizar cuenta de usuario | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 96 | TS059 | Exponer endpoint para eliminar cuenta de usuario | Endpoint DELETE con respuesta 204 sin lógica adicional compleja. | 1 |
-| 97 | TS062 | Exponer endpoint para cambiar contraseña mediante código de verificación | Endpoint POST con validación de código, cifrado y actualización de credencial. | 5 |
-| 98 | TS066 | Exponer endpoint para manejo de CORS | Endpoint OPTIONS con configuración de headers y políticas de origen. | 5 |
-| 99 | SWS001 | Ver sección Hero | Sección estática de presentación principal; requiere diseño visual atractivo. | 5 |
-| 100 | SWS002 | Ver sección Features | Listado visual de funcionalidades clave de la plataforma. | 3 |
-| 101 | SWS003 | Ver sección How It Works | Secuencia de pasos explicativos con elementos visuales de flujo. | 3 |
-| 102 | SWS004 | Ver sección About The Product | Sección descriptiva con beneficios detallados; mayor contenido y diseño. | 5 |
-| 103 | SWS005 | Ver sección Testimonials | Componente de tarjetas o carrusel con experiencias de usuarios. | 3 |
-| 104 | SWS006 | Ver sección About Us | Sección informativa simple con misión, visión y valores. | 2 |
-| 105 | SWS007 | Ver sección About The Team | Grilla de perfiles de equipo con foto, nombre y rol. | 5 |
-| 106 | SWS008 | Ver sección Pricing | Tabla comparativa de planes con destacado visual del recomendado. | 3 |
-| 107 | SWS009 | Ver sección FAQ | Componente acordeón con preguntas y respuestas frecuentes. | 5 |
-| 108 | SWS010 | Ver sección Contact | Formulario de contacto con campos y canales de comunicación. | 3 |
-| 109 | SWS011 | Ver sección Footer | Pie de página con enlaces legales, redes sociales y referencias corporativas. | 2 |
-| 110 | SS001 | Investigación de la integración de Stripe | Exploración de flujos de cobro, webhooks y viabilidad técnica de integración. | 8 |
-| 111 | SS002 | Investigación de la integración de Gmail | Análisis de protocolo SMTP, autenticación y pruebas de envío de correos. | 8 |
-| 112 | SS003 | Investigación de la integración de PagoEfectivo | Evaluación del flujo CIP y estructura requerida en el modelo financiero. | 8 |
-| 113 | SS004 | Probar bibliotecas de generación de archivos PDF y Excel | Benchmark de librerías exportadoras por latencia y soporte de estilos. | 8 |
-| 114 | SS005 | Probar bibliotecas de generación de gráficos | Evaluación comparativa de librerías de visualización para la plataforma. | 8 |
-| 115 | SS006 | Probar bibliotecas de generación de códigos QR | Evaluación comparativa de librerías QR por facilidad de integración y calidad. | 8 |
-| 116 | TS064 | Exponer endpoint para validación de recursos | Endpoint HEAD para comprobación rápida de existencia sin cuerpo de respuesta. | 1 |
-| 117 | TS065 | Exponer endpoint para manejo de CORS y métodos permitidos | Endpoint OPTIONS con headers de autorización HTTP para preflight.    | 2 |
+| 1 | US001 | Registro de Academia | Flujo principal del sistema; requiere validaciones de datos y persistencia en base de datos. | 5            |
+| 2 | TS006 | Exponer endpoint para registrar administrador | Endpoint POST con validaciones básicas y respuesta estándar. | 3            |
+| 3 | TS001 | Exponer endpoint para registrar academias | Endpoint POST con manejo de duplicados y validación de campos. | 3            |
+| 4 | US004 | Registro de Profesor | Implica creación de perfil docente con asignación a academia existente. | 5            |
+| 5 | US013 | Creación de Periodo Académico | Requiere validación de fechas y lógica de no solapamiento entre periodos. | 5            |
+| 6 | TS021 | Exponer endpoint para registrar periodos académicos | Endpoint POST con validación de consistencia temporal. | 3            |
+| 7 | US016 | Creación de Salones de Clase | Implica registro de espacio físico con capacidad y atributos de infraestructura. | 5            |
+| 8 | TS026 | Exponer endpoint para registrar salones de clase | Endpoint POST con validación de capacidad y campos requeridos. | 3            |
+| 9 | US019 | Creación de Horarios | Alta complejidad por detección de conflictos de horario entre docentes y salones. | 5            |
+| 10 | TS031 | Exponer endpoint para registrar cursos | Endpoint POST con manejo de duplicados por nombre o código. | 3            |
+| 11 | US007 | Matrícula de Alumno | Vincula alumno, periodo y curso; requiere validaciones de disponibilidad. | 5            |
+| 12 | TS011 | Exponer endpoint para registrar matrículas | Endpoint POST con control de conflictos de inscripción activa. | 3            |
+| 13 | US010 | Registro de Asistencia | Lógica simple de marcado por sesión con validación mínima. | 3            |
+| 14 | TS016 | Exponer endpoint para registrar asistencias de clase | Endpoint POST con control de duplicados por sesión y participante. | 2            |
+| 15 | US030 | Visualización de Horario de Clases | Consulta de datos filtrada por docente y periodo activo. | 3            |
+| 16 | TS036 | Exponer endpoint para registrar horarios | Endpoint POST con detección de solapamientos entre sesiones. | 3            |
+| 17 | US031 | Reprogramación de Clase | Requiere validación de nueva fecha sin conflictos y actualización del cronograma. | 5            |
+| 18 | TS055 | Exponer endpoint para reprogramar una sesión de clases | Endpoint PUT especializado con lógica de conflicto temporal. | 2            |
+| 19 | US022 | Generación de Boletas de Pago | Implica cálculo de montos, vinculación con inscripción y emisión de comprobante. | 5            |
+| 20 | TS041 | Exponer endpoint para registrar cuentas de cobro | Endpoint POST con validación financiera y control de duplicados. | 3            |
+| 21 | TS046 | Exponer endpoint para asignar boletas de pago | Endpoint POST de vinculación entre boleta y cuenta de cobro. | 2            |
+| 22 | US025 | Registro de Ingreso/Egreso | Requiere categorización de movimiento y validación de montos positivos. | 5            |
+| 23 | TS050 | Exponer endpoint para registrar transacciones | Endpoint POST con validación de monto y tipo de movimiento contable. | 3            |
+| 24 | US028 | Visualización de Resumen de Finanzas | Agregación de datos financieros con cálculo de indicadores por periodo. | 5            |
+| 25 | US029 | Generación de Reportes Financieros | Alta complejidad por procesamiento de datos, exportación y filtros por rango de fechas. | 5            |
+| 26 | TS053 | Exponer endpoint para generar reportes financieros | Endpoint GET con lógica de exportación y manejo de periodos sin datos. | 5            |
+| 27 | US032 | Registro de Cuenta | Creación de cuenta con validación de datos y confirmación de éxito. | 3            |
+| 28 | TS054 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de recurso no encontrado. | 3            |
+| 29 | TS056 | Exponer endpoint para visualizar horarios de un profesor | Endpoint GET filtrado por docente con validación de existencia. | 3            |
+| 30 | TS057 | Exponer endpoint para registrar cuenta de usuario | Endpoint POST con cifrado de credencial y control de duplicados por correo. | 2            |
+| 31 | TS060 | Exponer endpoint para activar cuenta de usuario | Endpoint POST con validación de token y cambio de estado de cuenta. | 3            |
+| 32 | TS061 | Exponer endpoint para reenviar código de verificación | Endpoint POST con disparo de evento de mensajería y control de estado. | 3            |
+| 33 | TS063 | Exponer endpoint para iniciar sesión | Endpoint POST con autenticación y emisión de token JWT. | 2            |
+| 34 | US002 | Actualización de Academia | Modificación de datos existentes con validación de campos obligatorios. | 2            |
+| 35 | US003 | Eliminación de Academia | Eliminación con confirmación explícita del administrador. | 2            |
+| 36 | TS002 | Exponer endpoint para actualizar academias | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 37 | TS003 | Exponer endpoint para eliminar academias | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 38 | TS004 | Exponer endpoint para listar academias | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 39 | TS005 | Exponer endpoint para obtener detalles de una academia | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 40 | US005 | Actualización de Profesor | Edición de perfil docente con validación de formato de datos. | 2            |
+| 41 | US006 | Eliminación de Profesor | Baja de docente con confirmación y limpieza del perfil. | 2            |
+| 42 | TS007 | Exponer endpoint para actualizar administrador | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 43 | TS008 | Exponer endpoint para eliminar administrador | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 44 | TS009 | Exponer endpoint para listar administradores | Endpoint GET que retorna lista de perfiles registrados. | 3            |
+| 45 | TS010 | Exponer endpoint para obtener detalles de un administrador | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 46 | US008 | Actualización de Matrícula | Edición de inscripción con validación de periodos y estados disponibles. | 5            |
+| 47 | US009 | Cancelación de Matrícula | Anulación de inscripción activa con actualización de estado. | 2            |
+| 48 | TS012 | Exponer endpoint para actualizar matrículas | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 49 | TS013 | Exponer endpoint para eliminar matrículas | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 50 | TS014 | Exponer endpoint para listar matrículas | Endpoint GET que retorna lista de inscripciones registradas. | 2            |
+| 51 | TS015 | Exponer endpoint para obtener detalles de una matrícula | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 52 | US011 | Actualización de Asistencia | Corrección de marcadores de presencia en sesión previa. | 3            |
+| 53 | US012 | Visualización de Reportes de Asistencia | Generación de informe filtrado por periodo con manejo de datos vacíos. | 5            |
+| 54 | TS017 | Exponer endpoint para actualizar asistencias de clase | Endpoint PUT con validación de cambios y manejo de no encontrado. | 3            |
+| 55 | TS018 | Exponer endpoint para eliminar asistencias de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 56 | TS019 | Exponer endpoint para listar asistencias de clase | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 57 | TS020 | Exponer endpoint para obtener detalles de una asistencia de clase | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 58 | US014 | Actualización de Periodo Académico | Edición de fechas con validación de no solapamiento. | 3            |
+| 59 | US015 | Eliminación de Periodo Académico | Baja de periodo con confirmación explícita del administrador. | 3            |
+| 60 | TS022 | Exponer endpoint para actualizar periodos académicos | Endpoint PUT con validación temporal y manejo de no encontrado. | 2            |
+| 61 | TS023 | Exponer endpoint para eliminar periodos académicos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1            |
+| 62 | TS024 | Exponer endpoint para listar periodos académicos | Endpoint GET que retorna lista de periodos registrados. | 2            |
+| 63 | TS025 | Exponer endpoint para obtener detalles de un periodo académico | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 64 | US017 | Actualización de Salones de Clase | Edición de atributos del salón con validación de campos obligatorios. | 3            |
+| 65 | US018 | Eliminación de Salones de Clase | Baja de espacio físico con confirmación del administrador. | 2            |
+| 66 | TS027 | Exponer endpoint para actualizar salones de clase | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 67 | TS028 | Exponer endpoint para eliminar salones de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 68 | TS029 | Exponer endpoint para listar salones de clase | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 69 | TS030 | Exponer endpoint para obtener detalles de un salón de clase | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 70 | US020 | Actualización de Horarios | Edición de programación con revalidación de conflictos entre sesiones. | 5            |
+| 71 | US021 | Eliminación de Horarios | Baja de programación con confirmación del administrador. | 2            |
+| 72 | TS032 | Exponer endpoint para actualizar cursos | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 73 | TS033 | Exponer endpoint para eliminar cursos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 74 | TS034 | Exponer endpoint para listar cursos | Endpoint GET que retorna lista de cursos registrados. | 2            |
+| 75 | TS035 | Exponer endpoint para obtener detalles de un curso | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 76 | TS037 | Exponer endpoint para actualizar horarios | Endpoint PUT con validación temporal y manejo de no encontrado. | 2            |
+| 77 | TS038 | Exponer endpoint para eliminar horarios | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1            |
+| 78 | TS039 | Exponer endpoint para listar horarios | Endpoint GET que retorna lista de programaciones registradas. | 2            |
+| 79 | TS040 | Exponer endpoint para obtener detalles de un horario | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 80 | US023 | Actualización de Boletas de Pago | Edición de montos y estado de comprobante con validación financiera. | 3            |
+| 81 | US024 | Eliminación de Boletas de Pago | Baja de comprobante duplicado o incorrecto con confirmación. | 1            |
+| 82 | TS042 | Exponer endpoint para actualizar cuentas de cobro | Endpoint PUT con validaciones financieras y manejo de no encontrado. | 5            |
+| 83 | TS043 | Exponer endpoint para eliminar cuentas de cobro | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 84 | TS044 | Exponer endpoint para listar cuentas de cobro | Endpoint GET que retorna listado financiero. | 2            |
+| 85 | TS045 | Exponer endpoint para obtener detalles de una cuenta de cobro | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 86 | TS047 | Exponer endpoint para actualizar boletas de pago asignadas a una cuenta de cobro | Endpoint PUT anidado con validación de IDs y manejo de no encontrado. | 3            |
+| 87 | TS048 | Exponer endpoint para listar boletas de pago asignadas a una cuenta de cobro | Endpoint GET anidado que retorna comprobantes vinculados. | 3            |
+| 88 | TS049 | Exponer endpoint para eliminar boletas de pago asignadas a una cuenta de cobro | Endpoint DELETE anidado con desvinculación y respuesta 204. | 2            |
+| 89 | US026 | Actualización de Ingreso/Egreso | Corrección de movimiento contable con validación de montos y justificación. | 3            |
+| 90 | US027 | Eliminación de Ingreso/Egreso | Baja de transacción duplicada o incorrecta con confirmación. | 2            |
+| 91 | TS051 | Exponer endpoint para actualizar transacciones | Endpoint PUT con validación de montos y manejo de datos inválidos. | 3            |
+| 92 | TS052 | Exponer endpoint para eliminar transacciones | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 93 | TS051 | Exponer endpoint para listar transacciones | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 94 | TS052 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 95 | TS058 | Exponer endpoint para actualizar cuenta de usuario | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 96 | TS059 | Exponer endpoint para eliminar cuenta de usuario | Endpoint DELETE con respuesta 204 sin lógica adicional compleja. | 1            |
+| 97 | TS062 | Exponer endpoint para cambiar contraseña mediante código de verificación | Endpoint POST con validación de código, cifrado y actualización de credencial. | 5            |
+| 98 | TS066 | Exponer endpoint para manejo de CORS | Endpoint OPTIONS con configuración de headers y políticas de origen. | 5            |
+| 99 | SWS001 | Ver sección Hero | Sección estática de presentación principal; requiere diseño visual atractivo. | 5            |
+| 100 | SWS002 | Ver sección Features | Listado visual de funcionalidades clave de la plataforma. | 3            |
+| 101 | SWS003 | Ver sección How It Works | Secuencia de pasos explicativos con elementos visuales de flujo. | 3            |
+| 102 | SWS004 | Ver sección About The Product | Sección descriptiva con beneficios detallados; mayor contenido y diseño. | 5            |
+| 103 | SWS005 | Ver sección Testimonials | Componente de tarjetas o carrusel con experiencias de usuarios. | 3            |
+| 104 | SWS006 | Ver sección About Us | Sección informativa simple con misión, visión y valores. | 2            |
+| 105 | SWS007 | Ver sección About The Team | Grilla de perfiles de equipo con foto, nombre y rol. | 5            |
+| 106 | SWS008 | Ver sección Pricing | Tabla comparativa de planes con destacado visual del recomendado. | 3            |
+| 107 | SWS009 | Ver sección FAQ | Componente acordeón con preguntas y respuestas frecuentes. | 5            |
+| 108 | SWS010 | Ver sección Contact | Formulario de contacto con campos y canales de comunicación. | 3            |
+| 109 | SWS011 | Ver sección Footer | Pie de página con enlaces legales, redes sociales y referencias corporativas. | 2            |
+| 110 | SS001 | Investigación de la integración de Stripe | Exploración de flujos de cobro, webhooks y viabilidad técnica de integración. | 5            |
+| 111 | SS002 | Investigación de la integración de Gmail | Análisis de protocolo SMTP, autenticación y pruebas de envío de correos. | 5            |
+| 112 | SS003 | Investigación de la integración de PagoEfectivo | Evaluación del flujo CIP y estructura requerida en el modelo financiero. | 5            |
+| 113 | SS004 | Probar bibliotecas de generación de archivos PDF y Excel | Benchmark de librerías exportadoras por latencia y soporte de estilos. | 5            |
+| 114 | SS005 | Probar bibliotecas de generación de gráficos | Evaluación comparativa de librerías de visualización para la plataforma. | 5            |
+| 115 | SS006 | Probar bibliotecas de generación de códigos QR | Evaluación comparativa de librerías QR por facilidad de integración y calidad. | 5            |
+| 116 | TS064 | Exponer endpoint para validación de recursos | Endpoint HEAD para comprobación rápida de existencia sin cuerpo de respuesta. | 1            |
+| 117 | TS065 | Exponer endpoint para manejo de CORS y métodos permitidos | Endpoint OPTIONS con headers de autorización HTTP para preflight.    | 2            |
 
 </div>
 
