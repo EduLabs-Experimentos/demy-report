@@ -49,7 +49,8 @@
 | 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
 | 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
 | 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
-| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   | 
+| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   |
+| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          | 
 
 <hr class="page-break">
 
