@@ -10233,6 +10233,12 @@ deploy:
 # Capítulo VIII: Experiment-Driven Development 
 ## 8.1. Experiment Planning 
 ### 8.1.1. As-Is Summary
+Actualmente el ecosistema Demy se encuentra completo en cuanto a desarrollo e integración, siendo la solución web dirigida a administradores el que está desplegado y la landing page para el call to action que también se encuentra operativa. En cuanto a los soluciones móviles,la de Tablet dirigida a administradores y la de celular dirigida a profesores, ambas se encuentran construidas y funcionales pero están en fases previas a su distribución oficial.
+
+Por otro lado, en cuanto a la interacción con la solución web, se selecciono un grupo pequeño del segmento de administradores para que empiecen a registrar sus informaciones financieras y académicas. Sin embargo, el equipo identifica que la plataforma opera bajo un escenario de alta incertidumbre respecto al comportamiento real del usuario y valor percibido. Hasta la fecha, Azure nos ayuda para el monitoreo de la solución web desplegada, pero no se cuenta con componentes de recolección de datos analíticos que permitan verificar si las funcionalidades core están resolviendo las necesidades de los usuarios como  se requiere.
+
+Entonces, este estado actual se caracteriza por una madurez técnica en el despliegue, pero una total ceguera analítica. Por eso, este punto de partida no busca proponer nuevas características técnicas, sino procesar el raw material(opiniones de los usuarios o suposiciones del equipo) para estructurar preguntas de investigación que nos permita recolectar evidencia científica sobre la interacción del usuario
+
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 ### 8.1.3. Experiment-Ready Questions
 ### 8.1.4. Question Backlog
