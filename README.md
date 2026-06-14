@@ -10405,6 +10405,123 @@ Por otro lado, en cuanto a la interacción con la solución web, se selecciono u
 Entonces, este estado actual se caracteriza por una madurez técnica en el despliegue, pero una total ceguera analítica. Por eso, este punto de partida no busca proponer nuevas características técnicas, sino procesar el raw material(opiniones de los usuarios o suposiciones del equipo) para estructurar preguntas de investigación que nos permita recolectar evidencia científica sobre la interacción del usuario
 
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+La materia prima representa los insumos iniciales que el equipo recolecta en la Fase de Planificación para descubrir las premisas subyacentes que orientarán los experimentos de validación del producto **Demy**.
+ 
+
+#### **Ideas**
+ 
+Las ideas surgieron de forma natural al observar los problemas de gestión administrativa en las academias del peru. El foco no es probar la idea en sí misma, sino identificar las creencias subyacentes que la sostienen.
+ 
+1. **Módulo centralizado de matrícula digital:** La idea de reemplazar el registro manual en Excel y talonarios físicos con un flujo de matrícula digital surge de la incomodidad en administrativos como Carmen Gutiérrez, quienes pierden tiempo valioso buscando datos dispersos. La premisa subyacente es que centralizar este proceso reducirá los errores y el tiempo operativo.
+2. **Registro de asistencia desde el celular para docentes:** La observación de que docentes como Luis Mendoza usan el celular como principal dispositivo de trabajo, pero encuentran Excel incómodo en mobile, lleva a proponer un módulo de asistencia optimizado para smartphones. La premisa subyacente es que una interfaz móvil nativa aumentará la frecuencia y precisión del registro.
+3. **Alertas automáticas de pagos pendientes:** El pain point de Carmen "no recuerdo si este alumno ya pagó" y "me olvidé de hacer recordar este pago" inspira la idea de notificaciones automáticas. La premisa subyacente es que los recordatorios automáticos reducirán la morosidad y la carga de seguimiento manual.
+4. **Panel de visualización de horarios para docentes:** La necesidad de Luis de consultar sus horarios y cambios desde cualquier dispositivo, sin depender de una encuestas de WhatsApp, genera la idea de una vista de calendario personal. La premisa es que el acceso inmediato a la información reduce el estrés por imprevistos y mejora la coordinación.
+5. **Reprogramación de clases desde la plataforma:** Los docentes actualmente improvisan soluciones ante cambios de horario a través de WhatsApp. La idea de habilitar la reprogramación formal dentro de la app asume que un canal oficial reducirá la desorganización y mejorará la experiencia de alumnos y padres de familia.
+6. **Reportes financieros automatizados:** La gestión de ingresos y egresos en Excel genera indisposicion por posibles errores en los administrativos. La idea de reportes generados automáticamente asume que la automatización contable mejorara la toma de decisiones estratégicas y la salud financiera de las academias.
+
+ 
+#### **Claims**
+ 
+Son declaraciones directas sobre el producto, realizadas por los stakeholders o los usuarios durante las entrevistas y el proceso de investigación.
+ 
+**Afirmaciones negativas**
+ 
+1. ***"Perdemos mucho tiempo buscando datos en Excel."*** <br> 
+    > Administrativos de academias entrevistados. Evidencia directa de la ineficiencia del sistema actual que Demy debe resolver.
+2. ***"Excel desde el celular es incómodo. Necesito algo que funcione en cualquier momento."*** <br> 
+    > Luis Mendoza (User Persona docente). Afirmación que valida la necesidad de una solución mobile-first para docentes.
+3. ***"Es un lío manejar tantas planillas."*** <br>
+    > Administrativos de academias entrevistados. Refleja la fragmentación de la información que genera duplicidad de tareas.
+4. ***"Registrar desde el celular es incómodo, pierdo tiempo con tareas administrativas."*** <br> 
+    > Docentes entrevistados. Confirma que las herramientas actuales no se adaptan al ritmo de trabajo de los profesores.
+5. ***"¿Dónde anoté eso? Ojalá tuviera la información al instante."*** <br> 
+    > Carmen Gutiérrez (User Persona administrativa). Afirmación que evidencia la falta de trazabilidad y acceso rápido a datos de estudiantes.
+6. ***"No encuentro la información, la clase ya se está distrayendo."*** <br> 
+    > Docentes entrevistados. Señala que la desorganización de la información impacta directamente en la calidad del servicio educativo.
+
+<br>    
+
+**Afirmaciones positivas**
+ 
+7. ***"Una herramienta automatizada nos ayudaría bastante."*** <br>
+   > Administrativos entrevistados. Validación directa de la propuesta de valor central de Demy.
+
+8. ***"Sería excelente si me avisaran cuando hay un pago pendiente."*** <br>
+   > Carmen Gutiérrez (User Persona administrativa). Confirma la receptividad ante la funcionalidad de alertas automáticas de cobro.
+
+9. ***"Necesito una herramienta que facilite la gestión de asistencia."*** <br>
+   > Docentes entrevistados. Afirma la disposición de adoptar una solución digital si resuelve el problema específico de asistencia.
+
+10. ***Según Naranjo et al. (2025), los procesos administrativos manuales —con su falta de claridad, duplicación de tareas y largos tiempos de respuesta— reducen la satisfacción del estudiante y la productividad del personal.*** <br>
+    > Evidencia académica que respalda la urgencia de implementar la propuesta de Demy y justifica la necesidad de digitalizar la gestión administrativa en academias educativas.
+
+ 
+#### **Assumptions**
+ 
+Son creencias previas sobre el comportamiento de los usuarios o las academias que requieran validación experimental.
+ 
+1. **Los administrativos adoptarán la plataforma si es suficientemente intuitiva.** <br>
+
+   > Se asume que la resistencia al cambio puede superarse con una interfaz simple y un proceso de onboarding adecuado, incluso en personal con habilidades digitales intermedias.
+
+2. **Los docentes usarán principalmente el smartphone para interactuar con Demy.** <br>
+
+   > Se asume que el 100% de los docentes entrevistados que prefieren el celular representa un patrón generalizable al segmento objetivo, justificando la priorización de la app mobile para profesores.
+
+3. **Las alertas automáticas de pago reducirán significativamente la morosidad.** <br>
+
+   > Se asume que el problema de los pagos atrasados se debe principalmente a la falta de recordatorios oportunos, y no a problemas económicos de los estudiantes o fallas en el proceso de comunicación.
+
+4. **Una plataforma centralizada mejorará la percepción de organización frente a padres de familia.** <br>
+
+   > Se asume que los padres valoran la capacidad de la academia de dar respuestas rápidas y precisas, y que esto impacta positivamente en la retención de alumnos.
+
+5. **Las academias de tamaño mediano (50-200 alumnos) en Lima son el segmento con mayor disposición y capacidad de adopción.** <br>
+
+   > Se asume que estas instituciones tienen suficiente volumen operativo para justificar la inversión en una solución digital y suficiente agilidad organizacional para implementarla.
+
+6. **El 80% del personal de una academia se beneficiará directamente de la plataforma.** <br>
+
+   > Esta estimación asume una distribución típica de roles en una academia promedio (3-5 administrativos y 10-20 docentes), sin considerar variaciones por tamaño o modelo de gestión.
+
+7. **Los docentes están dispuestos a reprogramar clases a través de la plataforma en lugar de WhatsApp.** <br>
+
+   > Se asume que la informalidad del canal actual (WhatsApp) es una limitación percibida como negativa, y no una preferencia cultural arraigada del segmento.
+
+8. **Los planes escalables (Essentials, Pro, Elite) facilitarán el crecimiento de las academias dentro del sistema.** <br>
+
+   > Se asume que las academias identificarán valor suficiente en el plan básico como para justificar una migración hacia planes superiores en el mediano plazo.
+
+9. **Centralizar la información académica y financiera en una sola plataforma mejorará la comunicación interna.** <br>
+
+   > Se asume que la desorganización actual se debe a la falta de un sistema único, y no a dinámicas organizacionales o culturales más profundas dentro de las academias.
+
+
+ 
+#### **Knowledge Gaps**
+ 
+Son áreas donde reconocemos las carencias de información suficiente para tomar decisiones con certeza. Generando preguntas de tipo exploratorio que orientarán la investigación cualitativa y cuantitativa.
+ 
+1. **¿Cuál es el nivel real de alfabetización digital del personal administrativo de academias pequeñas fuera de Lima?** <br> 
+    > Las entrevistas se realizaron en Lima e Ica con perfiles de edad entre 21 y 28 años. Se desconoce si el comportamiento y la receptividad tecnológica son representativos de academias en otras ciudades o con personal de mayor edad.
+2. **¿Qué tan dispuestos están los directores/dueños de academias a invertir en una suscripción mensual?** <br> 
+    >No se cuenta con información sobre la sensibilidad al precio del segmento objetivo ni sobre cuánto están pagando actualmente por herramientas de gestión (si pagan algo).
+3. **¿Con qué frecuencia ocurren reprogramaciones de clases en una academia promedio?** <br>
+    > El As-Is Scenario Mapping muestra que los docentes improvisan ante cambios de horario, pero no se tiene data cuantitativa sobre la frecuencia de este problema para dimensionar su impacto real.
+4. **¿Cuál es el proceso exacto de control de asistencia en academias con múltiples sedes?** <br>
+    > Las entrevistas cubrieron academias de sede única. Se desconoce cómo escala el problema de gestión en instituciones con varias sedes simultáneas, que representan un segmento de mayor valor.
+5. **¿Los padres de familia interactúan activamente con la academia a través de canales digitales?** <br>
+    > El As-Is Scenario Mapping menciona la atención a padres como un punto de dolor, pero no se tiene información sobre sus preferencias de comunicación ni si usarían una funcionalidad dirigida a ellos.
+6. **¿Cuánto tiempo exactamente invierte un administrativo en tareas manuales por semana?** <br>
+    > Se cuenta con datos generales (ENUT 2024: más de 20 horas semanales en tareas administrativas en el sector educación), pero no con mediciones específicas para el subsector de academias preuniversitarias.
+7. **¿Existen competidores directos o soluciones parciales que las academias ya estén evaluando o usando?** <br> 
+    > No se realizamos un análisis competitivo con los usuarios entrevistados para determinar si ya conocen o han probado otras herramientas de gestión académica, lo que podría afectar la estrategia de posicionamiento de Demy.
+8. **¿Qué tan viable es la integración con pasarelas de pago locales como PagoEfectivo desde el punto de vista técnico y legal?** <br> 
+    > Identificamos esta área como un spike técnico (SS003), pero aún no se tiene claridad sobre los requisitos legales y el esfuerzo de integración real en el contexto peruano.
+9. **¿Cuál es el umbral mínimo de funcionalidades para que una academia considere migrar desde Excel a Demy?** <br> 
+    > No se ha validado si el conjunto de módulos del MVP (matrícula, asistencia, horarios, pagos) es suficiente para generar el valor percibido necesario para justificar el cambio de herramienta.
+
 ### 8.1.3. Experiment-Ready Questions
 ### 8.1.4. Question Backlog
 ### 8.1.5. Experiment Cards
