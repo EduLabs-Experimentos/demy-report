@@ -10000,9 +10000,174 @@ describe('Billing Flow - Desktop', () => {
 ## 6.2. Static testing & Verification 
 
 ### 6.2.1. Static Code Analysis 
+
 #### 6.2.1.1. Coding standard & Code conventions
+
+Para garantizar que el código fuente de **Demy** sea limpio, mantenible y coherente entre todos los miembros del equipo de **EduLabs**, se establecieron estándares de codificación alineados con las buenas prácticas de los lenguajes, los frameworks utilizados y la arquitectura basada en **Domain-Driven Design (DDD)**.
+
+**1. Estándares generales (Clean Code)**
+- Uso de nombres descriptivos y significativos para clases, variables, métodos y paquetes.
+- Métodos enfocados en una única responsabilidad (Single Responsibility Principle).
+- Eliminación de código muerto (comentado o sin uso) y reducción estricta de la duplicación de código.
+- Los comentarios se utilizan exclusivamente para explicar la intención ("por qué") en lógicas de negocio complejas; el código debe explicar el "qué" y el "cómo" por sí mismo.
+
+**2. Estándares para el Backend (Java + Spring Boot)**
+- **Naming Conventions:**
+  - Clases, Interfaces y Enums: `PascalCase`.
+  - Variables, Atributos y Métodos: `camelCase`.
+  - Constantes: `SCREAMING_SNAKE_CASE` (mayúsculas separadas por guiones bajos).
+  - Paquetes: en minúsculas, organizados según la estructura de Bounded Contexts.
+- **Arquitectura y Framework:**
+  - Inyección de dependencias preferentemente mediante constructores.
+  - Separación estricta en capas (Domain, Application, Infrastructure, Interfaces) respetando la inyección de dependencias desde el dominio.
+  - Controladores enfocados solo en el enrutamiento HTTP; la lógica de negocio reside en los *Command/Query Services*.
+
+**3. Estándares para la Web App Administrativa (Angular + TypeScript)**
+- **Convenciones de Angular:**
+  - Archivos nombrados siguiendo la convención oficial (ej. `student-list.component.ts`, `auth.service.ts`).
+  - Clases y Decoradores en `PascalCase`. Propiedades, métodos y funciones en `camelCase`.
+- **Buenas Prácticas:**
+  - Uso estricto de TypeScript, evitando el uso de `any`.
+  - Herramientas: **ESLint** y **Prettier** para mantener consistencia visual y detectar errores de estilo.
+
+**4. Estándares para las Aplicaciones Móviles**
+
+Dado que el ecosistema móvil se divide según el tipo de usuario, se aplican estándares específicos para cada tecnología:
+
+- **Admin App (Kotlin + Jetpack Compose):**
+  - **Convenciones de Kotlin:** Nombres de funciones `@Composable` en `PascalCase` (para tratarlas como componentes de UI) y funciones normales/variables en `camelCase`.
+  - **Buenas Prácticas en Compose:** Aplicación estricta de *State Hoisting* (elevación de estado) y flujo de datos unidireccional (UDF). Se prioriza la creación de componentes *stateless* (sin estado) para facilitar su previsualización y reutilización.
+  - **Organización:** Separación clara entre la UI (screens/components) y los *ViewModels*.
+
+- **Teacher App (Flutter + Dart):**
+  - **Convenciones de Dart:** Formateo estandarizado mediante `dart format`. Clases y Widgets en `PascalCase`, variables y funciones en `camelCase`.
+  - **Buenas Prácticas con BLoC:** Arquitectura reactiva separando estrictamente los Eventos (Events), los Estados (States) y la lógica de negocio (Blocs). Ninguna regla de negocio debe existir dentro de la capa de UI (Widgets).
+  - **Manejo de memoria:** Cierre adecuado de *streams* y controladores para evitar fugas de memoria, sumado al uso de *Null Safety* estricto.
+
+**5. Convenciones de Domain-Driven Design (DDD)**
+- **Bounded Contexts:** Separación clara en módulos independientes para cada contexto del negocio: *IAM, Enrollment, Scheduling, Attendance, Billing, Accounting & Finance* e *Institution*.
+- **Lenguaje Ubicuo (Ubiquitous Language):** Términos de negocio unificados entre el equipo técnico y el dominio, utilizándolos de manera consistente en todo el código.
+
+---
+
 #### 6.2.1.2. Code Quality & Code Security
+
+Para asegurar que Demy cuente con un sistema robusto, seguro y altamente disponible para las instituciones educativas, se aplicó un proceso continuo de análisis estático y verificación de métricas. El equipo de EduLabs evaluó la calidad del código y la mitigación de vulnerabilidades mediante la integración de herramientas automatizadas.
+
+---
+
+**1. Evaluación de la calidad del código**
+
+Se monitorean continuamente métricas clave para evitar la degradación del sistema:
+- **Complejidad ciclomática:** Identificación de métodos con demasiadas ramificaciones condicionales.
+- **Duplicación de código:** Detección de bloques repetidos para fomentar la reutilización y el principio DRY.
+- **Code Smells y Deuda Técnica:** Identificación proactiva de malas prácticas de diseño.
+
+**Herramientas utilizadas:**
+- **ESLint & SonarLint:** Para feedback en tiempo real en los entornos de desarrollo (IDE) de cada programador.
+
+*Gracias a estos reportes, se ha logrado refactorizar métodos complejos en los módulos de Scheduling y Billing, y reducir la duplicación de código en los componentes de Angular.*
+
+---
+
+**2. Seguridad del código**
+
+Debido a que Demy maneja datos sensibles de estudiantes, profesores y transacciones financieras, se implementaron controles estrictos:
+
+- **Inyección SQL (SQL Injection):**
+  - Todo el acceso a la base de datos relacional se realiza a través de ORMs (como Spring Data JPA), los cuales utilizan consultas parametrizadas. Se prohíbe terminantemente la concatenación manual de cadenas para formar consultas SQL.
+
+- **Cross-Site Scripting (XSS):**
+  - En la aplicación web (Angular), se aprovecha el motor de sanitización integrado del framework, el cual neutraliza automáticamente scripts maliciosos antes de renderizar datos en el DOM.
+  - Se restringe el uso de bypass de seguridad (como `DomSanitizer`) solo a casos documentados y estrictamente necesarios.
+
+- **Gestión de Identidad y Accesos (IAM):**
+  - Todo el manejo de autenticación y autorización está centralizado en el Bounded Context de IAM.
+  - Se utilizan JSON Web Tokens (JWT) transmitidos exclusivamente mediante encabezados HTTP `Authorization` y bajo conexiones seguras (HTTPS).
+  - Los tokens tienen tiempos de expiración cortos y se cuenta con mecanismos de renovación segura.
+
+- **Manejo de información sensible:**
+  - Las contraseñas se almacenan utilizando algoritmos de hash robustos (ej. BCrypt) y nunca en texto plano.
+  - Las credenciales de bases de datos, claves de APIs de terceros (pasarelas de pago) y secretos de JWT se inyectan a través de variables de entorno y **nunca** se versionan en los repositorios de código.
+
+- **Validación de entradas:**
+  - **Backend:** Se valida la integridad de los payloads entrantes utilizando anotaciones de Bean Validation (`@NotNull`, `@Size`, `@Email`) en los DTOs, rechazando peticiones malformadas antes de que lleguen a la capa de dominio.
+  - **Frontend:** Se implementan Reactive Forms en Angular con validaciones síncronas y asíncronas para proporcionar retroalimentación inmediata al usuario y evitar envíos de datos incorrectos.
+
+Estas prácticas de validación estática aseguran que el ecosistema de **Demy** mantenga un alto estándar de calidad, facilitando el mantenimiento a largo plazo y protegiendo la información crítica de las instituciones educativas usuarias.
+
 ### 6.2.2. Reviews 
+
+Para garantizar la calidad, consistencia y seguridad del código en la plataforma **Demy**, el equipo de EduLabs implementó un proceso riguroso de revisiones que combina evaluaciones manuales, revisiones entre pares y análisis automático. Este proceso asegura que cada cambio que se integra al sistema sea seguro, mantenible y coherente con las buenas prácticas de desarrollo adoptadas para el backend (Spring Boot), web app administrativa (Angular), app móvil administrativa (Kotlin + Jetpack Compose) y app móvil de profesores (Flutter).
+
+---
+
+**1. Tipos de revisión**
+
+- **Revisión entre pares (Peer Review)**
+  - Todo cambio debe ser revisado por al menos un miembro del equipo antes de integrarse a la rama principal.
+  - Se evalúa la legibilidad, claridad, mantenibilidad y adherencia a los estándares específicos por tecnología (Java, TypeScript, Kotlin o Dart).
+
+- **Revisión formal**
+  - Para funcionalidades críticas del dominio (ej. lógicas de cruce de horarios en *Scheduling*, transacciones financieras en *Billing*, o emisión de JWT en *IAM*), se realiza una revisión estructurada utilizando un checklist técnico.
+  - Participan al menos dos desarrolladores para validar que la lógica de negocio esté correctamente aislada en la capa de dominio.
+
+- **Revisión automática**
+  - Herramientas como **SonarLint**, **ESLint**, **Android Lint**, **flutter analyze** y los pipelines de **GitHub Actions** detectan de manera automatizada errores, vulnerabilidades y *code smells* antes de permitir el merge.
+  - Permiten identificar complejidad ciclomática elevada, código duplicado, problemas de estilo o inseguridad en el manejo de datos.
+
+---
+
+**2. Proceso de revisión**
+
+- **Pull Requests (PR)**
+  - Cada cambio debe ingresar mediante un PR con una descripción clara del alcance, el motivo del cambio y las pruebas realizadas.
+  - Los PR deben estar vinculados a una historia de usuario o tarea específica del sistema (GitHub Projects / Trello / Jira).
+
+- **Checklist de revisión**
+  - Claridad y legibilidad del código.
+  - Cumplimiento de las convenciones de nomenclatura y arquitectura limpia (DDD).
+  - Validación de datos y manejo adecuado de excepciones.
+  - Ausencia de duplicación de código (*DRY - Don't Repeat Yourself*).
+  - Seguridad: validación contra puntos vulnerables a XSS, SQL Injection u exposición de variables de entorno.
+  - Verificación de que los cambios no rompan los flujos y módulos existentes.
+
+- **Comentarios y feedback constructivo**
+  - Los revisores deben justificar cada observación técnica y sugerir alternativas viables.
+  - Se promueve una cultura de egoless programming, mejora continua y aprendizaje colaborativo dentro del equipo.
+
+- **Aprobación de PR**
+  - Ningún cambio se fusiona a las ramas `develop` o `main` sin al menos **una aprobación externa** de otro miembro del equipo.
+  - Los cambios deben pasar obligatoriamente los *checks* automáticos de integración continua (CI) antes del merge.
+
+---
+
+**3. Criterios de aceptación**
+
+- Cumplimiento estricto de estándares de estilo (Prettier, ktlint, dart format) y estructura definidos para cada tecnología.
+- Cero vulnerabilidades críticas o *bugs* detectados por el análisis estático de los linters.
+- Pase exitoso de las pruebas unitarias y de integración, asegurando que no se generen regresiones en el sistema.
+- Cobertura mínima de pruebas recomendada para los *Application Services* y *Domain Entities* más críticos.
+- Mantener la coherencia arquitectónica con los principios de Domain-Driven Design (DDD) respetando los límites de los Bounded Contexts (*IAM, Enrollment, Scheduling, Attendance, Billing, Accounting*).
+
+---
+
+**4. Frecuencia de las revisiones**
+
+- Las revisiones (*Peer Reviews*) se realizan de forma constante como parte del flujo diario de trabajo y envío de código.
+- Se intensifican durante el cierre de cada iteración (Sprint) para garantizar que los entregables (*Release Candidates*) mantengan el nivel de calidad esperado.
+- Se aplican revisiones cruzadas especiales para configuraciones de despliegue o cambios en la base de datos relacional.
+
+---
+
+**5. Resultados del proceso de revisión en Demy**
+
+- **Frontend / Mobile:** Identificación temprana de duplicación en componentes visuales de Angular y refactorización de *Composables* ineficientes en Kotlin para evitar recomposiciones innecesarias de la interfaz. Mejora en la separación de estados mediante el patrón BLoC en Flutter.
+- **Backend:** Reducción de la complejidad lógica en los servicios de dominio relacionados a la validación de matrículas y cruces de horarios.
+- **Seguridad:** Eliminación de prácticas inseguras, garantizando un flujo correcto en el uso de *Bearer Tokens* (JWT) y el almacenamiento seguro de credenciales en dispositivos móviles.
+- **Arquitectura:** Fortalecimiento del Lenguaje Ubicuo y una mejor encapsulación de los repositorios e interfaces del dominio.
+
+Este proceso de *Reviews* garantiza que el ecosistema **Demy** mantenga una base de código robusta, escalable y alineada con los más altos estándares de ingeniería de software requeridos para un sistema SaaS educativo en producción.
 
 ## 6.3. Validation Interviews
 ### 6.3.1. Diseño de Entrevistas
