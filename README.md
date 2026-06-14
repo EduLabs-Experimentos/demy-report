@@ -10405,9 +10405,769 @@ Por otro lado, en cuanto a la interacción con la solución web, se selecciono u
 Entonces, este estado actual se caracteriza por una madurez técnica en el despliegue, pero una total ceguera analítica. Por eso, este punto de partida no busca proponer nuevas características técnicas, sino procesar el raw material(opiniones de los usuarios o suposiciones del equipo) para estructurar preguntas de investigación que nos permita recolectar evidencia científica sobre la interacción del usuario
 
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+La materia prima representa los insumos iniciales que el equipo recolecta en la Fase de Planificación para descubrir las premisas subyacentes que orientarán los experimentos de validación del producto **Demy**.
+ 
+
+#### **Ideas**
+ 
+Las ideas surgieron de forma natural al observar los problemas de gestión administrativa en las academias del peru. El foco no es probar la idea en sí misma, sino identificar las creencias subyacentes que la sostienen.
+ 
+1. **Módulo centralizado de matrícula digital:** La idea de reemplazar el registro manual en Excel y talonarios físicos con un flujo de matrícula digital surge de la incomodidad en administrativos como Carmen Gutiérrez, quienes pierden tiempo valioso buscando datos dispersos. La premisa subyacente es que centralizar este proceso reducirá los errores y el tiempo operativo.
+2. **Registro de asistencia desde el celular para docentes:** La observación de que docentes como Luis Mendoza usan el celular como principal dispositivo de trabajo, pero encuentran Excel incómodo en mobile, lleva a proponer un módulo de asistencia optimizado para smartphones. La premisa subyacente es que una interfaz móvil nativa aumentará la frecuencia y precisión del registro.
+3. **Alertas automáticas de pagos pendientes:** El pain point de Carmen "no recuerdo si este alumno ya pagó" y "me olvidé de hacer recordar este pago" inspira la idea de notificaciones automáticas. La premisa subyacente es que los recordatorios automáticos reducirán la morosidad y la carga de seguimiento manual.
+4. **Panel de visualización de horarios para docentes:** La necesidad de Luis de consultar sus horarios y cambios desde cualquier dispositivo, sin depender de una encuestas de WhatsApp, genera la idea de una vista de calendario personal. La premisa es que el acceso inmediato a la información reduce el estrés por imprevistos y mejora la coordinación.
+5. **Reprogramación de clases desde la plataforma:** Los docentes actualmente improvisan soluciones ante cambios de horario a través de WhatsApp. La idea de habilitar la reprogramación formal dentro de la app asume que un canal oficial reducirá la desorganización y mejorará la experiencia de alumnos y padres de familia.
+6. **Reportes financieros automatizados:** La gestión de ingresos y egresos en Excel genera indisposicion por posibles errores en los administrativos. La idea de reportes generados automáticamente asume que la automatización contable mejorara la toma de decisiones estratégicas y la salud financiera de las academias.
+
+ 
+#### **Claims**
+ 
+Son declaraciones directas sobre el producto, realizadas por los stakeholders o los usuarios durante las entrevistas y el proceso de investigación.
+ 
+**Afirmaciones negativas**
+ 
+1. ***"Perdemos mucho tiempo buscando datos en Excel."*** <br> 
+    > Administrativos de academias entrevistados. Evidencia directa de la ineficiencia del sistema actual que Demy debe resolver.
+2. ***"Excel desde el celular es incómodo. Necesito algo que funcione en cualquier momento."*** <br> 
+    > Luis Mendoza (User Persona docente). Afirmación que valida la necesidad de una solución mobile-first para docentes.
+3. ***"Es un lío manejar tantas planillas."*** <br>
+    > Administrativos de academias entrevistados. Refleja la fragmentación de la información que genera duplicidad de tareas.
+4. ***"Registrar desde el celular es incómodo, pierdo tiempo con tareas administrativas."*** <br> 
+    > Docentes entrevistados. Confirma que las herramientas actuales no se adaptan al ritmo de trabajo de los profesores.
+5. ***"¿Dónde anoté eso? Ojalá tuviera la información al instante."*** <br> 
+    > Carmen Gutiérrez (User Persona administrativa). Afirmación que evidencia la falta de trazabilidad y acceso rápido a datos de estudiantes.
+6. ***"No encuentro la información, la clase ya se está distrayendo."*** <br> 
+    > Docentes entrevistados. Señala que la desorganización de la información impacta directamente en la calidad del servicio educativo.
+
+<br>    
+
+**Afirmaciones positivas**
+ 
+7. ***"Una herramienta automatizada nos ayudaría bastante."*** <br>
+   > Administrativos entrevistados. Validación directa de la propuesta de valor central de Demy.
+
+8. ***"Sería excelente si me avisaran cuando hay un pago pendiente."*** <br>
+   > Carmen Gutiérrez (User Persona administrativa). Confirma la receptividad ante la funcionalidad de alertas automáticas de cobro.
+
+9. ***"Necesito una herramienta que facilite la gestión de asistencia."*** <br>
+   > Docentes entrevistados. Afirma la disposición de adoptar una solución digital si resuelve el problema específico de asistencia.
+
+10. ***Según Naranjo et al. (2025), los procesos administrativos manuales —con su falta de claridad, duplicación de tareas y largos tiempos de respuesta— reducen la satisfacción del estudiante y la productividad del personal.*** <br>
+    > Evidencia académica que respalda la urgencia de implementar la propuesta de Demy y justifica la necesidad de digitalizar la gestión administrativa en academias educativas.
+
+ 
+#### **Assumptions**
+ 
+Son creencias previas sobre el comportamiento de los usuarios o las academias que requieran validación experimental.
+ 
+1. **Los administrativos adoptarán la plataforma si es suficientemente intuitiva.** <br>
+
+   > Se asume que la resistencia al cambio puede superarse con una interfaz simple y un proceso de onboarding adecuado, incluso en personal con habilidades digitales intermedias.
+
+2. **Los docentes usarán principalmente el smartphone para interactuar con Demy.** <br>
+
+   > Se asume que el 100% de los docentes entrevistados que prefieren el celular representa un patrón generalizable al segmento objetivo, justificando la priorización de la app mobile para profesores.
+
+3. **Las alertas automáticas de pago reducirán significativamente la morosidad.** <br>
+
+   > Se asume que el problema de los pagos atrasados se debe principalmente a la falta de recordatorios oportunos, y no a problemas económicos de los estudiantes o fallas en el proceso de comunicación.
+
+4. **Una plataforma centralizada mejorará la percepción de organización frente a padres de familia.** <br>
+
+   > Se asume que los padres valoran la capacidad de la academia de dar respuestas rápidas y precisas, y que esto impacta positivamente en la retención de alumnos.
+
+5. **Las academias de tamaño mediano (50-200 alumnos) en Lima son el segmento con mayor disposición y capacidad de adopción.** <br>
+
+   > Se asume que estas instituciones tienen suficiente volumen operativo para justificar la inversión en una solución digital y suficiente agilidad organizacional para implementarla.
+
+6. **El 80% del personal de una academia se beneficiará directamente de la plataforma.** <br>
+
+   > Esta estimación asume una distribución típica de roles en una academia promedio (3-5 administrativos y 10-20 docentes), sin considerar variaciones por tamaño o modelo de gestión.
+
+7. **Los docentes están dispuestos a reprogramar clases a través de la plataforma en lugar de WhatsApp.** <br>
+
+   > Se asume que la informalidad del canal actual (WhatsApp) es una limitación percibida como negativa, y no una preferencia cultural arraigada del segmento.
+
+8. **Los planes escalables (Essentials, Pro, Elite) facilitarán el crecimiento de las academias dentro del sistema.** <br>
+
+   > Se asume que las academias identificarán valor suficiente en el plan básico como para justificar una migración hacia planes superiores en el mediano plazo.
+
+9. **Centralizar la información académica y financiera en una sola plataforma mejorará la comunicación interna.** <br>
+
+   > Se asume que la desorganización actual se debe a la falta de un sistema único, y no a dinámicas organizacionales o culturales más profundas dentro de las academias.
+
+
+ 
+#### **Knowledge Gaps**
+ 
+Son áreas donde reconocemos las carencias de información suficiente para tomar decisiones con certeza. Generando preguntas de tipo exploratorio que orientarán la investigación cualitativa y cuantitativa.
+ 
+1. **¿Cuál es el nivel real de alfabetización digital del personal administrativo de academias pequeñas fuera de Lima?** <br> 
+    > Las entrevistas se realizaron en Lima e Ica con perfiles de edad entre 21 y 28 años. Se desconoce si el comportamiento y la receptividad tecnológica son representativos de academias en otras ciudades o con personal de mayor edad.
+2. **¿Qué tan dispuestos están los directores/dueños de academias a invertir en una suscripción mensual?** <br> 
+    >No se cuenta con información sobre la sensibilidad al precio del segmento objetivo ni sobre cuánto están pagando actualmente por herramientas de gestión (si pagan algo).
+3. **¿Con qué frecuencia ocurren reprogramaciones de clases en una academia promedio?** <br>
+    > El As-Is Scenario Mapping muestra que los docentes improvisan ante cambios de horario, pero no se tiene data cuantitativa sobre la frecuencia de este problema para dimensionar su impacto real.
+4. **¿Cuál es el proceso exacto de control de asistencia en academias con múltiples sedes?** <br>
+    > Las entrevistas cubrieron academias de sede única. Se desconoce cómo escala el problema de gestión en instituciones con varias sedes simultáneas, que representan un segmento de mayor valor.
+5. **¿Los padres de familia interactúan activamente con la academia a través de canales digitales?** <br>
+    > El As-Is Scenario Mapping menciona la atención a padres como un punto de dolor, pero no se tiene información sobre sus preferencias de comunicación ni si usarían una funcionalidad dirigida a ellos.
+6. **¿Cuánto tiempo exactamente invierte un administrativo en tareas manuales por semana?** <br>
+    > Se cuenta con datos generales (ENUT 2024: más de 20 horas semanales en tareas administrativas en el sector educación), pero no con mediciones específicas para el subsector de academias preuniversitarias.
+7. **¿Existen competidores directos o soluciones parciales que las academias ya estén evaluando o usando?** <br> 
+    > No se realizamos un análisis competitivo con los usuarios entrevistados para determinar si ya conocen o han probado otras herramientas de gestión académica, lo que podría afectar la estrategia de posicionamiento de Demy.
+8. **¿Qué tan viable es la integración con pasarelas de pago locales como PagoEfectivo desde el punto de vista técnico y legal?** <br> 
+    > Identificamos esta área como un spike técnico (SS003), pero aún no se tiene claridad sobre los requisitos legales y el esfuerzo de integración real en el contexto peruano.
+9. **¿Cuál es el umbral mínimo de funcionalidades para que una academia considere migrar desde Excel a Demy?** <br> 
+    > No se ha validado si el conjunto de módulos del MVP (matrícula, asistencia, horarios, pagos) es suficiente para generar el valor percibido necesario para justificar el cambio de herramienta.
+
 ### 8.1.3. Experiment-Ready Questions
+
+Las preguntas listas para experimentar convierten la materia prima del punto Raw Material en interrogantes concretas y accionables que pueden responderse mediante trabajo específico en un tiempo razonable. Para su formulación se aplicó la técnica de las **Cinco W + H** (*Who, What, Where, When, Why, How*), lo que permite descubrir premisas ocultas y entender el contexto actual de los usuarios de **Demy**.
+ 
+Se distinguen dos tipos de preguntas:
+ 
+- **Belief-led questions (Preguntas basadas en creencias):** Buscan probar o falsear una suposición o premisa previa contra la realidad. Se derivan principalmente de los *Assumptions* e *Ideas* identificados.
+- **Exploratory questions (Preguntas exploratorias):** Se enfocan en recolectar conocimiento en áreas donde no existen creencias previas. Se derivan principalmente de los *Knowledge Gaps* y *Claims* identificados.
+
+ 
+#### **Belief-led Questions**
+ 
+Estas preguntas buscan validar o refutar las suposiciones y premisas subyacentes identificadas en la materia prima.
+ 
+#### BLQ-01 — Adopción de la plataforma por administrativos
+ 
+> **¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, a pesar de tener experiencia intermedia con herramientas digitales?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Administrativos y coordinadores de academias presenciales, ~55/100 en manejo digital. |
+| **What** | La premisa de que una interfaz suficientemente intuitiva puede superar la resistencia al cambio. |
+| **Where** | En academias medianas de Lima durante la fase piloto. |
+| **When** | Durante el primer mes de uso activo de la plataforma. |
+| **Why** | Porque el 100% de los administrativos entrevistados calificó sus procesos actuales como ineficientes, pero la baja competencia digital podría frenar la adopción. |
+| **How** | Midiendo el porcentaje de procesos clave (matrícula, pagos, asistencia) gestionados dentro de la plataforma al cabo de 4 semanas. |
+| **Origen** | Assumption 1 / Hypothesis 01 |
+ 
+---
+ 
+#### BLQ-02 — Preferencia mobile de los docentes
+ 
+> **¿Los docentes de academias utilizarán predominantemente el smartphone para registrar asistencia y consultar horarios en Demy, en lugar de la laptop u otros dispositivos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes de academias presenciales, ~85/100 en manejo digital. |
+| **What** | La premisa de que el celular es el dispositivo principal de trabajo del docente y que una app mobile-first resolverá su incomodidad con Excel en móvil. |
+| **Where** | En aulas, espacios de coordinación y fuera de la academia. |
+| **When** | Durante las primeras semanas de uso en situaciones reales de clase. |
+| **Why** | Porque el 100% de los docentes entrevistados expresó incomodidad con Excel en celular y el deseo de acceder desde múltiples dispositivos. |
+| **How** | Registrando el dispositivo desde el cual cada docente realiza acciones en la plataforma (analytics de sesión por tipo de dispositivo). |
+| **Origen** | Assumption 2 / Idea 2 / Claim negativo 2 |
+ 
+---
+ 
+#### BLQ-03 — Impacto de alertas automáticas en la morosidad
+ 
+> **¿La implementación de recordatorios automáticos de pago en Demy reducirá la tasa de morosidad de los estudiantes en al menos un 40% durante los primeros tres meses de uso?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Administrativos responsables del control de pagos y estudiantes con pagos pendientes. |
+| **What** | La premisa de que la morosidad se debe principalmente a la falta de recordatorios oportunos, y no a limitaciones económicas de los estudiantes. |
+| **Where** | En academias que actualmente gestionan cobros por WhatsApp o de forma manual. |
+| **When** | Durante los primeros tres meses tras la activación del módulo de alertas. |
+| **Why** | Porque Carmen Gutiérrez afirma olvidarse de enviar recordatorios, y el 100% de los administrativos entrevistados señala falta de control preciso de pagos. |
+| **How** | Comparando el porcentaje de pagos atrasados antes y después de activar las alertas automáticas en academias piloto. |
+| **Origen** | Assumption 3 / Hypothesis 02 / Idea 3 / Claim positivo 8 |
+ 
+
+ 
+#### BLQ-04 — Percepción de organización ante padres de familia
+ 
+> **¿La digitalización de la gestión administrativa mediante Demy mejorará la percepción de organización de la academia ante los padres de familia, traduciéndose en mayor retención de alumnos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Padres de familia de estudiantes matriculados y personal administrativo que los atiende. |
+| **What** | La premisa de que los padres valoran la capacidad de respuesta rápida y precisa de la academia, y que esto impacta en su decisión de permanencia. |
+| **Where** | En el punto de atención presencial y a través de canales de comunicación de la academia. |
+| **When** | Al finalizar el primer ciclo académico con Demy implementado. |
+| **Why** | Porque el As-Is Scenario Mapping muestra que los administrativos sienten tensión y sensación de desorganización al atender consultas de padres sin información centralizada. |
+| **How** | Aplicando encuestas de satisfacción a padres antes y después de la implementación, y midiendo la tasa de renovación de matrícula entre ciclos. |
+| **Origen** | Assumption 4 / Claim negativo 5 |
+ 
+---
+ 
+#### BLQ-05 — Disposición a reemplazar WhatsApp por Demy en reprogramaciones
+ 
+> **¿Los docentes están dispuestos a usar Demy como canal oficial para reprogramar clases, abandonando el uso de WhatsApp para esta tarea?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes que actualmente coordinan cambios de horario mediante encuestas de WhatsApp. |
+| **What** | La premisa de que la informalidad de WhatsApp es percibida como una limitación y no como una preferencia cultural del segmento. |
+| **Where** | En academias donde los cambios de horario son frecuentes o impredecibles. |
+| **When** | Durante el primer ciclo académico de uso de Demy. |
+| **Why** | Porque el 100% de los docentes entrevistados señaló el manejo de cambios e imprevistos como un punto de estrés, pero WhatsApp sigue siendo el canal por defecto. |
+| **How** | Midiendo el porcentaje de reprogramaciones realizadas a través de Demy vs. canales informales durante el periodo piloto. |
+| **Origen** | Assumption 7 / Idea 5 / As-Is Teacher columna 3 |
+ 
+
+ 
+#### BLQ-06 — Suficiencia del MVP para justificar la migración desde Excel
+ 
+> **¿El conjunto de módulos del MVP de Demy es suficiente para que una academia decida migrar completamente desde sus herramientas actuales?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores, coordinadores y personal administrativo con poder de decisión sobre herramientas de gestión. |
+| **What** | La premisa de que los cuatro módulos principales del MVP generan suficiente valor percibido para justificar el cambio de herramienta. |
+| **Where** | En academias medianas de Lima en fase de evaluación de la plataforma. |
+| **When** | Durante la demostración o periodo de prueba gratuito previo a la suscripción. |
+| **Why** | Porque no se ha validado cuál es el umbral mínimo de funcionalidades que activa la decisión de adopción en este segmento. |
+| **How** | Realizando sesiones de prueba con el MVP y registrando qué módulos son considerados imprescindibles vs. secundarios mediante entrevistas post-demo. |
+| **Origen** | Knowledge Gap 9 / Hypothesis 01 |
+ 
+
+ 
+#### BLQ-07 — Escalabilidad entre planes de suscripción
+ 
+> **¿Al menos el 25% de las academias suscritas al plan Essentials migrará a un plan superior dentro de los primeros seis meses, a medida que identifiquen valor adicional en funcionalidades avanzadas?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Dueños o directores de academias suscritas al plan de entrada. |
+| **What** | La premisa de que la propuesta de valor de los planes superiores es percibida claramente y que el crecimiento de la academia genera presión natural hacia funcionalidades más avanzadas. |
+| **Where** | Dentro de la plataforma, en el momento en que los usuarios encuentran limitaciones del plan actual. |
+| **When** | Entre el primer y sexto mes de suscripción activa. |
+| **Why** | Porque el modelo de negocio de Demy depende de la conversión ascendente entre planes para su sostenibilidad. |
+| **How** | Rastreando las conversiones de plan mediante el dashboard de suscripciones y correlacionándolas con el volumen de alumnos y uso de funcionalidades. |
+| **Origen** | Assumption 8 / Hypothesis 05 |
+ 
+
+ 
+#### **Exploratory Questions**
+ 
+Estas preguntas buscan recolectar conocimiento en áreas donde el equipo no cuenta con creencias o información previa suficiente.
+ 
+ 
+#### EXQ-01 — Alfabetización digital fuera de Lima
+ 
+> **¿Cómo varía el nivel de adopción tecnológica y la disposición al cambio del personal administrativo de academias ubicadas fuera de Lima?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Personal administrativo de academias presenciales en ciudades como Arequipa, Trujillo, Cusco o Piura. |
+| **What** | El nivel real de alfabetización digital y la receptividad ante soluciones tecnológicas de gestión. |
+| **Where** | Academias presenciales en ciudades intermedias del Perú. |
+| **When** | Antes de expandir el lanzamiento fuera de Lima. |
+| **Why** | Porque las entrevistas solo cubrieron Lima e Ica con perfiles jóvenes (21-28 años), lo que limita la representatividad del segmento nacional. |
+| **How** | Mediante entrevistas cualitativas exploratorias con administrativos de distintas regiones y análisis de diferencias en patrones de uso digital. |
+| **Origen** | Knowledge Gap 1 |
+ 
+
+ 
+#### EXQ-02 — Sensibilidad al precio del segmento objetivo
+ 
+> **¿Cuánto está dispuesto a pagar mensualmente un director o dueño de academia por una herramienta de gestión centralizada, y qué factores determinan su percepción de valor?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores, dueños o tomadores de decisión financiera en academias presenciales de tamaño mediano. |
+| **What** | El rango de precio aceptable, los factores que justifican el gasto y las comparaciones que realizan con sus herramientas actuales. |
+| **Where** | En academias de Lima durante reuniones de evaluación o demos de la plataforma. |
+| **When** | Previo al lanzamiento comercial de los planes de suscripción. |
+| **Why** | Porque no existe información sobre la sensibilidad al precio del segmento ni sobre el gasto actual en herramientas de gestión (si las hay). |
+| **How** | Mediante técnicas de entrevista de precio (Van Westendorp o Gabor-Granger) aplicadas a una muestra de decisores del segmento objetivo. |
+| **Origen** | Knowledge Gap 2 |
+ 
+
+ 
+#### EXQ-03 — Frecuencia real de reprogramaciones de clases
+ 
+> **¿Con qué frecuencia ocurren reprogramaciones o cancelaciones de clases en una academia presencial promedio, y cuáles son sus principales causas?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes y coordinadores académicos de academias presenciales de Lima. |
+| **What** | La frecuencia (diaria, semanal, mensual) y las causas más comunes de los cambios de horario. |
+| **Where** | En academias presenciales activas durante un ciclo académico completo. |
+| **When** | Durante la fase de investigación previa al desarrollo del módulo de reprogramación. |
+| **Why** | Porque sin datos cuantitativos de frecuencia, no es posible dimensionar el impacto real del problema ni priorizar adecuadamente el módulo en el roadmap. |
+| **How** | Mediante un registro observacional durante 4 semanas en 2-3 academias piloto, complementado con entrevistas a docentes y coordinadores. |
+| **Origen** | Knowledge Gap 3 / Idea 5 |
+ 
+
+ 
+#### EXQ-04 — Gestión de asistencia en academias multisede
+ 
+> **¿Cómo gestionan actualmente la asistencia y los horarios las academias con múltiples sedes, y qué complejidades adicionales presentan respecto a las academias de sede única?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Coordinadores generales y administrativos de academias con dos o más sedes en Lima. |
+| **What** | Los procesos, herramientas y puntos de dolor específicos al gestionar operaciones en múltiples ubicaciones simultáneamente. |
+| **Where** | En academias con presencia multisede en Lima Metropolitana. |
+| **When** | Durante la fase de investigación para el diseño de funcionalidades de escala. |
+| **Why** | Porque las academias multisede representan un segmento de mayor valor económico y su problemática puede requerir funcionalidades adicionales no contempladas en el MVP actual. |
+| **How** | Mediante entrevistas en profundidad con coordinadores generales de academias multisede y observación de sus flujos operativos actuales. |
+| **Origen** | Knowledge Gap 4 |
+ 
+
+ 
+#### EXQ-05 — Comportamiento digital de los padres de familia
+ 
+> **¿De qué manera los padres de familia de estudiantes en academias presenciales prefieren recibir información sobre el progreso académico y los pagos de sus hijos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Padres de familia de estudiantes matriculados en academias preuniversitarias en Lima. |
+| **What** | Sus canales de comunicación preferidos  y qué información consideran más relevante recibir de la academia. |
+| **Where** | En academias piloto durante el primer ciclo académico con Demy implementado. |
+| **When** | Previo al diseño de funcionalidades orientadas a padres de familia en futuras versiones. |
+| **Why** | Porque el As-Is Scenario Mapping muestra que la atención a padres es un punto de dolor para los administrativos, pero no se conoce la perspectiva ni las expectativas del padre como usuario indirecto del sistema. |
+| **How** | Mediante encuestas breves a padres de familia en academias piloto, complementadas con entrevistas cualitativas a una submuestra. |
+| **Origen** | Knowledge Gap 5 / As-Is Admin columna 5 |
+ 
+
+ 
+#### EXQ-06 — Tiempo real invertido en tareas manuales por administrativos
+ 
+> **¿Cuántas horas semanales dedica en promedio un administrativo de academia presencial a tareas que podrían automatizarse con Demy?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Personal administrativo de academias presenciales de tamaño mediano en Lima. |
+| **What** | El tiempo real invertido en cada tarea administrativa susceptible de automatización. |
+| **Where** | En el espacio de trabajo diario del administrativo dentro de la academia. |
+| **When** | Durante la fase de benchmarking previa al lanzamiento, para establecer una línea base de medición del impacto de Demy. |
+| **Why** | Porque los datos existentes (ENUT 2024: +20 horas semanales) corresponden al sector educación en general, no específicamente al subsector de academias preuniversitarias. |
+| **How** | Mediante un diario de actividades completado por 5-8 administrativos durante dos semanas, registrando cada tarea y el tiempo invertido. |
+| **Origen** | Knowledge Gap 6 |
+ 
+
+ 
+#### EXQ-07 — Competidores y soluciones alternativas conocidas
+ 
+> **¿Qué herramientas de gestión académica conocen o han evaluado previamente los directores y administrativos de academias, y por qué no las adoptaron o las abandonaron?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores y coordinadores administrativos con poder de decisión sobre herramientas de gestión. |
+| **What** | Las soluciones que han explorado y las razones de no adopción: precio, complejidad, falta de soporte local, etc. |
+| **Where** | En academias presenciales de Lima durante entrevistas de ventas o demos. |
+| **When** | Antes de definir la estrategia de posicionamiento y diferenciación de Demy en el mercado. |
+| **Why** | Porque no existe un análisis competitivo desde la perspectiva del usuario, y conocer las razones de rechazo de otras herramientas puede revelar ventajas estratégicas clave para Demy. |
+| **How** | Mediante preguntas específicas sobre herramientas evaluadas en entrevistas de ventas o sesiones de descubrimiento con prospectos. |
+| **Origen** | Knowledge Gap 7 |
+ 
+
+ 
+#### EXQ-08 — Viabilidad de integración con métodos de pago locales
+ 
+> **¿Qué requisitos técnicos, legales y operativos implica la integración de pasarelas de pago locales como PagoEfectivo en el contexto de academias peruanas, y cuál es el esfuerzo real de implementación?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Equipo técnico de Demy y representantes de las pasarelas de pago locales. |
+| **What** | Los requisitos de integración API, las obligaciones legales (SUNAT, comprobantes electrónicos), los costos de transacción y el tiempo de implementación estimado. |
+| **Where** | En el entorno de desarrollo y en coordinación con los proveedores de pasarelas de pago peruanas. |
+| **When** | Durante el spike técnico SS003, previo al diseño del módulo de pagos en su versión integrada. |
+| **Why** | Porque los métodos de pago locales son clave para la adopción en el mercado peruano, pero el equipo aún no tiene claridad sobre la viabilidad técnica y legal de esta integración. |
+| **How** | Mediante la revisión de la documentación técnica de cada pasarela, contacto directo con sus equipos de integración y desarrollo de un prototipo de concepto (spike técnico). |
+| **Origen** | Knowledge Gap 8 / SS003 |
+ 
+<br>
+ 
+#### **Resumen de Preguntas por Tipo y Origen**
+ 
+| ID | Tipo | Pregunta resumida | Origen |
+|----|------|-------------------|-----------------|
+| BLQ-01 | Belief-led | ¿Los administrativos adoptarán Demy en el primer mes? | Assumption 1, Hypothesis 01 |
+| BLQ-02 | Belief-led | ¿Los docentes usarán principalmente el smartphone? | Assumption 2, Idea 2 |
+| BLQ-03 | Belief-led | ¿Las alertas reducirán la morosidad en un 40%? | Assumption 3, Hypothesis 02 |
+| BLQ-04 | Belief-led | ¿Demy mejorará la percepción ante padres y retención? | Assumption 4, Claim 5 |
+| BLQ-05 | Belief-led | ¿Los docentes reemplazarán WhatsApp por Demy? | Assumption 7, Idea 5 |
+| BLQ-06 | Belief-led | ¿El MVP es suficiente para migrar desde Excel? | Knowledge Gap 9, Hypothesis 01 |
+| BLQ-07 | Belief-led | ¿El 25% migrará a planes superiores en 6 meses? | Assumption 8, Hypothesis 05 |
+| EXQ-01 | Exploratory | ¿Cómo varía la adopción digital fuera de Lima? | Knowledge Gap 1 |
+| EXQ-02 | Exploratory | ¿Cuánto pagaría un director por Demy? | Knowledge Gap 2 |
+| EXQ-03 | Exploratory | ¿Cuántas reprogramaciones ocurren por semana? | Knowledge Gap 3 |
+| EXQ-04 | Exploratory | ¿Cómo gestionan academias multisede? | Knowledge Gap 4 |
+| EXQ-05 | Exploratory | ¿Qué canal prefieren los padres de familia? | Knowledge Gap 5 |
+| EXQ-06 | Exploratory | ¿Cuántas horas semanales se pierden en tareas manuales? | Knowledge Gap 6 |
+| EXQ-07 | Exploratory | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Knowledge Gap 7 |
+| EXQ-08 | Exploratory | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Knowledge Gap 8 |
+
 ### 8.1.4. Question Backlog
+ 
+El Question Backlog es el resultado final de la fase de planificación. Constituye una lista priorizada de preguntas de investigación, no de funcionalidades, cuya respuesta es crucial para definir el curso de acción del producto **Demy**.
+ 
+ 
+####  **Sistema de Puntuación**
+ 
+Cada pregunta se evalúa bajo cuatro criterios en una escala del **1 al 5**:
+ 
+| Criterio | Descripción |
+|----------|-------------|
+| **Confianza** | Qué tan seguros estamos de nuestra creencia o premisa actual. A menor confianza, mayor prioridad . Escala invertida: 1 = muy seguros, 5 = muy inseguros. |
+| **Riesgo** | Qué tan grave sería estar equivocados. A mayor riesgo, mayor prioridad. 1 = bajo riesgo, 5 = riesgo crítico para el producto. |
+| **Impacto** | Qué tan importante sería la respuesta para el producto, el negocio o los usuarios. A mayor impacto, mayor prioridad. 1 = impacto marginal, 5 = impacto estratégico. |
+| **Interés** | Qué tan motivado está el equipo para responder esta pregunta ahora. 1 = baja urgencia, 5 = alta urgencia. |
+ 
+> **Puntuación total = Confianza + Riesgo + Impacto + Interés** (máximo: 20 puntos)
+> En caso de empate, se prioriza la pregunta con mayor puntaje en **Riesgo**.
+ 
+
+ 
+#### **Broad Backlog**
+ 
+El Broad Backlog contiene todas las preguntas identificadas, ordenadas por puntaje total de mayor a menor. Incluye tanto preguntas Belief-led (BLQ) como Exploratorias (EXQ).
+ 
+| Pos. | ID | Pregunta resumida | Tipo | Confianza | Riesgo | Impacto | Interés | **Total** |
+|------|----|-------------------|------|:---------:|:------:|:-------:|:-------:|:---------:|
+| 1 | BLQ-06 | ¿El MVP es suficiente para que una academia migre desde Excel? | Belief-led | 4 | 5 | 5 | 5 | **19** |
+| 2 | BLQ-01 | ¿Los administrativos adoptarán Demy en el primer mes de uso? | Belief-led | 3 | 5 | 5 | 5 | **18** |
+| 3 | BLQ-03 | ¿Las alertas automáticas reducirán la morosidad en un 40%? | Belief-led | 4 | 4 | 5 | 5 | **18** |
+| 4 | EXQ-02 | ¿Cuánto pagaría un director de academia por Demy? | Exploratory | 5 | 5 | 4 | 4 | **18** |
+| 5 | BLQ-02 | ¿Los docentes usarán principalmente el smartphone con Demy? | Belief-led | 2 | 4 | 5 | 4 | **15** |
+| 6 | BLQ-05 | ¿Los docentes reemplazarán WhatsApp por Demy en reprogramaciones? | Belief-led | 3 | 4 | 4 | 4 | **15** |
+| 7 | EXQ-06 | ¿Cuántas horas semanales pierde un administrativo en tareas manuales? | Exploratory | 4 | 3 | 5 | 3 | **15** |
+| 8 | EXQ-07 | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Exploratory | 4 | 4 | 4 | 3 | **15** |
+| 9 | BLQ-04 | ¿Demy mejorará la percepción de la academia ante los padres de familia? | Belief-led | 3 | 3 | 4 | 4 | **14** |
+| 10 | EXQ-03 | ¿Con qué frecuencia ocurren reprogramaciones de clases? | Exploratory | 4 | 3 | 4 | 3 | **14** |
+| 11 | EXQ-08 | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Exploratory | 4 | 4 | 3 | 3 | **14** |
+| 12 | BLQ-07 | ¿El 25% de academias migrará a planes superiores en 6 meses? | Belief-led | 3 | 3 | 4 | 3 | **13** |
+| 13 | EXQ-01 | ¿Cómo varía la adopción digital del personal fuera de Lima? | Exploratory | 3 | 3 | 3 | 4 | **13** |
+| 14 | EXQ-04 | ¿Cómo gestionan la asistencia las academias con múltiples sedes? | Exploratory | 4 | 3 | 3 | 3 | **13** |
+| 15 | EXQ-05 | ¿Qué canal de comunicación prefieren los padres de familia? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+ 
+
+<br>
+
+#### **Deep Backlog**
+ 
+El Deep Backlog presenta las **10 preguntas de mayor prioridad** con su ficha completa: motivación (el "por qué"), criterios de puntuación detallados y el método experimental recomendado para responderlas.
+ 
+#### #1 — BLQ-06 | Puntuación: 19
+ 
+**¿El conjunto de módulos del MVP de Demy es suficiente para que una academia decida migrar completamente desde Excel y registros físicos?**
+ 
+**¿Por qué esta pregunta?**
+Esta es la pregunta de mayor riesgo del producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de la calidad técnica de la plataforma. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido, por lo que validar esta premisa antes del lanzamiento comercial es crítico para evitar un fracaso de adopción masivo.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo tiene poca certeza sobre si los cuatro módulos son suficientes; las entrevistas muestran necesidad, pero no se ha probado el conjunto completo. |
+| Riesgo | 5 | Si el MVP no es suficiente, el producto no genera tracción y el modelo de negocio colapsa desde el inicio. |
+| Impacto | 5 | La respuesta define qué se incluye en el MVP y qué se posterga, impactando directamente el roadmap y la estrategia de lanzamiento. |
+| Interés | 5 | El equipo necesita esta respuesta antes del lanzamiento para no invertir en funcionalidades equivocadas. |
+ 
+**Método experimental sugerido:** Sesiones de demo del prototipo con 5-8 directores o coordinadores de academias medianas en Lima, seguidas de entrevistas estructuradas para identificar qué módulos consideran imprescindibles vs. secundarios para tomar la decisión de suscripción.
+ 
+
+ 
+#### #2 — BLQ-01 | Puntuación: 18
+ 
+**¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, a pesar de tener experiencia digital intermedia?**
+ 
+**¿Por qué esta pregunta?**
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia de uso y los responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás usuarios.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Las entrevistas muestran alta disposición verbal, pero la disposición declarada no siempre se traduce en comportamiento real. |
+| Riesgo | 5 | Si los administrativos no adoptan la plataforma, el producto falla en su promesa central y las academias cancelan la suscripción. |
+| Impacto | 5 | Define si el diseño de onboarding y la UX son suficientes, o si se requiere soporte adicional. |
+| Interés | 5 | Es urgente validarlo en la fase piloto antes de escalar el lanzamiento. |
+ 
+**Método experimental sugerido:** Piloto de 4 semanas con 2-3 academias, midiendo el porcentaje de procesos administrativos gestionados dentro de Demy vs. herramientas anteriores, complementado con observación directa y entrevistas semanales de seguimiento.
+ 
+
+ 
+#### #3 — BLQ-03 | Puntuación: 18
+ 
+**¿La implementación de recordatorios automáticos de pago en Demy reducirá la tasa de morosidad de los estudiantes en al menos un 40% durante los primeros tres meses?**
+ 
+**¿Por qué esta pregunta?**
+El control de pagos es uno de los pain points más críticos identificados en el 100% de los administrativos entrevistados. La Hypothesis 02 del Lean UX establece un KPI concreto (reducción del 40% en pagos atrasados), pero este número no ha sido validado. Además, existe el riesgo de que la morosidad responda a causas económicas estructurales de los estudiantes y no a la falta de recordatorios, lo que haría ineficaz esta funcionalidad como diferenciador del producto.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo asume que la morosidad es principalmente un problema de comunicación, pero no tiene evidencia para respaldarlo. |
+| Riesgo | 4 | Si la funcionalidad no reduce la morosidad, se pierde uno de los principales argumentos de venta del módulo de pagos. |
+| Impacto | 5 | Un impacto demostrable en morosidad es un argumento de venta poderoso y un diferenciador competitivo clave. |
+| Interés | 5 | Es necesario validarlo en el piloto para incluirlo como métrica de éxito en el pitch comercial. |
+ 
+**Método experimental sugerido:** Comparación pre/post en academias piloto: medir el porcentaje de pagos atrasados en el ciclo anterior (sin Demy) vs. el ciclo con alertas activas, controlando por tamaño de grupo y tipo de academia.
+ 
+
+ 
+#### #4 — EXQ-02 | Puntuación: 18
+ 
+**¿Cuánto está dispuesto a pagar mensualmente un director o dueño de academia por una herramienta de gestión centralizada como Demy, y qué factores determinan su percepción de valor?**
+ 
+**¿Por qué esta pregunta?**
+El modelo de negocio de Demy descansa en planes de suscripción, pero no existe información empírica sobre la sensibilidad al precio del segmento objetivo ni sobre su gasto actual en herramientas de gestión. Establecer precios sin esta información puede resultar en planes sub-valorados (pérdida de ingresos) o sobre-valorados (barrera de adopción). Esta es la brecha de conocimiento con mayor riesgo financiero para la sostenibilidad del negocio.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 5 | El equipo no tiene ninguna base empírica sobre disposición a pagar en este segmento específico. |
+| Riesgo | 5 | Definir precios incorrectos puede destruir la viabilidad comercial del producto antes de escalar. |
+| Impacto | 4 | La respuesta define la estructura de precios, los planes y la estrategia de monetización de Demy. |
+| Interés | 4 | Urgente antes de la definición final de los planes comerciales y del lanzamiento. |
+ 
+**Método experimental sugerido:** Aplicación de la técnica de precio de Van Westendorp a una muestra de 15-20 directores de academias medianas en Lima, identificando los umbrales de precio aceptable, caro, barato e inaceptablemente caro para el servicio.
+ 
+
+ 
+#### #5 — BLQ-02 | Puntuación: 15
+ 
+**¿Los docentes de academias utilizarán predominantemente el smartphone para interactuar con Demy, justificando la priorización de la app mobile sobre la versión web?**
+ 
+**¿Por qué esta pregunta?**
+La decisión de priorizar el desarrollo de una app móvil multiplataforma para docentes implica un costo significativo de desarrollo. Esta decisión se basa en las preferencias expresadas por los tres docentes entrevistados, pero la muestra es pequeña. Si la premisa es incorrecta y los docentes terminan usando principalmente la versión web, el esfuerzo en mobile-first habrá sido mal dirigido.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 2 | Alta confianza basada en tres entrevistas consistentes: el 100% prefiere el celular. |
+| Riesgo | 4 | Una inversión en mobile-first mal dirigida retrasa el roadmap y desvía recursos críticos. |
+| Impacto | 5 | Define la arquitectura del producto y las prioridades de desarrollo para el segmento docente. |
+| Interés | 4 | Necesario validarlo en la fase piloto antes de comprometer más recursos en desarrollo mobile. |
+ 
+**Método experimental sugerido:** Análisis de analytics de dispositivo durante las primeras 4 semanas del piloto, registrando desde qué tipo de dispositivo cada docente realiza sus acciones principales en la plataforma.
+ 
+
+ 
+#### #6 — BLQ-05 | Puntuación: 15
+ 
+**¿Los docentes están dispuestos a usar Demy como canal oficial para reprogramar clases, reemplazando el uso de WhatsApp para esta tarea?**
+ 
+**¿Por qué esta pregunta?**
+Uno de los módulos clave de Demy para docentes es la reprogramación de clases. Sin embargo, WhatsApp está profundamente arraigado como canal de coordinación en este segmento. Si los docentes continúan usando WhatsApp por costumbre o preferencia, la funcionalidad de reprogramación no generará el valor esperado y los administrativos seguirán recibiendo información fragmentada por canales informales.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Los docentes expresan frustración con WhatsApp, pero no está claro si adoptarían un canal más formal. |
+| Riesgo | 4 | Si no abandona WhatsApp, el módulo de reprogramación pierde utilidad y el dolor del usuario persiste dentro de la plataforma. |
+| Impacto | 4 | Define si el módulo de reprogramación requiere integración con notificaciones push para competir con la inmediatez de WhatsApp. |
+| Interés | 4 | Necesario para diseñar el flujo de reprogramación con los incentivos correctos desde el inicio. |
+ 
+**Método experimental sugerido:** Durante el piloto, monitorear el canal utilizado para cada reprogramación de clase durante 4 semanas, comparando el uso de Demy vs. WhatsApp, y entrevistar a docentes sobre las razones de su preferencia.
+ 
+
+ 
+#### #7 — EXQ-06 | Puntuación: 15
+ 
+**¿Cuántas horas semanales dedica en promedio un administrativo de academia a tareas manuales susceptibles de automatización con Demy?**
+ 
+**¿Por qué esta pregunta?**
+El argumento principal de venta de Demy es el ahorro de tiempo operativo. Sin una línea base cuantificada, no es posible demostrar el ROI de la plataforma ni construir un caso de negocio convincente para los directores de academia. Los datos de ENUT 2024 son genéricos para el sector educación y no son suficientemente específicos para el subsector de academias preuniversitarias.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que el tiempo es significativo, pero no se tiene una cifra concreta y medible para el segmento específico. |
+| Riesgo | 3 | Sin esta cifra, el pitch comercial es débil y el equipo no puede medir el impacto real de la plataforma post-implementación. |
+| Impacto | 5 | Un dato concreto de ahorro de horas es el argumento de venta más poderoso y objetivo de Demy. |
+| Interés | 3 | Importante para la estrategia comercial, aunque no bloquea el desarrollo técnico actual. |
+ 
+**Método experimental sugerido:** Diario de actividades completado por 5-8 administrativos durante dos semanas, registrando cada tarea manual y el tiempo invertido, con posterior análisis por categoría de proceso.
+ 
+
+ 
+#### #8 — EXQ-07 | Puntuación: 15
+ 
+**¿Qué herramientas de gestión académica conocen o han evaluado previamente los directores de academias, y cuáles fueron las razones por las que no las adoptaron o las abandonaron?**
+ 
+**¿Por qué esta pregunta?**
+Demy no llega a un mercado vacío. Entender qué intentaron antes los directores y por qué fracasó esa adopción es información estratégica para evitar los mismos errores y posicionar Demy diferenciadamente. Si existe una herramienta competidora conocida en el segmento, la estrategia de ventas y el mensaje de Demy deben adaptarse para superar esa referencia previa.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se desconoce completamente el panorama competitivo desde la perspectiva del usuario objetivo. |
+| Riesgo | 4 | Ignorar al competidor conocido por el usuario puede llevar a posicionamiento equivocado y pérdida de credibilidad en ventas. |
+| Impacto | 4 | Define la narrativa diferencial de Demy y los argumentos de venta frente a referencias previas del usuario. |
+| Interés | 3 | Importante para la estrategia de go-to-market, aunque no es bloqueante para el desarrollo del MVP. |
+ 
+**Método experimental sugerido:** Incluir preguntas específicas sobre herramientas previamente evaluadas en las entrevistas de descubrimiento con prospectos durante las demos comerciales de Demy.
+ 
+
+ 
+#### #9 — BLQ-04 | Puntuación: 14
+ 
+**¿La digitalización de la gestión con Demy mejorará la percepción de organización de la academia ante los padres de familia, y esto se traducirá en mayor retención de alumnos entre ciclos?**
+ 
+**¿Por qué esta pregunta?**
+El As-Is Scenario Mapping muestra que la atención a padres de familia es uno de los momentos de mayor tensión para los administrativos: buscan información en archivos dispersos mientras el padre espera. Si Demy resuelve este momento de verdad, podría generar un beneficio de retención medible que va más allá de la eficiencia interna y constituye un argumento de valor adicional hacia los directores de academia.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Se asume que los padres valoran la respuesta rápida, pero no se ha validado que esto impacte en su decisión de permanecer en la academia. |
+| Riesgo | 3 | Si el impacto en retención no es demostrable, Demy pierde un argumento de valor secundario pero relevante para el pitch. |
+| Impacto | 4 | Un impacto demostrable en retención de alumnos convierte a Demy en una inversión con ROI claro para el director. |
+| Interés | 4 | Relevante para enriquecer el pitch comercial con beneficios más allá de la eficiencia operativa. |
+ 
+**Método experimental sugerido:** Encuesta de satisfacción a padres de familia antes y después del primer ciclo con Demy, complementada con seguimiento de la tasa de renovación de matrícula en academias piloto.
+ 
+
+ 
+#### #10 — EXQ-03 | Puntuación: 14
+ 
+**¿Con qué frecuencia ocurren reprogramaciones o cancelaciones de clases en una academia presencial promedio, y cuáles son sus principales causas?**
+ 
+**¿Por qué esta pregunta?**
+El módulo de reprogramación de clases es una funcionalidad del backlog que consume esfuerzo de desarrollo. Su priorización depende de qué tan frecuente y crítico es el problema que resuelve. Si las reprogramaciones ocurren raramente, el módulo podría postergarse; si ocurren con alta frecuencia, su desarrollo es urgente y debe incluirse en el MVP o en la primera iteración.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que ocurren, pero no se tiene dato de frecuencia. El equipo no puede priorizar el módulo sin esta información. |
+| Riesgo | 3 | Desarrollar o posponer el módulo sin datos de frecuencia puede resultar en una mala priorización del roadmap. |
+| Impacto | 4 | Define si la funcionalidad de reprogramación pertenece al MVP o a una versión posterior, impactando el alcance del sprint actual. |
+| Interés | 3 | Necesario para la planificación del roadmap de corto plazo. |
+ 
+**Método experimental sugerido:** Registro observacional de reprogramaciones durante 4 semanas en 2-3 academias piloto, complementado con entrevistas a coordinadores sobre las causas más frecuentes de cambios de horario.
+ 
+
 ### 8.1.5. Experiment Cards
+
+Las Experiment Cards son el artefacto clave que documenta la información esencial antes de ejecutar cualquier experimento. Cada tarjeta tiene dos caras: el **Lado Frontal** captura la definición del experimento (QUESTION, WHY, HYPOTHESIS y WHAT), y el **Lado Posterior** detalla su configuración técnica (MEASURES, CONDITIONS y SCALE).
+ 
+Se presentan las 2 tarjetas correspondientes a las preguntas de mayor prioridad del Question Backlog.
+ 
+
+ 
+
+ 
+#### **EC-01 — BLQ-06 | Prioridad #1 (Puntuación: 19)**
+ 
+##### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿El conjunto de módulos del MVP de Demy es suficiente para que un director o coordinador de academia decida migrar completamente desde Excel y registros físicos?
+ 
+
+ 
+**WHY**
+ 
+Esta es la premisa de mayor riesgo para el producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de su calidad técnica. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido; validar esta creencia antes del lanzamiento comercial es crítico para evitar un fracaso de adopción desde el inicio.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 60% de los directores de academias medianas en Lima, tras una sesión de demo del MVP de Demy, declarará que el conjunto de módulos presentado es suficiente para tomar la decisión de suscribirse y migrar desde sus herramientas actuales.
+- **Hipótesis nula (H0):** La proporción de directores que declaran suficiencia del MVP no será significativamente diferente del 60%, o cualquier diferencia observada se deberá al azar y no al valor real del MVP.
+
+ 
+**WHAT**
+ 
+Sesión de demo estructurada del prototipo de Demy (sin código de producción completo) con 8 directores o coordinadores de academias medianas en Lima, seguida de una entrevista post-demo de 10 minutos con escala de decisión binaria (¿suscribiría su academia con estos módulos? Sí / No) y preguntas de profundización sobre qué módulo adicional considerarían imprescindible.
+ 
+
+ 
+#### ◼ LADO POSTERIOR
+ 
+
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Suficiencia Percibida del MVP | DBM-08 | ≥ 60% de directores declara suficiencia |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" |
+ 
+Evidencia secundaria a recolectar: lista de módulos adicionales mencionados como imprescindibles por los directores que respondan "No" a la suficiencia del MVP.
+ 
+
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Director o coordinador de academia mediana (50-200 alumnos) en Lima que aún utiliza Excel o registros físicos para gestión administrativa, expuesto a la demo completa del MVP de Demy con los cuatro módulos activos. |
+| **Control** | Director o coordinador que no ha visto la demo de Demy y continúa gestionando con herramientas actuales (Excel, talonarios, WhatsApp). Su percepción de suficiencia de herramientas actuales sirve como línea base de comparación. |
+ 
+
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Minimiza errores Tipo I (falsos positivos). Estándar en diseño experimental. |
+| Poder estadístico (1-β) | 80% | Reduce la probabilidad de errores Tipo II. Nivel mínimo aceptable. |
+| Efecto Mínimo Detectable (MDE) | 20 puntos porcentuales | Se considera relevante detectar una diferencia de al menos 20 pp entre la condición experimental y la de control (p.ej., de 40% a 60% de suficiencia percibida). |
+| Tamaño de muestra mínimo | 8 directores | Dado el contexto de investigación cualitativa-cuantitativa preliminar con recursos limitados, se aplica un muestreo intencional de 8 participantes como mínimo para obtener patrones consistentes. Este número se revisará antes de una validación cuantitativa a mayor escala. |
+| Duración estimada | 2 semanas | Tiempo para coordinar, ejecutar y analizar las 8 sesiones de demo. |
+ 
+
+ 
+#### **EC-02 — BLQ-01 | Prioridad #2 (Puntuación: 18)**
+ 
+
+ 
+#### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, gestionando al menos el 70% de sus procesos clave dentro de la plataforma?
+ 
+
+ 
+**WHY**
+ 
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia y responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás roles.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 70% de los administrativos en academias piloto gestionará sus procesos clave dentro de Demy durante el primer mes de uso, medido como porcentaje de procesos ejecutados en la plataforma vs. herramientas anteriores.
+- **Hipótesis nula (H0):** La Tasa de Adopción Administrativa no alcanzará el 70% en el primer mes, o cualquier diferencia observada respecto a la línea base se deberá al azar y no al impacto real de la plataforma.
+
+ 
+**WHAT**
+ 
+Piloto de 4 semanas con 2 academias medianas en Lima, con acceso completo a Demy y un proceso de onboarding de 2 horas. Se registra automáticamente qué porcentaje de procesos administrativos se ejecutan dentro de la plataforma vs. herramientas anteriores, complementado con entrevistas de seguimiento al final de cada semana.
+ 
+ 
+#### ◼ LADO POSTERIOR
+ 
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Adopción Administrativa | DBM-01 | ≥ 70% de procesos gestionados en Demy al mes 1 |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" al final de la semana 1 |
+| Tasa de Retención de Suscripción | DBM-03 | ≥ 60% de academias piloto renueva al mes 2 |
+ 
+Evidencia secundaria: registro de barreras de uso reportadas en entrevistas semanales.
+ 
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Administrativos de academias medianas en Lima con acceso a Demy + sesión de onboarding de 2 horas + soporte por canal de mensajería durante las 4 semanas del piloto. |
+| **Control** | Los mismos administrativos durante el ciclo académico inmediatamente anterior al piloto, gestionando con sus herramientas actuales (Excel, talonarios, WhatsApp). Sus métricas de tiempo y procesos sirven como línea base. |
+ 
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Estándar para minimizar errores Tipo I. |
+| Poder estadístico (1-β) | 80% | Nivel mínimo para reducir errores Tipo II. |
+| Efecto Mínimo Detectable (MDE) | 30 puntos porcentuales | Se considera relevante detectar un cambio de al menos 30 pp en la tasa de adopción (p.ej., de 20% con herramientas actuales a ≥70% con Demy). |
+| Tamaño de muestra mínimo | 2 academias / 3-5 administrativos | Muestra mínima viable para el piloto inicial. Suficiente para detectar patrones de adopción y barreras, con revisión antes de escalar. |
+| Duración estimada | 4 semanas | Un mes completo para capturar el comportamiento real en ciclo activo de la academia. |
+
+ 
 
 ## 8.2. Experiment Design 
 ### 8.2.1. Hypotheses
