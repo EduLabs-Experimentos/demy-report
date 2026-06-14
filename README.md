@@ -10802,6 +10802,234 @@ Estas preguntas buscan recolectar conocimiento en áreas donde el equipo no cuen
 | EXQ-08 | Exploratory | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Knowledge Gap 8 |
 
 ### 8.1.4. Question Backlog
+ 
+El Question Backlog es el resultado final de la fase de planificación. Constituye una lista priorizada de preguntas de investigación, no de funcionalidades, cuya respuesta es crucial para definir el curso de acción del producto **Demy**.
+ 
+ 
+####  **Sistema de Puntuación**
+ 
+Cada pregunta se evalúa bajo cuatro criterios en una escala del **1 al 5**:
+ 
+| Criterio | Descripción |
+|----------|-------------|
+| **Confianza** | Qué tan seguros estamos de nuestra creencia o premisa actual. A menor confianza, mayor prioridad . Escala invertida: 1 = muy seguros, 5 = muy inseguros. |
+| **Riesgo** | Qué tan grave sería estar equivocados. A mayor riesgo, mayor prioridad. 1 = bajo riesgo, 5 = riesgo crítico para el producto. |
+| **Impacto** | Qué tan importante sería la respuesta para el producto, el negocio o los usuarios. A mayor impacto, mayor prioridad. 1 = impacto marginal, 5 = impacto estratégico. |
+| **Interés** | Qué tan motivado está el equipo para responder esta pregunta ahora. 1 = baja urgencia, 5 = alta urgencia. |
+ 
+> **Puntuación total = Confianza + Riesgo + Impacto + Interés** (máximo: 20 puntos)
+> En caso de empate, se prioriza la pregunta con mayor puntaje en **Riesgo**.
+ 
+
+ 
+#### **Broad Backlog**
+ 
+El Broad Backlog contiene todas las preguntas identificadas, ordenadas por puntaje total de mayor a menor. Incluye tanto preguntas Belief-led (BLQ) como Exploratorias (EXQ).
+ 
+| Pos. | ID | Pregunta resumida | Tipo | Confianza | Riesgo | Impacto | Interés | **Total** |
+|------|----|-------------------|------|:---------:|:------:|:-------:|:-------:|:---------:|
+| 1 | BLQ-06 | ¿El MVP es suficiente para que una academia migre desde Excel? | Belief-led | 4 | 5 | 5 | 5 | **19** |
+| 2 | BLQ-01 | ¿Los administrativos adoptarán Demy en el primer mes de uso? | Belief-led | 3 | 5 | 5 | 5 | **18** |
+| 3 | BLQ-03 | ¿Las alertas automáticas reducirán la morosidad en un 40%? | Belief-led | 4 | 4 | 5 | 5 | **18** |
+| 4 | EXQ-02 | ¿Cuánto pagaría un director de academia por Demy? | Exploratory | 5 | 5 | 4 | 4 | **18** |
+| 5 | BLQ-02 | ¿Los docentes usarán principalmente el smartphone con Demy? | Belief-led | 2 | 4 | 5 | 4 | **15** |
+| 6 | BLQ-05 | ¿Los docentes reemplazarán WhatsApp por Demy en reprogramaciones? | Belief-led | 3 | 4 | 4 | 4 | **15** |
+| 7 | EXQ-06 | ¿Cuántas horas semanales pierde un administrativo en tareas manuales? | Exploratory | 4 | 3 | 5 | 3 | **15** |
+| 8 | EXQ-07 | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Exploratory | 4 | 4 | 4 | 3 | **15** |
+| 9 | BLQ-04 | ¿Demy mejorará la percepción de la academia ante los padres de familia? | Belief-led | 3 | 3 | 4 | 4 | **14** |
+| 10 | EXQ-03 | ¿Con qué frecuencia ocurren reprogramaciones de clases? | Exploratory | 4 | 3 | 4 | 3 | **14** |
+| 11 | EXQ-08 | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Exploratory | 4 | 4 | 3 | 3 | **14** |
+| 12 | BLQ-07 | ¿El 25% de academias migrará a planes superiores en 6 meses? | Belief-led | 3 | 3 | 4 | 3 | **13** |
+| 13 | EXQ-01 | ¿Cómo varía la adopción digital del personal fuera de Lima? | Exploratory | 3 | 3 | 3 | 4 | **13** |
+| 14 | EXQ-04 | ¿Cómo gestionan la asistencia las academias con múltiples sedes? | Exploratory | 4 | 3 | 3 | 3 | **13** |
+| 15 | EXQ-05 | ¿Qué canal de comunicación prefieren los padres de familia? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+ 
+
+<br>
+
+#### **Deep Backlog**
+ 
+El Deep Backlog presenta las **10 preguntas de mayor prioridad** con su ficha completa: motivación (el "por qué"), criterios de puntuación detallados y el método experimental recomendado para responderlas.
+ 
+#### #1 — BLQ-06 | Puntuación: 19
+ 
+**¿El conjunto de módulos del MVP de Demy es suficiente para que una academia decida migrar completamente desde Excel y registros físicos?**
+ 
+**¿Por qué esta pregunta?**
+Esta es la pregunta de mayor riesgo del producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de la calidad técnica de la plataforma. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido, por lo que validar esta premisa antes del lanzamiento comercial es crítico para evitar un fracaso de adopción masivo.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo tiene poca certeza sobre si los cuatro módulos son suficientes; las entrevistas muestran necesidad, pero no se ha probado el conjunto completo. |
+| Riesgo | 5 | Si el MVP no es suficiente, el producto no genera tracción y el modelo de negocio colapsa desde el inicio. |
+| Impacto | 5 | La respuesta define qué se incluye en el MVP y qué se posterga, impactando directamente el roadmap y la estrategia de lanzamiento. |
+| Interés | 5 | El equipo necesita esta respuesta antes del lanzamiento para no invertir en funcionalidades equivocadas. |
+ 
+**Método experimental sugerido:** Sesiones de demo del prototipo con 5-8 directores o coordinadores de academias medianas en Lima, seguidas de entrevistas estructuradas para identificar qué módulos consideran imprescindibles vs. secundarios para tomar la decisión de suscripción.
+ 
+
+ 
+#### #2 — BLQ-01 | Puntuación: 18
+ 
+**¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, a pesar de tener experiencia digital intermedia?**
+ 
+**¿Por qué esta pregunta?**
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia de uso y los responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás usuarios.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Las entrevistas muestran alta disposición verbal, pero la disposición declarada no siempre se traduce en comportamiento real. |
+| Riesgo | 5 | Si los administrativos no adoptan la plataforma, el producto falla en su promesa central y las academias cancelan la suscripción. |
+| Impacto | 5 | Define si el diseño de onboarding y la UX son suficientes, o si se requiere soporte adicional. |
+| Interés | 5 | Es urgente validarlo en la fase piloto antes de escalar el lanzamiento. |
+ 
+**Método experimental sugerido:** Piloto de 4 semanas con 2-3 academias, midiendo el porcentaje de procesos administrativos gestionados dentro de Demy vs. herramientas anteriores, complementado con observación directa y entrevistas semanales de seguimiento.
+ 
+
+ 
+#### #3 — BLQ-03 | Puntuación: 18
+ 
+**¿La implementación de recordatorios automáticos de pago en Demy reducirá la tasa de morosidad de los estudiantes en al menos un 40% durante los primeros tres meses?**
+ 
+**¿Por qué esta pregunta?**
+El control de pagos es uno de los pain points más críticos identificados en el 100% de los administrativos entrevistados. La Hypothesis 02 del Lean UX establece un KPI concreto (reducción del 40% en pagos atrasados), pero este número no ha sido validado. Además, existe el riesgo de que la morosidad responda a causas económicas estructurales de los estudiantes y no a la falta de recordatorios, lo que haría ineficaz esta funcionalidad como diferenciador del producto.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo asume que la morosidad es principalmente un problema de comunicación, pero no tiene evidencia para respaldarlo. |
+| Riesgo | 4 | Si la funcionalidad no reduce la morosidad, se pierde uno de los principales argumentos de venta del módulo de pagos. |
+| Impacto | 5 | Un impacto demostrable en morosidad es un argumento de venta poderoso y un diferenciador competitivo clave. |
+| Interés | 5 | Es necesario validarlo en el piloto para incluirlo como métrica de éxito en el pitch comercial. |
+ 
+**Método experimental sugerido:** Comparación pre/post en academias piloto: medir el porcentaje de pagos atrasados en el ciclo anterior (sin Demy) vs. el ciclo con alertas activas, controlando por tamaño de grupo y tipo de academia.
+ 
+
+ 
+#### #4 — EXQ-02 | Puntuación: 18
+ 
+**¿Cuánto está dispuesto a pagar mensualmente un director o dueño de academia por una herramienta de gestión centralizada como Demy, y qué factores determinan su percepción de valor?**
+ 
+**¿Por qué esta pregunta?**
+El modelo de negocio de Demy descansa en planes de suscripción, pero no existe información empírica sobre la sensibilidad al precio del segmento objetivo ni sobre su gasto actual en herramientas de gestión. Establecer precios sin esta información puede resultar en planes sub-valorados (pérdida de ingresos) o sobre-valorados (barrera de adopción). Esta es la brecha de conocimiento con mayor riesgo financiero para la sostenibilidad del negocio.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 5 | El equipo no tiene ninguna base empírica sobre disposición a pagar en este segmento específico. |
+| Riesgo | 5 | Definir precios incorrectos puede destruir la viabilidad comercial del producto antes de escalar. |
+| Impacto | 4 | La respuesta define la estructura de precios, los planes y la estrategia de monetización de Demy. |
+| Interés | 4 | Urgente antes de la definición final de los planes comerciales y del lanzamiento. |
+ 
+**Método experimental sugerido:** Aplicación de la técnica de precio de Van Westendorp a una muestra de 15-20 directores de academias medianas en Lima, identificando los umbrales de precio aceptable, caro, barato e inaceptablemente caro para el servicio.
+ 
+
+ 
+#### #5 — BLQ-02 | Puntuación: 15
+ 
+**¿Los docentes de academias utilizarán predominantemente el smartphone para interactuar con Demy, justificando la priorización de la app mobile sobre la versión web?**
+ 
+**¿Por qué esta pregunta?**
+La decisión de priorizar el desarrollo de una app móvil multiplataforma para docentes implica un costo significativo de desarrollo. Esta decisión se basa en las preferencias expresadas por los tres docentes entrevistados, pero la muestra es pequeña. Si la premisa es incorrecta y los docentes terminan usando principalmente la versión web, el esfuerzo en mobile-first habrá sido mal dirigido.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 2 | Alta confianza basada en tres entrevistas consistentes: el 100% prefiere el celular. |
+| Riesgo | 4 | Una inversión en mobile-first mal dirigida retrasa el roadmap y desvía recursos críticos. |
+| Impacto | 5 | Define la arquitectura del producto y las prioridades de desarrollo para el segmento docente. |
+| Interés | 4 | Necesario validarlo en la fase piloto antes de comprometer más recursos en desarrollo mobile. |
+ 
+**Método experimental sugerido:** Análisis de analytics de dispositivo durante las primeras 4 semanas del piloto, registrando desde qué tipo de dispositivo cada docente realiza sus acciones principales en la plataforma.
+ 
+
+ 
+#### #6 — BLQ-05 | Puntuación: 15
+ 
+**¿Los docentes están dispuestos a usar Demy como canal oficial para reprogramar clases, reemplazando el uso de WhatsApp para esta tarea?**
+ 
+**¿Por qué esta pregunta?**
+Uno de los módulos clave de Demy para docentes es la reprogramación de clases. Sin embargo, WhatsApp está profundamente arraigado como canal de coordinación en este segmento. Si los docentes continúan usando WhatsApp por costumbre o preferencia, la funcionalidad de reprogramación no generará el valor esperado y los administrativos seguirán recibiendo información fragmentada por canales informales.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Los docentes expresan frustración con WhatsApp, pero no está claro si adoptarían un canal más formal. |
+| Riesgo | 4 | Si no abandona WhatsApp, el módulo de reprogramación pierde utilidad y el dolor del usuario persiste dentro de la plataforma. |
+| Impacto | 4 | Define si el módulo de reprogramación requiere integración con notificaciones push para competir con la inmediatez de WhatsApp. |
+| Interés | 4 | Necesario para diseñar el flujo de reprogramación con los incentivos correctos desde el inicio. |
+ 
+**Método experimental sugerido:** Durante el piloto, monitorear el canal utilizado para cada reprogramación de clase durante 4 semanas, comparando el uso de Demy vs. WhatsApp, y entrevistar a docentes sobre las razones de su preferencia.
+ 
+
+ 
+#### #7 — EXQ-06 | Puntuación: 15
+ 
+**¿Cuántas horas semanales dedica en promedio un administrativo de academia a tareas manuales susceptibles de automatización con Demy?**
+ 
+**¿Por qué esta pregunta?**
+El argumento principal de venta de Demy es el ahorro de tiempo operativo. Sin una línea base cuantificada, no es posible demostrar el ROI de la plataforma ni construir un caso de negocio convincente para los directores de academia. Los datos de ENUT 2024 son genéricos para el sector educación y no son suficientemente específicos para el subsector de academias preuniversitarias.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que el tiempo es significativo, pero no se tiene una cifra concreta y medible para el segmento específico. |
+| Riesgo | 3 | Sin esta cifra, el pitch comercial es débil y el equipo no puede medir el impacto real de la plataforma post-implementación. |
+| Impacto | 5 | Un dato concreto de ahorro de horas es el argumento de venta más poderoso y objetivo de Demy. |
+| Interés | 3 | Importante para la estrategia comercial, aunque no bloquea el desarrollo técnico actual. |
+ 
+**Método experimental sugerido:** Diario de actividades completado por 5-8 administrativos durante dos semanas, registrando cada tarea manual y el tiempo invertido, con posterior análisis por categoría de proceso.
+ 
+
+ 
+#### #8 — EXQ-07 | Puntuación: 15
+ 
+**¿Qué herramientas de gestión académica conocen o han evaluado previamente los directores de academias, y cuáles fueron las razones por las que no las adoptaron o las abandonaron?**
+ 
+**¿Por qué esta pregunta?**
+Demy no llega a un mercado vacío. Entender qué intentaron antes los directores y por qué fracasó esa adopción es información estratégica para evitar los mismos errores y posicionar Demy diferenciadamente. Si existe una herramienta competidora conocida en el segmento, la estrategia de ventas y el mensaje de Demy deben adaptarse para superar esa referencia previa.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se desconoce completamente el panorama competitivo desde la perspectiva del usuario objetivo. |
+| Riesgo | 4 | Ignorar al competidor conocido por el usuario puede llevar a posicionamiento equivocado y pérdida de credibilidad en ventas. |
+| Impacto | 4 | Define la narrativa diferencial de Demy y los argumentos de venta frente a referencias previas del usuario. |
+| Interés | 3 | Importante para la estrategia de go-to-market, aunque no es bloqueante para el desarrollo del MVP. |
+ 
+**Método experimental sugerido:** Incluir preguntas específicas sobre herramientas previamente evaluadas en las entrevistas de descubrimiento con prospectos durante las demos comerciales de Demy.
+ 
+
+ 
+#### #9 — BLQ-04 | Puntuación: 14
+ 
+**¿La digitalización de la gestión con Demy mejorará la percepción de organización de la academia ante los padres de familia, y esto se traducirá en mayor retención de alumnos entre ciclos?**
+ 
+**¿Por qué esta pregunta?**
+El As-Is Scenario Mapping muestra que la atención a padres de familia es uno de los momentos de mayor tensión para los administrativos: buscan información en archivos dispersos mientras el padre espera. Si Demy resuelve este momento de verdad, podría generar un beneficio de retención medible que va más allá de la eficiencia interna y constituye un argumento de valor adicional hacia los directores de academia.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Se asume que los padres valoran la respuesta rápida, pero no se ha validado que esto impacte en su decisión de permanecer en la academia. |
+| Riesgo | 3 | Si el impacto en retención no es demostrable, Demy pierde un argumento de valor secundario pero relevante para el pitch. |
+| Impacto | 4 | Un impacto demostrable en retención de alumnos convierte a Demy en una inversión con ROI claro para el director. |
+| Interés | 4 | Relevante para enriquecer el pitch comercial con beneficios más allá de la eficiencia operativa. |
+ 
+**Método experimental sugerido:** Encuesta de satisfacción a padres de familia antes y después del primer ciclo con Demy, complementada con seguimiento de la tasa de renovación de matrícula en academias piloto.
+ 
+
+ 
+#### #10 — EXQ-03 | Puntuación: 14
+ 
+**¿Con qué frecuencia ocurren reprogramaciones o cancelaciones de clases en una academia presencial promedio, y cuáles son sus principales causas?**
+ 
+**¿Por qué esta pregunta?**
+El módulo de reprogramación de clases es una funcionalidad del backlog que consume esfuerzo de desarrollo. Su priorización depende de qué tan frecuente y crítico es el problema que resuelve. Si las reprogramaciones ocurren raramente, el módulo podría postergarse; si ocurren con alta frecuencia, su desarrollo es urgente y debe incluirse en el MVP o en la primera iteración.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que ocurren, pero no se tiene dato de frecuencia. El equipo no puede priorizar el módulo sin esta información. |
+| Riesgo | 3 | Desarrollar o posponer el módulo sin datos de frecuencia puede resultar en una mala priorización del roadmap. |
+| Impacto | 4 | Define si la funcionalidad de reprogramación pertenece al MVP o a una versión posterior, impactando el alcance del sprint actual. |
+| Interés | 3 | Necesario para la planificación del roadmap de corto plazo. |
+ 
+**Método experimental sugerido:** Registro observacional de reprogramaciones durante 4 semanas en 2-3 academias piloto, complementado con entrevistas a coordinadores sobre las causas más frecuentes de cambios de horario.
+ 
+
 ### 8.1.5. Experiment Cards
 
 ## 8.2. Experiment Design 
