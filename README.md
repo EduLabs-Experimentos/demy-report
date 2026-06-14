@@ -11032,6 +11032,143 @@ El módulo de reprogramación de clases es una funcionalidad del backlog que con
 
 ### 8.1.5. Experiment Cards
 
+Las Experiment Cards son el artefacto clave que documenta la información esencial antes de ejecutar cualquier experimento. Cada tarjeta tiene dos caras: el **Lado Frontal** captura la definición del experimento (QUESTION, WHY, HYPOTHESIS y WHAT), y el **Lado Posterior** detalla su configuración técnica (MEASURES, CONDITIONS y SCALE).
+ 
+Se presentan las 2 tarjetas correspondientes a las preguntas de mayor prioridad del Question Backlog.
+ 
+
+ 
+
+ 
+#### **EC-01 — BLQ-06 | Prioridad #1 (Puntuación: 19)**
+ 
+##### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿El conjunto de módulos del MVP de Demy es suficiente para que un director o coordinador de academia decida migrar completamente desde Excel y registros físicos?
+ 
+
+ 
+**WHY**
+ 
+Esta es la premisa de mayor riesgo para el producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de su calidad técnica. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido; validar esta creencia antes del lanzamiento comercial es crítico para evitar un fracaso de adopción desde el inicio.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 60% de los directores de academias medianas en Lima, tras una sesión de demo del MVP de Demy, declarará que el conjunto de módulos presentado es suficiente para tomar la decisión de suscribirse y migrar desde sus herramientas actuales.
+- **Hipótesis nula (H0):** La proporción de directores que declaran suficiencia del MVP no será significativamente diferente del 60%, o cualquier diferencia observada se deberá al azar y no al valor real del MVP.
+
+ 
+**WHAT**
+ 
+Sesión de demo estructurada del prototipo de Demy (sin código de producción completo) con 8 directores o coordinadores de academias medianas en Lima, seguida de una entrevista post-demo de 10 minutos con escala de decisión binaria (¿suscribiría su academia con estos módulos? Sí / No) y preguntas de profundización sobre qué módulo adicional considerarían imprescindible.
+ 
+
+ 
+#### ◼ LADO POSTERIOR
+ 
+
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Suficiencia Percibida del MVP | DBM-08 | ≥ 60% de directores declara suficiencia |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" |
+ 
+Evidencia secundaria a recolectar: lista de módulos adicionales mencionados como imprescindibles por los directores que respondan "No" a la suficiencia del MVP.
+ 
+
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Director o coordinador de academia mediana (50-200 alumnos) en Lima que aún utiliza Excel o registros físicos para gestión administrativa, expuesto a la demo completa del MVP de Demy con los cuatro módulos activos. |
+| **Control** | Director o coordinador que no ha visto la demo de Demy y continúa gestionando con herramientas actuales (Excel, talonarios, WhatsApp). Su percepción de suficiencia de herramientas actuales sirve como línea base de comparación. |
+ 
+
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Minimiza errores Tipo I (falsos positivos). Estándar en diseño experimental. |
+| Poder estadístico (1-β) | 80% | Reduce la probabilidad de errores Tipo II. Nivel mínimo aceptable. |
+| Efecto Mínimo Detectable (MDE) | 20 puntos porcentuales | Se considera relevante detectar una diferencia de al menos 20 pp entre la condición experimental y la de control (p.ej., de 40% a 60% de suficiencia percibida). |
+| Tamaño de muestra mínimo | 8 directores | Dado el contexto de investigación cualitativa-cuantitativa preliminar con recursos limitados, se aplica un muestreo intencional de 8 participantes como mínimo para obtener patrones consistentes. Este número se revisará antes de una validación cuantitativa a mayor escala. |
+| Duración estimada | 2 semanas | Tiempo para coordinar, ejecutar y analizar las 8 sesiones de demo. |
+ 
+
+ 
+#### **EC-02 — BLQ-01 | Prioridad #2 (Puntuación: 18)**
+ 
+
+ 
+#### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, gestionando al menos el 70% de sus procesos clave dentro de la plataforma?
+ 
+
+ 
+**WHY**
+ 
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia y responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás roles.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 70% de los administrativos en academias piloto gestionará sus procesos clave dentro de Demy durante el primer mes de uso, medido como porcentaje de procesos ejecutados en la plataforma vs. herramientas anteriores.
+- **Hipótesis nula (H0):** La Tasa de Adopción Administrativa no alcanzará el 70% en el primer mes, o cualquier diferencia observada respecto a la línea base se deberá al azar y no al impacto real de la plataforma.
+
+ 
+**WHAT**
+ 
+Piloto de 4 semanas con 2 academias medianas en Lima, con acceso completo a Demy y un proceso de onboarding de 2 horas. Se registra automáticamente qué porcentaje de procesos administrativos se ejecutan dentro de la plataforma vs. herramientas anteriores, complementado con entrevistas de seguimiento al final de cada semana.
+ 
+ 
+#### ◼ LADO POSTERIOR
+ 
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Adopción Administrativa | DBM-01 | ≥ 70% de procesos gestionados en Demy al mes 1 |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" al final de la semana 1 |
+| Tasa de Retención de Suscripción | DBM-03 | ≥ 60% de academias piloto renueva al mes 2 |
+ 
+Evidencia secundaria: registro de barreras de uso reportadas en entrevistas semanales.
+ 
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Administrativos de academias medianas en Lima con acceso a Demy + sesión de onboarding de 2 horas + soporte por canal de mensajería durante las 4 semanas del piloto. |
+| **Control** | Los mismos administrativos durante el ciclo académico inmediatamente anterior al piloto, gestionando con sus herramientas actuales (Excel, talonarios, WhatsApp). Sus métricas de tiempo y procesos sirven como línea base. |
+ 
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Estándar para minimizar errores Tipo I. |
+| Poder estadístico (1-β) | 80% | Nivel mínimo para reducir errores Tipo II. |
+| Efecto Mínimo Detectable (MDE) | 30 puntos porcentuales | Se considera relevante detectar un cambio de al menos 30 pp en la tasa de adopción (p.ej., de 20% con herramientas actuales a ≥70% con Demy). |
+| Tamaño de muestra mínimo | 2 academias / 3-5 administrativos | Muestra mínima viable para el piloto inicial. Suficiente para detectar patrones de adopción y barreras, con revisión antes de escalar. |
+| Duración estimada | 4 semanas | Un mes completo para capturar el comportamiento real en ciclo activo de la academia. |
+
+ 
+
 ## 8.2. Experiment Design 
 ### 8.2.1. Hypotheses
 ### 8.2.2. Domain Business Metrics 
