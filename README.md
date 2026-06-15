@@ -11363,6 +11363,17 @@ Se seleccionan criterios rigurosos de recolección bajo el principio de economí
     * Fricciones cualitativas: Lista priorizada de objeciones estructurales o solicitudes de características indicadas por los directores que rechazaron la suficiencia inicial del MVP.
 
 ### 8.2.4. Conditions
+
+Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del usuario para aislar las variables y comprender el motivo subyacente de las respuestas.
+
+* **Para Experimento de Suficiencia de MVP (EC-01):**
+    * **Condición Experimental:** Directores o coordinadores de academias medianas de Lima expuestos a una sesión de demostración interactiva guiada del MVP de Demy con el flujo completo de configuración (periodo académico, profesores, cursos, salones, alumnos y facturación activos en Azure).
+    * **Condición de Control:** Directores o coordinadores del mismo segmento que no son expuestos a Demy y evalúan la suficiencia de sus herramientas actuales tradicionales (archivos Excel fragmentados y talonarios físicos).
+
+* **Para Experimento de Adopción (EC-02):**
+    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment y Finance) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
+    * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
+
 ### 8.2.5. Scale Calculations and Decisions
 ### 8.2.6. Methods Selection
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
