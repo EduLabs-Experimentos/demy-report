@@ -11319,12 +11319,12 @@ Evidencia secundaria: registro de barreras de uso reportadas en entrevistas sema
 Siguiendo los principios de la experimentación científica y estadística en el marco XDPD, las hipótesis se formulan como declaraciones de creencias previas que se someten a pruebas de falsabilidad, testabilidad y medición, en lugar de intentar "validarlas como verdaderas" de manera sesgada. Cada hipótesis de trabajo va acompañada de su respectiva Hipótesis Nula (H_0).
 
 * **Hipótesis 1 (Suficiencia del MVP - EC-01):**
-    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy declarará de forma explícita que el conjunto de los 4 módulos core es suficiente para tomar la decisión de suscribirse y migrar desde Excel.
-    * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que cualquier resultado favorable observado se debe al azar o a métricas de vanidad.
+    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios y Facturación/Finance) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
+    * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que el conjunto actual de funcionalidades desplegadas no cubre el umbral mínimo de valor requerido por el segmento de negocio.
 
 * **Hipótesis 2 (Adopción Administrativa - EC-02):**
-    * **Hipótesis de Trabajo (H_1):** El uso de Demy en un entorno real con inducción inicial provocará que la Tasa de Adopción Administrativa sea mayor o igual al 70% al finalizar las primeras 4 semanas.
-    * **Hipótesis Nula (H_0):** La Tasa de Adopción Administrativa no alcanzará el 70% (Media < 0.70) en el primer mes de uso, indicando que el producto no mitiga eficazmente la resistencia al cambio organizacional.
+    * **Hipótesis de Trabajo (H_1):** El uso de Demy en un entorno real con inducción inicial provocará que la Tasa de Adopción Administrativa en la gestión financiera y operativa alcance o supere el 70% al finalizar las primeras 4 semanas del piloto.
+    * **Hipótesis Nula (H_0):** La Tasa de Adopción Administrativa no alcanzará el 70% (Media < 0.70) en el primer mes de uso, indicando que el producto no mitiga eficazmente la fricción de uso frente a los métodos manuales tradicionales.
 
 ### 8.2.2. Domain Business Metrics 
 ### 8.2.3. Measures
