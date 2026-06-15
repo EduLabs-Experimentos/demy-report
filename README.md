@@ -10274,16 +10274,16 @@ En el caso de los **administradores de academias**, se evaluó la **landing page
 
 | Atributo                | Detalle                                                                                                |
 |-------------------------|--------------------------------------------------------------------------------------------------------|
-| **Nombre**              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Edad**                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Sexo**                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Distrito**            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Ocupación**           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Fecha de entrevista** |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Timing**              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Video**               | [Ver en Microsoft Stream]()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-administrator-1.jpeg)                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| **Resumen**             |  |                                                                                                                                                                                                                                                                        
+| **Nombre**              | Freddy Quispe Mamani |
+| **Edad**                | 35 |
+| **Sexo**                | Masculino |
+| **Distrito**            | Comas (Lima) |
+| **Ocupación**           | Profesor de Matemáticas en academia preuniversitaria |
+| **Fecha de entrevista** | 14/06/2026 |
+| **Timing**              |  |
+| **Video**               | [Ver en Microsoft Stream]() |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-teacher-1.jpeg) |
+| **Resumen**             | Freddy, profesor de una academia preuniversitaria en Lima que usa el celular como su principal herramienta de trabajo, evaluó la aplicación móvil para docentes de Demy con una percepción muy positiva. Desde la pantalla principal ubicó sus cursos y las sesiones del día sin dificultad, y registró la asistencia de forma rápida e intuitiva, destacando que marcar presente/ausente por alumno es el paso más claro y que ningún ícono o sección le resultó confuso. No experimentó demoras ni acciones que tomaran más tiempo del esperado, y el guardado inmediato de los datos junto con el inicio de sesión seguro le transmitieron confianza. Considera la herramienta muy útil para organizar sus clases y, sobre todo, para automatizar el control de asistencia, tarea que hoy realiza en papel y luego traslada a Excel; valora la inmediatez de hacerlo desde el celular en el momento y sin pérdida de información. Como mejoras a futuro sugirió un resumen de asistencia por alumno y notificaciones ante cambios de horario, aunque considera que lo esencial (horario y asistencia) ya está muy bien resuelto. Manifestó alta disposición a adoptar la app como herramienta principal y a recomendarla a otros profesores de su academia (9/10). |
 
 #### Segmento: Profesor - Entrevistado 2
 
@@ -10317,6 +10317,219 @@ En el caso de los **administradores de academias**, se evaluó la **landing page
 
 
 ### 6.3.3. Evaluaciones según heurísticas
+
+**UX Heuristics & Principles Evaluation**
+
+*Usability – Inclusive Design – Information Architecture*
+
+| Campo | Detalle |
+|---|---|
+| **Carrera** | Ingeniería de Software |
+| **Curso** | 1ACC0238 - Aplicaciones para Dispositivos Móviles |
+| **NRC** | 1798 |
+| **Profesor** | Jorge Luis Mayta Guillermo |
+| **Auditor** | Nistra |
+| **Clientes** | Nataly Rodriguez, German Rivera |
+| **Site o App a evaluar** | Demy |
+
+> **Nota:** Esta evaluación heurística corresponde al producto **Demy** y se reutiliza de la auditoría realizada en el curso de Aplicaciones para Dispositivos Móviles, ya que se trata del mismo proyecto. Los hallazgos se contrastaron con las tres entrevistas de validación de este informe (administradores y profesor). Para cada problema se indica, con el ícono 📸, la captura de pantalla (screenshot) que debe tomarse como evidencia.
+
+#### Tareas a evaluar
+
+El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
+
+**Landing Page:**
+1. Explorar la propuesta de valor principal de Demy (Sección hero, mensaje clave).
+2. Feature Section.
+3. How it works Section.
+4. Testimonials Section.
+5. About Us Section.
+6. Pricing Section.
+7. FAQ Section.
+8. Contact Section.
+
+**Native Android Mobile Application:**
+1. Home Section
+2. Schedule Section
+3. Reschedule Section
+4. Attendance Section
+5. Profile Section
+
+**Cross-Platform Mobile Application:**
+1. Dashboard
+2. Teachers Section
+3. Students Section
+4. Periods Section
+5. Courses Section
+6. Classrooms Section
+7. Schedules Section
+8. Enrollments Section
+9. Scheduling Section
+10. Billing Section
+11. Finance Section
+12. Accounting Section
+13. Profile Section
+
+**Native iOS Mobile Application:**
+1. Home Section
+2. Schedule Section
+3. Settings Section
+4. Profile Section
+
+#### Fuera de alcance
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+**Landing Page**
+1. Redes sociales asociadas a la startup.
+2. Política de privacidad y condiciones de uso.
+
+**Mobile Applications**
+1. Recuperación de contraseña.
+2. Política de privacidad y condiciones de uso.
+3. Reportes de bugs.
+4. Configuraciones generales del sistema del dispositivo.
+
+#### Escala de severidad
+
+| Nivel | Descripción |
+|:---:|---|
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| **2** | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+#### Landing Page
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La landing no incluye un chat/chatbot de soporte ni indica claramente los horarios de atención del mismo. | 1 | Help and documentation |
+| 2 | La landing no explica con suficiente claridad qué herramientas ofrece cada sección. | 2 | Match between system and the real world |
+| 3 | Los términos y condiciones no se leen con claridad y afectan la confianza del usuario. | 2 | Visibility of system status |
+| 4 | El precio podría no estar alineado a la percepción de valor para academias grandes. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Falta de chat o chatbot de soporte con horarios visibles**
+- **Severidad:** 1
+- **Heurística violada:** Help and documentation
+- **Problema:** En la landing page de Demy no se visualiza ningún chat o chatbot de soporte que permita a los usuarios resolver dudas rápidas sobre el producto. Además, tampoco se indican horarios de atención ni disponibilidad del equipo de soporte. Esto genera incertidumbre en potenciales clientes (como administradores de academias) que podrían necesitar aclarar preguntas antes de tomar una decisión, y los obliga a buscar otros medios de contacto menos inmediatos.
+- **Recomendación:** Incorporar un chat o chatbot de soporte visible en la landing (por ejemplo, en la esquina inferior derecha), junto con un mensaje claro de disponibilidad, indicando los horarios de atención y el tiempo estimado de respuesta. En caso de estar fuera de horario, el chat podría cambiar a un modo "déjanos tu mensaje" para mantener expectativas realistas y mejorar la confianza en el servicio.
+- **📸 Screenshot a tomar:** Captura de la landing page (vista de la sección de Contacto y/o esquina inferior derecha) que evidencie la ausencia de un widget de chat/chatbot y de horarios de atención.
+
+**PROBLEMA #2: Falta de claridad en la explicación de las herramientas y secciones de la landing**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** La landing page de Demy no explica con suficiente claridad qué herramientas o funcionalidades incluye cada sección del sistema. El contenido presenta descripciones generales, pero no especifica de manera directa y concreta qué obtiene el usuario en cada módulo (por ejemplo: gestión de horarios, registros de asistencia, control de pagos, panel para profesores, vista de estudiantes, etc.). Esto provoca que los usuarios —especialmente perfiles administrativos como Germán— tengan dificultades para formarse un entendimiento claro de la propuesta de valor real del producto. La falta de precisión genera dudas, afecta la confianza y exige un esfuerzo cognitivo adicional para interpretar lo que Demy realmente ofrece.
+- **Recomendación:** Ampliar y reorganizar las secciones de la landing para describir explícitamente cada herramienta o funcionalidad, utilizando lenguaje claro, ejemplos y bullets concretos. Incluir pequeñas visualizaciones (íconos, screenshots o micro-demos) que ayuden a los usuarios a relacionar cada sección con su utilidad real dentro de una academia. Esto mejora la comprensión inmediata, reduce la ambigüedad y alinea el contenido con los modelos mentales del usuario.
+- **📸 Screenshot a tomar:** Captura de la Feature Section / "How it works" de la landing, donde se aprecien las descripciones genéricas de cada sección.
+
+**PROBLEMA #3: Los términos y condiciones no son claros ni fácilmente visibles**
+- **Severidad:** 2
+- **Heurística violada:** Visibility of system status
+- **Problema:** En las entrevistas se mencionó que los términos y condiciones de la landing no se leen bien, ya sea por tamaño, ubicación o claridad del texto. Esto afecta la percepción de transparencia y puede generar desconfianza en usuarios que buscan información legal o de uso antes de registrarse o contratar el servicio. La falta de una sección clara y fácil de localizar obstaculiza la comprensión del alcance del producto y de las condiciones del servicio.
+- **Recomendación:** Crear una sección dedicada y visible de "Términos y Condiciones" con tipografía adecuada, enlaces accesibles y estructura clara. Añadir además un resumen breve en lenguaje simple para reforzar transparencia.
+- **📸 Screenshot a tomar:** Captura del footer de la landing donde se ubican (o faltan) los enlaces a Términos y Condiciones, mostrando su baja visibilidad o legibilidad.
+
+**PROBLEMA #4: El precio puede resultar difícil de justificar para academias grandes**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Luciano indicó que, desde la perspectiva de academias grandes, el precio de Demy podría no encajar con sus estructuras de costo típicas. Esto sugiere que la landing no comunica adecuadamente la relación calidad–valor para academias de mayor escala, o no explica suficientemente los beneficios diferenciales que justifican la inversión.
+- **Recomendación:** Agregar una sección de precios más segmentada (pequeñas, medianas y grandes academias) y resaltar casos de uso que muestren ahorro, eficiencia o indicadores de impacto financiero.
+- **📸 Screenshot a tomar:** Captura de la Pricing Section de la landing, mostrando los planes actuales sin segmentación por tamaño de academia.
+
+---
+
+#### Native Android Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La aplicación no permite ajustar fuentes, colores o contrastes, reduciendo la accesibilidad y personalización. | 2 | User Control and Freedom |
+| 2 | La app no incluye una sección para ver las notas de los alumnos, generando ausencia de información relevante. | 3 | Match between system and the real world |
+| 3 | La vista de horarios no ofrece un modo de visualización semanal, lo que afecta la alineación con el flujo natural docente. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Falta de opciones para ajustar fuentes, colores y contraste**
+- **Severidad:** 2
+- **Heurística violada:** User Control and Freedom
+- **Problema:** La aplicación móvil para profesores no cuenta con opciones de personalización visual como ajustar tamaño de fuente, nivel de contraste o paleta de colores. Para profesores como Martín, estas opciones mejoran significativamente la comodidad visual durante sesiones largas de registro de asistencia, revisión de pagos o consulta de clases. La ausencia de estas configuraciones reduce la accesibilidad general de la aplicación y puede generar fatiga visual, especialmente en contextos de baja luz o uso frecuente.
+- **Recomendación:** Agregar un módulo de "Accesibilidad" dentro de la configuración que permita modificar tamaño de texto, modo de alto contraste y estilo de color. Esto mejora la experiencia de usuarios con diferentes preferencias visuales y aligera la carga cognitiva durante el uso prolongado.
+- **📸 Screenshot a tomar:** Captura de la pantalla de Perfil/Configuración de la app Android, evidenciando la ausencia de opciones de accesibilidad (tamaño de fuente, contraste, color).
+
+**PROBLEMA #2: Falta una sección para visualizar las notas de los alumnos**
+- **Severidad:** 3
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Profesores como José esperan que una aplicación académica incluya acceso rápido y directo a las calificaciones de los estudiantes. Sin embargo, la app actual no cuenta con una sección dedicada a consultar notas, lo que genera incompletitud en la experiencia y obliga al docente a acudir a otros sistemas o métodos informales (mensajes, cuadernos, Excel). Esta ausencia no coincide con el modelo mental del profesor sobre qué debe ofrecer una app de gestión académica, afectando la percepción de utilidad general.
+- **Recomendación:** Implementar una vista o módulo de "Notas de alumnos" accesible desde el dashboard principal o desde cada curso. Esta debe mostrar calificaciones, promedios y progreso del alumno. Así se complementa la experiencia docente y se alinea la app con las expectativas reales del usuario.
+- **📸 Screenshot a tomar:** Captura del Home/menú principal de la app Android, mostrando que no existe una sección de "Notas" entre las opciones disponibles.
+
+**PROBLEMA #3: La vista de horarios no incluye un modo semanal**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** El docente indicó que prefiere visualizar sus horarios únicamente en formato semanal, ya que así organiza mejor sus clases. La app no ofrece esta vista, lo que no se alinea con su modelo mental ni con prácticas comunes en calendarios académicos. Esto dificulta la planificación y puede generar confusión al navegar entre fechas.
+- **Recomendación:** Agregar un "Weekly View" con estructura de calendario docente, permitiendo alternar entre vista diaria, semanal y mensual según preferencia.
+- **📸 Screenshot a tomar:** Captura de la Schedule Section de la app Android, mostrando únicamente la vista diaria/lista sin opción de vista semanal.
+
+---
+
+#### Cross-Platform Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | No existe una opción de dictado por voz para registrar o gestionar grandes cantidades de alumnos. | 1 | Flexibility and efficiency of use |
+| 2 | Algunas tarjetas o secciones del dashboard no redirigen correctamente, lo que genera confusión en la navegación. | 2 | Consistency and standards |
+| 3 | Las secciones relacionadas (registro de periodos y cursos) están separadas, lo que no coincide con el flujo natural del usuario. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Ausencia de dictado por voz para registrar alumnos en flujos masivos**
+- **Severidad:** 1
+- **Heurística violada:** Flexibility and efficiency of use
+- **Problema:** En la aplicación móvil cross-platform (vista administrativa), el registro y la gestión de alumnos en secciones como Attendance, Enrollments o Students se realiza únicamente mediante interacción táctil y escritura manual. Para perfiles como Nataly, que gestionan grupos grandes de alumnos, esto implica muchas pulsaciones y tiempo invertido al registrar asistencias o realizar operaciones repetitivas. La falta de una opción de dictado por voz limita el aprovechamiento de atajos para usuarios frecuentes y reduce la eficiencia del flujo, especialmente en contextos de alta carga operativa.
+- **Recomendación:** Incorporar una opción de entrada por voz en los formularios o listas donde se realizan acciones repetitivas (por ejemplo, registrar asistencia o buscar alumnos), permitiendo que el usuario dicte nombres, estados o comandos básicos. Esto puede implementarse como un ícono de micrófono en los campos relevantes, aprovechando las APIs de reconocimiento de voz del sistema operativo.
+- **📸 Screenshot a tomar:** Captura de la sección Attendance / Enrollments / Students mostrando el formulario o lista que solo admite interacción táctil y escritura manual (sin ícono de micrófono).
+
+**PROBLEMA #2: Tarjetas del dashboard que no redirigen correctamente**
+- **Severidad:** 2
+- **Heurística violada:** Consistency and standards
+- **Problema:** En la aplicación móvil, algunas tarjetas o secciones del dashboard visual parecen ser elementos pulsables que deberían llevar al usuario a un módulo específico (por ejemplo, asistencia, cursos, pagos o alumnos). Sin embargo, al presionarlas, no redirigen o no realizan ninguna acción, lo que rompe con el comportamiento estándar de interfaces móviles. Este tipo de inconsistencia genera confusión, ya que el usuario asume —por su forma, tamaño y estilo— que estos elementos deberían cumplir una función navegable. La falta de respuesta afecta la fluidez del uso y provoca una experiencia de exploración frustrante, especialmente para usuarios nuevos.
+- **Recomendación:** Asegurar que todas las tarjetas del dashboard tengan un comportamiento consistente: si un componente luce como un acceso directo, debe redirigir al módulo correspondiente. También se recomienda aplicar retroalimentación visual (animación de "tap", cambio de opacidad o ripple effect). En caso de que una tarjeta aún no tenga funcionalidad implementada, es preferible ocultarla temporalmente o mostrar un estado "Próximamente" para evitar confusiones.
+- **📸 Screenshot a tomar:** Captura del Dashboard / Panel de Control (por ejemplo, las tarjetas de "Tendencia de Ingresos vs Gastos" y "Categorías de Gastos") señalando los elementos que aparentan ser pulsables pero no redirigen.
+
+**PROBLEMA #3: Las secciones de registro de periodos y cursos deberían estar unificadas**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Para Luciano, registrar periodos y cursos es parte de un mismo flujo operativo. La separación de estas secciones obliga a entrar a diferentes pantallas para completar una tarea cohesiva, lo que no coincide con el modelo mental del usuario ni con las prácticas reales de gestión académica.
+- **Recomendación:** Integrar ambos registros en un flujo único o permitir crearlos desde una misma pantalla con pasos consecutivos.
+- **📸 Screenshot a tomar:** Captura del menú lateral mostrando "Periodos" y "Cursos" como secciones separadas (o ambas pantallas de registro por separado).
+
+---
+
+#### Native iOS Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La aplicación no incluye un chatbot o asistente virtual para resolver dudas del alumno dentro de la app. | 2 | Help and documentation |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Ausencia de un chatbot o asistente virtual para resolver dudas del alumno**
+- **Severidad:** 2
+- **Heurística violada:** Help and documentation
+- **Problema:** Alexander comentó que, aunque la aplicación para alumnos es clara y fácil de usar, sería muy útil contar con un chatbot con IA dentro de la app para resolver dudas rápidas, como horarios, fechas de evaluaciones, recordatorios o detalles de cursos. Actualmente, la app no ofrece ningún canal de asistencia contextual, lo que obliga al alumno a buscar ayuda mediante otros medios (contactar a la academia, WhatsApp, correo), interrumpiendo su flujo de uso y reduciendo la inmediatez en la resolución de preguntas sencillas.
+- **Recomendación:** Integrar un chatbot de soporte dentro de la app nativa de iOS, accesible desde el menú principal o desde la vista de cursos. Este asistente debería resolver preguntas frecuentes, ofrecer enlaces rápidos y permitir enviar consultas cuando el alumno necesite apoyo inmediato.
+- **📸 Screenshot a tomar:** Captura del Home/menú principal de la app iOS, evidenciando la ausencia de un chatbot o asistente virtual.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 ### 6.4.1. Auditoría realizada
