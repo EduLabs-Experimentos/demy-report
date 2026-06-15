@@ -10318,218 +10318,209 @@ En el caso de los **administradores de academias**, se evaluó la **landing page
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-**UX Heuristics & Principles Evaluation**
+Esta sección contiene el proceso de evaluación de las sesiones de validación basado en heurísticas, considerando heurísticas de usabilidad, arquitectura de información e *inclusive design* de la experiencia propuesta. Para ello, la sección sigue la estructura del formato para evaluaciones de heurísticas indicado en el **Anexo D. Formato para Evaluación de User Experience según Heurísticas**.
 
-*Usability – Inclusive Design – Information Architecture*
+#### Tabla resumen
 
-| Campo | Detalle |
-|---|---|
-| **Carrera** | Ingeniería de Software |
-| **Curso** | 1ASI0732 - Diseño de Experimentos de Ingeniería de Software |
-| **NRC** | 16789 |
-| **Profesor** | Alex Humberto Sanchéz Ponce |
-| **Auditor** | Nistra |
-| **Clientes** | Nataly Rodriguez, German Rivera |
-| **Site o App a evaluar** | Demy |
-
-> **Nota:** Esta evaluación heurística corresponde al producto **Demy** y se reutiliza de la auditoría realizada en el curso de Aplicaciones para Dispositivos Móviles, ya que se trata del mismo proyecto. Los hallazgos se contrastaron con las tres entrevistas de validación de este informe (administradores y profesor). Para cada problema se indica, con el ícono 📸, la captura de pantalla (screenshot) que debe tomarse como evidencia.
-
-#### Tareas a evaluar
-
-El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
-
-**Landing Page:**
-1. Explorar la propuesta de valor principal de Demy (Sección hero, mensaje clave).
-2. Feature Section.
-3. How it works Section.
-4. Testimonials Section.
-5. About Us Section.
-6. Pricing Section.
-7. FAQ Section.
-8. Contact Section.
-
-**Native Android Mobile Application:**
-1. Home Section
-2. Schedule Section
-3. Reschedule Section
-4. Attendance Section
-5. Profile Section
-
-**Cross-Platform Mobile Application:**
-1. Dashboard
-2. Teachers Section
-3. Students Section
-4. Periods Section
-5. Courses Section
-6. Classrooms Section
-7. Schedules Section
-8. Enrollments Section
-9. Scheduling Section
-10. Billing Section
-11. Finance Section
-12. Accounting Section
-13. Profile Section
-
-**Native iOS Mobile Application:**
-1. Home Section
-2. Schedule Section
-3. Settings Section
-4. Profile Section
-
-#### Fuera de alcance
-
-No están incluidas en esta versión de la evaluación las siguientes tareas:
-
-**Landing Page**
-1. Redes sociales asociadas a la startup.
-2. Política de privacidad y condiciones de uso.
-
-**Mobile Applications**
-1. Recuperación de contraseña.
-2. Política de privacidad y condiciones de uso.
-3. Reportes de bugs.
-4. Configuraciones generales del sistema del dispositivo.
-
-#### Escala de severidad
-
-| Nivel | Descripción |
-|:---:|---|
-| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
-| **2** | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja de cara al siguiente release. |
-| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
-| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
-
----
-
-#### Landing Page
-
-**Tabla resumen**
-
-| # | Problema | Severidad | Heurística / Principio violado |
+| # | Problema | Escala de Severidad | Heurística / Principio violado |
 |:---:|---|:---:|---|
-| 1 | La landing no incluye un chat/chatbot de soporte ni indica claramente los horarios de atención del mismo. | 1 | Help and documentation |
-| 2 | La landing no explica con suficiente claridad qué herramientas ofrece cada sección. | 2 | Match between system and the real world |
-| 3 | Los términos y condiciones no se leen con claridad y afectan la confianza del usuario. | 2 | Visibility of system status |
-| 4 | El precio podría no estar alineado a la percepción de valor para academias grandes. | 2 | Match between system and the real world |
+| 1 | Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout). | 2 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 2 | El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual. | 3 | Usability: Control y libertad del usuario |
+| 3 | Elemento interactivo (botón de idioma) superpuesto o muy cerca de un elemento gráfico decorativo. | 1 | Usability: Diseño estético y minimalista |
+| 4 | Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard. | 3 | Usability: Control y libertad del usuario |
+| 5 | Control global (cambio de idioma) oculto al colapsar el menú lateral. | 2 | Usability: Consistencia y estándares / Flexibilidad |
+| 6 | Duplicidad innecesaria de la interfaz de notificaciones en la misma vista. | 2 | Usability: Diseño estético y minimalista |
+| 7 | Texto truncado e incompleto en una opción del menú lateral. | 1 | Usability: Diseño estético y minimalista |
+| 8 | La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación. | 4 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 9 | Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador. | 4 | Usability: Prevención de errores / Diseño estético y minimalista |
+| 10 | Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos. | 3 | Usability: Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores |
+| 11 | Duplicidad innecesaria del título de la sección en la cabecera. | 1 | Usability: Diseño estético y minimalista |
+| 12 | Falta de interactividad y retroalimentación en el botón "Filtrar". | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 13 | Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento. | 3 | Usability: Consistencia y estándares / Visibilidad del estado del sistema |
+| 14 | Duplicidad innecesaria del título de la sección ("Gestión de Ventas"). | 1 | Usability: Diseño estético y minimalista |
+| 15 | Falta de interactividad en el botón "Filtro" de la barra de búsqueda. | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 16 | Latencia excesiva (aprox. 3 segundos) sin retroalimentación visual al agregar productos o modificar cantidades en el carrito. | 3 | Usability: Visibilidad del estado del sistema / Eficiencia de uso |
+| 17 | Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés. | 3 | Usability: Relación entre el sistema y el mundo real |
+| 18 | Duplicidad innecesaria del título de la sección ("Reports"). | 1 | Usability: Diseño estético y minimalista |
+| 19 | Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa. | 3 | Usability: Visibilidad del estado del sistema / Prevención de errores |
 
-**Descripción de problemas**
+#### Descripción de problemas
 
-**PROBLEMA #1: Falta de chat o chatbot de soporte con horarios visibles**
-- **Severidad:** 1
-- **Heurística violada:** Help and documentation
-- **Problema:** En la landing page de Demy no se visualiza ningún chat o chatbot de soporte que permita a los usuarios resolver dudas rápidas sobre el producto. Además, tampoco se indican horarios de atención ni disponibilidad del equipo de soporte. Esto genera incertidumbre en potenciales clientes (como administradores de academias) que podrían necesitar aclarar preguntas antes de tomar una decisión, y los obliga a buscar otros medios de contacto menos inmediatos.
-- **Recomendación:** Incorporar un chat o chatbot de soporte visible en la landing (por ejemplo, en la esquina inferior derecha), junto con un mensaje claro de disponibilidad, indicando los horarios de atención y el tiempo estimado de respuesta. En caso de estar fuera de horario, el chat podría cambiar a un modo "déjanos tu mensaje" para mantener expectativas realistas y mejorar la confianza en el servicio.
-- **📸 Screenshot a tomar:** Captura de la landing page (vista de la sección de Contacto y/o esquina inferior derecha) que evidencie la ausencia de un widget de chat/chatbot y de horarios de atención.
-
-**PROBLEMA #2: Falta de claridad en la explicación de las herramientas y secciones de la landing**
+**PROBLEMA #1: Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout)**
 - **Severidad:** 2
-- **Heurística violada:** Match between system and the real world
-- **Problema:** La landing page de Demy no explica con suficiente claridad qué herramientas o funcionalidades incluye cada sección del sistema. El contenido presenta descripciones generales, pero no especifica de manera directa y concreta qué obtiene el usuario en cada módulo (por ejemplo: gestión de horarios, registros de asistencia, control de pagos, panel para profesores, vista de estudiantes, etc.). Esto provoca que los usuarios —especialmente perfiles administrativos como Germán— tengan dificultades para formarse un entendimiento claro de la propuesta de valor real del producto. La falta de precisión genera dudas, afecta la confianza y exige un esfuerzo cognitivo adicional para interpretar lo que Demy realmente ofrece.
-- **Recomendación:** Ampliar y reorganizar las secciones de la landing para describir explícitamente cada herramienta o funcionalidad, utilizando lenguaje claro, ejemplos y bullets concretos. Incluir pequeñas visualizaciones (íconos, screenshots o micro-demos) que ayuden a los usuarios a relacionar cada sección con su utilidad real dentro de una academia. Esto mejora la comprensión inmediata, reduce la ambigüedad y alinea el contenido con los modelos mentales del usuario.
-- **📸 Screenshot a tomar:** Captura de la Feature Section / "How it works" de la landing, donde se aprecien las descripciones genéricas de cada sección.
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+- **Problema:** Al realizar el primer intento de inicio de sesión, el sistema muestra correctamente un indicador de carga (spinner) en el botón. Sin embargo, debido a una alta latencia del servidor, este spinner se mantiene girando indefinidamente (más de 30 segundos) sin ofrecer ninguna actualización de estado. Al no existir un límite de tiempo de espera (timeout) ni un botón para cancelar la petición, el usuario percibe que la aplicación se ha "congelado", obligándolo a cerrar y recargar la página manualmente para poder continuar.
+- **Recomendación:** Establecer un tiempo máximo de espera para la petición HTTP (por ejemplo, 10 o 15 segundos). Si el servidor no responde en ese lapso, se debe detener el spinner y mostrar un mensaje de error claro al usuario (ej. "El servidor está tardando más de lo esperado, por favor intenta nuevamente"). Alternativamente, si se sabe que el servidor puede tener un "arranque en frío", mostrar un aviso temporal que diga "Conectando con el servidor, esto puede tomar unos segundos...".
+- **📸 Evidencia:** Captura de la página de login con el botón mostrando el spinner cargando.
 
-**PROBLEMA #3: Los términos y condiciones no son claros ni fácilmente visibles**
-- **Severidad:** 2
-- **Heurística violada:** Visibility of system status
-- **Problema:** En las entrevistas se mencionó que los términos y condiciones de la landing no se leen bien, ya sea por tamaño, ubicación o claridad del texto. Esto afecta la percepción de transparencia y puede generar desconfianza en usuarios que buscan información legal o de uso antes de registrarse o contratar el servicio. La falta de una sección clara y fácil de localizar obstaculiza la comprensión del alcance del producto y de las condiciones del servicio.
-- **Recomendación:** Crear una sección dedicada y visible de "Términos y Condiciones" con tipografía adecuada, enlaces accesibles y estructura clara. Añadir además un resumen breve en lenguaje simple para reforzar transparencia.
-- **📸 Screenshot a tomar:** Captura del footer de la landing donde se ubican (o faltan) los enlaces a Términos y Condiciones, mostrando su baja visibilidad o legibilidad.
+![Problema 1](./assets/validation-interviews/heuristics/p01.png)
 
-**PROBLEMA #4: El precio puede resultar difícil de justificar para academias grandes**
-- **Severidad:** 2
-- **Heurística violada:** Match between system and the real world
-- **Problema:** Luciano indicó que, desde la perspectiva de academias grandes, el precio de Demy podría no encajar con sus estructuras de costo típicas. Esto sugiere que la landing no comunica adecuadamente la relación calidad–valor para academias de mayor escala, o no explica suficientemente los beneficios diferenciales que justifican la inversión.
-- **Recomendación:** Agregar una sección de precios más segmentada (pequeñas, medianas y grandes academias) y resaltar casos de uso que muestren ahorro, eficiencia o indicadores de impacto financiero.
-- **📸 Screenshot a tomar:** Captura de la Pricing Section de la landing, mostrando los planes actuales sin segmentación por tamaño de academia.
-
----
-
-#### Native Android Mobile Application
-
-**Tabla resumen**
-
-| # | Problema | Severidad | Heurística / Principio violado |
-|:---:|---|:---:|---|
-| 1 | La aplicación no permite ajustar fuentes, colores o contrastes, reduciendo la accesibilidad y personalización. | 2 | User Control and Freedom |
-| 2 | La app no incluye una sección para ver las notas de los alumnos, generando ausencia de información relevante. | 3 | Match between system and the real world |
-| 3 | La vista de horarios no ofrece un modo de visualización semanal, lo que afecta la alineación con el flujo natural docente. | 2 | Match between system and the real world |
-
-**Descripción de problemas**
-
-**PROBLEMA #1: Falta de opciones para ajustar fuentes, colores y contraste**
-- **Severidad:** 2
-- **Heurística violada:** User Control and Freedom
-- **Problema:** La aplicación móvil para profesores no cuenta con opciones de personalización visual como ajustar tamaño de fuente, nivel de contraste o paleta de colores. Para profesores como Martín, estas opciones mejoran significativamente la comodidad visual durante sesiones largas de registro de asistencia, revisión de pagos o consulta de clases. La ausencia de estas configuraciones reduce la accesibilidad general de la aplicación y puede generar fatiga visual, especialmente en contextos de baja luz o uso frecuente.
-- **Recomendación:** Agregar un módulo de "Accesibilidad" dentro de la configuración que permita modificar tamaño de texto, modo de alto contraste y estilo de color. Esto mejora la experiencia de usuarios con diferentes preferencias visuales y aligera la carga cognitiva durante el uso prolongado.
-- **📸 Screenshot a tomar:** Captura de la pantalla de Perfil/Configuración de la app Android, evidenciando la ausencia de opciones de accesibilidad (tamaño de fuente, contraste, color).
-
-**PROBLEMA #2: Falta una sección para visualizar las notas de los alumnos**
+**PROBLEMA #2: El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual**
 - **Severidad:** 3
-- **Heurística violada:** Match between system and the real world
-- **Problema:** Profesores como José esperan que una aplicación académica incluya acceso rápido y directo a las calificaciones de los estudiantes. Sin embargo, la app actual no cuenta con una sección dedicada a consultar notas, lo que genera incompletitud en la experiencia y obliga al docente a acudir a otros sistemas o métodos informales (mensajes, cuadernos, Excel). Esta ausencia no coincide con el modelo mental del profesor sobre qué debe ofrecer una app de gestión académica, afectando la percepción de utilidad general.
-- **Recomendación:** Implementar una vista o módulo de "Notas de alumnos" accesible desde el dashboard principal o desde cada curso. Esta debe mostrar calificaciones, promedios y progreso del alumno. Así se complementa la experiencia docente y se alinea la app con las expectativas reales del usuario.
-- **📸 Screenshot a tomar:** Captura del Home/menú principal de la app Android, mostrando que no existe una sección de "Notas" entre las opciones disponibles.
+- **Heurística violada:** Usability - Control y libertad del usuario
+- **Problema:** Al hacer clic en la opción "¿Olvidaste tu contraseña?", el sistema no redirige al usuario a la vista correspondiente para restablecer sus credenciales. En su lugar, el enlace simplemente recarga la página de login actual y altera la URL agregando un parámetro (ej. `?returnUrl=%2Fdashboard`). Esto atrapa al usuario en un bucle sin salida si realmente ha perdido su contraseña, impidiendo su recuperación.
+- **Recomendación:** Revisar el enrutamiento (routing) en el frontend de la aplicación web. Se debe asegurar que el enlace tenga la ruta correcta hacia el componente de recuperación (por ejemplo, `/auth/recovery`) en lugar de apuntar a la misma vista de login, eliminando la recarga innecesaria de la página.
+- **📸 Evidencia:** Captura de la página de login señalando con un círculo rojo el texto "¿Olvidaste tu contraseña?".
 
-**PROBLEMA #3: La vista de horarios no incluye un modo semanal**
-- **Severidad:** 2
-- **Heurística violada:** Match between system and the real world
-- **Problema:** El docente indicó que prefiere visualizar sus horarios únicamente en formato semanal, ya que así organiza mejor sus clases. La app no ofrece esta vista, lo que no se alinea con su modelo mental ni con prácticas comunes en calendarios académicos. Esto dificulta la planificación y puede generar confusión al navegar entre fechas.
-- **Recomendación:** Agregar un "Weekly View" con estructura de calendario docente, permitiendo alternar entre vista diaria, semanal y mensual según preferencia.
-- **📸 Screenshot a tomar:** Captura de la Schedule Section de la app Android, mostrando únicamente la vista diaria/lista sin opción de vista semanal.
+![Problema 2](./assets/validation-interviews/heuristics/p02.png)
 
----
-
-#### Cross-Platform Mobile Application
-
-**Tabla resumen**
-
-| # | Problema | Severidad | Heurística / Principio violado |
-|:---:|---|:---:|---|
-| 1 | No existe una opción de dictado por voz para registrar o gestionar grandes cantidades de alumnos. | 1 | Flexibility and efficiency of use |
-| 2 | Algunas tarjetas o secciones del dashboard no redirigen correctamente, lo que genera confusión en la navegación. | 2 | Consistency and standards |
-| 3 | Las secciones relacionadas (registro de periodos y cursos) están separadas, lo que no coincide con el flujo natural del usuario. | 2 | Match between system and the real world |
-
-**Descripción de problemas**
-
-**PROBLEMA #1: Ausencia de dictado por voz para registrar alumnos en flujos masivos**
+**PROBLEMA #3: Elemento interactivo superpuesto o muy cerca de un elemento gráfico decorativo**
 - **Severidad:** 1
-- **Heurística violada:** Flexibility and efficiency of use
-- **Problema:** En la aplicación móvil cross-platform (vista administrativa), el registro y la gestión de alumnos en secciones como Attendance, Enrollments o Students se realiza únicamente mediante interacción táctil y escritura manual. Para perfiles como Nataly, que gestionan grupos grandes de alumnos, esto implica muchas pulsaciones y tiempo invertido al registrar asistencias o realizar operaciones repetitivas. La falta de una opción de dictado por voz limita el aprovechamiento de atajos para usuarios frecuentes y reduce la eficiencia del flujo, especialmente en contextos de alta carga operativa.
-- **Recomendación:** Incorporar una opción de entrada por voz en los formularios o listas donde se realizan acciones repetitivas (por ejemplo, registrar asistencia o buscar alumnos), permitiendo que el usuario dicte nombres, estados o comandos básicos. Esto puede implementarse como un ícono de micrófono en los campos relevantes, aprovechando las APIs de reconocimiento de voz del sistema operativo.
-- **📸 Screenshot a tomar:** Captura de la sección Attendance / Enrollments / Students mostrando el formulario o lista que solo admite interacción táctil y escritura manual (sin ícono de micrófono).
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** En la esquina superior derecha, el selector de idioma (ES/EN) se encuentra visualmente sobrepuesto o demasiado pegado al elemento gráfico decorativo (el círculo amarillo de fondo). Esto genera ruido visual, reduce la claridad de la interfaz y da una apariencia poco pulida al diseño, aunque no impide la funcionalidad del botón.
+- **Recomendación:** Ajustar los estilos CSS del contenedor del botón. Se debe aumentar el margen (`margin`) o el espaciado interno (`padding`) para separarlo del círculo decorativo, o en su defecto, ajustar el posicionamiento absoluto y el `z-index` de los elementos de fondo para que no interfieran con las áreas de interacción de los componentes superiores.
+- **📸 Evidencia:** Captura con un acercamiento a la esquina superior derecha que ilustre la superposición.
 
-**PROBLEMA #2: Tarjetas del dashboard que no redirigen correctamente**
+![Problema 3](./assets/validation-interviews/heuristics/p03.png)
+
+**PROBLEMA #4: Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Control y libertad del usuario
+- **Problema:** Estando en la vista principal del Dashboard, si el usuario recarga la página (F5 o botón de refresh del navegador), el sistema pierde el contexto de la ruta actual y lo redirige automáticamente a la sección de "Settings" (Ajustes). Esto interrumpe el flujo de trabajo del usuario, causándole desorientación y obligándolo a hacer clics adicionales para volver a la pantalla de inicio.
+- **Recomendación:** Revisar la configuración del enrutador del frontend (ej. Vue Router, React Router). Se debe asegurar que el estado de la aplicación o el manejo de rutas privadas/autenticadas respete la URL actual (`/dashboard`) durante la recarga del navegador, en lugar de usar una redirección por defecto hacia `/settings`.
+- **📸 Evidencia:** Dos capturas: el Dashboard antes de refrescar y la vista de "Ajustes" a la que redirige tras el refresco.
+
+![Problema 4 - Dashboard](./assets/validation-interviews/heuristics/p04-1.png)
+![Problema 4 - Ajustes](./assets/validation-interviews/heuristics/p04-2.png)
+
+**PROBLEMA #5: Control global (cambio de idioma) oculto al colapsar el menú lateral**
 - **Severidad:** 2
-- **Heurística violada:** Consistency and standards
-- **Problema:** En la aplicación móvil, algunas tarjetas o secciones del dashboard visual parecen ser elementos pulsables que deberían llevar al usuario a un módulo específico (por ejemplo, asistencia, cursos, pagos o alumnos). Sin embargo, al presionarlas, no redirigen o no realizan ninguna acción, lo que rompe con el comportamiento estándar de interfaces móviles. Este tipo de inconsistencia genera confusión, ya que el usuario asume —por su forma, tamaño y estilo— que estos elementos deberían cumplir una función navegable. La falta de respuesta afecta la fluidez del uso y provoca una experiencia de exploración frustrante, especialmente para usuarios nuevos.
-- **Recomendación:** Asegurar que todas las tarjetas del dashboard tengan un comportamiento consistente: si un componente luce como un acceso directo, debe redirigir al módulo correspondiente. También se recomienda aplicar retroalimentación visual (animación de "tap", cambio de opacidad o ripple effect). En caso de que una tarjeta aún no tenga funcionalidad implementada, es preferible ocultarla temporalmente o mostrar un estado "Próximamente" para evitar confusiones.
-- **📸 Screenshot a tomar:** Captura del Dashboard / Panel de Control (por ejemplo, las tarjetas de "Tendencia de Ingresos vs Gastos" y "Categorías de Gastos") señalando los elementos que aparentan ser pulsables pero no redirigen.
+- **Heurística violada:** Usability - Consistencia y estándares / Flexibilidad y eficiencia de uso
+- **Problema:** El botón para alternar el idioma (ES/EN) está ubicado dentro del menú lateral izquierdo (sidebar). El problema de diseño radica en que, si el usuario decide colapsar este menú para tener más espacio de visualización, el control de idioma desaparece. Los controles de configuración global no deben depender de elementos colapsables de navegación específica.
+- **Recomendación:** Reubicar el selector de idiomas. El estándar en el diseño de interfaces web (UI) dicta que este tipo de controles globales se coloquen en la barra superior (Header o Topbar), preferiblemente alineado a la derecha, cerca del icono de notificaciones o del perfil del usuario, garantizando su visibilidad y acceso en todo momento.
+- **📸 Evidencia:** Dos capturas: el menú lateral expandido (con el botón de idioma) y colapsado (sin él).
 
-**PROBLEMA #3: Las secciones de registro de periodos y cursos deberían estar unificadas**
+![Problema 5 - Menú expandido](./assets/validation-interviews/heuristics/p05-1.png)
+![Problema 5 - Menú colapsado](./assets/validation-interviews/heuristics/p05-2.png)
+
+**PROBLEMA #6: Duplicidad innecesaria de la interfaz de notificaciones en la misma vista**
 - **Severidad:** 2
-- **Heurística violada:** Match between system and the real world
-- **Problema:** Para Luciano, registrar periodos y cursos es parte de un mismo flujo operativo. La separación de estas secciones obliga a entrar a diferentes pantallas para completar una tarea cohesiva, lo que no coincide con el modelo mental del usuario ni con las prácticas reales de gestión académica.
-- **Recomendación:** Integrar ambos registros en un flujo único o permitir crearlos desde una misma pantalla con pasos consecutivos.
-- **📸 Screenshot a tomar:** Captura del menú lateral mostrando "Periodos" y "Cursos" como secciones separadas (o ambas pantallas de registro por separado).
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** La pantalla del Dashboard presenta redundancia de información. Existe un panel estático en el lado derecho que muestra una lista de notificaciones (ej. "Product running out") y, simultáneamente, en la barra superior hay un icono de campana que despliega exactamente la misma lista en un menú flotante. Esta duplicidad satura la interfaz con información repetida y desperdicia espacio valioso en la pantalla principal.
+- **Recomendación:** Eliminar el panel estático de notificaciones del cuerpo del Dashboard. Se recomienda mantener únicamente el icono de la campana en la barra superior con su respectivo menú desplegable (que es el estándar de la industria). El espacio liberado en el lado derecho del Dashboard puede aprovecharse para expandir los gráficos de métricas o incluir un nuevo indicador de negocio.
+- **📸 Evidencia:** Dos capturas: el panel estático de notificaciones del Dashboard y el menú flotante de la campana mostrando la misma lista.
 
----
+![Problema 6 - Panel estático](./assets/validation-interviews/heuristics/p06-1.png)
+![Problema 6 - Menú campana](./assets/validation-interviews/heuristics/p06-2.png)
 
-#### Native iOS Mobile Application
+**PROBLEMA #7: Texto truncado e incompleto en una opción del menú lateral**
+- **Severidad:** 1
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** En la parte inferior del menú de navegación lateral (sidebar), la etiqueta del último botón ("Administración d...") o ("Personal adminis...") es demasiado larga para el ancho predeterminado del contenedor. Al no caber, el texto se corta abruptamente con puntos suspensivos. Aunque esto no impide hacer clic en el botón, da un aspecto visual poco profesional y descuidado a la interfaz.
+- **Recomendación:** La mejor práctica en diseño de menús es utilizar etiquetas cortas y directas. Se recomienda cambiar el texto a una alternativa más concisa (por ejemplo, "Administración", "Personal" o "Usuarios"). Si por reglas de negocio es obligatorio mantener el texto original completo, se debe implementar un atributo de accesibilidad tipo tooltip (título emergente) nativo en HTML (`title="Administración de personal"`) que se muestre al pasar el cursor (hover) sobre el botón.
+- **📸 Evidencia:** Dos capturas: vista general del menú lateral y un acercamiento a la etiqueta truncada.
 
-**Tabla resumen**
+![Problema 7 - Menú lateral](./assets/validation-interviews/heuristics/p07-1.png)
+![Problema 7 - Etiqueta truncada](./assets/validation-interviews/heuristics/p07-2.png)
 
-| # | Problema | Severidad | Heurística / Principio violado |
-|:---:|---|:---:|---|
-| 1 | La aplicación no incluye un chatbot o asistente virtual para resolver dudas del alumno dentro de la app. | 2 | Help and documentation |
+**PROBLEMA #8: La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación**
+- **Severidad:** 4
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+- **Problema:** Al abrir el menú de acciones (icono de tres puntos) en un producto específico y seleccionar la opción "Editar", la interfaz no responde de ninguna manera. No se abre ningún modal, ni se redirige a otra vista, ni se muestra ningún mensaje de error. Esta falta de respuesta bloquea por completo la capacidad del usuario para actualizar la información del inventario.
+- **Recomendación:** Revisar el evento de clic asociado a la opción "Editar" en el código (ej. `@click` en Vue). Asegurar que el componente modal de edición esté correctamente importado y que la variable reactiva que controla su visibilidad cambie a verdadero (`true`). Además, verificar en la consola del navegador si existe algún error de JavaScript bloqueando la ejecución del evento.
+- **📸 Evidencia:** Captura del menú contextual del producto con la opción "Editar" seleccionada y sin respuesta.
 
-**Descripción de problemas**
+![Problema 8](./assets/validation-interviews/heuristics/p08.png)
 
-**PROBLEMA #1: Ausencia de un chatbot o asistente virtual para resolver dudas del alumno**
-- **Severidad:** 2
-- **Heurística violada:** Help and documentation
-- **Problema:** Alexander comentó que, aunque la aplicación para alumnos es clara y fácil de usar, sería muy útil contar con un chatbot con IA dentro de la app para resolver dudas rápidas, como horarios, fechas de evaluaciones, recordatorios o detalles de cursos. Actualmente, la app no ofrece ningún canal de asistencia contextual, lo que obliga al alumno a buscar ayuda mediante otros medios (contactar a la academia, WhatsApp, correo), interrumpiendo su flujo de uso y reduciendo la inmediatez en la resolución de preguntas sencillas.
-- **Recomendación:** Integrar un chatbot de soporte dentro de la app nativa de iOS, accesible desde el menú principal o desde la vista de cursos. Este asistente debería resolver preguntas frecuentes, ofrecer enlaces rápidos y permitir enviar consultas cuando el alumno necesite apoyo inmediato.
-- **📸 Screenshot a tomar:** Captura del Home/menú principal de la app iOS, evidenciando la ausencia de un chatbot o asistente virtual.
+**PROBLEMA #9: Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador**
+- **Severidad:** 4
+- **Heurística violada:** Usability - Prevención de errores / Diseño estético y minimalista
+- **Problema:** Al intentar eliminar un producto mediante el menú de acciones, ocurren dos problemas graves: primero, el sistema lanza un cuadro de diálogo `alert()` nativo del navegador para confirmar la acción, lo cual rompe completamente la estética y consistencia del diseño de la aplicación. Segundo, tras confirmar la acción en dicho cuadro, el producto no se elimina del listado, fallando en su propósito principal.
+- **Recomendación:** Reemplazar el uso de `alert()` o `confirm()` nativos de JavaScript por un componente modal de confirmación diseñado específicamente para la aplicación (que siga el sistema de diseño actual). En cuanto a la funcionalidad, se debe depurar la petición HTTP de tipo `DELETE` hacia el servidor para identificar por qué no se está completando la eliminación, y actualizar el estado local del listado (la tabla) para que el producto desaparezca de la vista inmediatamente después de una respuesta exitosa.
+- **📸 Evidencia:** Captura del cuadro de diálogo nativo (alert) de confirmación de eliminación.
+
+![Problema 9](./assets/validation-interviews/heuristics/p09.png)
+
+**PROBLEMA #10: Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores
+- **Problema:** En el formulario de creación de un nuevo "Kit", si el usuario omite un campo obligatorio (como el nombre del kit) e intenta guardar los cambios, el sistema simplemente falla silenciosamente. No se guarda el registro, pero tampoco se resalta el campo faltante ni se muestra ningún mensaje de advertencia. El usuario se queda sin saber qué hizo mal o por qué su acción no tuvo efecto.
+- **Recomendación:** Implementar validación de formularios en el frontend antes de enviar los datos. Se debe deshabilitar el botón de guardar si los campos obligatorios están vacíos o, preferiblemente, si el usuario hace clic en guardar, resaltar los campos faltantes en color rojo y mostrar un mensaje de error explícito debajo del campo (ej. "El nombre del kit es obligatorio"), indicándole claramente cómo corregir el problema.
+- **📸 Evidencia:** Captura del formulario de creación de "Kit" con un campo obligatorio vacío al intentar guardar.
+
+![Problema 10](./assets/validation-interviews/heuristics/p10.png)
+
+**PROBLEMA #11: Duplicidad innecesaria del título de la sección en la cabecera**
+- **Severidad:** 1
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** En la vista actual, el título "Proveedores" aparece repetido dos veces de forma casi consecutiva: una vez en la barra superior (Topbar) junto al icono de notificaciones, y otra vez inmediatamente debajo, en rojo, como encabezado del contenedor principal. Esta redundancia no aporta valor informativo, genera ruido visual y desperdicia espacio vertical en la pantalla.
+- **Recomendación:** Eliminar el segundo título ("Proveedores" en texto rojo) del área de contenido para mantener un diseño más limpio, dejando únicamente el título de la barra superior como indicador global de la vista. Alternativamente, ese espacio inferior puede usarse para un componente de breadcrumbs (migas de pan) si la navegación se vuelve más profunda.
+- **📸 Evidencia:** Captura de la vista de "Proveedores" mostrando el título duplicado.
+
+![Problema 11](./assets/validation-interviews/heuristics/p11.png)
+
+**PROBLEMA #12: Falta de interactividad y retroalimentación en el botón "Filtrar"**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+- **Problema:** El usuario puede ingresar texto en el campo de búsqueda ("Buscar"), pero al hacer clic en el botón contiguo de "Filtrar", el sistema no ejecuta ninguna acción. La tabla no se actualiza, la página no recarga y no se muestra ningún mensaje de error o estado de "cargando". El botón actúa como un elemento estático, lo que rompe la expectativa del usuario y frustra la tarea de búsqueda.
+- **Recomendación:** Asegurar que el evento de clic del botón esté correctamente enlazado a la función de filtrado en el controlador del componente. Si la funcionalidad de búsqueda aún está en desarrollo, el botón debe estar visualmente deshabilitado (`disabled`) o, al hacer clic, debería mostrar una notificación tipo toast indicando que la función estará disponible próximamente.
+- **📸 Evidencia:** Captura de la barra de búsqueda con el botón "Filtrar" sin respuesta.
+
+![Problema 12](./assets/validation-interviews/heuristics/p12.png)
+
+**PROBLEMA #13: Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Consistencia y estándares / Visibilidad del estado del sistema
+- **Problema:** La acción de eliminar un proveedor presenta dos fallos de experiencia. Primero, invoca un cuadro de diálogo nativo del navegador (`confirm()`) en lugar de un modal propio, rompiendo la consistencia visual del sistema. Segundo, tras aceptar la alerta, el sistema tarda entre 3 y 5 segundos en remover el registro de la tabla sin mostrar ningún indicador visual de carga (spinner), dejando al usuario con la incertidumbre de si el clic funcionó o si el sistema se colgó.
+- **Recomendación:** Al desarrollar sistemas CRUD integrales, el estándar en frameworks modernos (como Vue o Angular) exige mantener todo el flujo dentro de la interfaz gráfica propia. Se debe reemplazar la alerta nativa por un componente modal personalizado para la confirmación. Además, es obligatorio inyectar un estado de carga local (por ejemplo, deshabilitar el icono del basurero y cambiarlo por un spinner) durante los segundos que tarde la petición HTTP, actualizando la tabla de inmediato al recibir la respuesta exitosa `200 OK`.
+- **📸 Evidencia:** Captura de la alerta nativa de confirmación de eliminación de proveedor.
+
+![Problema 13](./assets/validation-interviews/heuristics/p13.png)
+
+**PROBLEMA #14: Duplicidad innecesaria del título de la sección ("Gestión de Ventas")**
+- **Severidad:** 1
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** Al igual que en la vista de Proveedores, la pantalla de Ventas presenta el título "Gestión de Ventas" repetido dos veces seguidas (en la barra superior y como encabezado del área de trabajo). Esto es redundante y ocupa espacio vertical que podría ser aprovechado para mostrar más productos en la tabla sin necesidad de hacer scroll.
+- **Recomendación:** Mantener la consistencia en el diseño de las plantillas (layouts). Se debe remover el título secundario del contenedor principal y conservar únicamente el título de la barra superior.
+- **📸 Evidencia:** Captura de la vista de "Gestión de Ventas" mostrando el título duplicado.
+
+![Problema 14](./assets/validation-interviews/heuristics/p14.png)
+
+**PROBLEMA #15: Falta de interactividad en el botón "Filtro" de la barra de búsqueda**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+- **Problema:** El usuario puede ingresar el nombre de un producto (ej. "Bolsa Papitas") en el input de texto, pero al presionar el botón "Filtro", la acción es ignorada por el sistema. La tabla de productos no se filtra ni se muestra ningún mensaje, lo que obliga al usuario a buscar el ítem manualmente entre toda la lista, reduciendo drásticamente la eficiencia en el proceso de venta.
+- **Recomendación:** Vincular correctamente el evento `@click` (o equivalente según el framework utilizado) del botón al método de filtrado. Dado que los productos ya están listados en el DOM, se recomienda implementar un filtrado local (procesando el array de datos en el cliente) para que la búsqueda sea instantánea, en lugar de hacer una nueva petición al servidor.
+- **📸 Evidencia:** Captura de la barra de búsqueda en Ventas con el botón "Filtro" sin acción.
+
+![Problema 15](./assets/validation-interviews/heuristics/p15.png)
+
+**PROBLEMA #16: Latencia excesiva sin retroalimentación visual al agregar productos o modificar cantidades en el carrito**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+- **Problema:** Al hacer clic en el ícono verde para agregar un producto al "Borrador salida de productos" (carrito), o al intentar aumentar su cantidad, el sistema sufre una latencia aproximada de 3 segundos antes de reflejar el cambio en el panel derecho. Durante este tiempo, la interfaz no bloquea el botón ni muestra un indicador de carga, lo que genera confusión e invita al usuario a hacer múltiples clics accidentales pensando que la acción no funcionó.
+- **Recomendación:** Implementar un patrón de diseño de Interfaz de Usuario Optimista (Optimistic UI). Las actualizaciones de estado (como añadir al carrito) deben reflejarse instantáneamente en la pantalla manipulando el estado local del frontend, mientras la sincronización con la base de datos ocurre en segundo plano. Adicionalmente, si es estrictamente necesario esperar al servidor, se debe cambiar el icono del carrito por un pequeño spinner de carga durante esos segundos.
+- **📸 Evidencia:** Captura del carrito ("Borrador salida de productos") al agregar un producto sin retroalimentación visual.
+
+![Problema 16](./assets/validation-interviews/heuristics/p16.png)
+
+**PROBLEMA #17: Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Relación entre el sistema y el mundo real / Prevención de errores
+- **Problema:** Al cambiar el idioma de la aplicación a inglés (botón "EN") y abrir los modales de creación en la sección de Inventario (como "New Category" o "New product"), el sistema falla al renderizar los textos. En lugar de mostrar lenguaje natural, expone las llaves o variables internas del diccionario de internacionalización (por ejemplo: `inventory.newCategory`, `inventory.categoryNamePlaceholder`, `inventory.isActive`). Esto confunde gravemente al usuario final, quien no tiene por qué entender la estructura del código.
+- **Recomendación:** Revisar la configuración del paquete de internacionalización (i18n). Se debe verificar el archivo del diccionario correspondiente al idioma inglés (ej. `en.json`) e incluir todas las llaves faltantes con sus respectivas traducciones legibles. Adicionalmente, configurar un valor de retroceso (fallback locale) para que, en caso de faltar una traducción en inglés, el sistema muestre el texto en español por defecto en lugar de la variable de código.
+- **📸 Evidencia:** Dos capturas de los modales "New Category" / "New product" en inglés mostrando las llaves i18n sin traducir.
+
+![Problema 17 - New Category](./assets/validation-interviews/heuristics/p17-1.png)
+![Problema 17 - New product](./assets/validation-interviews/heuristics/p17-2.png)
+
+**PROBLEMA #18: Duplicidad innecesaria del título de la sección ("Reports")**
+- **Severidad:** 1
+- **Heurística violada:** Usability - Diseño estético y minimalista
+- **Problema:** Siguiendo el mismo patrón de error visual encontrado en las vistas de Proveedores y Ventas, la pantalla de Reportes muestra el título duplicado: uno en la barra superior y otro en texto rojo justo debajo, en el área de contenido. Esta repetición es redundante, no aporta nueva información al usuario y resta espacio valioso que podría utilizarse para visualizar los datos o los gráficos de los reportes.
+- **Recomendación:** Estandarizar el diseño (layout) de las vistas principales del sistema. Se debe eliminar el título secundario (el texto rojo dentro del contenedor) en esta y todas las demás pantallas, centralizando la indicación de la vista actual únicamente en la barra de navegación superior.
+- **📸 Evidencia:** Captura de la vista de "Reports" mostrando el título duplicado.
+
+![Problema 18](./assets/validation-interviews/heuristics/p18.png)
+
+**PROBLEMA #19: Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa**
+- **Severidad:** 3
+- **Heurística violada:** Usability - Visibilidad del estado del sistema / Prevención de errores
+- **Problema:** Al completar el formulario para "Nuevo Personal", asignar los permisos correspondientes y hacer clic en "Guardar", el botón cambia a un estado de carga (spinner) y se congela indefinidamente. La ventana modal nunca se cierra ni se muestra un mensaje de confirmación. Sin embargo, si el usuario observa la tabla atenuada en el fondo, puede notar que el nuevo registro sí fue creado. Esta falsa retroalimentación de "procesando" hace creer al administrador que el sistema falló, lo que puede inducirlo a cancelar, refrescar la página o intentar crear al mismo usuario duplicado.
+- **Recomendación:** Corregir la resolución de la promesa (Promise) de la petición HTTP en el frontend. La lógica del componente debe actualizar el estado de carga (`isLoading = false`) e invocar la función para cerrar el modal automáticamente tan pronto como el servidor devuelva un código de éxito (ej. `201 Created` o `200 OK`). Adicionalmente, se debe limpiar el formulario para futuras inserciones y mostrar una notificación temporal (toast) que confirme explícitamente: "Usuario creado con éxito".
+- **📸 Evidencia:** Captura del modal "Nuevo Personal" atascado con el spinner tras guardar.
+
+![Problema 19](./assets/validation-interviews/heuristics/p19.png)
 
 ## 6.4. Auditoría de Experiencias de Usuario
 ### 6.4.1. Auditoría realizada
