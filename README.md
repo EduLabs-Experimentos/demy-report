@@ -11395,6 +11395,17 @@ Se selecciona el método experimental bajo la regla de la Simplest Useful Thing 
 * **Restricciones Éticas y Operativas:** Queda estrictamente establecido que no se ejecutarán experimentos simultáneos sobre el mismo grupo de usuarios que puedan corromper las muestras o generar sobrecarga cognitiva. Ningún experimento causará perjuicio económico u operativo a los flujos de caja reales de las academias piloto.
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+Esta sección define la preparación analítica para procesar la telemetría del producto Demy y asegurar la precisión en la captura del comportamiento del usuario.
+
+* **Meta Analítica 1:** Cuantificar la eficiencia operativa ganada por la administración de la academia al centralizar y automatizar los flujos financieros de matrículas y control de cobros.
+    * **KPI Asociado:** Tasa de efectividad de digitalización financiera en el piloto.
+    * **Métrica Analítica:** Porcentaje de cuentas de cobro y comprobantes emitidos exitosamente desde la plataforma web sin cancelaciones del flujo de datos.
+
+* **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
+    * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
+    * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
+    
 ### 8.2.8. Web and Mobile Tracking Plan
 
 ## 8.3. Experimentation 
