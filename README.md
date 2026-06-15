@@ -11405,8 +11405,25 @@ Esta sección define la preparación analítica para procesar la telemetría del
 * **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
     * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
     * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
-    
+
 ### 8.2.8. Web and Mobile Tracking Plan
+
+Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
+
+**Esquema Técnico de Eventos (Ecosistema Demy)**
+[Cliente Web - Admin]   --> (Event: admin_enrollment_submit) --> [ Segment / Firebase ] --> BigQuery / Analytics
+[Cliente Web - Finance] --> (Event: admin_invoice_create)     --> [ Firebase Analytics ]
+
+**Matriz del Plan de Rastreo (Tracking Plan)**
+
+| ID Evento | Plataforma | Trigger (Disparador Técnico) | Propiedades / Contexto | KPI / Métrica Vinculada |
+| :--- | :--- | :--- | :--- | :--- |
+| admin_login_success | Web | Éxito en autenticación del administrador. | academy_id, role: admin | Frecuencia de uso del sistema. |
+| admin_enrollment_submit | Web | Clic exitoso en "Registrar Estudiante" (HTTP 200). | student_id, cycle_id | DBM-01 (Adopción de Matrícula). |
+| admin_invoice_create | Web | Envío completado del formulario "Crear Cuenta de Cobro".| invoice_id, total_amount | DBM-01 / DBM-03 (Uso de Facturación).|
+| admin_finance_entry_save| Web | Clic en guardar registro de ingreso/egreso en Finance. | entry_type (ingreso/egreso) | DBM-03 (Retención de uso financiero).|
+| admin_schedule_save | Web | Confirmación exitosa de asignación de horarios en grilla. | classroom_id, course_id | Adopción de flujos estructurales. |
+| umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
 
 ## 8.3. Experimentation 
 ### 8.3.1. To-Be User Stories
