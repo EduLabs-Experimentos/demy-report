@@ -11375,7 +11375,25 @@ Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del
     * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
 
 ### 8.2.5. Scale Calculations and Decisions
+
+La determinación de la escala experimental establece cuánta evidencia es matemáticamente necesaria para dotar al estudio de validez estadística, balanceando Certeza (probabilidad de error aceptable) y Precisión (granularidad del cambio).
+
+* **Parámetros de Configuration Estadística:**
+    * **Nivel de Significación (alfa):** 5% (Probabilidad máxima aceptable de cometer un error Tipo I o falso positivo).
+    * **Poder Estadístico (1 - beta):** 80% (Probabilidad de detectar un efecto real si este existe, mitigando errores Tipo II).
+    * **Efecto Mínimo Detectable (MDE):** 20 puntos porcentuales para la percepción de suficiencia del MVP y 30 puntos porcentuales para la adopción en entorno operativo real.
+
+* **Decisiones de Tamaño de Muestra:**
+    * Debido al contexto B2B (Directores y administradores de academias preuniversitarias) y las restricciones de acceso al segmento en fases tempranas, se define un muestreo intencional y controlado de 8 directores para el experimento de MVP (EC-01) y un piloto cerrado con 2 academias medianas (que consolidan entre 3 y 5 administrativos de alta frecuencia) para el experimento de Adopción (EC-02). Esta escala es metodológicamente suficiente para identificar patrones críticos de usabilidad, adopción de flujos contables y valor antes de ejecutar un escalamiento masivo.
+
 ### 8.2.6. Methods Selection
+
+Se selecciona el método experimental bajo la regla de la Simplest Useful Thing (la cosa más simple y útil) que cumpla con las condiciones requeridas con el menor desperdicio de esfuerzo técnico.
+
+* **Para EC-01:** El método elegido es un Test de Prototipos con Entrevista Estructurada Post-Demo. Se separa conceptualmente el objeto de investigación (la percepción de suficiencia contable y operativa de los módulos actuales) de la técnica metodológica (entrevista interactiva presencial o remota).
+* **Para EC-02:** El método seleccionado es un Estudio de Piloto en Entorno Real (Cohorte Cerrada con Medición Pre/Post), implementando analítica automatizada sobre el software de gestión desplegado.
+* **Restricciones Éticas y Operativas:** Queda estrictamente establecido que no se ejecutarán experimentos simultáneos sobre el mismo grupo de usuarios que puedan corromper las muestras o generar sobrecarga cognitiva. Ningún experimento causará perjuicio económico u operativo a los flujos de caja reales de las academias piloto.
+
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 ### 8.2.8. Web and Mobile Tracking Plan
 
