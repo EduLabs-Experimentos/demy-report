@@ -11352,6 +11352,16 @@ Para garantizar que los experimentos se vinculen directamente con el rendimiento
 
 ### 8.2.3. Measures
 
+Se seleccionan criterios rigurosos de recolección bajo el principio de economía de rastreo (utilizar solo las medidas necesarias durante el tiempo justo para minimizar costos y ruidos analíticos).
+
+* **Evidencia Primaria (Representativa del cambio esperado):**
+    * Métricas de interacción core: Cantidad de estudiantes matriculados digitalmente, salones asignados y horarios guardados de forma exitosa por sesión en la solución web.
+    * Métricas financieras de impacto: Número de cuentas de cobro generadas, comprobantes de estudiantes emitidos y registros de egresos/ingresos completados dentro del módulo de Finance.
+
+* **Evidencia Secundaria (Detección de efectos adyacentes):**
+    * Tasa de error operativo técnico: Frecuencia con la que un usuario administrativo cancela un flujo o abandona un formulario (por ejemplo, salir del formulario de creación de periodo académico o asignación de profesores a mitad del registro).
+    * Fricciones cualitativas: Lista priorizada de objeciones estructurales o solicitudes de características indicadas por los directores que rechazaron la suficiencia inicial del MVP.
+
 ### 8.2.4. Conditions
 ### 8.2.5. Scale Calculations and Decisions
 ### 8.2.6. Methods Selection
