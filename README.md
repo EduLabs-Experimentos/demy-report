@@ -10325,9 +10325,9 @@ En el caso de los **administradores de academias**, se evaluó la **landing page
 | Campo | Detalle |
 |---|---|
 | **Carrera** | Ingeniería de Software |
-| **Curso** | 1ACC0238 - Aplicaciones para Dispositivos Móviles |
-| **NRC** | 1798 |
-| **Profesor** | Jorge Luis Mayta Guillermo |
+| **Curso** | 1ASI0732 - Diseño de Experimentos de Ingeniería de Software |
+| **NRC** | 16789 |
+| **Profesor** | Alex Humberto Sanchéz Ponce |
 | **Auditor** | Nistra |
 | **Clientes** | Nataly Rodriguez, German Rivera |
 | **Site o App a evaluar** | Demy |
