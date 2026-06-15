@@ -11327,7 +11327,31 @@ Siguiendo los principios de la experimentación científica y estadística en el
     * **Hipótesis Nula (H_0):** La Tasa de Adopción Administrativa no alcanzará el 70% (Media < 0.70) en el primer mes de uso, indicando que el producto no mitiga eficazmente la fricción de uso frente a los métodos manuales tradicionales.
 
 ### 8.2.2. Domain Business Metrics 
+
+Para garantizar que los experimentos se vinculen directamente con el rendimiento financiero y operativo real de las academias, se definen de manera estricta las métricas de negocio del dominio utilizando exclusivamente las capacidades del software desplegado. Queda prohibido el uso de métricas ad-hoc o datos no descritos en esta sección.
+
+1. **DBM-01: Tasa de Adopción Administrativa**
+    * **Fórmula:** Tasa = (Número de procesos core de matrícula y horarios registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
+    * **Técnica de recolección:** Registro automatizado de transacciones de inscripción en la base de datos de Demy cruzado con la auditoría de matrículas manuales reportadas externamente por la administración en su balance semanal.
+    * **Meta:** Mayor o igual a 70% al finalizar el primer mes.
+
+2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Facturación/Finance)**
+    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cuentas de cobro, comprobantes o egresos en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
+    * **Técnica de recolección:** Log analítico e inspección de marcas de tiempo en las tablas de auditoría de Base de Datos para los módulos de Facturación y Finance en Azure.
+    * **Meta:** Mayor o igual a 60% de uso recurrente continuo al cierre del piloto de un mes.
+
+3. **DBM-07: Puntuación de Facilidad de Uso (UMUX-Lite abreviado)**
+    * **Fórmula:** Puntuación = (Suma de respuestas de ítems Capacidad y Utilidad en escala 1 a 5 / Máximo puntaje posible) * 100
+    * **Técnica de recolección:** Micro-encuesta in-app desplegada en la interfaz web de Demy tras completar flujos operativos clave (como el cierre de un registro de matrícula o emisión de un comprobante).
+    * **Meta:** Mayor o igual a 75% de percepción de usabilidad positiva.
+
+4. **DBM-08: Tasa de Suficiencia Percibida del MVP**
+    * **Fórmula:** Tasa = (Número de decisores que responden "Sí" a la suficiencia del MVP / Total de decisores expuestos a la demo) * 100
+    * **Técnica de recolección:** Entrevista estructurada post-demo con recolección de respuesta binaria cerrada (Sí/No).
+    * **Meta:** Mayor o igual a 60%.
+
 ### 8.2.3. Measures
+
 ### 8.2.4. Conditions
 ### 8.2.5. Scale Calculations and Decisions
 ### 8.2.6. Methods Selection
