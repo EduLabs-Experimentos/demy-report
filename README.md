@@ -50,7 +50,11 @@
 | 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
 | 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
 | 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   |
-| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          | 
+| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          |
+| 8.2     | 5/06/2026  | Henry Kalet         | Documentación de validation interviews                   |
+| 8.3     | 14/06/2026 | Renso Julca         | Documentación de la Auditoria UX                         |
+| 8.4     | 14/06/2026 | Rafael Dominguez    | Documentación de Experiment Planning                     |
+| 8.5     | 16/06/2026 | Diego Vilca         | Documentación de Experiment Design                       |
 
 <hr class="page-break">
 
@@ -113,6 +117,42 @@ Estos gráficos detallan la cantidad de líneas de código añadidas por cada mi
 Análisis de líneas de código añadidas por contribuyente.
 
 ![Insights - Contributors](./assets/images/team-collaboration-insights/report/tb1/tb1-pulse.png)
+
+</div>
+
+## AV2
+
+**Tareas**
+
+Para el desarrollo del AV2, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes | Tarea asignada |
+| :--- | :--- |
+| Crispin Ramos, Daniel Franco | - Static testing & Verifications y Reviews <br> - Validation interviews |
+| Dominguez Vargas, Rafael | - Experiment Planning |
+| Esteban Roman, Henry Kalet | - Validation interviews |
+| Julca, Renso | - Auditoria UX |
+| Vilca Saboya, Diego Alejandro | - Continuous Monitoring y Experiment Design, Experimentation |
+
+**GitHub Collaboration Insights**
+
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/team-collaboration-insights/report/av2/av2-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada correspondiente al AV2.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/team-collaboration-insights/report/av2/av2-pulse.png)
 
 </div>
 
