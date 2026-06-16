@@ -10322,14 +10322,653 @@ En el caso de los **administradores de academias**, se evaluó la **landing page
 ## 6.4. Auditoría de Experiencias de Usuario
 ### 6.4.1. Auditoría realizada
 #### 6.4.1.1. Información del grupo auditado
+
+| Campo                    | Detalle                                                       |
+| ------------------------ | ------------------------------------------------------------- |
+| Grupo auditado           | Grupo 3                                                       |
+| Startup                  | Stoq                                     |
+| Producto evaluado        | StockWise                                  |
+| Integrantes del equipo   | Ronald Peralta, Luciana Choquehuanca, Camila Rios, Fabiola Del Rocio y Roy Fernandes|
+| Repositorio del proyecto | https://github.com/orgs/upc-1ASI0732-2610-16879-Stoq/repositories                                  |
+| Landing Page             | https://stockwiselanding.netlify.app/                            |
+| Aplicación web           | https://stocktrack-frontend.vercel.app/auth/register |
+
 #### 6.4.1.2. Cronograma de auditoría realizada
+
+| Actividad                                                | Fecha      | Responsable    | Duración estimada |
+| -------------------------------------------------------- |------------|----------------|-------------------|
+| Exploración de usabilidad y navegación general (Login, Dashboard, Menú lateral - Hallazgos 1 al 7)               | 13/06/2026 | Renso Julca    | 120 minutos       |
+| Documentación preliminar, asignación de severidad y mapeo de heurísticas           | 13/06/2026 | Renso Julca | 90 minutos        |
+| Pruebas transaccionales profundas en módulos CRUD (Inventario, Ventas, Proveedores, Personal - Hallazgos 8 al 19)     | 14/06/2026 | Renso Julca | 180 minutos       |
+| Consolidación del informe final, elaboración de tabla resumen y redacción de recomendaciones | 14/06/2026 | Renso Julca | 90 minutos       |
+
 #### 6.4.1.3. Contenido de auditoría realizada
+
+**SITE O APP A EVALUAR:**
+
+StockWise
+
+***TAREAS A EVALUAR:***
+
+*El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:*
+
+1. Inicio de sesión y flujo de recuperación de credenciales
+2. Navegación general, uso del menú lateral y configuración de idioma
+3. Visualización y gestión de notificaciones en el Dashboard
+4. Administración de inventario (edición y eliminación de productos)
+5. Creación de "Kits" de productos y validación de formularios
+6. Búsqueda y filtrado de datos en las tablas del sistema
+7. Gestión de proveedores (procesos de eliminación de registros)
+8. Gestión de ventas (agregación de ítems al borrador y control de cantidades)
+9. Administración de personal (creación de usuarios y asignación de permisos)
+10. Visualización de módulos de reportes
+
+***TABLA RESUMEN:***
+
+| # | Problema | Escala de Severidad | Heurística/Principio violada(o) |
+| :--- | :--- | :--- | :--- |
+| 1 | Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout). | 2 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 2 | El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual. | 3 | Usability: Control y libertad del usuario |
+| 3 | Elemento interactivo (botón de idioma) superpuesto o muy cerca de un elemento gráfico decorativo. | 1 | Usability: Diseño estético y minimalista |
+| 4 | Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard. | 3 | Usability: Control y libertad del usuario |
+| 5 | Control global (cambio de idioma) oculto al colapsar el menú lateral. | 2 | Usability: Consistencia y estándares / Flexibilidad |
+| 6 | Duplicidad innecesaria de la interfaz de notificaciones en la misma vista. | 2 | Usability: Diseño estético y minimalista |
+| 7 | Texto truncado e incompleto en una opción del menú lateral. | 1 | Usability: Diseño estético y minimalista |
+| 8 | La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación. | 4 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 9 | Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador. | 4 | Usability: Prevención de errores / Diseño estético y minimalista |
+| 10 | Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos. | 3 | Usability: Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores |
+| 11 | Duplicidad innecesaria del título de la sección en la cabecera. | 1 | Usability: Diseño estético y minimalista |
+| 12 | Falta de interactividad y retroalimentación en el botón "Filtrar". | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 13 | Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento. | 3 | Usability: Consistencia y estándares / Visibilidad del estado del sistema |
+| 14 | Duplicidad innecesaria del título de la sección ("Gestión de Ventas"). | 1 | Usability: Diseño estético y minimalista |
+| 15 | Falta de interactividad en el botón "Filtro" de la barra de búsqueda. | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 16 | Latencia excesiva (aprox. 3 segundos) sin retroalimentación visual al agregar productos o modificar cantidades en el carrito. | 3 | Usability: Visibilidad del estado del sistema / Eficiencia de uso |
+| 17 | Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés. | 3 | Usability: Relación entre el sistema y el mundo real |
+| 18 | Duplicidad innecesaria del título de la sección ("Reports"). | 1 | Usability: Diseño estético y minimalista |
+| 19 | Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa. | 3 | Usability: Visibilidad del estado del sistema / Prevención de errores |
+
+***DESCRIPCIÓN DE PROBLEMA:***
+
+**PROBLEMA #1:** Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout).
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+
+**Problema:**
+Al realizar el primer intento de inicio de sesión, el sistema muestra correctamente un indicador de carga (spinner) en el botón. Sin embargo, debido a una alta latencia del servidor, este spinner se mantiene girando indefinidamente (más de 30 segundos) sin ofrecer ninguna actualización de estado. Al no existir un límite de tiempo de espera (timeout) ni un botón para cancelar la petición, el usuario percibe que la aplicación se ha "congelado", obligándolo a cerrar y recargar la página manualmente para poder continuar.
+
+![Problem 01](./assets/ux-ui/audit/problem-01.png)
+
+**Recomendación:**
+Establecer un tiempo máximo de espera para la petición HTTP (por ejemplo, 10 o 15 segundos). Si el servidor no responde en ese lapso, se debe detener el spinner y mostrar un mensaje de error claro al usuario (ej. "El servidor está tardando más de lo esperado, por favor intenta nuevamente"). Alternativamente, si se sabe que el servidor puede tener un "arranque en frío", mostrar un aviso temporal que diga "Conectando con el servidor, esto puede tomar unos segundos...".
+
+---
+
+**PROBLEMA #2:** El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Control y libertad del usuario
+
+**Problema:**
+Al hacer clic en la opción "¿Olvidaste tu contraseña?", el sistema no redirige al usuario a la vista correspondiente para restablecer sus credenciales. En su lugar, el enlace simplemente recarga la página de login actual y altera la URL agregando un parámetro (ej. ?returnUrl=%2Fdashboard). Esto atrapa al usuario en un bucle sin salida si realmente ha perdido su contraseña, impidiendo su recuperación.(Puedes incluir la misma captura de pantalla, tal vez señalando con un círculo rojo el texto de "¿Olvidaste tu contraseña?")
+
+![Problem 02](./assets/ux-ui/audit/problem-02.png)
+
+**Recomendación:**
+Revisar el enrutamiento (routing) en el frontend de la aplicación web. Se debe asegurar que el enlace tenga la ruta correcta hacia el componente de recuperación (por ejemplo, /auth/recovery) en lugar de apuntar a la misma vista de login, eliminando la recarga innecesaria de la página.
+
+---
+
+**PROBLEMA #3:** Elemento interactivo superpuesto o muy cerca de un elemento gráfico decorativo.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la esquina superior derecha, el selector de idioma (ES/EN) se encuentra visualmente sobrepuesto o demasiado pegado al elemento gráfico decorativo (el círculo amarillo de fondo). Esto genera ruido visual, reduce la claridad de la interfaz y da una apariencia poco pulida al diseño, aunque no impide la funcionalidad del botón.(Toma una captura de pantalla haciendo un acercamiento solo a esa esquina superior derecha para ilustrar el problema)
+
+![Problem 03](./assets/ux-ui/audit/problem-03.png)
+
+**Recomendación:**
+Ajustar los estilos CSS del contenedor del botón. Se debe aumentar el margen (margin) o el espaciado interno (padding) para separarlo del círculo decorativo, o en su defecto, ajustar el posicionamiento absoluto y el z-index de los elementos de fondo para que no interfieran con las áreas de interacción de los componentes superiores.
+
+---
+
+**PROBLEMA #4:** Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Control y libertad del usuario
+
+**Problema:**
+Estando en la vista principal del Dashboard, si el usuario recarga la página (F5 o botón de refresh del navegador), el sistema pierde el contexto de la ruta actual y lo redirige automáticamente a la sección de "Settings" (Ajustes). Esto interrumpe el flujo de trabajo del usuario, causándole desorientación y obligándolo a hacer clics adicionales para volver a la pantalla de inicio.
+
+![Problem 04](./assets/ux-ui/audit/problem-04-1.png)
+![Problem 04](./assets/ux-ui/audit/problem-04-2.png)
+
+**Recomendación:**
+Revisar la configuración del enrutador del frontend (ej. Vue Router, React Router). Se debe asegurar que el estado de la aplicación o el manejo de rutas privadas/autenticadas respete la URL actual (/dashboard) durante la recarga del navegador, en lugar de usar una redirección por defecto hacia /settings.
+
+---
+
+**PROBLEMA #5:** Control global (cambio de idioma) oculto al colapsar el menú lateral.
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Consistencia y estándares / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El botón para alternar el idioma (ES/EN) está ubicado dentro del menú lateral izquierdo (sidebar). El problema de diseño radica en que, si el usuario decide colapsar este menú para tener más espacio de visualización, el control de idioma desaparece. Los controles de configuración global no deben depender de elementos colapsables de navegación específica.
+
+![Problem 05](./assets/ux-ui/audit/problem-05-1.png)
+![Problem 05](./assets/ux-ui/audit/problem-05-2.png)
+
+**Recomendación:**
+Reubicar el selector de idiomas. El estándar en el diseño de interfaces web (UI) dicta que este tipo de controles globales se coloquen en la barra superior (Header o Topbar), preferiblemente alineado a la derecha, cerca del icono de notificaciones o del perfil del usuario, garantizando su visibilidad y acceso en todo momento.
+
+---
+
+**PROBLEMA #6:** Duplicidad innecesaria de la interfaz de notificaciones en la misma vista.
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+La pantalla del Dashboard presenta redundancia de información. Existe un panel estático en el lado derecho que muestra una lista de notificaciones (ej. "Product running out") y, simultáneamente, en la barra superior hay un icono de campana que despliega exactamente la misma lista en un menú flotante. Esta duplicidad satura la interfaz con información repetida y desperdicia espacio valioso en la pantalla principal.
+
+![Problem 06](./assets/ux-ui/audit/problem-06-1.png)
+![Problem 06](./assets/ux-ui/audit/problem-06-2.png)
+
+**Recomendación:**
+Eliminar el panel estático de notificaciones del cuerpo del Dashboard. Se recomienda mantener únicamente el icono de la campana en la barra superior con su respectivo menú desplegable (que es el estándar de la industria). El espacio liberado en el lado derecho del Dashboard puede aprovecharse para expandir los gráficos de métricas o incluir un nuevo indicador de negocio.
+
+---
+
+**PROBLEMA #7:** Texto truncado e incompleto en una opción del menú lateral.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la parte inferior del menú de navegación lateral (sidebar), la etiqueta del último botón ("Administración d...") o ("Personal adminis...") es demasiado larga para el ancho predeterminado del contenedor. Al no caber, el texto se corta abruptamente con puntos suspensivos. Aunque esto no impide hacer clic en el botón, da un aspecto visual poco profesional y descuidado a la interfaz.
+
+![Problem 07](./assets/ux-ui/audit/problem-07-1.png)
+![Problem 07](./assets/ux-ui/audit/problem-07-2.png)
+
+**Recomendación:**
+La mejor práctica en diseño de menús es utilizar etiquetas cortas y directas. Se recomienda cambiar el texto a una alternativa más concisa (por ejemplo, "Administración", "Personal" o "Usuarios"). Si por reglas de negocio es obligatorio mantener el texto original completo, se debe implementar un atributo de accesibilidad tipo tooltip (título emergente) nativo en HTML (title="Personal administration") o (title="Administración de personal") que se muestre cuando el usuario pase el cursor (hover) sobre el botón.
+
+---
+
+**PROBLEMA #8:** La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación.
+
+**Severidad:** 4
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+
+**Problema:**
+Al abrir el menú de acciones (icono de tres puntos) en un producto específico y seleccionar la opción "Editar", la interfaz no responde de ninguna manera. No se abre ningún modal, ni se redirige a otra vista, ni se muestra ningún mensaje de error. Esta falta de respuesta bloquea por completo la capacidad del usuario para actualizar la información del inventario.
+
+![Problem 08](./assets/ux-ui/audit/problem-08.png)
+
+**Recomendación:**
+Revisar el evento de clic asociado a la opción "Editar" en el código (ej. @click en Vue). Asegurar que el componente modal de edición esté correctamente importado y que la variable reactiva que controla su visibilidad cambie a verdadero (true). Además, verificar en la consola del navegador si existe algún error de JavaScript bloqueando la ejecución del evento.
+
+---
+
+**PROBLEMA #9:** Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador.
+
+**Severidad:** 4
+
+**Heurística violada:** Usability - Prevención de errores / Diseño estético y minimalista
+
+**Problema:**
+Al intentar eliminar un producto mediante el menú de acciones, ocurren dos problemas graves: primero, el sistema lanza un cuadro de diálogo alert() nativo del navegador para confirmar la acción, lo cual rompe completamente la estética y consistencia del diseño de la aplicación. Segundo, tras confirmar la acción en dicho cuadro, el producto no se elimina del listado, fallando en su propósito principal.
+
+![Problem 09](./assets/ux-ui/audit/problem-09.png)
+
+**Recomendación:**
+Reemplazar el uso de alert() o confirm() nativos de JavaScript por un componente modal de confirmación diseñado específicamente para la aplicación (que siga el sistema de diseño actual). En cuanto a la funcionalidad, se debe depurar la petición HTTP de tipo DELETE hacia el servidor para identificar por qué no se está completando la eliminación, y actualizar el estado local del listado (la tabla) para que el producto desaparezca de la vista inmediatamente después de una respuesta exitosa.
+
+---
+
+**PROBLEMA #10:** Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores
+
+**Problema:**
+En el formulario de creación de un nuevo "Kit", si el usuario omite un campo obligatorio (como el nombre del kit) e intenta guardar los cambios, el sistema simplemente falla silenciosamente. No se guarda el registro, pero tampoco se resalta el campo faltante ni se muestra ningún mensaje de advertencia. El usuario se queda sin saber qué hizo mal o por qué su acción no tuvo efecto.
+
+![Problem 10](./assets/ux-ui/audit/problem-10.png)
+
+**Recomendación:**
+Implementar validación de formularios en el frontend antes de enviar los datos. Se debe deshabilitar el botón de guardar si los campos obligatorios están vacíos o, preferiblemente, si el usuario hace clic en guardar, resaltar los campos faltantes en color rojo y mostrar un mensaje de error explícito debajo del campo (ej. "El nombre del kit es obligatorio"), indicándole claramente cómo corregir el problema.
+
+---
+
+**PROBLEMA #11:** Duplicidad innecesaria del título de la sección en la cabecera.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la vista actual, el título "Proveedores" aparece repetido dos veces de forma casi consecutiva: una vez en la barra superior (Topbar) junto al icono de notificaciones, y otra vez inmediatamente debajo, en rojo, como encabezado del contenedor principal. Esta redundancia no aporta valor informativo, genera ruido visual y desperdicia espacio vertical en la pantalla.
+
+![Problem 11](./assets/ux-ui/audit/problem-11.png)
+
+**Recomendación:**
+Eliminar el segundo título ("Proveedores" en texto rojo) del área de contenido para mantener un diseño más limpio, dejando únicamente el título de la barra superior como indicador global de la vista. Alternativamente, ese espacio inferior puede usarse para un componente de breadcrumbs (migas de pan) si la navegación se vuelve más profunda.
+
+---
+
+**PROBLEMA #12:** Falta de interactividad y retroalimentación en el botón "Filtrar".
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El usuario puede ingresar texto en el campo de búsqueda ("Buscar"), pero al hacer clic en el botón contiguo de "Filtrar", el sistema no ejecuta ninguna acción. La tabla no se actualiza, la página no recarga y no se muestra ningún mensaje de error o estado de "cargando". El botón actúa como un elemento estático, lo que rompe la expectativa del usuario y frustra la tarea de búsqueda.
+
+![Problem 12](./assets/ux-ui/audit/problem-12.png)
+
+**Recomendación:**
+Asegurar que el evento de clic del botón esté correctamente enlazado a la función de filtrado en el controlador del componente. Si la funcionalidad de búsqueda aún está en desarrollo, el botón debe estar visualmente deshabilitado (disabled) o, al hacer clic, debería mostrar una notificación tipo toast indicando que la función estará disponible próximamente.
+
+---
+
+**PROBLEMA #13:** Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Consistencia y estándares / Visibilidad del estado del sistema
+
+**Problema:**
+La acción de eliminar un proveedor presenta dos fallos de experiencia. Primero, invoca un cuadro de diálogo nativo del navegador (confirm()) en lugar de un modal propio, rompiendo la consistencia visual del sistema. Segundo, tras aceptar la alerta, el sistema tarda entre 3 y 5 segundos en remover el registro de la tabla sin mostrar ningún indicador visual de carga (spinner), dejando al usuario con la incertidumbre de si el clic funcionó o si el sistema se colgó.
+
+![Problem 13](./assets/ux-ui/audit/problem-13.png)
+
+**Recomendación:**
+Al desarrollar sistemas CRUD integrales para el control de operaciones, el estándar en frameworks modernos (como Vue o Angular) exige mantener todo el flujo dentro de la interfaz gráfica propia. Se debe reemplazar la alerta nativa por un componente modal personalizado para la confirmación. Además, es obligatorio inyectar un estado de carga local (por ejemplo, deshabilitar el icono del basurero y cambiarlo por un spinner) durante los segundos que tarde la petición HTTP, actualizando la tabla de inmediato al recibir la respuesta exitosa 200 OK.
+
+---
+
+**PROBLEMA #14:** Duplicidad innecesaria del título de la sección ("Gestión de Ventas").
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+Al igual que en la vista de Proveedores, la pantalla de Ventas presenta el título "Gestión de Ventas" repetido dos veces seguidas (en la barra superior y como encabezado del área de trabajo). Esto es redundante y ocupa espacio vertical que podría ser aprovechado para mostrar más productos en la tabla sin necesidad de hacer scroll.
+
+![Problem 14](./assets/ux-ui/audit/problem-14.png)
+
+**Recomendación:**
+Mantener la consistencia en el diseño de las plantillas (layouts). Se debe remover el título secundario del contenedor principal y conservar únicamente el título de la barra superior.
+
+---
+
+**PROBLEMA #15:** Falta de interactividad en el botón "Filtro" de la barra de búsqueda.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El usuario puede ingresar el nombre de un producto (ej. "Bolsa Papitas") en el input de texto, pero al presionar el botón "Filtro", la acción es ignorada por el sistema. La tabla de productos no se filtra ni se muestra ningún mensaje, lo que obliga al usuario a buscar el ítem manualmente entre toda la lista, reduciendo drásticamente la eficiencia en el proceso de venta.
+
+![Problem 15](./assets/ux-ui/audit/problem-15.png)
+
+**Recomendación:**
+Vincular correctamente el evento @click (o equivalente según el framework utilizado) del botón al método de filtrado. Dado que los productos ya están listados en el DOM, se recomienda implementar un filtrado local (procesando el array de datos en el cliente) para que la búsqueda sea instantánea, en lugar de hacer una nueva petición al servidor.
+
+---
+
+**PROBLEMA #16:** Latencia excesiva sin retroalimentación visual al agregar productos o modificar cantidades en el carrito.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+Al hacer clic en el ícono verde para agregar un producto al "Borrador salida de productos" (carrito), o al intentar aumentar su cantidad, el sistema sufre una latencia aproximada de 3 segundos antes de reflejar el cambio en el panel derecho. Durante este tiempo, la interfaz no bloquea el botón ni muestra un indicador de carga, lo que genera confusión e invita al usuario a hacer múltiples clics accidentales pensando que la acción no funcionó.
+
+![Problem 16](./assets/ux-ui/audit/problem-16.png)
+
+**Recomendación:**
+Implementar un patrón de diseño de Interfaz de Usuario Optimista (Optimistic UI). Cuando se desarrolla un sistema transaccional donde la agilidad operativa es clave, las actualizaciones de estado (como añadir a un carrito) deben reflejarse instantáneamente en la pantalla manipulando el estado local del frontend. La sincronización de estos datos con la base de datos a través de peticiones HTTP debe ocurrir en segundo plano. Adicionalmente, si es estrictamente necesario esperar al servidor, se debe cambiar el icono del carrito por un pequeño spinner de carga durante esos 3 segundos.
+
+---
+
+**PROBLEMA #17:** Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Relación entre el sistema y el mundo real / Prevención de errores
+
+**Problema:**
+Al cambiar el idioma de la aplicación a inglés (botón "EN") y abrir los modales de creación en la sección de Inventario (como "New Category" o "New product"), el sistema falla al renderizar los textos. En lugar de mostrar lenguaje natural, expone las llaves o variables internas del diccionario de internacionalización (por ejemplo: inventory.newCategory, inventory.categoryNamePlaceholder, inventory.isActive). Esto confunde gravemente al usuario final, quien no tiene por qué entender la estructura del código, dificultando la correcta inserción de datos.
+
+![Problem 17](./assets/ux-ui/audit/problem-17-1.png)
+![Problem 17](./assets/ux-ui/audit/problem-17-2.png)
+
+**Recomendación:**
+Revisar la configuración del paquete de internacionalización (i18n) en el código fuente. Se debe verificar el archivo del diccionario correspondiente al idioma inglés (ej. en.json o en.js) e incluir todas las llaves faltantes que se están utilizando en la vista de inventario con sus respectivas traducciones legibles. Adicionalmente, configurar un valor de retroceso (fallback locale) para que, en caso de faltar una traducción en inglés, el sistema muestre el texto en español por defecto en lugar de la variable de código.
+
+---
+
+**PROBLEMA #18:** Duplicidad innecesaria del título de la sección ("Reports").
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+Siguiendo el mismo patrón de error visual encontrado en las vistas de Proveedores y Ventas, la pantalla de Reportes muestra el título duplicado: uno en la barra superior y otro en texto rojo justo debajo, en el área de contenido. Esta repetición es redundante, no aporta nueva información al usuario y resta espacio valioso que podría utilizarse para visualizar los datos o los gráficos de los reportes.
+
+![Problem 18](./assets/ux-ui/audit/problem-18.png)
+
+**Recomendación:**
+Estandarizar el diseño (layout) de las vistas principales del sistema. Se debe eliminar el título secundario (el texto rojo dentro del contenedor) en esta y todas las demás pantallas, centralizando la indicación de la vista actual únicamente en la barra de navegación superior.
+
+---
+
+**PROBLEMA #19:** Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Prevención de errores
+
+**Problema:**
+Al completar el formulario para "Nuevo Personal", asignar los permisos correspondientes y hacer clic en "Guardar", el botón cambia a un estado de carga (spinner) y se congela indefinidamente. La ventana modal nunca se cierra ni se muestra un mensaje de confirmación. Sin embargo, si el usuario observa la tabla atenuada en el fondo, puede notar que el nuevo registro sí fue creado y añadido al sistema. Esta falsa retroalimentación de "procesando" hace creer al administrador que el sistema falló, lo que puede inducirlo a cancelar, refrescar la página o intentar crear al mismo usuario duplicado.
+
+![Problem 19](./assets/ux-ui/audit/problem-19.png)
+
+**Recomendación:**
+Corregir la resolución de la promesa (Promise) de la petición HTTP en el frontend. La lógica del componente debe actualizar el estado de carga (isLoading = false) e invocar la función para cerrar el modal automáticamente tan pronto como el servidor devuelva un código de éxito (ej. 201 Created o 200 OK). Adicionalmente, se debe limpiar el formulario para futuras inserciones y mostrar una notificación temporal (toast) que confirme explícitamente: "Usuario creado con éxito".
 
 ### 6.4.2. Auditoría recibida
 #### 6.4.2.1. Información del grupo auditor
+
+| Campo                    | Detalle                                                       |
+| ------------------------ | ------------------------------------------------------------- |
+| Grupo auditado           | Grupo 3                                                       |
+| Startup                  | Stoq                                     |
+| Producto evaluado        | StockWise                                  |
+| Integrantes del equipo   | Ronald Peralta, Luciana Choquehuanca, Camila Rios, Fabiola Del Rocio y Roy Fernandes|
+| Repositorio del proyecto | https://github.com/orgs/upc-1ASI0732-2610-16879-Stoq/repositories                                  |
+| Landing Page             | https://stockwiselanding.netlify.app/                            |
+| Aplicación web           | https://stocktrack-frontend.vercel.app/auth/register |
+
 #### 6.4.2.2. Cronograma de auditoría recibida
+
+| Actividad                                                | Fecha      | Responsable          | Duración estimada |
+| -------------------------------------------------------- | ---------- | -------------------- | ----------------- |
+| Recepción del informe de auditoría externa               | 11/06/2026 | Ronald Peralta  | 30 minutos        |
+| Revisión y análisis de hallazgos identificados           | 11/06/2026 | Ronald Peralta  | 1 hora            |
+| Priorización de observaciones y acciones correctivas     | 12/06/2026 | Ronald Peralta  | 30 minutos        |
+| Evaluación integral del flujo funcional de la aplicación | 13/06/2026 | Ronald Peralta  | 1 hora            |
+| Implementación de mejoras y corrección de incidencias    | 13/06/2026 | Ronald Peralta  | 30 minutos        |
+
 #### 6.4.2.3. Contenido de auditoría recibida
+
+La presente auditoría tuvo como objetivo evaluar la usabilidad y experiencia de usuario del producto desarrollado por el grupo auditado. Para ello, se analizaron los principales flujos de interacción de la aplicación, identificando problemas relacionados con navegación, retroalimentación del sistema, accesibilidad, consistencia visual y comprensión de la interfaz.
+
+**Tareas evaluadas**
+
+Durante la auditoría se ejecutaron las siguientes tareas representativas del flujo de uso de la aplicación:
+
+| N.° | Tarea evaluada       | Descripción                            |
+| --- | -------------------- | -------------------------------------- |
+| 1   | Navegación global | Interacción con la barra de navegación (Header) para retornar a la vista principal. |
+| 2   | Visualización de contenido | Carga y renderizado de los recursos multimedia en las distintas secciones informativas. |
+| 3   | Análisis de rendimiento | Evaluación de métricas de carga, accesibilidad y SEO utilizando la herramienta Google Lighthouse. |
+| 4   | Arquitectura de la información | Recorrido por las secciones de la Landing Page para evaluar la carga cognitiva y relevancia del contenido. |
+| 5   | Flujo de conversión | Búsqueda del enlace o botón principal (Call to Action) para iniciar el proceso de registro en la Web App. |
+| 6   | Navegación interna | Exploración de las opciones secundarias del menú de navegación ("Configuración" y "Ayuda"). |
+| 7   | Registro de datos de usuario | Ingreso de información demográfica y de contacto en el formulario de la sección "ESTUDIANTES". |
+| 8   | Gestión de disponibilidad | Configuración de rangos de tiempo (hora de inicio y fin) en la sección de "Horarios". |
+| 9   | Adaptabilidad visual |Evaluación de la legibilidad de la interfaz al alternar el esquema de colores (Modo Oscuro) en la sección "Cobranzas".|
+
+
+**Escala de severidad utilizada**
+
+| Nivel | Descripción                                                                       |
+| ----- | --------------------------------------------------------------------------------- |
+| 1     | Problema superficial que no afecta significativamente la experiencia del usuario. |
+| 2     | Problema menor que genera cierta dificultad pero permite completar la tarea.      |
+| 3     | Problema importante que dificulta considerablemente la interacción.               |
+| 4     | Problema crítico que impide completar la tarea o continuar utilizando el sistema. |
+
+
+**Resumen de hallazgos identificados**
+
+| ID   | Tarea                    | Problema identificado                                                | Severidad | Heurística vulnerada              |
+| ---- | ------------------------ | ------------------------------------------------------------------- | --------- | --------------------------------- |
+| H-01 | Navegación global        | Logotipo inactivo sin redirección a la página de inicio.            | 2         | Consistencia y estándares         |
+| H-02 | Visualización de contenido | Imagen rota o no renderizada en la sección "Nosotros".             | 2         | Diseño estético y minimalista     |
+| H-03 | Análisis de rendimiento  | Bajo puntaje de rendimiento (59/100) en la métrica de Lighthouse.   | 3         | Flexibilidad y eficiencia de uso  |
+| H-04 | Arquitectura de la información | Exceso de secciones y contenido redundante (sección "Pasos"). | 1         | Diseño estético y minimalista     |
+| H-05 | Flujo de conversión      | Ausencia total de botón CTA hacia el registro de la aplicación web. | 4         | Control y libertad del usuario    |
+| H-06 | Navegación interna | Enlaces inactivos en el menú de navegación principal. | 3 | Control y libertad del usuario |
+| H-07 | Registro de datos de usuario | Ausencia de validaciones lógicas en campos de teléfono y fecha de nacimiento. | 3 | Prevención de errores |
+| H-08 | Gestión de disponibilidad | Interfaz de selección de horas (Time Picker) poco intuitiva y demandante. | 2 | Flexibilidad y eficiencia de uso |
+| H-09 | Adaptabilidad visual | Deficiencia de contraste y pérdida de claridad en el modo oscuro (Módulo de facturas). | 2 | Diseño estético y minimalista |
+
+---
+
+** Detalle de hallazgos**
+- **Hallazgo H-01**
+
+| Campo                   | Detalle                                                                                                                                                                                                                |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Navegación global                                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Barra de navegación superior (Header)                                                                                                                                                                   |
+| Problema identificado   | Logotipo de la marca inactivo sin hipervínculo al Home                                                                                                                                                                 |
+| Severidad               | 2                                                                                                                                                                                                                      |
+| Heurística vulnerada    | Consistencia y estándares                                                                                                                                                                                              |
+| Descripción             | Al navegar por las distintas secciones de la página, el usuario intenta hacer clic en el logotipo "Demy" para regresar rápidamente al inicio, pero este elemento es estático y no contiene un enlace (etiqueta `<a>`). |
+| Impacto para el usuario | Genera fricción en la navegación. El usuario se ve obligado a hacer scroll manual hacia arriba o buscar alternativas para regresar, rompiendo una convención estándar de diseño web.                                   |
+| Recomendación           | Envolver el logotipo en una etiqueta de ancla (`<a>`) o componente de enrutamiento que apunte a la ruta raíz (`/` o `#home`).                                                                                          |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-01](assets/ux-ui/audit/hallazgo-h01.png)
+
+*Figura 1. Barra de navegación donde se observa el logotipo estático.*
+
+---
+
+- **Hallazgo H-02**
+
+| Campo                   | Detalle                                                                                                                                                                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Visualización de contenido                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Sección "Nosotros"                                                                                                                                                                               |
+| Problema identificado   | Elemento de imagen no disponible (Enlace roto)                                                                                                                                                                  |
+| Severidad               | 2                                                                                                                                                                                                               |
+| Heurística vulnerada    | Diseño estético y minimalista / Prevención de errores                                                                                                                                                           |
+| Descripción             | Dentro del apartado "Nosotros", uno de los recursos gráficos no logra cargar correctamente, mostrando el icono estándar de "imagen rota" o un espacio en blanco en el navegador.                                |
+| Impacto para el usuario | Disminuye la percepción de calidad y profesionalismo del producto. Puede generar desconfianza en el usuario sobre el mantenimiento del sitio.                                                                   |
+| Recomendación           | Verificar la ruta del atributo `src` en la etiqueta `<img>`. Asegurar que el archivo exista en el directorio de despliegue o proveer un atributo `alt` descriptivo junto con una imagen de respaldo (fallback). |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-02](assets/ux-ui/audit/hallazgo-h02.png)
+
+*Figura 2. Sección "Nosotros" evidenciando el error de carga del recurso multimedia.*
+
+---
+
+- **Hallazgo H-03**
+
+| Campo                   | Detalle                                                                                                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Análisis de rendimiento                                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Entorno global                                                                                                                                                                                                |
+| Problema identificado   | Puntaje deficiente de Performance (59/100) en Lighthouse                                                                                                                                                                     |
+| Severidad               | 3                                                                                                                                                                                                                            |
+| Heurística vulnerada    | Flexibilidad y eficiencia de uso                                                                                                                                                                                             |
+| Descripción             | La auditoría técnica con Google Lighthouse arroja resultados contrastantes: Accesibilidad (90), Buenas prácticas (77), SEO (91), pero el Rendimiento cae a 59/100, indicando tiempos de carga lentos para el hilo principal. |
+| Impacto para el usuario | Un bajo rendimiento impacta directamente en los Core Web Vitals (como el LCP). Los usuarios con conexiones inestables pueden abandonar la página antes de que termine de cargar.                                             |
+| Recomendación           | Optimizar el tamaño y formato de las imágenes (usar WebP), diferir la carga de JavaScript no crítico y minificar los archivos estáticos CSS/JS para mejorar el First Contentful Paint (FCP).                                 |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h03.png)
+
+*Figura 3. Resultados del análisis de Google Lighthouse.*
+
+---
+
+- **Hallazgo H-04**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Arquitectura de la información                                                                                                                                                                                                                                   |
+| Ubicación               | Landing Page - Cuerpo de la página (Sección "Pasos")                                                                                                                                                                                                             |
+| Problema identificado   | Sobrecarga de información y redundancia de secciones                                                                                                                                                                                                             |
+| Severidad               | 1                                                                                                                                                                                                                                                                |
+| Heurística vulnerada    | Diseño estético y minimalista                                                                                                                                                                                                                                    |
+| Descripción             | La página presenta un volumen excesivo de secciones verticales (Características, Pasos, Testimonios, Nosotros, Precios, Preguntas, Contacto). Específicamente, la sección "Pasos" describe un proceso que resulta ser demasiado trivial, sin aportar valor real. |
+| Impacto para el usuario | Incrementa la fatiga visual y la carga cognitiva del usuario al tener que hacer demasiado scroll. Diluye la atención y desvía al usuario de la acción principal que debe realizar.                                                                               |
+| Recomendación           | Simplificar la estructura de la Landing Page. Eliminar la sección "Pasos" y condensar u ocultar información secundaria en acordeones o enlaces internos para mantener un flujo más directo.                                                                      |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h04.png)
+
+*Figura 4. Sección "Pasos" que aporta baja relevancia al flujo de la página.*
+
+---
+
+- **Hallazgo H-05**
+
+| Campo                   | Detalle                                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Flujo de conversión                                                                                                                                                                                                 |
+| Ubicación               | Landing Page - Menú de navegación y Hero Section                                                                                                                                                                    |
+| Problema identificado   | Ausencia de un botón de llamada a la acción (CTA) hacia la aplicación web                                                                                                                                           |
+| Severidad               | 4                                                                                                                                                                                                                   |
+| Heurística vulnerada    | Control y libertad del usuario / Prevención de errores                                                                                                                                                              |
+| Descripción             | El propósito principal de la Landing Page es captar usuarios, pero no existe un botón prominente (como "Regístrate" o "Ingresar a la App") que dirija al usuario al flujo de registro (`/sign-up`) de la Web App.   |
+| Impacto para el usuario | Impide por completo la conversión. El usuario interesado en el producto se queda estancado en la Landing Page sin un camino claro para comenzar a utilizar la aplicación, frustrando el objetivo de negocio.        |
+| Recomendación           | Implementar botones CTA de alto contraste y tamaño adecuado tanto en la esquina superior derecha del menú de navegación como en la sección principal (Hero Section), enlazados directamente a la vista de registro. |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h05.png)
+
+*Figura 5. Ausencia de botones de registro en el primer impacto visual de la página.*
+
+---
+
+- **Hallazgo H-06**
+
+| Campo                   | Detalle                                                                                                                                                                                                                              |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tarea evaluada          | Navegación interna                                                                                                                                                                                                                   |
+| Ubicación               | Web App - Barra de navegación lateral/superior                                                                                                                                                                                       |
+| Problema identificado   | Secciones "Configuración" y "Ayuda" sin funcionalidad                                                                                                                                                                                |
+| Severidad               | 3                                                                                                                                                                                                                                    |
+| Heurística vulnerada    | Control y libertad del usuario                                                                                                                                                                                                       |
+| Descripción             | Al intentar acceder a las opciones de "Configuración" y "Ayuda" desde el menú principal, los enlaces no ejecutan ninguna acción, no redirigen a ninguna vista, ni muestran un mensaje indicando que la función está en construcción. |
+| Impacto para el usuario | Genera confusión y frustración. El usuario percibe la aplicación como incompleta o defectuosa al no poder acceder a herramientas críticas de gestión de su cuenta o soporte.                                                         |
+| Recomendación           | Implementar las vistas correspondientes para estas rutas. Si las funcionalidades aún no están desarrolladas, se deben ocultar temporalmente los enlaces del menú o mostrar un modal informativo de "Próximamente" (Coming soon).     |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-06](assets/ux-ui/audit/hallazgo-h06.png)
+
+*Figura 6. Elementos del menú de navegación que no presentan interactividad.*
+
+---
+
+- **Hallazgo H-07**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Registro de datos de usuario                                                                                                                                                                                                                                                                                              |
+| Ubicación               | Web App - Sección "ESTUDIANTES" (Formulario de creación/edición)                                                                                                                                                                                                                                                          |
+| Problema identificado   | Falta de validación lógica en inputs de teléfono y fecha de nacimiento                                                                                                                                                                                                                                                    |
+| Severidad               | 3                                                                                                                                                                                                                                                                                                                         |
+| Heurística vulnerada    | Prevención de errores                                                                                                                                                                                                                                                                                                     |
+| Descripción             | El formulario presenta dos fallas críticas de validación: 1) El campo de número de celular restringe la entrada estrictamente a 9 dígitos y no permite ingresar códigos de país (ej. +51), limitando la internacionalización. 2) El selector de fecha de cumpleaños permite seleccionar la fecha actual o fechas futuras. |
+| Impacto para el usuario | Compromete la integridad de la base de datos al permitir el ingreso de información irreal o malformada. Limita el uso de la plataforma a un formato telefónico local, excluyendo posibles usuarios extranjeros.                                                                                                           |
+| Recomendación           | Implementar validaciones de fecha (ej. `max="[fecha-actual]"` en el input de tipo date) para bloquear fechas futuras en los cumpleaños. Incorporar un componente de Input Phone que incluya un selector desplegable de códigos de país y ajuste la longitud esperada según la región.                                     |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-07](assets/ux-ui/audit/hallazgo-h07.png)
+
+*Figura 7. Formulario aceptando datos incongruentes en los campos de contacto y nacimiento.*
+
+---
+
+- **Hallazgo H-08**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Gestión de disponibilidad                                                                                                                                                                                                                                |
+| Ubicación               | Web App - Sección "Horarios"                                                                                                                                                                                                                             |
+| Problema identificado   | Interfaz de selección de horas (Time Picker) incómoda y poco fluida                                                                                                                                                                                      |
+| Severidad               | 2                                                                                                                                                                                                                                                        |
+| Heurística vulnerada    | Flexibilidad y eficiencia de uso                                                                                                                                                                                                                         |
+| Descripción             | El componente utilizado para ingresar la "Hora de inicio" y "Hora de fin" en las sesiones requiere múltiples clics o una manipulación poco ergonómica, dificultando la entrada rápida de datos, especialmente si se deben configurar múltiples horarios. |
+| Impacto para el usuario | Incrementa innecesariamente el tiempo y el esfuerzo requerido para completar una tarea repetitiva, degradando la experiencia de uso (fricción operativa).                                                                                                |
+| Recomendación           | Reemplazar el componente actual por un Time Picker más intuitivo (por ejemplo, selectores visuales de reloj, campos con autocompletado en formato HH:MM, o incrementos rápidos de 15/30 minutos mediante botones).                                       |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-08](assets/ux-ui/audit/hallazgo-h08.png)
+
+*Figura 8. Interfaz de configuración de horarios evidenciando un flujo de selección ineficiente.*
+
+---
+
+- **Hallazgo H-09**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Adaptabilidad visual                                                                                                                                                                                                                                                                      |
+| Ubicación               | Web App - Sección "Cobranzas" (Apartado de facturas)                                                                                                                                                                                                                                      |
+| Problema identificado   | Pérdida de claridad y legibilidad en el esquema de Modo Oscuro                                                                                                                                                                                                                            |
+| Severidad               | 3                                                                                                                                                                                                                                                                                         |
+| Heurística vulnerada    | Diseño estético y minimalista (Accesibilidad)                                                                                                                                                                                                                                             |
+| Descripción             | Al activar el tema oscuro (Dark Mode), los estilos CSS específicos del apartado de facturas no se adaptan correctamente. El texto y los elementos de la interfaz carecen del contraste necesario contra los fondos oscuros, volviendo la información difícil o imposible de leer.         |
+| Impacto para el usuario | Impide la correcta visualización de datos financieros sensibles. Causa fatiga visual severa y vulnera las pautas de accesibilidad (WCAG) sobre el ratio de contraste mínimo requerido.                                                                                                    |
+| Recomendación           | Auditar y ajustar la paleta de colores del Modo Oscuro utilizando variables CSS. Asegurar que los colores de texto principales (ej. blanco o gris claro) tengan un ratio de contraste de al menos 4.5:1 sobre los fondos oscuros correspondientes a las tablas y tarjetas de facturación. |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-09](assets/ux-ui/audit/hallazgo-h09.png)
+
+*Figura 9. Problemas de contraste en el módulo de facturas al utilizar el tema oscuro.*
+
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+A partir de la auditoría recibida, se planificaron e implementaron las siguientes modificaciones técnicas y de diseño en la Landing Page y la Web App para resolver los problemas de usabilidad identificados:
+
+| ID | Tarea evaluada | Modificación implementada (Acción correctiva) |
+| :--- | :--- | :--- |
+| **H-01** | Navegación global | Se envolvió el logotipo principal de la marca en una etiqueta de enrutamiento (`<a>`) configurada para redirigir a la ruta raíz (`/`), permitiendo el retorno rápido al inicio. |
+| **H-02** | Visualización de contenido | Se corrigió la ruta de origen (`src`) del recurso multimedia en la sección "Nosotros" y se configuró una imagen de respaldo (fallback) junto con su atributo `alt`. |
+| **H-03** | Análisis de rendimiento | Se optimizaron las imágenes al formato WebP, se minificaron los archivos estáticos y se aplazó la carga de JavaScript no crítico para mejorar el tiempo de respuesta (FCP) en Lighthouse. |
+| **H-04** | Arquitectura de la información | Se eliminó la sección redundante de "Pasos" en la Landing Page para reducir el nivel de scroll y disminuir la carga cognitiva del usuario. |
+| **H-05** | Flujo de conversión | Se incorporaron botones de llamada a la acción (CTA) con alto contraste en el Header y el Hero Section, enlazados directamente a la ruta de registro (`/sign-up`). |
+| **H-06** | Navegación interna | Se ocultaron temporalmente los enlaces de "Configuración" y "Ayuda" del menú de navegación lateral para evitar clics muertos hasta que dichos módulos sean desarrollados. |
+| **H-07** | Registro de datos de usuario | Se añadió el atributo `max` en el selector de fecha para evitar cumpleaños futuros y se integró un componente con selector de prefijo internacional para el campo de teléfono. |
+| **H-08** | Gestión de disponibilidad | Se reemplazó el componente nativo de selección de hora por un *Time Picker* más ergonómico que permite el ingreso rápido mediante teclado e incrementos de bloques de minutos. |
+| **H-09** | Adaptabilidad visual | Se ajustaron las variables de la paleta de colores CSS para el "Modo Oscuro" en el módulo de facturas, garantizando un contraste mínimo de 4.5:1 para los textos sobre fondos oscuros. |
 
 <hr class="page-break">
 
