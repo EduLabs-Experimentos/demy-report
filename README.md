@@ -10994,6 +10994,10 @@ El Broad Backlog contiene todas las preguntas identificadas, ordenadas por punta
 #### **Deep Backlog**
  
 El Deep Backlog presenta las **10 preguntas de mayor prioridad** con su ficha completa: motivación (el "por qué"), criterios de puntuación detallados y el método experimental recomendado para responderlas.
+
+En esta imagen se resumen y se observa de forma visual las 10 preguntas de mayor prioridad, siendo las de color azul las de tipo "BLQ" y las de color verde de tipo "EXQ". 
+![Matriz de las 10 preguntas de mayor prioridad](./assets/experiment-planning/matriz-preguntas-mayor-prioridad.png)
+
  
 #### #1 — BLQ-06 | Puntuación: 19
  
@@ -11315,13 +11319,114 @@ Evidencia secundaria: registro de barreras de uso reportadas en entrevistas sema
 
 ## 8.2. Experiment Design 
 ### 8.2.1. Hypotheses
+
+Siguiendo los principios de la experimentación científica y estadística en el marco XDPD, las hipótesis se formulan como declaraciones de creencias previas que se someten a pruebas de falsabilidad, testabilidad y medición, en lugar de intentar "validarlas como verdaderas" de manera sesgada. Cada hipótesis de trabajo va acompañada de su respectiva Hipótesis Nula (H_0).
+
+* **Hipótesis 1 (Suficiencia del MVP - EC-01):**
+    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios y Facturación/Finance) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
+    * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que el conjunto actual de funcionalidades desplegadas no cubre el umbral mínimo de valor requerido por el segmento de negocio.
+
+* **Hipótesis 2 (Adopción Administrativa - EC-02):**
+    * **Hipótesis de Trabajo (H_1):** El uso de Demy en un entorno real con inducción inicial provocará que la Tasa de Adopción Administrativa en la gestión financiera y operativa alcance o supere el 70% al finalizar las primeras 4 semanas del piloto.
+    * **Hipótesis Nula (H_0):** La Tasa de Adopción Administrativa no alcanzará el 70% (Media < 0.70) en el primer mes de uso, indicando que el producto no mitiga eficazmente la fricción de uso frente a los métodos manuales tradicionales.
+
 ### 8.2.2. Domain Business Metrics 
+
+Para garantizar que los experimentos se vinculen directamente con el rendimiento financiero y operativo real de las academias, se definen de manera estricta las métricas de negocio del dominio utilizando exclusivamente las capacidades del software desplegado. Queda prohibido el uso de métricas ad-hoc o datos no descritos en esta sección.
+
+1. **DBM-01: Tasa de Adopción Administrativa**
+    * **Fórmula:** Tasa = (Número de procesos core de matrícula y horarios registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
+    * **Técnica de recolección:** Registro automatizado de transacciones de inscripción en la base de datos de Demy cruzado con la auditoría de matrículas manuales reportadas externamente por la administración en su balance semanal.
+    * **Meta:** Mayor o igual a 70% al finalizar el primer mes.
+
+2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Facturación/Finance)**
+    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cuentas de cobro, comprobantes o egresos en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
+    * **Técnica de recolección:** Log analítico e inspección de marcas de tiempo en las tablas de auditoría de Base de Datos para los módulos de Facturación y Finance en Azure.
+    * **Meta:** Mayor o igual a 60% de uso recurrente continuo al cierre del piloto de un mes.
+
+3. **DBM-07: Puntuación de Facilidad de Uso (UMUX-Lite abreviado)**
+    * **Fórmula:** Puntuación = (Suma de respuestas de ítems Capacidad y Utilidad en escala 1 a 5 / Máximo puntaje posible) * 100
+    * **Técnica de recolección:** Micro-encuesta in-app desplegada en la interfaz web de Demy tras completar flujos operativos clave (como el cierre de un registro de matrícula o emisión de un comprobante).
+    * **Meta:** Mayor o igual a 75% de percepción de usabilidad positiva.
+
+4. **DBM-08: Tasa de Suficiencia Percibida del MVP**
+    * **Fórmula:** Tasa = (Número de decisores que responden "Sí" a la suficiencia del MVP / Total de decisores expuestos a la demo) * 100
+    * **Técnica de recolección:** Entrevista estructurada post-demo con recolección de respuesta binaria cerrada (Sí/No).
+    * **Meta:** Mayor o igual a 60%.
+
 ### 8.2.3. Measures
+
+Se seleccionan criterios rigurosos de recolección bajo el principio de economía de rastreo (utilizar solo las medidas necesarias durante el tiempo justo para minimizar costos y ruidos analíticos).
+
+* **Evidencia Primaria (Representativa del cambio esperado):**
+    * Métricas de interacción core: Cantidad de estudiantes matriculados digitalmente, salones asignados y horarios guardados de forma exitosa por sesión en la solución web.
+    * Métricas financieras de impacto: Número de cuentas de cobro generadas, comprobantes de estudiantes emitidos y registros de egresos/ingresos completados dentro del módulo de Finance.
+
+* **Evidencia Secundaria (Detección de efectos adyacentes):**
+    * Tasa de error operativo técnico: Frecuencia con la que un usuario administrativo cancela un flujo o abandona un formulario (por ejemplo, salir del formulario de creación de periodo académico o asignación de profesores a mitad del registro).
+    * Fricciones cualitativas: Lista priorizada de objeciones estructurales o solicitudes de características indicadas por los directores que rechazaron la suficiencia inicial del MVP.
+
 ### 8.2.4. Conditions
+
+Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del usuario para aislar las variables y comprender el motivo subyacente de las respuestas.
+
+* **Para Experimento de Suficiencia de MVP (EC-01):**
+    * **Condición Experimental:** Directores o coordinadores de academias medianas de Lima expuestos a una sesión de demostración interactiva guiada del MVP de Demy con el flujo completo de configuración (periodo académico, profesores, cursos, salones, alumnos y facturación activos en Azure).
+    * **Condición de Control:** Directores o coordinadores del mismo segmento que no son expuestos a Demy y evalúan la suficiencia de sus herramientas actuales tradicionales (archivos Excel fragmentados y talonarios físicos).
+
+* **Para Experimento de Adopción (EC-02):**
+    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment y Finance) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
+    * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
+
 ### 8.2.5. Scale Calculations and Decisions
+
+La determinación de la escala experimental establece cuánta evidencia es matemáticamente necesaria para dotar al estudio de validez estadística, balanceando Certeza (probabilidad de error aceptable) y Precisión (granularidad del cambio).
+
+* **Parámetros de Configuration Estadística:**
+    * **Nivel de Significación (alfa):** 5% (Probabilidad máxima aceptable de cometer un error Tipo I o falso positivo).
+    * **Poder Estadístico (1 - beta):** 80% (Probabilidad de detectar un efecto real si este existe, mitigando errores Tipo II).
+    * **Efecto Mínimo Detectable (MDE):** 20 puntos porcentuales para la percepción de suficiencia del MVP y 30 puntos porcentuales para la adopción en entorno operativo real.
+
+* **Decisiones de Tamaño de Muestra:**
+    * Debido al contexto B2B (Directores y administradores de academias preuniversitarias) y las restricciones de acceso al segmento en fases tempranas, se define un muestreo intencional y controlado de 8 directores para el experimento de MVP (EC-01) y un piloto cerrado con 2 academias medianas (que consolidan entre 3 y 5 administrativos de alta frecuencia) para el experimento de Adopción (EC-02). Esta escala es metodológicamente suficiente para identificar patrones críticos de usabilidad, adopción de flujos contables y valor antes de ejecutar un escalamiento masivo.
+
 ### 8.2.6. Methods Selection
+
+Se selecciona el método experimental bajo la regla de la Simplest Useful Thing (la cosa más simple y útil) que cumpla con las condiciones requeridas con el menor desperdicio de esfuerzo técnico.
+
+* **Para EC-01:** El método elegido es un Test de Prototipos con Entrevista Estructurada Post-Demo. Se separa conceptualmente el objeto de investigación (la percepción de suficiencia contable y operativa de los módulos actuales) de la técnica metodológica (entrevista interactiva presencial o remota).
+* **Para EC-02:** El método seleccionado es un Estudio de Piloto en Entorno Real (Cohorte Cerrada con Medición Pre/Post), implementando analítica automatizada sobre el software de gestión desplegado.
+* **Restricciones Éticas y Operativas:** Queda estrictamente establecido que no se ejecutarán experimentos simultáneos sobre el mismo grupo de usuarios que puedan corromper las muestras o generar sobrecarga cognitiva. Ningún experimento causará perjuicio económico u operativo a los flujos de caja reales de las academias piloto.
+
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+Esta sección define la preparación analítica para procesar la telemetría del producto Demy y asegurar la precisión en la captura del comportamiento del usuario.
+
+* **Meta Analítica 1:** Cuantificar la eficiencia operativa ganada por la administración de la academia al centralizar y automatizar los flujos financieros de matrículas y control de cobros.
+    * **KPI Asociado:** Tasa de efectividad de digitalización financiera en el piloto.
+    * **Métrica Analítica:** Porcentaje de cuentas de cobro y comprobantes emitidos exitosamente desde la plataforma web sin cancelaciones del flujo de datos.
+
+* **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
+    * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
+    * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
+
 ### 8.2.8. Web and Mobile Tracking Plan
+
+Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
+
+**Esquema Técnico de Eventos (Ecosistema Demy)**
+![Flujo de eventos del ecosistema demy](./assets/experiment-planning/flujo-eventos-tracking-plan.png)
+
+**Matriz del Plan de Rastreo (Tracking Plan)**
+
+| ID Evento | Plataforma | Trigger (Disparador Técnico) | Propiedades / Contexto | KPI / Métrica Vinculada |
+| :--- | :--- | :--- | :--- | :--- |
+| admin_login_success | Web | Éxito en autenticación del administrador. | academy_id, role: admin | Frecuencia de uso del sistema. |
+| admin_enrollment_submit | Web | Clic exitoso en "Registrar Estudiante" (HTTP 200). | student_id, cycle_id | DBM-01 (Adopción de Matrícula). |
+| admin_invoice_create | Web | Envío completado del formulario "Crear Cuenta de Cobro".| invoice_id, total_amount | DBM-01 / DBM-03 (Uso de Facturación).|
+| admin_finance_entry_save| Web | Clic en guardar registro de ingreso/egreso en Finance. | entry_type (ingreso/egreso) | DBM-03 (Retención de uso financiero).|
+| admin_schedule_save | Web | Confirmación exitosa de asignación de horarios en grilla. | classroom_id, course_id | Adopción de flujos estructurales. |
+| umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
 
 ## 8.3. Experimentation 
 ### 8.3.1. To-Be User Stories
