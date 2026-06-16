@@ -12526,12 +12526,16 @@ Se recomienda priorizar la implementación de las funcionalidades más críticas
 
 Asimismo, se logro verificar la robustez de nuestras soluciones mediante las pruebas unitarias, integración,e2e y bdd.
 
+Para el AV2, el equipo realizó la etapa de experiment driven product development, donde logramos identificar la situación actual del proyecto y las pequeñas modificaciones que haríamos planteadas en las to-be user stories para poder mejorar la analítica del ecosistema demy y ver si las funcionalidades core son usadas por los usuarios.
+
 ### Recomendaciones
 
 Es crucial preparar los escenarios de validación con usuarios reales para contrastar las hipótesis planteadas y asegurar que la solución propuesta realmente satisface las necesidades del mercado, así como identificar posibles mejoras o ajustes necesarios.
 
 Además, se recomienda mantener la coherencia visual y de experiencia de usuario en todas las plataformas (web y móvil) para garantizar una experiencia fluida y agradable para los usuarios.
 Estas acciones permitirán aumentar la adopción y satisfacción de los usuarios con la plataforma Demy y acercarse al objetivo de transformar la gestión administrativa de las academias educativas en el Perú.
+
+Por otro lado, se recomienda realizar la parte de experiment driven product developemnt con casi o todo el equipo, ya que es una etapa que requiere muchas ideas, suposiciones del estado actual del proyecto y que modificaciones se realizaría para ver si hay cambios en la interacción del usuario con algunas funcionalidades.
 
 Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
 Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
