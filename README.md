@@ -49,7 +49,8 @@
 | 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
 | 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
 | 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
-| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   | 
+| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   |
+| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          | 
 
 <hr class="page-break">
 
@@ -10533,9 +10534,42 @@ deploy:
 
 ## 7.4. Continuous Monitoring 
 ### 7.4.1. Tools and Practices
+
+Para garantizar la alta disponibilidad, rendimiento y correcto funcionamiento del ecosistema digital de Demy (orientado a la gestión académica y financiera de academias preuniversitarias), se implementa una estrategia de monitoreo continuo basada en la observabilidad y proactividad.  
+**Herramientas Clave**
+- **Azure Application Insights /Azure Monitor** : Herramienta centralizada para la telemetría del backend en Azure, encargada de la recolección de logs, excepciones, tiempos de respuesta de las peticiones API y consumo de CPU/Memoria.
+
+- **Log Analytics Workspaces** : Espacio de trabajo en Azure utilizado para almacenar y consultar mediante KQL (Kusto Query Language) los datos agregados de telemetría.
+
+**Prácticas adoptadas**
+- **Monitoreo Transaccional Integral**: Seguimiento en tiempo real de los flujos críticos de Demy, tales como el procesamiento de cobros de pensiones (módulo financiero) y el registro de notas o asistencia (módulo académico).
+
+- **Análisis de Tasa de Errores (Error Rate)**: Revisión constante de la proporción de respuestas HTTP del backend en rangos 4xx (errores de cliente) y 5xx (errores de servidor).
+
+- **Monitoreo del lado del cliente(RUM)**: Recolección básica de excepciones de frontend en la aplicación web para identificar fallos en la experiencia de usuario de administradores y profesores.
+
 ### 7.4.2. Monitoring Pipeline Components
+
+Este componente describe el flujo de datos e infraestructura técnica encargada de la recolección, ingesta y almacenamiento de la telemetría del ecosistema Demy.
+* **Data Collection (Recolección):** Agentes ligeros e instrumentación de código integrados de forma nativa en la API REST de Azure capturan métricas y trazas operacionales de manera asíncrona, previniendo cualquier degradación del rendimiento en las operaciones académicas.
+* **Ingestion Pipeline (Ingesta):** Los logs generados por el servidor y el landing page se envían mediante canales de red seguros de forma continua y secuencial hacia los endpoints de Azure Monitor.
+* **Storage & Querying (Almacenamiento y Consulta):** Los datos estructurados son resguardados en una instancia dedicada de Log Analytics. A partir de esta base de datos, se generan tableros visuales interactivos (*Dashboards*) que visibilizan la salud global del sistema.
 ### 7.4.3. Alerting Pipeline Components 
+
+El componente de alertas evalúa las métricas capturadas por el pipeline de monitoreo e identifica de manera automatizada cualquier anomalía o desvío de los niveles de servicio aceptables. Utilizando **Azure Monitor Alerts**, se definen reglas basadas en umbrales estáticos y dinámicos:
+
+* **Regla de Alerta de Latencia en la API (Performance):** Si el percentil 95 ($P_{95}$) del tiempo de respuesta de los endpoints del backend supera los 2.0 segundos durante una ventana de evaluación de 5 minutos, se dispara la alerta debido al impacto negativo directo en la experiencia del profesor en aula.
+* **Regla de Alerta de Disponibilidad (Disponibilidad):** Si la tasa de respuestas HTTP `500` (*Internal Server Error*) excede el **5%** del volumen total de peticiones en un lapso móvil de 3 minutos, el sistema entra en estado de incidente prioritario.
+* **Regla de Alerta de Infraestructura (Recursos):** Activación de un disparador automático si el consumo de CPU o memoria en las instancias que alojan el backend de Demy supera el **85%** de su capacidad asignada de forma sostenida por más de 10 minutos.
+
 ### 7.4.4. Notification Pipeline Components
+Cuando el motor de alertas detecta el cumplimiento de alguna condición anómala, el componente de notificación se encarga de empaquetar el incidente, determinar su criticidad y distribuirlo inmediatamente a los canales adecuados del equipo de ingeniería de Demy.
+
+* **Action Groups (Grupos de Acción de Azure):** Mecanismo de configuración centralizado que intercepta el payload JSON generado por la alerta y ejecuta acciones automatizadas de salida.
+
+* **Canales de Notificación Utilizados:**
+    * **Webhook a Discord / Slack del Equipo:** Envío automático de notificaciones enriquecidas al canal de comunicación interna del equipo de desarrollo, detallando la estampa de tiempo, el servicio afectado (ej. *Módulo de Finanzas*) y un resumen descriptivo del fallo.
+    * **Alerta por Correo Electrónico (E-mail Alerts):** Envío formal de notificaciones directas a las bandejas del Administrador del Sistema y del Líder Técnico para incidentes críticos de Severidad Alta (Sev1/Sev2), asegurando el inicio inmediato de los protocolos de mitigación.
 
 <hr class="page-break">
 
