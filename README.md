@@ -10994,6 +10994,10 @@ El Broad Backlog contiene todas las preguntas identificadas, ordenadas por punta
 #### **Deep Backlog**
  
 El Deep Backlog presenta las **10 preguntas de mayor prioridad** con su ficha completa: motivación (el "por qué"), criterios de puntuación detallados y el método experimental recomendado para responderlas.
+
+En esta imagen se resumen y se observa de forma visual las 10 preguntas de mayor prioridad, siendo las de color azul las de tipo "BLQ" y las de color verde de tipo "EXQ". 
+![Matriz de las 10 preguntas de mayor prioridad](./assets/experiment-planning/matriz-preguntas-mayor-prioridad.png)
+
  
 #### #1 — BLQ-06 | Puntuación: 19
  
@@ -11411,8 +11415,7 @@ Esta sección define la preparación analítica para procesar la telemetría del
 Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
 
 **Esquema Técnico de Eventos (Ecosistema Demy)**
-[Cliente Web - Admin]   --> (Event: admin_enrollment_submit) --> [ Segment / Firebase ] --> BigQuery / Analytics
-[Cliente Web - Finance] --> (Event: admin_invoice_create)     --> [ Firebase Analytics ]
+![Flujo de eventos del ecosistema demy](./assets/experiment-planning/flujo-eventos-tracking-plan.png)
 
 **Matriz del Plan de Rastreo (Tracking Plan)**
 
