@@ -12337,9 +12337,91 @@ Plan técnico detallado para la inyección de componentes de captura de datos an
 | umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
 
 ## 8.3. Experimentation 
-### 8.3.1. To-Be User Stories
-### 8.3.2. To-Be Product Backlog
+Esta sección detalla la evolución del producto Demy a partir de las necesidades detectadas en la fase de diseño experimental. Para mitigar la "ceguera analítica" identificada en el estado actual, el backlog técnico del producto se reestructura incorporando modificaciones cortas y componentes de medición analítica in-app. Esto permite contrastar científicamente las hipótesis planteadas en las fases previas mediante el uso y comportamiento real del usuario.
 
+### 8.3.1. To-Be User Stories
+Las historias de usuario en la fase "To-Be" no son simples descripciones de requerimientos técnicos o funcionales tradicionales; ahora incorporan explícitamente el **componente de medición, el beneficio de negocio y la métrica de dominio (DBM)** esperada con su respectivo criterio de aceptación cuantitativo. 
+
+A continuación, se presentan las historias de usuario prioritarias diseñadas para viabilizar los experimentos de suficiencia y adopción operativa:
+
+<table width="100%">
+  <thead>
+    <tr style="background-color: #626e7a; color: white;">
+      <th style="padding: 10px;" width="15%">ID / Título</th>
+      <th style="padding: 10px;" width="45%">Estructura Gherkin / Narrativa</th>
+      <th style="padding: 10px;" width="25%">Métrica Core Vinculada</th>
+      <th style="padding: 10px;" width="15%">Criterio de Aceptación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-01<br><br>Medición in-app de Usabilidad (UMUX-Lite)</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Líder de Producto de Demy,<br>
+        <b>Quiero</b> desplegar una micro-encuesta interactiva automática al finalizar flujos operativos core,<br>
+        <b>Para</b> recolectar feedback cuantitativo inmediato sobre la utilidad y facilidad de uso del MVP.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que un administrador completa con éxito un registro de matrícula o de horarios,<br>
+        <b>When</b> el sistema procesa el flujo y muestra el mensaje de éxito,<br>
+        <b>Then</b> se despliega un pop-up modal no intrusivo con los 2 ítems de la escala UMUX-Lite (Likert 1-5).
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-07:</b> Puntuación de Facilidad de Uso.<br><br>
+        <b>Telemetría:</b> Evento <code>umux_survey_respond</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">El score consolidado del piloto debe ser mayor o igual al 75% de usabilidad positiva.</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-02<br><br>Centralización Operativa de Matrículas</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Personal Administrativo de la academia,<br>
+        <b>Quiero</b> procesar las inscripciones y asignaciones de alumnos de forma 100% digital,<br>
+        <b>Para</b> reducir el tiempo operativo manual por alumno y eliminar el uso de cuadernos y archivos Excel fragmentados.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que el administrador está en el módulo "Enrollment",<br>
+        <b>When</b> llena el formulario y presiona el botón "Registrar Estudiante",<br>
+        <b>Then</b> el sistema guarda al alumno en el periodo académico actual y dispara la telemetría en Azure.
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-01:</b> Tasa de Adopción Administrativa.<br><br>
+        <b>Telemetría:</b> Evento <code>admin_enrollment_submit</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">Al menos el 70% de las matrículas totales del ciclo deben ejecutarse digitalmente dentro de Demy.</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cuentas de Cobro</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Administrador Financiero de la academia,<br>
+        <b>Quiero</b> registrar de forma consecutiva e integrada las cuentas de cobro y egresos en la plataforma web,<br>
+        <b>Para</b> evaluar si el módulo de Finance genera el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que la academia inició su piloto operativo en producción,<br>
+        <b>When</b> los administradores registran ingresos/egresos diariamente durante 4 semanas,<br>
+        <b>Then</b> la telemetría audita las marcas de tiempo para calcular la retención del uso del sistema.
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-03:</b> Tasa de Retención Operativa.<br><br>
+        <b>Telemetría:</b> Eventos <code>admin_invoice_create</code> y <code>admin_finance_entry_save</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de facturación hasta la Semana 4.</td>
+    </tr>
+  </tbody>
+</table>
+
+### 8.3.2. To-Be Product Backlog
+El To-Be Product Backlog consolida el mapa de desarrollo modificado para los próximos micro-sprints del proyecto. A diferencia de un Scrum tradicional, la prioridad de los ítems está determinada bajo un enfoque científico: **se anteponen las modificaciones que inyectan telemetría y sensores analíticos** en la plataforma, garantizando que el equipo obtenga la data de eventos necesaria para evaluar las hipótesis nulas antes de realizar desarrollos masivos a ciegas.
+
+La priorización utiliza el sistema de puntuación XDPD (Confianza + Riesgo + Impacto + Interés), donde el mayor nivel de Riesgo actúa como criterio de desempate:
+
+| Prioridad | ID Ítem | Tipo de Tarea | Funcionalidad / Modificación Corta de Producto | Puntos XDPD | Justificación Metodológica (XDPD) |
+| :---: | :--- | :--- | :--- | :---: | :--- |
+| **01** | `TS-EXP-101` | Analítica In-App | Inyección de SDK analítico (Firebase/Segment) y trackers de eventos core de administración. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
+| **02** | `US-EXP-01` | Feature (Mejora) | Implementación de componente modal interactivo de encuesta de usabilidad (UMUX-Lite). | **19 / 20** | Permite medir la percepción de suficiencia del MVP (`EC-01`) directamente en el entorno de producción web de Azure. |
+| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al disparador del evento analítico de matrícula exitosa. | **18 / 20** | Necesario para evaluar de forma cuantitativa el indicador de adopción operativa del personal (`DBM-01`). |
+| **04** | `US-EXP-03` | Feature (Mejora) | Implementación de logs analíticos con marcas de tiempo en las transacciones contables del módulo de Finance. | **18 / 20** | Provee la granularidad analítica para vigilar la retención y recurrencia de uso semanal del cliente (`DBM-03`). |
+| **05** | `TS-EXP-102` | Spike Técnico | Configuración y despliegue de base de datos analítica en BigQuery/Azure para consolidar eventos del piloto. | **15 / 20** | Asegura que la data recolectada de forma limpia se consolide en repositorios listos para la fase de análisis estadístico. |
+
+Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avanzar basándose en opiniones o suposiciones intuitivas de la industria, obligando al pipeline de integración y despliegue continuo (CI/CD) a empaquetar una aplicación con alta madurez técnica pero, sobre todo, dotada de **luz analítica** para el negocio.
 
 <hr class="page-break">
 
