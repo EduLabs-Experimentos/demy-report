@@ -335,37 +335,75 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <tr>
             <td style="padding: 10px;"><strong> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </strong></td>
             <td style="padding: 10px;">
-                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.</p>
-                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.</p>
-                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.</p>
-                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.</p>
-                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.</p>
+                <p><strong>Daniel Crispin</strong><br> 
+                <strong>TB1:</strong><br>
+                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.<br>
+                <strong>AV2:</strong><br>
+                Llevé a cabo los procesos de Static Testing, Reviews y Verificaciones con rigurosidad profesional, asegurando de manera transparente y honesta la detección temprana de vulnerabilidades o fallos en el código para no comprometer la seguridad de los usuarios finales.</p>
+                <p><strong>Rafael Dominguez</strong><br> 
+                <strong>TB1:</strong><br>
+                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.<br>
+                <strong>AV2:</strong><br>
+                En el Experiment Planning, actué bajo principios de honestidad científica, estructurando hipótesis y métricas claras sin manipular los escenarios de prueba, garantizando un marco de experimentación transparente y responsable.</p>
+                <p><strong>Henry Esteban</strong><br> 
+                <strong>TB1:</strong><br>
+                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.<br>
+                <strong>AV2:</strong><br>
+                Durante las entrevistas de validación, mantuve un comportamiento profesional y respetuoso con los entrevistados, asegurando la confidencialidad de sus testimonios y recopilando feedback genuino sin inducir sesgos de manera poco ética.</p>
+                <p><strong>Renso Julca</strong><br> 
+                <strong>TB1:</strong><br>
+                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.<br>
+                <strong>AV2:</strong><br>
+                Al realizar la Auditoría UX, evalué la interfaz de forma objetiva, priorizando la accesibilidad y la inclusión de los usuarios, asumiendo la responsabilidad de evitar patrones oscuros (dark patterns) que pudieran engañar o perjudicar la experiencia del cliente.</p>
+                <p><strong>Diego Vilca</strong><br> 
+                <strong>TB1:</strong><br>
+                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.<br>
+                <strong>AV2:</strong><br>
+                Diseñé e implementé la estrategia de Continuous Monitoring y Experimentation bajo criterios de transparencia técnica, asegurando que el monitoreo de datos de uso respete la privacidad de los usuarios y que los experimentos reflejen el comportamiento real del sistema.</p>
             </td>
-            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
                 Como equipo, concluimos que desarrollar software profesional implica mucho más que programar. Reafirmamos nuestra responsabilidad ética al manejar datos sensibles (identidades, dinero, asistencias) aplicando seguridad, transparencia en nuestros acuerdos (SaaS) y garantizando que el código y los despliegues sean confiables y trazables para evitar fallos que afecten al usuario final.
+                <br><br>
+                <strong>AV2:</strong><br>
+                Para esta entrega, concluimos que la responsabilidad profesional se consolida mediante la verificación constante y la validación honesta de nuestro trabajo. La combinación de pruebas estáticas, monitoreo continuo, auditorías centradas en el usuario y experimentos transparentes nos permite asegurar la calidad del producto final, mostrando respeto por los estándares de ingeniería y por la confianza depositada por los usuarios.
             </td>
         </tr>
-                <tr>
-            <td style="padding: 10px;"><strong>  Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales .</strong></td>
+        <tr>
+            <td style="padding: 10px;"><strong> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales.</strong></td>
             <td style="padding: 10px;">
-                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).</p>
-                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.</p>
-                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.</p>
-                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.</p>
-                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).</p>
+                <p><strong>Daniel Crispin</strong><br> 
+                <strong>TB1:</strong><br>
+                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).<br>
+                <strong>AV2:</strong><br>
+                A través del Static Testing y las entrevistas de validación cruzadas, analicé cómo mitigar fallos tempranos en la aplicación previene reprocesos costosos, lo cual optimiza la inversión en el desarrollo del producto (impacto económico y social).</p>
+                <p><strong>Rafael Dominguez</strong><br> 
+                <strong>TB1:</strong><br>
+                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.<br>
+                <strong>AV2:</strong><br>
+                Al estructurar el Experiment Planning, evalué la viabilidad del negocio y el impacto de implementar nuevas características arquitectónicas, asegurando que las decisiones de ingeniería respondan a una demanda real del mercado global sin desperdiciar recursos.</p>
+                <p><strong>Henry Esteban</strong><br> 
+                <strong>TB1:</strong><br>
+                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.<br>
+                <strong>AV2:</strong><br>
+                Al co-conducir las entrevistas de validación, sinteticé las perspectivas socioeconómicas de los usuarios reales, validando directamente si los cambios propuestos en el producto generan un alivio verdadero en sus actividades cotidianas.</p>
+                <p><strong>Renso Julca</strong><br> 
+                <strong>TB1:</strong><br>
+                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.<br>
+                <strong>AV2:</strong><br>
+                Mediante la Auditoría UX, analicé el impacto social de la interfaz, asegurando que la navegación sea intuitiva y accesible para personas con distintos niveles de alfabetización digital, reduciendo así la brecha tecnológica de uso.</p>
+                <p><strong>Diego Vilca</strong><br> 
+                <strong>TB1:</strong><br>
+                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).<br>
+                <strong>AV2:</strong><br>
+                A través del Continuous Monitoring y Experiment Design, medí el impacto en el consumo de recursos de infraestructura en la nube. Esto nos ayuda a tomar decisiones orientadas a una ingeniería de software verde y eficiente, minimizando la huella ecológica del backend (impacto ambiental y económico).</p>
             </td>
-            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
                 Logramos comprender que nuestra startup tiene un impacto real en el entorno. Digitalizar matrículas, pagos y asistencias elimina el uso innecesario de papel (impacto ambiental), automatiza tareas pesadas permitiendo a las instituciones reducir costos (impacto económico) y hace que los usuarios finales ganen tiempo y comodidad en su día a día (impacto social).
+                <br><br>
+                <strong>AV2:</strong><br>
+                Concluimos que el proceso de validación, auditoría y monitoreo continuo nos otorga una visión empírica del impacto de nuestro software. Validar con usuarios reales y analizar métricas de rendimiento nos ayuda a iterar la solución con conciencia de su accesibilidad social, eficiencia de costos económicos y sostenibilidad ambiental mediante el control de recursos digitales en la nube.
             </td>
         </tr>
     </tbody>
@@ -11041,7 +11079,7 @@ Durante la auditoría se ejecutaron las siguientes tareas representativas del fl
 
 ---
 
-** Detalle de hallazgos**
+**Detalle de hallazgos**
 - **Hallazgo H-01**
 
 | Campo                   | Detalle                                                                                                                                                                                                                |
