@@ -34,19 +34,87 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Mayo 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
 
 <hr class="page-break">
 
 # Registro de Versiones del Informe
 
-| Versión | Fecha     | Autor         | Descripción de modificación                              |
-|---------|-----------|---------------|----------------------------------------------------------|
-| 1.0     | 3/05/2026 |  Diego Vilca  | Creación inicial de la estructura del informe            |
+| Versión | Fecha      | Autor               | Descripción de modificación                              |
+|---------|------------|---------------------|----------------------------------------------------------|
+| 1.0     | 3/05/2026  |  Diego Vilca        | Creación inicial de la estructura del informe            |
+| 2.0     | 4/05/2026  |  Diego Vilca        | Documentación del Chapter 2                              |
+| 3.0     | 6/05/2026  |  Rafael Dominguez   | Documentación del Chapter 3                              |
+| 4.0     | 7/05/2026  |  Daniel Crispin     | Documentación del Chapter 4                              |
+| 5.0     | 8/05/2026  |  Henry Esteban      | Documentación del Chapter 5                              |
+| 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
+| 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
+| 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   |
+| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          | 
 
 <hr class="page-break">
 
 # Project Report Collaboration Insights
+
+En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
+
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye enlace para acceder al repositorio para el reporte del proyecto. [Ver en Github](https://github.com/EduLabs-Experimentos/demy-report)
+
+Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
+
+| Integrantes                        | Nombre en GitHub |
+|------------------------------------|------------------|
+| Crispin Ramos, Daniel Franco       | danielcr04       |
+| Dominguez Vargas, Rafael Alexander | Radv2005         |
+| Esteban Roman, Henry Kalet         | kalet123-commit  |
+| Julca Cruz, Renso Anthony          | rajc02           |
+| Vilca Saboya, Diego Alejandro      | diesoks          |
+
+Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
+
+- **main:** Rama principal que contiene la versión estable y consolidada del documento.
+- **develop:** Rama de integración utilizada para fusionar los cambios realizados en las ramas de características.
+- **feature/nombre-tarea-realizada:** Ramas feature que se crean en base a la tarea/punto del reporte que se está trabajando.
+- **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
+- **hotfix/urgent-fix:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
+
+## TB1
+
+**Tareas**
+
+Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes | Tarea asignada |
+| :--- | :--- |
+| Crispin Ramos, Daniel Franco | - Registro de entrevistas <br> - Pruebas para el bounded context de IAM y Scheduling <br> - Actualizar Lean UX Canvas <br> - Sprint Backlogs <br> - Codificación del web application |
+| Dominguez Vargas, Rafael | - Registro de entrevistas <br> - As-is Scenario Mapping <br> - To-be Scenario <br> - Domain Driven Software Architecture <br> - Product Backlog <br> - Pruebas para el bounded context de Enrollment <br> - Evidencia de las soluciones móviles |
+| Esteban Roman, Henry Kalet | - Crearle un logo a la startup <br> - Registro de entrevistas <br> - Impact mapping <br> - Software Oriented and Database Design <br> - Restful API Documentation <br> - Pruebas para el bounded context de attendance |
+| Julca, Renso | - Actualizar user stories <br> - Registro de entrevistas <br> - Acuerdo de Servicio - SaaS <br> - Desplegar Landing Page <br> - Pruebas para el bounded context de Finance <br> - Video About the Product |
+| Vilca Saboya, Diego Alejandro | - Actualizar perfil de integrantes <br> - Continuous Delivery, Continuous Deployment <br> - Pruebas para el bounded context de Institution <br> - Registro de entrevistas <br> - Product Design y codificación de la app web <br> - Software Configuration Management <br> - Team Collaboration Insights <br> - Continuous Integration |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados.  
+Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, adaptado para una organización que utiliza un sistema de control de versiones.  
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/team-collaboration-insights/report/tb1/tb1-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/team-collaboration-insights/report/tb1/tb1-pulse.png)
+
+</div>
 
 <hr class="page-break">
 
@@ -147,6 +215,25 @@
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
     - [6.1.4. Core System Tests](#614-core-system-tests)
+  - [6.2. Static testing & Verification](#62-static-testing--verification)
+    - [6.2.1. Static Code Analysis ](#621-static-code-analysis)
+      - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
+      - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
+    - [6.2.2. Reviews ](#622-reviews)
+  - [6.3. Validation Interviews.](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
+    - [6.4.1. Auditoría realizada.](#641-auditoría-realizada)
+      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
+      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
+      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
+      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
+      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
+      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
   - [7.1. Continuous Integration](#71-continuous-integration)
@@ -158,6 +245,36 @@
   - [7.3. Continuous Deployment](#73-continuous-deployment)
     - [7.3.1. Tools and Practices](#731-tools-and-practices)
     - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
+  - [7.4. Continuous Monitoring ](#74-continuous-monitoring)
+    - [7.4.1. Tools and Practices](#741-tools-and-practices)
+    - [7.4.2. Monitoring Pipeline Components ](#742-monitoring-pipeline-components)
+    - [7.4.3. Alerting Pipeline Components ](#743-alerting-pipeline-components)
+    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+
+- [Capítulo VIII: Experiment-Driven Development ](#capítulo-viii-experiment-driven-development)
+  - [8.1. Experiment Planning ](#81-experiment-planning)
+    - [8.1.1. As-Is Summary](#811-as-is-summary)
+    - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
+    - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+    - [8.1.4. Question Backlog](#814-question-backlog)
+    - [8.1.5. Experiment Cards](#815-experiment-cards)
+  - [8.2. Experiment Design](#82-experiment-design)
+    - [8.2.1. Hypotheses](#821-hypotheses)
+    - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+    - [8.2.3. Measures](#823-measures)
+    - [8.2.4. Conditions](#824-conditions)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+    - [8.2.6. Methods Selection](#826-methods-selection)
+    - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
+    - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+  - [8.3. Experimentation ](#83-experimentation)
+    - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
+    - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+
+
+- [Conclusiones](#conclusiones)
+- [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
 
 
 <hr class="page-break">
@@ -179,36 +296,36 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
             <td style="padding: 10px;"><strong> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </strong></td>
             <td style="padding: 10px;">
                 <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.</p>
                 <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.</p>
                 <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                ...</p>
+                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.</p>
                 <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.</p>
                 <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
-                Como equipo,.....
+                Como equipo, concluimos que desarrollar software profesional implica mucho más que programar. Reafirmamos nuestra responsabilidad ética al manejar datos sensibles (identidades, dinero, asistencias) aplicando seguridad, transparencia en nuestros acuerdos (SaaS) y garantizando que el código y los despliegues sean confiables y trazables para evitar fallos que afecten al usuario final.
             </td>
         </tr>
                 <tr>
             <td style="padding: 10px;"><strong>  Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales .</strong></td>
             <td style="padding: 10px;">
                 <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).</p>
                 <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.</p>
                 <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                ...</p>
+                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.</p>
                 <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.</p>
                 <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                ....</p>
+                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
-                Logramos ....
+                Logramos comprender que nuestra startup tiene un impacto real en el entorno. Digitalizar matrículas, pagos y asistencias elimina el uso innecesario de papel (impacto ambiental), automatiza tareas pesadas permitiendo a las instituciones reducir costos (impacto económico) y hace que los usuarios finales ganen tiempo y comodidad en su día a día (impacto social).
             </td>
         </tr>
     </tbody>
@@ -233,12 +350,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-daniel.png" alt="daniel_photo"  width="520"></img>
+      <img src="assets/images/team-members/daniel.png" alt="daniel_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Daniel Crispin - U20221g120 </strong></p>
           <p align="justify">
-            .....
+            Estudiante de 7° ciclo. Conocimiento en bases de datos y gestión de proyectos. Experiencia en interfaces de usuario y soluciones para la administración educativa.
           </p>
     </td>
   </tr>
@@ -247,12 +364,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-rafael.png" alt="rafael_photo"  width="520"></img>
+      <img src="assets/images/team-members/rafael.png" alt="rafael_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Rafel Dominguez - U202312318</strong></p>
           <p align="justify">
-            .....
+             Estudiante de 7° ciclo. Conocimiento en bases de datos relacionales y validación de requisitos. Experiencia en análisis de necesidades de usuario y desarrollo frontend
           </p>
     </td>
   </tr>
@@ -261,12 +378,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="img/profile-photos/member-kalet.png" alt="kalet_photo"  width="520"></img>
+      <img src="assets/images/team-members/kalet.png" alt="kalet_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Henry Esteban - U202310210</strong></p>
           <p align="justify">
-            ....
+            Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales.
           </p>
     </td>
   </tr>
@@ -275,12 +392,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-renso.png" alt="renso_photo"  width="520"></img>
+      <img src="assets/images/team-members/renso.png" alt="renso_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Renso Julca - U202121579</strong></p>
           <p align="justify">
-             ...
+             Soy Renso Anthony Julca Cruz estudiante de Ingenieria de Software, actualmente curso el 7mo ciclo de esta carrera. Me gusta ser autodidacta para poder mejorar mis habilidades en el desarrollo de software, quisiera dedicarme a la parte de gestion bancaria, o la parte de data analyst.
           </p>
     </td>
   </tr>
@@ -288,12 +405,12 @@ La startup **EduLabs**, es un equipo conformado por estudiantes de la carrera de
 <table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
   <tr>
     <td style="width: 150px; text-align: center;">
-      <img src="assets/images/photos/member-diego.png" alt="diego_photo"  width="520"></img>
+      <img src="assets/images/team-members/diego.jpeg" alt="diego_photo"  width="520"></img>
     </td>
       <td>
           <p align="center"><strong>Diego Vilca - u20231a778</strong></p>
           <p align="justify">
-             Mi nombre es Diego Vilca, tengo 20 años y actualmente me encuentro cursando el 7mo ciclo de la carrera de Ingeniería de Software en la UPC. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
+             Hola soy Diego Vilca  y estudio la carrera de Ingeniería de Software en la UPC donde actualmente me encuentro en el 7mo ciclo. Tengo experiencia en desarollo web y móvil, metodologías ágiles, UX, Domain Driven Design y Git. Me considero alguien comunicativo, comprometido y con muchas ganas de aprender y dar lo mejor de si para entregar un buen proyecto.
           </p>
     </td>
   </tr>
@@ -713,7 +830,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Masculino |
 | **Distrito** | Lima |
 | **Ocupación** | Coordinador de Academia |
-| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Fecha de entrevista** | 08 de mayo de 2026 |
 | **Timing** | 00:00 - 07:42 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista1.png) |
@@ -730,7 +847,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Femenino |
 | **Distrito** | Lima |
 | **Ocupación** | Coordinador de Academia |
-| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Fecha de entrevista** | 08 de mayo de 2026 |
 | **Timing** | 07:43 - 12:39 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista2.png) |
@@ -747,7 +864,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Femenino |
 | **Distrito** | Ica |
 | **Ocupación** | Coordinadora de Academia |
-| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Fecha de entrevista** | 08 de mayo de 2026 |
 | **Timing** | 12:40 - 17:36 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista3.png) |
@@ -764,7 +881,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Masculino |
 | **Distrito** | Lima |
 | **Ocupación** | Profesor de Academia |
-| **Fecha de entrevista** | 05 de mayo de 2025 |
+| **Fecha de entrevista** | 05 de mayo de 2026 |
 | **Timing** | 17:37 - 22:59 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista4.jpg) |
@@ -781,7 +898,7 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Masculino |
 | **Distrito** | La Molina |
 | **Ocupación** | Docente de Círculos de estudio en la Universidad Agraria |
-| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Fecha de entrevista** | 08 de mayo de 2026 |
 | **Timing** | 23:00 - 35:16 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista5.png) |
@@ -798,14 +915,14 @@ Para diseñar las entrevistas, se elaboraron dos bloques de preguntas, diferenci
 | **Sexo** | Masculino |
 | **Distrito** | Ica |
 | **Ocupación** | Coordinadora de Academia |
-| **Fecha de entrevista** | 08 de mayo de 2025 |
+| **Fecha de entrevista** | 08 de mayo de 2026 |
 | **Timing** | 35:16 - 40:44 |
 | **Video** | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQB2UZfOcnYTRa5SisnXZ3Y8AQy36WKrXlnOfu15lgjOyJM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nnfb1x) |
 | **Captura** | ![Captura](./assets/entrevista/Entrevista6.png) |
 | **Resumen** | La entrevistada señaló que actualmente la gestión académica y administrativa en academias suele depender de registros manuales y herramientas dispersas, lo que dificulta el control eficiente de asistencia, pagos y seguimiento de alumnos. Considera importante implementar una plataforma digital centralizada que permita optimizar estos procesos, mejorar la organización y reducir errores operativos. Además, destacó la necesidad de que la herramienta sea intuitiva, rápida y accesible desde distintos dispositivos para facilitar su adopción por parte de profesores y administrativos. |
 ### 2.2.3. Análisis de entrevistas
 
-Las entrevistas se realizaron durante mayo de 2025 a un total de seis participantes: tres administrativos/coordinadores de academias y tres docentes de academias y círculos de estudio en Lima e Ica. El objetivo fue comprender sus procesos actuales de gestión, identificar problemas frecuentes en la administración académica y validar la necesidad de una solución digital centralizada.
+Las entrevistas se realizaron durante mayo de 2026 a un total de seis participantes: tres administrativos/coordinadores de academias y tres docentes de academias y círculos de estudio en Lima e Ica. El objetivo fue comprender sus procesos actuales de gestión, identificar problemas frecuentes en la administración académica y validar la necesidad de una solución digital centralizada.
 
 ---
 
@@ -815,7 +932,7 @@ Las entrevistas se realizaron durante mayo de 2025 a un total de seis participan
 **Edades:** 24, 26 y 28 años  
 **Distritos:** Lima, La Molina e Ica  
 **Instituciones:** Academias preuniversitarias y círculos de estudio universitarios  
-**Fechas:** 05 y 08 de mayo de 2025  
+**Fechas:** 05 y 08 de mayo de 2026  
 
 #### Características objetivas
 
@@ -842,7 +959,7 @@ Las entrevistas se realizaron durante mayo de 2025 a un total de seis participan
 **Edades:** 21, 28 y 28 años  
 **Distritos:** Lima e Ica  
 **Instituciones:** Academia Enigmas y academias particulares  
-**Fechas:** 08 de mayo de 2025  
+**Fechas:** 08 de mayo de 2026  
 
 #### Características objetivas
 
@@ -1058,7 +1175,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Registro de Academia</td>
 <td>Como administrador, quiero registrar una nueva academia para poder gestionar sus miembros.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador cuenta con los permisos necesarios de registro<br>Cuando envía los datos correspondientes de una nueva academia en formato válido<br>Entonces el sistema registra la institución exitosamente en la base de datos y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador cuenta con los permisos necesarios de registro<br>Cuando envía información incompleta o con datos inválidos sobre la nueva academia<br>Entonces el sistema rechaza el proceso e indica los errores específicos encontrados.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un administrador cuenta con los permisos necesarios de registro<br><b>When</b> envía los datos correspondientes de una nueva academia en formato válido<br><b>Then</b> el sistema registra la institución exitosamente en la base de datos y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un administrador cuenta con los permisos necesarios de registro<br><b>When</b> envía información incompleta o con datos inválidos sobre la nueva academia<br><b>Then</b> el sistema rechaza el proceso e indica los errores específicos encontrados.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1067,7 +1184,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Academia</td>
 <td>Como administrador, quiero actualizar la información de una academia existente para mantener los datos al día.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona una institución previamente registrada<br>Cuando modifica y envía los datos con nueva información válida<br>Entonces el sistema procesa la modificación y actualiza el registro institucional.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona una institución previamente registrada<br>Cuando envía los datos omitiendo información obligatoria<br>Entonces el sistema deniega la actualización y muestra un indicador de campos faltantes.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador selecciona una institución previamente registrada<br><b>When</b> modifica y envía los datos con nueva información válida<br><b>Then</b> el sistema procesa la modificación y actualiza el registro institucional.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador selecciona una institución previamente registrada<br><b>When</b> envía los datos omitiendo información obligatoria<br><b>Then</b> el sistema deniega la actualización y muestra un indicador de campos faltantes.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1076,7 +1193,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Academia</td>
 <td>Como administrador, quiero eliminar una academia existente para deshacerme de una institución que ya no gestiono.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador solicita la eliminación de una academia existente<br>Cuando confirma definitivamente la orden de eliminación del registro<br>Entonces el sistema borra la institución del ecosistema y de los registros principales.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador solicita la eliminación de una academia existente<br>Cuando declina u omite la orden definitiva de eliminación<br>Entonces el sistema suspende la acción y conserva la institución sin alteraciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador solicita la eliminación de una academia existente<br><b>When</b> confirma definitivamente la orden de eliminación del registro<br><b>Then</b> el sistema borra la institución del ecosistema y de los registros principales.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador solicita la eliminación de una academia existente<br><b>When</b> declina u omite la orden definitiva de eliminación<br><b>Then</b> el sistema suspende la acción y conserva la institución sin alteraciones.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1085,7 +1202,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Registro de Profesor</td>
 <td>Como administrador, quiero registrar un nuevo profesor para poder asignarlo a clases y gestionar su información.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador solicita el registro de un nuevo docente<br>Cuando envía las credenciales y datos válidos exigidos para el profesor<br>Entonces el sistema añade al profesor a la academia y confirma la creación del perfil.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador solicita el registro de un nuevo docente<br>Cuando envía los datos con información incorrecta o ya existente<br>Entonces el sistema bloquea el registro y notifica la incongruencia en los datos aportados.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un administrador solicita el registro de un nuevo docente<br><b>When</b> envía las credenciales y datos válidos exigidos para el profesor<br><b>Then</b> el sistema añade al profesor a la academia y confirma la creación del perfil.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un administrador solicita el registro de un nuevo docente<br><b>When</b> envía los datos con información incorrecta o ya existente<br><b>Then</b> el sistema bloquea el registro y notifica la incongruencia en los datos aportados.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1094,7 +1211,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Profesor</td>
 <td>Como administrador, quiero actualizar la información de un profesor existente para mantener los datos actualizados.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona el perfil de un docente existente<br>Cuando modifica y envía los datos requeridos con información válida<br>Entonces el sistema procesa los cambios y refleja la información actualizada del profesor.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona el perfil de un docente existente<br>Cuando envía los datos con información en formato inválido<br>Entonces el sistema rechaza los cambios e indica las fallas específicas en la información enviada.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador selecciona el perfil de un docente existente<br><b>When</b> modifica y envía los datos requeridos con información válida<br><b>Then</b> el sistema procesa los cambios y refleja la información actualizada del profesor.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador selecciona el perfil de un docente existente<br><b>When</b> envía los datos con información en formato inválido<br><b>Then</b> el sistema rechaza los cambios e indica las fallas específicas en la información enviada.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1103,7 +1220,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Profesor</td>
 <td>Como administrador, quiero eliminar un profesor existente para deshacerme de un docente que ya no forma parte de la academia.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con el perfil de un profesor registrado<br>Cuando confirma la orden explícita de eliminación de dicho usuario<br>Entonces el sistema retira al docente de la academia de manera exitosa.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con el perfil de un profesor registrado<br>Cuando declina la orden explícita de eliminación antes de que sea procesada<br>Entonces el sistema conserva la cuenta del docente activa y sin modificaciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador interactúa con el perfil de un profesor registrado<br><b>When</b> confirma la orden explícita de eliminación de dicho usuario<br><b>Then</b> el sistema retira al docente de la academia de manera exitosa.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador interactúa con el perfil de un profesor registrado<br><b>When</b> declina la orden explícita de eliminación antes de que sea procesada<br><b>Then</b> el sistema conserva la cuenta del docente activa y sin modificaciones.</td>
 <td>Alta</td>
 <td>EP001</td>
 </tr>
@@ -1121,7 +1238,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Registro de Inscripción</td>
 <td>Como administrador, quiero registrar una inscripción en un periodo académico para habilitar el acceso a las clases correspondientes.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos válidos para una nueva inscripción en un periodo activo<br>Entonces el sistema registra la inscripción correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos de inscripción con información incompleta o referenciando cursos no disponibles<br>Entonces el sistema rechaza el registro y notifica los campos incorrectos.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un administrador cuenta con los permisos de gestión<br><b>When</b> envía los datos válidos para una nueva inscripción en un periodo activo<br><b>Then</b> el sistema registra la inscripción correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un administrador cuenta con los permisos de gestión<br><b>When</b> envía los datos de inscripción con información incompleta o referenciando cursos no disponibles<br><b>Then</b> el sistema rechaza el registro y notifica los campos incorrectos.</td>
 <td>Alta</td>
 <td>EP002</td>
 </tr>
@@ -1130,7 +1247,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Inscripción</td>
 <td>Como administrador, quiero actualizar la información de una inscripción existente para corregir datos o cambiar el estado del registro.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un registro de inscripción existente<br>Cuando modifica y envía los datos con información válida<br>Entonces el sistema actualiza el registro correctamente y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un registro de inscripción existente<br>Cuando envía modificaciones con información inválida o periodos inexistentes<br>Entonces el sistema rechaza los cambios e indica las fallas específicas encontradas.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador selecciona un registro de inscripción existente<br><b>When</b> modifica y envía los datos con información válida<br><b>Then</b> el sistema actualiza el registro correctamente y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador selecciona un registro de inscripción existente<br><b>When</b> envía modificaciones con información inválida o periodos inexistentes<br><b>Then</b> el sistema rechaza los cambios e indica las fallas específicas encontradas.</td>
 <td>Alta</td>
 <td>EP002</td>
 </tr>
@@ -1139,7 +1256,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Cancelación de Inscripción</td>
 <td>Como administrador, quiero cancelar una inscripción activa para gestionar bajas o cambios en el registro del ciclo académico.</td>
-<td><b>Escenario 1: Cancelación exitosa</b><br>Dado que un administrador interactúa con un registro de inscripción activo<br>Cuando confirma la orden explícita de cancelación<br>Entonces el sistema anula la inscripción y actualiza su estado en la base de datos de manera exitosa.<br><br><b>Escenario 2: Declinación de cancelación</b><br>Dado que un administrador interactúa con un registro de inscripción activo<br>Cuando declina u omite la orden de cancelación antes de su procesamiento<br>Entonces el sistema conserva la inscripción activa y sin aplicar modificaciones.</td>
+<td><b>Escenario 1: Cancelación exitosa</b><br><b>Given</b> que un administrador interactúa con un registro de inscripción activo<br><b>When</b> confirma la orden explícita de cancelación<br><b>Then</b> el sistema anula la inscripción y actualiza su estado en la base de datos de manera exitosa.<br><br><b>Escenario 2: Declinación de cancelación</b><br><b>Given</b> que un administrador interactúa con un registro de inscripción activo<br><b>When</b> declina u omite la orden de cancelación antes de su procesamiento<br><b>Then</b> el sistema conserva la inscripción activa y sin aplicar modificaciones.</td>
 <td>Alta</td>
 <td>EP002</td>
 </tr>
@@ -1159,7 +1276,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Profesor</td>
 <td>Registro de Asistencia</td>
 <td>Como profesor, quiero registrar la asistencia en mis clases para llevar un control preciso y facilitar la gestión académica.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un profesor cuenta con una sesión de clase asignada<br>Cuando marca el registro de participación y envía la información validada<br>Entonces el sistema guarda la asistencia correctamente y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un profesor cuenta con una sesión de clase asignada<br>Cuando intenta enviar el registro vacío sin indicar la participación en la sesión<br>Entonces el sistema rechaza la acción y solicita que se registre al menos un marcador de presencia.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un profesor cuenta con una sesión de clase asignada<br><b>When</b> marca el registro de participación y envía la información validada<br><b>Then</b> el sistema guarda la asistencia correctamente y emite un mensaje de éxito.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un profesor cuenta con una sesión de clase asignada<br><b>When</b> intenta enviar el registro vacío sin indicar la participación en la sesión<br><b>Then</b> el sistema rechaza la acción y solicita que se registre al menos un marcador de presencia.</td>
 <td>Alta</td>
 <td>EP003</td>
 </tr>
@@ -1168,7 +1285,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Profesor</td>
 <td>Actualización de Asistencia</td>
 <td>Como profesor, quiero actualizar los registros de asistencia para corregir errores o reflejar cambios en la participación real.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un profesor revisa un registro de asistencia previo<br>Cuando modifica y envía las participaciones actualizadas<br>Entonces el sistema guarda los cambios y confirma la actualización.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un profesor revisa un registro de asistencia previo<br>Cuando intenta enviar modificaciones sin realizar alteraciones a la información original<br>Entonces el sistema deniega la acción indicando que no hay cambios nuevos para procesar.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un profesor revisa un registro de asistencia previo<br><b>When</b> modifica y envía las participaciones actualizadas<br><b>Then</b> el sistema guarda los cambios y confirma la actualización.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un profesor revisa un registro de asistencia previo<br><b>When</b> intenta enviar modificaciones sin realizar alteraciones a la información original<br><b>Then</b> el sistema deniega la acción indicando que no hay cambios nuevos para procesar.</td>
 <td>Alta</td>
 <td>EP003</td>
 </tr>
@@ -1177,7 +1294,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Profesor</td>
 <td>Visualización de Reportes de Asistencia</td>
 <td>Como profesor, quiero visualizar reportes de asistencia para analizar patrones y tomar decisiones informadas sobre la gestión académica.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un profesor requiere un informe de participaciones<br>Cuando solicita el reporte enviando los parámetros de un periodo válido<br>Entonces el sistema procesa los datos y retorna el informe de asistencia correspondiente.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un profesor requiere un informe de participaciones<br>Cuando solicita el reporte de un periodo que aún no cuenta con datos registrados<br>Entonces el sistema detiene la generación y notifica que no existe información disponible para ese rango.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un profesor requiere un informe de participaciones<br><b>When</b> solicita el reporte enviando los parámetros de un periodo válido<br><b>Then</b> el sistema procesa los datos y retorna el informe de asistencia correspondiente.<br><br><b>Escenario 2: Error por falta de datos</b><br><b>Given</b> que un profesor requiere un informe de participaciones<br><b>When</b> solicita el reporte de un periodo que aún no cuenta con datos registrados<br><b>Then</b> el sistema detiene la generación y notifica que no existe información disponible para ese rango.</td>
 <td>Media</td>
 <td>EP003</td>
 </tr>
@@ -1195,7 +1312,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Creación de Periodo Académico</td>
 <td>Como administrador, quiero crear un nuevo periodo académico para organizar las clases y registros correspondientes.</td>
-<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía los datos válidos para un nuevo periodo académico<br>Entonces el sistema registra el periodo correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en la creación</b><br>Dado que un administrador cuenta con los permisos de gestión<br>Cuando envía datos con fechas inconsistentes o incompletas<br>Entonces el sistema rechaza la creación e indica los campos incorrectos.</td>
+<td><b>Escenario 1: Creación exitosa</b><br><b>Given</b> que un administrador cuenta con los permisos de gestión<br><b>When</b> envía los datos válidos para un nuevo periodo académico<br><b>Then</b> el sistema registra el periodo correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en la creación</b><br><b>Given</b> que un administrador cuenta con los permisos de gestión<br><b>When</b> envía datos con fechas inconsistentes o incompletas<br><b>Then</b> el sistema rechaza la creación e indica los campos incorrectos.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1204,7 +1321,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Periodo Académico</td>
 <td>Como administrador, quiero actualizar la información de un periodo académico existente para mantener los datos vigentes.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un periodo registrado<br>Cuando envía las modificaciones con información válida<br>Entonces el sistema actualiza el registro del periodo y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un periodo registrado<br>Cuando envía modificaciones con información inválida o fechas que se solapan<br>Entonces el sistema rechaza los cambios e informa los errores.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador selecciona un periodo registrado<br><b>When</b> envía las modificaciones con información válida<br><b>Then</b> el sistema actualiza el registro del periodo y emite una confirmación.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador selecciona un periodo registrado<br><b>When</b> envía modificaciones con información inválida o fechas que se solapan<br><b>Then</b> el sistema rechaza los cambios e informa los errores.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1213,7 +1330,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Periodo Académico</td>
 <td>Como administrador, quiero eliminar un periodo académico existente para retirar aquellos que ya no son relevantes en el sistema.</td>
-<td><b>Escenario 1: Elminación exitosa</b><br>Dado que un administrador solicita eliminar un periodo académico<br>Cuando confirma explícitamente la acción de eliminación<br>Entonces el sistema elimina el periodo y emite un mensaje de éxito.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador solicita eliminar un periodo académico<br>Cuando declina la acción antes de que sea procesada<br>Entonces el sistema conserva el periodo sin aplicar modificaciones.</td>
+<td><b>Escenario 1: Elminación exitosa</b><br><b>Given</b> que un administrador solicita eliminar un periodo académico<br><b>When</b> confirma explícitamente la acción de eliminación<br><b>Then</b> el sistema elimina el periodo y emite un mensaje de éxito.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador solicita eliminar un periodo académico<br><b>When</b> declina la acción antes de que sea procesada<br><b>Then</b> el sistema conserva el periodo sin aplicar modificaciones.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1222,7 +1339,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Creación de Salones de Clase</td>
 <td>Como administrador, quiero crear nuevos salones de clase para organizar los espacios físicos disponibles en la institución.</td>
-<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador cuenta con los permisos requeridos para gestionar espacios<br>Cuando envía los datos válidos de un nuevo salón de clase<br>Entonces el sistema registra el salón exitosamente en la base de datos.<br><br><b>Escenario 2: Error en la creación</b><br>Dado que un administrador cuenta con los permisos requeridos para gestionar espacios<br>Cuando envía los datos de un salón con información inválida o capacidad negativa<br>Entonces el sistema rechaza el registro e informa los campos incorrectos.</td>
+<td><b>Escenario 1: Creación exitosa</b><br><b>Given</b> que un administrador cuenta con los permisos requeridos para gestionar espacios<br><b>When</b> envía los datos válidos de un nuevo salón de clase<br><b>Then</b> el sistema registra el salón exitosamente en la base de datos.<br><br><b>Escenario 2: Error en la creación</b><br><b>Given</b> que un administrador cuenta con los permisos requeridos para gestionar espacios<br><b>When</b> envía los datos de un salón con información inválida o capacidad negativa<br><b>Then</b> el sistema rechaza el registro e informa los campos incorrectos.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1231,7 +1348,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Salones de Clase</td>
 <td>Como administrador, quiero actualizar la información de un salón de clase existente para mantener los datos de infraestructura al día.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador selecciona un salón de clase registrado<br>Cuando modifica y envía los datos con información válida<br>Entonces el sistema procesa la modificación y actualiza el registro correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador selecciona un salón de clase registrado<br>Cuando envía modificaciones omitiendo campos obligatorios<br>Entonces el sistema rechaza los cambios e indica la información faltante.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador selecciona un salón de clase registrado<br><b>When</b> modifica y envía los datos con información válida<br><b>Then</b> el sistema procesa la modificación y actualiza el registro correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador selecciona un salón de clase registrado<br><b>When</b> envía modificaciones omitiendo campos obligatorios<br><b>Then</b> el sistema rechaza los cambios e indica la información faltante.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1240,7 +1357,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Salones de Clase</td>
 <td>Como administrador, quiero eliminar un salón de clase existente para retirar espacios físicos que ya no están operativos en la institución.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador requiere eliminar un salón de clase<br>Cuando confirma definitivamente la orden de eliminación<br>Entonces el sistema borra el salón de los registros permanentemente.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador requiere eliminar un salón de clase<br>Cuando declina la orden de eliminación antes de ser procesada<br>Entonces el sistema conserva el salón sin realizar modificaciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador requiere eliminar un salón de clase<br><b>When</b> confirma definitivamente la orden de eliminación<br><b>Then</b> el sistema borra el salón de los registros permanentemente.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador requiere eliminar un salón de clase<br><b>When</b> declina la orden de eliminación antes de ser procesada<br><b>Then</b> el sistema conserva el salón sin realizar modificaciones.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1249,7 +1366,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Creación de Horarios</td>
 <td>Como administrador, quiero crear horarios de clase para organizar las sesiones académicas y asignar a los docentes correspondientes.</td>
-<td><b>Escenario 1: Creación exitosa</b><br>Dado que un administrador organiza la programación académica<br>Cuando envía los datos válidos para un nuevo horario sin solapamientos<br>Entonces el sistema genera el horario exitosamente en la base de datos.<br><br><b>Escenario 2: Error por conflicto de horarios</b><br>Dado que un administrador organiza la programación académica<br>Cuando envía los datos de un horario que presenta cruces con otros registros de profesores o salones<br>Entonces el sistema rechaza la creación y notifica el conflicto específico detectado.</td>
+<td><b>Escenario 1: Creación exitosa</b><br><b>Given</b> que un administrador organiza la programación académica<br><b>When</b> envía los datos válidos para un nuevo horario sin solapamientos<br><b>Then</b> el sistema genera el horario exitosamente en la base de datos.<br><br><b>Escenario 2: Error por conflicto de horarios</b><br><b>Given</b> que un administrador organiza la programación académica<br><b>When</b> envía los datos de un horario que presenta cruces con otros registros de profesores o salones<br><b>Then</b> el sistema rechaza la creación y notifica el conflicto específico detectado.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1258,7 +1375,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Horarios</td>
 <td>Como administrador, quiero actualizar un horario existente para ajustarlo ante imprevistos o cambios de planificación institucional.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador accede a un horario previamente establecido<br>Cuando envía nuevos datos válidos que no generan conflicto con otras sesiones<br>Entonces el sistema procesa los cambios y actualiza la programación del horario.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador accede a un horario previamente establecido<br>Cuando envía nuevos datos que generan un cruce de horarios<br>Entonces el sistema bloquea la actualización y muestra un mensaje advirtiendo el conflicto.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador accede a un horario previamente establecido<br><b>When</b> envía nuevos datos válidos que no generan conflicto con otras sesiones<br><b>Then</b> el sistema procesa los cambios y actualiza la programación del horario.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador accede a un horario previamente establecido<br><b>When</b> envía nuevos datos que generan un cruce de horarios<br><b>Then</b> el sistema bloquea la actualización y muestra un mensaje advirtiendo el conflicto.</td>
 <td>Media</td>
 <td>EP004</td>
 </tr>
@@ -1267,7 +1384,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Horarios</td>
 <td>Como administrador, quiero eliminar un horario existente para retirar una programación que ya no se ejecutará.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador gestiona los horarios activos<br>Cuando emite la orden definitiva de eliminar un horario específico<br>Entonces el sistema retira la programación de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador gestiona los horarios activos<br>Cuando declina o cancela la eliminación del horario<br>Entonces el sistema mantiene el horario intacto sin aplicar modificaciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador gestiona los horarios activos<br><b>When</b> emite la orden definitiva de eliminar un horario específico<br><b>Then</b> el sistema retira la programación de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador gestiona los horarios activos<br><b>When</b> declina o cancela la eliminación del horario<br><b>Then</b> el sistema mantiene el horario intacto sin aplicar modificaciones.</td>
 <td>Media</td>
 <td>EP004</td>
 <tr>
@@ -1284,7 +1401,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Generación de Boletas de Pago</td>
 <td>Como administrador, quiero generar boletas de pago para las inscripciones registradas para facilitar el proceso de cobro y seguimiento financiero.</td>
-<td><b>Escenario 1: Generación exitosa</b><br>Dado que un administrador gestiona la facturación de las inscripciones<br>Cuando envía los parámetros requeridos para emitir un comprobante<br>Entonces el sistema genera la boleta de pago correctamente y confirma la operación.<br><br><b>Escenario 2: Error en la generación</b><br>Dado que un administrador gestiona la facturación de las inscripciones<br>Cuando solicita emitir un comprobante para una cuenta inactiva o con datos faltantes<br>Entonces el sistema rechaza la solicitud e indica el motivo del fallo.</td>
+<td><b>Escenario 1: Generación exitosa</b><br><b>Given</b> que un administrador gestiona la facturación de las inscripciones<br><b>When</b> envía los parámetros requeridos para emitir un comprobante<br><b>Then</b> el sistema genera la boleta de pago correctamente y confirma la operación.<br><br><b>Escenario 2: Error en la generación</b><br><b>Given</b> que un administrador gestiona la facturación de las inscripciones<br><b>When</b> solicita emitir un comprobante para una cuenta inactiva o con datos faltantes<br><b>Then</b> el sistema rechaza la solicitud e indica el motivo del fallo.</td>
 <td>Media</td>
 <td>EP005</td>
 </tr>
@@ -1293,7 +1410,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Boletas de Pago</td>
 <td>Como administrador, quiero actualizar la información de una boleta de pago existente para corregir errores o reflejar cambios en los montos.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador accede a un registro de cobro existente<br>Cuando envía modificaciones válidas sobre los montos o su estado<br>Entonces el sistema procesa y actualiza la boleta correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador accede a un registro de cobro existente<br>Cuando envía datos con valores financieros inválidos o montos negativos<br>Entonces el sistema bloquea el cambio y notifica la incongruencia en los valores.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador accede a un registro de cobro existente<br><b>When</b> envía modificaciones válidas sobre los montos o su estado<br><b>Then</b> el sistema procesa y actualiza la boleta correctamente.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador accede a un registro de cobro existente<br><b>When</b> envía datos con valores financieros inválidos o montos negativos<br><b>Then</b> el sistema bloquea el cambio y notifica la incongruencia en los valores.</td>
 <td>Media</td>
 <td>EP005</td>
 </tr>
@@ -1302,7 +1419,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Boletas de Pago</td>
 <td>Como administrador, quiero eliminar una boleta de pago existente para deshacerme de un registro incorrecto o duplicado.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con una boleta previamente generada<br>Cuando emite la orden definitiva para su eliminación<br>Entonces el sistema borra el registro financiero exitosamente de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con una boleta previamente generada<br>Cuando declina u omite la orden de borrado<br>Entonces el sistema conserva el comprobante sin aplicar modificaciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador interactúa con una boleta previamente generada<br><b>When</b> emite la orden definitiva para su eliminación<br><b>Then</b> el sistema borra el registro financiero exitosamente de la base de datos.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador interactúa con una boleta previamente generada<br><b>When</b> declina u omite la orden de borrado<br><b>Then</b> el sistema conserva el comprobante sin aplicar modificaciones.</td>
 <td>Media</td>
 <td>EP005</td>
 </tr>
@@ -1320,7 +1437,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Registro de Ingreso/Egreso</td>
 <td>Como administrador, quiero registrar ingresos y egresos financieros para mantener un control adecuado de la economía de la institución.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un administrador gestiona las finanzas operativas<br>Cuando envía los datos válidos de una nueva transacción contable<br>Entonces el sistema registra el movimiento y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un administrador gestiona las finanzas operativas<br>Cuando envía una transacción con valores negativos o parámetros incompletos<br>Entonces el sistema rechaza el registro y detalla los campos erróneos.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un administrador gestiona las finanzas operativas<br><b>When</b> envía los datos válidos de una nueva transacción contable<br><b>Then</b> el sistema registra el movimiento y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un administrador gestiona las finanzas operativas<br><b>When</b> envía una transacción con valores negativos o parámetros incompletos<br><b>Then</b> el sistema rechaza el registro y detalla los campos erróneos.</td>
 <td>Media</td>
 <td>EP006</td>
 </tr>
@@ -1329,7 +1446,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Actualización de Ingreso/Egreso</td>
 <td>Como administrador, quiero actualizar la información de un ingreso o egreso existente para corregir información contable.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un administrador interactúa con una transacción registrada<br>Cuando envía modificaciones con montos y justificaciones válidas<br>Entonces el sistema actualiza el registro contable de manera exitosa.<br><br><b>Escenario 2: Error en la actualización</b><br>Dado que un administrador interactúa con una transacción registrada<br>Cuando omite información obligatoria o provee datos inconsistentes<br>Entonces el sistema deniega el cambio e indica la información faltante.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un administrador interactúa con una transacción registrada<br><b>When</b> envía modificaciones con montos y justificaciones válidas<br><b>Then</b> el sistema actualiza el registro contable de manera exitosa.<br><br><b>Escenario 2: Error en la actualización</b><br><b>Given</b> que un administrador interactúa con una transacción registrada<br><b>When</b> omite información obligatoria o provee datos inconsistentes<br><b>Then</b> el sistema deniega el cambio e indica la información faltante.</td>
 <td>Media</td>
 <td>EP006</td>
 </tr>
@@ -1338,7 +1455,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Eliminación de Ingreso/Egreso</td>
 <td>Como administrador, quiero eliminar un registro de ingreso o egreso existente para retirar información duplicada o incorrecta.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un administrador interactúa con un movimiento contable<br>Cuando confirma la instrucción irrevocable de eliminación<br>Entonces el sistema borra permanentemente el registro financiero.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br>Dado que un administrador interactúa con un movimiento contable<br>Cuando cancela o declina la orden antes de su confirmación<br>Entonces el sistema mantiene la transacción sin alteraciones.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un administrador interactúa con un movimiento contable<br><b>When</b> confirma la instrucción irrevocable de eliminación<br><b>Then</b> el sistema borra permanentemente el registro financiero.<br><br><b>Escenario 2: Cancelación de la eliminación</b><br><b>Given</b> que un administrador interactúa con un movimiento contable<br><b>When</b> cancela o declina la orden antes de su confirmación<br><b>Then</b> el sistema mantiene la transacción sin alteraciones.</td>
 <td>Media</td>
 <td>EP006</td>
 </tr>
@@ -1347,7 +1464,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Visualización de Resumen de Finanzas</td>
 <td>Como administrador, quiero visualizar un resumen de finanzas para evaluar el estado económico de la institución de forma rápida.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un administrador solicita la vista general de la economía institucional<br>Cuando el sistema procesa una consulta en un periodo con transacciones activas<br>Entonces retorna los indicadores financieros y métricas correspondientes.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un administrador solicita la vista general de la economía institucional<br>Cuando ocurre un problema en la disponibilidad o consulta de los datos<br>Entonces el sistema notifica que los registros no pueden ser cargados temporalmente.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un administrador solicita la vista general de la economía institucional<br><b>When</b> el sistema procesa una consulta en un periodo con transacciones activas<br><b>Then</b> retorna los indicadores financieros y métricas correspondientes.<br><br><b>Escenario 2: Error por falta de datos</b><br><b>Given</b> que un administrador solicita la vista general de la economía institucional<br><b>When</b> ocurre un problema en la disponibilidad o consulta de los datos<br><b>Then</b> el sistema notifica que los registros no pueden ser cargados temporalmente.</td>
 <td>Media</td>
 <td>EP006</td>
 </tr>
@@ -1356,7 +1473,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Administrador</td>
 <td>Generación de Reportes Financieros</td>
 <td>Como administrador, quiero generar reportes financieros detallados para analizar la situación económica y tomar decisiones estratégicas.</td>
-<td><b>Escenario 1: Generación exitosa</b><br>Dado que un administrador solicita un informe contable de operaciones<br>Cuando envía parámetros con un periodo de fechas válido<br>Entonces el sistema genera y retorna el reporte con los datos financieros estructurados.<br><br><b>Escenario 2: Error por periodo sin registros</b><br>Dado que un administrador solicita un informe contable de operaciones<br>Cuando especifica un rango de fechas que carece por completo de transacciones<br>Entonces el sistema detiene la operación e indica que no hay información disponible para exportar.</td>
+<td><b>Escenario 1: Generación exitosa</b><br><b>Given</b> que un administrador solicita un informe contable de operaciones<br><b>When</b> envía parámetros con un periodo de fechas válido<br><b>Then</b> el sistema genera y retorna el reporte con los datos financieros estructurados.<br><br><b>Escenario 2: Error por periodo sin registros</b><br><b>Given</b> que un administrador solicita un informe contable de operaciones<br><b>When</b> especifica un rango de fechas que carece por completo de transacciones<br><b>Then</b> el sistema detiene la operación e indica que no hay información disponible para exportar.</td>
 <td>Media</td>
 <td>EP006</td>
 </tr>
@@ -1374,7 +1491,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Profesor</td>
 <td>Visualización de Horario de Clases</td>
 <td>Como profesor, quiero visualizar mi horario asignado para organizar mi tiempo y preparar cada sesión.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un profesor accede a su programación académica<br>Cuando el sistema procesa la consulta para un periodo activo<br>Entonces retorna el horario con las clases asignadas y los detalles correspondientes.<br><br><b>Escenario 2: Error en la visualización</b><br>Dado que un profesor accede a su programación académica<br>Cuando ocurre un problema en la disponibilidad de los datos<br>Entonces el sistema emite una notificación de indisponibilidad temporal.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un profesor accede a su programación académica<br><b>When</b> el sistema procesa la consulta para un periodo activo<br><b>Then</b> retorna el horario con las clases asignadas y los detalles correspondientes.<br><br><b>Escenario 2: Error en la visualización</b><br><b>Given</b> que un profesor accede a su programación académica<br><b>When</b> ocurre un problema en la disponibilidad de los datos<br><b>Then</b> el sistema emite una notificación de indisponibilidad temporal.</td>
 <td>Media</td>
 <td>EP007</td>
 </tr>
@@ -1383,7 +1500,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Profesor</td>
 <td>Reprogramación de Clase</td>
 <td>Como profesor, quiero reprogramar una clase para ajustar la programación ante imprevistos institucionales.</td>
-<td><b>Escenario 1: Reprogramación exitosa</b><br>Dado que un profesor requiere ajustar la fecha de una sesión<br>Cuando envía los nuevos parámetros sin generar un conflicto de horarios<br>Entonces el sistema procesa el cambio y actualiza el cronograma exitosamente.<br><br><b>Escenario 2: Error en la reprogramación</b><br>Dado que un profesor requiere ajustar la fecha de una sesión<br>Cuando envía información que provoca cruces con otros registros<br>Entonces el sistema deniega el ajuste e informa sobre el conflicto detectado.</td>
+<td><b>Escenario 1: Reprogramación exitosa</b><br><b>Given</b> que un profesor requiere ajustar la fecha de una sesión<br><b>When</b> envía los nuevos parámetros sin generar un conflicto de horarios<br><b>Then</b> el sistema procesa el cambio y actualiza el cronograma exitosamente.<br><br><b>Escenario 2: Error en la reprogramación</b><br><b>Given</b> que un profesor requiere ajustar la fecha de una sesión<br><b>When</b> envía información que provoca cruces con otros registros<br><b>Then</b> el sistema deniega el ajuste e informa sobre el conflicto detectado.</td>
 <td>Media</td>
 <td>EP007</td>
 </tr>
@@ -1401,7 +1518,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Usuario</td>
 <td>Registro de Cuenta</td>
 <td>Como usuario, quiero registrarme en la plataforma para acceder a los servicios ofrecidos.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un usuario solicita registro en el ecosistema<br>Cuando envía los datos válidos obligatorios<br>Entonces el sistema crea la cuenta correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br>Dado que un usuario solicita registro en el ecosistema<br>Cuando envía los datos con información incompleta o formatos inválidos<br>Entonces el sistema rechaza la solicitud e indica los parámetros incorrectos.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un usuario solicita registro en el ecosistema<br><b>When</b> envía los datos válidos obligatorios<br><b>Then</b> el sistema crea la cuenta correctamente y emite una confirmación de éxito.<br><br><b>Escenario 2: Error en el registro</b><br><b>Given</b> que un usuario solicita registro en el ecosistema<br><b>When</b> envía los datos con información incompleta o formatos inválidos<br><b>Then</b> el sistema rechaza la solicitud e indica los parámetros incorrectos.</td>
 <td>Alta</td>
 <td>EP008</td>
 </tr>
@@ -1410,7 +1527,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Usuario</td>
 <td>Activación de Cuenta</td>
 <td>Como usuario, quiero activar la cuenta después del registro para validar la identidad y utilizar los servicios.</td>
-<td><b>Escenario 1: Activación exitosa</b><br>Dado que un usuario cuenta con una solicitud de validación pendiente<br>Cuando envía el código de verificación válido<br>Entonces el sistema activa la cuenta correctamente.<br><br><b>Escenario 2: Error en la activación</b><br>Dado que un usuario cuenta con una solicitud de validación pendiente<br>Cuando envía un código de verificación inválido o expirado<br>Entonces el sistema deniega la acción y notifica la invalidez del código.</td>
+<td><b>Escenario 1: Activación exitosa</b><br><b>Given</b> que un usuario cuenta con una solicitud de validación pendiente<br><b>When</b> envía el código de verificación válido<br><b>Then</b> el sistema activa la cuenta correctamente.<br><br><b>Escenario 2: Error en la activación</b><br><b>Given</b> que un usuario cuenta con una solicitud de validación pendiente<br><b>When</b> envía un código de verificación inválido o expirado<br><b>Then</b> el sistema deniega la acción y notifica la invalidez del código.</td>
 <td>Alta</td>
 <td>EP008</td>
 </tr>
@@ -1419,7 +1536,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Usuario</td>
 <td>Inicio de Sesión</td>
 <td>Como usuario, quiero autenticarme en la plataforma para acceder al perfil y gestionar los servicios.</td>
-<td><b>Escenario 1: Inicio exitoso</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales válidas de una cuenta activa<br>Entonces el sistema permite el acceso y carga el perfil.<br><br><b>Escenario 2: Error de credenciales</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales incorrectas<br>Entonces el sistema rechaza el acceso y notifica el error.<br><br><b>Escenario 3: Cuenta inactiva</b><br>Dado que un usuario interactúa con el sistema de autenticación<br>Cuando envía credenciales válidas pero la cuenta carece de activación previa<br>Entonces el sistema bloquea el acceso y requiere la validación obligatoria.</td>
+<td><b>Escenario 1: Inicio exitoso</b><br><b>Given</b> que un usuario interactúa con el sistema de autenticación<br><b>When</b> envía credenciales válidas de una cuenta activa<br><b>Then</b> el sistema permite el acceso y carga el perfil.<br><br><b>Escenario 2: Error de credenciales</b><br><b>Given</b> que un usuario interactúa con el sistema de autenticación<br><b>When</b> envía credenciales incorrectas<br><b>Then</b> el sistema rechaza el acceso y notifica el error.<br><br><b>Escenario 3: Cuenta inactiva</b><br><b>Given</b> que un usuario interactúa con el sistema de autenticación<br><b>When</b> envía credenciales válidas pero la cuenta carece de activación previa<br><b>Then</b> el sistema bloquea el acceso y requiere la validación obligatoria.</td>
 <td>Alta</td>
 <td>EP008</td>
 <tr>
@@ -1436,7 +1553,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Propósito Principal (Hero)</td>
 <td>Como visitante del segmento administrador, quiero visualizar la información principal para entender el propósito y beneficios del sistema.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante interactúa con el portal público<br>Cuando solicita el acceso inicial<br>Entonces el sistema presenta el propósito general y las opciones de interacción.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante interactúa con el portal público<br><b>When</b> solicita el acceso inicial<br><b>Then</b> el sistema presenta el propósito general y las opciones de interacción.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1445,7 +1562,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Funcionalidades (Features)</td>
 <td>Como visitante del segmento administrador, quiero visualizar las funcionalidades clave para conocer las capacidades de la plataforma.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las capacidades del sistema<br>Entonces el sistema expone la lista de funcionalidades disponibles.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta las capacidades del sistema<br><b>Then</b> el sistema expone la lista de funcionalidades disponibles.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1454,7 +1571,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización del Funcionamiento (How It Works)</td>
 <td>Como visitante del segmento administrador, quiero entender el proceso de uso para evaluar la simplicidad de la plataforma.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta el flujo de trabajo<br>Entonces el sistema detalla los pasos secuenciales de operación.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta el flujo de trabajo<br><b>Then</b> el sistema detalla los pasos secuenciales de operación.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1463,7 +1580,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Detalles (About The Product)</td>
 <td>Como visitante del segmento administrador, quiero conocer más sobre los beneficios específicos del producto.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando solicita la descripción del sistema<br>Entonces el sistema expone las características y beneficios a profundidad.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> solicita la descripción del sistema<br><b>Then</b> el sistema expone las características y beneficios a profundidad.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1472,7 +1589,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Casos de Éxito (Testimonials)</td>
 <td>Como visitante del segmento administrador, quiero visualizar testimonios para validar la efectividad de la plataforma.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las referencias de terceros<br>Entonces el sistema lista las experiencias previas de otros usuarios.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta las referencias de terceros<br><b>Then</b> el sistema lista las experiencias previas de otros usuarios.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1481,7 +1598,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de la Empresa (About Us)</td>
 <td>Como visitante del segmento administrador, quiero conocer la misión de la empresa para generar confianza.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la información corporativa<br>Entonces el sistema expone la misión, visión y valores de la entidad.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta la información corporativa<br><b>Then</b> el sistema expone la misión, visión y valores de la entidad.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1490,7 +1607,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización del Equipo (About The Team)</td>
 <td>Como visitante del segmento administrador, quiero conocer al equipo detrás de la plataforma para validar su credibilidad.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la estructura corporativa<br>Entonces el sistema expone los perfiles y roles de los miembros.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta la estructura corporativa<br><b>Then</b> el sistema expone los perfiles y roles de los miembros.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1499,7 +1616,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Planes (Pricing)</td>
 <td>Como visitante del segmento administrador, quiero conocer los planes disponibles para evaluar los costos del servicio.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la oferta comercial<br>Entonces el sistema presenta los planes, costos y características comparativas.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta la oferta comercial<br><b>Then</b> el sistema presenta los planes, costos y características comparativas.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1508,7 +1625,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Ayuda (FAQ)</td>
 <td>Como visitante del segmento administrador, quiero encontrar respuestas a dudas comunes para resolver incertidumbres.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta la sección de soporte informativo<br>Entonces el sistema expone el listado de preguntas frecuentes y sus respuestas.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta la sección de soporte informativo<br><b>Then</b> el sistema expone el listado de preguntas frecuentes y sus respuestas.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1517,7 +1634,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Contacto (Contact)</td>
 <td>Como visitante del segmento administrador, quiero obtener los canales de comunicación para solicitar soporte directo.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando requiere asistencia adicional<br>Entonces el sistema expone los medios de contacto y opciones de solicitud de ayuda.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> requiere asistencia adicional<br><b>Then</b> el sistema expone los medios de contacto y opciones de solicitud de ayuda.</td>
 <td>Baja</td>
 <td>EP009</td>
 </tr>
@@ -1526,7 +1643,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Visitante</td>
 <td>Visualización de Referencias Legales (Footer)</td>
 <td>Como visitante del segmento administrador, quiero acceder a políticas y redes sociales para verificar la legalidad y presencia digital.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un visitante explora el portal público<br>Cuando consulta las referencias al pie del sitio<br>Entonces el sistema proporciona los enlaces legales y corporativos correspondientes.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un visitante explora el portal público<br><b>When</b> consulta las referencias al pie del sitio<br><b>Then</b> el sistema proporciona los enlaces legales y corporativos correspondientes.</td>
 <td>Baja</td>
 <td>EP009</td>
 <tr>
@@ -1543,7 +1660,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar academias</td>
 <td>Como developer, quiero exponer POST /api/academies para permitir el registro de nuevas academias en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/academies con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea una nueva academia y se devuelve un estado 201 Created con los detalles correspondientes.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST /api/academies con datos inválidos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request con un mensaje indicando los campos incorrectos.<br><br><b>Escenario 3: Error por academia duplicada</b><br>Dado que un cliente envía una solicitud POST /api/academies para una academia que ya existe<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict indicando que la academia ya está registrada.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/academies con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea una nueva academia y se devuelve un estado 201 Created con los detalles correspondientes.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST /api/academies con datos inválidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request con un mensaje indicando los campos incorrectos.<br><br><b>Escenario 3: Error por academia duplicada</b><br><b>Given</b> que un cliente envía una solicitud POST /api/academies para una academia que ya existe<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict indicando que la academia ya está registrada.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1552,7 +1669,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar academias</td>
 <td>Como developer, quiero exponer PUT /api/academies/{id} para permitir la actualización de academias existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/academies/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la academia y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud PUT /api/academies/{id} omitiendo campos obligatorios<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por no encontrada</b><br>Dado que un cliente envía una solicitud PUT para una academia inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found indicando que no fue encontrada.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/academies/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza la academia y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/academies/{id} omitiendo campos obligatorios<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por no encontrada</b><br><b>Given</b> que un cliente envía una solicitud PUT para una academia inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found indicando que no fue encontrada.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1561,7 +1678,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar academias</td>
 <td>Como developer, quiero exponer GET /api/academies para permitir la obtención de una lista de academias en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/academies<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de academias.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET /api/academies cuando no hay registros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista vacía.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/academies<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de academias.<br><br><b>Escenario 2: Listado vacío</b><br><b>Given</b> que un cliente envía una solicitud GET /api/academies cuando no hay registros<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista vacía.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1570,7 +1687,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de una academia</td>
 <td>Como developer, quiero exponer GET /api/academies/{id} para permitir la obtención de los detalles de una academia específica en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/academies/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles solicitados.<br><br><b>Escenario 2: Error por no encontrada</b><br>Dado que un cliente envía una solicitud GET para una academia inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/academies/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles solicitados.<br><br><b>Escenario 2: Error por no encontrada</b><br><b>Given</b> que un cliente envía una solicitud GET para una academia inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1579,7 +1696,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar administrador</td>
 <td>Como developer, quiero exponer POST /api/admins para permitir el registro de nuevos administradores en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/admins con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea el administrador y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST /api/admins con datos inválidos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por duplicado</b><br>Dado que un cliente envía una solicitud POST para un administrador existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/admins con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea el administrador y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST /api/admins con datos inválidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando las fallas.<br><br><b>Escenario 3: Error por duplicado</b><br><b>Given</b> que un cliente envía una solicitud POST para un administrador existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1588,7 +1705,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar administrador</td>
 <td>Como developer, quiero exponer PUT /api/admins/{id} para permitir la actualización de administradores existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/admins/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/admins/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un perfil inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1597,7 +1714,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar administrador</td>
 <td>Como developer, quiero exponer DELETE /api/admins/{id} para permitir la eliminación de administradores existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/admins/{id} para un perfil existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el perfil y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/admins/{id} para un perfil existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el perfil y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un perfil inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1606,7 +1723,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar administradores</td>
 <td>Como developer, quiero exponer GET /api/admins para permitir la obtención de una lista de administradores en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/admins<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de perfiles.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/admins<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de perfiles.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1615,7 +1732,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de un administrador</td>
 <td>Como developer, quiero exponer GET /api/admins/{id} para permitir la obtención de los detalles de un administrador específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/admins/{id} para un perfil existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/admins/{id} para un perfil existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un perfil inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1624,7 +1741,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar inscripciones</td>
 <td>Como developer, quiero exponer POST /api/enrollments para permitir el registro de nuevas inscripciones en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/enrollments con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea una nueva inscripción y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST con datos faltantes (ej. falta el ID del participante)<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las omisiones.<br><br><b>Escenario 3: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un participante que ya cuenta con una inscripción activa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/enrollments con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea una nueva inscripción y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST con datos faltantes (ej. falta el ID del participante)<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando las omisiones.<br><br><b>Escenario 3: Error por conflicto</b><br><b>Given</b> que un cliente envía una solicitud POST para un participante que ya cuenta con una inscripción activa<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1633,7 +1750,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar inscripciones</td>
 <td>Como developer, quiero exponer PUT /api/enrollments/{id} para permitir la actualización de inscripciones existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/enrollments/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el registro y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para una inscripción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/enrollments/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el registro y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para una inscripción inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1642,7 +1759,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar inscripciones</td>
 <td>Como developer, quiero exponer DELETE /api/enrollments/{id} para permitir la eliminación de inscripciones existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/enrollments/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se borra la inscripción y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/enrollments/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se borra la inscripción y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1651,7 +1768,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar inscripciones</td>
 <td>Como developer, quiero exponer GET /api/enrollments para permitir la obtención de una lista de inscripciones en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/enrollments<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de inscripciones.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/enrollments<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de inscripciones.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1660,7 +1777,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de una inscripción</td>
 <td>Como developer, quiero exponer GET /api/enrollments/{id} para permitir la obtención de los detalles de una inscripción específica en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/enrollments/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/enrollments/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1669,7 +1786,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar asistencias de clase</td>
 <td>Como developer, quiero exponer POST /api/class-attendances para permitir el registro de asistencias a clases en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/class-attendances con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo registro y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST omitiendo datos críticos (ej. ID del participante)<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por duplicado</b><br>Dado que un cliente envía una solicitud POST para un participante que ya tiene asistencia marcada<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/class-attendances con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea un nuevo registro y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST omitiendo datos críticos (ej. ID del participante)<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por duplicado</b><br><b>Given</b> que un cliente envía una solicitud POST para un participante que ya tiene asistencia marcada<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1678,7 +1795,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar asistencias de clase</td>
 <td>Como developer, quiero exponer PUT /api/class-attendances/{id} para permitir la actualización de registros de asistencia en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/class-attendances/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la participación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/class-attendances/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza la participación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1687,7 +1804,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar asistencias de clase</td>
 <td>Como developer, quiero exponer DELETE /api/class-attendances/{id} para permitir la eliminación de registros de asistencia en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/class-attendances/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/class-attendances/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1696,7 +1813,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar asistencias de clase</td>
 <td>Como developer, quiero exponer GET /api/class-attendances para permitir la obtención de una lista de registros de asistencia en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/class-attendances<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con la lista de participaciones.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET sin información almacenada previamente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/class-attendances<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con la lista de participaciones.<br><br><b>Escenario 2: Listado vacío</b><br><b>Given</b> que un cliente envía una solicitud GET sin información almacenada previamente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con un arreglo vacío.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1705,7 +1822,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para detalles de asistencia de clase</td>
 <td>Como developer, quiero exponer GET /api/class-attendances/{id} para permitir la obtención de los detalles de un registro de asistencia específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/class-attendances/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/class-attendances/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 <tr>
@@ -1713,7 +1830,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar periodos académicos</td>
 <td>Como developer, quiero exponer POST /api/academic-periods para permitir el registro de nuevos periodos académicos en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/academic-periods con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo periodo y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inconsistentes</b><br>Dado que un cliente envía una solicitud POST con incongruencias de tiempo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un periodo que ya existe<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/academic-periods con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea un nuevo periodo y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inconsistentes</b><br><b>Given</b> que un cliente envía una solicitud POST con incongruencias de tiempo<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request.<br><br><b>Escenario 3: Error por conflicto</b><br><b>Given</b> que un cliente envía una solicitud POST para un periodo que ya existe<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1722,7 +1839,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar periodos académicos</td>
 <td>Como developer, quiero exponer PUT /api/academic-periods/{id} para permitir la actualización de periodos académicos en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/academic-periods/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el periodo y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/academic-periods/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el periodo y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un ciclo inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1731,7 +1848,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar periodos académicos</td>
 <td>Como developer, quiero exponer DELETE /api/academic-periods/{id} para permitir la eliminación de periodos académicos en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/academic-periods/{id} para un periodo existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/academic-periods/{id} para un periodo existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un ciclo inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1740,7 +1857,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar periodos académicos</td>
 <td>Como developer, quiero exponer GET /api/academic-periods para permitir la obtención de una lista de periodos académicos en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/academic-periods<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de periodos.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/academic-periods<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de periodos.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1749,7 +1866,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para detalles de periodo académico</td>
 <td>Como developer, quiero exponer GET /api/academic-periods/{id} para permitir la obtención de los detalles de un periodo específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/academic-periods/{id} para un periodo existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un ciclo inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/academic-periods/{id} para un periodo existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un ciclo inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1758,7 +1875,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar salones de clase</td>
 <td>Como developer, quiero exponer POST /api/classrooms para permitir el registro de nuevos salones de clase en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/classrooms con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo salón de clase y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST con parámetros faltantes o capacidad negativa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando los errores correspondientes.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/classrooms con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea un nuevo salón de clase y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST con parámetros faltantes o capacidad negativa<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando los errores correspondientes.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1767,7 +1884,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar salones de clase</td>
 <td>Como developer, quiero exponer PUT /api/classrooms/{id} para permitir la actualización de salones de clase existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/classrooms/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el salón de clase y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/classrooms/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el salón de clase y se devuelve un estado 200 OK con los detalles modificados.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un salón inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1776,7 +1893,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar salones de clase</td>
 <td>Como developer, quiero exponer DELETE /api/classrooms/{id} para permitir la eliminación de salones de clase existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/classrooms/{id} para un salón existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/classrooms/{id} para un salón existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un salón inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1785,7 +1902,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar salones de clase</td>
 <td>Como developer, quiero exponer GET /api/classrooms para permitir la obtención de una lista de salones de clase en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/classrooms<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de salones de clase.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET cuando no hay salones registrados<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/classrooms<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de salones de clase.<br><br><b>Escenario 2: Listado vacío</b><br><b>Given</b> que un cliente envía una solicitud GET cuando no hay salones registrados<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con un arreglo vacío.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1794,7 +1911,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de un salón de clase</td>
 <td>Como developer, quiero exponer GET /api/classrooms/{id} para permitir la obtención de los detalles de un salón de clase específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/classrooms/{id} para un salón existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles del salón.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un salón inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/classrooms/{id} para un salón existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles del salón.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un salón inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1803,7 +1920,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar cursos</td>
 <td>Como developer, quiero exponer POST /api/courses para permitir el registro de nuevos cursos en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/courses con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo curso y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un curso que ya cuenta con un registro idéntico<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/courses con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea un nuevo curso y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br><b>Given</b> que un cliente envía una solicitud POST para un curso que ya cuenta con un registro idéntico<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1812,7 +1929,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar cursos</td>
 <td>Como developer, quiero exponer PUT /api/courses/{id} para permitir la actualización de cursos existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/courses/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualizan los datos del curso y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un registro de curso inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/courses/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualizan los datos del curso y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un registro de curso inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1821,7 +1938,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar cursos</td>
 <td>Como developer, quiero exponer DELETE /api/courses/{id} para permitir la eliminación de cursos existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/courses/{id} para un curso existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para un registro inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/courses/{id} para un curso existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el registro y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un registro inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1830,7 +1947,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar cursos</td>
 <td>Como developer, quiero exponer GET /api/courses para permitir la obtención de una lista de cursos en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/courses<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de cursos.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/courses<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de cursos.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1839,7 +1956,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de un curso</td>
 <td>Como developer, quiero exponer GET /api/courses/{id} para permitir la obtención de los detalles de un curso específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/courses/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un curso inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/courses/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un curso inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1848,7 +1965,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar horarios</td>
 <td>Como developer, quiero exponer POST /api/schedules para permitir el registro de nuevos horarios en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/schedules con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea la programación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto de horario</b><br>Dado que un cliente envía una solicitud POST con horas que se superponen con otras sesiones<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/schedules con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea la programación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto de horario</b><br><b>Given</b> que un cliente envía una solicitud POST con horas que se superponen con otras sesiones<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1857,7 +1974,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar horarios</td>
 <td>Como developer, quiero exponer PUT /api/schedules/{id} para permitir la actualización de horarios existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/schedules/{id} con parámetros de tiempo válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la programación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para un horario inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/schedules/{id} con parámetros de tiempo válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza la programación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para un horario inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1866,7 +1983,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar horarios</td>
 <td>Como developer, quiero exponer DELETE /api/schedules/{id} para permitir la eliminación de horarios existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/schedules/{id} para una programación activa<br>Cuando el servidor procesa la solicitud<br>Entonces se retira el horario y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una programación inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/schedules/{id} para una programación activa<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se retira el horario y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para una programación inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1875,7 +1992,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar horarios</td>
 <td>Como developer, quiero exponer GET /api/schedules para permitir la obtención de una lista de horarios en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/schedules<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de las programaciones registradas.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/schedules<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de las programaciones registradas.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1884,7 +2001,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de un horario</td>
 <td>Como developer, quiero exponer GET /api/schedules/{id} para permitir la obtención de los detalles de un horario específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/schedules/{id} para un horario activo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles requeridos.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una programación inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/schedules/{id} para un horario activo<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles requeridos.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para una programación inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 <tr>
@@ -1903,7 +2020,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar cuentas de cobro</td>
 <td>Como developer, quiero exponer POST /api/billing-accounts para permitir el registro de nuevas cuentas de cobro en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/billing-accounts con parámetros financieros válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea un nuevo perfil de facturación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br>Dado que un cliente envía una solicitud POST para un registro que ya posee un perfil de cobro asignado<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/billing-accounts con parámetros financieros válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea un nuevo perfil de facturación y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por conflicto</b><br><b>Given</b> que un cliente envía una solicitud POST para un registro que ya posee un perfil de cobro asignado<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1912,7 +2029,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar cuentas de cobro</td>
 <td>Como developer, quiero exponer PUT /api/billing-accounts/{id} para permitir la actualización de cuentas de cobro existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/billing-accounts/{id} con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil de facturación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/billing-accounts/{id} con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el perfil de facturación y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT para una cuenta inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1921,7 +2038,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar cuentas de cobro</td>
 <td>Como developer, quiero exponer DELETE /api/billing-accounts/{id} para permitir la eliminación de cuentas de cobro existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/billing-accounts/{id} para una cuenta activa<br>Cuando el servidor procesa la solicitud<br>Entonces se borra el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/billing-accounts/{id} para una cuenta activa<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se borra el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para una cuenta inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1930,7 +2047,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar cuentas de cobro</td>
 <td>Como developer, quiero exponer GET /api/billing-accounts para permitir la obtención de una lista de cuentas de cobro en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/billing-accounts<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con el listado financiero.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/billing-accounts<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con el listado financiero.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1939,7 +2056,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de una cuenta de cobro</td>
 <td>Como developer, quiero exponer GET /api/billing-accounts/{id} para permitir la obtención de los detalles de una cuenta de cobro específica en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/billing-accounts/{id} para un perfil activo<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los parámetros financieros del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una cuenta inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/billing-accounts/{id} para un perfil activo<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los parámetros financieros del perfil.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para una cuenta inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1948,7 +2065,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para asignar boletas de pago</td>
 <td>Como developer, quiero exponer POST /api/billing-accounts/invoices para permitir la asignación de boletas de pago a las cuentas de cobro en el sistema.</td>
-<td><b>Escenario 1: Asignación exitosa</b><br>Dado que un cliente envía una solicitud POST con los datos de cobro válidos<br>Cuando el servidor procesa la solicitud<br>Entonces la boleta se vincula correctamente y se devuelve un estado 201 Created con sus detalles.</td>
+<td><b>Escenario 1: Asignación exitosa</b><br><b>Given</b> que un cliente envía una solicitud POST con los datos de cobro válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> la boleta se vincula correctamente y se devuelve un estado 201 Created con sus detalles.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1957,7 +2074,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar boletas asignadas</td>
 <td>Como developer, quiero exponer PUT /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la actualización de boletas de pago asignadas a una cuenta en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT con montos y estados financieros válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el comprobante y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud PUT con identificadores financieros incorrectos<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT con montos y estados financieros válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el comprobante y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud PUT con identificadores financieros incorrectos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1966,7 +2083,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar boletas asignadas</td>
 <td>Como developer, quiero exponer GET /api/billing-accounts/{id}/invoices para permitir la obtención de boletas de pago asignadas a una cuenta.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET dirigida a una cuenta financiera activa<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista que detalla todos los comprobantes asignados.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET dirigida a una cuenta financiera activa<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista que detalla todos los comprobantes asignados.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1975,7 +2092,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar boletas asignadas</td>
 <td>Como developer, quiero exponer DELETE /api/billing-accounts/{accountId}/invoices/{invoiceId} para permitir la eliminación de boletas asignadas a una cuenta.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE con identificadores válidos<br>Cuando el servidor procesa la solicitud<br>Entonces el comprobante se desvincula de la cuenta y se devuelve un estado 204 No Content.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE con identificadores válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> el comprobante se desvincula de la cuenta y se devuelve un estado 204 No Content.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1984,7 +2101,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar transacciones</td>
 <td>Como developer, quiero exponer POST /api/transactions para permitir el registro de nuevas transacciones en el sistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST /api/transactions con montos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se consolida el movimiento contable y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud POST omitiendo datos contables como el monto<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las faltas detectadas.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST /api/transactions con montos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se consolida el movimiento contable y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud POST omitiendo datos contables como el monto<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando las faltas detectadas.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -1993,7 +2110,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar transacciones</td>
 <td>Como developer, quiero exponer PUT /api/transactions/{id} para permitir la actualización de transacciones financieras existentes en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT /api/transactions/{id} con datos contables válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la transacción y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por datos inválidos</b><br>Dado que un cliente envía una solicitud PUT con montos negativos o información faltante<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 400 Bad Request indicando las fallas.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT /api/transactions/{id} con datos contables válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza la transacción y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por datos inválidos</b><br><b>Given</b> que un cliente envía una solicitud PUT con montos negativos o información faltante<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 400 Bad Request indicando las fallas.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2002,7 +2119,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar transacciones</td>
 <td>Como developer, quiero exponer DELETE /api/transactions/{id} para permitir la eliminación de transacciones existentes en el sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE /api/transactions/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se elimina el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud DELETE para una transacción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE /api/transactions/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se elimina el registro financiero y se devuelve un estado 204 No Content.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud DELETE para una transacción inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2011,7 +2128,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para listar transacciones</td>
 <td>Como developer, quiero exponer GET /api/transactions para permitir la obtención de una lista de movimientos contables en el sistema.</td>
-<td><b>Escenario 1: Listado exitoso</b><br>Dado que un cliente envía una solicitud GET /api/transactions<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con una lista de transacciones.<br><br><b>Escenario 2: Listado vacío</b><br>Dado que un cliente envía una solicitud GET cuando no hay registros financieros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con un arreglo vacío.</td>
+<td><b>Escenario 1: Listado exitoso</b><br><b>Given</b> que un cliente envía una solicitud GET /api/transactions<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con una lista de transacciones.<br><br><b>Escenario 2: Listado vacío</b><br><b>Given</b> que un cliente envía una solicitud GET cuando no hay registros financieros<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con un arreglo vacío.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2020,7 +2137,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para obtener detalles de una transacción</td>
 <td>Como developer, quiero exponer GET /api/transactions/{id} para permitir la obtención de los detalles de un movimiento contable específico en el sistema.</td>
-<td><b>Escenario 1: Obtención exitosa</b><br>Dado que un cliente envía una solicitud GET /api/transactions/{id} para un registro existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para una transacción inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Obtención exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET /api/transactions/{id} para un registro existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con los detalles.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para una transacción inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2029,7 +2146,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para generar reportes financieros</td>
 <td>Como developer, quiero exponer GET /api/reports/financial para permitir la generación de reportes contables en el sistema.</td>
-<td><b>Escenario 1: Generación exitosa</b><br>Dado que un cliente envía una solicitud GET con un rango de fechas válido<br>Cuando el servidor procesa la solicitud<br>Entonces se genera el reporte y se devuelve un estado 200 OK con el archivo exportado.<br><br><b>Escenario 2: Error por falta de datos</b><br>Dado que un cliente solicita un reporte en un periodo sin registros<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 204 No Content indicando la ausencia de datos.</td>
+<td><b>Escenario 1: Generación exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET con un rango de fechas válido<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se genera el reporte y se devuelve un estado 200 OK con el archivo exportado.<br><br><b>Escenario 2: Error por falta de datos</b><br><b>Given</b> que un cliente solicita un reporte en un periodo sin registros<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 204 No Content indicando la ausencia de datos.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2038,7 +2155,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para visualizar horarios de un profesor</td>
 <td>Como developer, quiero exponer GET /api/teachers/{id}/schedules para permitir la visualización de los horarios asignados a un docente específico.</td>
-<td><b>Escenario 1: Visualización exitosa</b><br>Dado que un cliente envía una solicitud GET para un perfil docente existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 200 OK con la lista de sus programaciones.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente envía una solicitud GET para un perfil docente inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Visualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud GET para un perfil docente existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 200 OK con la lista de sus programaciones.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente envía una solicitud GET para un perfil docente inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2047,7 +2164,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para reprogramar una sesión de clases</td>
 <td>Como developer, quiero exponer PUT /api/schedules/{id}/reschedule para permitir la reprogramación de una sesión en el sistema.</td>
-<td><b>Escenario 1: Reprogramación exitosa</b><br>Dado que un cliente envía una solicitud PUT con una nueva fecha y hora válidas<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza la sesión y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por cruce de horarios</b><br>Dado que un cliente envía una solicitud PUT que genera un conflicto temporal<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Reprogramación exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT con una nueva fecha y hora válidas<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza la sesión y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por cruce de horarios</b><br><b>Given</b> que un cliente envía una solicitud PUT que genera un conflicto temporal<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2056,7 +2173,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para registrar cuenta de usuario</td>
 <td>Como developer, quiero exponer POST /api/auth/sign-up para permitir la creación segura de nuevas cuentas en el ecosistema.</td>
-<td><b>Escenario 1: Registro exitoso</b><br>Dado que un cliente envía una solicitud POST con datos válidos<br>Cuando el servidor procesa la solicitud<br>Entonces se crea la cuenta, se cifra la credencial y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por duplicidad</b><br>Dado que un cliente intenta registrar un correo ya existente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 409 Conflict.</td>
+<td><b>Escenario 1: Registro exitoso</b><br><b>Given</b> que un cliente envía una solicitud POST con datos válidos<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se crea la cuenta, se cifra la credencial y se devuelve un estado 201 Created.<br><br><b>Escenario 2: Error por duplicidad</b><br><b>Given</b> que un cliente intenta registrar un correo ya existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 409 Conflict.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2065,7 +2182,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para actualizar cuenta de usuario</td>
 <td>Como developer, quiero exponer PUT /api/users/{id} para permitir la actualización de perfiles de cuenta en el sistema.</td>
-<td><b>Escenario 1: Actualización exitosa</b><br>Dado que un cliente envía una solicitud PUT con información válida<br>Cuando el servidor procesa la solicitud<br>Entonces se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br>Dado que un cliente intenta modificar un perfil inexistente<br>Cuando el servidor procesa la solicitud<br>Entonces se devuelve un estado 404 Not Found.</td>
+<td><b>Escenario 1: Actualización exitosa</b><br><b>Given</b> que un cliente envía una solicitud PUT con información válida<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se actualiza el perfil y se devuelve un estado 200 OK.<br><br><b>Escenario 2: Error por no encontrado</b><br><b>Given</b> que un cliente intenta modificar un perfil inexistente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se devuelve un estado 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2074,7 +2191,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para eliminar cuenta de usuario</td>
 <td>Como developer, quiero exponer DELETE /api/users/{id} para retirar cuentas de usuario del sistema.</td>
-<td><b>Escenario 1: Eliminación exitosa</b><br>Dado que un cliente envía una solicitud DELETE para un usuario existente<br>Cuando el servidor procesa la solicitud<br>Entonces se retira la cuenta y se devuelve un estado 204 No Content.</td>
+<td><b>Escenario 1: Eliminación exitosa</b><br><b>Given</b> que un cliente envía una solicitud DELETE para un usuario existente<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> se retira la cuenta y se devuelve un estado 204 No Content.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2083,7 +2200,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para activar cuenta de usuario</td>
 <td>Como developer, quiero exponer POST /api/users/{id}/activate para gestionar la activación mediante validación.</td>
-<td><b>Escenario 1: Activación exitosa</b><br>Dado que un cliente envía el token o código correcto<br>Cuando el servidor procesa la solicitud<br>Entonces el estado de la cuenta cambia a activa y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta ya activa</b><br>Dado que un cliente solicita activar un perfil previamente validado<br>Cuando el servidor procesa la solicitud<br>Entonces devuelve un estado 400 Bad Request.</td>
+<td><b>Escenario 1: Activación exitosa</b><br><b>Given</b> que un cliente envía el token o código correcto<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> el estado de la cuenta cambia a activa y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta ya activa</b><br><b>Given</b> que un cliente solicita activar un perfil previamente validado<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> devuelve un estado 400 Bad Request.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2092,7 +2209,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para reenviar código de verificación</td>
 <td>Como developer, quiero exponer POST /api/users/{id}/resend-verification para asegurar que los usuarios reciban sus credenciales de validación.</td>
-<td><b>Escenario 1: Reenvío exitoso</b><br>Dado que un cliente solicita un nuevo código para una cuenta pendiente<br>Cuando el servidor procesa la orden<br>Entonces dispara el evento de mensajería y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta verificada</b><br>Dado que un cliente solicita código para un perfil validado<br>Cuando el servidor procesa la orden<br>Entonces devuelve un estado 400 Bad Request.</td>
+<td><b>Escenario 1: Reenvío exitoso</b><br><b>Given</b> que un cliente solicita un nuevo código para una cuenta pendiente<br><b>When</b> el servidor procesa la orden<br><b>Then</b> dispara el evento de mensajería y devuelve 200 OK.<br><br><b>Escenario 2: Error por cuenta verificada</b><br><b>Given</b> que un cliente solicita código para un perfil validado<br><b>When</b> el servidor procesa la orden<br><b>Then</b> devuelve un estado 400 Bad Request.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2101,7 +2218,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para cambiar contraseña con código</td>
 <td>Como developer, quiero exponer POST /api/users/{id}/change-password para facilitar la recuperación de acceso.</td>
-<td><b>Escenario 1: Cambio exitoso</b><br>Dado que un cliente envía un código válido y una credencial nueva segura<br>Cuando el servidor procesa la solicitud<br>Entonces actualiza la seguridad de la cuenta y retorna 200 OK.<br><br><b>Escenario 2: Error por código inválido</b><br>Dado que un cliente envía un código expirado o incorrecto<br>Cuando el servidor procesa la solicitud<br>Entonces bloquea la acción y devuelve un estado 400 Bad Request.</td>
+<td><b>Escenario 1: Cambio exitoso</b><br><b>Given</b> que un cliente envía un código válido y una credencial nueva segura<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> actualiza la seguridad de la cuenta y retorna 200 OK.<br><br><b>Escenario 2: Error por código inválido</b><br><b>Given</b> que un cliente envía un código expirado o incorrecto<br><b>When</b> el servidor procesa la solicitud<br><b>Then</b> bloquea la acción y devuelve un estado 400 Bad Request.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2110,7 +2227,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para iniciar sesión</td>
 <td>Como developer, quiero exponer POST /api/auth/login para gestionar la autenticación y emisión de tokens.</td>
-<td><b>Escenario 1: Inicio exitoso</b><br>Dado que un cliente envía credenciales correctas de una cuenta activa<br>Cuando el servidor las valida<br>Entonces retorna 200 OK junto con un token JWT firmado.<br><br><b>Escenario 2: Error de autenticación</b><br>Dado que un cliente envía credenciales incorrectas<br>Cuando el servidor las procesa<br>Entonces rechaza el acceso devolviendo 401 Unauthorized.</td>
+<td><b>Escenario 1: Inicio exitoso</b><br><b>Given</b> que un cliente envía credenciales correctas de una cuenta activa<br><b>When</b> el servidor las valida<br><b>Then</b> retorna 200 OK junto con un token JWT firmado.<br><br><b>Escenario 2: Error de autenticación</b><br><b>Given</b> que un cliente envía credenciales incorrectas<br><b>When</b> el servidor las procesa<br><b>Then</b> rechaza el acceso devolviendo 401 Unauthorized.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2119,7 +2236,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para validación de recursos</td>
 <td>Como developer, quiero exponer HEAD /api/resource/{id} para permitir comprobaciones rápidas de existencia.</td>
-<td><b>Escenario 1: Verificación exitosa</b><br>Dado que un cliente solicita validación de un elemento existente<br>Cuando el servidor la procesa<br>Entonces devuelve 200 OK sin cuerpo de respuesta.<br><br><b>Escenario 2: Recurso ausente</b><br>Dado que un cliente consulta un identificador inexistente<br>Cuando el servidor responde<br>Entonces emite 404 Not Found.</td>
+<td><b>Escenario 1: Verificación exitosa</b><br><b>Given</b> que un cliente solicita validación de un elemento existente<br><b>When</b> el servidor la procesa<br><b>Then</b> devuelve 200 OK sin cuerpo de respuesta.<br><br><b>Escenario 2: Recurso ausente</b><br><b>Given</b> que un cliente consulta un identificador inexistente<br><b>When</b> el servidor responde<br><b>Then</b> emite 404 Not Found.</td>
 <td>Alta</td>
 <td>EP010</td>
 </tr>
@@ -2128,7 +2245,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Developer</td>
 <td>Exponer endpoint para manejo de CORS</td>
 <td>Como developer, quiero exponer OPTIONS /api/resource para garantizar la seguridad transversal y comunicación entre orígenes.</td>
-<td><b>Escenario 1: Resolución de políticas</b><br>Dado que un cliente emite una consulta de preflight<br>Cuando el servidor evalúa los orígenes permitidos<br>Entonces devuelve 204 No Content junto a los headers de autorización HTTP.</td>
+<td><b>Escenario 1: Resolución de políticas</b><br><b>Given</b> que un cliente emite una consulta de preflight<br><b>When</b> el servidor evalúa los orígenes permitidos<br><b>Then</b> devuelve 204 No Content junto a los headers de autorización HTTP.</td>
 <td>Alta</td>
 <td>EP010</td>
 <tr>
@@ -2145,7 +2262,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Investigación de la integración de pasarelas globales</td>
 <td>Como equipo de desarrollo, quiero investigar la documentación de plataformas de pagos globales (ej. Stripe) para comprender su ciclo de integración técnica.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo revisa las guías de integración de la pasarela<br>Cuando documentan los flujos de cobro y webhooks requeridos<br>Entonces se genera un informe técnico detallando su viabilidad para la facturación.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo revisa las guías de integración de la pasarela<br><b>When</b> documentan los flujos de cobro y webhooks requeridos<br><b>Then</b> se genera un informe técnico detallando su viabilidad para la facturación.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2154,7 +2271,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Investigación de la integración de servicios de correo</td>
 <td>Como equipo de desarrollo, quiero explorar los protocolos SMTP y APIs de servicios como Gmail para garantizar el envío de códigos de verificación.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo estudia el motor de plantillas y autenticación del proveedor<br>Cuando se realizan pruebas de concepto aisladas de envío<br>Entonces se establece un estándar seguro para la mensajería del sistema.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo estudia el motor de plantillas y autenticación del proveedor<br><b>When</b> se realizan pruebas de concepto aisladas de envío<br><b>Then</b> se establece un estándar seguro para la mensajería del sistema.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2163,7 +2280,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Investigación de métodos de cobro local</td>
 <td>Como equipo de desarrollo, quiero analizar pasarelas de recaudo regional (ej. PagoEfectivo) para ofrecer alternativas en los cobros de cuentas y servicios.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo accede a los manuales de desarrollador del proveedor local<br>Cuando evalúan el flujo de generación de códigos de pago CIP<br>Entonces definen la estructura necesaria en el modelo financiero del sistema.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo accede a los manuales de desarrollador del proveedor local<br><b>When</b> evalúan el flujo de generación de códigos de pago CIP<br><b>Then</b> definen la estructura necesaria en el modelo financiero del sistema.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2172,7 +2289,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Probar bibliotecas de generación de PDF y Excel</td>
 <td>Como equipo de desarrollo, quiero evaluar el rendimiento de librerías exportadoras para soportar la generación de reportes financieros.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo implementa un entorno de pruebas con datos ficticios<br>Cuando procesan exportaciones masivas en formatos estáticos y hojas de cálculo<br>Entonces seleccionan la librería con mejor latencia y soporte de estilos.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo implementa un entorno de pruebas con datos ficticios<br><b>When</b> procesan exportaciones masivas en formatos estáticos y hojas de cálculo<br><b>Then</b> seleccionan la librería con mejor latencia y soporte de estilos.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2181,7 +2298,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Probar bibliotecas de generación de gráficos</td>
 <td>Como equipo de desarrollo, quiero probar bibliotecas de generación de gráficos para seleccionar las más adecuadas para la plataforma.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo de desarrollo investiga bibliotecas populares para la generación de gráficos<br>Cuando revisan reseñas, comparativas y documentación<br>Entonces crean una lista de posibles bibliotecas a evaluar.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo de desarrollo investiga bibliotecas populares para la generación de gráficos<br><b>When</b> revisan reseñas, comparativas y documentación<br><b>Then</b> crean una lista de posibles bibliotecas a evaluar.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2190,7 +2307,7 @@ Se incluyen diferentes tipos de historias, tales como:
 <td>Equipo de Desarrollo</td>
 <td>Probar bibliotecas de generación de códigos QR</td>
 <td>Como equipo de desarrollo, quiero probar bibliotecas de generación de códigos QR para seleccionar las más adecuadas para la plataforma.</td>
-<td><b>Escenario 1: Análisis completado</b><br>Dado que el equipo de desarrollo investiga bibliotecas populares para la generación de códigos QR<br>Cuando revisan reseñas, comparativas y documentación<br>Entonces crean una lista de posibles bibliotecas a evaluar.</td>
+<td><b>Escenario 1: Análisis completado</b><br><b>Given</b> que el equipo de desarrollo investiga bibliotecas populares para la generación de códigos QR<br><b>When</b> revisan reseñas, comparativas y documentación<br><b>Then</b> crean una lista de posibles bibliotecas a evaluar.</td>
 <td>Media</td>
 <td>EP011</td>
 </tr>
@@ -2210,123 +2327,123 @@ La priorización se ha realizado considerando el valor que cada ítem aporta al 
 
 | # Orden | User Story ID | Título | Descripción | Story Points |
 |---------|--------------|--------|-------------|--------------|
-| 1 | US001 | Registro de Academia | Flujo principal del sistema; requiere validaciones de datos y persistencia en base de datos. | 5 |
-| 2 | TS006 | Exponer endpoint para registrar administrador | Endpoint POST con validaciones básicas y respuesta estándar. | 3 |
-| 3 | TS001 | Exponer endpoint para registrar academias | Endpoint POST con manejo de duplicados y validación de campos. | 3 |
-| 4 | US004 | Registro de Profesor | Implica creación de perfil docente con asignación a academia existente. | 5 |
-| 5 | US013 | Creación de Periodo Académico | Requiere validación de fechas y lógica de no solapamiento entre periodos. | 5 |
-| 6 | TS021 | Exponer endpoint para registrar periodos académicos | Endpoint POST con validación de consistencia temporal. | 3 |
-| 7 | US016 | Creación de Salones de Clase | Implica registro de espacio físico con capacidad y atributos de infraestructura. | 5 |
-| 8 | TS026 | Exponer endpoint para registrar salones de clase | Endpoint POST con validación de capacidad y campos requeridos. | 3 |
-| 9 | US019 | Creación de Horarios | Alta complejidad por detección de conflictos de horario entre docentes y salones. | 5 |
-| 10 | TS031 | Exponer endpoint para registrar cursos | Endpoint POST con manejo de duplicados por nombre o código. | 3 |
-| 11 | US007 | Matrícula de Alumno | Vincula alumno, periodo y curso; requiere validaciones de disponibilidad. | 5 |
-| 12 | TS011 | Exponer endpoint para registrar matrículas | Endpoint POST con control de conflictos de inscripción activa. | 3 |
-| 13 | US010 | Registro de Asistencia | Lógica simple de marcado por sesión con validación mínima. | 3 |
-| 14 | TS016 | Exponer endpoint para registrar asistencias de clase | Endpoint POST con control de duplicados por sesión y participante. | 2 |
-| 15 | US030 | Visualización de Horario de Clases | Consulta de datos filtrada por docente y periodo activo. | 3 |
-| 16 | TS036 | Exponer endpoint para registrar horarios | Endpoint POST con detección de solapamientos entre sesiones. | 3 |
-| 17 | US031 | Reprogramación de Clase | Requiere validación de nueva fecha sin conflictos y actualización del cronograma. | 5 |
-| 18 | TS055 | Exponer endpoint para reprogramar una sesión de clases | Endpoint PUT especializado con lógica de conflicto temporal. | 2 |
-| 19 | US022 | Generación de Boletas de Pago | Implica cálculo de montos, vinculación con inscripción y emisión de comprobante. | 5 |
-| 20 | TS041 | Exponer endpoint para registrar cuentas de cobro | Endpoint POST con validación financiera y control de duplicados. | 3 |
-| 21 | TS046 | Exponer endpoint para asignar boletas de pago | Endpoint POST de vinculación entre boleta y cuenta de cobro. | 2 |
-| 22 | US025 | Registro de Ingreso/Egreso | Requiere categorización de movimiento y validación de montos positivos. | 5 |
-| 23 | TS050 | Exponer endpoint para registrar transacciones | Endpoint POST con validación de monto y tipo de movimiento contable. | 3 |
-| 24 | US028 | Visualización de Resumen de Finanzas | Agregación de datos financieros con cálculo de indicadores por periodo. | 5 |
-| 25 | US029 | Generación de Reportes Financieros | Alta complejidad por procesamiento de datos, exportación y filtros por rango de fechas. | 8 |
-| 26 | TS053 | Exponer endpoint para generar reportes financieros | Endpoint GET con lógica de exportación y manejo de periodos sin datos. | 5 |
-| 27 | US032 | Registro de Cuenta | Creación de cuenta con validación de datos y confirmación de éxito. | 3 |
-| 28 | TS054 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de recurso no encontrado. | 3 |
-| 29 | TS056 | Exponer endpoint para visualizar horarios de un profesor | Endpoint GET filtrado por docente con validación de existencia. | 3 |
-| 30 | TS057 | Exponer endpoint para registrar cuenta de usuario | Endpoint POST con cifrado de credencial y control de duplicados por correo. | 2 |
-| 31 | TS060 | Exponer endpoint para activar cuenta de usuario | Endpoint POST con validación de token y cambio de estado de cuenta. | 3 |
-| 32 | TS061 | Exponer endpoint para reenviar código de verificación | Endpoint POST con disparo de evento de mensajería y control de estado. | 3 |
-| 33 | TS063 | Exponer endpoint para iniciar sesión | Endpoint POST con autenticación y emisión de token JWT. | 2 |
-| 34 | US002 | Actualización de Academia | Modificación de datos existentes con validación de campos obligatorios. | 2 |
-| 35 | US003 | Eliminación de Academia | Eliminación con confirmación explícita del administrador. | 2 |
-| 36 | TS002 | Exponer endpoint para actualizar academias | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 37 | TS003 | Exponer endpoint para eliminar academias | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 38 | TS004 | Exponer endpoint para listar academias | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 39 | TS005 | Exponer endpoint para obtener detalles de una academia | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 40 | US005 | Actualización de Profesor | Edición de perfil docente con validación de formato de datos. | 2 |
-| 41 | US006 | Eliminación de Profesor | Baja de docente con confirmación y limpieza del perfil. | 2 |
-| 42 | TS007 | Exponer endpoint para actualizar administrador | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 43 | TS008 | Exponer endpoint para eliminar administrador | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 44 | TS009 | Exponer endpoint para listar administradores | Endpoint GET que retorna lista de perfiles registrados. | 3 |
-| 45 | TS010 | Exponer endpoint para obtener detalles de un administrador | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 46 | US008 | Actualización de Matrícula | Edición de inscripción con validación de periodos y estados disponibles. | 5 |
-| 47 | US009 | Cancelación de Matrícula | Anulación de inscripción activa con actualización de estado. | 2 |
-| 48 | TS012 | Exponer endpoint para actualizar matrículas | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 49 | TS013 | Exponer endpoint para eliminar matrículas | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 50 | TS014 | Exponer endpoint para listar matrículas | Endpoint GET que retorna lista de inscripciones registradas. | 2 |
-| 51 | TS015 | Exponer endpoint para obtener detalles de una matrícula | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 52 | US011 | Actualización de Asistencia | Corrección de marcadores de presencia en sesión previa. | 3 |
-| 53 | US012 | Visualización de Reportes de Asistencia | Generación de informe filtrado por periodo con manejo de datos vacíos. | 5 |
-| 54 | TS017 | Exponer endpoint para actualizar asistencias de clase | Endpoint PUT con validación de cambios y manejo de no encontrado. | 3 |
-| 55 | TS018 | Exponer endpoint para eliminar asistencias de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 56 | TS019 | Exponer endpoint para listar asistencias de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 57 | TS020 | Exponer endpoint para obtener detalles de una asistencia de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 58 | US014 | Actualización de Periodo Académico | Edición de fechas con validación de no solapamiento. | 3 |
-| 59 | US015 | Eliminación de Periodo Académico | Baja de periodo con confirmación explícita del administrador. | 3 |
-| 60 | TS022 | Exponer endpoint para actualizar periodos académicos | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
-| 61 | TS023 | Exponer endpoint para eliminar periodos académicos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
-| 62 | TS024 | Exponer endpoint para listar periodos académicos | Endpoint GET que retorna lista de periodos registrados. | 2 |
-| 63 | TS025 | Exponer endpoint para obtener detalles de un periodo académico | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 64 | US017 | Actualización de Salones de Clase | Edición de atributos del salón con validación de campos obligatorios. | 3 |
-| 65 | US018 | Eliminación de Salones de Clase | Baja de espacio físico con confirmación del administrador. | 2 |
-| 66 | TS027 | Exponer endpoint para actualizar salones de clase | Endpoint PUT con validación de campos y manejo de no encontrado. | 3 |
-| 67 | TS028 | Exponer endpoint para eliminar salones de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 68 | TS029 | Exponer endpoint para listar salones de clase | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 69 | TS030 | Exponer endpoint para obtener detalles de un salón de clase | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 70 | US020 | Actualización de Horarios | Edición de programación con revalidación de conflictos entre sesiones. | 5 |
-| 71 | US021 | Eliminación de Horarios | Baja de programación con confirmación del administrador. | 2 |
-| 72 | TS032 | Exponer endpoint para actualizar cursos | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 73 | TS033 | Exponer endpoint para eliminar cursos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 74 | TS034 | Exponer endpoint para listar cursos | Endpoint GET que retorna lista de cursos registrados. | 2 |
-| 75 | TS035 | Exponer endpoint para obtener detalles de un curso | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 76 | TS037 | Exponer endpoint para actualizar horarios | Endpoint PUT con validación temporal y manejo de no encontrado. | 2 |
-| 77 | TS038 | Exponer endpoint para eliminar horarios | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1 |
-| 78 | TS039 | Exponer endpoint para listar horarios | Endpoint GET que retorna lista de programaciones registradas. | 2 |
-| 79 | TS040 | Exponer endpoint para obtener detalles de un horario | Endpoint GET por ID con manejo de no encontrado. | 1 |
-| 80 | US023 | Actualización de Boletas de Pago | Edición de montos y estado de comprobante con validación financiera. | 3 |
-| 81 | US024 | Eliminación de Boletas de Pago | Baja de comprobante duplicado o incorrecto con confirmación. | 1 |
-| 82 | TS042 | Exponer endpoint para actualizar cuentas de cobro | Endpoint PUT con validaciones financieras y manejo de no encontrado. | 5 |
-| 83 | TS043 | Exponer endpoint para eliminar cuentas de cobro | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3 |
-| 84 | TS044 | Exponer endpoint para listar cuentas de cobro | Endpoint GET que retorna listado financiero. | 2 |
-| 85 | TS045 | Exponer endpoint para obtener detalles de una cuenta de cobro | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 86 | TS047 | Exponer endpoint para actualizar boletas de pago asignadas a una cuenta de cobro | Endpoint PUT anidado con validación de IDs y manejo de no encontrado. | 3 |
-| 87 | TS048 | Exponer endpoint para listar boletas de pago asignadas a una cuenta de cobro | Endpoint GET anidado que retorna comprobantes vinculados. | 3 |
-| 88 | TS049 | Exponer endpoint para eliminar boletas de pago asignadas a una cuenta de cobro | Endpoint DELETE anidado con desvinculación y respuesta 204. | 2 |
-| 89 | US026 | Actualización de Ingreso/Egreso | Corrección de movimiento contable con validación de montos y justificación. | 3 |
-| 90 | US027 | Eliminación de Ingreso/Egreso | Baja de transacción duplicada o incorrecta con confirmación. | 2 |
-| 91 | TS051 | Exponer endpoint para actualizar transacciones | Endpoint PUT con validación de montos y manejo de datos inválidos. | 3 |
-| 92 | TS052 | Exponer endpoint para eliminar transacciones | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2 |
-| 93 | TS051 | Exponer endpoint para listar transacciones | Endpoint GET que retorna lista o arreglo vacío. | 2 |
-| 94 | TS052 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de no encontrado. | 2 |
-| 95 | TS058 | Exponer endpoint para actualizar cuenta de usuario | Endpoint PUT con validación de datos y manejo de no encontrado. | 3 |
-| 96 | TS059 | Exponer endpoint para eliminar cuenta de usuario | Endpoint DELETE con respuesta 204 sin lógica adicional compleja. | 1 |
-| 97 | TS062 | Exponer endpoint para cambiar contraseña mediante código de verificación | Endpoint POST con validación de código, cifrado y actualización de credencial. | 5 |
-| 98 | TS066 | Exponer endpoint para manejo de CORS | Endpoint OPTIONS con configuración de headers y políticas de origen. | 5 |
-| 99 | SWS001 | Ver sección Hero | Sección estática de presentación principal; requiere diseño visual atractivo. | 5 |
-| 100 | SWS002 | Ver sección Features | Listado visual de funcionalidades clave de la plataforma. | 3 |
-| 101 | SWS003 | Ver sección How It Works | Secuencia de pasos explicativos con elementos visuales de flujo. | 3 |
-| 102 | SWS004 | Ver sección About The Product | Sección descriptiva con beneficios detallados; mayor contenido y diseño. | 5 |
-| 103 | SWS005 | Ver sección Testimonials | Componente de tarjetas o carrusel con experiencias de usuarios. | 3 |
-| 104 | SWS006 | Ver sección About Us | Sección informativa simple con misión, visión y valores. | 2 |
-| 105 | SWS007 | Ver sección About The Team | Grilla de perfiles de equipo con foto, nombre y rol. | 5 |
-| 106 | SWS008 | Ver sección Pricing | Tabla comparativa de planes con destacado visual del recomendado. | 3 |
-| 107 | SWS009 | Ver sección FAQ | Componente acordeón con preguntas y respuestas frecuentes. | 5 |
-| 108 | SWS010 | Ver sección Contact | Formulario de contacto con campos y canales de comunicación. | 3 |
-| 109 | SWS011 | Ver sección Footer | Pie de página con enlaces legales, redes sociales y referencias corporativas. | 2 |
-| 110 | SS001 | Investigación de la integración de Stripe | Exploración de flujos de cobro, webhooks y viabilidad técnica de integración. | 8 |
-| 111 | SS002 | Investigación de la integración de Gmail | Análisis de protocolo SMTP, autenticación y pruebas de envío de correos. | 8 |
-| 112 | SS003 | Investigación de la integración de PagoEfectivo | Evaluación del flujo CIP y estructura requerida en el modelo financiero. | 8 |
-| 113 | SS004 | Probar bibliotecas de generación de archivos PDF y Excel | Benchmark de librerías exportadoras por latencia y soporte de estilos. | 8 |
-| 114 | SS005 | Probar bibliotecas de generación de gráficos | Evaluación comparativa de librerías de visualización para la plataforma. | 8 |
-| 115 | SS006 | Probar bibliotecas de generación de códigos QR | Evaluación comparativa de librerías QR por facilidad de integración y calidad. | 8 |
-| 116 | TS064 | Exponer endpoint para validación de recursos | Endpoint HEAD para comprobación rápida de existencia sin cuerpo de respuesta. | 1 |
-| 117 | TS065 | Exponer endpoint para manejo de CORS y métodos permitidos | Endpoint OPTIONS con headers de autorización HTTP para preflight.    | 2 |
+| 1 | US001 | Registro de Academia | Flujo principal del sistema; requiere validaciones de datos y persistencia en base de datos. | 5            |
+| 2 | TS006 | Exponer endpoint para registrar administrador | Endpoint POST con validaciones básicas y respuesta estándar. | 3            |
+| 3 | TS001 | Exponer endpoint para registrar academias | Endpoint POST con manejo de duplicados y validación de campos. | 3            |
+| 4 | US004 | Registro de Profesor | Implica creación de perfil docente con asignación a academia existente. | 5            |
+| 5 | US013 | Creación de Periodo Académico | Requiere validación de fechas y lógica de no solapamiento entre periodos. | 5            |
+| 6 | TS021 | Exponer endpoint para registrar periodos académicos | Endpoint POST con validación de consistencia temporal. | 3            |
+| 7 | US016 | Creación de Salones de Clase | Implica registro de espacio físico con capacidad y atributos de infraestructura. | 5            |
+| 8 | TS026 | Exponer endpoint para registrar salones de clase | Endpoint POST con validación de capacidad y campos requeridos. | 3            |
+| 9 | US019 | Creación de Horarios | Alta complejidad por detección de conflictos de horario entre docentes y salones. | 5            |
+| 10 | TS031 | Exponer endpoint para registrar cursos | Endpoint POST con manejo de duplicados por nombre o código. | 3            |
+| 11 | US007 | Matrícula de Alumno | Vincula alumno, periodo y curso; requiere validaciones de disponibilidad. | 5            |
+| 12 | TS011 | Exponer endpoint para registrar matrículas | Endpoint POST con control de conflictos de inscripción activa. | 3            |
+| 13 | US010 | Registro de Asistencia | Lógica simple de marcado por sesión con validación mínima. | 3            |
+| 14 | TS016 | Exponer endpoint para registrar asistencias de clase | Endpoint POST con control de duplicados por sesión y participante. | 2            |
+| 15 | US030 | Visualización de Horario de Clases | Consulta de datos filtrada por docente y periodo activo. | 3            |
+| 16 | TS036 | Exponer endpoint para registrar horarios | Endpoint POST con detección de solapamientos entre sesiones. | 3            |
+| 17 | US031 | Reprogramación de Clase | Requiere validación de nueva fecha sin conflictos y actualización del cronograma. | 5            |
+| 18 | TS055 | Exponer endpoint para reprogramar una sesión de clases | Endpoint PUT especializado con lógica de conflicto temporal. | 2            |
+| 19 | US022 | Generación de Boletas de Pago | Implica cálculo de montos, vinculación con inscripción y emisión de comprobante. | 5            |
+| 20 | TS041 | Exponer endpoint para registrar cuentas de cobro | Endpoint POST con validación financiera y control de duplicados. | 3            |
+| 21 | TS046 | Exponer endpoint para asignar boletas de pago | Endpoint POST de vinculación entre boleta y cuenta de cobro. | 2            |
+| 22 | US025 | Registro de Ingreso/Egreso | Requiere categorización de movimiento y validación de montos positivos. | 5            |
+| 23 | TS050 | Exponer endpoint para registrar transacciones | Endpoint POST con validación de monto y tipo de movimiento contable. | 3            |
+| 24 | US028 | Visualización de Resumen de Finanzas | Agregación de datos financieros con cálculo de indicadores por periodo. | 5            |
+| 25 | US029 | Generación de Reportes Financieros | Alta complejidad por procesamiento de datos, exportación y filtros por rango de fechas. | 5            |
+| 26 | TS053 | Exponer endpoint para generar reportes financieros | Endpoint GET con lógica de exportación y manejo de periodos sin datos. | 5            |
+| 27 | US032 | Registro de Cuenta | Creación de cuenta con validación de datos y confirmación de éxito. | 3            |
+| 28 | TS054 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de recurso no encontrado. | 3            |
+| 29 | TS056 | Exponer endpoint para visualizar horarios de un profesor | Endpoint GET filtrado por docente con validación de existencia. | 3            |
+| 30 | TS057 | Exponer endpoint para registrar cuenta de usuario | Endpoint POST con cifrado de credencial y control de duplicados por correo. | 2            |
+| 31 | TS060 | Exponer endpoint para activar cuenta de usuario | Endpoint POST con validación de token y cambio de estado de cuenta. | 3            |
+| 32 | TS061 | Exponer endpoint para reenviar código de verificación | Endpoint POST con disparo de evento de mensajería y control de estado. | 3            |
+| 33 | TS063 | Exponer endpoint para iniciar sesión | Endpoint POST con autenticación y emisión de token JWT. | 2            |
+| 34 | US002 | Actualización de Academia | Modificación de datos existentes con validación de campos obligatorios. | 2            |
+| 35 | US003 | Eliminación de Academia | Eliminación con confirmación explícita del administrador. | 2            |
+| 36 | TS002 | Exponer endpoint para actualizar academias | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 37 | TS003 | Exponer endpoint para eliminar academias | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 38 | TS004 | Exponer endpoint para listar academias | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 39 | TS005 | Exponer endpoint para obtener detalles de una academia | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 40 | US005 | Actualización de Profesor | Edición de perfil docente con validación de formato de datos. | 2            |
+| 41 | US006 | Eliminación de Profesor | Baja de docente con confirmación y limpieza del perfil. | 2            |
+| 42 | TS007 | Exponer endpoint para actualizar administrador | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 43 | TS008 | Exponer endpoint para eliminar administrador | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 44 | TS009 | Exponer endpoint para listar administradores | Endpoint GET que retorna lista de perfiles registrados. | 3            |
+| 45 | TS010 | Exponer endpoint para obtener detalles de un administrador | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 46 | US008 | Actualización de Matrícula | Edición de inscripción con validación de periodos y estados disponibles. | 5            |
+| 47 | US009 | Cancelación de Matrícula | Anulación de inscripción activa con actualización de estado. | 2            |
+| 48 | TS012 | Exponer endpoint para actualizar matrículas | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 49 | TS013 | Exponer endpoint para eliminar matrículas | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 50 | TS014 | Exponer endpoint para listar matrículas | Endpoint GET que retorna lista de inscripciones registradas. | 2            |
+| 51 | TS015 | Exponer endpoint para obtener detalles de una matrícula | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 52 | US011 | Actualización de Asistencia | Corrección de marcadores de presencia en sesión previa. | 3            |
+| 53 | US012 | Visualización de Reportes de Asistencia | Generación de informe filtrado por periodo con manejo de datos vacíos. | 5            |
+| 54 | TS017 | Exponer endpoint para actualizar asistencias de clase | Endpoint PUT con validación de cambios y manejo de no encontrado. | 3            |
+| 55 | TS018 | Exponer endpoint para eliminar asistencias de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 56 | TS019 | Exponer endpoint para listar asistencias de clase | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 57 | TS020 | Exponer endpoint para obtener detalles de una asistencia de clase | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 58 | US014 | Actualización de Periodo Académico | Edición de fechas con validación de no solapamiento. | 3            |
+| 59 | US015 | Eliminación de Periodo Académico | Baja de periodo con confirmación explícita del administrador. | 3            |
+| 60 | TS022 | Exponer endpoint para actualizar periodos académicos | Endpoint PUT con validación temporal y manejo de no encontrado. | 2            |
+| 61 | TS023 | Exponer endpoint para eliminar periodos académicos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1            |
+| 62 | TS024 | Exponer endpoint para listar periodos académicos | Endpoint GET que retorna lista de periodos registrados. | 2            |
+| 63 | TS025 | Exponer endpoint para obtener detalles de un periodo académico | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 64 | US017 | Actualización de Salones de Clase | Edición de atributos del salón con validación de campos obligatorios. | 3            |
+| 65 | US018 | Eliminación de Salones de Clase | Baja de espacio físico con confirmación del administrador. | 2            |
+| 66 | TS027 | Exponer endpoint para actualizar salones de clase | Endpoint PUT con validación de campos y manejo de no encontrado. | 3            |
+| 67 | TS028 | Exponer endpoint para eliminar salones de clase | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 68 | TS029 | Exponer endpoint para listar salones de clase | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 69 | TS030 | Exponer endpoint para obtener detalles de un salón de clase | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 70 | US020 | Actualización de Horarios | Edición de programación con revalidación de conflictos entre sesiones. | 5            |
+| 71 | US021 | Eliminación de Horarios | Baja de programación con confirmación del administrador. | 2            |
+| 72 | TS032 | Exponer endpoint para actualizar cursos | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 73 | TS033 | Exponer endpoint para eliminar cursos | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 74 | TS034 | Exponer endpoint para listar cursos | Endpoint GET que retorna lista de cursos registrados. | 2            |
+| 75 | TS035 | Exponer endpoint para obtener detalles de un curso | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 76 | TS037 | Exponer endpoint para actualizar horarios | Endpoint PUT con validación temporal y manejo de no encontrado. | 2            |
+| 77 | TS038 | Exponer endpoint para eliminar horarios | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 1            |
+| 78 | TS039 | Exponer endpoint para listar horarios | Endpoint GET que retorna lista de programaciones registradas. | 2            |
+| 79 | TS040 | Exponer endpoint para obtener detalles de un horario | Endpoint GET por ID con manejo de no encontrado. | 1            |
+| 80 | US023 | Actualización de Boletas de Pago | Edición de montos y estado de comprobante con validación financiera. | 3            |
+| 81 | US024 | Eliminación de Boletas de Pago | Baja de comprobante duplicado o incorrecto con confirmación. | 1            |
+| 82 | TS042 | Exponer endpoint para actualizar cuentas de cobro | Endpoint PUT con validaciones financieras y manejo de no encontrado. | 5            |
+| 83 | TS043 | Exponer endpoint para eliminar cuentas de cobro | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 3            |
+| 84 | TS044 | Exponer endpoint para listar cuentas de cobro | Endpoint GET que retorna listado financiero. | 2            |
+| 85 | TS045 | Exponer endpoint para obtener detalles de una cuenta de cobro | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 86 | TS047 | Exponer endpoint para actualizar boletas de pago asignadas a una cuenta de cobro | Endpoint PUT anidado con validación de IDs y manejo de no encontrado. | 3            |
+| 87 | TS048 | Exponer endpoint para listar boletas de pago asignadas a una cuenta de cobro | Endpoint GET anidado que retorna comprobantes vinculados. | 3            |
+| 88 | TS049 | Exponer endpoint para eliminar boletas de pago asignadas a una cuenta de cobro | Endpoint DELETE anidado con desvinculación y respuesta 204. | 2            |
+| 89 | US026 | Actualización de Ingreso/Egreso | Corrección de movimiento contable con validación de montos y justificación. | 3            |
+| 90 | US027 | Eliminación de Ingreso/Egreso | Baja de transacción duplicada o incorrecta con confirmación. | 2            |
+| 91 | TS051 | Exponer endpoint para actualizar transacciones | Endpoint PUT con validación de montos y manejo de datos inválidos. | 3            |
+| 92 | TS052 | Exponer endpoint para eliminar transacciones | Endpoint DELETE con respuesta 204 y manejo de no encontrado. | 2            |
+| 93 | TS051 | Exponer endpoint para listar transacciones | Endpoint GET que retorna lista o arreglo vacío. | 2            |
+| 94 | TS052 | Exponer endpoint para obtener detalles de una transacción | Endpoint GET por ID con manejo de no encontrado. | 2            |
+| 95 | TS058 | Exponer endpoint para actualizar cuenta de usuario | Endpoint PUT con validación de datos y manejo de no encontrado. | 3            |
+| 96 | TS059 | Exponer endpoint para eliminar cuenta de usuario | Endpoint DELETE con respuesta 204 sin lógica adicional compleja. | 1            |
+| 97 | TS062 | Exponer endpoint para cambiar contraseña mediante código de verificación | Endpoint POST con validación de código, cifrado y actualización de credencial. | 5            |
+| 98 | TS066 | Exponer endpoint para manejo de CORS | Endpoint OPTIONS con configuración de headers y políticas de origen. | 5            |
+| 99 | SWS001 | Ver sección Hero | Sección estática de presentación principal; requiere diseño visual atractivo. | 5            |
+| 100 | SWS002 | Ver sección Features | Listado visual de funcionalidades clave de la plataforma. | 3            |
+| 101 | SWS003 | Ver sección How It Works | Secuencia de pasos explicativos con elementos visuales de flujo. | 3            |
+| 102 | SWS004 | Ver sección About The Product | Sección descriptiva con beneficios detallados; mayor contenido y diseño. | 5            |
+| 103 | SWS005 | Ver sección Testimonials | Componente de tarjetas o carrusel con experiencias de usuarios. | 3            |
+| 104 | SWS006 | Ver sección About Us | Sección informativa simple con misión, visión y valores. | 2            |
+| 105 | SWS007 | Ver sección About The Team | Grilla de perfiles de equipo con foto, nombre y rol. | 5            |
+| 106 | SWS008 | Ver sección Pricing | Tabla comparativa de planes con destacado visual del recomendado. | 3            |
+| 107 | SWS009 | Ver sección FAQ | Componente acordeón con preguntas y respuestas frecuentes. | 5            |
+| 108 | SWS010 | Ver sección Contact | Formulario de contacto con campos y canales de comunicación. | 3            |
+| 109 | SWS011 | Ver sección Footer | Pie de página con enlaces legales, redes sociales y referencias corporativas. | 2            |
+| 110 | SS001 | Investigación de la integración de Stripe | Exploración de flujos de cobro, webhooks y viabilidad técnica de integración. | 5            |
+| 111 | SS002 | Investigación de la integración de Gmail | Análisis de protocolo SMTP, autenticación y pruebas de envío de correos. | 5            |
+| 112 | SS003 | Investigación de la integración de PagoEfectivo | Evaluación del flujo CIP y estructura requerida en el modelo financiero. | 5            |
+| 113 | SS004 | Probar bibliotecas de generación de archivos PDF y Excel | Benchmark de librerías exportadoras por latencia y soporte de estilos. | 5            |
+| 114 | SS005 | Probar bibliotecas de generación de gráficos | Evaluación comparativa de librerías de visualización para la plataforma. | 5            |
+| 115 | SS006 | Probar bibliotecas de generación de códigos QR | Evaluación comparativa de librerías QR por facilidad de integración y calidad. | 5            |
+| 116 | TS064 | Exponer endpoint para validación de recursos | Endpoint HEAD para comprobación rápida de existencia sin cuerpo de respuesta. | 1            |
+| 117 | TS065 | Exponer endpoint para manejo de CORS y métodos permitidos | Endpoint OPTIONS con headers de autorización HTTP para preflight.    | 2            |
 
 </div>
 
@@ -6324,7 +6441,34 @@ Mediante el endpoint `/teachers`, se listan todos los profesores registrados en 
 
 ### 5.2.8. Team Collaboration Insights
 
+En esta sección se presenta los insights de nuestro equipo en las soluciones implementadas.
+
+**Backend**
+
+![Insights del backend](assets/images/team-collaboration-insights/report/insights-backend.png)
+
+**Frontend**
+![Insights del Frontend](assets/images/team-collaboration-insights/report/insights-frontend.png)
+
+**Aplicación Móvil para Admins**
+![Insights del mobile android native](/assets/images/team-collaboration-insights/report/inisghts-mobile-admin.png)
+
+**Aplicación Móvil para Profesores**
+![Insights del mobile multiplatform](/assets/images/team-collaboration-insights/report/insights-mobile-teacher.png)
+
+**Landing Page**
+![Insights de la landing page](/assets/images/team-collaboration-insights/report/insights-landing.png)
+
+Se puede observar una repartición en las diferentes implementaciones de las soluciones,donde el backend se concentra más en commits debido a las pruebas implementadas
+
 ## 5.3. Video About-the-Product
+
+En esta sección se presenta el video about the product de las soluciones desplegadas, donde se explica el flujo de la aplicación y se promociona su uso.
+
+![Video about the product](/assets/images/photos/about-the-product-video.png)
+
+Link: https://youtu.be/Ar2XDwMkPfU
+
 
 <hr class="page-break">
 
@@ -9854,6 +9998,1216 @@ describe('Billing Flow - Desktop', () => {
 ```
 ![Billing Test](./assets/test/billing4.png)
 
+## 6.2. Static testing & Verification 
+
+### 6.2.1. Static Code Analysis 
+
+#### 6.2.1.1. Coding standard & Code conventions
+
+Para garantizar que el código fuente de **Demy** sea limpio, mantenible y coherente entre todos los miembros del equipo de **EduLabs**, se establecieron estándares de codificación alineados con las buenas prácticas de los lenguajes, los frameworks utilizados y la arquitectura basada en **Domain-Driven Design (DDD)**.
+
+**1. Estándares generales (Clean Code)**
+- Uso de nombres descriptivos y significativos para clases, variables, métodos y paquetes.
+- Métodos enfocados en una única responsabilidad (Single Responsibility Principle).
+- Eliminación de código muerto (comentado o sin uso) y reducción estricta de la duplicación de código.
+- Los comentarios se utilizan exclusivamente para explicar la intención ("por qué") en lógicas de negocio complejas; el código debe explicar el "qué" y el "cómo" por sí mismo.
+
+**2. Estándares para el Backend (Java + Spring Boot)**
+- **Naming Conventions:**
+  - Clases, Interfaces y Enums: `PascalCase`.
+  - Variables, Atributos y Métodos: `camelCase`.
+  - Constantes: `SCREAMING_SNAKE_CASE` (mayúsculas separadas por guiones bajos).
+  - Paquetes: en minúsculas, organizados según la estructura de Bounded Contexts.
+- **Arquitectura y Framework:**
+  - Inyección de dependencias preferentemente mediante constructores.
+  - Separación estricta en capas (Domain, Application, Infrastructure, Interfaces) respetando la inyección de dependencias desde el dominio.
+  - Controladores enfocados solo en el enrutamiento HTTP; la lógica de negocio reside en los *Command/Query Services*.
+
+**3. Estándares para la Web App Administrativa (Angular + TypeScript)**
+- **Convenciones de Angular:**
+  - Archivos nombrados siguiendo la convención oficial (ej. `student-list.component.ts`, `auth.service.ts`).
+  - Clases y Decoradores en `PascalCase`. Propiedades, métodos y funciones en `camelCase`.
+- **Buenas Prácticas:**
+  - Uso estricto de TypeScript, evitando el uso de `any`.
+  - Herramientas: **ESLint** y **Prettier** para mantener consistencia visual y detectar errores de estilo.
+
+**4. Estándares para las Aplicaciones Móviles**
+
+Dado que el ecosistema móvil se divide según el tipo de usuario, se aplican estándares específicos para cada tecnología:
+
+- **Admin App (Kotlin + Jetpack Compose):**
+  - **Convenciones de Kotlin:** Nombres de funciones `@Composable` en `PascalCase` (para tratarlas como componentes de UI) y funciones normales/variables en `camelCase`.
+  - **Buenas Prácticas en Compose:** Aplicación estricta de *State Hoisting* (elevación de estado) y flujo de datos unidireccional (UDF). Se prioriza la creación de componentes *stateless* (sin estado) para facilitar su previsualización y reutilización.
+  - **Organización:** Separación clara entre la UI (screens/components) y los *ViewModels*.
+
+- **Teacher App (Flutter + Dart):**
+  - **Convenciones de Dart:** Formateo estandarizado mediante `dart format`. Clases y Widgets en `PascalCase`, variables y funciones en `camelCase`.
+  - **Buenas Prácticas con BLoC:** Arquitectura reactiva separando estrictamente los Eventos (Events), los Estados (States) y la lógica de negocio (Blocs). Ninguna regla de negocio debe existir dentro de la capa de UI (Widgets).
+  - **Manejo de memoria:** Cierre adecuado de *streams* y controladores para evitar fugas de memoria, sumado al uso de *Null Safety* estricto.
+
+**5. Convenciones de Domain-Driven Design (DDD)**
+- **Bounded Contexts:** Separación clara en módulos independientes para cada contexto del negocio: *IAM, Enrollment, Scheduling, Attendance, Billing, Accounting & Finance* e *Institution*.
+- **Lenguaje Ubicuo (Ubiquitous Language):** Términos de negocio unificados entre el equipo técnico y el dominio, utilizándolos de manera consistente en todo el código.
+
+---
+
+#### 6.2.1.2. Code Quality & Code Security
+
+Para asegurar que Demy cuente con un sistema robusto, seguro y altamente disponible para las instituciones educativas, se aplicó un proceso continuo de análisis estático y verificación de métricas. El equipo de EduLabs evaluó la calidad del código y la mitigación de vulnerabilidades mediante la integración de herramientas automatizadas.
+
+---
+
+**1. Evaluación de la calidad del código**
+
+Se monitorean continuamente métricas clave para evitar la degradación del sistema:
+- **Complejidad ciclomática:** Identificación de métodos con demasiadas ramificaciones condicionales.
+- **Duplicación de código:** Detección de bloques repetidos para fomentar la reutilización y el principio DRY.
+- **Code Smells y Deuda Técnica:** Identificación proactiva de malas prácticas de diseño.
+
+**Herramientas utilizadas:**
+- **ESLint & SonarLint:** Para feedback en tiempo real en los entornos de desarrollo (IDE) de cada programador.
+
+*Gracias a estos reportes, se ha logrado refactorizar métodos complejos en los módulos de Scheduling y Billing, y reducir la duplicación de código en los componentes de Angular.*
+
+---
+
+**2. Seguridad del código**
+
+Debido a que Demy maneja datos sensibles de estudiantes, profesores y transacciones financieras, se implementaron controles estrictos:
+
+- **Inyección SQL (SQL Injection):**
+  - Todo el acceso a la base de datos relacional se realiza a través de ORMs (como Spring Data JPA), los cuales utilizan consultas parametrizadas. Se prohíbe terminantemente la concatenación manual de cadenas para formar consultas SQL.
+
+- **Cross-Site Scripting (XSS):**
+  - En la aplicación web (Angular), se aprovecha el motor de sanitización integrado del framework, el cual neutraliza automáticamente scripts maliciosos antes de renderizar datos en el DOM.
+  - Se restringe el uso de bypass de seguridad (como `DomSanitizer`) solo a casos documentados y estrictamente necesarios.
+
+- **Gestión de Identidad y Accesos (IAM):**
+  - Todo el manejo de autenticación y autorización está centralizado en el Bounded Context de IAM.
+  - Se utilizan JSON Web Tokens (JWT) transmitidos exclusivamente mediante encabezados HTTP `Authorization` y bajo conexiones seguras (HTTPS).
+  - Los tokens tienen tiempos de expiración cortos y se cuenta con mecanismos de renovación segura.
+
+- **Manejo de información sensible:**
+  - Las contraseñas se almacenan utilizando algoritmos de hash robustos (ej. BCrypt) y nunca en texto plano.
+  - Las credenciales de bases de datos, claves de APIs de terceros (pasarelas de pago) y secretos de JWT se inyectan a través de variables de entorno y **nunca** se versionan en los repositorios de código.
+
+- **Validación de entradas:**
+  - **Backend:** Se valida la integridad de los payloads entrantes utilizando anotaciones de Bean Validation (`@NotNull`, `@Size`, `@Email`) en los DTOs, rechazando peticiones malformadas antes de que lleguen a la capa de dominio.
+  - **Frontend:** Se implementan Reactive Forms en Angular con validaciones síncronas y asíncronas para proporcionar retroalimentación inmediata al usuario y evitar envíos de datos incorrectos.
+
+Estas prácticas de validación estática aseguran que el ecosistema de **Demy** mantenga un alto estándar de calidad, facilitando el mantenimiento a largo plazo y protegiendo la información crítica de las instituciones educativas usuarias.
+
+### 6.2.2. Reviews 
+
+Para garantizar la calidad, consistencia y seguridad del código en la plataforma **Demy**, el equipo de EduLabs implementó un proceso riguroso de revisiones que combina evaluaciones manuales, revisiones entre pares y análisis automático. Este proceso asegura que cada cambio que se integra al sistema sea seguro, mantenible y coherente con las buenas prácticas de desarrollo adoptadas para el backend (Spring Boot), web app administrativa (Angular), app móvil administrativa (Kotlin + Jetpack Compose) y app móvil de profesores (Flutter).
+
+---
+
+**1. Tipos de revisión**
+
+- **Revisión entre pares (Peer Review)**
+  - Todo cambio debe ser revisado por al menos un miembro del equipo antes de integrarse a la rama principal.
+  - Se evalúa la legibilidad, claridad, mantenibilidad y adherencia a los estándares específicos por tecnología (Java, TypeScript, Kotlin o Dart).
+
+- **Revisión formal**
+  - Para funcionalidades críticas del dominio (ej. lógicas de cruce de horarios en *Scheduling*, transacciones financieras en *Billing*, o emisión de JWT en *IAM*), se realiza una revisión estructurada utilizando un checklist técnico.
+  - Participan al menos dos desarrolladores para validar que la lógica de negocio esté correctamente aislada en la capa de dominio.
+
+- **Revisión automática**
+  - Herramientas como **SonarLint**, **ESLint**, **Android Lint**, **flutter analyze** y los pipelines de **GitHub Actions** detectan de manera automatizada errores, vulnerabilidades y *code smells* antes de permitir el merge.
+  - Permiten identificar complejidad ciclomática elevada, código duplicado, problemas de estilo o inseguridad en el manejo de datos.
+
+---
+
+**2. Proceso de revisión**
+
+- **Pull Requests (PR)**
+  - Cada cambio debe ingresar mediante un PR con una descripción clara del alcance, el motivo del cambio y las pruebas realizadas.
+  - Los PR deben estar vinculados a una historia de usuario o tarea específica del sistema (GitHub Projects / Trello / Jira).
+
+- **Checklist de revisión**
+  - Claridad y legibilidad del código.
+  - Cumplimiento de las convenciones de nomenclatura y arquitectura limpia (DDD).
+  - Validación de datos y manejo adecuado de excepciones.
+  - Ausencia de duplicación de código (*DRY - Don't Repeat Yourself*).
+  - Seguridad: validación contra puntos vulnerables a XSS, SQL Injection u exposición de variables de entorno.
+  - Verificación de que los cambios no rompan los flujos y módulos existentes.
+
+- **Comentarios y feedback constructivo**
+  - Los revisores deben justificar cada observación técnica y sugerir alternativas viables.
+  - Se promueve una cultura de egoless programming, mejora continua y aprendizaje colaborativo dentro del equipo.
+
+- **Aprobación de PR**
+  - Ningún cambio se fusiona a las ramas `develop` o `main` sin al menos **una aprobación externa** de otro miembro del equipo.
+  - Los cambios deben pasar obligatoriamente los *checks* automáticos de integración continua (CI) antes del merge.
+
+---
+
+**3. Criterios de aceptación**
+
+- Cumplimiento estricto de estándares de estilo (Prettier, ktlint, dart format) y estructura definidos para cada tecnología.
+- Cero vulnerabilidades críticas o *bugs* detectados por el análisis estático de los linters.
+- Pase exitoso de las pruebas unitarias y de integración, asegurando que no se generen regresiones en el sistema.
+- Cobertura mínima de pruebas recomendada para los *Application Services* y *Domain Entities* más críticos.
+- Mantener la coherencia arquitectónica con los principios de Domain-Driven Design (DDD) respetando los límites de los Bounded Contexts (*IAM, Enrollment, Scheduling, Attendance, Billing, Accounting*).
+
+---
+
+**4. Frecuencia de las revisiones**
+
+- Las revisiones (*Peer Reviews*) se realizan de forma constante como parte del flujo diario de trabajo y envío de código.
+- Se intensifican durante el cierre de cada iteración (Sprint) para garantizar que los entregables (*Release Candidates*) mantengan el nivel de calidad esperado.
+- Se aplican revisiones cruzadas especiales para configuraciones de despliegue o cambios en la base de datos relacional.
+
+---
+
+**5. Resultados del proceso de revisión en Demy**
+
+- **Frontend / Mobile:** Identificación temprana de duplicación en componentes visuales de Angular y refactorización de *Composables* ineficientes en Kotlin para evitar recomposiciones innecesarias de la interfaz. Mejora en la separación de estados mediante el patrón BLoC en Flutter.
+- **Backend:** Reducción de la complejidad lógica en los servicios de dominio relacionados a la validación de matrículas y cruces de horarios.
+- **Seguridad:** Eliminación de prácticas inseguras, garantizando un flujo correcto en el uso de *Bearer Tokens* (JWT) y el almacenamiento seguro de credenciales en dispositivos móviles.
+- **Arquitectura:** Fortalecimiento del Lenguaje Ubicuo y una mejor encapsulación de los repositorios e interfaces del dominio.
+
+Este proceso de *Reviews* garantiza que el ecosistema **Demy** mantenga una base de código robusta, escalable y alineada con los más altos estándares de ingeniería de software requeridos para un sistema SaaS educativo en producción.
+
+## 6.3. Validation Interviews
+
+En esta sección se presentan las entrevistas de validación realizadas con los representantes de los segmentos objetivo del proyecto: administrativos y docentes de academias educativas. El propósito de esta fase fue evaluar la claridad de la propuesta de valor, la usabilidad del prototipo y la aceptación de las funcionalidades planteadas, contrastando las hipótesis iniciales con la percepción real de los usuarios.
+
+### 6.3.1. Diseño de Entrevistas
+
+Para el diseño de las entrevistas de validación se elaboraron guías diferenciadas por segmento. Las preguntas se centraron en dos dimensiones principales: propuesta de valor y usabilidad.
+
+En el caso de los **administradores de academias**, se evaluó la **landing page** y la **web application** orientada a la gestión académica y administrativa. En el caso de los **profesores**, se evaluó la **mobile application** enfocada en la visualización de horarios, el registro de asistencia y el uso diario dentro de su labor docente.
+
+**Segmento 1: Administrativos de academias**
+
+**A. Landing Page (Propuesta de valor)**
+
+1. ¿Qué fue lo primero que entendiste al ver la página?
+2. ¿Te queda claro qué problema buscamos resolver o ayudar?
+3. ¿El mensaje principal te parece relevante para tu trabajo diario?
+4. ¿Qué parte del contenido te pareció más útil o atractiva?
+5. ¿Qué mejorarías para que la información sea más clara o persuasiva?
+
+**B. Web Application (Interfaz)**
+
+1. ¿Qué tan fácil fue navegar por la aplicación o entender sus secciones?
+2. ¿Lograste identificar rápidamente dónde registrar matrículas o pagos?
+3. ¿Te pareció intuitiva la interfaz o tuviste que pensar demasiado para realizar una acción?
+4. ¿Hay alguna función que esperabas encontrar y no viste?
+5. ¿Qué te generó confianza o desconfianza mientras probabas la herramienta?
+
+**C. Web Application (Propuesta de valor)**
+
+1. ¿Qué tan útil consideras esta herramienta para mejorar tu organización diaria?
+2. ¿Qué tarea específica crees que te ahorraría más tiempo o esfuerzo?
+3. Si tuvieras que reemplazar tu sistema actual por este, ¿qué necesitaría tener para convencerte?
+4. ¿Qué tan probable sería que recomendaras esta herramienta a otro administrativo?
+
+**Segmento 2: Profesores de academia**
+
+**A. Mobile Application (Interfaz)**
+
+1. ¿Qué tan fácil te resultó ubicar tus cursos y sesiones programadas desde la pantalla principal?
+2. ¿Pudiste registrar asistencia sin dificultad? ¿Qué parte del flujo te pareció más clara y cuál más confusa?
+3. ¿Algún botón, ícono o sección te resultó poco intuitiva o no entendiste para qué servía?
+4. ¿Te tomó más tiempo del esperado realizar alguna acción? ¿Cuál?
+5. ¿Hubo algo en la experiencia que te generó confianza o desconfianza?
+
+**B. Mobile Application (Propuesta de valor)**
+
+1. ¿Qué tan útil te parece esta herramienta para organizar tus clases y controlar asistencia?
+2. ¿Qué tarea docente sientes que esta app te ayudaría a automatizar o simplificar más?
+3. Comparado con la forma en que trabajas hoy, ¿qué ventaja le encuentras?
+4. Si tuvieras que usar Demy como herramienta principal, ¿qué funcionalidades adicionales necesitarías para comprometerte al 100%?
+5. ¿Qué tan probable sería que recomendaras esta app a otros profesores de tu academia?
+6. 
+### 6.3.2. Registro de Entrevistas
+
+
+#### Segmento: Administrativo - Entrevistado 1
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Kyrie Salas Romero                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Edad**                | 31                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Sexo**                | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Distrito**            | San Miguel (Lima)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Ocupación**           | Administrador de academia preuniversitaria (~150 alumnos)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Fecha de entrevista** | 08 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Timing**              | 00:00 - 09:08                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-administrator-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Resumen**             | Kyrie, administrador de una academia preuniversitaria (~150 alumnos), comprendió desde el primer vistazo que Demy reúne matrícula, asistencia, horarios y pagos en un solo lugar, resolviendo su problema de información dispersa en Excel y WhatsApp; su sugerencia fue añadir testimonios de academias reales para reforzar la confianza. La web application le resultó muy fácil de navegar e intuitiva gracias al menú lateral ordenado, ubicando rápidamente matrícula y pagos sin trabarse en ningún paso, y el inicio de sesión junto al panel de datos ordenado le generaron confianza y sensación de solidez profesional. Estima que la plataforma sería "un antes y un después", ahorrándole horas cada semana, sobre todo en el control de pagos y la matrícula que hoy realiza cruzando Excel con recibos a mano. Para migrar solo necesitaría importar sus datos actuales y una capacitación corta para su equipo; a futuro le gustaría un aviso de pagos por WhatsApp. La recomendaría con alta probabilidad (9/10). |                                                                                                                                                                                                                                                                        
+
+#### Segmento: Administrativo - Entrevistado 2
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Anjali Crispin Vega                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Edad**                | 34                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Sexo**                | Femenino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Distrito**            | Santiago de Surco (Lima)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Ocupación**           | Coordinadora administrativa de academia de idiomas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Fecha de entrevista** | 08 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Timing**              | 09:08 - 17:55                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-administrator-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Resumen**             | Anjali, coordinadora administrativa de una academia de idiomas con 2 sedes (~220 alumnos), valoró positivamente tanto la landing page como la web application. En la landing entendió de inmediato que Demy centraliza la gestión de academias y destacó la relevancia de unificar la información dispersa y duplicada entre sedes; su única sugerencia fue resaltar más el soporte multisede, que para ella es el punto clave. En la web application encontró la navegación muy fácil e intuitiva, ubicando matrícula y pagos sin esfuerzo, y el login junto al panel de indicadores ordenado le transmitieron confianza y seriedad frente a sus hojas de cálculo. Considera la herramienta utilísima para ordenar su operación diaria, siendo la gestión de pagos y la matrícula las tareas donde más tiempo ahorraría al evitar conciliaciones entre sedes. Para reemplazar su sistema actual solo requeriría poder cargar los datos de sus dos sedes y gestionar usuarios por sede. La recomendaría sin dudarlo (10/10). |                                                                                                                                                                                                                                                                        
+
+#### Segmento: Administrativo - Entrevistado 3
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Luis Ramos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Edad**                | 36 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Sexo**                | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Distrito**            | San Juan de Lurigancho                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Ocupación**           | Administrador de academia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Fecha de entrevista** | 08 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Timing**              | 17:55 - 21:12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                                                                                                                                                          |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-administrator-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Resumen**             | Luis menciona que actualmente gestiona matrículas, pagos y horarios con herramientas manuales, lo que le obliga a invertir tiempo revisando datos y corrigiendo errores. También señala que Demy le parece una propuesta clara y útil para centralizar la información de la academia, mejorar la organización y reducir tareas repetitivas. Considera que la landing page comunica bien la idea general, aunque sería mejor reforzar los beneficios concretos para el administrador. Además, comenta que la web application le resultó fácil de entender y podría ser una solución valiosa si mantiene simplicidad, seguridad y reportes claros. |                                                                                                                                                                                                                                                                        
+
+#### Segmento: Profesor - Entrevistado 1
+
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Fredy Fernandez                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Edad**                | 26 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Sexo**                | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Distrito**            | Los Olivos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Ocupación**           | Profesor de academia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Fecha de entrevista** | 08 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Timing**              | 21:12 - 25:08                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                                                                                                                                                |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-teacher-1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Resumen**             | Fredy menciona que actualmente organiza sus clases y el registro de asistencia de forma manual, lo que le quita tiempo y hace más difícil mantener todo ordenado. También señala que Demy le parece una herramienta útil porque centraliza la información docente y permite acceder rápidamente a horarios y sesiones desde el celular. La interfaz le resultó clara y práctica, especialmente para ubicar sus cursos y realizar acciones sin demasiados pasos. Además, considera que la aplicación sería valiosa si mantiene una navegación sencilla, notificaciones útiles y funciones pensadas para el trabajo diario del profesor. |
+
+#### Segmento: Profesor - Entrevistado 2
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Diego Mendoza                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Edad**                | 31 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Sexo**                | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Distrito**            | Jesús María                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Ocupación**           | Profesor de academia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Fecha de entrevista** | 07 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Timing**              | 25:08 - 28:15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-teacher-2.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Resumen**             | Diego menciona que en su trabajo docente suele organizar clases y asistencia de forma manual, por lo que una aplicación como Demy le ayudaría a ahorrar tiempo y tener mayor orden. También indica que la interfaz móvil le pareció clara en general y fácil de usar para ubicar sus cursos y registrar asistencia. Considera que la propuesta de valor es buena porque centraliza tareas importantes del docente y reduce el uso de herramientas dispersas. Además, afirma que la recomendaría si mantiene una navegación rápida, botones más intuitivos y funciones útiles para el día a día. |
+
+#### Segmento: Profesor - Entrevistado 3
+
+| Atributo                | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre**              | Jhon Castillo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Edad**                | 40 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Sexo**                | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Distrito**            | Cercado de Lima                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Ocupación**           | Profesor de academia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Fecha de entrevista** | 06 de junio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Timing**              | 25:08 - 28:15                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Video**               | [Ver en Microsoft Stream](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g120_upc_edu_pe/IQADrK2mbuASR7bnu0LMqXmwAXJKQoOBGUFsUGNQS3wQSw8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Ke9ahB)                                                                                                                                                           |
+| **Captura**             | ![Captura](./assets/validation-interviews/screenshot-validation-teacher-3.png)                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Resumen**             | Jhon menciona que actualmente maneja sus clases y asistencia de forma manual, lo que le quita tiempo y puede generar desorden. También señala que Demy le parece una herramienta útil porque centraliza la información docente y permite acceder a horarios y asistencia desde el celular. La interfaz le resultó clara y enfocada en las tareas que realmente necesita. Además, considera que sería una buena solución para profesores si mantiene simplicidad, rapidez y funciones que apoyen la rutina diaria. |
+
+### 6.3.3. Evaluaciones según heurísticas
+
+**UX Heuristics & Principles Evaluation**
+
+*Usability – Inclusive Design – Information Architecture*
+
+| Campo | Detalle |
+|---|---|
+| **Carrera** | Ingeniería de Software |
+| **Curso** | 1ASI0732 - Diseño de Experimentos de Ingeniería de Software |
+| **NRC** | 16789 |
+| **Profesor** | Alex Humberto Sanchéz Ponce |
+| **Auditor** | Nistra |
+| **Clientes** | Nataly Rodriguez, German Rivera |
+| **Site o App a evaluar** | Demy |
+
+Esta evaluación heurística parte de los hallazgos recogidos en las entrevistas de validación (administradores y profesor) y revisa la usabilidad de la experiencia propuesta según heurísticas de usabilidad, arquitectura de información e *inclusive design*. Para cada problema se indica, con el ícono 📸, la captura de pantalla que debe tomarse como evidencia y el nombre de archivo sugerido.
+
+#### Tareas a evaluar
+
+El alcance de esta evaluación incluye la revisión de usabilidad de las siguientes tareas:
+
+**Landing Page:**
+1. Explorar la propuesta de valor principal de Demy (Sección hero, mensaje clave).
+2. Feature Section.
+3. How it works Section.
+4. Testimonials Section.
+5. About Us Section.
+6. Pricing Section.
+7. FAQ Section.
+8. Contact Section.
+
+**Native Android Mobile Application:**
+1. Home Section
+2. Schedule Section
+3. Reschedule Section
+4. Attendance Section
+5. Profile Section
+
+**Cross-Platform Mobile Application:**
+1. Dashboard
+2. Teachers Section
+3. Students Section
+4. Periods Section
+5. Courses Section
+6. Classrooms Section
+7. Schedules Section
+8. Enrollments Section
+9. Scheduling Section
+10. Billing Section
+11. Finance Section
+12. Accounting Section
+13. Profile Section
+
+**Native iOS Mobile Application:**
+1. Home Section
+2. Schedule Section
+3. Settings Section
+4. Profile Section
+
+#### Fuera de alcance
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+**Landing Page**
+1. Redes sociales asociadas a la startup.
+2. Política de privacidad y condiciones de uso.
+
+**Mobile Applications**
+1. Recuperación de contraseña.
+2. Política de privacidad y condiciones de uso.
+3. Reportes de bugs.
+4. Configuraciones generales del sistema del dispositivo.
+
+#### Escala de severidad
+
+| Nivel | Descripción |
+|:---:|---|
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| **2** | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+#### Landing Page
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La landing no incluye un chat/chatbot de soporte ni indica claramente los horarios de atención del mismo. | 1 | Help and documentation |
+| 2 | La landing no explica con suficiente claridad qué herramientas ofrece cada sección. | 2 | Match between system and the real world |
+| 3 | Los términos y condiciones no se leen con claridad y afectan la confianza del usuario. | 2 | Visibility of system status |
+| 4 | El precio podría no estar alineado a la percepción de valor para academias grandes. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Falta de chat o chatbot de soporte con horarios visibles**
+- **Severidad:** 1
+- **Heurística violada:** Help and documentation
+- **Problema:** En la landing page de Demy no se visualiza ningún chat o chatbot de soporte que permita a los usuarios resolver dudas rápidas sobre el producto. Además, tampoco se indican horarios de atención ni disponibilidad del equipo de soporte. Esto genera incertidumbre en potenciales clientes (como administradores de academias) que podrían necesitar aclarar preguntas antes de tomar una decisión, y los obliga a buscar otros medios de contacto menos inmediatos.
+- **Recomendación:** Incorporar un chat o chatbot de soporte visible en la landing (por ejemplo, en la esquina inferior derecha), junto con un mensaje claro de disponibilidad, indicando los horarios de atención y el tiempo estimado de respuesta. En caso de estar fuera de horario, el chat podría cambiar a un modo "déjanos tu mensaje" para mantener expectativas realistas.
+- **📸 Captura a tomar:** Vista de la landing (sección de Contacto y/o esquina inferior derecha) evidenciando la ausencia de un widget de chat/chatbot y de horarios de atención. → `landing-p1-soporte-chat.png`
+
+![Landing - Problema 1](./assets/heuristics/landing-p1-soporte-chat.png)
+
+**PROBLEMA #2: Falta de claridad en la explicación de las herramientas y secciones de la landing**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** La landing page de Demy no explica con suficiente claridad qué herramientas o funcionalidades incluye cada sección del sistema. El contenido presenta descripciones generales, pero no especifica de manera directa y concreta qué obtiene el usuario en cada módulo (por ejemplo: gestión de horarios, registros de asistencia, control de pagos, panel para profesores, vista de estudiantes, etc.). Esto provoca que los usuarios —especialmente perfiles administrativos como Germán— tengan dificultades para formarse un entendimiento claro de la propuesta de valor real del producto.
+- **Recomendación:** Ampliar y reorganizar las secciones de la landing para describir explícitamente cada herramienta o funcionalidad, utilizando lenguaje claro, ejemplos y bullets concretos. Incluir pequeñas visualizaciones (íconos, screenshots o micro-demos) que ayuden a relacionar cada sección con su utilidad real dentro de una academia.
+- **📸 Captura a tomar:** Feature Section / "How it works" de la landing mostrando las descripciones genéricas de cada sección. → `landing-p2-secciones.png`
+
+![Landing - Problema 2](./assets/heuristics/landing-p2-secciones.png)
+
+**PROBLEMA #3: Los términos y condiciones no son claros ni fácilmente visibles**
+- **Severidad:** 2
+- **Heurística violada:** Visibility of system status
+- **Problema:** En las entrevistas se mencionó que los términos y condiciones de la landing no se leen bien, ya sea por tamaño, ubicación o claridad del texto. Esto afecta la percepción de transparencia y puede generar desconfianza en usuarios que buscan información legal o de uso antes de registrarse o contratar el servicio.
+- **Recomendación:** Crear una sección dedicada y visible de "Términos y Condiciones" con tipografía adecuada, enlaces accesibles y estructura clara. Añadir además un resumen breve en lenguaje simple para reforzar transparencia.
+- **📸 Captura a tomar:** Footer de la landing donde se ubican (o faltan) los enlaces a Términos y Condiciones, mostrando su baja visibilidad/legibilidad. → `landing-p3-terminos-condiciones.png`
+
+![Landing - Problema 3](./assets/heuristics/landing-p3-terminos-condiciones.png)
+
+**PROBLEMA #4: El precio puede resultar difícil de justificar para academias grandes**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Luciano indicó que, desde la perspectiva de academias grandes, el precio de Demy podría no encajar con sus estructuras de costo típicas. Esto sugiere que la landing no comunica adecuadamente la relación calidad–valor para academias de mayor escala, o no explica suficientemente los beneficios diferenciales que justifican la inversión.
+- **Recomendación:** Agregar una sección de precios más segmentada (pequeñas, medianas y grandes academias) y resaltar casos de uso que muestren ahorro, eficiencia o indicadores de impacto financiero.
+- **📸 Captura a tomar:** Pricing Section de la landing, mostrando los planes actuales sin segmentación por tamaño de academia. → `landing-p4-precios.png`
+
+![Landing - Problema 4](./assets/heuristics/landing-p4-precios.png)
+
+---
+
+#### Native Android Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La aplicación no permite ajustar fuentes, colores o contrastes, reduciendo la accesibilidad y personalización. | 2 | User Control and Freedom |
+| 2 | La app no incluye una sección para ver las notas de los alumnos, generando ausencia de información relevante. | 3 | Match between system and the real world |
+| 3 | La vista de horarios no ofrece un modo de visualización semanal, lo que afecta la alineación con el flujo natural docente. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Falta de opciones para ajustar fuentes, colores y contraste**
+- **Severidad:** 2
+- **Heurística violada:** User Control and Freedom
+- **Problema:** La aplicación móvil para profesores no cuenta con opciones de personalización visual como ajustar tamaño de fuente, nivel de contraste o paleta de colores. Para profesores como Martín, estas opciones mejoran significativamente la comodidad visual durante sesiones largas de registro de asistencia o consulta de clases. La ausencia de estas configuraciones reduce la accesibilidad general y puede generar fatiga visual, especialmente en contextos de baja luz o uso frecuente.
+- **Recomendación:** Agregar un módulo de "Accesibilidad" dentro de la configuración que permita modificar tamaño de texto, modo de alto contraste y estilo de color. Esto mejora la experiencia de usuarios con diferentes preferencias visuales y aligera la carga cognitiva durante el uso prolongado.
+- **📸 Captura a tomar:** Pantalla de Perfil/Configuración (Profile) de la app Android, evidenciando la ausencia de opciones de accesibilidad. → `android-p1-accesibilidad.png`
+
+![Android - Problema 1](./assets/heuristics/android-p1-accesibilidad.png)
+
+**PROBLEMA #2: Falta una sección para visualizar las notas de los alumnos**
+- **Severidad:** 3
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Profesores como José esperan que una aplicación académica incluya acceso rápido y directo a las calificaciones de los estudiantes. Sin embargo, la app actual no cuenta con una sección dedicada a consultar notas, lo que genera incompletitud en la experiencia y obliga al docente a acudir a otros sistemas o métodos informales (mensajes, cuadernos, Excel). Esta ausencia no coincide con el modelo mental del profesor sobre qué debe ofrecer una app de gestión académica.
+- **Recomendación:** Implementar una vista o módulo de "Notas de alumnos" accesible desde el dashboard principal o desde cada curso, mostrando calificaciones, promedios y progreso del alumno.
+- **📸 Captura a tomar:** Home/menú principal de la app Android, mostrando que no existe una sección de "Notas". → `android-p2-notas-alumnos.png`
+
+![Android - Problema 2](./assets/heuristics/android-p2-notas-alumnos.png)
+
+**PROBLEMA #3: La vista de horarios no incluye un modo semanal**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** El docente indicó que prefiere visualizar sus horarios en formato semanal, ya que así organiza mejor sus clases. La app no ofrece esta vista, lo que no se alinea con su modelo mental ni con prácticas comunes en calendarios académicos. Esto dificulta la planificación y puede generar confusión al navegar entre fechas.
+- **Recomendación:** Agregar un "Weekly View" con estructura de calendario docente, permitiendo alternar entre vista diaria, semanal y mensual según preferencia.
+- **📸 Captura a tomar:** Schedule Section de la app Android, mostrando únicamente la vista diaria/lista sin opción semanal. → `android-p3-horario-semanal.png`
+
+![Android - Problema 3](./assets/heuristics/android-p3-horario-semanal.png)
+
+---
+
+#### Cross-Platform Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | No existe una opción de dictado por voz para registrar o gestionar grandes cantidades de alumnos. | 1 | Flexibility and efficiency of use |
+| 2 | Algunas tarjetas o secciones del dashboard no redirigen correctamente, lo que genera confusión en la navegación. | 2 | Consistency and standards |
+| 3 | Las secciones relacionadas (registro de periodos y cursos) están separadas, lo que no coincide con el flujo natural del usuario. | 2 | Match between system and the real world |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Ausencia de dictado por voz para registrar alumnos en flujos masivos**
+- **Severidad:** 1
+- **Heurística violada:** Flexibility and efficiency of use
+- **Problema:** En la aplicación móvil cross-platform (vista administrativa), el registro y la gestión de alumnos en secciones como Attendance, Enrollments o Students se realiza únicamente mediante interacción táctil y escritura manual. Para perfiles como Nataly, que gestionan grupos grandes de alumnos, esto implica muchas pulsaciones y tiempo invertido al registrar asistencias o realizar operaciones repetitivas. La falta de una opción de dictado por voz limita el aprovechamiento de atajos para usuarios frecuentes.
+- **Recomendación:** Incorporar una opción de entrada por voz en los formularios o listas donde se realizan acciones repetitivas (por ejemplo, registrar asistencia o buscar alumnos), mediante un ícono de micrófono que aproveche las APIs de reconocimiento de voz del sistema operativo.
+- **📸 Captura a tomar:** Sección Attendance / Enrollments / Students mostrando el formulario o lista que solo admite interacción táctil (sin ícono de micrófono). → `crossplatform-p1-dictado-voz.png`
+
+![Cross-Platform - Problema 1](./assets/heuristics/crossplatform-p1-dictado-voz.png)
+
+**PROBLEMA #2: Tarjetas del dashboard que no redirigen correctamente**
+- **Severidad:** 2
+- **Heurística violada:** Consistency and standards
+- **Problema:** En la aplicación, algunas tarjetas o secciones del dashboard visual parecen ser elementos pulsables que deberían llevar al usuario a un módulo específico (por ejemplo, asistencia, cursos, pagos o alumnos). Sin embargo, al presionarlas, no redirigen ni realizan ninguna acción, lo que rompe con el comportamiento estándar de las interfaces. El usuario asume —por su forma, tamaño y estilo— que estos elementos deberían ser navegables, y la falta de respuesta genera una experiencia de exploración frustrante.
+- **Recomendación:** Asegurar que todas las tarjetas del dashboard tengan un comportamiento consistente: si un componente luce como un acceso directo, debe redirigir al módulo correspondiente, con retroalimentación visual (animación de "tap", cambio de opacidad o ripple effect). Si una tarjeta aún no tiene funcionalidad, mostrar un estado "Próximamente" u ocultarla temporalmente.
+- **📸 Captura a tomar:** Dashboard / Panel de Control (por ejemplo, las tarjetas "Tendencia de Ingresos vs Gastos" y "Categorías de Gastos") señalando los elementos que aparentan ser pulsables pero no redirigen. → `crossplatform-p2-tarjetas-dashboard.png`
+
+![Cross-Platform - Problema 2](./assets/heuristics/crossplatform-p2-tarjetas-dashboard.png)
+
+**PROBLEMA #3: Las secciones de registro de periodos y cursos deberían estar unificadas**
+- **Severidad:** 2
+- **Heurística violada:** Match between system and the real world
+- **Problema:** Para Luciano, registrar periodos y cursos es parte de un mismo flujo operativo. La separación de estas secciones obliga a entrar a diferentes pantallas para completar una tarea cohesiva, lo que no coincide con el modelo mental del usuario ni con las prácticas reales de gestión académica.
+- **Recomendación:** Integrar ambos registros en un flujo único o permitir crearlos desde una misma pantalla con pasos consecutivos.
+- **📸 Captura a tomar:** Menú lateral mostrando "Periodos" y "Cursos" como secciones separadas (o ambas pantallas de registro por separado). → `crossplatform-p3-periodos-cursos.png`
+
+![Cross-Platform - Problema 3](./assets/heuristics/crossplatform-p3-periodos-cursos.png)
+
+---
+
+#### Native iOS Mobile Application
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado |
+|:---:|---|:---:|---|
+| 1 | La aplicación no incluye un chatbot o asistente virtual para resolver dudas del alumno dentro de la app. | 2 | Help and documentation |
+
+**Descripción de problemas**
+
+**PROBLEMA #1: Ausencia de un chatbot o asistente virtual para resolver dudas del alumno**
+- **Severidad:** 2
+- **Heurística violada:** Help and documentation
+- **Problema:** Alexander comentó que, aunque la aplicación para alumnos es clara y fácil de usar, sería muy útil contar con un chatbot con IA dentro de la app para resolver dudas rápidas, como horarios, fechas de evaluaciones, recordatorios o detalles de cursos. Actualmente, la app no ofrece ningún canal de asistencia contextual, lo que obliga al alumno a buscar ayuda mediante otros medios (contactar a la academia, WhatsApp, correo), interrumpiendo su flujo de uso.
+- **Recomendación:** Integrar un chatbot de soporte dentro de la app nativa de iOS, accesible desde el menú principal o desde la vista de cursos, que resuelva preguntas frecuentes, ofrezca enlaces rápidos y permita enviar consultas.
+- **📸 Captura a tomar:** Home/menú principal de la app iOS, evidenciando la ausencia de un chatbot o asistente virtual. → `ios-p1-chatbot.png`
+
+![iOS - Problema 1](./assets/heuristics/ios-p1-chatbot.png)
+
+## 6.4. Auditoría de Experiencias de Usuario
+### 6.4.1. Auditoría realizada
+#### 6.4.1.1. Información del grupo auditado
+
+| Campo                    | Detalle                                                       |
+| ------------------------ | ------------------------------------------------------------- |
+| Grupo auditado           | Grupo 3                                                       |
+| Startup                  | Stoq                                     |
+| Producto evaluado        | StockWise                                  |
+| Integrantes del equipo   | Ronald Peralta, Luciana Choquehuanca, Camila Rios, Fabiola Del Rocio y Roy Fernandes|
+| Repositorio del proyecto | https://github.com/orgs/upc-1ASI0732-2610-16879-Stoq/repositories                                  |
+| Landing Page             | https://stockwiselanding.netlify.app/                            |
+| Aplicación web           | https://stocktrack-frontend.vercel.app/auth/register |
+
+#### 6.4.1.2. Cronograma de auditoría realizada
+
+| Actividad                                                | Fecha      | Responsable    | Duración estimada |
+| -------------------------------------------------------- |------------|----------------|-------------------|
+| Exploración de usabilidad y navegación general (Login, Dashboard, Menú lateral - Hallazgos 1 al 7)               | 13/06/2026 | Renso Julca    | 120 minutos       |
+| Documentación preliminar, asignación de severidad y mapeo de heurísticas           | 13/06/2026 | Renso Julca | 90 minutos        |
+| Pruebas transaccionales profundas en módulos CRUD (Inventario, Ventas, Proveedores, Personal - Hallazgos 8 al 19)     | 14/06/2026 | Renso Julca | 180 minutos       |
+| Consolidación del informe final, elaboración de tabla resumen y redacción de recomendaciones | 14/06/2026 | Renso Julca | 90 minutos       |
+
+#### 6.4.1.3. Contenido de auditoría realizada
+
+**SITE O APP A EVALUAR:**
+
+StockWise
+
+***TAREAS A EVALUAR:***
+
+*El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:*
+
+1. Inicio de sesión y flujo de recuperación de credenciales
+2. Navegación general, uso del menú lateral y configuración de idioma
+3. Visualización y gestión de notificaciones en el Dashboard
+4. Administración de inventario (edición y eliminación de productos)
+5. Creación de "Kits" de productos y validación de formularios
+6. Búsqueda y filtrado de datos en las tablas del sistema
+7. Gestión de proveedores (procesos de eliminación de registros)
+8. Gestión de ventas (agregación de ítems al borrador y control de cantidades)
+9. Administración de personal (creación de usuarios y asignación de permisos)
+10. Visualización de módulos de reportes
+
+***TABLA RESUMEN:***
+
+| # | Problema | Escala de Severidad | Heurística/Principio violada(o) |
+| :--- | :--- | :--- | :--- |
+| 1 | Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout). | 2 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 2 | El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual. | 3 | Usability: Control y libertad del usuario |
+| 3 | Elemento interactivo (botón de idioma) superpuesto o muy cerca de un elemento gráfico decorativo. | 1 | Usability: Diseño estético y minimalista |
+| 4 | Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard. | 3 | Usability: Control y libertad del usuario |
+| 5 | Control global (cambio de idioma) oculto al colapsar el menú lateral. | 2 | Usability: Consistencia y estándares / Flexibilidad |
+| 6 | Duplicidad innecesaria de la interfaz de notificaciones en la misma vista. | 2 | Usability: Diseño estético y minimalista |
+| 7 | Texto truncado e incompleto en una opción del menú lateral. | 1 | Usability: Diseño estético y minimalista |
+| 8 | La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación. | 4 | Usability: Visibilidad del estado del sistema / Control del usuario |
+| 9 | Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador. | 4 | Usability: Prevención de errores / Diseño estético y minimalista |
+| 10 | Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos. | 3 | Usability: Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores |
+| 11 | Duplicidad innecesaria del título de la sección en la cabecera. | 1 | Usability: Diseño estético y minimalista |
+| 12 | Falta de interactividad y retroalimentación en el botón "Filtrar". | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 13 | Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento. | 3 | Usability: Consistencia y estándares / Visibilidad del estado del sistema |
+| 14 | Duplicidad innecesaria del título de la sección ("Gestión de Ventas"). | 1 | Usability: Diseño estético y minimalista |
+| 15 | Falta de interactividad en el botón "Filtro" de la barra de búsqueda. | 3 | Usability: Visibilidad del estado del sistema / Flexibilidad y eficiencia |
+| 16 | Latencia excesiva (aprox. 3 segundos) sin retroalimentación visual al agregar productos o modificar cantidades en el carrito. | 3 | Usability: Visibilidad del estado del sistema / Eficiencia de uso |
+| 17 | Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés. | 3 | Usability: Relación entre el sistema y el mundo real |
+| 18 | Duplicidad innecesaria del título de la sección ("Reports"). | 1 | Usability: Diseño estético y minimalista |
+| 19 | Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa. | 3 | Usability: Visibilidad del estado del sistema / Prevención de errores |
+
+***DESCRIPCIÓN DE PROBLEMA:***
+
+**PROBLEMA #1:** Espera prolongada con spinner infinito sin mensaje de contexto ni manejo de tiempo de espera (timeout).
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+
+**Problema:**
+Al realizar el primer intento de inicio de sesión, el sistema muestra correctamente un indicador de carga (spinner) en el botón. Sin embargo, debido a una alta latencia del servidor, este spinner se mantiene girando indefinidamente (más de 30 segundos) sin ofrecer ninguna actualización de estado. Al no existir un límite de tiempo de espera (timeout) ni un botón para cancelar la petición, el usuario percibe que la aplicación se ha "congelado", obligándolo a cerrar y recargar la página manualmente para poder continuar.
+
+![Problem 01](./assets/ux-ui/audit/problem-01.png)
+
+**Recomendación:**
+Establecer un tiempo máximo de espera para la petición HTTP (por ejemplo, 10 o 15 segundos). Si el servidor no responde en ese lapso, se debe detener el spinner y mostrar un mensaje de error claro al usuario (ej. "El servidor está tardando más de lo esperado, por favor intenta nuevamente"). Alternativamente, si se sabe que el servidor puede tener un "arranque en frío", mostrar un aviso temporal que diga "Conectando con el servidor, esto puede tomar unos segundos...".
+
+---
+
+**PROBLEMA #2:** El enlace de "Olvidaste tu contraseña" no dirige al flujo de recuperación, recargando la vista actual.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Control y libertad del usuario
+
+**Problema:**
+Al hacer clic en la opción "¿Olvidaste tu contraseña?", el sistema no redirige al usuario a la vista correspondiente para restablecer sus credenciales. En su lugar, el enlace simplemente recarga la página de login actual y altera la URL agregando un parámetro (ej. ?returnUrl=%2Fdashboard). Esto atrapa al usuario en un bucle sin salida si realmente ha perdido su contraseña, impidiendo su recuperación.(Puedes incluir la misma captura de pantalla, tal vez señalando con un círculo rojo el texto de "¿Olvidaste tu contraseña?")
+
+![Problem 02](./assets/ux-ui/audit/problem-02.png)
+
+**Recomendación:**
+Revisar el enrutamiento (routing) en el frontend de la aplicación web. Se debe asegurar que el enlace tenga la ruta correcta hacia el componente de recuperación (por ejemplo, /auth/recovery) en lugar de apuntar a la misma vista de login, eliminando la recarga innecesaria de la página.
+
+---
+
+**PROBLEMA #3:** Elemento interactivo superpuesto o muy cerca de un elemento gráfico decorativo.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la esquina superior derecha, el selector de idioma (ES/EN) se encuentra visualmente sobrepuesto o demasiado pegado al elemento gráfico decorativo (el círculo amarillo de fondo). Esto genera ruido visual, reduce la claridad de la interfaz y da una apariencia poco pulida al diseño, aunque no impide la funcionalidad del botón.(Toma una captura de pantalla haciendo un acercamiento solo a esa esquina superior derecha para ilustrar el problema)
+
+![Problem 03](./assets/ux-ui/audit/problem-03.png)
+
+**Recomendación:**
+Ajustar los estilos CSS del contenedor del botón. Se debe aumentar el margen (margin) o el espaciado interno (padding) para separarlo del círculo decorativo, o en su defecto, ajustar el posicionamiento absoluto y el z-index de los elementos de fondo para que no interfieran con las áreas de interacción de los componentes superiores.
+
+---
+
+**PROBLEMA #4:** Redirección inesperada a la vista de "Ajustes" al refrescar el Dashboard.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Control y libertad del usuario
+
+**Problema:**
+Estando en la vista principal del Dashboard, si el usuario recarga la página (F5 o botón de refresh del navegador), el sistema pierde el contexto de la ruta actual y lo redirige automáticamente a la sección de "Settings" (Ajustes). Esto interrumpe el flujo de trabajo del usuario, causándole desorientación y obligándolo a hacer clics adicionales para volver a la pantalla de inicio.
+
+![Problem 04](./assets/ux-ui/audit/problem-04-1.png)
+![Problem 04](./assets/ux-ui/audit/problem-04-2.png)
+
+**Recomendación:**
+Revisar la configuración del enrutador del frontend (ej. Vue Router, React Router). Se debe asegurar que el estado de la aplicación o el manejo de rutas privadas/autenticadas respete la URL actual (/dashboard) durante la recarga del navegador, en lugar de usar una redirección por defecto hacia /settings.
+
+---
+
+**PROBLEMA #5:** Control global (cambio de idioma) oculto al colapsar el menú lateral.
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Consistencia y estándares / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El botón para alternar el idioma (ES/EN) está ubicado dentro del menú lateral izquierdo (sidebar). El problema de diseño radica en que, si el usuario decide colapsar este menú para tener más espacio de visualización, el control de idioma desaparece. Los controles de configuración global no deben depender de elementos colapsables de navegación específica.
+
+![Problem 05](./assets/ux-ui/audit/problem-05-1.png)
+![Problem 05](./assets/ux-ui/audit/problem-05-2.png)
+
+**Recomendación:**
+Reubicar el selector de idiomas. El estándar en el diseño de interfaces web (UI) dicta que este tipo de controles globales se coloquen en la barra superior (Header o Topbar), preferiblemente alineado a la derecha, cerca del icono de notificaciones o del perfil del usuario, garantizando su visibilidad y acceso en todo momento.
+
+---
+
+**PROBLEMA #6:** Duplicidad innecesaria de la interfaz de notificaciones en la misma vista.
+
+**Severidad:** 2
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+La pantalla del Dashboard presenta redundancia de información. Existe un panel estático en el lado derecho que muestra una lista de notificaciones (ej. "Product running out") y, simultáneamente, en la barra superior hay un icono de campana que despliega exactamente la misma lista en un menú flotante. Esta duplicidad satura la interfaz con información repetida y desperdicia espacio valioso en la pantalla principal.
+
+![Problem 06](./assets/ux-ui/audit/problem-06-1.png)
+![Problem 06](./assets/ux-ui/audit/problem-06-2.png)
+
+**Recomendación:**
+Eliminar el panel estático de notificaciones del cuerpo del Dashboard. Se recomienda mantener únicamente el icono de la campana en la barra superior con su respectivo menú desplegable (que es el estándar de la industria). El espacio liberado en el lado derecho del Dashboard puede aprovecharse para expandir los gráficos de métricas o incluir un nuevo indicador de negocio.
+
+---
+
+**PROBLEMA #7:** Texto truncado e incompleto en una opción del menú lateral.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la parte inferior del menú de navegación lateral (sidebar), la etiqueta del último botón ("Administración d...") o ("Personal adminis...") es demasiado larga para el ancho predeterminado del contenedor. Al no caber, el texto se corta abruptamente con puntos suspensivos. Aunque esto no impide hacer clic en el botón, da un aspecto visual poco profesional y descuidado a la interfaz.
+
+![Problem 07](./assets/ux-ui/audit/problem-07-1.png)
+![Problem 07](./assets/ux-ui/audit/problem-07-2.png)
+
+**Recomendación:**
+La mejor práctica en diseño de menús es utilizar etiquetas cortas y directas. Se recomienda cambiar el texto a una alternativa más concisa (por ejemplo, "Administración", "Personal" o "Usuarios"). Si por reglas de negocio es obligatorio mantener el texto original completo, se debe implementar un atributo de accesibilidad tipo tooltip (título emergente) nativo en HTML (title="Personal administration") o (title="Administración de personal") que se muestre cuando el usuario pase el cursor (hover) sobre el botón.
+
+---
+
+**PROBLEMA #8:** La acción "Editar" producto en el menú contextual no responde ni ofrece retroalimentación.
+
+**Severidad:** 4
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Control y libertad del usuario
+
+**Problema:**
+Al abrir el menú de acciones (icono de tres puntos) en un producto específico y seleccionar la opción "Editar", la interfaz no responde de ninguna manera. No se abre ningún modal, ni se redirige a otra vista, ni se muestra ningún mensaje de error. Esta falta de respuesta bloquea por completo la capacidad del usuario para actualizar la información del inventario.
+
+![Problem 08](./assets/ux-ui/audit/problem-08.png)
+
+**Recomendación:**
+Revisar el evento de clic asociado a la opción "Editar" en el código (ej. @click en Vue). Asegurar que el componente modal de edición esté correctamente importado y que la variable reactiva que controla su visibilidad cambie a verdadero (true). Además, verificar en la consola del navegador si existe algún error de JavaScript bloqueando la ejecución del evento.
+
+---
+
+**PROBLEMA #9:** Fallo en la funcionalidad de eliminación y uso de alertas nativas del navegador.
+
+**Severidad:** 4
+
+**Heurística violada:** Usability - Prevención de errores / Diseño estético y minimalista
+
+**Problema:**
+Al intentar eliminar un producto mediante el menú de acciones, ocurren dos problemas graves: primero, el sistema lanza un cuadro de diálogo alert() nativo del navegador para confirmar la acción, lo cual rompe completamente la estética y consistencia del diseño de la aplicación. Segundo, tras confirmar la acción en dicho cuadro, el producto no se elimina del listado, fallando en su propósito principal.
+
+![Problem 09](./assets/ux-ui/audit/problem-09.png)
+
+**Recomendación:**
+Reemplazar el uso de alert() o confirm() nativos de JavaScript por un componente modal de confirmación diseñado específicamente para la aplicación (que siga el sistema de diseño actual). En cuanto a la funcionalidad, se debe depurar la petición HTTP de tipo DELETE hacia el servidor para identificar por qué no se está completando la eliminación, y actualizar el estado local del listado (la tabla) para que el producto desaparezca de la vista inmediatamente después de una respuesta exitosa.
+
+---
+
+**PROBLEMA #10:** Falta de validación y mensajería de error al intentar guardar un "Kit" con campos obligatorios vacíos.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de errores
+
+**Problema:**
+En el formulario de creación de un nuevo "Kit", si el usuario omite un campo obligatorio (como el nombre del kit) e intenta guardar los cambios, el sistema simplemente falla silenciosamente. No se guarda el registro, pero tampoco se resalta el campo faltante ni se muestra ningún mensaje de advertencia. El usuario se queda sin saber qué hizo mal o por qué su acción no tuvo efecto.
+
+![Problem 10](./assets/ux-ui/audit/problem-10.png)
+
+**Recomendación:**
+Implementar validación de formularios en el frontend antes de enviar los datos. Se debe deshabilitar el botón de guardar si los campos obligatorios están vacíos o, preferiblemente, si el usuario hace clic en guardar, resaltar los campos faltantes en color rojo y mostrar un mensaje de error explícito debajo del campo (ej. "El nombre del kit es obligatorio"), indicándole claramente cómo corregir el problema.
+
+---
+
+**PROBLEMA #11:** Duplicidad innecesaria del título de la sección en la cabecera.
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+En la vista actual, el título "Proveedores" aparece repetido dos veces de forma casi consecutiva: una vez en la barra superior (Topbar) junto al icono de notificaciones, y otra vez inmediatamente debajo, en rojo, como encabezado del contenedor principal. Esta redundancia no aporta valor informativo, genera ruido visual y desperdicia espacio vertical en la pantalla.
+
+![Problem 11](./assets/ux-ui/audit/problem-11.png)
+
+**Recomendación:**
+Eliminar el segundo título ("Proveedores" en texto rojo) del área de contenido para mantener un diseño más limpio, dejando únicamente el título de la barra superior como indicador global de la vista. Alternativamente, ese espacio inferior puede usarse para un componente de breadcrumbs (migas de pan) si la navegación se vuelve más profunda.
+
+---
+
+**PROBLEMA #12:** Falta de interactividad y retroalimentación en el botón "Filtrar".
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El usuario puede ingresar texto en el campo de búsqueda ("Buscar"), pero al hacer clic en el botón contiguo de "Filtrar", el sistema no ejecuta ninguna acción. La tabla no se actualiza, la página no recarga y no se muestra ningún mensaje de error o estado de "cargando". El botón actúa como un elemento estático, lo que rompe la expectativa del usuario y frustra la tarea de búsqueda.
+
+![Problem 12](./assets/ux-ui/audit/problem-12.png)
+
+**Recomendación:**
+Asegurar que el evento de clic del botón esté correctamente enlazado a la función de filtrado en el controlador del componente. Si la funcionalidad de búsqueda aún está en desarrollo, el botón debe estar visualmente deshabilitado (disabled) o, al hacer clic, debería mostrar una notificación tipo toast indicando que la función estará disponible próximamente.
+
+---
+
+**PROBLEMA #13:** Uso de alertas nativas para confirmar eliminación y ausencia de estado de carga durante el procesamiento.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Consistencia y estándares / Visibilidad del estado del sistema
+
+**Problema:**
+La acción de eliminar un proveedor presenta dos fallos de experiencia. Primero, invoca un cuadro de diálogo nativo del navegador (confirm()) en lugar de un modal propio, rompiendo la consistencia visual del sistema. Segundo, tras aceptar la alerta, el sistema tarda entre 3 y 5 segundos en remover el registro de la tabla sin mostrar ningún indicador visual de carga (spinner), dejando al usuario con la incertidumbre de si el clic funcionó o si el sistema se colgó.
+
+![Problem 13](./assets/ux-ui/audit/problem-13.png)
+
+**Recomendación:**
+Al desarrollar sistemas CRUD integrales para el control de operaciones, el estándar en frameworks modernos (como Vue o Angular) exige mantener todo el flujo dentro de la interfaz gráfica propia. Se debe reemplazar la alerta nativa por un componente modal personalizado para la confirmación. Además, es obligatorio inyectar un estado de carga local (por ejemplo, deshabilitar el icono del basurero y cambiarlo por un spinner) durante los segundos que tarde la petición HTTP, actualizando la tabla de inmediato al recibir la respuesta exitosa 200 OK.
+
+---
+
+**PROBLEMA #14:** Duplicidad innecesaria del título de la sección ("Gestión de Ventas").
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+Al igual que en la vista de Proveedores, la pantalla de Ventas presenta el título "Gestión de Ventas" repetido dos veces seguidas (en la barra superior y como encabezado del área de trabajo). Esto es redundante y ocupa espacio vertical que podría ser aprovechado para mostrar más productos en la tabla sin necesidad de hacer scroll.
+
+![Problem 14](./assets/ux-ui/audit/problem-14.png)
+
+**Recomendación:**
+Mantener la consistencia en el diseño de las plantillas (layouts). Se debe remover el título secundario del contenedor principal y conservar únicamente el título de la barra superior.
+
+---
+
+**PROBLEMA #15:** Falta de interactividad en el botón "Filtro" de la barra de búsqueda.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+El usuario puede ingresar el nombre de un producto (ej. "Bolsa Papitas") en el input de texto, pero al presionar el botón "Filtro", la acción es ignorada por el sistema. La tabla de productos no se filtra ni se muestra ningún mensaje, lo que obliga al usuario a buscar el ítem manualmente entre toda la lista, reduciendo drásticamente la eficiencia en el proceso de venta.
+
+![Problem 15](./assets/ux-ui/audit/problem-15.png)
+
+**Recomendación:**
+Vincular correctamente el evento @click (o equivalente según el framework utilizado) del botón al método de filtrado. Dado que los productos ya están listados en el DOM, se recomienda implementar un filtrado local (procesando el array de datos en el cliente) para que la búsqueda sea instantánea, en lugar de hacer una nueva petición al servidor.
+
+---
+
+**PROBLEMA #16:** Latencia excesiva sin retroalimentación visual al agregar productos o modificar cantidades en el carrito.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Flexibilidad y eficiencia de uso
+
+**Problema:**
+Al hacer clic en el ícono verde para agregar un producto al "Borrador salida de productos" (carrito), o al intentar aumentar su cantidad, el sistema sufre una latencia aproximada de 3 segundos antes de reflejar el cambio en el panel derecho. Durante este tiempo, la interfaz no bloquea el botón ni muestra un indicador de carga, lo que genera confusión e invita al usuario a hacer múltiples clics accidentales pensando que la acción no funcionó.
+
+![Problem 16](./assets/ux-ui/audit/problem-16.png)
+
+**Recomendación:**
+Implementar un patrón de diseño de Interfaz de Usuario Optimista (Optimistic UI). Cuando se desarrolla un sistema transaccional donde la agilidad operativa es clave, las actualizaciones de estado (como añadir a un carrito) deben reflejarse instantáneamente en la pantalla manipulando el estado local del frontend. La sincronización de estos datos con la base de datos a través de peticiones HTTP debe ocurrir en segundo plano. Adicionalmente, si es estrictamente necesario esperar al servidor, se debe cambiar el icono del carrito por un pequeño spinner de carga durante esos 3 segundos.
+
+---
+
+**PROBLEMA #17:** Exposición de variables internas de código (llaves de traducción) al cambiar el idioma a inglés.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Relación entre el sistema y el mundo real / Prevención de errores
+
+**Problema:**
+Al cambiar el idioma de la aplicación a inglés (botón "EN") y abrir los modales de creación en la sección de Inventario (como "New Category" o "New product"), el sistema falla al renderizar los textos. En lugar de mostrar lenguaje natural, expone las llaves o variables internas del diccionario de internacionalización (por ejemplo: inventory.newCategory, inventory.categoryNamePlaceholder, inventory.isActive). Esto confunde gravemente al usuario final, quien no tiene por qué entender la estructura del código, dificultando la correcta inserción de datos.
+
+![Problem 17](./assets/ux-ui/audit/problem-17-1.png)
+![Problem 17](./assets/ux-ui/audit/problem-17-2.png)
+
+**Recomendación:**
+Revisar la configuración del paquete de internacionalización (i18n) en el código fuente. Se debe verificar el archivo del diccionario correspondiente al idioma inglés (ej. en.json o en.js) e incluir todas las llaves faltantes que se están utilizando en la vista de inventario con sus respectivas traducciones legibles. Adicionalmente, configurar un valor de retroceso (fallback locale) para que, en caso de faltar una traducción en inglés, el sistema muestre el texto en español por defecto en lugar de la variable de código.
+
+---
+
+**PROBLEMA #18:** Duplicidad innecesaria del título de la sección ("Reports").
+
+**Severidad:** 1
+
+**Heurística violada:** Usability - Diseño estético y minimalista
+
+**Problema:**
+Siguiendo el mismo patrón de error visual encontrado en las vistas de Proveedores y Ventas, la pantalla de Reportes muestra el título duplicado: uno en la barra superior y otro en texto rojo justo debajo, en el área de contenido. Esta repetición es redundante, no aporta nueva información al usuario y resta espacio valioso que podría utilizarse para visualizar los datos o los gráficos de los reportes.
+
+![Problem 18](./assets/ux-ui/audit/problem-18.png)
+
+**Recomendación:**
+Estandarizar el diseño (layout) de las vistas principales del sistema. Se debe eliminar el título secundario (el texto rojo dentro del contenedor) en esta y todas las demás pantallas, centralizando la indicación de la vista actual únicamente en la barra de navegación superior.
+
+---
+
+**PROBLEMA #19:** Modal de creación de personal atascado en estado de carga indefinido tras una operación exitosa.
+
+**Severidad:** 3
+
+**Heurística violada:** Usability - Visibilidad del estado del sistema / Prevención de errores
+
+**Problema:**
+Al completar el formulario para "Nuevo Personal", asignar los permisos correspondientes y hacer clic en "Guardar", el botón cambia a un estado de carga (spinner) y se congela indefinidamente. La ventana modal nunca se cierra ni se muestra un mensaje de confirmación. Sin embargo, si el usuario observa la tabla atenuada en el fondo, puede notar que el nuevo registro sí fue creado y añadido al sistema. Esta falsa retroalimentación de "procesando" hace creer al administrador que el sistema falló, lo que puede inducirlo a cancelar, refrescar la página o intentar crear al mismo usuario duplicado.
+
+![Problem 19](./assets/ux-ui/audit/problem-19.png)
+
+**Recomendación:**
+Corregir la resolución de la promesa (Promise) de la petición HTTP en el frontend. La lógica del componente debe actualizar el estado de carga (isLoading = false) e invocar la función para cerrar el modal automáticamente tan pronto como el servidor devuelva un código de éxito (ej. 201 Created o 200 OK). Adicionalmente, se debe limpiar el formulario para futuras inserciones y mostrar una notificación temporal (toast) que confirme explícitamente: "Usuario creado con éxito".
+
+### 6.4.2. Auditoría recibida
+#### 6.4.2.1. Información del grupo auditor
+
+| Campo                    | Detalle                                                       |
+| ------------------------ | ------------------------------------------------------------- |
+| Grupo auditado           | Grupo 3                                                       |
+| Startup                  | Stoq                                     |
+| Producto evaluado        | StockWise                                  |
+| Integrantes del equipo   | Ronald Peralta, Luciana Choquehuanca, Camila Rios, Fabiola Del Rocio y Roy Fernandes|
+| Repositorio del proyecto | https://github.com/orgs/upc-1ASI0732-2610-16879-Stoq/repositories                                  |
+| Landing Page             | https://stockwiselanding.netlify.app/                            |
+| Aplicación web           | https://stocktrack-frontend.vercel.app/auth/register |
+
+#### 6.4.2.2. Cronograma de auditoría recibida
+
+| Actividad                                                | Fecha      | Responsable          | Duración estimada |
+| -------------------------------------------------------- | ---------- | -------------------- | ----------------- |
+| Recepción del informe de auditoría externa               | 11/06/2026 | Ronald Peralta  | 30 minutos        |
+| Revisión y análisis de hallazgos identificados           | 11/06/2026 | Ronald Peralta  | 1 hora            |
+| Priorización de observaciones y acciones correctivas     | 12/06/2026 | Ronald Peralta  | 30 minutos        |
+| Evaluación integral del flujo funcional de la aplicación | 13/06/2026 | Ronald Peralta  | 1 hora            |
+| Implementación de mejoras y corrección de incidencias    | 13/06/2026 | Ronald Peralta  | 30 minutos        |
+
+#### 6.4.2.3. Contenido de auditoría recibida
+
+La presente auditoría tuvo como objetivo evaluar la usabilidad y experiencia de usuario del producto desarrollado por el grupo auditado. Para ello, se analizaron los principales flujos de interacción de la aplicación, identificando problemas relacionados con navegación, retroalimentación del sistema, accesibilidad, consistencia visual y comprensión de la interfaz.
+
+**Tareas evaluadas**
+
+Durante la auditoría se ejecutaron las siguientes tareas representativas del flujo de uso de la aplicación:
+
+| N.° | Tarea evaluada       | Descripción                            |
+| --- | -------------------- | -------------------------------------- |
+| 1   | Navegación global | Interacción con la barra de navegación (Header) para retornar a la vista principal. |
+| 2   | Visualización de contenido | Carga y renderizado de los recursos multimedia en las distintas secciones informativas. |
+| 3   | Análisis de rendimiento | Evaluación de métricas de carga, accesibilidad y SEO utilizando la herramienta Google Lighthouse. |
+| 4   | Arquitectura de la información | Recorrido por las secciones de la Landing Page para evaluar la carga cognitiva y relevancia del contenido. |
+| 5   | Flujo de conversión | Búsqueda del enlace o botón principal (Call to Action) para iniciar el proceso de registro en la Web App. |
+| 6   | Navegación interna | Exploración de las opciones secundarias del menú de navegación ("Configuración" y "Ayuda"). |
+| 7   | Registro de datos de usuario | Ingreso de información demográfica y de contacto en el formulario de la sección "ESTUDIANTES". |
+| 8   | Gestión de disponibilidad | Configuración de rangos de tiempo (hora de inicio y fin) en la sección de "Horarios". |
+| 9   | Adaptabilidad visual |Evaluación de la legibilidad de la interfaz al alternar el esquema de colores (Modo Oscuro) en la sección "Cobranzas".|
+
+
+**Escala de severidad utilizada**
+
+| Nivel | Descripción                                                                       |
+| ----- | --------------------------------------------------------------------------------- |
+| 1     | Problema superficial que no afecta significativamente la experiencia del usuario. |
+| 2     | Problema menor que genera cierta dificultad pero permite completar la tarea.      |
+| 3     | Problema importante que dificulta considerablemente la interacción.               |
+| 4     | Problema crítico que impide completar la tarea o continuar utilizando el sistema. |
+
+
+**Resumen de hallazgos identificados**
+
+| ID   | Tarea                    | Problema identificado                                                | Severidad | Heurística vulnerada              |
+| ---- | ------------------------ | ------------------------------------------------------------------- | --------- | --------------------------------- |
+| H-01 | Navegación global        | Logotipo inactivo sin redirección a la página de inicio.            | 2         | Consistencia y estándares         |
+| H-02 | Visualización de contenido | Imagen rota o no renderizada en la sección "Nosotros".             | 2         | Diseño estético y minimalista     |
+| H-03 | Análisis de rendimiento  | Bajo puntaje de rendimiento (59/100) en la métrica de Lighthouse.   | 3         | Flexibilidad y eficiencia de uso  |
+| H-04 | Arquitectura de la información | Exceso de secciones y contenido redundante (sección "Pasos"). | 1         | Diseño estético y minimalista     |
+| H-05 | Flujo de conversión      | Ausencia total de botón CTA hacia el registro de la aplicación web. | 4         | Control y libertad del usuario    |
+| H-06 | Navegación interna | Enlaces inactivos en el menú de navegación principal. | 3 | Control y libertad del usuario |
+| H-07 | Registro de datos de usuario | Ausencia de validaciones lógicas en campos de teléfono y fecha de nacimiento. | 3 | Prevención de errores |
+| H-08 | Gestión de disponibilidad | Interfaz de selección de horas (Time Picker) poco intuitiva y demandante. | 2 | Flexibilidad y eficiencia de uso |
+| H-09 | Adaptabilidad visual | Deficiencia de contraste y pérdida de claridad en el modo oscuro (Módulo de facturas). | 2 | Diseño estético y minimalista |
+
+---
+
+** Detalle de hallazgos**
+- **Hallazgo H-01**
+
+| Campo                   | Detalle                                                                                                                                                                                                                |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Navegación global                                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Barra de navegación superior (Header)                                                                                                                                                                   |
+| Problema identificado   | Logotipo de la marca inactivo sin hipervínculo al Home                                                                                                                                                                 |
+| Severidad               | 2                                                                                                                                                                                                                      |
+| Heurística vulnerada    | Consistencia y estándares                                                                                                                                                                                              |
+| Descripción             | Al navegar por las distintas secciones de la página, el usuario intenta hacer clic en el logotipo "Demy" para regresar rápidamente al inicio, pero este elemento es estático y no contiene un enlace (etiqueta `<a>`). |
+| Impacto para el usuario | Genera fricción en la navegación. El usuario se ve obligado a hacer scroll manual hacia arriba o buscar alternativas para regresar, rompiendo una convención estándar de diseño web.                                   |
+| Recomendación           | Envolver el logotipo en una etiqueta de ancla (`<a>`) o componente de enrutamiento que apunte a la ruta raíz (`/` o `#home`).                                                                                          |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-01](assets/ux-ui/audit/hallazgo-h01.png)
+
+*Figura 1. Barra de navegación donde se observa el logotipo estático.*
+
+---
+
+- **Hallazgo H-02**
+
+| Campo                   | Detalle                                                                                                                                                                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Visualización de contenido                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Sección "Nosotros"                                                                                                                                                                               |
+| Problema identificado   | Elemento de imagen no disponible (Enlace roto)                                                                                                                                                                  |
+| Severidad               | 2                                                                                                                                                                                                               |
+| Heurística vulnerada    | Diseño estético y minimalista / Prevención de errores                                                                                                                                                           |
+| Descripción             | Dentro del apartado "Nosotros", uno de los recursos gráficos no logra cargar correctamente, mostrando el icono estándar de "imagen rota" o un espacio en blanco en el navegador.                                |
+| Impacto para el usuario | Disminuye la percepción de calidad y profesionalismo del producto. Puede generar desconfianza en el usuario sobre el mantenimiento del sitio.                                                                   |
+| Recomendación           | Verificar la ruta del atributo `src` en la etiqueta `<img>`. Asegurar que el archivo exista en el directorio de despliegue o proveer un atributo `alt` descriptivo junto con una imagen de respaldo (fallback). |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-02](assets/ux-ui/audit/hallazgo-h02.png)
+
+*Figura 2. Sección "Nosotros" evidenciando el error de carga del recurso multimedia.*
+
+---
+
+- **Hallazgo H-03**
+
+| Campo                   | Detalle                                                                                                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Análisis de rendimiento                                                                                                                                                                                                      |
+| Ubicación               | Landing Page - Entorno global                                                                                                                                                                                                |
+| Problema identificado   | Puntaje deficiente de Performance (59/100) en Lighthouse                                                                                                                                                                     |
+| Severidad               | 3                                                                                                                                                                                                                            |
+| Heurística vulnerada    | Flexibilidad y eficiencia de uso                                                                                                                                                                                             |
+| Descripción             | La auditoría técnica con Google Lighthouse arroja resultados contrastantes: Accesibilidad (90), Buenas prácticas (77), SEO (91), pero el Rendimiento cae a 59/100, indicando tiempos de carga lentos para el hilo principal. |
+| Impacto para el usuario | Un bajo rendimiento impacta directamente en los Core Web Vitals (como el LCP). Los usuarios con conexiones inestables pueden abandonar la página antes de que termine de cargar.                                             |
+| Recomendación           | Optimizar el tamaño y formato de las imágenes (usar WebP), diferir la carga de JavaScript no crítico y minificar los archivos estáticos CSS/JS para mejorar el First Contentful Paint (FCP).                                 |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h03.png)
+
+*Figura 3. Resultados del análisis de Google Lighthouse.*
+
+---
+
+- **Hallazgo H-04**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Arquitectura de la información                                                                                                                                                                                                                                   |
+| Ubicación               | Landing Page - Cuerpo de la página (Sección "Pasos")                                                                                                                                                                                                             |
+| Problema identificado   | Sobrecarga de información y redundancia de secciones                                                                                                                                                                                                             |
+| Severidad               | 1                                                                                                                                                                                                                                                                |
+| Heurística vulnerada    | Diseño estético y minimalista                                                                                                                                                                                                                                    |
+| Descripción             | La página presenta un volumen excesivo de secciones verticales (Características, Pasos, Testimonios, Nosotros, Precios, Preguntas, Contacto). Específicamente, la sección "Pasos" describe un proceso que resulta ser demasiado trivial, sin aportar valor real. |
+| Impacto para el usuario | Incrementa la fatiga visual y la carga cognitiva del usuario al tener que hacer demasiado scroll. Diluye la atención y desvía al usuario de la acción principal que debe realizar.                                                                               |
+| Recomendación           | Simplificar la estructura de la Landing Page. Eliminar la sección "Pasos" y condensar u ocultar información secundaria en acordeones o enlaces internos para mantener un flujo más directo.                                                                      |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h04.png)
+
+*Figura 4. Sección "Pasos" que aporta baja relevancia al flujo de la página.*
+
+---
+
+- **Hallazgo H-05**
+
+| Campo                   | Detalle                                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Flujo de conversión                                                                                                                                                                                                 |
+| Ubicación               | Landing Page - Menú de navegación y Hero Section                                                                                                                                                                    |
+| Problema identificado   | Ausencia de un botón de llamada a la acción (CTA) hacia la aplicación web                                                                                                                                           |
+| Severidad               | 4                                                                                                                                                                                                                   |
+| Heurística vulnerada    | Control y libertad del usuario / Prevención de errores                                                                                                                                                              |
+| Descripción             | El propósito principal de la Landing Page es captar usuarios, pero no existe un botón prominente (como "Regístrate" o "Ingresar a la App") que dirija al usuario al flujo de registro (`/sign-up`) de la Web App.   |
+| Impacto para el usuario | Impide por completo la conversión. El usuario interesado en el producto se queda estancado en la Landing Page sin un camino claro para comenzar a utilizar la aplicación, frustrando el objetivo de negocio.        |
+| Recomendación           | Implementar botones CTA de alto contraste y tamaño adecuado tanto en la esquina superior derecha del menú de navegación como en la sección principal (Hero Section), enlazados directamente a la vista de registro. |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-03](assets/ux-ui/audit/hallazgo-h05.png)
+
+*Figura 5. Ausencia de botones de registro en el primer impacto visual de la página.*
+
+---
+
+- **Hallazgo H-06**
+
+| Campo                   | Detalle                                                                                                                                                                                                                              |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tarea evaluada          | Navegación interna                                                                                                                                                                                                                   |
+| Ubicación               | Web App - Barra de navegación lateral/superior                                                                                                                                                                                       |
+| Problema identificado   | Secciones "Configuración" y "Ayuda" sin funcionalidad                                                                                                                                                                                |
+| Severidad               | 3                                                                                                                                                                                                                                    |
+| Heurística vulnerada    | Control y libertad del usuario                                                                                                                                                                                                       |
+| Descripción             | Al intentar acceder a las opciones de "Configuración" y "Ayuda" desde el menú principal, los enlaces no ejecutan ninguna acción, no redirigen a ninguna vista, ni muestran un mensaje indicando que la función está en construcción. |
+| Impacto para el usuario | Genera confusión y frustración. El usuario percibe la aplicación como incompleta o defectuosa al no poder acceder a herramientas críticas de gestión de su cuenta o soporte.                                                         |
+| Recomendación           | Implementar las vistas correspondientes para estas rutas. Si las funcionalidades aún no están desarrolladas, se deben ocultar temporalmente los enlaces del menú o mostrar un modal informativo de "Próximamente" (Coming soon).     |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-06](assets/ux-ui/audit/hallazgo-h06.png)
+
+*Figura 6. Elementos del menú de navegación que no presentan interactividad.*
+
+---
+
+- **Hallazgo H-07**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Registro de datos de usuario                                                                                                                                                                                                                                                                                              |
+| Ubicación               | Web App - Sección "ESTUDIANTES" (Formulario de creación/edición)                                                                                                                                                                                                                                                          |
+| Problema identificado   | Falta de validación lógica en inputs de teléfono y fecha de nacimiento                                                                                                                                                                                                                                                    |
+| Severidad               | 3                                                                                                                                                                                                                                                                                                                         |
+| Heurística vulnerada    | Prevención de errores                                                                                                                                                                                                                                                                                                     |
+| Descripción             | El formulario presenta dos fallas críticas de validación: 1) El campo de número de celular restringe la entrada estrictamente a 9 dígitos y no permite ingresar códigos de país (ej. +51), limitando la internacionalización. 2) El selector de fecha de cumpleaños permite seleccionar la fecha actual o fechas futuras. |
+| Impacto para el usuario | Compromete la integridad de la base de datos al permitir el ingreso de información irreal o malformada. Limita el uso de la plataforma a un formato telefónico local, excluyendo posibles usuarios extranjeros.                                                                                                           |
+| Recomendación           | Implementar validaciones de fecha (ej. `max="[fecha-actual]"` en el input de tipo date) para bloquear fechas futuras en los cumpleaños. Incorporar un componente de Input Phone que incluya un selector desplegable de códigos de país y ajuste la longitud esperada según la región.                                     |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-07](assets/ux-ui/audit/hallazgo-h07.png)
+
+*Figura 7. Formulario aceptando datos incongruentes en los campos de contacto y nacimiento.*
+
+---
+
+- **Hallazgo H-08**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Gestión de disponibilidad                                                                                                                                                                                                                                |
+| Ubicación               | Web App - Sección "Horarios"                                                                                                                                                                                                                             |
+| Problema identificado   | Interfaz de selección de horas (Time Picker) incómoda y poco fluida                                                                                                                                                                                      |
+| Severidad               | 2                                                                                                                                                                                                                                                        |
+| Heurística vulnerada    | Flexibilidad y eficiencia de uso                                                                                                                                                                                                                         |
+| Descripción             | El componente utilizado para ingresar la "Hora de inicio" y "Hora de fin" en las sesiones requiere múltiples clics o una manipulación poco ergonómica, dificultando la entrada rápida de datos, especialmente si se deben configurar múltiples horarios. |
+| Impacto para el usuario | Incrementa innecesariamente el tiempo y el esfuerzo requerido para completar una tarea repetitiva, degradando la experiencia de uso (fricción operativa).                                                                                                |
+| Recomendación           | Reemplazar el componente actual por un Time Picker más intuitivo (por ejemplo, selectores visuales de reloj, campos con autocompletado en formato HH:MM, o incrementos rápidos de 15/30 minutos mediante botones).                                       |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-08](assets/ux-ui/audit/hallazgo-h08.png)
+
+*Figura 8. Interfaz de configuración de horarios evidenciando un flujo de selección ineficiente.*
+
+---
+
+- **Hallazgo H-09**
+
+| Campo                   | Detalle                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tarea evaluada          | Adaptabilidad visual                                                                                                                                                                                                                                                                      |
+| Ubicación               | Web App - Sección "Cobranzas" (Apartado de facturas)                                                                                                                                                                                                                                      |
+| Problema identificado   | Pérdida de claridad y legibilidad en el esquema de Modo Oscuro                                                                                                                                                                                                                            |
+| Severidad               | 3                                                                                                                                                                                                                                                                                         |
+| Heurística vulnerada    | Diseño estético y minimalista (Accesibilidad)                                                                                                                                                                                                                                             |
+| Descripción             | Al activar el tema oscuro (Dark Mode), los estilos CSS específicos del apartado de facturas no se adaptan correctamente. El texto y los elementos de la interfaz carecen del contraste necesario contra los fondos oscuros, volviendo la información difícil o imposible de leer.         |
+| Impacto para el usuario | Impide la correcta visualización de datos financieros sensibles. Causa fatiga visual severa y vulnera las pautas de accesibilidad (WCAG) sobre el ratio de contraste mínimo requerido.                                                                                                    |
+| Recomendación           | Auditar y ajustar la paleta de colores del Modo Oscuro utilizando variables CSS. Asegurar que los colores de texto principales (ej. blanco o gris claro) tengan un ratio de contraste de al menos 4.5:1 sobre los fondos oscuros correspondientes a las tablas y tarjetas de facturación. |
+
+**Evidencia**
+
+![Figura 1 - Hallazgo H-09](assets/ux-ui/audit/hallazgo-h09.png)
+
+*Figura 9. Problemas de contraste en el módulo de facturas al utilizar el tema oscuro.*
+
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+A partir de la auditoría recibida, se planificaron e implementaron las siguientes modificaciones técnicas y de diseño en la Landing Page y la Web App para resolver los problemas de usabilidad identificados:
+
+| ID | Tarea evaluada | Modificación implementada (Acción correctiva) |
+| :--- | :--- | :--- |
+| **H-01** | Navegación global | Se envolvió el logotipo principal de la marca en una etiqueta de enrutamiento (`<a>`) configurada para redirigir a la ruta raíz (`/`), permitiendo el retorno rápido al inicio. |
+| **H-02** | Visualización de contenido | Se corrigió la ruta de origen (`src`) del recurso multimedia en la sección "Nosotros" y se configuró una imagen de respaldo (fallback) junto con su atributo `alt`. |
+| **H-03** | Análisis de rendimiento | Se optimizaron las imágenes al formato WebP, se minificaron los archivos estáticos y se aplazó la carga de JavaScript no crítico para mejorar el tiempo de respuesta (FCP) en Lighthouse. |
+| **H-04** | Arquitectura de la información | Se eliminó la sección redundante de "Pasos" en la Landing Page para reducir el nivel de scroll y disminuir la carga cognitiva del usuario. |
+| **H-05** | Flujo de conversión | Se incorporaron botones de llamada a la acción (CTA) con alto contraste en el Header y el Hero Section, enlazados directamente a la ruta de registro (`/sign-up`). |
+| **H-06** | Navegación interna | Se ocultaron temporalmente los enlaces de "Configuración" y "Ayuda" del menú de navegación lateral para evitar clics muertos hasta que dichos módulos sean desarrollados. |
+| **H-07** | Registro de datos de usuario | Se añadió el atributo `max` en el selector de fecha para evitar cumpleaños futuros y se integró un componente con selector de prefijo internacional para el campo de teléfono. |
+| **H-08** | Gestión de disponibilidad | Se reemplazó el componente nativo de selección de hora por un *Time Picker* más ergonómico que permite el ingreso rápido mediante teclado e incrementos de bloques de minutos. |
+| **H-09** | Adaptabilidad visual | Se ajustaron las variables de la paleta de colores CSS para el "Modo Oscuro" en el módulo de facturas, garantizando un contraste mínimo de 4.5:1 para los textos sobre fondos oscuros. |
+
+<hr class="page-break">
+
+
 # Capítulo VII: DevOPS Practices
 
 En el presente proyecto de software, hemos implementado una cultura DevOps orientada a la automatización de procesos, garantizando que el código integrado sea confiable y que las entregas de valor a los usuarios finales sean rápidas y seguras. Para ello, hemos diseñado *pipelines* independientes tanto para el Backend (RESTful API) como para el Frontend (Web Application).
@@ -10052,9 +11406,1156 @@ deploy:
 
 ![Continuous deployment evidencia](./assets/images/ci-cd/cd-evidence.png)
 
+## 7.4. Continuous Monitoring 
+### 7.4.1. Tools and Practices
+
+Para garantizar la alta disponibilidad, rendimiento y correcto funcionamiento del ecosistema digital de Demy (orientado a la gestión académica y financiera de academias preuniversitarias), se implementa una estrategia de monitoreo continuo basada en la observabilidad y proactividad.  
+**Herramientas Clave**
+- **Azure Application Insights /Azure Monitor** : Herramienta centralizada para la telemetría del backend en Azure, encargada de la recolección de logs, excepciones, tiempos de respuesta de las peticiones API y consumo de CPU/Memoria.
+
+- **Log Analytics Workspaces** : Espacio de trabajo en Azure utilizado para almacenar y consultar mediante KQL (Kusto Query Language) los datos agregados de telemetría.
+
+**Prácticas adoptadas**
+- **Monitoreo Transaccional Integral**: Seguimiento en tiempo real de los flujos críticos de Demy, tales como el procesamiento de cobros de pensiones (módulo financiero) y el registro de notas o asistencia (módulo académico).
+
+- **Análisis de Tasa de Errores (Error Rate)**: Revisión constante de la proporción de respuestas HTTP del backend en rangos 4xx (errores de cliente) y 5xx (errores de servidor).
+
+- **Monitoreo del lado del cliente(RUM)**: Recolección básica de excepciones de frontend en la aplicación web para identificar fallos en la experiencia de usuario de administradores y profesores.
+
+### 7.4.2. Monitoring Pipeline Components
+
+Este componente describe el flujo de datos e infraestructura técnica encargada de la recolección, ingesta y almacenamiento de la telemetría del ecosistema Demy.
+* **Data Collection (Recolección):** Agentes ligeros e instrumentación de código integrados de forma nativa en la API REST de Azure capturan métricas y trazas operacionales de manera asíncrona, previniendo cualquier degradación del rendimiento en las operaciones académicas.
+* **Ingestion Pipeline (Ingesta):** Los logs generados por el servidor y el landing page se envían mediante canales de red seguros de forma continua y secuencial hacia los endpoints de Azure Monitor.
+* **Storage & Querying (Almacenamiento y Consulta):** Los datos estructurados son resguardados en una instancia dedicada de Log Analytics. A partir de esta base de datos, se generan tableros visuales interactivos (*Dashboards*) que visibilizan la salud global del sistema.
+### 7.4.3. Alerting Pipeline Components 
+
+El componente de alertas evalúa las métricas capturadas por el pipeline de monitoreo e identifica de manera automatizada cualquier anomalía o desvío de los niveles de servicio aceptables. Utilizando **Azure Monitor Alerts**, se definen reglas basadas en umbrales estáticos y dinámicos:
+
+* **Regla de Alerta de Latencia en la API (Performance):** Si el percentil 95 ($P_{95}$) del tiempo de respuesta de los endpoints del backend supera los 2.0 segundos durante una ventana de evaluación de 5 minutos, se dispara la alerta debido al impacto negativo directo en la experiencia del profesor en aula.
+* **Regla de Alerta de Disponibilidad (Disponibilidad):** Si la tasa de respuestas HTTP `500` (*Internal Server Error*) excede el **5%** del volumen total de peticiones en un lapso móvil de 3 minutos, el sistema entra en estado de incidente prioritario.
+* **Regla de Alerta de Infraestructura (Recursos):** Activación de un disparador automático si el consumo de CPU o memoria en las instancias que alojan el backend de Demy supera el **85%** de su capacidad asignada de forma sostenida por más de 10 minutos.
+
+### 7.4.4. Notification Pipeline Components
+Cuando el motor de alertas detecta el cumplimiento de alguna condición anómala, el componente de notificación se encarga de empaquetar el incidente, determinar su criticidad y distribuirlo inmediatamente a los canales adecuados del equipo de ingeniería de Demy.
+
+* **Action Groups (Grupos de Acción de Azure):** Mecanismo de configuración centralizado que intercepta el payload JSON generado por la alerta y ejecuta acciones automatizadas de salida.
+
+* **Canales de Notificación Utilizados:**
+    * **Webhook a Discord / Slack del Equipo:** Envío automático de notificaciones enriquecidas al canal de comunicación interna del equipo de desarrollo, detallando la estampa de tiempo, el servicio afectado (ej. *Módulo de Finanzas*) y un resumen descriptivo del fallo.
+    * **Alerta por Correo Electrónico (E-mail Alerts):** Envío formal de notificaciones directas a las bandejas del Administrador del Sistema y del Líder Técnico para incidentes críticos de Severidad Alta (Sev1/Sev2), asegurando el inicio inmediato de los protocolos de mitigación.
+
+<hr class="page-break">
+
+# Capítulo VIII: Experiment-Driven Development 
+## 8.1. Experiment Planning 
+### 8.1.1. As-Is Summary
+Actualmente el ecosistema Demy se encuentra completo en cuanto a desarrollo e integración, siendo la solución web dirigida a administradores el que está desplegado y la landing page para el call to action que también se encuentra operativa. En cuanto a los soluciones móviles,la de Tablet dirigida a administradores y la de celular dirigida a profesores, ambas se encuentran construidas y funcionales pero están en fases previas a su distribución oficial.
+
+Por otro lado, en cuanto a la interacción con la solución web, se selecciono un grupo pequeño del segmento de administradores para que empiecen a registrar sus informaciones financieras y académicas. Sin embargo, el equipo identifica que la plataforma opera bajo un escenario de alta incertidumbre respecto al comportamiento real del usuario y valor percibido. Hasta la fecha, Azure nos ayuda para el monitoreo de la solución web desplegada, pero no se cuenta con componentes de recolección de datos analíticos que permitan verificar si las funcionalidades core están resolviendo las necesidades de los usuarios como  se requiere.
+
+Entonces, este estado actual se caracteriza por una madurez técnica en el despliegue, pero una total ceguera analítica. Por eso, este punto de partida no busca proponer nuevas características técnicas, sino procesar el raw material(opiniones de los usuarios o suposiciones del equipo) para estructurar preguntas de investigación que nos permita recolectar evidencia científica sobre la interacción del usuario
+
+### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+La materia prima representa los insumos iniciales que el equipo recolecta en la Fase de Planificación para descubrir las premisas subyacentes que orientarán los experimentos de validación del producto **Demy**.
+ 
+
+#### **Ideas**
+ 
+Las ideas surgieron de forma natural al observar los problemas de gestión administrativa en las academias del peru. El foco no es probar la idea en sí misma, sino identificar las creencias subyacentes que la sostienen.
+ 
+1. **Módulo centralizado de matrícula digital:** La idea de reemplazar el registro manual en Excel y talonarios físicos con un flujo de matrícula digital surge de la incomodidad en administrativos como Carmen Gutiérrez, quienes pierden tiempo valioso buscando datos dispersos. La premisa subyacente es que centralizar este proceso reducirá los errores y el tiempo operativo.
+2. **Registro de asistencia desde el celular para docentes:** La observación de que docentes como Luis Mendoza usan el celular como principal dispositivo de trabajo, pero encuentran Excel incómodo en mobile, lleva a proponer un módulo de asistencia optimizado para smartphones. La premisa subyacente es que una interfaz móvil nativa aumentará la frecuencia y precisión del registro.
+3. **Alertas automáticas de pagos pendientes:** El pain point de Carmen "no recuerdo si este alumno ya pagó" y "me olvidé de hacer recordar este pago" inspira la idea de notificaciones automáticas. La premisa subyacente es que los recordatorios automáticos reducirán la morosidad y la carga de seguimiento manual.
+4. **Panel de visualización de horarios para docentes:** La necesidad de Luis de consultar sus horarios y cambios desde cualquier dispositivo, sin depender de una encuestas de WhatsApp, genera la idea de una vista de calendario personal. La premisa es que el acceso inmediato a la información reduce el estrés por imprevistos y mejora la coordinación.
+5. **Reprogramación de clases desde la plataforma:** Los docentes actualmente improvisan soluciones ante cambios de horario a través de WhatsApp. La idea de habilitar la reprogramación formal dentro de la app asume que un canal oficial reducirá la desorganización y mejorará la experiencia de alumnos y padres de familia.
+6. **Reportes financieros automatizados:** La gestión de ingresos y egresos en Excel genera indisposicion por posibles errores en los administrativos. La idea de reportes generados automáticamente asume que la automatización contable mejorara la toma de decisiones estratégicas y la salud financiera de las academias.
+
+ 
+#### **Claims**
+ 
+Son declaraciones directas sobre el producto, realizadas por los stakeholders o los usuarios durante las entrevistas y el proceso de investigación.
+ 
+**Afirmaciones negativas**
+ 
+1. ***"Perdemos mucho tiempo buscando datos en Excel."*** <br> 
+    > Administrativos de academias entrevistados. Evidencia directa de la ineficiencia del sistema actual que Demy debe resolver.
+2. ***"Excel desde el celular es incómodo. Necesito algo que funcione en cualquier momento."*** <br> 
+    > Luis Mendoza (User Persona docente). Afirmación que valida la necesidad de una solución mobile-first para docentes.
+3. ***"Es un lío manejar tantas planillas."*** <br>
+    > Administrativos de academias entrevistados. Refleja la fragmentación de la información que genera duplicidad de tareas.
+4. ***"Registrar desde el celular es incómodo, pierdo tiempo con tareas administrativas."*** <br> 
+    > Docentes entrevistados. Confirma que las herramientas actuales no se adaptan al ritmo de trabajo de los profesores.
+5. ***"¿Dónde anoté eso? Ojalá tuviera la información al instante."*** <br> 
+    > Carmen Gutiérrez (User Persona administrativa). Afirmación que evidencia la falta de trazabilidad y acceso rápido a datos de estudiantes.
+6. ***"No encuentro la información, la clase ya se está distrayendo."*** <br> 
+    > Docentes entrevistados. Señala que la desorganización de la información impacta directamente en la calidad del servicio educativo.
+
+<br>    
+
+**Afirmaciones positivas**
+ 
+7. ***"Una herramienta automatizada nos ayudaría bastante."*** <br>
+   > Administrativos entrevistados. Validación directa de la propuesta de valor central de Demy.
+
+8. ***"Sería excelente si me avisaran cuando hay un pago pendiente."*** <br>
+   > Carmen Gutiérrez (User Persona administrativa). Confirma la receptividad ante la funcionalidad de alertas automáticas de cobro.
+
+9. ***"Necesito una herramienta que facilite la gestión de asistencia."*** <br>
+   > Docentes entrevistados. Afirma la disposición de adoptar una solución digital si resuelve el problema específico de asistencia.
+
+10. ***Según Naranjo et al. (2025), los procesos administrativos manuales —con su falta de claridad, duplicación de tareas y largos tiempos de respuesta— reducen la satisfacción del estudiante y la productividad del personal.*** <br>
+    > Evidencia académica que respalda la urgencia de implementar la propuesta de Demy y justifica la necesidad de digitalizar la gestión administrativa en academias educativas.
+
+ 
+#### **Assumptions**
+ 
+Son creencias previas sobre el comportamiento de los usuarios o las academias que requieran validación experimental.
+ 
+1. **Los administrativos adoptarán la plataforma si es suficientemente intuitiva.** <br>
+
+   > Se asume que la resistencia al cambio puede superarse con una interfaz simple y un proceso de onboarding adecuado, incluso en personal con habilidades digitales intermedias.
+
+2. **Los docentes usarán principalmente el smartphone para interactuar con Demy.** <br>
+
+   > Se asume que el 100% de los docentes entrevistados que prefieren el celular representa un patrón generalizable al segmento objetivo, justificando la priorización de la app mobile para profesores.
+
+3. **Las alertas automáticas de pago reducirán significativamente la morosidad.** <br>
+
+   > Se asume que el problema de los pagos atrasados se debe principalmente a la falta de recordatorios oportunos, y no a problemas económicos de los estudiantes o fallas en el proceso de comunicación.
+
+4. **Una plataforma centralizada mejorará la percepción de organización frente a padres de familia.** <br>
+
+   > Se asume que los padres valoran la capacidad de la academia de dar respuestas rápidas y precisas, y que esto impacta positivamente en la retención de alumnos.
+
+5. **Las academias de tamaño mediano (50-200 alumnos) en Lima son el segmento con mayor disposición y capacidad de adopción.** <br>
+
+   > Se asume que estas instituciones tienen suficiente volumen operativo para justificar la inversión en una solución digital y suficiente agilidad organizacional para implementarla.
+
+6. **El 80% del personal de una academia se beneficiará directamente de la plataforma.** <br>
+
+   > Esta estimación asume una distribución típica de roles en una academia promedio (3-5 administrativos y 10-20 docentes), sin considerar variaciones por tamaño o modelo de gestión.
+
+7. **Los docentes están dispuestos a reprogramar clases a través de la plataforma en lugar de WhatsApp.** <br>
+
+   > Se asume que la informalidad del canal actual (WhatsApp) es una limitación percibida como negativa, y no una preferencia cultural arraigada del segmento.
+
+8. **Los planes escalables (Essentials, Pro, Elite) facilitarán el crecimiento de las academias dentro del sistema.** <br>
+
+   > Se asume que las academias identificarán valor suficiente en el plan básico como para justificar una migración hacia planes superiores en el mediano plazo.
+
+9. **Centralizar la información académica y financiera en una sola plataforma mejorará la comunicación interna.** <br>
+
+   > Se asume que la desorganización actual se debe a la falta de un sistema único, y no a dinámicas organizacionales o culturales más profundas dentro de las academias.
 
 
+ 
+#### **Knowledge Gaps**
+ 
+Son áreas donde reconocemos las carencias de información suficiente para tomar decisiones con certeza. Generando preguntas de tipo exploratorio que orientarán la investigación cualitativa y cuantitativa.
+ 
+1. **¿Cuál es el nivel real de alfabetización digital del personal administrativo de academias pequeñas fuera de Lima?** <br> 
+    > Las entrevistas se realizaron en Lima e Ica con perfiles de edad entre 21 y 28 años. Se desconoce si el comportamiento y la receptividad tecnológica son representativos de academias en otras ciudades o con personal de mayor edad.
+2. **¿Qué tan dispuestos están los directores/dueños de academias a invertir en una suscripción mensual?** <br> 
+    >No se cuenta con información sobre la sensibilidad al precio del segmento objetivo ni sobre cuánto están pagando actualmente por herramientas de gestión (si pagan algo).
+3. **¿Con qué frecuencia ocurren reprogramaciones de clases en una academia promedio?** <br>
+    > El As-Is Scenario Mapping muestra que los docentes improvisan ante cambios de horario, pero no se tiene data cuantitativa sobre la frecuencia de este problema para dimensionar su impacto real.
+4. **¿Cuál es el proceso exacto de control de asistencia en academias con múltiples sedes?** <br>
+    > Las entrevistas cubrieron academias de sede única. Se desconoce cómo escala el problema de gestión en instituciones con varias sedes simultáneas, que representan un segmento de mayor valor.
+5. **¿Los padres de familia interactúan activamente con la academia a través de canales digitales?** <br>
+    > El As-Is Scenario Mapping menciona la atención a padres como un punto de dolor, pero no se tiene información sobre sus preferencias de comunicación ni si usarían una funcionalidad dirigida a ellos.
+6. **¿Cuánto tiempo exactamente invierte un administrativo en tareas manuales por semana?** <br>
+    > Se cuenta con datos generales (ENUT 2024: más de 20 horas semanales en tareas administrativas en el sector educación), pero no con mediciones específicas para el subsector de academias preuniversitarias.
+7. **¿Existen competidores directos o soluciones parciales que las academias ya estén evaluando o usando?** <br> 
+    > No se realizamos un análisis competitivo con los usuarios entrevistados para determinar si ya conocen o han probado otras herramientas de gestión académica, lo que podría afectar la estrategia de posicionamiento de Demy.
+8. **¿Qué tan viable es la integración con pasarelas de pago locales como PagoEfectivo desde el punto de vista técnico y legal?** <br> 
+    > Identificamos esta área como un spike técnico (SS003), pero aún no se tiene claridad sobre los requisitos legales y el esfuerzo de integración real en el contexto peruano.
+9. **¿Cuál es el umbral mínimo de funcionalidades para que una academia considere migrar desde Excel a Demy?** <br> 
+    > No se ha validado si el conjunto de módulos del MVP (matrícula, asistencia, horarios, pagos) es suficiente para generar el valor percibido necesario para justificar el cambio de herramienta.
 
+### 8.1.3. Experiment-Ready Questions
+
+Las preguntas listas para experimentar convierten la materia prima del punto Raw Material en interrogantes concretas y accionables que pueden responderse mediante trabajo específico en un tiempo razonable. Para su formulación se aplicó la técnica de las **Cinco W + H** (*Who, What, Where, When, Why, How*), lo que permite descubrir premisas ocultas y entender el contexto actual de los usuarios de **Demy**.
+ 
+Se distinguen dos tipos de preguntas:
+ 
+- **Belief-led questions (Preguntas basadas en creencias):** Buscan probar o falsear una suposición o premisa previa contra la realidad. Se derivan principalmente de los *Assumptions* e *Ideas* identificados.
+- **Exploratory questions (Preguntas exploratorias):** Se enfocan en recolectar conocimiento en áreas donde no existen creencias previas. Se derivan principalmente de los *Knowledge Gaps* y *Claims* identificados.
+
+ 
+#### **Belief-led Questions**
+ 
+Estas preguntas buscan validar o refutar las suposiciones y premisas subyacentes identificadas en la materia prima.
+ 
+#### BLQ-01 — Adopción de la plataforma por administrativos
+ 
+> **¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, a pesar de tener experiencia intermedia con herramientas digitales?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Administrativos y coordinadores de academias presenciales, ~55/100 en manejo digital. |
+| **What** | La premisa de que una interfaz suficientemente intuitiva puede superar la resistencia al cambio. |
+| **Where** | En academias medianas de Lima durante la fase piloto. |
+| **When** | Durante el primer mes de uso activo de la plataforma. |
+| **Why** | Porque el 100% de los administrativos entrevistados calificó sus procesos actuales como ineficientes, pero la baja competencia digital podría frenar la adopción. |
+| **How** | Midiendo el porcentaje de procesos clave (matrícula, pagos, asistencia) gestionados dentro de la plataforma al cabo de 4 semanas. |
+| **Origen** | Assumption 1 / Hypothesis 01 |
+ 
+---
+ 
+#### BLQ-02 — Preferencia mobile de los docentes
+ 
+> **¿Los docentes de academias utilizarán predominantemente el smartphone para registrar asistencia y consultar horarios en Demy, en lugar de la laptop u otros dispositivos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes de academias presenciales, ~85/100 en manejo digital. |
+| **What** | La premisa de que el celular es el dispositivo principal de trabajo del docente y que una app mobile-first resolverá su incomodidad con Excel en móvil. |
+| **Where** | En aulas, espacios de coordinación y fuera de la academia. |
+| **When** | Durante las primeras semanas de uso en situaciones reales de clase. |
+| **Why** | Porque el 100% de los docentes entrevistados expresó incomodidad con Excel en celular y el deseo de acceder desde múltiples dispositivos. |
+| **How** | Registrando el dispositivo desde el cual cada docente realiza acciones en la plataforma (analytics de sesión por tipo de dispositivo). |
+| **Origen** | Assumption 2 / Idea 2 / Claim negativo 2 |
+ 
+---
+ 
+#### BLQ-03 — Impacto de alertas automáticas en la morosidad
+ 
+> **¿La implementación de recordatorios automáticos de pago en Demy reducirá la tasa de morosidad de los estudiantes en al menos un 40% durante los primeros tres meses de uso?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Administrativos responsables del control de pagos y estudiantes con pagos pendientes. |
+| **What** | La premisa de que la morosidad se debe principalmente a la falta de recordatorios oportunos, y no a limitaciones económicas de los estudiantes. |
+| **Where** | En academias que actualmente gestionan cobros por WhatsApp o de forma manual. |
+| **When** | Durante los primeros tres meses tras la activación del módulo de alertas. |
+| **Why** | Porque Carmen Gutiérrez afirma olvidarse de enviar recordatorios, y el 100% de los administrativos entrevistados señala falta de control preciso de pagos. |
+| **How** | Comparando el porcentaje de pagos atrasados antes y después de activar las alertas automáticas en academias piloto. |
+| **Origen** | Assumption 3 / Hypothesis 02 / Idea 3 / Claim positivo 8 |
+ 
+
+ 
+#### BLQ-04 — Percepción de organización ante padres de familia
+ 
+> **¿La digitalización de la gestión administrativa mediante Demy mejorará la percepción de organización de la academia ante los padres de familia, traduciéndose en mayor retención de alumnos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Padres de familia de estudiantes matriculados y personal administrativo que los atiende. |
+| **What** | La premisa de que los padres valoran la capacidad de respuesta rápida y precisa de la academia, y que esto impacta en su decisión de permanencia. |
+| **Where** | En el punto de atención presencial y a través de canales de comunicación de la academia. |
+| **When** | Al finalizar el primer ciclo académico con Demy implementado. |
+| **Why** | Porque el As-Is Scenario Mapping muestra que los administrativos sienten tensión y sensación de desorganización al atender consultas de padres sin información centralizada. |
+| **How** | Aplicando encuestas de satisfacción a padres antes y después de la implementación, y midiendo la tasa de renovación de matrícula entre ciclos. |
+| **Origen** | Assumption 4 / Claim negativo 5 |
+ 
+---
+ 
+#### BLQ-05 — Disposición a reemplazar WhatsApp por Demy en reprogramaciones
+ 
+> **¿Los docentes están dispuestos a usar Demy como canal oficial para reprogramar clases, abandonando el uso de WhatsApp para esta tarea?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes que actualmente coordinan cambios de horario mediante encuestas de WhatsApp. |
+| **What** | La premisa de que la informalidad de WhatsApp es percibida como una limitación y no como una preferencia cultural del segmento. |
+| **Where** | En academias donde los cambios de horario son frecuentes o impredecibles. |
+| **When** | Durante el primer ciclo académico de uso de Demy. |
+| **Why** | Porque el 100% de los docentes entrevistados señaló el manejo de cambios e imprevistos como un punto de estrés, pero WhatsApp sigue siendo el canal por defecto. |
+| **How** | Midiendo el porcentaje de reprogramaciones realizadas a través de Demy vs. canales informales durante el periodo piloto. |
+| **Origen** | Assumption 7 / Idea 5 / As-Is Teacher columna 3 |
+ 
+
+ 
+#### BLQ-06 — Suficiencia del MVP para justificar la migración desde Excel
+ 
+> **¿El conjunto de módulos del MVP de Demy es suficiente para que una academia decida migrar completamente desde sus herramientas actuales?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores, coordinadores y personal administrativo con poder de decisión sobre herramientas de gestión. |
+| **What** | La premisa de que los cuatro módulos principales del MVP generan suficiente valor percibido para justificar el cambio de herramienta. |
+| **Where** | En academias medianas de Lima en fase de evaluación de la plataforma. |
+| **When** | Durante la demostración o periodo de prueba gratuito previo a la suscripción. |
+| **Why** | Porque no se ha validado cuál es el umbral mínimo de funcionalidades que activa la decisión de adopción en este segmento. |
+| **How** | Realizando sesiones de prueba con el MVP y registrando qué módulos son considerados imprescindibles vs. secundarios mediante entrevistas post-demo. |
+| **Origen** | Knowledge Gap 9 / Hypothesis 01 |
+ 
+
+ 
+#### BLQ-07 — Escalabilidad entre planes de suscripción
+ 
+> **¿Al menos el 25% de las academias suscritas al plan Essentials migrará a un plan superior dentro de los primeros seis meses, a medida que identifiquen valor adicional en funcionalidades avanzadas?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Dueños o directores de academias suscritas al plan de entrada. |
+| **What** | La premisa de que la propuesta de valor de los planes superiores es percibida claramente y que el crecimiento de la academia genera presión natural hacia funcionalidades más avanzadas. |
+| **Where** | Dentro de la plataforma, en el momento en que los usuarios encuentran limitaciones del plan actual. |
+| **When** | Entre el primer y sexto mes de suscripción activa. |
+| **Why** | Porque el modelo de negocio de Demy depende de la conversión ascendente entre planes para su sostenibilidad. |
+| **How** | Rastreando las conversiones de plan mediante el dashboard de suscripciones y correlacionándolas con el volumen de alumnos y uso de funcionalidades. |
+| **Origen** | Assumption 8 / Hypothesis 05 |
+ 
+
+ 
+#### **Exploratory Questions**
+ 
+Estas preguntas buscan recolectar conocimiento en áreas donde el equipo no cuenta con creencias o información previa suficiente.
+ 
+ 
+#### EXQ-01 — Alfabetización digital fuera de Lima
+ 
+> **¿Cómo varía el nivel de adopción tecnológica y la disposición al cambio del personal administrativo de academias ubicadas fuera de Lima?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Personal administrativo de academias presenciales en ciudades como Arequipa, Trujillo, Cusco o Piura. |
+| **What** | El nivel real de alfabetización digital y la receptividad ante soluciones tecnológicas de gestión. |
+| **Where** | Academias presenciales en ciudades intermedias del Perú. |
+| **When** | Antes de expandir el lanzamiento fuera de Lima. |
+| **Why** | Porque las entrevistas solo cubrieron Lima e Ica con perfiles jóvenes (21-28 años), lo que limita la representatividad del segmento nacional. |
+| **How** | Mediante entrevistas cualitativas exploratorias con administrativos de distintas regiones y análisis de diferencias en patrones de uso digital. |
+| **Origen** | Knowledge Gap 1 |
+ 
+
+ 
+#### EXQ-02 — Sensibilidad al precio del segmento objetivo
+ 
+> **¿Cuánto está dispuesto a pagar mensualmente un director o dueño de academia por una herramienta de gestión centralizada, y qué factores determinan su percepción de valor?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores, dueños o tomadores de decisión financiera en academias presenciales de tamaño mediano. |
+| **What** | El rango de precio aceptable, los factores que justifican el gasto y las comparaciones que realizan con sus herramientas actuales. |
+| **Where** | En academias de Lima durante reuniones de evaluación o demos de la plataforma. |
+| **When** | Previo al lanzamiento comercial de los planes de suscripción. |
+| **Why** | Porque no existe información sobre la sensibilidad al precio del segmento ni sobre el gasto actual en herramientas de gestión (si las hay). |
+| **How** | Mediante técnicas de entrevista de precio (Van Westendorp o Gabor-Granger) aplicadas a una muestra de decisores del segmento objetivo. |
+| **Origen** | Knowledge Gap 2 |
+ 
+
+ 
+#### EXQ-03 — Frecuencia real de reprogramaciones de clases
+ 
+> **¿Con qué frecuencia ocurren reprogramaciones o cancelaciones de clases en una academia presencial promedio, y cuáles son sus principales causas?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Docentes y coordinadores académicos de academias presenciales de Lima. |
+| **What** | La frecuencia (diaria, semanal, mensual) y las causas más comunes de los cambios de horario. |
+| **Where** | En academias presenciales activas durante un ciclo académico completo. |
+| **When** | Durante la fase de investigación previa al desarrollo del módulo de reprogramación. |
+| **Why** | Porque sin datos cuantitativos de frecuencia, no es posible dimensionar el impacto real del problema ni priorizar adecuadamente el módulo en el roadmap. |
+| **How** | Mediante un registro observacional durante 4 semanas en 2-3 academias piloto, complementado con entrevistas a docentes y coordinadores. |
+| **Origen** | Knowledge Gap 3 / Idea 5 |
+ 
+
+ 
+#### EXQ-04 — Gestión de asistencia en academias multisede
+ 
+> **¿Cómo gestionan actualmente la asistencia y los horarios las academias con múltiples sedes, y qué complejidades adicionales presentan respecto a las academias de sede única?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Coordinadores generales y administrativos de academias con dos o más sedes en Lima. |
+| **What** | Los procesos, herramientas y puntos de dolor específicos al gestionar operaciones en múltiples ubicaciones simultáneamente. |
+| **Where** | En academias con presencia multisede en Lima Metropolitana. |
+| **When** | Durante la fase de investigación para el diseño de funcionalidades de escala. |
+| **Why** | Porque las academias multisede representan un segmento de mayor valor económico y su problemática puede requerir funcionalidades adicionales no contempladas en el MVP actual. |
+| **How** | Mediante entrevistas en profundidad con coordinadores generales de academias multisede y observación de sus flujos operativos actuales. |
+| **Origen** | Knowledge Gap 4 |
+ 
+
+ 
+#### EXQ-05 — Comportamiento digital de los padres de familia
+ 
+> **¿De qué manera los padres de familia de estudiantes en academias presenciales prefieren recibir información sobre el progreso académico y los pagos de sus hijos?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Padres de familia de estudiantes matriculados en academias preuniversitarias en Lima. |
+| **What** | Sus canales de comunicación preferidos  y qué información consideran más relevante recibir de la academia. |
+| **Where** | En academias piloto durante el primer ciclo académico con Demy implementado. |
+| **When** | Previo al diseño de funcionalidades orientadas a padres de familia en futuras versiones. |
+| **Why** | Porque el As-Is Scenario Mapping muestra que la atención a padres es un punto de dolor para los administrativos, pero no se conoce la perspectiva ni las expectativas del padre como usuario indirecto del sistema. |
+| **How** | Mediante encuestas breves a padres de familia en academias piloto, complementadas con entrevistas cualitativas a una submuestra. |
+| **Origen** | Knowledge Gap 5 / As-Is Admin columna 5 |
+ 
+
+ 
+#### EXQ-06 — Tiempo real invertido en tareas manuales por administrativos
+ 
+> **¿Cuántas horas semanales dedica en promedio un administrativo de academia presencial a tareas que podrían automatizarse con Demy?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Personal administrativo de academias presenciales de tamaño mediano en Lima. |
+| **What** | El tiempo real invertido en cada tarea administrativa susceptible de automatización. |
+| **Where** | En el espacio de trabajo diario del administrativo dentro de la academia. |
+| **When** | Durante la fase de benchmarking previa al lanzamiento, para establecer una línea base de medición del impacto de Demy. |
+| **Why** | Porque los datos existentes (ENUT 2024: +20 horas semanales) corresponden al sector educación en general, no específicamente al subsector de academias preuniversitarias. |
+| **How** | Mediante un diario de actividades completado por 5-8 administrativos durante dos semanas, registrando cada tarea y el tiempo invertido. |
+| **Origen** | Knowledge Gap 6 |
+ 
+
+ 
+#### EXQ-07 — Competidores y soluciones alternativas conocidas
+ 
+> **¿Qué herramientas de gestión académica conocen o han evaluado previamente los directores y administrativos de academias, y por qué no las adoptaron o las abandonaron?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Directores y coordinadores administrativos con poder de decisión sobre herramientas de gestión. |
+| **What** | Las soluciones que han explorado y las razones de no adopción: precio, complejidad, falta de soporte local, etc. |
+| **Where** | En academias presenciales de Lima durante entrevistas de ventas o demos. |
+| **When** | Antes de definir la estrategia de posicionamiento y diferenciación de Demy en el mercado. |
+| **Why** | Porque no existe un análisis competitivo desde la perspectiva del usuario, y conocer las razones de rechazo de otras herramientas puede revelar ventajas estratégicas clave para Demy. |
+| **How** | Mediante preguntas específicas sobre herramientas evaluadas en entrevistas de ventas o sesiones de descubrimiento con prospectos. |
+| **Origen** | Knowledge Gap 7 |
+ 
+
+ 
+#### EXQ-08 — Viabilidad de integración con métodos de pago locales
+ 
+> **¿Qué requisitos técnicos, legales y operativos implica la integración de pasarelas de pago locales como PagoEfectivo en el contexto de academias peruanas, y cuál es el esfuerzo real de implementación?**
+ 
+| Dimensión | Detalle |
+|-----------|---------|
+| **Who** | Equipo técnico de Demy y representantes de las pasarelas de pago locales. |
+| **What** | Los requisitos de integración API, las obligaciones legales (SUNAT, comprobantes electrónicos), los costos de transacción y el tiempo de implementación estimado. |
+| **Where** | En el entorno de desarrollo y en coordinación con los proveedores de pasarelas de pago peruanas. |
+| **When** | Durante el spike técnico SS003, previo al diseño del módulo de pagos en su versión integrada. |
+| **Why** | Porque los métodos de pago locales son clave para la adopción en el mercado peruano, pero el equipo aún no tiene claridad sobre la viabilidad técnica y legal de esta integración. |
+| **How** | Mediante la revisión de la documentación técnica de cada pasarela, contacto directo con sus equipos de integración y desarrollo de un prototipo de concepto (spike técnico). |
+| **Origen** | Knowledge Gap 8 / SS003 |
+ 
+<br>
+ 
+#### **Resumen de Preguntas por Tipo y Origen**
+ 
+| ID | Tipo | Pregunta resumida | Origen |
+|----|------|-------------------|-----------------|
+| BLQ-01 | Belief-led | ¿Los administrativos adoptarán Demy en el primer mes? | Assumption 1, Hypothesis 01 |
+| BLQ-02 | Belief-led | ¿Los docentes usarán principalmente el smartphone? | Assumption 2, Idea 2 |
+| BLQ-03 | Belief-led | ¿Las alertas reducirán la morosidad en un 40%? | Assumption 3, Hypothesis 02 |
+| BLQ-04 | Belief-led | ¿Demy mejorará la percepción ante padres y retención? | Assumption 4, Claim 5 |
+| BLQ-05 | Belief-led | ¿Los docentes reemplazarán WhatsApp por Demy? | Assumption 7, Idea 5 |
+| BLQ-06 | Belief-led | ¿El MVP es suficiente para migrar desde Excel? | Knowledge Gap 9, Hypothesis 01 |
+| BLQ-07 | Belief-led | ¿El 25% migrará a planes superiores en 6 meses? | Assumption 8, Hypothesis 05 |
+| EXQ-01 | Exploratory | ¿Cómo varía la adopción digital fuera de Lima? | Knowledge Gap 1 |
+| EXQ-02 | Exploratory | ¿Cuánto pagaría un director por Demy? | Knowledge Gap 2 |
+| EXQ-03 | Exploratory | ¿Cuántas reprogramaciones ocurren por semana? | Knowledge Gap 3 |
+| EXQ-04 | Exploratory | ¿Cómo gestionan academias multisede? | Knowledge Gap 4 |
+| EXQ-05 | Exploratory | ¿Qué canal prefieren los padres de familia? | Knowledge Gap 5 |
+| EXQ-06 | Exploratory | ¿Cuántas horas semanales se pierden en tareas manuales? | Knowledge Gap 6 |
+| EXQ-07 | Exploratory | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Knowledge Gap 7 |
+| EXQ-08 | Exploratory | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Knowledge Gap 8 |
+
+### 8.1.4. Question Backlog
+ 
+El Question Backlog es el resultado final de la fase de planificación. Constituye una lista priorizada de preguntas de investigación, no de funcionalidades, cuya respuesta es crucial para definir el curso de acción del producto **Demy**.
+ 
+ 
+####  **Sistema de Puntuación**
+ 
+Cada pregunta se evalúa bajo cuatro criterios en una escala del **1 al 5**:
+ 
+| Criterio | Descripción |
+|----------|-------------|
+| **Confianza** | Qué tan seguros estamos de nuestra creencia o premisa actual. A menor confianza, mayor prioridad . Escala invertida: 1 = muy seguros, 5 = muy inseguros. |
+| **Riesgo** | Qué tan grave sería estar equivocados. A mayor riesgo, mayor prioridad. 1 = bajo riesgo, 5 = riesgo crítico para el producto. |
+| **Impacto** | Qué tan importante sería la respuesta para el producto, el negocio o los usuarios. A mayor impacto, mayor prioridad. 1 = impacto marginal, 5 = impacto estratégico. |
+| **Interés** | Qué tan motivado está el equipo para responder esta pregunta ahora. 1 = baja urgencia, 5 = alta urgencia. |
+ 
+> **Puntuación total = Confianza + Riesgo + Impacto + Interés** (máximo: 20 puntos)
+> En caso de empate, se prioriza la pregunta con mayor puntaje en **Riesgo**.
+ 
+
+ 
+#### **Broad Backlog**
+ 
+El Broad Backlog contiene todas las preguntas identificadas, ordenadas por puntaje total de mayor a menor. Incluye tanto preguntas Belief-led (BLQ) como Exploratorias (EXQ).
+ 
+| Pos. | ID | Pregunta resumida | Tipo | Confianza | Riesgo | Impacto | Interés | **Total** |
+|------|----|-------------------|------|:---------:|:------:|:-------:|:-------:|:---------:|
+| 1 | BLQ-06 | ¿El MVP es suficiente para que una academia migre desde Excel? | Belief-led | 4 | 5 | 5 | 5 | **19** |
+| 2 | BLQ-01 | ¿Los administrativos adoptarán Demy en el primer mes de uso? | Belief-led | 3 | 5 | 5 | 5 | **18** |
+| 3 | BLQ-03 | ¿Las alertas automáticas reducirán la morosidad en un 40%? | Belief-led | 4 | 4 | 5 | 5 | **18** |
+| 4 | EXQ-02 | ¿Cuánto pagaría un director de academia por Demy? | Exploratory | 5 | 5 | 4 | 4 | **18** |
+| 5 | BLQ-02 | ¿Los docentes usarán principalmente el smartphone con Demy? | Belief-led | 2 | 4 | 5 | 4 | **15** |
+| 6 | BLQ-05 | ¿Los docentes reemplazarán WhatsApp por Demy en reprogramaciones? | Belief-led | 3 | 4 | 4 | 4 | **15** |
+| 7 | EXQ-06 | ¿Cuántas horas semanales pierde un administrativo en tareas manuales? | Exploratory | 4 | 3 | 5 | 3 | **15** |
+| 8 | EXQ-07 | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Exploratory | 4 | 4 | 4 | 3 | **15** |
+| 9 | BLQ-04 | ¿Demy mejorará la percepción de la academia ante los padres de familia? | Belief-led | 3 | 3 | 4 | 4 | **14** |
+| 10 | EXQ-03 | ¿Con qué frecuencia ocurren reprogramaciones de clases? | Exploratory | 4 | 3 | 4 | 3 | **14** |
+| 11 | EXQ-08 | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Exploratory | 4 | 4 | 3 | 3 | **14** |
+| 12 | BLQ-07 | ¿El 25% de academias migrará a planes superiores en 6 meses? | Belief-led | 3 | 3 | 4 | 3 | **13** |
+| 13 | EXQ-01 | ¿Cómo varía la adopción digital del personal fuera de Lima? | Exploratory | 3 | 3 | 3 | 4 | **13** |
+| 14 | EXQ-04 | ¿Cómo gestionan la asistencia las academias con múltiples sedes? | Exploratory | 4 | 3 | 3 | 3 | **13** |
+| 15 | EXQ-05 | ¿Qué canal de comunicación prefieren los padres de familia? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+ 
+
+<br>
+
+#### **Deep Backlog**
+ 
+El Deep Backlog presenta las **10 preguntas de mayor prioridad** con su ficha completa: motivación (el "por qué"), criterios de puntuación detallados y el método experimental recomendado para responderlas.
+
+En esta imagen se resumen y se observa de forma visual las 10 preguntas de mayor prioridad, siendo las de color azul las de tipo "BLQ" y las de color verde de tipo "EXQ". 
+![Matriz de las 10 preguntas de mayor prioridad](./assets/experiment-planning/matriz-preguntas-mayor-prioridad.png)
+
+ 
+#### #1 — BLQ-06 | Puntuación: 19
+ 
+**¿El conjunto de módulos del MVP de Demy es suficiente para que una academia decida migrar completamente desde Excel y registros físicos?**
+ 
+**¿Por qué esta pregunta?**
+Esta es la pregunta de mayor riesgo del producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de la calidad técnica de la plataforma. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido, por lo que validar esta premisa antes del lanzamiento comercial es crítico para evitar un fracaso de adopción masivo.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo tiene poca certeza sobre si los cuatro módulos son suficientes; las entrevistas muestran necesidad, pero no se ha probado el conjunto completo. |
+| Riesgo | 5 | Si el MVP no es suficiente, el producto no genera tracción y el modelo de negocio colapsa desde el inicio. |
+| Impacto | 5 | La respuesta define qué se incluye en el MVP y qué se posterga, impactando directamente el roadmap y la estrategia de lanzamiento. |
+| Interés | 5 | El equipo necesita esta respuesta antes del lanzamiento para no invertir en funcionalidades equivocadas. |
+ 
+**Método experimental sugerido:** Sesiones de demo del prototipo con 5-8 directores o coordinadores de academias medianas en Lima, seguidas de entrevistas estructuradas para identificar qué módulos consideran imprescindibles vs. secundarios para tomar la decisión de suscripción.
+ 
+
+ 
+#### #2 — BLQ-01 | Puntuación: 18
+ 
+**¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, a pesar de tener experiencia digital intermedia?**
+ 
+**¿Por qué esta pregunta?**
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia de uso y los responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás usuarios.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Las entrevistas muestran alta disposición verbal, pero la disposición declarada no siempre se traduce en comportamiento real. |
+| Riesgo | 5 | Si los administrativos no adoptan la plataforma, el producto falla en su promesa central y las academias cancelan la suscripción. |
+| Impacto | 5 | Define si el diseño de onboarding y la UX son suficientes, o si se requiere soporte adicional. |
+| Interés | 5 | Es urgente validarlo en la fase piloto antes de escalar el lanzamiento. |
+ 
+**Método experimental sugerido:** Piloto de 4 semanas con 2-3 academias, midiendo el porcentaje de procesos administrativos gestionados dentro de Demy vs. herramientas anteriores, complementado con observación directa y entrevistas semanales de seguimiento.
+ 
+
+ 
+#### #3 — BLQ-03 | Puntuación: 18
+ 
+**¿La implementación de recordatorios automáticos de pago en Demy reducirá la tasa de morosidad de los estudiantes en al menos un 40% durante los primeros tres meses?**
+ 
+**¿Por qué esta pregunta?**
+El control de pagos es uno de los pain points más críticos identificados en el 100% de los administrativos entrevistados. La Hypothesis 02 del Lean UX establece un KPI concreto (reducción del 40% en pagos atrasados), pero este número no ha sido validado. Además, existe el riesgo de que la morosidad responda a causas económicas estructurales de los estudiantes y no a la falta de recordatorios, lo que haría ineficaz esta funcionalidad como diferenciador del producto.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | El equipo asume que la morosidad es principalmente un problema de comunicación, pero no tiene evidencia para respaldarlo. |
+| Riesgo | 4 | Si la funcionalidad no reduce la morosidad, se pierde uno de los principales argumentos de venta del módulo de pagos. |
+| Impacto | 5 | Un impacto demostrable en morosidad es un argumento de venta poderoso y un diferenciador competitivo clave. |
+| Interés | 5 | Es necesario validarlo en el piloto para incluirlo como métrica de éxito en el pitch comercial. |
+ 
+**Método experimental sugerido:** Comparación pre/post en academias piloto: medir el porcentaje de pagos atrasados en el ciclo anterior (sin Demy) vs. el ciclo con alertas activas, controlando por tamaño de grupo y tipo de academia.
+ 
+
+ 
+#### #4 — EXQ-02 | Puntuación: 18
+ 
+**¿Cuánto está dispuesto a pagar mensualmente un director o dueño de academia por una herramienta de gestión centralizada como Demy, y qué factores determinan su percepción de valor?**
+ 
+**¿Por qué esta pregunta?**
+El modelo de negocio de Demy descansa en planes de suscripción, pero no existe información empírica sobre la sensibilidad al precio del segmento objetivo ni sobre su gasto actual en herramientas de gestión. Establecer precios sin esta información puede resultar en planes sub-valorados (pérdida de ingresos) o sobre-valorados (barrera de adopción). Esta es la brecha de conocimiento con mayor riesgo financiero para la sostenibilidad del negocio.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 5 | El equipo no tiene ninguna base empírica sobre disposición a pagar en este segmento específico. |
+| Riesgo | 5 | Definir precios incorrectos puede destruir la viabilidad comercial del producto antes de escalar. |
+| Impacto | 4 | La respuesta define la estructura de precios, los planes y la estrategia de monetización de Demy. |
+| Interés | 4 | Urgente antes de la definición final de los planes comerciales y del lanzamiento. |
+ 
+**Método experimental sugerido:** Aplicación de la técnica de precio de Van Westendorp a una muestra de 15-20 directores de academias medianas en Lima, identificando los umbrales de precio aceptable, caro, barato e inaceptablemente caro para el servicio.
+ 
+
+ 
+#### #5 — BLQ-02 | Puntuación: 15
+ 
+**¿Los docentes de academias utilizarán predominantemente el smartphone para interactuar con Demy, justificando la priorización de la app mobile sobre la versión web?**
+ 
+**¿Por qué esta pregunta?**
+La decisión de priorizar el desarrollo de una app móvil multiplataforma para docentes implica un costo significativo de desarrollo. Esta decisión se basa en las preferencias expresadas por los tres docentes entrevistados, pero la muestra es pequeña. Si la premisa es incorrecta y los docentes terminan usando principalmente la versión web, el esfuerzo en mobile-first habrá sido mal dirigido.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 2 | Alta confianza basada en tres entrevistas consistentes: el 100% prefiere el celular. |
+| Riesgo | 4 | Una inversión en mobile-first mal dirigida retrasa el roadmap y desvía recursos críticos. |
+| Impacto | 5 | Define la arquitectura del producto y las prioridades de desarrollo para el segmento docente. |
+| Interés | 4 | Necesario validarlo en la fase piloto antes de comprometer más recursos en desarrollo mobile. |
+ 
+**Método experimental sugerido:** Análisis de analytics de dispositivo durante las primeras 4 semanas del piloto, registrando desde qué tipo de dispositivo cada docente realiza sus acciones principales en la plataforma.
+ 
+
+ 
+#### #6 — BLQ-05 | Puntuación: 15
+ 
+**¿Los docentes están dispuestos a usar Demy como canal oficial para reprogramar clases, reemplazando el uso de WhatsApp para esta tarea?**
+ 
+**¿Por qué esta pregunta?**
+Uno de los módulos clave de Demy para docentes es la reprogramación de clases. Sin embargo, WhatsApp está profundamente arraigado como canal de coordinación en este segmento. Si los docentes continúan usando WhatsApp por costumbre o preferencia, la funcionalidad de reprogramación no generará el valor esperado y los administrativos seguirán recibiendo información fragmentada por canales informales.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Los docentes expresan frustración con WhatsApp, pero no está claro si adoptarían un canal más formal. |
+| Riesgo | 4 | Si no abandona WhatsApp, el módulo de reprogramación pierde utilidad y el dolor del usuario persiste dentro de la plataforma. |
+| Impacto | 4 | Define si el módulo de reprogramación requiere integración con notificaciones push para competir con la inmediatez de WhatsApp. |
+| Interés | 4 | Necesario para diseñar el flujo de reprogramación con los incentivos correctos desde el inicio. |
+ 
+**Método experimental sugerido:** Durante el piloto, monitorear el canal utilizado para cada reprogramación de clase durante 4 semanas, comparando el uso de Demy vs. WhatsApp, y entrevistar a docentes sobre las razones de su preferencia.
+ 
+
+ 
+#### #7 — EXQ-06 | Puntuación: 15
+ 
+**¿Cuántas horas semanales dedica en promedio un administrativo de academia a tareas manuales susceptibles de automatización con Demy?**
+ 
+**¿Por qué esta pregunta?**
+El argumento principal de venta de Demy es el ahorro de tiempo operativo. Sin una línea base cuantificada, no es posible demostrar el ROI de la plataforma ni construir un caso de negocio convincente para los directores de academia. Los datos de ENUT 2024 son genéricos para el sector educación y no son suficientemente específicos para el subsector de academias preuniversitarias.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que el tiempo es significativo, pero no se tiene una cifra concreta y medible para el segmento específico. |
+| Riesgo | 3 | Sin esta cifra, el pitch comercial es débil y el equipo no puede medir el impacto real de la plataforma post-implementación. |
+| Impacto | 5 | Un dato concreto de ahorro de horas es el argumento de venta más poderoso y objetivo de Demy. |
+| Interés | 3 | Importante para la estrategia comercial, aunque no bloquea el desarrollo técnico actual. |
+ 
+**Método experimental sugerido:** Diario de actividades completado por 5-8 administrativos durante dos semanas, registrando cada tarea manual y el tiempo invertido, con posterior análisis por categoría de proceso.
+ 
+
+ 
+#### #8 — EXQ-07 | Puntuación: 15
+ 
+**¿Qué herramientas de gestión académica conocen o han evaluado previamente los directores de academias, y cuáles fueron las razones por las que no las adoptaron o las abandonaron?**
+ 
+**¿Por qué esta pregunta?**
+Demy no llega a un mercado vacío. Entender qué intentaron antes los directores y por qué fracasó esa adopción es información estratégica para evitar los mismos errores y posicionar Demy diferenciadamente. Si existe una herramienta competidora conocida en el segmento, la estrategia de ventas y el mensaje de Demy deben adaptarse para superar esa referencia previa.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se desconoce completamente el panorama competitivo desde la perspectiva del usuario objetivo. |
+| Riesgo | 4 | Ignorar al competidor conocido por el usuario puede llevar a posicionamiento equivocado y pérdida de credibilidad en ventas. |
+| Impacto | 4 | Define la narrativa diferencial de Demy y los argumentos de venta frente a referencias previas del usuario. |
+| Interés | 3 | Importante para la estrategia de go-to-market, aunque no es bloqueante para el desarrollo del MVP. |
+ 
+**Método experimental sugerido:** Incluir preguntas específicas sobre herramientas previamente evaluadas en las entrevistas de descubrimiento con prospectos durante las demos comerciales de Demy.
+ 
+
+ 
+#### #9 — BLQ-04 | Puntuación: 14
+ 
+**¿La digitalización de la gestión con Demy mejorará la percepción de organización de la academia ante los padres de familia, y esto se traducirá en mayor retención de alumnos entre ciclos?**
+ 
+**¿Por qué esta pregunta?**
+El As-Is Scenario Mapping muestra que la atención a padres de familia es uno de los momentos de mayor tensión para los administrativos: buscan información en archivos dispersos mientras el padre espera. Si Demy resuelve este momento de verdad, podría generar un beneficio de retención medible que va más allá de la eficiencia interna y constituye un argumento de valor adicional hacia los directores de academia.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 3 | Se asume que los padres valoran la respuesta rápida, pero no se ha validado que esto impacte en su decisión de permanecer en la academia. |
+| Riesgo | 3 | Si el impacto en retención no es demostrable, Demy pierde un argumento de valor secundario pero relevante para el pitch. |
+| Impacto | 4 | Un impacto demostrable en retención de alumnos convierte a Demy en una inversión con ROI claro para el director. |
+| Interés | 4 | Relevante para enriquecer el pitch comercial con beneficios más allá de la eficiencia operativa. |
+ 
+**Método experimental sugerido:** Encuesta de satisfacción a padres de familia antes y después del primer ciclo con Demy, complementada con seguimiento de la tasa de renovación de matrícula en academias piloto.
+ 
+
+ 
+#### #10 — EXQ-03 | Puntuación: 14
+ 
+**¿Con qué frecuencia ocurren reprogramaciones o cancelaciones de clases en una academia presencial promedio, y cuáles son sus principales causas?**
+ 
+**¿Por qué esta pregunta?**
+El módulo de reprogramación de clases es una funcionalidad del backlog que consume esfuerzo de desarrollo. Su priorización depende de qué tan frecuente y crítico es el problema que resuelve. Si las reprogramaciones ocurren raramente, el módulo podría postergarse; si ocurren con alta frecuencia, su desarrollo es urgente y debe incluirse en el MVP o en la primera iteración.
+ 
+| Criterio | Puntaje | Justificación |
+|----------|:-------:|---------------|
+| Confianza | 4 | Se sabe que ocurren, pero no se tiene dato de frecuencia. El equipo no puede priorizar el módulo sin esta información. |
+| Riesgo | 3 | Desarrollar o posponer el módulo sin datos de frecuencia puede resultar en una mala priorización del roadmap. |
+| Impacto | 4 | Define si la funcionalidad de reprogramación pertenece al MVP o a una versión posterior, impactando el alcance del sprint actual. |
+| Interés | 3 | Necesario para la planificación del roadmap de corto plazo. |
+ 
+**Método experimental sugerido:** Registro observacional de reprogramaciones durante 4 semanas en 2-3 academias piloto, complementado con entrevistas a coordinadores sobre las causas más frecuentes de cambios de horario.
+ 
+
+### 8.1.5. Experiment Cards
+
+Las Experiment Cards son el artefacto clave que documenta la información esencial antes de ejecutar cualquier experimento. Cada tarjeta tiene dos caras: el **Lado Frontal** captura la definición del experimento (QUESTION, WHY, HYPOTHESIS y WHAT), y el **Lado Posterior** detalla su configuración técnica (MEASURES, CONDITIONS y SCALE).
+ 
+Se presentan las 2 tarjetas correspondientes a las preguntas de mayor prioridad del Question Backlog.
+ 
+
+ 
+
+ 
+#### **EC-01 — BLQ-06 | Prioridad #1 (Puntuación: 19)**
+ 
+##### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿El conjunto de módulos del MVP de Demy es suficiente para que un director o coordinador de academia decida migrar completamente desde Excel y registros físicos?
+ 
+
+ 
+**WHY**
+ 
+Esta es la premisa de mayor riesgo para el producto. Si el MVP no alcanza el umbral mínimo de valor percibido, ninguna academia pagará por Demy independientemente de su calidad técnica. El esfuerzo de desarrollo de los cuatro módulos principales ya está comprometido; validar esta creencia antes del lanzamiento comercial es crítico para evitar un fracaso de adopción desde el inicio.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 60% de los directores de academias medianas en Lima, tras una sesión de demo del MVP de Demy, declarará que el conjunto de módulos presentado es suficiente para tomar la decisión de suscribirse y migrar desde sus herramientas actuales.
+- **Hipótesis nula (H0):** La proporción de directores que declaran suficiencia del MVP no será significativamente diferente del 60%, o cualquier diferencia observada se deberá al azar y no al valor real del MVP.
+
+ 
+**WHAT**
+ 
+Sesión de demo estructurada del prototipo de Demy (sin código de producción completo) con 8 directores o coordinadores de academias medianas en Lima, seguida de una entrevista post-demo de 10 minutos con escala de decisión binaria (¿suscribiría su academia con estos módulos? Sí / No) y preguntas de profundización sobre qué módulo adicional considerarían imprescindible.
+ 
+
+ 
+#### ◼ LADO POSTERIOR
+ 
+
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Suficiencia Percibida del MVP | DBM-08 | ≥ 60% de directores declara suficiencia |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" |
+ 
+Evidencia secundaria a recolectar: lista de módulos adicionales mencionados como imprescindibles por los directores que respondan "No" a la suficiencia del MVP.
+ 
+
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Director o coordinador de academia mediana (50-200 alumnos) en Lima que aún utiliza Excel o registros físicos para gestión administrativa, expuesto a la demo completa del MVP de Demy con los cuatro módulos activos. |
+| **Control** | Director o coordinador que no ha visto la demo de Demy y continúa gestionando con herramientas actuales (Excel, talonarios, WhatsApp). Su percepción de suficiencia de herramientas actuales sirve como línea base de comparación. |
+ 
+
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Minimiza errores Tipo I (falsos positivos). Estándar en diseño experimental. |
+| Poder estadístico (1-β) | 80% | Reduce la probabilidad de errores Tipo II. Nivel mínimo aceptable. |
+| Efecto Mínimo Detectable (MDE) | 20 puntos porcentuales | Se considera relevante detectar una diferencia de al menos 20 pp entre la condición experimental y la de control (p.ej., de 40% a 60% de suficiencia percibida). |
+| Tamaño de muestra mínimo | 8 directores | Dado el contexto de investigación cualitativa-cuantitativa preliminar con recursos limitados, se aplica un muestreo intencional de 8 participantes como mínimo para obtener patrones consistentes. Este número se revisará antes de una validación cuantitativa a mayor escala. |
+| Duración estimada | 2 semanas | Tiempo para coordinar, ejecutar y analizar las 8 sesiones de demo. |
+ 
+
+ 
+#### **EC-02 — BLQ-01 | Prioridad #2 (Puntuación: 18)**
+ 
+
+ 
+#### ◼ LADO FRONTAL
+ 
+ 
+**QUESTION**
+ 
+¿Los administrativos de academias presenciales adoptarán Demy como herramienta de gestión diaria dentro del primer mes de uso, gestionando al menos el 70% de sus procesos clave dentro de la plataforma?
+ 
+
+ 
+**WHY**
+ 
+El éxito operativo de Demy depende en primer lugar de los administrativos, quienes son los usuarios de mayor frecuencia y responsables de los procesos más críticos. Si este segmento no adopta la plataforma, los datos no se generan y el sistema pierde utilidad para todos los demás roles.
+ 
+
+ 
+**HYPOTHESIS**
+ 
+- **Hipótesis de trabajo (H1):** Al menos el 70% de los administrativos en academias piloto gestionará sus procesos clave dentro de Demy durante el primer mes de uso, medido como porcentaje de procesos ejecutados en la plataforma vs. herramientas anteriores.
+- **Hipótesis nula (H0):** La Tasa de Adopción Administrativa no alcanzará el 70% en el primer mes, o cualquier diferencia observada respecto a la línea base se deberá al azar y no al impacto real de la plataforma.
+
+ 
+**WHAT**
+ 
+Piloto de 4 semanas con 2 academias medianas en Lima, con acceso completo a Demy y un proceso de onboarding de 2 horas. Se registra automáticamente qué porcentaje de procesos administrativos se ejecutan dentro de la plataforma vs. herramientas anteriores, complementado con entrevistas de seguimiento al final de cada semana.
+ 
+ 
+#### ◼ LADO POSTERIOR
+ 
+ 
+**MEASURES**
+ 
+| Métrica | Referencia | Valor esperado |
+|---------|-----------|----------------|
+| Tasa de Adopción Administrativa | DBM-01 | ≥ 70% de procesos gestionados en Demy al mes 1 |
+| Puntuación de Facilidad de Uso | DBM-07 | ≥ 75% califica como "fácil" o "muy fácil" al final de la semana 1 |
+| Tasa de Retención de Suscripción | DBM-03 | ≥ 60% de academias piloto renueva al mes 2 |
+ 
+Evidencia secundaria: registro de barreras de uso reportadas en entrevistas semanales.
+ 
+ 
+**CONDITIONS**
+ 
+| Condición | Descripción |
+|-----------|-------------|
+| **Experimental** | Administrativos de academias medianas en Lima con acceso a Demy + sesión de onboarding de 2 horas + soporte por canal de mensajería durante las 4 semanas del piloto. |
+| **Control** | Los mismos administrativos durante el ciclo académico inmediatamente anterior al piloto, gestionando con sus herramientas actuales (Excel, talonarios, WhatsApp). Sus métricas de tiempo y procesos sirven como línea base. |
+ 
+ 
+**SCALE**
+ 
+| Parámetro | Valor | Justificación |
+|-----------|-------|---------------|
+| Nivel de significación (α) | 5% | Estándar para minimizar errores Tipo I. |
+| Poder estadístico (1-β) | 80% | Nivel mínimo para reducir errores Tipo II. |
+| Efecto Mínimo Detectable (MDE) | 30 puntos porcentuales | Se considera relevante detectar un cambio de al menos 30 pp en la tasa de adopción (p.ej., de 20% con herramientas actuales a ≥70% con Demy). |
+| Tamaño de muestra mínimo | 2 academias / 3-5 administrativos | Muestra mínima viable para el piloto inicial. Suficiente para detectar patrones de adopción y barreras, con revisión antes de escalar. |
+| Duración estimada | 4 semanas | Un mes completo para capturar el comportamiento real en ciclo activo de la academia. |
+
+ 
+
+## 8.2. Experiment Design 
+### 8.2.1. Hypotheses
+
+Siguiendo los principios de la experimentación científica y estadística en el marco XDPD, las hipótesis se formulan como declaraciones de creencias previas que se someten a pruebas de falsabilidad, testabilidad y medición, en lugar de intentar "validarlas como verdaderas" de manera sesgada. Cada hipótesis de trabajo va acompañada de su respectiva Hipótesis Nula (H_0).
+
+* **Hipótesis 1 (Suficiencia del MVP - EC-01):**
+    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios y Facturación/Finance) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
+    * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que el conjunto actual de funcionalidades desplegadas no cubre el umbral mínimo de valor requerido por el segmento de negocio.
+
+* **Hipótesis 2 (Adopción Administrativa - EC-02):**
+    * **Hipótesis de Trabajo (H_1):** El uso de Demy en un entorno real con inducción inicial provocará que la Tasa de Adopción Administrativa en la gestión financiera y operativa alcance o supere el 70% al finalizar las primeras 4 semanas del piloto.
+    * **Hipótesis Nula (H_0):** La Tasa de Adopción Administrativa no alcanzará el 70% (Media < 0.70) en el primer mes de uso, indicando que el producto no mitiga eficazmente la fricción de uso frente a los métodos manuales tradicionales.
+
+### 8.2.2. Domain Business Metrics 
+
+Para garantizar que los experimentos se vinculen directamente con el rendimiento financiero y operativo real de las academias, se definen de manera estricta las métricas de negocio del dominio utilizando exclusivamente las capacidades del software desplegado. Queda prohibido el uso de métricas ad-hoc o datos no descritos en esta sección.
+
+1. **DBM-01: Tasa de Adopción Administrativa**
+    * **Fórmula:** Tasa = (Número de procesos core de matrícula y horarios registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
+    * **Técnica de recolección:** Registro automatizado de transacciones de inscripción en la base de datos de Demy cruzado con la auditoría de matrículas manuales reportadas externamente por la administración en su balance semanal.
+    * **Meta:** Mayor o igual a 70% al finalizar el primer mes.
+
+2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Facturación/Finance)**
+    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cuentas de cobro, comprobantes o egresos en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
+    * **Técnica de recolección:** Log analítico e inspección de marcas de tiempo en las tablas de auditoría de Base de Datos para los módulos de Facturación y Finance en Azure.
+    * **Meta:** Mayor o igual a 60% de uso recurrente continuo al cierre del piloto de un mes.
+
+3. **DBM-07: Puntuación de Facilidad de Uso (UMUX-Lite abreviado)**
+    * **Fórmula:** Puntuación = (Suma de respuestas de ítems Capacidad y Utilidad en escala 1 a 5 / Máximo puntaje posible) * 100
+    * **Técnica de recolección:** Micro-encuesta in-app desplegada en la interfaz web de Demy tras completar flujos operativos clave (como el cierre de un registro de matrícula o emisión de un comprobante).
+    * **Meta:** Mayor o igual a 75% de percepción de usabilidad positiva.
+
+4. **DBM-08: Tasa de Suficiencia Percibida del MVP**
+    * **Fórmula:** Tasa = (Número de decisores que responden "Sí" a la suficiencia del MVP / Total de decisores expuestos a la demo) * 100
+    * **Técnica de recolección:** Entrevista estructurada post-demo con recolección de respuesta binaria cerrada (Sí/No).
+    * **Meta:** Mayor o igual a 60%.
+
+### 8.2.3. Measures
+
+Se seleccionan criterios rigurosos de recolección bajo el principio de economía de rastreo (utilizar solo las medidas necesarias durante el tiempo justo para minimizar costos y ruidos analíticos).
+
+* **Evidencia Primaria (Representativa del cambio esperado):**
+    * Métricas de interacción core: Cantidad de estudiantes matriculados digitalmente, salones asignados y horarios guardados de forma exitosa por sesión en la solución web.
+    * Métricas financieras de impacto: Número de cuentas de cobro generadas, comprobantes de estudiantes emitidos y registros de egresos/ingresos completados dentro del módulo de Finance.
+
+* **Evidencia Secundaria (Detección de efectos adyacentes):**
+    * Tasa de error operativo técnico: Frecuencia con la que un usuario administrativo cancela un flujo o abandona un formulario (por ejemplo, salir del formulario de creación de periodo académico o asignación de profesores a mitad del registro).
+    * Fricciones cualitativas: Lista priorizada de objeciones estructurales o solicitudes de características indicadas por los directores que rechazaron la suficiencia inicial del MVP.
+
+### 8.2.4. Conditions
+
+Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del usuario para aislar las variables y comprender el motivo subyacente de las respuestas.
+
+* **Para Experimento de Suficiencia de MVP (EC-01):**
+    * **Condición Experimental:** Directores o coordinadores de academias medianas de Lima expuestos a una sesión de demostración interactiva guiada del MVP de Demy con el flujo completo de configuración (periodo académico, profesores, cursos, salones, alumnos y facturación activos en Azure).
+    * **Condición de Control:** Directores o coordinadores del mismo segmento que no son expuestos a Demy y evalúan la suficiencia de sus herramientas actuales tradicionales (archivos Excel fragmentados y talonarios físicos).
+
+* **Para Experimento de Adopción (EC-02):**
+    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment y Finance) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
+    * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
+
+### 8.2.5. Scale Calculations and Decisions
+
+La determinación de la escala experimental establece cuánta evidencia es matemáticamente necesaria para dotar al estudio de validez estadística, balanceando Certeza (probabilidad de error aceptable) y Precisión (granularidad del cambio).
+
+* **Parámetros de Configuration Estadística:**
+    * **Nivel de Significación (alfa):** 5% (Probabilidad máxima aceptable de cometer un error Tipo I o falso positivo).
+    * **Poder Estadístico (1 - beta):** 80% (Probabilidad de detectar un efecto real si este existe, mitigando errores Tipo II).
+    * **Efecto Mínimo Detectable (MDE):** 20 puntos porcentuales para la percepción de suficiencia del MVP y 30 puntos porcentuales para la adopción en entorno operativo real.
+
+* **Decisiones de Tamaño de Muestra:**
+    * Debido al contexto B2B (Directores y administradores de academias preuniversitarias) y las restricciones de acceso al segmento en fases tempranas, se define un muestreo intencional y controlado de 8 directores para el experimento de MVP (EC-01) y un piloto cerrado con 2 academias medianas (que consolidan entre 3 y 5 administrativos de alta frecuencia) para el experimento de Adopción (EC-02). Esta escala es metodológicamente suficiente para identificar patrones críticos de usabilidad, adopción de flujos contables y valor antes de ejecutar un escalamiento masivo.
+
+### 8.2.6. Methods Selection
+
+Se selecciona el método experimental bajo la regla de la Simplest Useful Thing (la cosa más simple y útil) que cumpla con las condiciones requeridas con el menor desperdicio de esfuerzo técnico.
+
+* **Para EC-01:** El método elegido es un Test de Prototipos con Entrevista Estructurada Post-Demo. Se separa conceptualmente el objeto de investigación (la percepción de suficiencia contable y operativa de los módulos actuales) de la técnica metodológica (entrevista interactiva presencial o remota).
+* **Para EC-02:** El método seleccionado es un Estudio de Piloto en Entorno Real (Cohorte Cerrada con Medición Pre/Post), implementando analítica automatizada sobre el software de gestión desplegado.
+* **Restricciones Éticas y Operativas:** Queda estrictamente establecido que no se ejecutarán experimentos simultáneos sobre el mismo grupo de usuarios que puedan corromper las muestras o generar sobrecarga cognitiva. Ningún experimento causará perjuicio económico u operativo a los flujos de caja reales de las academias piloto.
+
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+Esta sección define la preparación analítica para procesar la telemetría del producto Demy y asegurar la precisión en la captura del comportamiento del usuario.
+
+* **Meta Analítica 1:** Cuantificar la eficiencia operativa ganada por la administración de la academia al centralizar y automatizar los flujos financieros de matrículas y control de cobros.
+    * **KPI Asociado:** Tasa de efectividad de digitalización financiera en el piloto.
+    * **Métrica Analítica:** Porcentaje de cuentas de cobro y comprobantes emitidos exitosamente desde la plataforma web sin cancelaciones del flujo de datos.
+
+* **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
+    * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
+    * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
+
+### 8.2.8. Web and Mobile Tracking Plan
+
+Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
+
+**Esquema Técnico de Eventos (Ecosistema Demy)**
+![Flujo de eventos del ecosistema demy](./assets/experiment-planning/flujo-eventos-tracking-plan.png)
+
+**Matriz del Plan de Rastreo (Tracking Plan)**
+
+| ID Evento | Plataforma | Trigger (Disparador Técnico) | Propiedades / Contexto | KPI / Métrica Vinculada |
+| :--- | :--- | :--- | :--- | :--- |
+| admin_login_success | Web | Éxito en autenticación del administrador. | academy_id, role: admin | Frecuencia de uso del sistema. |
+| admin_enrollment_submit | Web | Clic exitoso en "Registrar Estudiante" (HTTP 200). | student_id, cycle_id | DBM-01 (Adopción de Matrícula). |
+| admin_invoice_create | Web | Envío completado del formulario "Crear Cuenta de Cobro".| invoice_id, total_amount | DBM-01 / DBM-03 (Uso de Facturación).|
+| admin_finance_entry_save| Web | Clic en guardar registro de ingreso/egreso en Finance. | entry_type (ingreso/egreso) | DBM-03 (Retención de uso financiero).|
+| admin_schedule_save | Web | Confirmación exitosa de asignación de horarios en grilla. | classroom_id, course_id | Adopción de flujos estructurales. |
+| umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
+
+## 8.3. Experimentation 
+Esta sección detalla la evolución del producto Demy a partir de las necesidades detectadas en la fase de diseño experimental. Para mitigar la "ceguera analítica" identificada en el estado actual, el backlog técnico del producto se reestructura incorporando modificaciones cortas y componentes de medición analítica in-app. Esto permite contrastar científicamente las hipótesis planteadas en las fases previas mediante el uso y comportamiento real del usuario.
+
+### 8.3.1. To-Be User Stories
+Las historias de usuario en la fase "To-Be" no son simples descripciones de requerimientos técnicos o funcionales tradicionales; ahora incorporan explícitamente el **componente de medición, el beneficio de negocio y la métrica de dominio (DBM)** esperada con su respectivo criterio de aceptación cuantitativo. 
+
+A continuación, se presentan las historias de usuario prioritarias diseñadas para viabilizar los experimentos de suficiencia y adopción operativa:
+
+<table width="100%">
+  <thead>
+    <tr style="background-color: #626e7a; color: white;">
+      <th style="padding: 10px;" width="15%">ID / Título</th>
+      <th style="padding: 10px;" width="45%">Estructura Gherkin / Narrativa</th>
+      <th style="padding: 10px;" width="25%">Métrica Core Vinculada</th>
+      <th style="padding: 10px;" width="15%">Criterio de Aceptación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-01<br><br>Medición in-app de Usabilidad (UMUX-Lite)</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Líder de Producto de Demy,<br>
+        <b>Quiero</b> desplegar una micro-encuesta interactiva automática al finalizar flujos operativos core,<br>
+        <b>Para</b> recolectar feedback cuantitativo inmediato sobre la utilidad y facilidad de uso del MVP.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que un administrador completa con éxito un registro de matrícula o de horarios,<br>
+        <b>When</b> el sistema procesa el flujo y muestra el mensaje de éxito,<br>
+        <b>Then</b> se despliega un pop-up modal no intrusivo con los 2 ítems de la escala UMUX-Lite (Likert 1-5).
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-07:</b> Puntuación de Facilidad de Uso.<br><br>
+        <b>Telemetría:</b> Evento <code>umux_survey_respond</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">El score consolidado del piloto debe ser mayor o igual al 75% de usabilidad positiva.</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-02<br><br>Centralización Operativa de Matrículas</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Personal Administrativo de la academia,<br>
+        <b>Quiero</b> procesar las inscripciones y asignaciones de alumnos de forma 100% digital,<br>
+        <b>Para</b> reducir el tiempo operativo manual por alumno y eliminar el uso de cuadernos y archivos Excel fragmentados.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que el administrador está en el módulo "Enrollment",<br>
+        <b>When</b> llena el formulario y presiona el botón "Registrar Estudiante",<br>
+        <b>Then</b> el sistema guarda al alumno en el periodo académico actual y dispara la telemetría en Azure.
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-01:</b> Tasa de Adopción Administrativa.<br><br>
+        <b>Telemetría:</b> Evento <code>admin_enrollment_submit</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">Al menos el 70% de las matrículas totales del ciclo deben ejecutarse digitalmente dentro de Demy.</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cuentas de Cobro</td>
+      <td style="padding: 10px;">
+        <b>Como</b> Administrador Financiero de la academia,<br>
+        <b>Quiero</b> registrar de forma consecutiva e integrada las cuentas de cobro y egresos en la plataforma web,<br>
+        <b>Para</b> evaluar si el módulo de Finance genera el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
+        <b>GHERKIN SCENARIO:</b><br>
+        <b>Given</b> que la academia inició su piloto operativo en producción,<br>
+        <b>When</b> los administradores registran ingresos/egresos diariamente durante 4 semanas,<br>
+        <b>Then</b> la telemetría audita las marcas de tiempo para calcular la retención del uso del sistema.
+      </td>
+      <td style="padding: 10px;">
+        <b>DBM-03:</b> Tasa de Retención Operativa.<br><br>
+        <b>Telemetría:</b> Eventos <code>admin_invoice_create</code> y <code>admin_finance_entry_save</code>.
+      </td>
+      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de facturación hasta la Semana 4.</td>
+    </tr>
+  </tbody>
+</table>
+
+### 8.3.2. To-Be Product Backlog
+El To-Be Product Backlog consolida el mapa de desarrollo modificado para los próximos micro-sprints del proyecto. A diferencia de un Scrum tradicional, la prioridad de los ítems está determinada bajo un enfoque científico: **se anteponen las modificaciones que inyectan telemetría y sensores analíticos** en la plataforma, garantizando que el equipo obtenga la data de eventos necesaria para evaluar las hipótesis nulas antes de realizar desarrollos masivos a ciegas.
+
+La priorización utiliza el sistema de puntuación XDPD (Confianza + Riesgo + Impacto + Interés), donde el mayor nivel de Riesgo actúa como criterio de desempate:
+
+| Prioridad | ID Ítem | Tipo de Tarea | Funcionalidad / Modificación Corta de Producto | Puntos XDPD | Justificación Metodológica (XDPD) |
+| :---: | :--- | :--- | :--- | :---: | :--- |
+| **01** | `TS-EXP-101` | Analítica In-App | Inyección de SDK analítico (Firebase/Segment) y trackers de eventos core de administración. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
+| **02** | `US-EXP-01` | Feature (Mejora) | Implementación de componente modal interactivo de encuesta de usabilidad (UMUX-Lite). | **19 / 20** | Permite medir la percepción de suficiencia del MVP (`EC-01`) directamente en el entorno de producción web de Azure. |
+| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al disparador del evento analítico de matrícula exitosa. | **18 / 20** | Necesario para evaluar de forma cuantitativa el indicador de adopción operativa del personal (`DBM-01`). |
+| **04** | `US-EXP-03` | Feature (Mejora) | Implementación de logs analíticos con marcas de tiempo en las transacciones contables del módulo de Finance. | **18 / 20** | Provee la granularidad analítica para vigilar la retención y recurrencia de uso semanal del cliente (`DBM-03`). |
+| **05** | `TS-EXP-102` | Spike Técnico | Configuración y despliegue de base de datos analítica en BigQuery/Azure para consolidar eventos del piloto. | **15 / 20** | Asegura que la data recolectada de forma limpia se consolide en repositorios listos para la fase de análisis estadístico. |
+
+Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avanzar basándose en opiniones o suposiciones intuitivas de la industria, obligando al pipeline de integración y despliegue continuo (CI/CD) a empaquetar una aplicación con alta madurez técnica pero, sobre todo, dotada de **luz analítica** para el negocio.
+
+<hr class="page-break">
+
+# Conclusiones
+
+En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma Demy.
+
+## Conclusiones y recomendaciones
+
+Se identificaron las siguientes conclusiones y recomendaciones basadas en el desarrollo del proyecto:
+
+### Conclusiones
+
+El equipo concluyó que las academias educativas en el Perú enfrentan desafíos significativos en la gestión administrativa, lo que afecta su eficiencia operativa y la experiencia de estudiantes y docentes.
+La plataforma Demy, desarrollada por la startup EduLabs, aborda estas necesidades mediante una solución integral que automatiza procesos clave como matrícula, asistencia, asignación de horarios, control de inventarios y gestión de pagos.
+
+Mediante el uso de Demy, las academias pueden mejorar su eficiencia operativa, reducir errores administrativos y ofrecer una mejor experiencia a sus usuarios.
+
+Las hipótesis se consideran válidas, ya que se basan en entrevistas y validaciones con potenciales usuarios y expertos en el dominio educativo.
+Sin embargo, aún no se ha contrastado la solución con usuarios reales, lo que será un paso crucial en las siguientes fases del proyecto.
+A pesar de ello, la investigación y el diseño realizados proporcionan una base sólida para el desarrollo futuro de la plataforma.
+
+Se recomienda priorizar la implementación de las funcionalidades más críticas para las academias, como la gestión de matrículas y pagos, para maximizar el impacto inicial de la plataforma.
+
+Asimismo, se logro verificar la robustez de nuestras soluciones mediante las pruebas unitarias, integración,e2e y bdd.
+
+### Recomendaciones
+
+Es crucial preparar los escenarios de validación con usuarios reales para contrastar las hipótesis planteadas y asegurar que la solución propuesta realmente satisface las necesidades del mercado, así como identificar posibles mejoras o ajustes necesarios.
+
+Además, se recomienda mantener la coherencia visual y de experiencia de usuario en todas las plataformas (web y móvil) para garantizar una experiencia fluida y agradable para los usuarios.
+Estas acciones permitirán aumentar la adopción y satisfacción de los usuarios con la plataforma Demy y acercarse al objetivo de transformar la gestión administrativa de las academias educativas en el Perú.
+
+Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
+Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
+
+<hr class="page-break">
+
+# Bibliografía
+
+<p class="ref">
+  Brandemia. (2024).
+  <i>Arquetipos de marca: Los 12 perfiles de Jung</i>.
+  <a href="https://brandemia.org/arquetipos-de-marca">https://brandemia.org/arquetipos-de-marca</a>
+</p>
+
+<p class="ref">
+  Díaz-García, V., Montero-Navarro, A., Rodríguez-Sánchez, J.-L., &amp; Gallego-Losada, R. (2023).
+  Managing digital transformation: A case study in a higher education institution.
+  <i>Electronics, 12</i>(11), Artículo e2522.
+  <a href="https://doi.org/10.3390/electronics12112522">https://doi.org/10.3390/electronics12112522</a>
+</p>
+
+<p class="ref">
+  Holum Studio. (2022).
+  <i>7 Types of Logos for Your Brand and How to Use Them</i>.
+  <a href="https://www.holumstudio.com/resources/7-types-of-logos-for-your-brand-and-how-to-use-them">https://www.holumstudio.com/resources/7-types-of-logos-for-your-brand-and-how-to-use-them</a>
+</p>
+
+<p class="ref">
+  Instituto Nacional de Estadística e Informática (INEI). (2024).
+  <i>Encuesta Nacional de Uso del Tiempo (ENUT) 2024</i>.
+  Instituto Nacional de Estadística e Informática.
+  <a href="https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib2010/libro.pdf">https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib2010/libro.pdf</a>
+</p>
+
+<p class="ref">
+  Instituto Nacional de Estadística e Informática. (2024, 27 de junio).
+  <i>Las Tecnologías de Información y Comunicación en los Hogares: Ene-Feb-Mar 2024</i>.
+  INEI.
+  <a href="https://www.gob.pe/institucion/inei/informes-publicaciones/5702640-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2024">https://www.gob.pe/institucion/inei/informes-publicaciones/5702640-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2024</a>
+</p>
+
+<p class="ref">
+  Gan@Más. (2014, julio 24).
+  Docentes usan hasta el 29% de su tiempo en las tareas administrativas.
+  <i>Revista Gan@Más</i>.
+  <a href="https://revistaganamas.com.pe/docentes-utilizan-hasta-el-29-de-su-tiempo-en-las-tareas-administrativas/">https://revistaganamas.com.pe/docentes-utilizan-hasta-el-29-de-su-tiempo-en-las-tareas-administrativas/</a>
+</p>
+
+<p class="ref">
+  GRADE. (2023).
+  <i>Estado de la educación en el Perú</i>.
+  Grupo de Análisis para el Desarrollo.
+  <a href="https://repositorio.minedu.gob.pe/bitstream/handle/20.500.12799/5692/Estado%20de%20la%20educaci%C3%B3n%20en%20el%20Per%C3%BA.pdf?isAllowed=y&amp;sequence=1">https://repositorio.minedu.gob.pe/bitstream/handle/20.500.12799/5692/Estado%20de%20la%20educaci%C3%B3n%20en%20el%20Per%C3%BA.pdf?isAllowed=y&amp;sequence=1</a>
+</p>
+
+<p class="ref">
+  Ministerio de Educación del Perú. (2021).
+  <i>Encuesta Nacional de Estudiantes de Educación Superior Universitaria 2019: Principales resultados</i>.
+  MINEDU.
+  <a href="https://repositorio.minedu.gob.pe/handle/20.500.12799/7745">https://repositorio.minedu.gob.pe/handle/20.500.12799/7745</a>
+</p>
+
+<p class="ref">
+  Naranjo, J. E., Alban, J. S., Balseca, M. S., Bustamante Villagómez, D. F., Mancheno Falconi, M. G., &amp; Garcia, M. V. (2025).
+  Enhancing institutional sustainability through process optimization: A hybrid approach using FMEA and machine learning.
+  <i>Sustainability, 17</i>(4), Artículo e1357.
+  <a href="https://doi.org/10.3390/su17041357">https://doi.org/10.3390/su17041357</a>
+</p>
+
+<hr class="page-break">
+
+# Anexos
+
+En esta sección se incluyen materiales adicionales que complementan el contenido del informe principal. Se proporciona información detallada sobre aspectos que no se abordaron en profundidad en las secciones anteriores, pero que son relevantes para una comprensión completa del proyecto.
+
+Se incluyen además, enlaces a repositorios, diagramas, documentos, y otros recursos que son de utilidad.
+
+## Anexo A: Código Fuente
+
+El código fuente del proyecto está disponible en el siguiente repositorio de GitHub:
+
+Organización de GitHub: https://github.com/EduLabs-Experimentos
+Repositorio del reporte en GitHub: https://github.com/EduLabs-Experimentos/demy-report
+Repositorio de la aplicación mobile para Admins:https://github.com/EduLabs-Experimentos/demy-admin-mobile-application
+Repositorio de la aplicación mobile para Profesores:https://github.com/EduLabs-Experimentos/demy-teacher-mobile-application
+
+Además, se incluye la evidencia de despliegue:
+
+**Enlace para acceder a la landing page:** [https://demy-edulabs.netlify.app/](https://demy-edulabs.netlify.app/)
+
+**Enlace para acceder a la RESTful API:** [https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html](https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html)
+
+**Enlace para acceder a la Web Application:** [https://edulabs-experimentos.github.io/demy-admin-web/sign-up](https://edulabs-experimentos.github.io/demy-admin-web/sign-up)
+
+Usuario por defecto para iniciar sesión:
+
+email: diegovilcatut@gmail.com  
+
+password: Sofiamia
+
+
+<hr class="page-break">
 
 
 
