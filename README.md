@@ -34,7 +34,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Julio 2026 </h5>
 
 <hr class="page-break">
 
@@ -55,6 +55,7 @@
 | 8.3     | 14/06/2026 | Renso Julca         | Documentación de la Auditoria UX                         |
 | 8.4     | 14/06/2026 | Rafael Dominguez    | Documentación de Experiment Planning                     |
 | 8.5     | 16/06/2026 | Diego Vilca         | Documentación de Experiment Design                       |
+| 9.0     | 4/07/2026  |
 
 <hr class="page-break">
 
@@ -310,9 +311,27 @@ Análisis de líneas de código añadidas por contribuyente.
   - [8.3. Experimentation ](#83-experimentation)
     - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
     - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+    - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
+      - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
+      - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
+      - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
+      - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
+      - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
+      - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+    - [8.3.4. To-Be Validation Interviews ](#834-to-be-validation-interviews)
+      - [8.3.4.1. Diseño de Entrevistas.](#8341-diseño-de-entrevistas)
+      - [8.3.4.2. Registro de Entrevistas.](#8342-registro-de-entrevistas)
+  - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
+    - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
+    - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
+  - [8.5. Continuous Learning](#85-continuous-learning)
+    - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
+  - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
+    - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 
-
+- [Matriz de Evaluación Etica y de Impacto](#matriz-de-evaluación-etica-y-de-impacto)
 - [Conclusiones](#conclusiones)
+- [Video About the Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 
@@ -12503,6 +12522,53 @@ Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avan
 
 <hr class="page-break">
 
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+#### 8.3.3.1. To-Be Sprint Backlogs
+
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+#### 8.3.3.6. Team Collaboration Insights
+
+### 8.3.4. To-Be Validation Interviews 
+
+#### 8.3.4.1. Diseño de Entrevistas.
+
+#### 8.3.4.2. Registro de Entrevistas.
+
+<hr class="page-break">
+
+## 8.4. Experiment Aftermath & Analysis
+### 8.4.1. Analysis and Interpretation of Results
+
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+
+<hr class="page-break">
+
+## 8.5. Continuous Learning
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
+
+<hr class="page-break">
+
+## 8.6. To-Be Software Platform Pre-launch
+### 8.6.1. About-the-Product Intro Video
+
+<hr class="page-break">
+
+
+# Matriz de Evaluación Etica y de Impacto
+
+<hr class="page-break">
+
+
+
 # Conclusiones
 
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto. Se analizan los resultados obtenidos, los desafíos enfrentados y las lecciones aprendidas durante el proceso. Además, se proponen acciones futuras para mejorar y optimizar la plataforma Demy.
@@ -12539,6 +12605,10 @@ Por otro lado, se recomienda realizar la parte de experiment driven product deve
 
 Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
 Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
+
+<hr class="page-break">
+
+# Video About-The-Team
 
 <hr class="page-break">
 
@@ -12626,7 +12696,7 @@ Además, se incluye la evidencia de despliegue:
 
 **Enlace para acceder a la landing page:** [https://demy-edulabs.netlify.app/](https://demy-edulabs.netlify.app/)
 
-**Enlace para acceder a la RESTful API:** [https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html](https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html)
+**Enlace para acceder a la RESTful API:** [https://demy-app-backend-eygre7eda5g3hkfh.southeastasia-01.azurewebsites.net/swagger-ui/index.html](https://demy-app-backend-eygre7eda5g3hkfh.southeastasia-01.azurewebsites.net/swagger-ui/index.html)
 
 **Enlace para acceder a la Web Application:** [https://edulabs-experimentos.github.io/demy-admin-web/sign-up](https://edulabs-experimentos.github.io/demy-admin-web/sign-up)
 
@@ -12634,7 +12704,7 @@ Usuario por defecto para iniciar sesión:
 
 email: diegovilcatut@gmail.com  
 
-password: Sofiamia
+password: sofiamia
 
 
 <hr class="page-break">
