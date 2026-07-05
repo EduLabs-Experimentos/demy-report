@@ -12328,7 +12328,7 @@ Evidencia secundaria: registro de barreras de uso reportadas en entrevistas sema
 Siguiendo los principios de la experimentación científica y estadística en el marco XDPD, las hipótesis se formulan como declaraciones de creencias previas que se someten a pruebas de falsabilidad, testabilidad y medición, en lugar de intentar "validarlas como verdaderas" de manera sesgada. Cada hipótesis de trabajo va acompañada de su respectiva Hipótesis Nula (H_0).
 
 * **Hipótesis 1 (Suficiencia del MVP - EC-01):**
-    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios y Facturación/Finance) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
+    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios, Billing y Accounting) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
     * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que el conjunto actual de funcionalidades desplegadas no cubre el umbral mínimo de valor requerido por el segmento de negocio.
 
 * **Hipótesis 2 (Adopción Administrativa - EC-02):**
@@ -12340,13 +12340,13 @@ Siguiendo los principios de la experimentación científica y estadística en el
 Para garantizar que los experimentos se vinculen directamente con el rendimiento financiero y operativo real de las academias, se definen de manera estricta las métricas de negocio del dominio utilizando exclusivamente las capacidades del software desplegado. Queda prohibido el uso de métricas ad-hoc o datos no descritos en esta sección.
 
 1. **DBM-01: Tasa de Adopción Administrativa**
-    * **Fórmula:** Tasa = (Número de procesos core de matrícula y horarios registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
+    * **Fórmula:** Tasa = (Número de procesos core de matrícula y cobro registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
     * **Técnica de recolección:** Registro automatizado de transacciones de inscripción en la base de datos de Demy cruzado con la auditoría de matrículas manuales reportadas externamente por la administración en su balance semanal.
     * **Meta:** Mayor o igual a 70% al finalizar el primer mes.
 
-2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Facturación/Finance)**
-    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cuentas de cobro, comprobantes o egresos en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
-    * **Técnica de recolección:** Log analítico e inspección de marcas de tiempo en las tablas de auditoría de Base de Datos para los módulos de Facturación y Finance en Azure.
+2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Billing y Accounting)**
+    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cobros o transacciones contables en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
+    * **Técnica de recolección:** Inspección de registros operativos de Billing y Accounting, complementada por telemetría UX del evento `umux_survey_respond` para comparar la facilidad percibida de los flujos financieros.
     * **Meta:** Mayor o igual a 60% de uso recurrente continuo al cierre del piloto de un mes.
 
 3. **DBM-07: Puntuación de Facilidad de Uso (UMUX-Lite abreviado)**
@@ -12364,8 +12364,8 @@ Para garantizar que los experimentos se vinculen directamente con el rendimiento
 Se seleccionan criterios rigurosos de recolección bajo el principio de economía de rastreo (utilizar solo las medidas necesarias durante el tiempo justo para minimizar costos y ruidos analíticos).
 
 * **Evidencia Primaria (Representativa del cambio esperado):**
-    * Métricas de interacción core: Cantidad de estudiantes matriculados digitalmente, salones asignados y horarios guardados de forma exitosa por sesión en la solución web.
-    * Métricas financieras de impacto: Número de cuentas de cobro generadas, comprobantes de estudiantes emitidos y registros de egresos/ingresos completados dentro del módulo de Finance.
+    * Métricas de interacción core: Cantidad de matrículas, cobros y transacciones financieras registradas exitosamente en la solución web.
+    * Métricas UX de impacto: Promedio y distribución de `score_usability` y `score_utility` capturados por el evento `umux_survey_respond`.
 
 * **Evidencia Secundaria (Detección de efectos adyacentes):**
     * Tasa de error operativo técnico: Frecuencia con la que un usuario administrativo cancela un flujo o abandona un formulario (por ejemplo, salir del formulario de creación de periodo académico o asignación de profesores a mitad del registro).
@@ -12380,7 +12380,7 @@ Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del
     * **Condición de Control:** Directores o coordinadores del mismo segmento que no son expuestos a Demy y evalúan la suficiencia de sus herramientas actuales tradicionales (archivos Excel fragmentados y talonarios físicos).
 
 * **Para Experimento de Adopción (EC-02):**
-    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment y Finance) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
+    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment, Billing y Accounting) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
     * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
 
 ### 8.2.5. Scale Calculations and Decisions
@@ -12407,17 +12407,17 @@ Se selecciona el método experimental bajo la regla de la Simplest Useful Thing 
 
 Esta sección define la preparación analítica para procesar la telemetría del producto Demy y asegurar la precisión en la captura del comportamiento del usuario.
 
-* **Meta Analítica 1:** Cuantificar la eficiencia operativa ganada por la administración de la academia al centralizar y automatizar los flujos financieros de matrículas y control de cobros.
-    * **KPI Asociado:** Tasa de efectividad de digitalización financiera en el piloto.
-    * **Métrica Analítica:** Porcentaje de cuentas de cobro y comprobantes emitidos exitosamente desde la plataforma web sin cancelaciones del flujo de datos.
+* **Meta Analítica 1:** Cuantificar la facilidad percibida por la administración de la academia al completar flujos operativos core en la plataforma web.
+    * **KPI Asociado:** DBM-07: Puntuación de Facilidad de Uso.
+    * **Métrica Analítica:** Promedio de `score_usability` y `score_utility` capturado por el evento `umux_survey_respond`, segmentado por `academy_id` y `flow`.
 
-* **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
-    * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
-    * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
+* **Meta Analítica 2:** Comparar la experiencia percibida entre los flujos instrumentados de Enrollment, Billing y Accounting.
+    * **KPI Asociado:** Variación del score UMUX-Lite por flujo operativo.
+    * **Métrica Analítica:** Distribución de respuestas por `flow = enrollment_registration`, `billing_invoice_create` y `accounting_transaction_create` en Azure Application Insights.
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
-Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
+Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web de administradores, aprovechando los flujos funcionales existentes en producción. El alcance implementado se concentra en la medición UMUX-Lite desde el frontend Angular, enviando telemetría directamente a Azure Application Insights sin pasar por la API backend.
 
 **Esquema Técnico de Eventos (Ecosistema Demy)**
 ![Flujo de eventos del ecosistema demy](./assets/experiment-planning/flujo-eventos-tracking-plan.png)
@@ -12426,12 +12426,23 @@ Plan técnico detallado para la inyección de componentes de captura de datos an
 
 | ID Evento | Plataforma | Trigger (Disparador Técnico) | Propiedades / Contexto | KPI / Métrica Vinculada |
 | :--- | :--- | :--- | :--- | :--- |
-| admin_login_success | Web | Éxito en autenticación del administrador. | academy_id, role: admin | Frecuencia de uso del sistema. |
-| admin_enrollment_submit | Web | Clic exitoso en "Registrar Estudiante" (HTTP 200). | student_id, cycle_id | DBM-01 (Adopción de Matrícula). |
-| admin_invoice_create | Web | Envío completado del formulario "Crear Cuenta de Cobro".| invoice_id, total_amount | DBM-01 / DBM-03 (Uso de Facturación).|
-| admin_finance_entry_save| Web | Clic en guardar registro de ingreso/egreso en Finance. | entry_type (ingreso/egreso) | DBM-03 (Retención de uso financiero).|
-| admin_schedule_save | Web | Confirmación exitosa de asignación de horarios en grilla. | classroom_id, course_id | Adopción de flujos estructurales. |
-| umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de crear una matrícula en Enrollment. | `event`, `academy_id`, `flow = enrollment_registration`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de crear/asignar un cobro en Billing. | `event`, `academy_id`, `flow = billing_invoice_create`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de registrar una transacción en Accounting. | `event`, `academy_id`, `flow = accounting_transaction_create`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+
+El evento se instrumenta con el SDK `@microsoft/applicationinsights-web` y se envía desde el navegador al recurso de Azure Application Insights configurado con `InstrumentationKey` e `IngestionEndpoint`. Para mantener consistencia analítica y evitar datos operativos innecesarios, el payload se limita a la academia, el flujo evaluado y los dos puntajes UMUX-Lite:
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+El modal se muestra como máximo una vez por flujo en el navegador del administrador. Esta regla evita interrupciones repetitivas en tareas recurrentes y mantiene la encuesta como una medición ligera de experiencia posterior a la operación.
 
 ## 8.3. Experimentation 
 Esta sección detalla la evolución del producto Demy a partir de las necesidades detectadas en la fase de diseño experimental. Para mitigar la "ceguera analítica" identificada en el estado actual, el backlog técnico del producto se reestructura incorporando modificaciones cortas y componentes de medición analítica in-app. Esto permite contrastar científicamente las hipótesis planteadas en las fases previas mediante el uso y comportamiento real del usuario.
@@ -12458,7 +12469,7 @@ A continuación, se presentan las historias de usuario prioritarias diseñadas p
         <b>Quiero</b> desplegar una micro-encuesta interactiva automática al finalizar flujos operativos core,<br>
         <b>Para</b> recolectar feedback cuantitativo inmediato sobre la utilidad y facilidad de uso del MVP.<br><br>
         <b>GHERKIN SCENARIO:</b><br>
-        <b>Given</b> que un administrador completa con éxito un registro de matrícula o de horarios,<br>
+        <b>Given</b> que un administrador completa con éxito un registro de matrícula, cobro o transacción contable,<br>
         <b>When</b> el sistema procesa el flujo y muestra el mensaje de éxito,<br>
         <b>Then</b> se despliega un pop-up modal no intrusivo con los 2 ítems de la escala UMUX-Lite (Likert 1-5).
       </td>
@@ -12477,30 +12488,30 @@ A continuación, se presentan las historias de usuario prioritarias diseñadas p
         <b>GHERKIN SCENARIO:</b><br>
         <b>Given</b> que el administrador está en el módulo "Enrollment",<br>
         <b>When</b> llena el formulario y presiona el botón "Registrar Estudiante",<br>
-        <b>Then</b> el sistema guarda al alumno en el periodo académico actual y dispara la telemetría en Azure.
+        <b>Then</b> el sistema guarda la matrícula en el periodo académico actual y despliega la micro-encuesta UMUX-Lite asociada al flujo <code>enrollment_registration</code>.
       </td>
       <td style="padding: 10px;">
         <b>DBM-01:</b> Tasa de Adopción Administrativa.<br><br>
-        <b>Telemetría:</b> Evento <code>admin_enrollment_submit</code>.
+        <b>Telemetría UX:</b> Evento <code>umux_survey_respond</code> con <code>flow = enrollment_registration</code>.
       </td>
       <td style="padding: 10px; font-weight: bold;">Al menos el 70% de las matrículas totales del ciclo deben ejecutarse digitalmente dentro de Demy.</td>
     </tr>
     <tr style="background-color: #fafafa;">
-      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cuentas de Cobro</td>
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cobros y Transacciones</td>
       <td style="padding: 10px;">
         <b>Como</b> Administrador Financiero de la academia,<br>
-        <b>Quiero</b> registrar de forma consecutiva e integrada las cuentas de cobro y egresos en la plataforma web,<br>
-        <b>Para</b> evaluar si el módulo de Finance genera el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
+        <b>Quiero</b> registrar de forma consecutiva e integrada los cobros y las transacciones financieras en la plataforma web,<br>
+        <b>Para</b> evaluar si los módulos Billing y Accounting generan el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
         <b>GHERKIN SCENARIO:</b><br>
         <b>Given</b> que la academia inició su piloto operativo en producción,<br>
-        <b>When</b> los administradores registran ingresos/egresos diariamente durante 4 semanas,<br>
-        <b>Then</b> la telemetría audita las marcas de tiempo para calcular la retención del uso del sistema.
+        <b>When</b> los administradores registran cobros en Billing o ingresos/egresos en Accounting,<br>
+        <b>Then</b> el sistema despliega la micro-encuesta UMUX-Lite asociada al flujo <code>billing_invoice_create</code> o <code>accounting_transaction_create</code>.
       </td>
       <td style="padding: 10px;">
         <b>DBM-03:</b> Tasa de Retención Operativa.<br><br>
-        <b>Telemetría:</b> Eventos <code>admin_invoice_create</code> y <code>admin_finance_entry_save</code>.
+        <b>Telemetría UX:</b> Evento <code>umux_survey_respond</code> con <code>flow = billing_invoice_create</code> o <code>accounting_transaction_create</code>.
       </td>
-      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de facturación hasta la Semana 4.</td>
+      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de cobros o transacciones financieras hasta la Semana 4.</td>
     </tr>
   </tbody>
 </table>
@@ -12512,11 +12523,11 @@ La priorización utiliza el sistema de puntuación XDPD (Confianza + Riesgo + Im
 
 | Prioridad | ID Ítem | Tipo de Tarea | Funcionalidad / Modificación Corta de Producto | Puntos XDPD | Justificación Metodológica (XDPD) |
 | :---: | :--- | :--- | :--- | :---: | :--- |
-| **01** | `TS-EXP-101` | Analítica In-App | Inyección de SDK analítico (Firebase/Segment) y trackers de eventos core de administración. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
+| **01** | `TS-EXP-101` | Analítica In-App | Inyección del SDK `@microsoft/applicationinsights-web` y configuración de Azure Application Insights para eventos frontend. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
 | **02** | `US-EXP-01` | Feature (Mejora) | Implementación de componente modal interactivo de encuesta de usabilidad (UMUX-Lite). | **19 / 20** | Permite medir la percepción de suficiencia del MVP (`EC-01`) directamente en el entorno de producción web de Azure. |
-| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al disparador del evento analítico de matrícula exitosa. | **18 / 20** | Necesario para evaluar de forma cuantitativa el indicador de adopción operativa del personal (`DBM-01`). |
-| **04** | `US-EXP-03` | Feature (Mejora) | Implementación de logs analíticos con marcas de tiempo en las transacciones contables del módulo de Finance. | **18 / 20** | Provee la granularidad analítica para vigilar la retención y recurrencia de uso semanal del cliente (`DBM-03`). |
-| **05** | `TS-EXP-102` | Spike Técnico | Configuración y despliegue de base de datos analítica en BigQuery/Azure para consolidar eventos del piloto. | **15 / 20** | Asegura que la data recolectada de forma limpia se consolide en repositorios listos para la fase de análisis estadístico. |
+| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al modal UMUX-Lite posterior a una matrícula exitosa. | **18 / 20** | Necesario para medir la facilidad percibida del flujo de matrícula mediante `umux_survey_respond` con `flow = enrollment_registration`. |
+| **04** | `US-EXP-03` | Feature (Mejora) | Vinculación de Billing y Accounting al modal UMUX-Lite posterior a cobros y transacciones exitosas. | **18 / 20** | Permite comparar la facilidad percibida entre flujos financieros usando `flow = billing_invoice_create` y `flow = accounting_transaction_create`. |
+| **05** | `TS-EXP-102` | Spike Técnico | Consulta y validación de eventos `umux_survey_respond` en Azure Application Insights mediante KQL. | **15 / 20** | Asegura que la data recolectada pueda observarse y analizarse desde el recurso de Azure usado por el proyecto. |
 
 Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avanzar basándose en opiniones o suposiciones intuitivas de la industria, obligando al pipeline de integración y despliegue continuo (CI/CD) a empaquetar una aplicación con alta madurez técnica pero, sobre todo, dotada de **luz analítica** para el negocio.
 
@@ -12575,7 +12586,7 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
       </tr>
       <tr style="background-color: #fafafa;">
         <th style="padding: 8px; text-align: left;">Sprint 4 Goal</th>
-        <td style="padding: 8px;">En este sprint nos enfocamos en instrumentar con telemetría los flujos operativos core de Demy (matrícula, facturación y encuestas de usabilidad) en el backend (Spring Boot en Azure), la Web Application (Angular) y la aplicación móvil de docentes (Flutter), en lugar de seguir agregando funcionalidades basadas en supuestos. Creemos que esto entrega evidencia empírica y cuantificable sobre la adopción y facilidad de uso real de la plataforma al equipo de producto de Demy, apoyándonos en Azure Application Insights (backend y web) y Firebase Analytics (mobile) como repositorios de eventos ya gestionados, sin necesidad de construir infraestructura analítica propia. Esto se confirmará cuando los eventos <code>admin_enrollment_submit</code>, <code>admin_finance_entry_save</code> y <code>umux_survey_respond</code> se registren con datos reales en Application Insights durante el piloto con las academias.</td>
+        <td style="padding: 8px;">En este sprint nos enfocamos en instrumentar con telemetría UX los flujos operativos core de Demy en la Web Application (Angular): matrícula, cobros y transacciones contables. Creemos que esto entrega evidencia empírica y cuantificable sobre la facilidad de uso real de la plataforma al equipo de producto de Demy, usando Azure Application Insights como repositorio gestionado de eventos frontend. Esto se confirmará cuando el evento <code>umux_survey_respond</code> se registre con los campos <code>academy_id</code>, <code>flow</code>, <code>score_usability</code> y <code>score_utility</code> durante el piloto con las academias.</td>
       </tr>
       <tr style="background-color: #ffffff;">
         <th style="padding: 8px; text-align: left;">Sprint 4 Velocity</th>
@@ -12619,7 +12630,7 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>Inyección de SDK Analítico</td>
         <td>TS-EXP-101a</td>
         <td>Provisionar Application Insights en Azure</td>
-        <td>Crear el recurso de Application Insights en el portal de Azure y generar el Connection String para el backend y la web</td>
+        <td>Crear el recurso de Application Insights en el portal de Azure y generar el Connection String para la Web Application Angular</td>
         <td>2</td>
         <td>Henry Esteban</td>
         <td>Done</td>
@@ -12628,8 +12639,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>TS-EXP-101</td>
         <td>Inyección de SDK Analítico</td>
         <td>TS-EXP-101b</td>
-        <td>Instanciar TelemetryClient en demy-backend</td>
-        <td>Declarar <code>private final TelemetryClient telemetryClient = new TelemetryClient();</code> en los controladores de Spring Boot involucrados, para el disparo de eventos de negocio directamente a Application Insights</td>
+        <td>Configurar connection string en Angular</td>
+        <td>Agregar la connection string de Application Insights en los archivos de entorno del frontend para habilitar telemetría desde navegador</td>
         <td>4</td>
         <td>Daniel Crispin</td>
         <td>Done</td>
@@ -12639,7 +12650,7 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>Inyección de SDK Analítico</td>
         <td>TS-EXP-101c</td>
         <td>Integrar Application Insights SDK en el frontend</td>
-        <td>Configurar el SDK de Application Insights para JavaScript en demy-admin-web (Angular), para el disparo de eventos de UX directamente desde el cliente</td>
+        <td>Instalar y configurar <code>@microsoft/applicationinsights-web</code> en demy-admin-web para el disparo de eventos de UX directamente desde el cliente</td>
         <td>3</td>
         <td>Diego Vilca</td>
         <td>Done</td>
@@ -12648,8 +12659,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>TS-EXP-101</td>
         <td>Inyección de SDK Analítico</td>
         <td>TS-EXP-101d</td>
-        <td>Integrar Firebase Analytics en la app de docentes</td>
-        <td>Configurar Firebase Analytics en demy-teacher-mobile-application (Flutter), ya desplegada, para el registro de eventos de uso nativo</td>
+        <td>Centralizar el tracking frontend</td>
+        <td>Crear el servicio de analítica Angular para enviar <code>umux_survey_respond</code> a Application Insights sin pasar por el backend</td>
         <td>4</td>
         <td>Rafael Dominguez</td>
         <td>Done</td>
@@ -12678,8 +12689,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>US-EXP-02</td>
         <td>Centralización Operativa de Matrículas</td>
         <td>US-EXP-02a</td>
-        <td>Disparo del evento en el controlador de Enrollment</td>
-        <td>Agregar <code>telemetryClient.trackEvent("admin_enrollment_submit", ...)</code> en el controlador de matrícula de demy-backend, tras persistir el registro exitosamente</td>
+        <td>Activar UMUX-Lite tras matrícula</td>
+        <td>Mostrar el modal luego de una matrícula exitosa y enviar <code>umux_survey_respond</code> con <code>flow = enrollment_registration</code></td>
         <td>3</td>
         <td>Daniel Crispin</td>
         <td>Done</td>
@@ -12688,28 +12699,28 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>US-EXP-02</td>
         <td>Centralización Operativa de Matrículas</td>
         <td>US-EXP-02b</td>
-        <td>Validar registro del evento en Application Insights</td>
-        <td>Verificar en Application Insights que el evento se asocie correctamente con la academia y el periodo académico correspondiente</td>
+        <td>Validar academy_id en el evento</td>
+        <td>Verificar que el evento use el <code>academy_id</code> real de la matrícula creada y no un valor desconocido</td>
         <td>2</td>
         <td>Henry Esteban</td>
         <td>Done</td>
       </tr>
       <tr>
         <td>US-EXP-03</td>
-        <td>Trazabilidad Recurrente de Cuentas de Cobro</td>
+        <td>Trazabilidad Recurrente de Cobros y Transacciones</td>
         <td>US-EXP-03a</td>
-        <td>Disparo del evento en el controlador de Billing</td>
-        <td>Agregar <code>telemetryClient.trackEvent("admin_invoice_create", ...)</code> en el controlador de facturación de demy-backend al registrar una cuenta de cobro</td>
+        <td>Activar UMUX-Lite tras cobro</td>
+        <td>Mostrar el modal luego de crear/asignar un cobro y enviar <code>umux_survey_respond</code> con <code>flow = billing_invoice_create</code></td>
         <td>3</td>
         <td>Renso Julca</td>
         <td>Done</td>
       </tr>
       <tr>
         <td>US-EXP-03</td>
-        <td>Trazabilidad Recurrente de Cuentas de Cobro</td>
+        <td>Trazabilidad Recurrente de Cobros y Transacciones</td>
         <td>US-EXP-03b</td>
-        <td>Disparo del evento con marca de tiempo en Finance</td>
-        <td>Agregar <code>telemetryClient.trackEvent("admin_finance_entry_save", ...)</code> con timestamp de auditoría en el controlador de Finance, para calcular retención semanal</td>
+        <td>Activar UMUX-Lite tras transacción</td>
+        <td>Mostrar el modal luego de registrar una transacción contable y enviar <code>umux_survey_respond</code> con <code>flow = accounting_transaction_create</code></td>
         <td>3</td>
         <td>Henry Esteban</td>
         <td>Done</td>
@@ -12718,8 +12729,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>TS-EXP-102</td>
         <td>Spike: Consolidación de Eventos Analíticos</td>
         <td>TS-EXP-102a</td>
-        <td>Evaluar Application Insights vs. tabla propia</td>
-        <td>Comparar el uso de Application Insights como repositorio consolidado de eventos del backend y la web frente a construir una tabla <code>analytics_events</code> propia, concluyendo el uso de Application Insights por su integración nativa con Azure</td>
+        <td>Validar eventos en Application Insights</td>
+        <td>Consultar <code>customEvents</code> mediante KQL para confirmar la recepción de <code>umux_survey_respond</code> y sus dimensiones personalizadas</td>
         <td>3</td>
         <td>Henry Esteban</td>
         <td>Done</td>
@@ -12728,8 +12739,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>TS-EXP-102</td>
         <td>Spike: Consolidación de Eventos Analíticos</td>
         <td>TS-EXP-102b</td>
-        <td>Documentar decisión de Firebase Analytics para mobile</td>
-        <td>Redactar la recomendación técnica de usar Firebase Analytics (en lugar de Application Insights) para la aplicación Flutter de docentes, por su mejor soporte nativo en mobile</td>
+        <td>Documentar evidencia frontend-web</td>
+        <td>Documentar en el report el flujo implementado, el payload JSON, la regla de aparición del modal y las capturas requeridas</td>
         <td>2</td>
         <td>Rafael Dominguez</td>
         <td>To-Review</td>
@@ -12743,6 +12754,173 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
 La Landing Page fue implementada y desplegada durante la fase As-Is (ver [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)) y no presentó cambios funcionales en este ciclo experimental. Al priorizar el Question Backlog (ver 8.1.4) bajo el sistema de puntuación XDPD, el equipo identificó que el mayor riesgo para la continuidad del negocio no estaba en la conversión de visitantes de la landing, sino en la adopción operativa interna del panel administrativo (matrícula y facturación) y en la usabilidad percibida del MVP, por eso el To-Be Product Backlog (8.3.2) se concentró en la inyección de telemetría en el backend, la Web Application y las aplicaciones móviles, dejando los posibles cambios experimentales de la landing page como una pregunta pendiente, registrada para un próximo ciclo en el Re-scored and Re-prioritized Question Backlog (ver 8.4.2).
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+En esta sección se presenta la evidencia de implementación de las historias `US-EXP-01`, `US-EXP-02` y `US-EXP-03` en la aplicación web de Demy. La mejora implementada consiste en una micro-encuesta UMUX-Lite que aparece al finalizar exitosamente flujos operativos clave del administrador y que envía el evento analítico `umux_survey_respond` directamente desde el frontend hacia Azure Application Insights.
+
+La implementación se realizó en el frontend Angular mediante el SDK `@microsoft/applicationinsights-web`. El envío de telemetría no pasa por la API backend, sino que se realiza directamente desde el navegador del usuario hacia el recurso de Application Insights configurado con `InstrumentationKey` e `IngestionEndpoint`.
+
+#### Historias implementadas
+
+| Historia | Alcance implementado | Flujo web instrumentado | Evento enviado |
+| :--- | :--- | :--- | :--- |
+| `US-EXP-01` | Micro-encuesta UMUX-Lite in-app con escala Likert de 1 a 5 para facilidad y utilidad. | Modal no intrusivo posterior a una operación exitosa. | `umux_survey_respond` |
+| `US-EXP-02` | Captura de feedback luego de una matrícula completada en el módulo Enrollment. | Creación exitosa de matrícula. | `umux_survey_respond` con `flow = enrollment_registration` |
+| `US-EXP-03` | Captura de feedback luego de operaciones financieras recurrentes. | Creación de cobro en Billing y transacción en Accounting. | `umux_survey_respond` con `flow = billing_invoice_create` o `accounting_transaction_create` |
+
+#### Componentes y archivos implementados
+
+| Archivo | Responsabilidad |
+| :--- | :--- |
+| `src/app/shared/infrastructure/analytics/application-insights.service.ts` | Inicializa Application Insights y centraliza el envío del evento `umux_survey_respond`. |
+| `src/app/shared/presentation/components/umux-survey-dialog/umux-survey-dialog.ts` | Componente reutilizable del modal UMUX-Lite, con control para mostrarlo solo una vez por flujo. |
+| `src/app/enrollments/application/store/enrollment.store.ts` | Activa el modal luego de crear una matrícula y toma el `academyId` desde la respuesta del backend. |
+| `src/app/billing/application/billing.store.ts` | Activa el modal luego de crear/asignar un cobro y toma el `academyId` desde la cuenta de cobro actualizada. |
+| `src/app/accounting/application/store/accounting.store.ts` | Activa el modal luego de registrar una nueva transacción contable. |
+| `src/environments/environment.ts` y `src/environments/environment.development.ts` | Configuran la connection string de Application Insights. |
+
+#### Configuración del SDK de Application Insights
+
+Para habilitar el envío directo de eventos desde Angular hacia Azure Application Insights, se agregó la dependencia oficial:
+
+```bash
+pnpm add @microsoft/applicationinsights-web
+```
+
+La connection string se configura en los archivos de entorno de Angular:
+
+```ts
+export const environment = {
+  production: false,
+  applicationInsightsConnectionString: 'InstrumentationKey=<instrumentation-key>;IngestionEndpoint=<ingestion-endpoint>',
+  platformProviderApiBaseUrl: 'http://localhost:8080',
+};
+```
+
+El servicio de analítica inicializa el SDK y envía el evento:
+
+```ts
+this.appInsights?.trackEvent({
+  name: 'umux_survey_respond',
+  properties: {
+    event: 'umux_survey_respond',
+    academy_id: academyId,
+    flow: telemetry.flow,
+    score_usability: telemetry.scoreUsability,
+    score_utility: telemetry.scoreUtility,
+  },
+});
+```
+
+#### Diseño del evento analítico
+
+El evento implementado mantiene un payload reducido para evitar ruido analítico y no enviar datos operativos innecesarios. Solo se registran las propiedades necesarias para analizar la percepción de facilidad de uso por academia y por flujo.
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+| Propiedad | Descripción |
+| :--- | :--- |
+| `event` | Nombre semántico del evento enviado a Azure. |
+| `academy_id` | Identificador de la academia asociada al usuario administrador. |
+| `flow` | Flujo donde se capturó la respuesta: `enrollment_registration`, `billing_invoice_create` o `accounting_transaction_create`. |
+| `score_usability` | Respuesta de 1 a 5 sobre qué tan fácil fue completar el flujo. |
+| `score_utility` | Respuesta de 1 a 5 sobre qué tan útil fue el flujo para el trabajo administrativo. |
+
+#### Regla de aparición del modal
+
+Para evitar una experiencia invasiva, el modal UMUX-Lite se muestra como máximo una vez por flujo en el navegador del usuario. Cuando el administrador responde u omite la encuesta, se registra una marca local:
+
+```txt
+umux_survey_answered_enrollment_registration = true
+umux_survey_answered_billing_invoice_create = true
+umux_survey_answered_accounting_transaction_create = true
+```
+
+De esta manera, la aplicación recolecta feedback de los flujos principales sin interrumpir repetidamente tareas operativas como el registro de transacciones.
+
+#### Formulario web de matrícula
+
+La siguiente captura muestra el formulario web del módulo Enrollment, donde el administrador selecciona estudiante, periodo académico, horario, monto y estado de pago para registrar una matrícula.
+
+![Formulario de matrícula en Demy](./assets/experiment-planning/frontend-web-evidence/enrollment-form.png)
+
+*Formulario de creación de matrícula en la aplicación web de Demy.*
+
+#### Formulario web de cobro
+
+La siguiente captura muestra el formulario del módulo Billing utilizado por el administrador para crear o asignar un cobro a la cuenta de un estudiante matriculado.
+
+![Formulario de cobro en Demy](./assets/experiment-planning/frontend-web-evidence/billing-invoice-form.png)
+
+*Formulario de creación de cobro en el módulo Billing.*
+
+#### Formulario web de transacción contable
+
+La siguiente captura muestra el formulario del módulo Accounting utilizado para registrar una nueva transacción financiera, ya sea ingreso o egreso.
+
+![Formulario de transacción contable en Demy](./assets/experiment-planning/frontend-web-evidence/accounting-transaction-form.png)
+
+*Formulario de creación de transacción en el módulo Accounting.*
+
+#### Pop-up modal UMUX-Lite
+
+Luego de completar exitosamente un flujo operativo, la aplicación muestra un pop-up modal no intrusivo con dos preguntas de escala 1 a 5: facilidad del flujo y utilidad para el trabajo administrativo.
+
+![Pop-up UMUX-Lite en Demy](./assets/experiment-planning/frontend-web-evidence/umux-survey-popup.png)
+
+*Micro-encuesta UMUX-Lite mostrada luego de una operación exitosa.*
+
+#### Payload JSON generado en consola
+
+Al enviar la respuesta de la encuesta, el frontend registra en consola el payload enviado a Application Insights. Este registro facilita validar que el evento se está generando con las propiedades esperadas.
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+![Payload del evento UMUX-Lite en consola](./assets/experiment-planning/frontend-web-evidence/umux-console-payload.png)
+
+*Payload JSON del evento `umux_survey_respond` mostrado en la consola del navegador.*
+
+#### Recepción del evento en Azure Application Insights
+
+Para validar que la telemetría fue recibida correctamente por Azure, se consulta el recurso de Application Insights mediante Kusto Query Language (KQL):
+
+```kusto
+customEvents
+| where name == "umux_survey_respond"
+| project timestamp,
+          name,
+          academy_id = customDimensions.academy_id,
+          flow = customDimensions.flow,
+          score_usability = customDimensions.score_usability,
+          score_utility = customDimensions.score_utility
+| order by timestamp desc
+```
+
+![Evento UMUX-Lite en Azure Application Insights](./assets/experiment-planning/frontend-web-evidence/application-insights-umux-event.jpeg)
+
+*Evento `umux_survey_respond` registrado en Azure Application Insights.*
+
+#### Resultado de implementación
+
+La implementación permite recolectar evidencia cuantitativa inmediata sobre la facilidad y utilidad percibida por los administradores luego de completar operaciones core. Con esta telemetría, Demy puede evaluar la métrica `DBM-07: Puntuación de Facilidad de Uso` y contrastar la hipótesis de suficiencia del MVP con datos reales de uso.
+
+<hr class="page-break">
+
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
