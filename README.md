@@ -12516,6 +12516,8 @@ A continuación, se presentan las historias de usuario prioritarias diseñadas p
   </tbody>
 </table>
 
+> **Nota metodológica sobre canales de telemetría:** Las historias `US-EXP-02` y `US-EXP-03` generan evidencia por **dos canales complementarios, no redundantes**. Por un lado, el frontend dispara `umux_survey_respond` con el `flow` correspondiente, capturando la **percepción de facilidad de uso** (`DBM-07`) — una señal opcional que depende de que el administrador responda la encuesta. Por otro lado, el backend dispara de forma independiente los eventos `admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save` vía `TelemetryClient`, capturando el **hecho de negocio confirmado en el servidor** (`DBM-01` y `DBM-03`), sin depender de que el usuario complete ninguna encuesta ni de qué canal (web o mobile) haya usado para realizar la operación. Esta separación es intencional: una métrica de adopción no debería depender de si el usuario decide contestar un pop-up.
+
 ### 8.3.2. To-Be Product Backlog
 El To-Be Product Backlog consolida el mapa de desarrollo modificado para los próximos micro-sprints del proyecto. A diferencia de un Scrum tradicional, la prioridad de los ítems está determinada bajo un enfoque científico: **se anteponen las modificaciones que inyectan telemetría y sensores analíticos** en la plataforma, garantizando que el equipo obtenga la data de eventos necesaria para evaluar las hipótesis nulas antes de realizar desarrollos masivos a ciegas.
 
@@ -12530,6 +12532,8 @@ La priorización utiliza el sistema de puntuación XDPD (Confianza + Riesgo + Im
 | **05** | `TS-EXP-102` | Spike Técnico | Consulta y validación de eventos `umux_survey_respond` en Azure Application Insights mediante KQL. | **15 / 20** | Asegura que la data recolectada pueda observarse y analizarse desde el recurso de Azure usado por el proyecto. |
 
 Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avanzar basándose en opiniones o suposiciones intuitivas de la industria, obligando al pipeline de integración y despliegue continuo (CI/CD) a empaquetar una aplicación con alta madurez técnica pero, sobre todo, dotada de **luz analítica** para el negocio.
+
+Adicionalmente, para que `DBM-01` y `DBM-03` puedan sustentarse de forma independiente al canal utilizado por el administrador, `TS-EXP-101` se extendió más allá del frontend: se instrumentaron eventos equivalentes del lado del servidor (`admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save` vía `TelemetryClient` en los controladores del backend), y en la app Android de administradores se replicó el disparo de `admin_enrollment_submit` hacia Firebase Analytics, con el fin de estimar qué proporción de matrículas se origina específicamente desde el canal mobile. La app de docentes (Flutter) dispara además `teacher_mobile_attendance_taken`, sustentando `BLQ-02` (preferencia mobile de los docentes).
 
 <hr class="page-break">
 
@@ -12745,6 +12749,56 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
         <td>Rafael Dominguez</td>
         <td>To-Review</td>
       </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101e</td>
+        <td>Instanciar TelemetryClient en Enrollments</td>
+        <td>Declarar <code>TelemetryClient</code> en el controlador de Enrollments y disparar <code>admin_enrollment_submit</code> tras registrar una matrícula, de forma independiente al canal (web o mobile)</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101f</td>
+        <td>Instanciar TelemetryClient en BillingAccounts</td>
+        <td>Disparar <code>admin_invoice_create</code> en el controlador de BillingAccounts al asignar un invoice a una cuenta de cobro</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101g</td>
+        <td>Instanciar TelemetryClient en Transactions</td>
+        <td>Disparar <code>admin_financy_entry_save</code> en el controlador de Transactions al registrar un movimiento financiero</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101h</td>
+        <td>Integrar Firebase Analytics en la app Android de administradores</td>
+        <td>Configurar Firebase y una clase <code>AnalyticsLogger</code> en demy-admin-mobile-application, replicando <code>admin_enrollment_submit</code> para estimar la proporción de matrículas originadas desde mobile</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101i</td>
+        <td>Integrar Firebase Analytics en la app Flutter de docentes</td>
+        <td>Configurar Firebase en demy-teacher-mobile-application y disparar <code>teacher_mobile_attendance_taken</code> desde el <code>classAttendanceBloc</code> al registrar asistencia</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -12924,33 +12978,31 @@ La implementación permite recolectar evidencia cuantitativa inmediata sobre la 
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-A continuación se muestran capturas de evidencia de la implementación to be para nuestras soluciones móviles
+Con el despliegue de ambas aplicaciones móviles ya completado, se instrumentó Firebase Analytics como canal de telemetría nativo en cada una, complementando la instrumentación de Application Insights del backend y la web. A continuación se muestran capturas de evidencia de la implementación To-Be para ambas soluciones móviles.
 
 *Mobile MultiPlatform Teachers Application*
 
-Inicializamos FireBase en main.dart  
-![Captura evidencia de inicializacion de firebase](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-2.png)
+Inicializamos Firebase en `main.dart`.  
+![Captura evidencia de inicialización de Firebase](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-2.png)
 
-Luego en el classAttendanceBloc se añadio el siguiento fragmento de codigo para mandar el evento  
-![Captura de fragmento de codigo en classAttendaceBloc](./assets/to-be-mobile//multiplatform/to-be-mobile-teacher-1.png)
+Luego, en el `classAttendanceBloc`, se añadió el siguiente fragmento de código para disparar el evento `teacher_mobile_attendance_taken` al registrar la asistencia de una sesión de clase. Este evento sustenta `BLQ-02` (preferencia mobile de los docentes), evidenciando el uso real de la app nativa para una tarea operativa diaria.  
+![Captura de fragmento de código en classAttendanceBloc](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-1.png)
 
-*Mobile Android Admins Application*  
+*Mobile Android Admins Application*
 
-Se añadio la dependencia de FireBase  
-![Captura de evidencia de la dependencia de FireBase](./assets/to-be-mobile/android/to-be-mobile-admin-5.png)
+Se añadió la dependencia de Firebase.  
+![Captura de evidencia de la dependencia de Firebase](./assets/to-be-mobile/android/to-be-mobile-admin-5.png)
 
-Se creo una clase AnalyticsLogger que nos servirá como inyección SDK  
+Se creó una clase `AnalyticsLogger` que centraliza el disparo de eventos del SDK de Firebase.  
 ![Captura de la clase AnalyticsLogger](./assets/to-be-mobile/android/to-be-mobile-admin-1.png)
 
+En los ViewModel de cada feature relacionada, se añadieron los fragmentos de código que disparan los eventos correspondientes al registro de una matricula, asignación de un invoice y el registro de una transacción. Este evento replica, en Firebase, el mismo evento que el backend dispara de forma independiente vía `TelemetryClient` (ver 8.3.3.5); el objetivo no es duplicar la medición de adopción (`DBM-01`, que ya es channel-agnostic desde el backend), sino estimar qué proporción de esas matrículas se originó específicamente desde el canal mobile.  
+![Captura de evento analítico 1](./assets/to-be-mobile/android/to-be-mobile-admin-2.png)  
+![Captura de evento analítico 2](./assets/to-be-mobile/android/to-be-mobile-admin-3.png)  
+![Captura de evento analítico 3](./assets/to-be-mobile/android/to-be-mobile-admin-4.png)
 
-En los view model de cada feature relacionada al disparo del evento analitico, se añadieron los siguientes fragmentos de codigo
-![Captura de evento analitico 1](./assets/to-be-mobile/android/to-be-mobile-admin-2.png)  
-![Captura de evento analitico 2](./assets/to-be-mobile/android/to-be-mobile-admin-3.png)  
-![Captura de evento analitico 3](./assets/to-be-mobile/android/to-be-mobile-admin-4.png)  
-
-Ahora en la parte de FireBase Console podemos ver los eventos llegados en la sección de analíticas  
-![Captura de FireBase Console Events](./assets/to-be-mobile/android/to-be-mobile-admin-6.png)
-
+Ahora, en la consola de Firebase, podemos ver los eventos recibidos en la sección de analíticas.  
+![Captura de Firebase Console Events](./assets/to-be-mobile/android/to-be-mobile-admin-6.png)
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
@@ -12962,17 +13014,19 @@ Primero se añadio la dependencia de application insights de azure en el archivo
 Luego en cada controlador correspondiente al dominio del evento analitico, se instancio el objeto TelemetryClient  
 ![Captura de la instanciacion del objeto TelemetryClient](./assets/to-be-backend/to-be-backend-2.png)
 
-En el controlador de Enrollments, en la parte de registrar un enrollment(matrícula) se añadió el código correspondiente para mandar el evento analítico  
+En el controlador de Enrollments, en la parte de registrar un enrollment (matrícula), se añadió el código correspondiente para disparar el evento `admin_enrollment_submit`.  
 ![Captura del codigo para el envio del evento analitico del controlador Enrollments](./assets/to-be-backend/to-be-backend-3.png)
 
-En el controlador de BillingAccounts, en la parte de asignar un invocide, se añadió el código correspondiente para mandar el evento analítico
+En el controlador de BillingAccounts, en la parte de asignar un invoice, se añadió el código correspondiente para disparar el evento `admin_invoice_create`.
 ![Captura del codigo para el envio del evento analitico del controlador BillingAccounts](./assets/to-be-backend/to-be-backend-4.png)
 
-En el controlador de Transactions, en la parte de registrar un transaction, se añadió el código correspondiente para mandar el evento analítico
+En el controlador de Transactions, en la parte de registrar una transacción, se añadió el código correspondiente para disparar el evento `admin_financy_entry_save`.
 ![Captura del codigo para el envio del evento analitico del controlador Transactions](./assets/to-be-backend/to-be-backend-5.png)
 
-Finalmente en el application insights de nuestro backend desplegado en Azure,mediante una consulta podemos observar todos los eventos mandados, de esta forma ahora si podreamos tracker la analítica de nuestra plataforma.  
+Finalmente, en Application Insights de nuestro backend desplegado en Azure, mediante una consulta podemos observar todos los eventos recibidos, confirmando el registro de `admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save`.  
 ![Captura de la validacion del envio de eventos en los insights en aure](./assets/to-be-backend/to-be-backend-6.png)
+
+A diferencia del evento `umux_survey_respond` disparado desde el frontend (ver 8.3.3.3), estos tres eventos se generan del lado del servidor, en el mismo momento en que la transacción se persiste en base de datos, sin depender de que el usuario responda ninguna encuesta ni del canal (web o mobile) utilizado. Por ello, son la fuente autoritativa para calcular `DBM-01` (Tasa de Adopción Administrativa) y `DBM-03` (Tasa de Retención Operativa), mientras que la app Android de administradores replica adicionalmente `admin_enrollment_submit` hacia Firebase Analytics (ver 8.3.3.4) únicamente para estimar la proporción de matrículas originadas desde el canal mobile, no para recalcular la métrica en sí.
 
 #### 8.3.3.6. Team Collaboration Insights
 
