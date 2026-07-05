@@ -13088,13 +13088,165 @@ Para el Segmento 2 no se incluye una meta-pregunta sobre encuestas in-app, dado 
 ## 8.4. Experiment Aftermath & Analysis
 ### 8.4.1. Analysis and Interpretation of Results
 
+El piloto de instrumentación se ejecutó durante una ventana corta de **3 días** (2026-06-28 a 2026-07-05), con una academia y un conjunto reducido de usuarios administrativos probando el flujo completo de Demy en producción (Azure). A continuación se contrastan los datos reales recolectados contra los umbrales definidos en 8.2.2, siguiendo el principio de que una hipótesis **se prueba, no se valida como verdadera**: cuando la evidencia es insuficiente, se reporta como tal en lugar de forzar una conclusión.
+
+**DBM-01 — Tasa de Adopción Administrativa (Hipótesis 2)**
+
+La consulta KQL sobre `admin_enrollment_submit` registró **3 matrículas digitales** durante los 3 días del piloto.
+
+![Resultado KQL de admin_enrollment_submit en Application Insights](./assets/experiment-aftermath/dbm-01-kql.png)
+
+*Resultado de la consulta KQL para `admin_enrollment_submit` en Application Insights.*
+
+No se cuenta todavía con el total de matrículas reales de la academia en ese mismo periodo (incluyendo las registradas de forma manual), dato necesario para calcular la tasa definida en `DBM-01` (Digitales / Total real × 100). Por lo tanto, **no es posible aún rechazar ni aceptar H2** con este corte: solo puede reportarse el volumen absoluto observado. Adicionalmente, la ventana de la hipótesis (4 semanas) es muy superior a los 3 días disponibles, por lo que este resultado debe interpretarse como una primera señal de uso real, no como una medición concluyente de adopción.
+
+**DBM-03 — Tasa de Retención Operativa**
+
+La consulta KQL sobre `admin_invoice_create` y `admin_financy_entry_save` mostró **2 eventos** en la semana del 2026-06-28 y **1 evento** en la semana del 2026-07-05.
+
+![Resultado KQL de eventos de Finance agrupados por semana en Application Insights](./assets/experiment-aftermath/dbm-03-kql.png)
+
+*Resultado de la consulta KQL de retención semanal en Application Insights.*
+
+Con una sola academia piloto y apenas 2 semanas observadas (frente a las 4 que exige la métrica), no es metodológicamente correcto calcular un porcentaje de retención: se necesitaría un universo de varias academias iniciando en la Semana 1 para poder decir qué proporción se mantiene activa en la Semana 4. Este resultado se reporta como **evidencia preliminar insuficiente**, y queda como una acción concreta para el Re-scored Question Backlog (8.4.2): extender el piloto a más academias y a la ventana completa de 4 semanas.
+
+**DBM-07 — Puntuación de Facilidad de Uso (UMUX-Lite)**
+
+La consulta KQL sobre `umux_survey_respond` arrojó, sobre **9 respuestas**, un promedio de **4.56/5** en facilidad de uso (`score_usability`) y **4.89/5** en utilidad (`score_utility`).
+
+![Resultado KQL del promedio UMUX-Lite en Application Insights](./assets/experiment-aftermath/dbm-07-kql.png)
+
+*Resultado de la consulta KQL de promedios UMUX-Lite en Application Insights.*
+
+Aplicando la fórmula definida en `DBM-07` (suma de promedios / puntaje máximo posible × 100): (4.56 + 4.89) / 10 × 100 ≈ **94.4% de percepción de usabilidad positiva**, muy por encima del umbral de 75% definido para esta métrica. **Los datos son consistentes con una percepción positiva de facilidad de uso**, aunque con una muestra todavía pequeña (N=9), por lo que el resultado debe leerse como una tendencia favorable a confirmar con más respuestas durante el resto del piloto, no como un resultado estadísticamente definitivo.
+
+**Señal complementaria — Canal Mobile (Firebase, Android Admin)**
+
+En Firebase Analytics, filtrando por dispositivo, se registró **1 evento** `admin_invoice_create` disparado desde un dispositivo Tablet (5.56% del total de eventos observados en ese corte).
+
+![Evento admin_invoice_create registrado en Firebase desde dispositivo Tablet](./assets/experiment-aftermath/mobile-android-firebase.png)
+
+*Evento capturado en Firebase Analytics desde la app Android de administradores (dispositivo Tablet).*
+
+Con un solo evento observado, no se puede estimar todavía qué proporción de matrículas o cobros se origina desde el canal mobile; se mantiene como una señal a monitorear, no como un resultado concluyente.
+
+**Señal complementaria — App Móvil de Docentes (Firebase, Flutter)**
+
+Al cierre de este corte, el evento `teacher_mobile_attendance_taken` **aún no se refleja** en Firebase Console.
+
+![Estado del panel de Firebase Analytics para la app de docentes, sin eventos aún registrados](./assets/experiment-aftermath/mobile-teacher-firebase.png)
+
+*Estado del panel de Firebase Analytics para la app de docentes al momento de este corte.*
+
+Esto puede deberse a la latencia normal de agregación de Firebase Analytics (hasta 24-48 horas para eventos nuevos) o a que el flujo de registro de asistencia aún no fue ejecutado por un usuario piloto durante la ventana observada. Se recomienda validar con **Firebase DebugView** (que muestra eventos en tiempo real) antes de la sustentación, para confirmar si el evento se está disparando correctamente.
+
+**DBM-08 — Tasa de Suficiencia Percibida del MVP (Hipótesis 1)**
+
+De las entrevistas de validación registradas en 8.3.4.2, se entrevistó a **6 decisores** (directores/coordinadores de academias medianas) tras la demostración del MVP; **4 de ellos (66.7%)** respondieron afirmativamente a la pregunta de suficiencia, superando el umbral de **60%** definido para esta métrica.
+
+**Los datos son consistentes con H1**: la evidencia no permite rechazar la hipótesis de que el conjunto de funcionalidades del MVP (Matrícula, Facturación, Accounting) resulta suficiente para que un director de academia mediana considere migrar desde Excel. Con todo, N=6 es una muestra pequeña, por lo que el resultado debe leerse como una señal inicial favorable y no como una validación estadística robusta.
+
+**Limitaciones del corte actual:** los resultados aquí presentados provienen de un piloto de solo 3 días con una academia y una muestra reducida de usuarios y entrevistados, por lo que las métricas ligadas a ventanas de 4 semanas (`DBM-01`, `DBM-03`) deben interpretarse como señales tempranas y no como conclusiones definitivas. `DBM-07` y `DBM-08` son las que cuentan con evidencia suficientemente favorable para un pronunciamiento preliminar dentro del alcance de esta entrega. Ampliar la duración del piloto y el tamaño de la muestra queda registrado como una acción concreta para la siguiente iteración en el Re-scored Question Backlog (8.4.2), en lugar de ser un requisito de esta entrega.
+
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+Con los resultados de 8.4.1, el Question Backlog de 8.1.4 se actualiza en dos frentes: (1) se re-anota la **Confianza** e **Interés** de las preguntas que ya fueron experimentadas, ya que son los únicos criterios que cambian directamente por la evidencia recolectada (Riesgo e Impacto son propios del negocio y no varían solo porque el equipo aprendió algo nuevo); y (2) se incorporan preguntas nuevas que surgieron de los propios resultados y de decisiones de alcance tomadas durante la experimentación.
+
+**Re-scoring de preguntas ya experimentadas**
+
+| ID | Pregunta | Confianza (antes → ahora) | Interés (antes → ahora) | Total (antes → ahora) | Justificación |
+|---|---|:---:|:---:|:---:|---|
+| `BLQ-06` | ¿El MVP es suficiente para que una academia migre desde Excel? | 4 → 2 | 5 → 3 | 19 → 15 | `DBM-08` mostró 66.7% (4/6) de respuestas afirmativas, superando el umbral de 60%. Ya no somos "muy inseguros" sobre esta creencia, y al tener una primera respuesta favorable, baja la urgencia de re-investigarla de inmediato (aunque N=6 sigue siendo chico, por lo que la Confianza no baja al mínimo). |
+| `BLQ-01` | ¿Los administrativos adoptarán Demy en el primer mes de uso? | 3 → 3 | 5 → 5 | 18 → 18 | El corte de `DBM-01` (3 matrículas en 3 días) fue insuficiente para calcular la tasa de adopción real (falta el total de matrículas manuales del mismo periodo como denominador), por lo que la incertidumbre sobre esta creencia **no cambió**. La pregunta se mantiene con la misma prioridad y da origen a `EXQ-09`. |
+
+**Preguntas nuevas incorporadas al backlog**
+
+| ID | Tipo | Pregunta | Origen | Confianza | Riesgo | Impacto | Interés | **Total** |
+|---|---|---|---|:---:|:---:|:---:|:---:|:---:|
+| `EXQ-09` | Exploratory | ¿Qué tasa de adopción y retención real se alcanza al extender el piloto a la ventana completa de 4 semanas y a más academias? | Continuación directa de `BLQ-01` y `DBM-03`, cuyo corte de 3 días y 1 academia resultó insuficiente (8.4.1). | 4 | 5 | 5 | 5 | **19** |
+| `BLQ-08` | Belief-led | ¿El botón de llamado a la acción ("Solicitar Demo") de la Landing Page mejora la conversión de visitantes a leads? | Pregunta que quedó parqueada en 8.3.3.2 al priorizar la instrumentación operativa por sobre la landing en este ciclo. | 5 | 3 | 4 | 3 | **15** |
+| `EXQ-10` | Exploratory | ¿Qué proporción de matrículas y cobros se origina desde el canal mobile frente al canal web? | Surge del evento `admin_invoice_create` observado desde un dispositivo Tablet en Firebase (8.3.3.4 / 8.4.1), aún insuficiente (N=1) para estimar una proporción. | 4 | 2 | 3 | 3 | **12** |
+
+**Broad Backlog Re-priorizado**
+
+| Pos. | ID | Pregunta resumida | Tipo | Confianza | Riesgo | Impacto | Interés | **Total** |
+|------|----|-------------------|------|:---------:|:------:|:-------:|:-------:|:---------:|
+| 1 | `EXQ-09` | ¿Qué adopción/retención real se alcanza al extender el piloto a 4 semanas y más academias? | Exploratory | 4 | 5 | 5 | 5 | **19** |
+| 2 | `BLQ-01` | ¿Los administrativos adoptarán Demy en el primer mes de uso? | Belief-led | 3 | 5 | 5 | 5 | **18** |
+| 3 | `BLQ-03` | ¿Las alertas automáticas reducirán la morosidad en un 40%? | Belief-led | 4 | 4 | 5 | 5 | **18** |
+| 4 | `EXQ-02` | ¿Cuánto pagaría un director de academia por Demy? | Exploratory | 5 | 5 | 4 | 4 | **18** |
+| 5 | `BLQ-06` | ¿El MVP es suficiente para que una academia migre desde Excel? | Belief-led | 2 | 5 | 5 | 3 | **15** |
+| 6 | `BLQ-02` | ¿Los docentes usarán principalmente el smartphone con Demy? | Belief-led | 2 | 4 | 5 | 4 | **15** |
+| 7 | `BLQ-05` | ¿Los docentes reemplazarán WhatsApp por Demy en reprogramaciones? | Belief-led | 3 | 4 | 4 | 4 | **15** |
+| 8 | `EXQ-07` | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Exploratory | 4 | 4 | 4 | 3 | **15** |
+| 9 | `EXQ-06` | ¿Cuántas horas semanales pierde un administrativo en tareas manuales? | Exploratory | 4 | 3 | 5 | 3 | **15** |
+| 10 | `BLQ-08` | ¿El CTA "Solicitar Demo" de la Landing Page mejora la conversión de visitantes a leads? | Belief-led | 5 | 3 | 4 | 3 | **15** |
+| 11 | `BLQ-04` | ¿Demy mejorará la percepción de la academia ante los padres de familia? | Belief-led | 3 | 3 | 4 | 4 | **14** |
+| 12 | `EXQ-03` | ¿Con qué frecuencia ocurren reprogramaciones de clases? | Exploratory | 4 | 3 | 4 | 3 | **14** |
+| 13 | `EXQ-08` | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Exploratory | 4 | 4 | 3 | 3 | **14** |
+| 14 | `BLQ-07` | ¿El 25% de academias migrará a planes superiores en 6 meses? | Belief-led | 3 | 3 | 4 | 3 | **13** |
+| 15 | `EXQ-01` | ¿Cómo varía la adopción digital del personal fuera de Lima? | Exploratory | 3 | 3 | 3 | 4 | **13** |
+| 16 | `EXQ-04` | ¿Cómo gestionan la asistencia las academias con múltiples sedes? | Exploratory | 4 | 3 | 3 | 3 | **13** |
+| 17 | `EXQ-05` | ¿Qué canal de comunicación prefieren los padres de familia? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+| 18 | `EXQ-10` | ¿Qué proporción de matrículas y cobros se origina desde el canal mobile frente al canal web? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+
+`EXQ-09` toma el primer lugar del backlog re-priorizado: es la continuación directa del experimento de adopción/retención que quedó inconcluso por la duración limitada del piloto, y concentra el mayor Riesgo e Impacto del negocio. `BLQ-06`, en cambio, desciende de la posición 1 a la 5, reflejando que ya cuenta con una primera respuesta favorable y ya no es la incertidumbre más urgente del equipo.
 
 
 <hr class="page-break">
 
 ## 8.5. Continuous Learning
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
+
+Tras consolidar los resultados de 8.4.1, el equipo realizó una sesión de **Shareback**: una reunión donde se comparten los hallazgos del experimento con todo el equipo y se toma, por cada hipótesis o métrica, una decisión explícita de **Persevere** (continuar sin cambios), **Pivot** (cambiar el enfoque) o **Kill** (descartar la idea). Esta sesión cierra el ciclo de aprendizaje continuo y alimenta directamente al Question Backlog re-priorizado (8.4.2).
+
+<div style="overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="6" width="100%">
+    <tbody>
+      <tr style="background-color: #626e7a; color: white;">
+        <th style="padding: 8px; width: 30%;">Sesión</th>
+        <td style="padding: 8px;"><b>Shareback Session — Ciclo Experimental Sprint 4</b></td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Date</th>
+        <td style="padding: 8px;">2026-07-05</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Time</th>
+        <td style="padding: 8px;">09:00 PM</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Location</th>
+        <td style="padding: 8px;">Reunión virtual vía Discord</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Prepared By</th>
+        <td style="padding: 8px;">Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Attendees</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco / Dominguez Vargas, Rafael Alexander / Esteban Roman, Henry Kalet / Julca Cruz, Renso Anthony / Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Agenda</th>
+        <td style="padding: 8px;">1) Repaso de los resultados de Application Insights, Firebase Analytics y entrevistas de validación (8.4.1). 2) Discusión abierta de hallazgos y sorpresas. 3) Decisión Persevere/Pivot/Kill por hipótesis y métrica. 4) Traslado de conclusiones al Question Backlog re-priorizado (8.4.2).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Decisiones tomadas**
+
+| Hipótesis / Métrica | Resultado observado | Decisión | Justificación |
+|---|---|:---:|---|
+| H1 — Suficiencia del MVP (`DBM-08`) | 66.7% de respuestas afirmativas (4/6), sobre el umbral de 60% | **Persevere** | El conjunto actual de módulos (Enrollment, Billing, Accounting) se percibe suficiente; no se justifica agregar features nuevas antes de ampliar la muestra. |
+| H2 — Adopción Administrativa (`DBM-01`) | 3 matrículas digitales en 3 días, sin denominador para calcular la tasa | **Persevere, con extensión de medición** | No hay evidencia para pivotar ni descartar; se necesita más tiempo y más academias antes de decidir (ver `EXQ-09`). |
+| Retención Operativa (`DBM-03`) | 2 eventos en semana del 06-28, 1 evento en semana del 07-05, una sola academia | **Persevere, con extensión de medición** | Misma razón que `DBM-01`: la ventana de 4 semanas definida en la métrica no se cumplió todavía. |
+| Facilidad de Uso — UMUX-Lite (`DBM-07`) | 94.4% de percepción positiva, sobre el umbral de 75% | **Persevere** | El diseño del modal UMUX-Lite y su regla de aparición (una vez por flujo) funcionan según lo esperado; no se identificaron cambios de UX urgentes. |
+| Canal Mobile Admin (`EXQ-10`) | 1 evento `admin_invoice_create` observado desde Tablet (Firebase) | **Persevere, en observación** | Aún no hay evidencia suficiente para invertir en desarrollo mobile-first para administradores; se mantiene como pregunta exploratoria abierta. |
+| Landing Page CTA (`BLQ-08`) | Sin experimento ejecutado este ciclo | **Diferir** | Se prioriza conscientemente para un próximo ciclo, según lo justificado en 8.3.3.2. |
+
+**Aprendizaje principal de la sesión:** ninguna hipótesis fue descartada (Kill) en este ciclo; el equipo decidió **perseverar** con el producto y el diseño de instrumentación actuales, y concentrar el siguiente ciclo en **ampliar la escala del piloto** (más academias, ventana completa de 4 semanas) en lugar de introducir cambios de producto, ya que la limitación identificada es de **tamaño de muestra**, no de **diseño de la solución**.
 
 <hr class="page-break">
 
