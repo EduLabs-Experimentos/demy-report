@@ -12774,6 +12774,37 @@ Finalmente en el application insights de nuestro backend desplegado en Azure,med
 
 #### 8.3.4.1. Diseño de Entrevistas.
 
+A diferencia del diseño de entrevistas de Needfinding, estas entrevistas no buscan explorar el problema desde cero, sino **validar** las hipótesis de negocio y las métricas de dominio. Por ello, la telemetría en sí misma (Application Insights, Firebase Analytics) no se le pregunta al entrevistado, ya que es invisible para él, en su lugar, se diseña una dinámica de **tarea guiada sobre el producto real desplegado, seguida de preguntas de reacción**. La única excepción es el componente UMUX-Lite (`US-EXP-01`), ya que es la única pieza de instrumentación que sí es visible para el usuario administrativo, por lo que se incluye una meta-pregunta específica sobre esa interacción.
+
+**Segmento 1: Administrativos de academias**
+
+Tareas a ejecutar en vivo sobre la Web Application desplegada (`demy-admin-web`):
+1. Registrar la matrícula de un alumno nuevo en el módulo Enrollment.
+2. Registrar una cuenta de cobro en el módulo Finance.
+
+| # | Pregunta de reacción | Elemento que valida |
+|---|---|---|
+| 1 | Ahora que usaste matrícula y facturación juntos, ¿sientes que esto es suficiente para dejar tu Excel/cuaderno por completo? ¿Por qué sí o por qué no? | Hipótesis 1 / DBM-08 (Suficiencia del MVP) |
+| 2 | ¿Qué tan probable es que uses Demy todos los días para tus matrículas en vez de tus métodos actuales? ¿Qué te haría dudar? | Hipótesis 2 / DBM-01 (Adopción Administrativa) |
+| 3 | ¿Te sentirías cómodo registrando cuentas de cobro así cada semana, o se siente una carga extra? | DBM-03 (Retención Operativa en Finance) |
+| 4 | ¿Hubo algún momento en que quisiste salir del formulario a medias, o te confundiste con algún campo? | Fricción cualitativa (Evidencia Secundaria, 8.2.3) |
+| 5 | Al terminar el registro te apareció una ventana preguntando qué tan fácil fue la tarea. ¿La notaste? ¿Te pareció molesta o razonable? ¿Respondiste con sinceridad o solo por salir del paso? | DBM-07 — confiabilidad del instrumento de medición UMUX-Lite |
+
+**Segmento 2: Docentes de academias**
+
+Tareas a ejecutar en vivo sobre la aplicación móvil Flutter desplegada (`demy-teacher-mobile-application`):
+1. Registrar la asistencia de una sesión de clase desde el celular.
+2. Revisar el horario semanal desde la app.
+
+| # | Pregunta de reacción | Elemento que valida |
+|---|---|---|
+| 1 | Ahora que la app está instalada en tu propio celular, ¿la usarías en el día a día en vez de anotar en papel o en el grupo de WhatsApp del colegio? | BLQ-02 (Preferencia mobile de los docentes) |
+| 2 | ¿En qué casos seguirías prefiriendo el WhatsApp del grupo de profesores en vez de la app, por ejemplo para avisar una reprogramación? | BLQ-05 (Disposición a reemplazar WhatsApp) |
+| 3 | ¿Hubo alguna pantalla o paso donde te sentiste perdido o no sabías qué botón tocar? | Usabilidad general (cualitativo) |
+| 4 | Si la academia te pidiera usar esta app desde mañana todos los días, ¿qué te frenaría? | Adopción sostenida |
+
+Para el Segmento 2 no se incluye una meta-pregunta sobre encuestas in-app, dado que el componente UMUX-Lite (`US-EXP-01`) solo fue implementado en la Web Application administrativa y no en la aplicación móvil de docentes.
+
 #### 8.3.4.2. Registro de Entrevistas.
 
 <hr class="page-break">
