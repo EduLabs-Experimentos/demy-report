@@ -12924,6 +12924,34 @@ La implementación permite recolectar evidencia cuantitativa inmediata sobre la 
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
+A continuación se muestran capturas de evidencia de la implementación to be para nuestras soluciones móviles
+
+*Mobile MultiPlatform Teachers Application*
+
+Inicializamos FireBase en main.dart  
+![Captura evidencia de inicializacion de firebase](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-2.png)
+
+Luego en el classAttendanceBloc se añadio el siguiento fragmento de codigo para mandar el evento  
+![Captura de fragmento de codigo en classAttendaceBloc](./assets/to-be-mobile//multiplatform/to-be-mobile-teacher-1.png)
+
+*Mobile Android Admins Application*  
+
+Se añadio la dependencia de FireBase  
+![Captura de evidencia de la dependencia de FireBase](./assets/to-be-mobile/android/to-be-mobile-admin-5.png)
+
+Se creo una clase AnalyticsLogger que nos servirá como inyección SDK  
+![Captura de la clase AnalyticsLogger](./assets/to-be-mobile/android/to-be-mobile-admin-1.png)
+
+
+En los view model de cada feature relacionada al disparo del evento analitico, se añadieron los siguientes fragmentos de codigo
+![Captura de evento analitico 1](./assets/to-be-mobile/android/to-be-mobile-admin-2.png)  
+![Captura de evento analitico 2](./assets/to-be-mobile/android/to-be-mobile-admin-3.png)  
+![Captura de evento analitico 3](./assets/to-be-mobile/android/to-be-mobile-admin-4.png)  
+
+Ahora en la parte de FireBase Console podemos ver los eventos llegados en la sección de analíticas  
+![Captura de FireBase Console Events](./assets/to-be-mobile/android/to-be-mobile-admin-6.png)
+
+
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
 A continuación se muestran capturas de evidencia de la implementación to be para nuestro backend  
@@ -12947,6 +12975,22 @@ Finalmente en el application insights de nuestro backend desplegado en Azure,med
 ![Captura de la validacion del envio de eventos en los insights en aure](./assets/to-be-backend/to-be-backend-6.png)
 
 #### 8.3.3.6. Team Collaboration Insights
+
+En esta sección se presenta los insights de cada solución actualizada con la implementación de las to be user stories
+
+*Insights de la web application*  
+![Captura de Insights de la web application](./assets/to-be-insights/to-be-insights-web.png)
+
+*Insights del backend*  
+![Captura de insights del backend](./assets/to-be-insights/to-be-insights-backend.png)
+
+
+*Insights de la solución móvil para administradores*  
+![Captura de insights de la aplicacion movil nativa en android](./assets/to-be-insights/to-be-insights-mobile-android.png)
+
+*Insights de la solución móvil para profesores*  
+![Captura de insights de la aplicacion movil multiplataforma](./assets/to-be-insights/to-be-insights-mobile-multiplatform.png)
+
 
 ### 8.3.4. To-Be Validation Interviews 
 
