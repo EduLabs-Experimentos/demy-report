@@ -12740,6 +12740,8 @@ A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
+La Landing Page fue implementada y desplegada durante la fase As-Is (ver [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)) y no presentó cambios funcionales en este ciclo experimental. Al priorizar el Question Backlog (ver 8.1.4) bajo el sistema de puntuación XDPD, el equipo identificó que el mayor riesgo para la continuidad del negocio no estaba en la conversión de visitantes de la landing, sino en la adopción operativa interna del panel administrativo (matrícula y facturación) y en la usabilidad percibida del MVP, por eso el To-Be Product Backlog (8.3.2) se concentró en la inyección de telemetría en el backend, la Web Application y las aplicaciones móviles, dejando los posibles cambios experimentales de la landing page como una pregunta pendiente, registrada para un próximo ciclo en el Re-scored and Re-prioritized Question Backlog (ver 8.4.2).
+
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
