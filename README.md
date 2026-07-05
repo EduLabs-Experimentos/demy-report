@@ -55,7 +55,7 @@
 | 8.3     | 14/06/2026 | Renso Julca         | Documentación de la Auditoria UX                         |
 | 8.4     | 14/06/2026 | Rafael Dominguez    | Documentación de Experiment Planning                     |
 | 8.5     | 16/06/2026 | Diego Vilca         | Documentación de Experiment Design                       |
-| 9.0     | 4/07/2026  |
+| 9.0     | 4/07/2026  |  Diego Vilca        | Documentación de To-Be Sprint Backlogs (Sprint Planning 4 y Sprint Backlog 4) |
 
 <hr class="page-break">
 
@@ -12525,6 +12525,218 @@ Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avan
 ### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
 
 #### 8.3.3.1. To-Be Sprint Backlogs
+
+A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo experimental se ejecuta en un único Sprint adicional, el **Sprint 4**, cuyo objetivo no es agregar funcionalidad nueva sino instrumentar con telemetría los flujos operativos ya construidos, priorizando los ítems definidos en el To-Be Product Backlog (`TS-EXP-101`, `US-EXP-01`, `US-EXP-02`, `US-EXP-03`, `TS-EXP-102`) bajo el criterio de puntuación XDPD.
+
+##### Sprint 4
+
+##### Sprint Planning 4
+
+<div style="overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="6" width="100%">
+    <tbody>
+      <tr style="background-color: #626e7a; color: white;">
+        <th style="padding: 8px; width: 30%;">Sprint #</th>
+        <td style="padding: 8px;"><b>Sprint 4</b></td>
+      </tr>
+      <tr style="background-color: #d9dde1;">
+        <th colspan="2" style="padding: 8px; text-align: left;">Sprint Planning Background</th>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Date</th>
+        <td style="padding: 8px;">2026-06-30</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Time</th>
+        <td style="padding: 8px;">08:00 PM</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Location</th>
+        <td style="padding: 8px;">Reunión virtual vía Discord</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Prepared By</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Attendees (to planning meeting)</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco / Dominguez Vargas, Rafael Alexander / Esteban Roman, Henry Kalet / Julca Cruz, Renso Anthony / Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Sprint 3 Review Summary</th>
+        <td style="padding: 8px;">El Sprint 3 concluyó con la entrega funcional de las aplicaciones móviles nativas para administrador (Android) y docente (Flutter), incluyendo autenticación, visualización de horarios y registro de asistencia. El equipo validó que los flujos principales de consulta y registro operan correctamente en dispositivos móviles; sin embargo, se identificó que ninguno de los productos (web, mobile, landing) contaba con mecanismos de medición sobre su uso real por parte de las academias piloto, lo cual limitaba la validación de las hipótesis de negocio planteadas en el Lean UX Canvas.</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sprint 3 Retrospective Summary</th>
+        <td style="padding: 8px;">El equipo destacó como acierto la paralelización del desarrollo de las aplicaciones móviles (Android nativo y Flutter) sin bloquear el avance de la Web Application ni del backend. Como oportunidad de mejora, se reconoció que las decisiones de producto se seguían tomando en base a supuestos internos del equipo y no a datos de uso reales, por lo que se acordó priorizar en el siguiente Sprint la incorporación de telemetría antes de continuar construyendo nuevas features.</td>
+      </tr>
+      <tr style="background-color: #626e7a; color: white;">
+        <th colspan="2" style="padding: 8px; text-align: left;">Sprint Goal & User Stories</th>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sprint 4 Goal</th>
+        <td style="padding: 8px;">En este sprint nos enfocamos en instrumentar con telemetría los flujos operativos core de Demy (matrícula, facturación y encuestas de usabilidad) en el backend (Spring Boot en Azure), la Web Application (Angular) y la aplicación móvil de docentes (Flutter), en lugar de seguir agregando funcionalidades basadas en supuestos. Creemos que esto entrega evidencia empírica y cuantificable sobre la adopción y facilidad de uso real de la plataforma al equipo de producto de Demy, apoyándonos en Azure Application Insights (backend y web) y Firebase Analytics (mobile) como repositorios de eventos ya gestionados, sin necesidad de construir infraestructura analítica propia. Esto se confirmará cuando los eventos <code>admin_enrollment_submit</code>, <code>admin_finance_entry_save</code> y <code>umux_survey_respond</code> se registren con datos reales en Application Insights durante el piloto con las academias.</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Sprint 4 Velocity</th>
+        <td style="padding: 8px;">24</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sum of Story Points</th>
+        <td style="padding: 8px;">24</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### Sprint Backlog 4
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 4</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101a</td>
+        <td>Provisionar Application Insights en Azure</td>
+        <td>Crear el recurso de Application Insights en el portal de Azure y generar el Connection String para el backend y la web</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101b</td>
+        <td>Instanciar TelemetryClient en demy-backend</td>
+        <td>Declarar <code>private final TelemetryClient telemetryClient = new TelemetryClient();</code> en los controladores de Spring Boot involucrados, para el disparo de eventos de negocio directamente a Application Insights</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101c</td>
+        <td>Integrar Application Insights SDK en el frontend</td>
+        <td>Configurar el SDK de Application Insights para JavaScript en demy-admin-web (Angular), para el disparo de eventos de UX directamente desde el cliente</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101d</td>
+        <td>Integrar Firebase Analytics en la app de docentes</td>
+        <td>Configurar Firebase Analytics en demy-teacher-mobile-application (Flutter), ya desplegada, para el registro de eventos de uso nativo</td>
+        <td>4</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-01</td>
+        <td>Medición in-app de Usabilidad (UMUX-Lite)</td>
+        <td>US-EXP-01a</td>
+        <td>Componente modal de encuesta UMUX-Lite</td>
+        <td>Construir el componente standalone de Angular con la escala Likert 1-5</td>
+        <td>4</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-01</td>
+        <td>Medición in-app de Usabilidad (UMUX-Lite)</td>
+        <td>US-EXP-01b</td>
+        <td>Disparo del evento desde el frontend</td>
+        <td>Mostrar el modal tras un registro exitoso y enviar el evento <code>umux_survey_respond</code> directamente a Application Insights vía el SDK de JavaScript (sin pasar por el backend)</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-02</td>
+        <td>Centralización Operativa de Matrículas</td>
+        <td>US-EXP-02a</td>
+        <td>Disparo del evento en el controlador de Enrollment</td>
+        <td>Agregar <code>telemetryClient.trackEvent("admin_enrollment_submit", ...)</code> en el controlador de matrícula de demy-backend, tras persistir el registro exitosamente</td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-02</td>
+        <td>Centralización Operativa de Matrículas</td>
+        <td>US-EXP-02b</td>
+        <td>Validar registro del evento en Application Insights</td>
+        <td>Verificar en Application Insights que el evento se asocie correctamente con la academia y el periodo académico correspondiente</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-03</td>
+        <td>Trazabilidad Recurrente de Cuentas de Cobro</td>
+        <td>US-EXP-03a</td>
+        <td>Disparo del evento en el controlador de Billing</td>
+        <td>Agregar <code>telemetryClient.trackEvent("admin_invoice_create", ...)</code> en el controlador de facturación de demy-backend al registrar una cuenta de cobro</td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-03</td>
+        <td>Trazabilidad Recurrente de Cuentas de Cobro</td>
+        <td>US-EXP-03b</td>
+        <td>Disparo del evento con marca de tiempo en Finance</td>
+        <td>Agregar <code>telemetryClient.trackEvent("admin_finance_entry_save", ...)</code> con timestamp de auditoría en el controlador de Finance, para calcular retención semanal</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-102</td>
+        <td>Spike: Consolidación de Eventos Analíticos</td>
+        <td>TS-EXP-102a</td>
+        <td>Evaluar Application Insights vs. tabla propia</td>
+        <td>Comparar el uso de Application Insights como repositorio consolidado de eventos del backend y la web frente a construir una tabla <code>analytics_events</code> propia, concluyendo el uso de Application Insights por su integración nativa con Azure</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-102</td>
+        <td>Spike: Consolidación de Eventos Analíticos</td>
+        <td>TS-EXP-102b</td>
+        <td>Documentar decisión de Firebase Analytics para mobile</td>
+        <td>Redactar la recomendación técnica de usar Firebase Analytics (en lugar de Application Insights) para la aplicación Flutter de docentes, por su mejor soporte nativo en mobile</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>To-Review</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
