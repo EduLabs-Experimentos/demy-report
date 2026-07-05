@@ -12748,6 +12748,26 @@ La Landing Page fue implementada y desplegada durante la fase As-Is (ver [5.2.2.
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
+A continuación se muestran capturas de evidencia de la implementación to be para nuestro backend  
+
+Primero se añadio la dependencia de application insights de azure en el archivo pom.xmml  
+![Captura de la depenencia de pom.xml](./assets/to-be-backend/to-be-backend-1.png)
+
+Luego en cada controlador correspondiente al dominio del evento analitico, se instancio el objeto TelemetryClient  
+![Captura de la instanciacion del objeto TelemetryClient](./assets/to-be-backend/to-be-backend-2.png)
+
+En el controlador de Enrollments, en la parte de registrar un enrollment(matrícula) se añadió el código correspondiente para mandar el evento analítico  
+![Captura del codigo para el envio del evento analitico del controlador Enrollments](./assets/to-be-backend/to-be-backend-3.png)
+
+En el controlador de BillingAccounts, en la parte de asignar un invocide, se añadió el código correspondiente para mandar el evento analítico
+![Captura del codigo para el envio del evento analitico del controlador BillingAccounts](./assets/to-be-backend/to-be-backend-4.png)
+
+En el controlador de Transactions, en la parte de registrar un transaction, se añadió el código correspondiente para mandar el evento analítico
+![Captura del codigo para el envio del evento analitico del controlador Transactions](./assets/to-be-backend/to-be-backend-5.png)
+
+Finalmente en el application insights de nuestro backend desplegado en Azure,mediante una consulta podemos observar todos los eventos mandados, de esta forma ahora si podreamos tracker la analítica de nuestra plataforma.  
+![Captura de la validacion del envio de eventos en los insights en aure](./assets/to-be-backend/to-be-backend-6.png)
+
 #### 8.3.3.6. Team Collaboration Insights
 
 ### 8.3.4. To-Be Validation Interviews 
