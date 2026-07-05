@@ -12798,6 +12798,22 @@ Finalmente en el application insights de nuestro backend desplegado en Azure,med
 
 #### 8.3.3.6. Team Collaboration Insights
 
+En esta sección se presenta los insights de cada solución actualizada con la implementación de las to be user stories
+
+*Insights de la web application*  
+![Captura de Insights de la web application](./assets/to-be-insights/to-be-insights-web.png)
+
+*Insights del backend*  
+![Captura de insights del backend](./assets/to-be-insights/to-be-insights-backend.png)
+
+
+*Insights de la solución móvil para administradores*  
+![Captura de insights de la aplicacion movil nativa en android](./assets/to-be-insights/to-be-insights-mobile-android.png)
+
+*Insights de la solución móvil para profesores*  
+![Captura de insights de la aplicacion movil multiplataforma](./assets/to-be-insights/to-be-insights-mobile-multiplatform.png)
+
+
 ### 8.3.4. To-Be Validation Interviews 
 
 #### 8.3.4.1. Diseño de Entrevistas.
