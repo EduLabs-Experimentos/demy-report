@@ -12746,6 +12746,34 @@ La Landing Page fue implementada y desplegada durante la fase As-Is (ver [5.2.2.
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
+A continuación se muestran capturas de evidencia de la implementación to be para nuestras soluciones móviles
+
+*Mobile MultiPlatform Teachers Application*
+
+Inicializamos FireBase en main.dart  
+![Captura evidencia de inicializacion de firebase](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-2.png)
+
+Luego en el classAttendanceBloc se añadio el siguiento fragmento de codigo para mandar el evento  
+![Captura de fragmento de codigo en classAttendaceBloc](./assets/to-be-mobile//multiplatform/to-be-mobile-teacher-1.png)
+
+*Mobile Android Admins Application*  
+
+Se añadio la dependencia de FireBase  
+![Captura de evidencia de la dependencia de FireBase](./assets/to-be-mobile/android/to-be-mobile-admin-5.png)
+
+Se creo una clase AnalyticsLogger que nos servirá como inyección SDK  
+![Captura de la clase AnalyticsLogger](./assets/to-be-mobile/android/to-be-mobile-admin-1.png)
+
+
+En los view model de cada feature relacionada al disparo del evento analitico, se añadieron los siguientes fragmentos de codigo
+![Captura de evento analitico 1](./assets/to-be-mobile/android/to-be-mobile-admin-2.png)  
+![Captura de evento analitico 2](./assets/to-be-mobile/android/to-be-mobile-admin-3.png)  
+![Captura de evento analitico 3](./assets/to-be-mobile/android/to-be-mobile-admin-4.png)  
+
+Ahora en la parte de FireBase Console podemos ver los eventos llegados en la sección de analíticas  
+![Captura de FireBase Console Events](./assets/to-be-mobile/android/to-be-mobile-admin-6.png)
+
+
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
 A continuación se muestran capturas de evidencia de la implementación to be para nuestro backend  
