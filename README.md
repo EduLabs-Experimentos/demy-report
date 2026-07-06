@@ -13302,7 +13302,7 @@ Tras consolidar los resultados de 8.4.1, el equipo realizó una sesión de **Sha
 
 En esta sección se presenta el video about the product Introduction de las soluciones desplegadas, donde se explica el flujo de la aplicación y las soluciones que ofrecemos frente a la problematica que soluciona Demy
 
-![Video about the product](/assets/images/photos/About-the-product-introduction.png)
+![Video about the product](./assets/images/photos/About-the-product-introduction.png)
 
 * [Video de SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQDqrupfqm7uRLCxzJX2a3HOAe7h-upgslSK_ztDgS028eU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=LmunuP)
 
