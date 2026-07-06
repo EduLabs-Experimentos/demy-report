@@ -34,7 +34,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Julio 2026 </h5>
 
 <hr class="page-break">
 
@@ -50,7 +50,12 @@
 | 6.0     | 10/05/2026 |  Renso Julca        | Documentación del Chapter 6                              |
 | 7.0     | 11/05/2026 |  Diego Vilca        | Documentación del Chapter 7                              |
 | 8.0     | 25/05/2026 | Diego Vilca         | Actualización de la estructura del informe para el AV2   |
-| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          | 
+| 8.1     | 28/05/2026 | Daniel Crispin      | Corección de los escenarios de las user stories          |
+| 8.2     | 5/06/2026  | Henry Kalet         | Documentación de validation interviews                   |
+| 8.3     | 14/06/2026 | Renso Julca         | Documentación de la Auditoria UX                         |
+| 8.4     | 14/06/2026 | Rafael Dominguez    | Documentación de Experiment Planning                     |
+| 8.5     | 16/06/2026 | Diego Vilca         | Documentación de Experiment Design                       |
+| 9.0     | 4/07/2026  |  Diego Vilca        | Documentación de To-Be Sprint Backlogs (Sprint Planning 4 y Sprint Backlog 4) |
 
 <hr class="page-break">
 
@@ -113,6 +118,42 @@ Estos gráficos detallan la cantidad de líneas de código añadidas por cada mi
 Análisis de líneas de código añadidas por contribuyente.
 
 ![Insights - Contributors](./assets/images/team-collaboration-insights/report/tb1/tb1-pulse.png)
+
+</div>
+
+## AV2
+
+**Tareas**
+
+Para el desarrollo del AV2, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes | Tarea asignada |
+| :--- | :--- |
+| Crispin Ramos, Daniel Franco | - Static testing & Verifications y Reviews <br> - Validation interviews |
+| Dominguez Vargas, Rafael | - Experiment Planning |
+| Esteban Roman, Henry Kalet | - Validation interviews |
+| Julca, Renso | - Auditoria UX |
+| Vilca Saboya, Diego Alejandro | - Continuous Monitoring y Experiment Design, Experimentation |
+
+**GitHub Collaboration Insights**
+
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/team-collaboration-insights/report/av2/av2-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada correspondiente al AV2.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/team-collaboration-insights/report/av2/av2-pulse.png)
 
 </div>
 
@@ -270,9 +311,27 @@ Análisis de líneas de código añadidas por contribuyente.
   - [8.3. Experimentation ](#83-experimentation)
     - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
     - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+    - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
+      - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
+      - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
+      - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
+      - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
+      - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
+      - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+    - [8.3.4. To-Be Validation Interviews ](#834-to-be-validation-interviews)
+      - [8.3.4.1. Diseño de Entrevistas.](#8341-diseño-de-entrevistas)
+      - [8.3.4.2. Registro de Entrevistas.](#8342-registro-de-entrevistas)
+  - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
+    - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
+    - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
+  - [8.5. Continuous Learning](#85-continuous-learning)
+    - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
+  - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
+    - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 
-
+- [Matriz de Evaluación Etica y de Impacto](#matriz-de-evaluación-etica-y-de-impacto)
 - [Conclusiones](#conclusiones)
+- [Video About the Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 
@@ -295,37 +354,75 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <tr>
             <td style="padding: 10px;"><strong> Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software </strong></td>
             <td style="padding: 10px;">
-                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.</p>
-                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.</p>
-                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.</p>
-                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.</p>
-                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.</p>
+                <p><strong>Daniel Crispin</strong><br> 
+                <strong>TB1:</strong><br>
+                Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.<br>
+                <strong>AV2:</strong><br>
+                Llevé a cabo los procesos de Static Testing, Reviews y Verificaciones con rigurosidad profesional, asegurando de manera transparente y honesta la detección temprana de vulnerabilidades o fallos en el código para no comprometer la seguridad de los usuarios finales.</p>
+                <p><strong>Rafael Dominguez</strong><br> 
+                <strong>TB1:</strong><br>
+                Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.<br>
+                <strong>AV2:</strong><br>
+                En el Experiment Planning, actué bajo principios de honestidad científica, estructurando hipótesis y métricas claras sin manipular los escenarios de prueba, garantizando un marco de experimentación transparente y responsable.</p>
+                <p><strong>Henry Esteban</strong><br> 
+                <strong>TB1:</strong><br>
+                Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.<br>
+                <strong>AV2:</strong><br>
+                Durante las entrevistas de validación, mantuve un comportamiento profesional y respetuoso con los entrevistados, asegurando la confidencialidad de sus testimonios y recopilando feedback genuino sin inducir sesgos de manera poco ética.</p>
+                <p><strong>Renso Julca</strong><br> 
+                <strong>TB1:</strong><br>
+                Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.<br>
+                <strong>AV2:</strong><br>
+                Al realizar la Auditoría UX, evalué la interfaz de forma objetiva, priorizando la accesibilidad y la inclusión de los usuarios, asumiendo la responsabilidad de evitar patrones oscuros (dark patterns) que pudieran engañar o perjudicar la experiencia del cliente.</p>
+                <p><strong>Diego Vilca</strong><br> 
+                <strong>TB1:</strong><br>
+                Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.<br>
+                <strong>AV2:</strong><br>
+                Diseñé e implementé la estrategia de Continuous Monitoring y Experimentation bajo criterios de transparencia técnica, asegurando que el monitoreo de datos de uso respete la privacidad de los usuarios y que los experimentos reflejen el comportamiento real del sistema.</p>
             </td>
-            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
                 Como equipo, concluimos que desarrollar software profesional implica mucho más que programar. Reafirmamos nuestra responsabilidad ética al manejar datos sensibles (identidades, dinero, asistencias) aplicando seguridad, transparencia en nuestros acuerdos (SaaS) y garantizando que el código y los despliegues sean confiables y trazables para evitar fallos que afecten al usuario final.
+                <br><br>
+                <strong>AV2:</strong><br>
+                Para esta entrega, concluimos que la responsabilidad profesional se consolida mediante la verificación constante y la validación honesta de nuestro trabajo. La combinación de pruebas estáticas, monitoreo continuo, auditorías centradas en el usuario y experimentos transparentes nos permite asegurar la calidad del producto final, mostrando respeto por los estándares de ingeniería y por la confianza depositada por los usuarios.
             </td>
         </tr>
-                <tr>
-            <td style="padding: 10px;"><strong>  Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales .</strong></td>
+        <tr>
+            <td style="padding: 10px;"><strong> Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales.</strong></td>
             <td style="padding: 10px;">
-                <p><strong>Daniel Crispin</strong><br> <strong>TP:</strong><br>
-                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).</p>
-                <p><strong>Rafael Dominguez</strong><br> <strong>TP:</strong><br>
-                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.</p>
-                <p><strong>Henry Esteban</strong><br> <strong>TP:</strong><br>
-                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.</p>
-                <p><strong>Renso Julca</strong><br> <strong>TP:</strong><br>
-                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.</p>
-                <p><strong>Diego Vilca</strong><br> <strong>TP:</strong><br>
-                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).</p>
+                <p><strong>Daniel Crispin</strong><br> 
+                <strong>TB1:</strong><br>
+                Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).<br>
+                <strong>AV2:</strong><br>
+                A través del Static Testing y las entrevistas de validación cruzadas, analicé cómo mitigar fallos tempranos en la aplicación previene reprocesos costosos, lo cual optimiza la inversión en el desarrollo del producto (impacto económico y social).</p>
+                <p><strong>Rafael Dominguez</strong><br> 
+                <strong>TB1:</strong><br>
+                Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.<br>
+                <strong>AV2:</strong><br>
+                Al estructurar el Experiment Planning, evalué la viabilidad del negocio y el impacto de implementar nuevas características arquitectónicas, asegurando que las decisiones de ingeniería respondan a una demanda real del mercado global sin desperdiciar recursos.</p>
+                <p><strong>Henry Esteban</strong><br> 
+                <strong>TB1:</strong><br>
+                Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.<br>
+                <strong>AV2:</strong><br>
+                Al co-conducir las entrevistas de validación, sinteticé las perspectivas socioeconómicas de los usuarios reales, validando directamente si los cambios propuestos en el producto generan un alivio verdadero en sus actividades cotidianas.</p>
+                <p><strong>Renso Julca</strong><br> 
+                <strong>TB1:</strong><br>
+                A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.<br>
+                <strong>AV2:</strong><br>
+                Mediante la Auditoría UX, analicé el impacto social de la interfaz, asegurando que la navegación sea intuitiva y accesible para personas con distintos niveles de alfabetización digital, reduciendo así la brecha tecnológica de uso.</p>
+                <p><strong>Diego Vilca</strong><br> 
+                <strong>TB1:</strong><br>
+                Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).<br>
+                <strong>AV2:</strong><br>
+                A través del Continuous Monitoring y Experiment Design, medí el impacto en el consumo de recursos de infraestructura en la nube. Esto nos ayuda a tomar decisiones orientadas a una ingeniería de software verde y eficiente, minimizando la huella ecológica del backend (impacto ambiental y económico).</p>
             </td>
-            <td style="padding: 10px; vertical-align: top;"> <strong>TP:</strong><br>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
                 Logramos comprender que nuestra startup tiene un impacto real en el entorno. Digitalizar matrículas, pagos y asistencias elimina el uso innecesario de papel (impacto ambiental), automatiza tareas pesadas permitiendo a las instituciones reducir costos (impacto económico) y hace que los usuarios finales ganen tiempo y comodidad en su día a día (impacto social).
+                <br><br>
+                <strong>AV2:</strong><br>
+                Concluimos que el proceso de validación, auditoría y monitoreo continuo nos otorga una visión empírica del impacto de nuestro software. Validar con usuarios reales y analizar métricas de rendimiento nos ayuda a iterar la solución con conciencia de su accesibilidad social, eficiencia de costos económicos y sostenibilidad ambiental mediante el control de recursos digitales en la nube.
             </td>
         </tr>
     </tbody>
@@ -11001,7 +11098,7 @@ Durante la auditoría se ejecutaron las siguientes tareas representativas del fl
 
 ---
 
-** Detalle de hallazgos**
+**Detalle de hallazgos**
 - **Hallazgo H-01**
 
 | Campo                   | Detalle                                                                                                                                                                                                                |
@@ -12231,7 +12328,7 @@ Evidencia secundaria: registro de barreras de uso reportadas en entrevistas sema
 Siguiendo los principios de la experimentación científica y estadística en el marco XDPD, las hipótesis se formulan como declaraciones de creencias previas que se someten a pruebas de falsabilidad, testabilidad y medición, en lugar de intentar "validarlas como verdaderas" de manera sesgada. Cada hipótesis de trabajo va acompañada de su respectiva Hipótesis Nula (H_0).
 
 * **Hipótesis 1 (Suficiencia del MVP - EC-01):**
-    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios y Facturación/Finance) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
+    * **Hipótesis de Trabajo (H_1):** Al menos el 60% de los directores de academias medianas en Lima expuestos a la demo del MVP de Demy (que integra los módulos core de Matrícula/Enrollment, Gestión de Periodos, Cursos, Horarios, Billing y Accounting) declarará de forma explícita que el conjunto de estas características es suficiente para tomar la decisión de adoptar la herramienta y migrar desde Excel.
     * **Hipótesis Nula (H_0):** La proporción de directores que consideran suficiente el MVP de Demy será inferior al 60% (P < 0.60), sugiriendo que el conjunto actual de funcionalidades desplegadas no cubre el umbral mínimo de valor requerido por el segmento de negocio.
 
 * **Hipótesis 2 (Adopción Administrativa - EC-02):**
@@ -12243,13 +12340,13 @@ Siguiendo los principios de la experimentación científica y estadística en el
 Para garantizar que los experimentos se vinculen directamente con el rendimiento financiero y operativo real de las academias, se definen de manera estricta las métricas de negocio del dominio utilizando exclusivamente las capacidades del software desplegado. Queda prohibido el uso de métricas ad-hoc o datos no descritos en esta sección.
 
 1. **DBM-01: Tasa de Adopción Administrativa**
-    * **Fórmula:** Tasa = (Número de procesos core de matrícula y horarios registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
+    * **Fórmula:** Tasa = (Número de procesos core de matrícula y cobro registrados en Demy / Total de procesos core ejecutados en la academia de forma global) * 100
     * **Técnica de recolección:** Registro automatizado de transacciones de inscripción en la base de datos de Demy cruzado con la auditoría de matrículas manuales reportadas externamente por la administración en su balance semanal.
     * **Meta:** Mayor o igual a 70% al finalizar el primer mes.
 
-2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Facturación/Finance)**
-    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cuentas de cobro, comprobantes o egresos en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
-    * **Técnica de recolección:** Log analítico e inspección de marcas de tiempo en las tablas de auditoría de Base de Datos para los módulos de Facturación y Finance en Azure.
+2. **DBM-03: Tasa de Retención Operativa del Cliente (Uso Recurrente de Billing y Accounting)**
+    * **Fórmula:** Tasa = (Número de academias piloto que registran de forma recurrente cobros o transacciones contables en la Semana 4 / Total de academias piloto que iniciaron el uso en la Semana 1) * 100
+    * **Técnica de recolección:** Inspección de registros operativos de Billing y Accounting, complementada por telemetría UX del evento `umux_survey_respond` para comparar la facilidad percibida de los flujos financieros.
     * **Meta:** Mayor o igual a 60% de uso recurrente continuo al cierre del piloto de un mes.
 
 3. **DBM-07: Puntuación de Facilidad de Uso (UMUX-Lite abreviado)**
@@ -12267,8 +12364,8 @@ Para garantizar que los experimentos se vinculen directamente con el rendimiento
 Se seleccionan criterios rigurosos de recolección bajo el principio de economía de rastreo (utilizar solo las medidas necesarias durante el tiempo justo para minimizar costos y ruidos analíticos).
 
 * **Evidencia Primaria (Representativa del cambio esperado):**
-    * Métricas de interacción core: Cantidad de estudiantes matriculados digitalmente, salones asignados y horarios guardados de forma exitosa por sesión en la solución web.
-    * Métricas financieras de impacto: Número de cuentas de cobro generadas, comprobantes de estudiantes emitidos y registros de egresos/ingresos completados dentro del módulo de Finance.
+    * Métricas de interacción core: Cantidad de matrículas, cobros y transacciones financieras registradas exitosamente en la solución web.
+    * Métricas UX de impacto: Promedio y distribución de `score_usability` y `score_utility` capturados por el evento `umux_survey_respond`.
 
 * **Evidencia Secundaria (Detección de efectos adyacentes):**
     * Tasa de error operativo técnico: Frecuencia con la que un usuario administrativo cancela un flujo o abandona un formulario (por ejemplo, salir del formulario de creación de periodo académico o asignación de profesores a mitad del registro).
@@ -12283,7 +12380,7 @@ Se estructuran los escenarios bajo los cuales se evaluará el comportamiento del
     * **Condición de Control:** Directores o coordinadores del mismo segmento que no son expuestos a Demy y evalúan la suficiencia de sus herramientas actuales tradicionales (archivos Excel fragmentados y talonarios físicos).
 
 * **Para Experimento de Adopción (EC-02):**
-    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment y Finance) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
+    * **Condición Experimental:** Personal administrativo operando activamente con el sistema Demy en producción para su gestión diaria (módulos Enrollment, Billing y Accounting) tras recibir una capacitación inicial de onboarding de 2 horas y soporte técnico continuo.
     * **Condición de Control (Línea Base Histórica):** El desempeño, tasas de error y tiempos de procesamiento registrados por el mismo personal administrativo durante el ciclo académico inmediatamente anterior bajo sus métodos manuales de hojas de cálculo de Excel y cuadernos de control físicos.
 
 ### 8.2.5. Scale Calculations and Decisions
@@ -12310,17 +12407,17 @@ Se selecciona el método experimental bajo la regla de la Simplest Useful Thing 
 
 Esta sección define la preparación analítica para procesar la telemetría del producto Demy y asegurar la precisión en la captura del comportamiento del usuario.
 
-* **Meta Analítica 1:** Cuantificar la eficiencia operativa ganada por la administración de la academia al centralizar y automatizar los flujos financieros de matrículas y control de cobros.
-    * **KPI Asociado:** Tasa de efectividad de digitalización financiera en el piloto.
-    * **Métrica Analítica:** Porcentaje de cuentas de cobro y comprobantes emitidos exitosamente desde la plataforma web sin cancelaciones del flujo de datos.
+* **Meta Analítica 1:** Cuantificar la facilidad percibida por la administración de la academia al completar flujos operativos core en la plataforma web.
+    * **KPI Asociado:** DBM-07: Puntuación de Facilidad de Uso.
+    * **Métrica Analítica:** Promedio de `score_usability` y `score_utility` capturado por el evento `umux_survey_respond`, segmentado por `academy_id` y `flow`.
 
-* **Meta Analítica 2:** Validar la usabilidad percibida e intuitividad del software durante la configuración de la estructura académica inicial de la institución.
-    * **KPI Asociado:** Nivel de adopción técnica de flujos estructurales de configuración.
-    * **Métrica Analítica:** Ratio de salones, cursos y horarios guardados de forma completa con respecto al total de intentos de registro iniciados en la sesión.
+* **Meta Analítica 2:** Comparar la experiencia percibida entre los flujos instrumentados de Enrollment, Billing y Accounting.
+    * **KPI Asociado:** Variación del score UMUX-Lite por flujo operativo.
+    * **Métrica Analítica:** Distribución de respuestas por `flow = enrollment_registration`, `billing_invoice_create` y `accounting_transaction_create` en Azure Application Insights.
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
-Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web (Administradores) aprovechando los flujos funcionales existentes en producción.
+Plan técnico detallado para la inyección de componentes de captura de datos analíticos en la plataforma web de administradores, aprovechando los flujos funcionales existentes en producción. El alcance implementado se concentra en la medición UMUX-Lite desde el frontend Angular, enviando telemetría directamente a Azure Application Insights sin pasar por la API backend.
 
 **Esquema Técnico de Eventos (Ecosistema Demy)**
 ![Flujo de eventos del ecosistema demy](./assets/experiment-planning/flujo-eventos-tracking-plan.png)
@@ -12329,12 +12426,23 @@ Plan técnico detallado para la inyección de componentes de captura de datos an
 
 | ID Evento | Plataforma | Trigger (Disparador Técnico) | Propiedades / Contexto | KPI / Métrica Vinculada |
 | :--- | :--- | :--- | :--- | :--- |
-| admin_login_success | Web | Éxito en autenticación del administrador. | academy_id, role: admin | Frecuencia de uso del sistema. |
-| admin_enrollment_submit | Web | Clic exitoso en "Registrar Estudiante" (HTTP 200). | student_id, cycle_id | DBM-01 (Adopción de Matrícula). |
-| admin_invoice_create | Web | Envío completado del formulario "Crear Cuenta de Cobro".| invoice_id, total_amount | DBM-01 / DBM-03 (Uso de Facturación).|
-| admin_finance_entry_save| Web | Clic en guardar registro de ingreso/egreso en Finance. | entry_type (ingreso/egreso) | DBM-03 (Retención de uso financiero).|
-| admin_schedule_save | Web | Confirmación exitosa de asignación de horarios en grilla. | classroom_id, course_id | Adopción de flujos estructurales. |
-| umux_survey_respond | Web | Selección de escala y clic en enviar micro-encuesta. | score_utility, score_usability | DBM-07 (Métrica de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de crear una matrícula en Enrollment. | `event`, `academy_id`, `flow = enrollment_registration`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de crear/asignar un cobro en Billing. | `event`, `academy_id`, `flow = billing_invoice_create`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+| `umux_survey_respond` | Web | El administrador responde el pop-up UMUX-Lite mostrado después de registrar una transacción en Accounting. | `event`, `academy_id`, `flow = accounting_transaction_create`, `score_usability`, `score_utility` | DBM-07 (Puntuación de Facilidad de Uso). |
+
+El evento se instrumenta con el SDK `@microsoft/applicationinsights-web` y se envía desde el navegador al recurso de Azure Application Insights configurado con `InstrumentationKey` e `IngestionEndpoint`. Para mantener consistencia analítica y evitar datos operativos innecesarios, el payload se limita a la academia, el flujo evaluado y los dos puntajes UMUX-Lite:
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+El modal se muestra como máximo una vez por flujo en el navegador del administrador. Esta regla evita interrupciones repetitivas en tareas recurrentes y mantiene la encuesta como una medición ligera de experiencia posterior a la operación.
 
 ## 8.3. Experimentation 
 Esta sección detalla la evolución del producto Demy a partir de las necesidades detectadas en la fase de diseño experimental. Para mitigar la "ceguera analítica" identificada en el estado actual, el backlog técnico del producto se reestructura incorporando modificaciones cortas y componentes de medición analítica in-app. Esto permite contrastar científicamente las hipótesis planteadas en las fases previas mediante el uso y comportamiento real del usuario.
@@ -12361,7 +12469,7 @@ A continuación, se presentan las historias de usuario prioritarias diseñadas p
         <b>Quiero</b> desplegar una micro-encuesta interactiva automática al finalizar flujos operativos core,<br>
         <b>Para</b> recolectar feedback cuantitativo inmediato sobre la utilidad y facilidad de uso del MVP.<br><br>
         <b>GHERKIN SCENARIO:</b><br>
-        <b>Given</b> que un administrador completa con éxito un registro de matrícula o de horarios,<br>
+        <b>Given</b> que un administrador completa con éxito un registro de matrícula, cobro o transacción contable,<br>
         <b>When</b> el sistema procesa el flujo y muestra el mensaje de éxito,<br>
         <b>Then</b> se despliega un pop-up modal no intrusivo con los 2 ítems de la escala UMUX-Lite (Likert 1-5).
       </td>
@@ -12380,33 +12488,35 @@ A continuación, se presentan las historias de usuario prioritarias diseñadas p
         <b>GHERKIN SCENARIO:</b><br>
         <b>Given</b> que el administrador está en el módulo "Enrollment",<br>
         <b>When</b> llena el formulario y presiona el botón "Registrar Estudiante",<br>
-        <b>Then</b> el sistema guarda al alumno en el periodo académico actual y dispara la telemetría en Azure.
+        <b>Then</b> el sistema guarda la matrícula en el periodo académico actual y despliega la micro-encuesta UMUX-Lite asociada al flujo <code>enrollment_registration</code>.
       </td>
       <td style="padding: 10px;">
         <b>DBM-01:</b> Tasa de Adopción Administrativa.<br><br>
-        <b>Telemetría:</b> Evento <code>admin_enrollment_submit</code>.
+        <b>Telemetría UX:</b> Evento <code>umux_survey_respond</code> con <code>flow = enrollment_registration</code>.
       </td>
       <td style="padding: 10px; font-weight: bold;">Al menos el 70% de las matrículas totales del ciclo deben ejecutarse digitalmente dentro de Demy.</td>
     </tr>
     <tr style="background-color: #fafafa;">
-      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cuentas de Cobro</td>
+      <td style="padding: 10px; font-weight: bold; color: #16a085;">US-EXP-03<br><br>Trazabilidad Recurrente de Cobros y Transacciones</td>
       <td style="padding: 10px;">
         <b>Como</b> Administrador Financiero de la academia,<br>
-        <b>Quiero</b> registrar de forma consecutiva e integrada las cuentas de cobro y egresos en la plataforma web,<br>
-        <b>Para</b> evaluar si el módulo de Finance genera el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
+        <b>Quiero</b> registrar de forma consecutiva e integrada los cobros y las transacciones financieras en la plataforma web,<br>
+        <b>Para</b> evaluar si los módulos Billing y Accounting generan el valor suficiente para reemplazar por completo el libro contable de Excel.<br><br>
         <b>GHERKIN SCENARIO:</b><br>
         <b>Given</b> que la academia inició su piloto operativo en producción,<br>
-        <b>When</b> los administradores registran ingresos/egresos diariamente durante 4 semanas,<br>
-        <b>Then</b> la telemetría audita las marcas de tiempo para calcular la retención del uso del sistema.
+        <b>When</b> los administradores registran cobros en Billing o ingresos/egresos en Accounting,<br>
+        <b>Then</b> el sistema despliega la micro-encuesta UMUX-Lite asociada al flujo <code>billing_invoice_create</code> o <code>accounting_transaction_create</code>.
       </td>
       <td style="padding: 10px;">
         <b>DBM-03:</b> Tasa de Retención Operativa.<br><br>
-        <b>Telemetría:</b> Eventos <code>admin_invoice_create</code> y <code>admin_finance_entry_save</code>.
+        <b>Telemetría UX:</b> Evento <code>umux_survey_respond</code> con <code>flow = billing_invoice_create</code> o <code>accounting_transaction_create</code>.
       </td>
-      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de facturación hasta la Semana 4.</td>
+      <td style="padding: 10px; font-weight: bold;">El 60% de las academias piloto deben mantener un uso semanal recurrente de cobros o transacciones financieras hasta la Semana 4.</td>
     </tr>
   </tbody>
 </table>
+
+> **Nota metodológica sobre canales de telemetría:** Las historias `US-EXP-02` y `US-EXP-03` generan evidencia por **dos canales complementarios, no redundantes**. Por un lado, el frontend dispara `umux_survey_respond` con el `flow` correspondiente, capturando la **percepción de facilidad de uso** (`DBM-07`) — una señal opcional que depende de que el administrador responda la encuesta. Por otro lado, el backend dispara de forma independiente los eventos `admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save` vía `TelemetryClient`, capturando el **hecho de negocio confirmado en el servidor** (`DBM-01` y `DBM-03`), sin depender de que el usuario complete ninguna encuesta ni de qué canal (web o mobile) haya usado para realizar la operación. Esta separación es intencional: una métrica de adopción no debería depender de si el usuario decide contestar un pop-up.
 
 ### 8.3.2. To-Be Product Backlog
 El To-Be Product Backlog consolida el mapa de desarrollo modificado para los próximos micro-sprints del proyecto. A diferencia de un Scrum tradicional, la prioridad de los ítems está determinada bajo un enfoque científico: **se anteponen las modificaciones que inyectan telemetría y sensores analíticos** en la plataforma, garantizando que el equipo obtenga la data de eventos necesaria para evaluar las hipótesis nulas antes de realizar desarrollos masivos a ciegas.
@@ -12415,15 +12525,857 @@ La priorización utiliza el sistema de puntuación XDPD (Confianza + Riesgo + Im
 
 | Prioridad | ID Ítem | Tipo de Tarea | Funcionalidad / Modificación Corta de Producto | Puntos XDPD | Justificación Metodológica (XDPD) |
 | :---: | :--- | :--- | :--- | :---: | :--- |
-| **01** | `TS-EXP-101` | Analítica In-App | Inyección de SDK analítico (Firebase/Segment) y trackers de eventos core de administración. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
+| **01** | `TS-EXP-101` | Analítica In-App | Inyección del SDK `@microsoft/applicationinsights-web` y configuración de Azure Application Insights para eventos frontend. | **20 / 20** | Bloqueante crítico. Sin telemetría inyectada en producción no existe recolección de evidencia empírica para evaluar las hipótesis. |
 | **02** | `US-EXP-01` | Feature (Mejora) | Implementación de componente modal interactivo de encuesta de usabilidad (UMUX-Lite). | **19 / 20** | Permite medir la percepción de suficiencia del MVP (`EC-01`) directamente en el entorno de producción web de Azure. |
-| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al disparador del evento analítico de matrícula exitosa. | **18 / 20** | Necesario para evaluar de forma cuantitativa el indicador de adopción operativa del personal (`DBM-01`). |
-| **04** | `US-EXP-03` | Feature (Mejora) | Implementación de logs analíticos con marcas de tiempo en las transacciones contables del módulo de Finance. | **18 / 20** | Provee la granularidad analítica para vigilar la retención y recurrencia de uso semanal del cliente (`DBM-03`). |
-| **05** | `TS-EXP-102` | Spike Técnico | Configuración y despliegue de base de datos analítica en BigQuery/Azure para consolidar eventos del piloto. | **15 / 20** | Asegura que la data recolectada de forma limpia se consolide en repositorios listos para la fase de análisis estadístico. |
+| **03** | `US-EXP-02` | Refactor (Core) | Vinculación del formulario del módulo "Enrollment" al modal UMUX-Lite posterior a una matrícula exitosa. | **18 / 20** | Necesario para medir la facilidad percibida del flujo de matrícula mediante `umux_survey_respond` con `flow = enrollment_registration`. |
+| **04** | `US-EXP-03` | Feature (Mejora) | Vinculación de Billing y Accounting al modal UMUX-Lite posterior a cobros y transacciones exitosas. | **18 / 20** | Permite comparar la facilidad percibida entre flujos financieros usando `flow = billing_invoice_create` y `flow = accounting_transaction_create`. |
+| **05** | `TS-EXP-102` | Spike Técnico | Consulta y validación de eventos `umux_survey_respond` en Azure Application Insights mediante KQL. | **15 / 20** | Asegura que la data recolectada pueda observarse y analizarse desde el recurso de Azure usado por el proyecto. |
 
 Este backlog modificado asegura que el equipo de desarrollo de Demy deje de avanzar basándose en opiniones o suposiciones intuitivas de la industria, obligando al pipeline de integración y despliegue continuo (CI/CD) a empaquetar una aplicación con alta madurez técnica pero, sobre todo, dotada de **luz analítica** para el negocio.
 
+Adicionalmente, para que `DBM-01` y `DBM-03` puedan sustentarse de forma independiente al canal utilizado por el administrador, `TS-EXP-101` se extendió más allá del frontend: se instrumentaron eventos equivalentes del lado del servidor (`admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save` vía `TelemetryClient` en los controladores del backend), y en la app Android de administradores se replicó el disparo de `admin_enrollment_submit` hacia Firebase Analytics, con el fin de estimar qué proporción de matrículas se origina específicamente desde el canal mobile. La app de docentes (Flutter) dispara además `teacher_mobile_attendance_taken`, sustentando `BLQ-02` (preferencia mobile de los docentes).
+
 <hr class="page-break">
+
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+#### 8.3.3.1. To-Be Sprint Backlogs
+
+A diferencia de los Sprints 1, 2 y 3 (orientados a construir features), el ciclo experimental se ejecuta en un único Sprint adicional, el **Sprint 4**, cuyo objetivo no es agregar funcionalidad nueva sino instrumentar con telemetría los flujos operativos ya construidos, priorizando los ítems definidos en el To-Be Product Backlog (`TS-EXP-101`, `US-EXP-01`, `US-EXP-02`, `US-EXP-03`, `TS-EXP-102`) bajo el criterio de puntuación XDPD.
+
+##### Sprint 4
+
+##### Sprint Planning 4
+
+<div style="overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="6" width="100%">
+    <tbody>
+      <tr style="background-color: #626e7a; color: white;">
+        <th style="padding: 8px; width: 30%;">Sprint #</th>
+        <td style="padding: 8px;"><b>Sprint 4</b></td>
+      </tr>
+      <tr style="background-color: #d9dde1;">
+        <th colspan="2" style="padding: 8px; text-align: left;">Sprint Planning Background</th>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Date</th>
+        <td style="padding: 8px;">2026-06-30</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Time</th>
+        <td style="padding: 8px;">08:00 PM</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Location</th>
+        <td style="padding: 8px;">Reunión virtual vía Discord</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Prepared By</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Attendees (to planning meeting)</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco / Dominguez Vargas, Rafael Alexander / Esteban Roman, Henry Kalet / Julca Cruz, Renso Anthony / Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Sprint 3 Review Summary</th>
+        <td style="padding: 8px;">El Sprint 3 concluyó con la entrega funcional de las aplicaciones móviles nativas para administrador (Android) y docente (Flutter), incluyendo autenticación, visualización de horarios y registro de asistencia. El equipo validó que los flujos principales de consulta y registro operan correctamente en dispositivos móviles; sin embargo, se identificó que ninguno de los productos (web, mobile, landing) contaba con mecanismos de medición sobre su uso real por parte de las academias piloto, lo cual limitaba la validación de las hipótesis de negocio planteadas en el Lean UX Canvas.</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sprint 3 Retrospective Summary</th>
+        <td style="padding: 8px;">El equipo destacó como acierto la paralelización del desarrollo de las aplicaciones móviles (Android nativo y Flutter) sin bloquear el avance de la Web Application ni del backend. Como oportunidad de mejora, se reconoció que las decisiones de producto se seguían tomando en base a supuestos internos del equipo y no a datos de uso reales, por lo que se acordó priorizar en el siguiente Sprint la incorporación de telemetría antes de continuar construyendo nuevas features.</td>
+      </tr>
+      <tr style="background-color: #626e7a; color: white;">
+        <th colspan="2" style="padding: 8px; text-align: left;">Sprint Goal & User Stories</th>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sprint 4 Goal</th>
+        <td style="padding: 8px;">En este sprint nos enfocamos en instrumentar con telemetría UX los flujos operativos core de Demy en la Web Application (Angular): matrícula, cobros y transacciones contables. Creemos que esto entrega evidencia empírica y cuantificable sobre la facilidad de uso real de la plataforma al equipo de producto de Demy, usando Azure Application Insights como repositorio gestionado de eventos frontend. Esto se confirmará cuando el evento <code>umux_survey_respond</code> se registre con los campos <code>academy_id</code>, <code>flow</code>, <code>score_usability</code> y <code>score_utility</code> durante el piloto con las academias.</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Sprint 4 Velocity</th>
+        <td style="padding: 8px;">24</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Sum of Story Points</th>
+        <td style="padding: 8px;">24</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+##### Sprint Backlog 4
+
+<div style="font-size:80%; overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th colspan="2">Sprint #</th>
+        <th colspan="6">Sprint 4</th>
+      </tr>
+      <tr>
+        <th colspan="2">User Story</th>
+        <th colspan="6">Work-Item / Task</th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Estimation (Hours)</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101a</td>
+        <td>Provisionar Application Insights en Azure</td>
+        <td>Crear el recurso de Application Insights en el portal de Azure y generar el Connection String para la Web Application Angular</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101b</td>
+        <td>Configurar connection string en Angular</td>
+        <td>Agregar la connection string de Application Insights en los archivos de entorno del frontend para habilitar telemetría desde navegador</td>
+        <td>4</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101c</td>
+        <td>Integrar Application Insights SDK en el frontend</td>
+        <td>Instalar y configurar <code>@microsoft/applicationinsights-web</code> en demy-admin-web para el disparo de eventos de UX directamente desde el cliente</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101d</td>
+        <td>Centralizar el tracking frontend</td>
+        <td>Crear el servicio de analítica Angular para enviar <code>umux_survey_respond</code> a Application Insights sin pasar por el backend</td>
+        <td>4</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-01</td>
+        <td>Medición in-app de Usabilidad (UMUX-Lite)</td>
+        <td>US-EXP-01a</td>
+        <td>Componente modal de encuesta UMUX-Lite</td>
+        <td>Construir el componente standalone de Angular con la escala Likert 1-5</td>
+        <td>4</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-01</td>
+        <td>Medición in-app de Usabilidad (UMUX-Lite)</td>
+        <td>US-EXP-01b</td>
+        <td>Disparo del evento desde el frontend</td>
+        <td>Mostrar el modal tras un registro exitoso y enviar el evento <code>umux_survey_respond</code> directamente a Application Insights vía el SDK de JavaScript (sin pasar por el backend)</td>
+        <td>3</td>
+        <td>Rafael Dominguez</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-02</td>
+        <td>Centralización Operativa de Matrículas</td>
+        <td>US-EXP-02a</td>
+        <td>Activar UMUX-Lite tras matrícula</td>
+        <td>Mostrar el modal luego de una matrícula exitosa y enviar <code>umux_survey_respond</code> con <code>flow = enrollment_registration</code></td>
+        <td>3</td>
+        <td>Daniel Crispin</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-02</td>
+        <td>Centralización Operativa de Matrículas</td>
+        <td>US-EXP-02b</td>
+        <td>Validar academy_id en el evento</td>
+        <td>Verificar que el evento use el <code>academy_id</code> real de la matrícula creada y no un valor desconocido</td>
+        <td>2</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-03</td>
+        <td>Trazabilidad Recurrente de Cobros y Transacciones</td>
+        <td>US-EXP-03a</td>
+        <td>Activar UMUX-Lite tras cobro</td>
+        <td>Mostrar el modal luego de crear/asignar un cobro y enviar <code>umux_survey_respond</code> con <code>flow = billing_invoice_create</code></td>
+        <td>3</td>
+        <td>Renso Julca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>US-EXP-03</td>
+        <td>Trazabilidad Recurrente de Cobros y Transacciones</td>
+        <td>US-EXP-03b</td>
+        <td>Activar UMUX-Lite tras transacción</td>
+        <td>Mostrar el modal luego de registrar una transacción contable y enviar <code>umux_survey_respond</code> con <code>flow = accounting_transaction_create</code></td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-102</td>
+        <td>Spike: Consolidación de Eventos Analíticos</td>
+        <td>TS-EXP-102a</td>
+        <td>Validar eventos en Application Insights</td>
+        <td>Consultar <code>customEvents</code> mediante KQL para confirmar la recepción de <code>umux_survey_respond</code> y sus dimensiones personalizadas</td>
+        <td>3</td>
+        <td>Henry Esteban</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-102</td>
+        <td>Spike: Consolidación de Eventos Analíticos</td>
+        <td>TS-EXP-102b</td>
+        <td>Documentar evidencia frontend-web</td>
+        <td>Documentar en el report el flujo implementado, el payload JSON, la regla de aparición del modal y las capturas requeridas</td>
+        <td>2</td>
+        <td>Rafael Dominguez</td>
+        <td>To-Review</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101e</td>
+        <td>Instanciar TelemetryClient en Enrollments</td>
+        <td>Declarar <code>TelemetryClient</code> en el controlador de Enrollments y disparar <code>admin_enrollment_submit</code> tras registrar una matrícula, de forma independiente al canal (web o mobile)</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101f</td>
+        <td>Instanciar TelemetryClient en BillingAccounts</td>
+        <td>Disparar <code>admin_invoice_create</code> en el controlador de BillingAccounts al asignar un invoice a una cuenta de cobro</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101g</td>
+        <td>Instanciar TelemetryClient en Transactions</td>
+        <td>Disparar <code>admin_financy_entry_save</code> en el controlador de Transactions al registrar un movimiento financiero</td>
+        <td>2</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101h</td>
+        <td>Integrar Firebase Analytics en la app Android de administradores</td>
+        <td>Configurar Firebase y una clase <code>AnalyticsLogger</code> en demy-admin-mobile-application, replicando <code>admin_enrollment_submit</code> para estimar la proporción de matrículas originadas desde mobile</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>TS-EXP-101</td>
+        <td>Inyección de SDK Analítico</td>
+        <td>TS-EXP-101i</td>
+        <td>Integrar Firebase Analytics en la app Flutter de docentes</td>
+        <td>Configurar Firebase en demy-teacher-mobile-application y disparar <code>teacher_mobile_attendance_taken</code> desde el <code>classAttendanceBloc</code> al registrar asistencia</td>
+        <td>3</td>
+        <td>Diego Vilca</td>
+        <td>Done</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+La Landing Page fue implementada y desplegada durante la fase As-Is (ver [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)) y no presentó cambios funcionales en este ciclo experimental. Al priorizar el Question Backlog (ver 8.1.4) bajo el sistema de puntuación XDPD, el equipo identificó que el mayor riesgo para la continuidad del negocio no estaba en la conversión de visitantes de la landing, sino en la adopción operativa interna del panel administrativo (matrícula y facturación) y en la usabilidad percibida del MVP, por eso el To-Be Product Backlog (8.3.2) se concentró en la inyección de telemetría en el backend, la Web Application y las aplicaciones móviles, dejando los posibles cambios experimentales de la landing page como una pregunta pendiente, registrada para un próximo ciclo en el Re-scored and Re-prioritized Question Backlog (ver 8.4.2).
+
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
+
+En esta sección se presenta la evidencia de implementación de las historias `US-EXP-01`, `US-EXP-02` y `US-EXP-03` en la aplicación web de Demy. La mejora implementada consiste en una micro-encuesta UMUX-Lite que aparece al finalizar exitosamente flujos operativos clave del administrador y que envía el evento analítico `umux_survey_respond` directamente desde el frontend hacia Azure Application Insights.
+
+La implementación se realizó en el frontend Angular mediante el SDK `@microsoft/applicationinsights-web`. El envío de telemetría no pasa por la API backend, sino que se realiza directamente desde el navegador del usuario hacia el recurso de Application Insights configurado con `InstrumentationKey` e `IngestionEndpoint`.
+
+#### Historias implementadas
+
+| Historia | Alcance implementado | Flujo web instrumentado | Evento enviado |
+| :--- | :--- | :--- | :--- |
+| `US-EXP-01` | Micro-encuesta UMUX-Lite in-app con escala Likert de 1 a 5 para facilidad y utilidad. | Modal no intrusivo posterior a una operación exitosa. | `umux_survey_respond` |
+| `US-EXP-02` | Captura de feedback luego de una matrícula completada en el módulo Enrollment. | Creación exitosa de matrícula. | `umux_survey_respond` con `flow = enrollment_registration` |
+| `US-EXP-03` | Captura de feedback luego de operaciones financieras recurrentes. | Creación de cobro en Billing y transacción en Accounting. | `umux_survey_respond` con `flow = billing_invoice_create` o `accounting_transaction_create` |
+
+#### Componentes y archivos implementados
+
+| Archivo | Responsabilidad |
+| :--- | :--- |
+| `src/app/shared/infrastructure/analytics/application-insights.service.ts` | Inicializa Application Insights y centraliza el envío del evento `umux_survey_respond`. |
+| `src/app/shared/presentation/components/umux-survey-dialog/umux-survey-dialog.ts` | Componente reutilizable del modal UMUX-Lite, con control para mostrarlo solo una vez por flujo. |
+| `src/app/enrollments/application/store/enrollment.store.ts` | Activa el modal luego de crear una matrícula y toma el `academyId` desde la respuesta del backend. |
+| `src/app/billing/application/billing.store.ts` | Activa el modal luego de crear/asignar un cobro y toma el `academyId` desde la cuenta de cobro actualizada. |
+| `src/app/accounting/application/store/accounting.store.ts` | Activa el modal luego de registrar una nueva transacción contable. |
+| `src/environments/environment.ts` y `src/environments/environment.development.ts` | Configuran la connection string de Application Insights. |
+
+#### Configuración del SDK de Application Insights
+
+Para habilitar el envío directo de eventos desde Angular hacia Azure Application Insights, se agregó la dependencia oficial:
+
+```bash
+pnpm add @microsoft/applicationinsights-web
+```
+
+La connection string se configura en los archivos de entorno de Angular:
+
+```ts
+export const environment = {
+  production: false,
+  applicationInsightsConnectionString: 'InstrumentationKey=<instrumentation-key>;IngestionEndpoint=<ingestion-endpoint>',
+  platformProviderApiBaseUrl: 'http://localhost:8080',
+};
+```
+
+El servicio de analítica inicializa el SDK y envía el evento:
+
+```ts
+this.appInsights?.trackEvent({
+  name: 'umux_survey_respond',
+  properties: {
+    event: 'umux_survey_respond',
+    academy_id: academyId,
+    flow: telemetry.flow,
+    score_usability: telemetry.scoreUsability,
+    score_utility: telemetry.scoreUtility,
+  },
+});
+```
+
+#### Diseño del evento analítico
+
+El evento implementado mantiene un payload reducido para evitar ruido analítico y no enviar datos operativos innecesarios. Solo se registran las propiedades necesarias para analizar la percepción de facilidad de uso por academia y por flujo.
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+| Propiedad | Descripción |
+| :--- | :--- |
+| `event` | Nombre semántico del evento enviado a Azure. |
+| `academy_id` | Identificador de la academia asociada al usuario administrador. |
+| `flow` | Flujo donde se capturó la respuesta: `enrollment_registration`, `billing_invoice_create` o `accounting_transaction_create`. |
+| `score_usability` | Respuesta de 1 a 5 sobre qué tan fácil fue completar el flujo. |
+| `score_utility` | Respuesta de 1 a 5 sobre qué tan útil fue el flujo para el trabajo administrativo. |
+
+#### Regla de aparición del modal
+
+Para evitar una experiencia invasiva, el modal UMUX-Lite se muestra como máximo una vez por flujo en el navegador del usuario. Cuando el administrador responde u omite la encuesta, se registra una marca local:
+
+```txt
+umux_survey_answered_enrollment_registration = true
+umux_survey_answered_billing_invoice_create = true
+umux_survey_answered_accounting_transaction_create = true
+```
+
+De esta manera, la aplicación recolecta feedback de los flujos principales sin interrumpir repetidamente tareas operativas como el registro de transacciones.
+
+#### Formulario web de matrícula
+
+La siguiente captura muestra el formulario web del módulo Enrollment, donde el administrador selecciona estudiante, periodo académico, horario, monto y estado de pago para registrar una matrícula.
+
+![Formulario de matrícula en Demy](./assets/experiment-planning/frontend-web-evidence/enrollment-form.png)
+
+*Formulario de creación de matrícula en la aplicación web de Demy.*
+
+#### Formulario web de cobro
+
+La siguiente captura muestra el formulario del módulo Billing utilizado por el administrador para crear o asignar un cobro a la cuenta de un estudiante matriculado.
+
+![Formulario de cobro en Demy](./assets/experiment-planning/frontend-web-evidence/billing-invoice-form.png)
+
+*Formulario de creación de cobro en el módulo Billing.*
+
+#### Formulario web de transacción contable
+
+La siguiente captura muestra el formulario del módulo Accounting utilizado para registrar una nueva transacción financiera, ya sea ingreso o egreso.
+
+![Formulario de transacción contable en Demy](./assets/experiment-planning/frontend-web-evidence/accounting-transaction-form.png)
+
+*Formulario de creación de transacción en el módulo Accounting.*
+
+#### Pop-up modal UMUX-Lite
+
+Luego de completar exitosamente un flujo operativo, la aplicación muestra un pop-up modal no intrusivo con dos preguntas de escala 1 a 5: facilidad del flujo y utilidad para el trabajo administrativo.
+
+![Pop-up UMUX-Lite en Demy](./assets/experiment-planning/frontend-web-evidence/umux-survey-popup.png)
+
+*Micro-encuesta UMUX-Lite mostrada luego de una operación exitosa.*
+
+#### Payload JSON generado en consola
+
+Al enviar la respuesta de la encuesta, el frontend registra en consola el payload enviado a Application Insights. Este registro facilita validar que el evento se está generando con las propiedades esperadas.
+
+```json
+{
+  "event": "umux_survey_respond",
+  "academy_id": "1",
+  "flow": "enrollment_registration",
+  "score_usability": 4,
+  "score_utility": 5
+}
+```
+
+![Payload del evento UMUX-Lite en consola](./assets/experiment-planning/frontend-web-evidence/umux-console-payload.png)
+
+*Payload JSON del evento `umux_survey_respond` mostrado en la consola del navegador.*
+
+#### Recepción del evento en Azure Application Insights
+
+Para validar que la telemetría fue recibida correctamente por Azure, se consulta el recurso de Application Insights mediante Kusto Query Language (KQL):
+
+```kusto
+customEvents
+| where name == "umux_survey_respond"
+| project timestamp,
+          name,
+          academy_id = customDimensions.academy_id,
+          flow = customDimensions.flow,
+          score_usability = customDimensions.score_usability,
+          score_utility = customDimensions.score_utility
+| order by timestamp desc
+```
+
+![Evento UMUX-Lite en Azure Application Insights](./assets/experiment-planning/frontend-web-evidence/application-insights-umux-event.jpeg)
+
+*Evento `umux_survey_respond` registrado en Azure Application Insights.*
+
+#### Resultado de implementación
+
+La implementación permite recolectar evidencia cuantitativa inmediata sobre la facilidad y utilidad percibida por los administradores luego de completar operaciones core. Con esta telemetría, Demy puede evaluar la métrica `DBM-07: Puntuación de Facilidad de Uso` y contrastar la hipótesis de suficiencia del MVP con datos reales de uso.
+
+<hr class="page-break">
+
+
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+Con el despliegue de ambas aplicaciones móviles ya completado, se instrumentó Firebase Analytics como canal de telemetría nativo en cada una, complementando la instrumentación de Application Insights del backend y la web. A continuación se muestran capturas de evidencia de la implementación To-Be para ambas soluciones móviles.
+
+*Mobile MultiPlatform Teachers Application*
+
+Inicializamos Firebase en `main.dart`.  
+![Captura evidencia de inicialización de Firebase](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-2.png)
+
+Luego, en el `classAttendanceBloc`, se añadió el siguiente fragmento de código para disparar el evento `teacher_mobile_attendance_taken` al registrar la asistencia de una sesión de clase. Este evento sustenta `BLQ-02` (preferencia mobile de los docentes), evidenciando el uso real de la app nativa para una tarea operativa diaria.  
+![Captura de fragmento de código en classAttendanceBloc](./assets/to-be-mobile/multiplatform/to-be-mobile-teacher-1.png)
+
+*Mobile Android Admins Application*
+
+Se añadió la dependencia de Firebase.  
+![Captura de evidencia de la dependencia de Firebase](./assets/to-be-mobile/android/to-be-mobile-admin-5.png)
+
+Se creó una clase `AnalyticsLogger` que centraliza el disparo de eventos del SDK de Firebase.  
+![Captura de la clase AnalyticsLogger](./assets/to-be-mobile/android/to-be-mobile-admin-1.png)
+
+En los ViewModel de cada feature relacionada, se añadieron los fragmentos de código que disparan los eventos correspondientes al registro de una matricula, asignación de un invoice y el registro de una transacción. Este evento replica, en Firebase, el mismo evento que el backend dispara de forma independiente vía `TelemetryClient` (ver 8.3.3.5); el objetivo no es duplicar la medición de adopción (`DBM-01`, que ya es channel-agnostic desde el backend), sino estimar qué proporción de esas matrículas se originó específicamente desde el canal mobile.  
+![Captura de evento analítico 1](./assets/to-be-mobile/android/to-be-mobile-admin-2.png)  
+![Captura de evento analítico 2](./assets/to-be-mobile/android/to-be-mobile-admin-3.png)  
+![Captura de evento analítico 3](./assets/to-be-mobile/android/to-be-mobile-admin-4.png)
+
+Ahora, en la consola de Firebase, podemos ver los eventos recibidos en la sección de analíticas.  
+![Captura de Firebase Console Events](./assets/to-be-mobile/android/to-be-mobile-admin-6.png)
+
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
+
+A continuación se muestran capturas de evidencia de la implementación to be para nuestro backend  
+
+Primero se añadio la dependencia de application insights de azure en el archivo pom.xmml  
+![Captura de la depenencia de pom.xml](./assets/to-be-backend/to-be-backend-1.png)
+
+Luego en cada controlador correspondiente al dominio del evento analitico, se instancio el objeto TelemetryClient  
+![Captura de la instanciacion del objeto TelemetryClient](./assets/to-be-backend/to-be-backend-2.png)
+
+En el controlador de Enrollments, en la parte de registrar un enrollment (matrícula), se añadió el código correspondiente para disparar el evento `admin_enrollment_submit`.  
+![Captura del codigo para el envio del evento analitico del controlador Enrollments](./assets/to-be-backend/to-be-backend-3.png)
+
+En el controlador de BillingAccounts, en la parte de asignar un invoice, se añadió el código correspondiente para disparar el evento `admin_invoice_create`.
+![Captura del codigo para el envio del evento analitico del controlador BillingAccounts](./assets/to-be-backend/to-be-backend-4.png)
+
+En el controlador de Transactions, en la parte de registrar una transacción, se añadió el código correspondiente para disparar el evento `admin_financy_entry_save`.
+![Captura del codigo para el envio del evento analitico del controlador Transactions](./assets/to-be-backend/to-be-backend-5.png)
+
+Finalmente, en Application Insights de nuestro backend desplegado en Azure, mediante una consulta podemos observar todos los eventos recibidos, confirmando el registro de `admin_enrollment_submit`, `admin_invoice_create` y `admin_financy_entry_save`.  
+![Captura de la validacion del envio de eventos en los insights en aure](./assets/to-be-backend/to-be-backend-6.png)
+
+A diferencia del evento `umux_survey_respond` disparado desde el frontend (ver 8.3.3.3), estos tres eventos se generan del lado del servidor, en el mismo momento en que la transacción se persiste en base de datos, sin depender de que el usuario responda ninguna encuesta ni del canal (web o mobile) utilizado. Por ello, son la fuente autoritativa para calcular `DBM-01` (Tasa de Adopción Administrativa) y `DBM-03` (Tasa de Retención Operativa), mientras que la app Android de administradores replica adicionalmente `admin_enrollment_submit` hacia Firebase Analytics (ver 8.3.3.4) únicamente para estimar la proporción de matrículas originadas desde el canal mobile, no para recalcular la métrica en sí.
+
+#### 8.3.3.6. Team Collaboration Insights
+
+En esta sección se presenta los insights de cada solución actualizada con la implementación de las to be user stories
+
+*Insights de la web application*  
+![Captura de Insights de la web application](./assets/to-be-insights/to-be-insights-web.png)
+
+*Insights del backend*  
+![Captura de insights del backend](./assets/to-be-insights/to-be-insights-backend.png)
+
+
+*Insights de la solución móvil para administradores*  
+![Captura de insights de la aplicacion movil nativa en android](./assets/to-be-insights/to-be-insights-mobile-android.png)
+
+*Insights de la solución móvil para profesores*  
+![Captura de insights de la aplicacion movil multiplataforma](./assets/to-be-insights/to-be-insights-mobile-multiplatform.png)
+
+
+### 8.3.4. To-Be Validation Interviews 
+
+#### 8.3.4.1. Diseño de Entrevistas.
+
+A diferencia del diseño de entrevistas de Needfinding, estas entrevistas no buscan explorar el problema desde cero, sino **validar** las hipótesis de negocio y las métricas de dominio. Por ello, la telemetría en sí misma (Application Insights, Firebase Analytics) no se le pregunta al entrevistado, ya que es invisible para él, en su lugar, se diseña una dinámica de **tarea guiada sobre el producto real desplegado, seguida de preguntas de reacción**. La única excepción es el componente UMUX-Lite (`US-EXP-01`), ya que es la única pieza de instrumentación que sí es visible para el usuario administrativo, por lo que se incluye una meta-pregunta específica sobre esa interacción.
+
+**Segmento 1: Administrativos de academias**
+
+Tareas a ejecutar en vivo sobre la Web Application desplegada (`demy-admin-web`):
+1. Registrar la matrícula de un alumno nuevo en el módulo Enrollment.
+2. Registrar una cuenta de cobro en el módulo Finance.
+
+| # | Pregunta de reacción | Elemento que valida |
+|---|---|---|
+| 1 | Ahora que usaste matrícula y facturación juntos, ¿sientes que esto es suficiente para dejar tu Excel/cuaderno por completo? ¿Por qué sí o por qué no? | Hipótesis 1 / DBM-08 (Suficiencia del MVP) |
+| 2 | ¿Qué tan probable es que uses Demy todos los días para tus matrículas en vez de tus métodos actuales? ¿Qué te haría dudar? | Hipótesis 2 / DBM-01 (Adopción Administrativa) |
+| 3 | ¿Te sentirías cómodo registrando cuentas de cobro así cada semana, o se siente una carga extra? | DBM-03 (Retención Operativa en Finance) |
+| 4 | ¿Hubo algún momento en que quisiste salir del formulario a medias, o te confundiste con algún campo? | Fricción cualitativa (Evidencia Secundaria, 8.2.3) |
+| 5 | Al terminar el registro te apareció una ventana preguntando qué tan fácil fue la tarea. ¿La notaste? ¿Te pareció molesta o razonable? ¿Respondiste con sinceridad o solo por salir del paso? | DBM-07 — confiabilidad del instrumento de medición UMUX-Lite |
+
+**Segmento 2: Docentes de academias**
+
+Tareas a ejecutar en vivo sobre la aplicación móvil Flutter desplegada (`demy-teacher-mobile-application`):
+1. Registrar la asistencia de una sesión de clase desde el celular.
+2. Revisar el horario semanal desde la app.
+
+| # | Pregunta de reacción | Elemento que valida |
+|---|---|---|
+| 1 | Ahora que la app está instalada en tu propio celular, ¿la usarías en el día a día en vez de anotar en papel o en el grupo de WhatsApp del colegio? | BLQ-02 (Preferencia mobile de los docentes) |
+| 2 | ¿En qué casos seguirías prefiriendo el WhatsApp del grupo de profesores en vez de la app, por ejemplo para avisar una reprogramación? | BLQ-05 (Disposición a reemplazar WhatsApp) |
+| 3 | ¿Hubo alguna pantalla o paso donde te sentiste perdido o no sabías qué botón tocar? | Usabilidad general (cualitativo) |
+| 4 | Si la academia te pidiera usar esta app desde mañana todos los días, ¿qué te frenaría? | Adopción sostenida |
+
+Para el Segmento 2 no se incluye una meta-pregunta sobre encuestas in-app, dado que el componente UMUX-Lite (`US-EXP-01`) solo fue implementado en la Web Application administrativa y no en la aplicación móvil de docentes.
+
+#### 8.3.4.2. Registro de Entrevistas.
+
+**Segmento 1: Administrativos de academias**
+
+##### Segmento: Administradora - Entrevistado 1
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                          |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | Fiorella Vilca                                                                                                                                                                                                                                                                                                                                   |
+| **Edad** | 24 años                                                                                                                                                                                                                                                                                                                                          |
+| **Sexo** | Femenino                                                                                                                                                                                                                                                                                                                                         |
+| **Distrito** | Los Olivos                                                                                                                                                                                                                                                                                                                                       |
+| **Ocupación** | Administradora de Academia Preuniversitaria                                                                                                                                                                                                                                                                                                      |
+| **Fecha de entrevista** | 05 de julio de 2026                                                                                                                                                                                                                                                                                                                              |
+| **Timing** | 00:00 - 07:18                                                                                                                                                                                                                                                                                                                                    |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQAVCSLY5jPVToGSqA-M3GkeAZNQZRx4tTWUm64jJg44R7U?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qpX5Zo) |
+| **Captura** | ![Captura de video](./assets/interviews/Entrevista-01.png)                                                                                                                                                                                                                                                                                       |
+| **Resumen** |  Durante la fase de validación de Demy, obtuvimos un testimonio clave de un practicante de administración que confirmó el impacto positivo de nuestra solución en la eficiencia operativa. El usuario destacó que la integración total de funciones en una sola plataforma web elimina la fragmentación de datos en múltiples archivos de Excel, aliviando significativamente la carga administrativa en comparación con el llenado de registros manuales en papel. Asimismo, validamos que la interfaz es intuitiva y fácil de aprender para nuevos usuarios, quienes no reportaron fricciones al completar los formularios, lo que refuerza nuestra hipótesis de una alta probabilidad de adopción por parte del personal administrativo de las academias.                                                                                                                                                                                                                                                                                                                                                  |
+
+##### Segmento: Administradora - Entrevistado 2
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                          |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | Allison Rivera                                                                                                                                                                                                                                                                                                                                   |
+| **Edad** | 22 años                                                                                                                                                                                                                                                                                                                                          |
+| **Sexo** | Femenino                                                                                                                                                                                                                                                                                                                                         |
+| **Distrito** | Independencia                                                                                                                                                                                                                                                                                                                                    |
+| **Ocupación** | Administradora de Academia Preuniversitaria                                                                                                                                                                                                                                                                                                      |
+| **Fecha de entrevista** | 05 de julio de 2026                                                                                                                                                                                                                                                                                                                              |
+| **Timing** | 00:00 - 04:20                                                                                                                                                                                                                                                                                                                                    |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQB8acWFoFnMTJkfStC5giWNAYUpHZu2ztcYj2vC7MtV7X0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=g6ZA6f) |
+| **Captura** | ![Captura de video](./assets/interviews/Entrevista-02.png)                                                                                                                                                                                                                                                                                       |
+| **Resumen** |  La entrevista con el practicante de administración con enfoque en eficiencia operativa confirmó que la integración de los módulos de Enrollment y Finance en Demy resuelve directamente el problema de la duplicidad de datos al eliminar la necesidad de trabajar con múltiples archivos, lo que se traduce en un ahorro considerable de tiempo. El usuario calificó la experiencia como cómoda y altamente automatizada en comparación con sus procesos actuales, destacando que el flujo de trabajo a través del formulario es intuitivo y libre de fricciones, incluso para un perfil en etapa de aprendizaje. Si bien mostró una alta probabilidad de adopción por la mejora en el orden diario que ofrece la plataforma, el usuario identificó la capacidad de exportar reportes al final del mes como una funcionalidad crítica necesaria para reemplazar por completo sus herramientas previas, mostrando una actitud positiva y profesional ante los mecanismos de medición de usabilidad aplicados por el equipo.                                                                                                                                                                                                                                                                                                                                                |
+
+##### Segmento: Administradora - Entrevistado 3
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                          |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | Laura Campos                                                                                                                                                                                                                                                                                                                                     |
+| **Edad** | 26 años                                                                                                                                                                                                                                                                                                                                          |
+| **Sexo** | Femenino                                                                                                                                                                                                                                                                                                                                         |
+| **Distrito** | Los Olivos                                                                                                                                                                                                                                                                                                                                       |
+| **Ocupación** | Administradora de Academia Preuniversitaria                                                                                                                                                                                                                                                                                                      |
+| **Fecha de entrevista** | 06 de julio de 2026                                                                                                                                                                                                                                                                                                                              |
+| **Timing** | 00:00 - 04:26                                                                                                                                                                                                                                                                                                                                    |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQD16CEYsV4UT5alxnGIoWOsASxtr0tYdYbH36e5h5QQDMQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=mqyulT) |
+| **Captura** | ![Captura de video](./assets/interviews/Entrevista-03.png)                                                                                                                                                                                                                                                                                       |
+| **Resumen** | La entrevista con el administrador de dos años de experiencia reveló que, aunque reconoce la flexibilidad de Excel, valora la centralización de Demy por el incremento en la seguridad y el control que proporciona, señalando que la trazabilidad es un factor clave para no retornar a los métodos manuales, siempre que el sistema demuestre estabilidad. El usuario percibió el flujo de trabajo como una mejora operativa y no como una carga adicional, destacando que, a pesar de encontrar los formularios estándar y funcionales, su principal interés radica en la gestión de casos complejos —como anulaciones y errores— y en la viabilidad técnica para migrar su data histórica sin contratiempos. Finalmente, el administrador validó positivamente la eficiencia del sistema y mostró una actitud colaborativa hacia los procesos de medición de usabilidad, sugiriendo que la herramienta tiene una base sólida aunque requiere ajustes continuos para adaptarse perfectamente al entorno crítico de las jornadas de alta demanda, como la época de matrículas.                                                                                                                                                                                                                                                                                                                                                 |
+
+
+
+**Segmento 2: Docentes de academias**
+
+##### Segmento: Profesor - Entrevistado 1
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|---|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | María Fernanda Reyes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Edad** | 27 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Sexo** | Femenino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Distrito** | Jesús María                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Ocupación** | Profesora de academia (Inglés)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Fecha de entrevista** | 01 de julio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Timing** | 00:00 - 04:13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQATbU1F7HGNTqK7NotIZ53kAfi7TVLLKPaANgiiWFAErbI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=R5eCAD)                                                                                                                                                                                                                                                                                                                          |
+| **Captura** | ![Captura de video](./assets/interviews/Mafer.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Resumen** | María Fernanda ("Mafer") Reyes menciona que trabaja casi todo desde el celular, por lo que una app como Demy le resulta natural para su día a día. Registró la asistencia de su clase y revisó su horario semanal sin dificultad, destacando que el flujo es rápido y que los botones dicen claramente lo que hacen. Considera que usaría la app a diario en vez del papel o el WhatsApp, dejando este último solo para conversaciones informales, ya que para la asistencia, el horario y las reprogramaciones prefiere que todo quede registrado en la plataforma. Afirma que casi nada la frenaría para adoptarla desde mañana y que la recomendaría a otros docentes. |
+
+##### Segmento: Profesor - Entrevistado 2
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | Luciano Paredes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Edad** | 41 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Sexo** | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Distrito** | San Miguel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Ocupación** | Profesor de academia (Matemáticas)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Fecha de entrevista** | 02 de julio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Timing** | 00:00 - 03:57                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQBkgHAVrO1zRZOXMvTePGL7ARo5DLhy8yW08Fbjwfu-3Jc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=anaH2d)                                                                                                                                                                                                                                                                                                                                          |
+| **Captura** | ![Captura de video](./assets/interviews/Luciano.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Resumen** | Luciano, con un perfil más tradicional acostumbrado a anotar en papel, reconoce que la app es claramente más rápida y ordenada, y que evita traspapelar las listas de asistencia. Completó las tareas de registro de asistencia y revisión del horario semanal sin sentirse perdido en ninguna pantalla, valorando que la aplicación esté enfocada solo en lo que un docente realmente necesita. Indica que reservaría el WhatsApp para coordinaciones informales, pero que para avisar una reprogramación prefiere la app por dejar constancia formal. Considera que, con una breve explicación inicial, la usaría a diario sin problema y que le pareció más simple de lo que esperaba. |
+
+##### Segmento: Profesor - Entrevistado 3
+
+| Atributo | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|---|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Nombre** | Sebastián Núñez                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Edad** | 33 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Sexo** | Masculino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Distrito** | Los Olivos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Ocupación** | Profesor de academia (Ciencias)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Fecha de entrevista** | 03 de julio de 2026                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Timing** | 00:00 - 03:13                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Video** | [Enlace del video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202121579_upc_edu_pe/IQC1x7Zu-akuSbtum8WxR4WhAd9mCS_Ki4cSGoarZRK-Fxk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=cYWueu)                                                                                                                                                                                                                                                                                            |
+| **Captura** | ![Captura de video](./assets/interviews/Sebastian.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Resumen** | Sebastián valora que Demy centralice la asistencia y el horario en el celular, simplificando su rutina y ahorrándole tiempo entre clases. Registró la asistencia y revisó su horario semanal con facilidad, e incluso probó la reprogramación de una sesión, resaltando que se entiende a la primera y que todo está donde uno espera encontrarlo. Señala que solo usaría el WhatsApp para charlas informales, mientras que para lo operativo —y en especial las reprogramaciones— prefiere la app por dejar constancia. Manifiesta que nada lo frenaría para adoptarla desde mañana y que pediría funciones adicionales solo más adelante. |
+
+<hr class="page-break">
+
+## 8.4. Experiment Aftermath & Analysis
+### 8.4.1. Analysis and Interpretation of Results
+
+El piloto de instrumentación se ejecutó durante una ventana corta de **3 días** (2026-06-28 a 2026-07-05), con una academia y un conjunto reducido de usuarios administrativos probando el flujo completo de Demy en producción (Azure). A continuación se contrastan los datos reales recolectados contra los umbrales definidos en 8.2.2, siguiendo el principio de que una hipótesis **se prueba, no se valida como verdadera**: cuando la evidencia es insuficiente, se reporta como tal en lugar de forzar una conclusión.
+
+**DBM-01 — Tasa de Adopción Administrativa (Hipótesis 2)**
+
+La consulta KQL sobre `admin_enrollment_submit` registró **3 matrículas digitales** durante los 3 días del piloto.
+
+![Resultado KQL de admin_enrollment_submit en Application Insights](./assets/experiment-aftermath/dbm-01-kql.png)
+
+*Resultado de la consulta KQL para `admin_enrollment_submit` en Application Insights.*
+
+No se cuenta todavía con el total de matrículas reales de la academia en ese mismo periodo (incluyendo las registradas de forma manual), dato necesario para calcular la tasa definida en `DBM-01` (Digitales / Total real × 100). Por lo tanto, **no es posible aún rechazar ni aceptar H2** con este corte: solo puede reportarse el volumen absoluto observado. Adicionalmente, la ventana de la hipótesis (4 semanas) es muy superior a los 3 días disponibles, por lo que este resultado debe interpretarse como una primera señal de uso real, no como una medición concluyente de adopción.
+
+**DBM-03 — Tasa de Retención Operativa**
+
+La consulta KQL sobre `admin_invoice_create` y `admin_financy_entry_save` mostró **2 eventos** en la semana del 2026-06-28 y **1 evento** en la semana del 2026-07-05.
+
+![Resultado KQL de eventos de Finance agrupados por semana en Application Insights](./assets/experiment-aftermath/dbm-03-kql.png)
+
+*Resultado de la consulta KQL de retención semanal en Application Insights.*
+
+Con una sola academia piloto y apenas 2 semanas observadas (frente a las 4 que exige la métrica), no es metodológicamente correcto calcular un porcentaje de retención: se necesitaría un universo de varias academias iniciando en la Semana 1 para poder decir qué proporción se mantiene activa en la Semana 4. Este resultado se reporta como **evidencia preliminar insuficiente**, y queda como una acción concreta para el Re-scored Question Backlog (8.4.2): extender el piloto a más academias y a la ventana completa de 4 semanas.
+
+**DBM-07 — Puntuación de Facilidad de Uso (UMUX-Lite)**
+
+La consulta KQL sobre `umux_survey_respond` arrojó, sobre **9 respuestas**, un promedio de **4.56/5** en facilidad de uso (`score_usability`) y **4.89/5** en utilidad (`score_utility`).
+
+![Resultado KQL del promedio UMUX-Lite en Application Insights](./assets/experiment-aftermath/dbm-07-kql.png)
+
+*Resultado de la consulta KQL de promedios UMUX-Lite en Application Insights.*
+
+Aplicando la fórmula definida en `DBM-07` (suma de promedios / puntaje máximo posible × 100): (4.56 + 4.89) / 10 × 100 ≈ **94.4% de percepción de usabilidad positiva**, muy por encima del umbral de 75% definido para esta métrica. **Los datos son consistentes con una percepción positiva de facilidad de uso**, aunque con una muestra todavía pequeña (N=9), por lo que el resultado debe leerse como una tendencia favorable a confirmar con más respuestas durante el resto del piloto, no como un resultado estadísticamente definitivo.
+
+**Señal complementaria — Canal Mobile (Firebase, Android Admin)**
+
+En Firebase Analytics, filtrando por dispositivo, se registró **1 evento** `admin_invoice_create` disparado desde un dispositivo Tablet (5.56% del total de eventos observados en ese corte).
+
+![Evento admin_invoice_create registrado en Firebase desde dispositivo Tablet](./assets/experiment-aftermath/mobile-android-firebase.png)
+
+*Evento capturado en Firebase Analytics desde la app Android de administradores (dispositivo Tablet).*
+
+Con un solo evento observado, no se puede estimar todavía qué proporción de matrículas o cobros se origina desde el canal mobile; se mantiene como una señal a monitorear, no como un resultado concluyente.
+
+**Señal complementaria — App Móvil de Docentes (Firebase, Flutter)**
+
+Al cierre de este corte, el evento `teacher_mobile_attendance_taken` **aún no se refleja** en Firebase Console.
+
+![Estado del panel de Firebase Analytics para la app de docentes, sin eventos aún registrados](./assets/experiment-aftermath/mobile-teacher-firebase.png)
+
+*Estado del panel de Firebase Analytics para la app de docentes al momento de este corte.*
+
+Esto puede deberse a la latencia normal de agregación de Firebase Analytics (hasta 24-48 horas para eventos nuevos) o a que el flujo de registro de asistencia aún no fue ejecutado por un usuario piloto durante la ventana observada. Se recomienda validar con **Firebase DebugView** (que muestra eventos en tiempo real) antes de la sustentación, para confirmar si el evento se está disparando correctamente.
+
+**DBM-08 — Tasa de Suficiencia Percibida del MVP (Hipótesis 1)**
+
+De las entrevistas de validación registradas en 8.3.4.2, se entrevistó a **6 decisores** (directores/coordinadores de academias medianas) tras la demostración del MVP; **4 de ellos (66.7%)** respondieron afirmativamente a la pregunta de suficiencia, superando el umbral de **60%** definido para esta métrica.
+
+**Los datos son consistentes con H1**: la evidencia no permite rechazar la hipótesis de que el conjunto de funcionalidades del MVP (Matrícula, Facturación, Accounting) resulta suficiente para que un director de academia mediana considere migrar desde Excel. Con todo, N=6 es una muestra pequeña, por lo que el resultado debe leerse como una señal inicial favorable y no como una validación estadística robusta.
+
+**Limitaciones del corte actual:** los resultados aquí presentados provienen de un piloto de solo 3 días con una academia y una muestra reducida de usuarios y entrevistados, por lo que las métricas ligadas a ventanas de 4 semanas (`DBM-01`, `DBM-03`) deben interpretarse como señales tempranas y no como conclusiones definitivas. `DBM-07` y `DBM-08` son las que cuentan con evidencia suficientemente favorable para un pronunciamiento preliminar dentro del alcance de esta entrega. Ampliar la duración del piloto y el tamaño de la muestra queda registrado como una acción concreta para la siguiente iteración en el Re-scored Question Backlog (8.4.2), en lugar de ser un requisito de esta entrega.
+
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+Con los resultados de 8.4.1, el Question Backlog de 8.1.4 se actualiza en dos frentes: (1) se re-anota la **Confianza** e **Interés** de las preguntas que ya fueron experimentadas, ya que son los únicos criterios que cambian directamente por la evidencia recolectada (Riesgo e Impacto son propios del negocio y no varían solo porque el equipo aprendió algo nuevo); y (2) se incorporan preguntas nuevas que surgieron de los propios resultados y de decisiones de alcance tomadas durante la experimentación.
+
+**Re-scoring de preguntas ya experimentadas**
+
+| ID | Pregunta | Confianza (antes → ahora) | Interés (antes → ahora) | Total (antes → ahora) | Justificación |
+|---|---|:---:|:---:|:---:|---|
+| `BLQ-06` | ¿El MVP es suficiente para que una academia migre desde Excel? | 4 → 2 | 5 → 3 | 19 → 15 | `DBM-08` mostró 66.7% (4/6) de respuestas afirmativas, superando el umbral de 60%. Ya no somos "muy inseguros" sobre esta creencia, y al tener una primera respuesta favorable, baja la urgencia de re-investigarla de inmediato (aunque N=6 sigue siendo chico, por lo que la Confianza no baja al mínimo). |
+| `BLQ-01` | ¿Los administrativos adoptarán Demy en el primer mes de uso? | 3 → 3 | 5 → 5 | 18 → 18 | El corte de `DBM-01` (3 matrículas en 3 días) fue insuficiente para calcular la tasa de adopción real (falta el total de matrículas manuales del mismo periodo como denominador), por lo que la incertidumbre sobre esta creencia **no cambió**. La pregunta se mantiene con la misma prioridad y da origen a `EXQ-09`. |
+
+**Preguntas nuevas incorporadas al backlog**
+
+| ID | Tipo | Pregunta | Origen | Confianza | Riesgo | Impacto | Interés | **Total** |
+|---|---|---|---|:---:|:---:|:---:|:---:|:---:|
+| `EXQ-09` | Exploratory | ¿Qué tasa de adopción y retención real se alcanza al extender el piloto a la ventana completa de 4 semanas y a más academias? | Continuación directa de `BLQ-01` y `DBM-03`, cuyo corte de 3 días y 1 academia resultó insuficiente (8.4.1). | 4 | 5 | 5 | 5 | **19** |
+| `BLQ-08` | Belief-led | ¿El botón de llamado a la acción ("Solicitar Demo") de la Landing Page mejora la conversión de visitantes a leads? | Pregunta que quedó parqueada en 8.3.3.2 al priorizar la instrumentación operativa por sobre la landing en este ciclo. | 5 | 3 | 4 | 3 | **15** |
+| `EXQ-10` | Exploratory | ¿Qué proporción de matrículas y cobros se origina desde el canal mobile frente al canal web? | Surge del evento `admin_invoice_create` observado desde un dispositivo Tablet en Firebase (8.3.3.4 / 8.4.1), aún insuficiente (N=1) para estimar una proporción. | 4 | 2 | 3 | 3 | **12** |
+
+**Broad Backlog Re-priorizado**
+
+| Pos. | ID | Pregunta resumida | Tipo | Confianza | Riesgo | Impacto | Interés | **Total** |
+|------|----|-------------------|------|:---------:|:------:|:-------:|:-------:|:---------:|
+| 1 | `EXQ-09` | ¿Qué adopción/retención real se alcanza al extender el piloto a 4 semanas y más academias? | Exploratory | 4 | 5 | 5 | 5 | **19** |
+| 2 | `BLQ-01` | ¿Los administrativos adoptarán Demy en el primer mes de uso? | Belief-led | 3 | 5 | 5 | 5 | **18** |
+| 3 | `BLQ-03` | ¿Las alertas automáticas reducirán la morosidad en un 40%? | Belief-led | 4 | 4 | 5 | 5 | **18** |
+| 4 | `EXQ-02` | ¿Cuánto pagaría un director de academia por Demy? | Exploratory | 5 | 5 | 4 | 4 | **18** |
+| 5 | `BLQ-06` | ¿El MVP es suficiente para que una academia migre desde Excel? | Belief-led | 2 | 5 | 5 | 3 | **15** |
+| 6 | `BLQ-02` | ¿Los docentes usarán principalmente el smartphone con Demy? | Belief-led | 2 | 4 | 5 | 4 | **15** |
+| 7 | `BLQ-05` | ¿Los docentes reemplazarán WhatsApp por Demy en reprogramaciones? | Belief-led | 3 | 4 | 4 | 4 | **15** |
+| 8 | `EXQ-07` | ¿Qué herramientas compiten con Demy y por qué no se adoptaron? | Exploratory | 4 | 4 | 4 | 3 | **15** |
+| 9 | `EXQ-06` | ¿Cuántas horas semanales pierde un administrativo en tareas manuales? | Exploratory | 4 | 3 | 5 | 3 | **15** |
+| 10 | `BLQ-08` | ¿El CTA "Solicitar Demo" de la Landing Page mejora la conversión de visitantes a leads? | Belief-led | 5 | 3 | 4 | 3 | **15** |
+| 11 | `BLQ-04` | ¿Demy mejorará la percepción de la academia ante los padres de familia? | Belief-led | 3 | 3 | 4 | 4 | **14** |
+| 12 | `EXQ-03` | ¿Con qué frecuencia ocurren reprogramaciones de clases? | Exploratory | 4 | 3 | 4 | 3 | **14** |
+| 13 | `EXQ-08` | ¿Es viable integrar PagoEfectivo técnica y legalmente? | Exploratory | 4 | 4 | 3 | 3 | **14** |
+| 14 | `BLQ-07` | ¿El 25% de academias migrará a planes superiores en 6 meses? | Belief-led | 3 | 3 | 4 | 3 | **13** |
+| 15 | `EXQ-01` | ¿Cómo varía la adopción digital del personal fuera de Lima? | Exploratory | 3 | 3 | 3 | 4 | **13** |
+| 16 | `EXQ-04` | ¿Cómo gestionan la asistencia las academias con múltiples sedes? | Exploratory | 4 | 3 | 3 | 3 | **13** |
+| 17 | `EXQ-05` | ¿Qué canal de comunicación prefieren los padres de familia? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+| 18 | `EXQ-10` | ¿Qué proporción de matrículas y cobros se origina desde el canal mobile frente al canal web? | Exploratory | 4 | 2 | 3 | 3 | **12** |
+
+`EXQ-09` toma el primer lugar del backlog re-priorizado: es la continuación directa del experimento de adopción/retención que quedó inconcluso por la duración limitada del piloto, y concentra el mayor Riesgo e Impacto del negocio. `BLQ-06`, en cambio, desciende de la posición 1 a la 5, reflejando que ya cuenta con una primera respuesta favorable y ya no es la incertidumbre más urgente del equipo.
+
+
+<hr class="page-break">
+
+## 8.5. Continuous Learning
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
+
+Tras consolidar los resultados de 8.4.1, el equipo realizó una sesión de **Shareback**: una reunión donde se comparten los hallazgos del experimento con todo el equipo y se toma, por cada hipótesis o métrica, una decisión explícita de **Persevere** (continuar sin cambios), **Pivot** (cambiar el enfoque) o **Kill** (descartar la idea). Esta sesión cierra el ciclo de aprendizaje continuo y alimenta directamente al Question Backlog re-priorizado (8.4.2).
+
+<div style="overflow-x:auto;">
+  <table border="1" cellspacing="0" cellpadding="6" width="100%">
+    <tbody>
+      <tr style="background-color: #626e7a; color: white;">
+        <th style="padding: 8px; width: 30%;">Sesión</th>
+        <td style="padding: 8px;"><b>Shareback Session — Ciclo Experimental Sprint 4</b></td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Date</th>
+        <td style="padding: 8px;">2026-07-05</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Time</th>
+        <td style="padding: 8px;">09:00 PM</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Location</th>
+        <td style="padding: 8px;">Reunión virtual vía Discord</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Prepared By</th>
+        <td style="padding: 8px;">Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #fafafa;">
+        <th style="padding: 8px; text-align: left;">Attendees</th>
+        <td style="padding: 8px;">Crispin Ramos, Daniel Franco / Dominguez Vargas, Rafael Alexander / Esteban Roman, Henry Kalet / Julca Cruz, Renso Anthony / Vilca Saboya, Diego Alejandro</td>
+      </tr>
+      <tr style="background-color: #ffffff;">
+        <th style="padding: 8px; text-align: left;">Agenda</th>
+        <td style="padding: 8px;">1) Repaso de los resultados de Application Insights, Firebase Analytics y entrevistas de validación (8.4.1). 2) Discusión abierta de hallazgos y sorpresas. 3) Decisión Persevere/Pivot/Kill por hipótesis y métrica. 4) Traslado de conclusiones al Question Backlog re-priorizado (8.4.2).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Decisiones tomadas**
+
+| Hipótesis / Métrica | Resultado observado | Decisión | Justificación |
+|---|---|:---:|---|
+| H1 — Suficiencia del MVP (`DBM-08`) | 66.7% de respuestas afirmativas (4/6), sobre el umbral de 60% | **Persevere** | El conjunto actual de módulos (Enrollment, Billing, Accounting) se percibe suficiente; no se justifica agregar features nuevas antes de ampliar la muestra. |
+| H2 — Adopción Administrativa (`DBM-01`) | 3 matrículas digitales en 3 días, sin denominador para calcular la tasa | **Persevere, con extensión de medición** | No hay evidencia para pivotar ni descartar; se necesita más tiempo y más academias antes de decidir (ver `EXQ-09`). |
+| Retención Operativa (`DBM-03`) | 2 eventos en semana del 06-28, 1 evento en semana del 07-05, una sola academia | **Persevere, con extensión de medición** | Misma razón que `DBM-01`: la ventana de 4 semanas definida en la métrica no se cumplió todavía. |
+| Facilidad de Uso — UMUX-Lite (`DBM-07`) | 94.4% de percepción positiva, sobre el umbral de 75% | **Persevere** | El diseño del modal UMUX-Lite y su regla de aparición (una vez por flujo) funcionan según lo esperado; no se identificaron cambios de UX urgentes. |
+| Canal Mobile Admin (`EXQ-10`) | 1 evento `admin_invoice_create` observado desde Tablet (Firebase) | **Persevere, en observación** | Aún no hay evidencia suficiente para invertir en desarrollo mobile-first para administradores; se mantiene como pregunta exploratoria abierta. |
+| Landing Page CTA (`BLQ-08`) | Sin experimento ejecutado este ciclo | **Diferir** | Se prioriza conscientemente para un próximo ciclo, según lo justificado en 8.3.3.2. |
+
+**Aprendizaje principal de la sesión:** ninguna hipótesis fue descartada (Kill) en este ciclo; el equipo decidió **perseverar** con el producto y el diseño de instrumentación actuales, y concentrar el siguiente ciclo en **ampliar la escala del piloto** (más academias, ventana completa de 4 semanas) en lugar de introducir cambios de producto, ya que la limitación identificada es de **tamaño de muestra**, no de **diseño de la solución**.
+
+<hr class="page-break">
+
+## 8.6. To-Be Software Platform Pre-launch
+### 8.6.1. About-the-Product Intro Video
+
+En esta sección se presenta el video about the product Introduction de las soluciones desplegadas, donde se explica el flujo de la aplicación y las soluciones que ofrecemos frente a la problematica que soluciona Demy
+
+![Video about the product](./assets/images/photos/About-the-product-introduction.png)
+
+* [Video de SharePoint](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312318_upc_edu_pe/IQDqrupfqm7uRLCxzJX2a3HOAe7h-upgslSK_ztDgS028eU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=LmunuP)
+
+
+<hr class="page-break">
+
+
+# Matriz de Evaluación Etica y de Impacto
+
+La siguiente matriz permite analizar las responsabilidades éticas y profesionales asociadas a Demy como solución de ingeniería de software para academias educativas. El objetivo no es evaluar únicamente si la plataforma cumple con los requerimientos funcionales, sino también reconocer sus posibles consecuencias sobre estudiantes, docentes, administradores, familias y academias. De esta manera, el equipo evita una visión puramente instrumental del desarrollo de software y evidencia un juicio crítico sobre el impacto social, económico, cultural, ambiental y profesional de la solución.
+
+| Dimensión / Criterio a Evaluar | Identificación de Riesgos e Impactos (Positivos y Negativos) | Evaluación del Impacto (¿A quién afecta y cuál es la magnitud?) | Estrategias de Mitigación y Acciones de Diseño |
+|---|---|---|---|
+| **1. Salud Pública y Seguridad** | **Negativo:** La dependencia excesiva del sistema para asistencia, pagos y horarios puede generar estrés operativo si la plataforma falla en momentos críticos. Además, un error en el registro de asistencia podría afectar la seguridad de estudiantes menores de edad si se interpreta que asistieron o faltaron incorrectamente.<br><br>**Positivo:** Centraliza información operativa y reduce pérdida de registros físicos, mejorando el seguimiento de asistencia y comunicación administrativa. | **Afectados:** Estudiantes, padres de familia, docentes y administrativos. La magnitud es alta cuando se trata de asistencia, trazabilidad de clases o comunicación de incidencias, porque la información puede influir en decisiones de cuidado y supervisión. | Implementar validaciones antes de guardar asistencia, historial de cambios, confirmaciones visuales y mensajes claros ante errores. Mantener copias de respaldo, disponibilidad mínima del servicio y mecanismos de exportación para que la academia no dependa exclusivamente de la plataforma en casos de contingencia. |
+| **2. Inclusión y Accesibilidad** | **Negativo:** Algunas academias, docentes o administrativos pueden tener equipos antiguos, conectividad limitada o baja familiaridad digital. Una interfaz compleja podría excluir a usuarios con discapacidad visual, adultos mayores o personas con menor experiencia tecnológica.<br><br>**Positivo:** La digitalización puede facilitar el acceso rápido a información académica y administrativa desde web y mobile. | **Afectados:** Administradores, docentes y academias pequeñas con menor presupuesto tecnológico. La magnitud es media-alta, porque la adopción del sistema depende de que usuarios no técnicos puedan completar tareas frecuentes sin fricción. | Diseñar interfaces simples, responsivas y con contraste adecuado. Mantener compatibilidad con dispositivos de gama media o baja, textos claros, formularios guiados, mensajes de error comprensibles y soporte para navegación accesible. Considerar capacitación inicial y documentación breve para usuarios administrativos y docentes. |
+| **3. Impacto Social y Cultural** | **Negativo:** La automatización puede modificar prácticas existentes en academias que funcionan con comunicación directa, cuadernos, Excel o WhatsApp. Si se impone sin acompañamiento, puede generar resistencia, sensación de vigilancia o pérdida de autonomía en docentes y administrativos.<br><br>**Positivo:** Promueve mayor orden institucional, transparencia y trazabilidad en procesos académicos y financieros. | **Afectados:** Comunidad educativa de la academia: directores, administrativos, docentes, estudiantes y familias. La magnitud es media, porque el sistema transforma rutinas de trabajo y relaciones de confianza dentro de organizaciones educativas pequeñas. | Introducir Demy como apoyo a la gestión, no como reemplazo del criterio profesional. Permitir flujos flexibles, capacitación gradual y canales de retroalimentación. Evitar mensajes que culpabilicen al usuario por errores y priorizar un lenguaje cercano al contexto educativo peruano. |
+| **4. Impacto Económico** | **Negativo:** Las academias pequeñas podrían asumir costos de suscripción, capacitación o cambio de procesos que no recuperen rápidamente. También existe riesgo de que la digitalización beneficie más a academias con mayor capacidad económica, ampliando brechas frente a instituciones pequeñas.<br><br>**Positivo:** Reduce tiempo administrativo, errores de cobranza, duplicidad de registros y pérdida de información, lo que puede mejorar la sostenibilidad económica de las academias. | **Afectados:** Directores, propietarios, administrativos y familias que podrían recibir cambios en procesos de pago o matrícula. La magnitud es alta para academias pequeñas, donde el margen económico suele ser limitado. | Proponer planes escalonados según tamaño de academia, pruebas piloto, exportación de información y métricas de ahorro de tiempo. Evitar dependencias cerradas que impidan a la academia recuperar sus datos si deja el servicio. Priorizar primero módulos de alto valor como matrícula, pagos y asistencia. |
+| **5. Impacto Ambiental (Antrópico)** | **Negativo:** El uso de servicios cloud, almacenamiento de evidencias, telemetría y consultas al backend incrementa consumo energético digital. El crecimiento de la plataforma puede aumentar la huella tecnológica si no se optimizan recursos.<br><br>**Positivo:** Disminuye el uso de papel en matrículas, asistencia, reportes, control de pagos y documentos internos. | **Afectados:** Medio ambiente y comunidad educativa. La magnitud es media: el impacto individual de una academia es reducido, pero puede crecer si la solución escala a muchas instituciones. | Optimizar consultas, almacenamiento de imágenes y generación de reportes. Conservar solo la información necesaria, aplicar políticas de retención de datos y promover reportes digitales en lugar de impresiones. Medir el uso de recursos cloud conforme el producto escale. |
+| **6. Enfoque Global** | **Negativo:** Si Demy escala fuera del Perú, puede enfrentarse a diferentes normativas de protección de datos, facturación, tratamiento de información de menores y prácticas educativas locales. Un diseño pensado solo para un contexto puede resultar inadecuado o riesgoso en otros países.<br><br>**Positivo:** La plataforma puede adaptarse a academias de distintos contextos latinoamericanos que comparten problemas similares de gestión manual. | **Afectados:** Academias, estudiantes, familias y equipos administradores de distintos países o regiones. La magnitud es media-alta si se manejan datos personales, financieros o de menores en marcos regulatorios diferentes. | Diseñar configuraciones por país para moneda, documentos de identidad, términos legales y políticas de privacidad. Aplicar principios de privacidad desde el diseño, consentimiento informado, minimización de datos y revisión legal antes de operar en nuevos mercados. |
+| **7. Revelación de Peligros y Responsabilidad** | **Riesgo:** Demy maneja datos sensibles como información de estudiantes, docentes, asistencia, pagos, usuarios, correos y eventos de telemetría. Una vulnerabilidad, fuga de datos, mala configuración de permisos o uso excesivo de analítica podría afectar la privacidad y confianza de la comunidad educativa. | **Afectados:** Estudiantes, padres, docentes, administradores, academias y el equipo responsable del producto. La magnitud es alta, porque involucra privacidad, información financiera y posibles datos de menores de edad. | Asumir responsabilidad profesional ante vulnerabilidades reales. Implementar autenticación segura, control de roles, cifrado, logs auditables, pruebas de seguridad y políticas claras de privacidad. Si se detecta un riesgo crítico, comunicarlo oportunamente, limitar el daño, suspender funciones afectadas si es necesario y corregir antes de priorizar intereses comerciales. |
+
+<hr class="page-break">
+
+
 
 # Conclusiones
 
@@ -12448,6 +13400,8 @@ Se recomienda priorizar la implementación de las funcionalidades más críticas
 
 Asimismo, se logro verificar la robustez de nuestras soluciones mediante las pruebas unitarias, integración,e2e y bdd.
 
+Para el AV2, el equipo realizó la etapa de experiment driven product development, donde logramos identificar la situación actual del proyecto y las pequeñas modificaciones que haríamos planteadas en las to-be user stories para poder mejorar la analítica del ecosistema demy y ver si las funcionalidades core son usadas por los usuarios.
+
 ### Recomendaciones
 
 Es crucial preparar los escenarios de validación con usuarios reales para contrastar las hipótesis planteadas y asegurar que la solución propuesta realmente satisface las necesidades del mercado, así como identificar posibles mejoras o ajustes necesarios.
@@ -12455,8 +13409,14 @@ Es crucial preparar los escenarios de validación con usuarios reales para contr
 Además, se recomienda mantener la coherencia visual y de experiencia de usuario en todas las plataformas (web y móvil) para garantizar una experiencia fluida y agradable para los usuarios.
 Estas acciones permitirán aumentar la adopción y satisfacción de los usuarios con la plataforma Demy y acercarse al objetivo de transformar la gestión administrativa de las academias educativas en el Perú.
 
+Por otro lado, se recomienda realizar la parte de experiment driven product developemnt con casi o todo el equipo, ya que es una etapa que requiere muchas ideas, suposiciones del estado actual del proyecto y que modificaciones se realizaría para ver si hay cambios en la interacción del usuario con algunas funcionalidades.
+
 Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
 Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
+
+<hr class="page-break">
+
+# Video About-The-Team
 
 <hr class="page-break">
 
@@ -12544,7 +13504,7 @@ Además, se incluye la evidencia de despliegue:
 
 **Enlace para acceder a la landing page:** [https://demy-edulabs.netlify.app/](https://demy-edulabs.netlify.app/)
 
-**Enlace para acceder a la RESTful API:** [https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html](https://demy-experimentos-backend-production.up.railway.app/swagger-ui/index.html)
+**Enlace para acceder a la RESTful API:** [https://demy-app-backend-eygre7eda5g3hkfh.southeastasia-01.azurewebsites.net/swagger-ui/index.html](https://demy-app-backend-eygre7eda5g3hkfh.southeastasia-01.azurewebsites.net/swagger-ui/index.html)
 
 **Enlace para acceder a la Web Application:** [https://edulabs-experimentos.github.io/demy-admin-web/sign-up](https://edulabs-experimentos.github.io/demy-admin-web/sign-up)
 
@@ -12552,7 +13512,7 @@ Usuario por defecto para iniciar sesión:
 
 email: diegovilcatut@gmail.com  
 
-password: Sofiamia
+password: sofiamia
 
 
 <hr class="page-break">
