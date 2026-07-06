@@ -13083,6 +13083,53 @@ Para el Segmento 2 no se incluye una meta-pregunta sobre encuestas in-app, dado 
 
 #### 8.3.4.2. Registro de Entrevistas.
 
+**Segmento 2: Docentes de academias**
+
+##### Segmento: Profesor - Entrevistado 1
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | María Fernanda Reyes |
+| **Edad** | 27 años |
+| **Sexo** | Femenino |
+| **Distrito** | Jesús María |
+| **Ocupación** | Profesora de academia (Inglés) |
+| **Fecha de entrevista** | 01 de julio de 2026 |
+| **Timing** |  |
+| **Video** |  |
+| **Captura** |  |
+| **Resumen** | María Fernanda ("Mafer") Reyes menciona que trabaja casi todo desde el celular, por lo que una app como Demy le resulta natural para su día a día. Registró la asistencia de su clase y revisó su horario semanal sin dificultad, destacando que el flujo es rápido y que los botones dicen claramente lo que hacen. Considera que usaría la app a diario en vez del papel o el WhatsApp, dejando este último solo para conversaciones informales, ya que para la asistencia, el horario y las reprogramaciones prefiere que todo quede registrado en la plataforma. Afirma que casi nada la frenaría para adoptarla desde mañana y que la recomendaría a otros docentes. |
+
+##### Segmento: Profesor - Entrevistado 2
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Luciano Paredes |
+| **Edad** | 41 años |
+| **Sexo** | Masculino |
+| **Distrito** | San Miguel |
+| **Ocupación** | Profesor de academia (Matemáticas) |
+| **Fecha de entrevista** | 02 de julio de 2026 |
+| **Timing** |  |
+| **Video** |  |
+| **Captura** |  |
+| **Resumen** | Luciano, con un perfil más tradicional acostumbrado a anotar en papel, reconoce que la app es claramente más rápida y ordenada, y que evita traspapelar las listas de asistencia. Completó las tareas de registro de asistencia y revisión del horario semanal sin sentirse perdido en ninguna pantalla, valorando que la aplicación esté enfocada solo en lo que un docente realmente necesita. Indica que reservaría el WhatsApp para coordinaciones informales, pero que para avisar una reprogramación prefiere la app por dejar constancia formal. Considera que, con una breve explicación inicial, la usaría a diario sin problema y que le pareció más simple de lo que esperaba. |
+
+##### Segmento: Profesor - Entrevistado 3
+
+| Atributo | Detalle |
+|---|---|
+| **Nombre** | Sebastián Núñez |
+| **Edad** | 33 años |
+| **Sexo** | Masculino |
+| **Distrito** | Los Olivos |
+| **Ocupación** | Profesor de academia (Ciencias) |
+| **Fecha de entrevista** | 03 de julio de 2026 |
+| **Timing** |  |
+| **Video** |  |
+| **Captura** |  |
+| **Resumen** | Sebastián valora que Demy centralice la asistencia y el horario en el celular, simplificando su rutina y ahorrándole tiempo entre clases. Registró la asistencia y revisó su horario semanal con facilidad, e incluso probó la reprogramación de una sesión, resaltando que se entiende a la primera y que todo está donde uno espera encontrarlo. Señala que solo usaría el WhatsApp para charlas informales, mientras que para lo operativo —y en especial las reprogramaciones— prefiere la app por dejar constancia. Manifiesta que nada lo frenaría para adoptarla desde mañana y que pediría funciones adicionales solo más adelante. |
+
 <hr class="page-break">
 
 ## 8.4. Experiment Aftermath & Analysis
