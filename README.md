@@ -56,6 +56,10 @@
 | 8.4     | 14/06/2026 | Rafael Dominguez    | Documentación de Experiment Planning                     |
 | 8.5     | 16/06/2026 | Diego Vilca         | Documentación de Experiment Design                       |
 | 9.0     | 4/07/2026  |  Diego Vilca        | Documentación de To-Be Sprint Backlogs (Sprint Planning 4 y Sprint Backlog 4) |
+| 9.1     | 5/07/2026  |  Daniel Crispin     | Documentación de Implemented To-Be Frontend-Web Application Evidence (8.3.3.3) |
+| 9.2     | 5/07/2026  |  Rafael Dominguez      | Documentación de Diseño de Entrevistas To-Be, Analysis and Interpretation of Results y Re-scored Question Backlog (8.3.4.1, 8.4.1, 8.4.2) |
+| 9.3     | 5/07/2026  |  Renso Julca        | Documentación de Shareback Session Artifacts: Learning Workflow (8.5.1) |
+| 9.4     | 6/07/2026  |  Henry Kalet        | Documentación del Video About-The-Team |
 
 <hr class="page-break">
 
@@ -154,6 +158,41 @@ Estos gráficos detallan la cantidad de líneas de código añadidas por cada mi
 Análisis de líneas de código añadidas por contribuyente.
 
 ![Insights - Contributors](./assets/images/team-collaboration-insights/report/av2/av2-pulse.png)
+
+</div>
+
+## TB2
+
+**Tareas**
+
+Para el desarrollo del TB2, cada participante del equipo realizó las siguientes tareas:
+
+| Integrantes | Tarea asignada |
+| :--- | :--- |
+| Crispin Ramos, Daniel Franco | - Implemented To-Be Frontend-Web Application Evidence |
+| Dominguez Vargas, Rafael | - To-Be Validation Interviews (Diseño y Registro de Entrevistas) |
+| Esteban Roman, Henry Kalet | - Experiment Aftermath & Analysis <br> - Matriz de Evaluación Ética y de Impacto |
+| Julca, Renso | - Continuous Learning: Shareback Session Artifacts <br> - To-Be Software Platform Pre-launch: About-the-Product Intro Video |
+| Vilca Saboya, Diego Alejandro | - To-Be Sprint Backlogs <br> - Implemented To-Be Landing Page, Native-Mobile y RESTful API Evidence <br> - Instrumentación de telemetría en backend y apps móviles (TelemetryClient, Firebase Analytics) <br> - Analysis and Interpretation of Results y Re-scored Question Backlog <br> - Video About-The-Team |
+
+**GitHub Collaboration Insights**
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
+
+![Insights - Network Graph](./assets/images/team-collaboration-insights/report/tb2/tb2-network-graph.png)
+
+</div>
+
+A continuación, se presentan los gráficos que muestran el análisis de los commits en el repositorio correspondiente al informe.  
+Estos gráficos detallan la cantidad de líneas de código añadidas por cada miembro del equipo y la actividad de commits registrada correspondiente al TB2.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Análisis de líneas de código añadidas por contribuyente.
+
+![Insights - Contributors](./assets/images/team-collaboration-insights/report/tb2/tb2-pulse.png)
 
 </div>
 
@@ -358,27 +397,37 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
                 <strong>TB1:</strong><br>
                 Al desarrollar el módulo de IAM (Gestión de Identidades y Accesos) y el frontend, implementé prácticas seguras para proteger las credenciales y la privacidad de los usuarios, asumiendo la responsabilidad de no exponer información sensible.<br>
                 <strong>AV2:</strong><br>
-                Llevé a cabo los procesos de Static Testing, Reviews y Verificaciones con rigurosidad profesional, asegurando de manera transparente y honesta la detección temprana de vulnerabilidades o fallos en el código para no comprometer la seguridad de los usuarios finales.</p>
+                Llevé a cabo los procesos de Static Testing, Reviews y Verificaciones con rigurosidad profesional, asegurando de manera transparente y honesta la detección temprana de vulnerabilidades o fallos en el código para no comprometer la seguridad de los usuarios finales.<br>
+                <strong>TB2:</strong><br>
+                Al documentar la evidencia de implementación de la Web Application To-Be, describí con precisión técnica el flujo real de instrumentación (SDK de Application Insights, disparo del evento y payload enviado), evitando presentar capturas o resultados que no correspondan exactamente a lo implementado en el código fuente.</p>
                 <p><strong>Rafael Dominguez</strong><br> 
                 <strong>TB1:</strong><br>
                 Diseñé la arquitectura del software (DDD) y probé el módulo de Enrollment, asegurando que la información de las matrículas y los datos personales se manejen bajo buenas prácticas y con estricta confidencialidad.<br>
                 <strong>AV2:</strong><br>
-                En el Experiment Planning, actué bajo principios de honestidad científica, estructurando hipótesis y métricas claras sin manipular los escenarios de prueba, garantizando un marco de experimentación transparente y responsable.</p>
+                En el Experiment Planning, actué bajo principios de honestidad científica, estructurando hipótesis y métricas claras sin manipular los escenarios de prueba, garantizando un marco de experimentación transparente y responsable.<br>
+                <strong>TB2:</strong><br>
+                Al diseñar las entrevistas de validación To-Be, evité reutilizar preguntas de needfinding que ya no correspondían a esta etapa, y construí un guion de tarea guiada más pregunta de reacción que respeta el consentimiento y la honestidad de la respuesta del entrevistado, sin inducir respuestas favorables al producto.</p>
                 <p><strong>Henry Esteban</strong><br> 
                 <strong>TB1:</strong><br>
                 Al diseñar la base de datos y documentar la API REST, mantuve total transparencia técnica para facilitar la integración del equipo. Además, apliqué pruebas en el módulo de asistencias para prevenir alteraciones éticamente incorrectas en los registros.<br>
                 <strong>AV2:</strong><br>
-                Durante las entrevistas de validación, mantuve un comportamiento profesional y respetuoso con los entrevistados, asegurando la confidencialidad de sus testimonios y recopilando feedback genuino sin inducir sesgos de manera poco ética.</p>
+                Durante las entrevistas de validación, mantuve un comportamiento profesional y respetuoso con los entrevistados, asegurando la confidencialidad de sus testimonios y recopilando feedback genuino sin inducir sesgos de manera poco ética.<br>
+                <strong>TB2:</strong><br>
+                Al analizar los resultados del piloto de experimentación, reporté con honestidad que los datos de adopción y retención (DBM-01, DBM-03) eran insuficientes para aceptar o rechazar la hipótesis, en lugar de forzar una conclusión favorable; aplicando el principio de que una hipótesis se prueba, no se valida como verdadera.</p>
                 <p><strong>Renso Julca</strong><br> 
                 <strong>TB1:</strong><br>
                 Redacté el Acuerdo de Servicio (SaaS) estableciendo términos claros y justos para los clientes. En el módulo de Finanzas (Finance), realicé pruebas rigurosas para evitar errores en cálculos, asumiendo la responsabilidad profesional que implica manejar dinero.<br>
                 <strong>AV2:</strong><br>
-                Al realizar la Auditoría UX, evalué la interfaz de forma objetiva, priorizando la accesibilidad y la inclusión de los usuarios, asumiendo la responsabilidad de evitar patrones oscuros (dark patterns) que pudieran engañar o perjudicar la experiencia del cliente.</p>
+                Al realizar la Auditoría UX, evalué la interfaz de forma objetiva, priorizando la accesibilidad y la inclusión de los usuarios, asumiendo la responsabilidad de evitar patrones oscuros (dark patterns) que pudieran engañar o perjudicar la experiencia del cliente.<br>
+                <strong>TB2:</strong><br>
+                Al documentar la sesión de Shareback y el Question Backlog re-priorizado, comuniqué de forma transparente que ninguna hipótesis fue descartada ni validada de forma definitiva, evitando presentar el ciclo experimental como un éxito absoluto cuando en realidad la limitación fue de escala del piloto.</p>
                 <p><strong>Diego Vilca</strong><br> 
                 <strong>TB1:</strong><br>
                 Configuré los flujos de CI/CD y la gestión de la configuración (SCM), asegurando que el código del equipo esté respaldado y los pases a producción sean seguros y trazables. Probé el módulo de Institution protegiendo la integridad de los datos de las organizaciones.<br>
                 <strong>AV2:</strong><br>
-                Diseñé e implementé la estrategia de Continuous Monitoring y Experimentation bajo criterios de transparencia técnica, asegurando que el monitoreo de datos de uso respete la privacidad de los usuarios y que los experimentos reflejen el comportamiento real del sistema.</p>
+                Diseñé e implementé la estrategia de Continuous Monitoring y Experimentation bajo criterios de transparencia técnica, asegurando que el monitoreo de datos de uso respete la privacidad de los usuarios y que los experimentos reflejen el comportamiento real del sistema.<br>
+                <strong>TB2:</strong><br>
+                Al detectar que la reformulación del To-Be Product Backlog había dejado sin sustento la evidencia ya implementada en el backend y las apps móviles, asumí la responsabilidad de reconciliar ambas versiones en vez de ocultar la inconsistencia, documentando honestamente que la telemetría de backend y la de frontend son complementarias y no redundantes.</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> 
                 <strong>TB1:</strong><br>
@@ -386,6 +435,9 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
                 <br><br>
                 <strong>AV2:</strong><br>
                 Para esta entrega, concluimos que la responsabilidad profesional se consolida mediante la verificación constante y la validación honesta de nuestro trabajo. La combinación de pruebas estáticas, monitoreo continuo, auditorías centradas en el usuario y experimentos transparentes nos permite asegurar la calidad del producto final, mostrando respeto por los estándares de ingeniería y por la confianza depositada por los usuarios.
+                <br><br>
+                <strong>TB2:</strong><br>
+                En esta entrega final, concluimos que la responsabilidad ética y profesional se demuestra sobre todo cuando los resultados no son los esperados: en lugar de forzar una validación optimista de nuestras hipótesis de adopción y retención, documentamos con transparencia que la evidencia fue insuficiente, y priorizamos la honestidad metodológica por sobre una narrativa de éxito conveniente para la sustentación.
             </td>
         </tr>
         <tr>
@@ -395,27 +447,37 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
                 <strong>TB1:</strong><br>
                 Mediante las entrevistas y el uso del Lean UX Canvas, identifiqué cómo nuestra aplicación reduce el tiempo que las personas gastan organizando horarios, mejorando directamente su calidad de vida (impacto social).<br>
                 <strong>AV2:</strong><br>
-                A través del Static Testing y las entrevistas de validación cruzadas, analicé cómo mitigar fallos tempranos en la aplicación previene reprocesos costosos, lo cual optimiza la inversión en el desarrollo del producto (impacto económico y social).</p>
+                A través del Static Testing y las entrevistas de validación cruzadas, analicé cómo mitigar fallos tempranos en la aplicación previene reprocesos costosos, lo cual optimiza la inversión en el desarrollo del producto (impacto económico y social).<br>
+                <strong>TB2:</strong><br>
+                Al instrumentar la Web Application con telemetría de UX, permití que las decisiones de mejora del producto se basen en datos reales de uso y no en supuestos del equipo, evitando inversión de desarrollo en funcionalidades que los usuarios no perciben como útiles (impacto económico).</p>
                 <p><strong>Rafael Dominguez</strong><br> 
                 <strong>TB1:</strong><br>
                 Con el mapeo de escenarios (As-is / To-be), analicé el impacto negativo de los procesos manuales actuales y cómo nuestra solución móvil y web ayuda a democratizar y agilizar el acceso a los servicios, beneficiando la economía del usuario al ahorrarle tiempo.<br>
                 <strong>AV2:</strong><br>
-                Al estructurar el Experiment Planning, evalué la viabilidad del negocio y el impacto de implementar nuevas características arquitectónicas, asegurando que las decisiones de ingeniería respondan a una demanda real del mercado global sin desperdiciar recursos.</p>
+                Al estructurar el Experiment Planning, evalué la viabilidad del negocio y el impacto de implementar nuevas características arquitectónicas, asegurando que las decisiones de ingeniería respondan a una demanda real del mercado global sin desperdiciar recursos.<br>
+                <strong>TB2:</strong><br>
+                Al diseñar las entrevistas de validación con directores y coordinadores de academias reales, evalué directamente si la suficiencia percibida del MVP se sostiene en la práctica, evitando que la academia invierta en migrar desde Excel sin evidencia de que la plataforma realmente resuelve su necesidad (impacto económico y social).</p>
                 <p><strong>Henry Esteban</strong><br> 
                 <strong>TB1:</strong><br>
                 Utilicé el Impact Mapping para conectar las necesidades sociales recogidas en las entrevistas con el diseño del sistema, garantizando que nuestra solución tecnológica realmente resuelva un problema real y aporte valor a la comunidad.<br>
                 <strong>AV2:</strong><br>
-                Al co-conducir las entrevistas de validación, sinteticé las perspectivas socioeconómicas de los usuarios reales, validando directamente si los cambios propuestos en el producto generan un alivio verdadero en sus actividades cotidianas.</p>
+                Al co-conducir las entrevistas de validación, sinteticé las perspectivas socioeconómicas de los usuarios reales, validando directamente si los cambios propuestos en el producto generan un alivio verdadero en sus actividades cotidianas.<br>
+                <strong>TB2:</strong><br>
+                Al analizar los resultados del piloto y actualizar la Matriz de Evaluación Ética y de Impacto, evalué cómo la recolección de datos de uso (telemetría) debe balancearse con la privacidad de administrativos y docentes, identificando riesgos y mitigaciones concretas antes de escalar la solución a más academias (impacto social y global).</p>
                 <p><strong>Renso Julca</strong><br> 
                 <strong>TB1:</strong><br>
                 A través del despliegue de la Landing Page y el análisis del módulo financiero, evalué cómo el producto permite a las empresas gestionar sus cobros digitalmente, promoviendo el ahorro económico y reduciendo el impacto ambiental al eliminar recibos físicos.<br>
                 <strong>AV2:</strong><br>
-                Mediante la Auditoría UX, analicé el impacto social de la interfaz, asegurando que la navegación sea intuitiva y accesible para personas con distintos niveles de alfabetización digital, reduciendo así la brecha tecnológica de uso.</p>
+                Mediante la Auditoría UX, analicé el impacto social de la interfaz, asegurando que la navegación sea intuitiva y accesible para personas con distintos niveles de alfabetización digital, reduciendo así la brecha tecnológica de uso.<br>
+                <strong>TB2:</strong><br>
+                Al preparar el video de pre-lanzamiento del producto y la sesión de Shareback, evalué cómo comunicar los resultados del piloto de forma honesta hacia los stakeholders, priorizando la confianza a largo plazo del negocio digital por sobre una presentación artificialmente positiva (impacto económico y social).</p>
                 <p><strong>Diego Vilca</strong><br> 
                 <strong>TB1:</strong><br>
                 Al diseñar el producto e implementar los flujos automatizados en la nube, optimicé los recursos tecnológicos para que la solución sea escalable. Esto permite que las instituciones ahorren en costos operativos y de infraestructura (impacto económico).<br>
                 <strong>AV2:</strong><br>
-                A través del Continuous Monitoring y Experiment Design, medí el impacto en el consumo de recursos de infraestructura en la nube. Esto nos ayuda a tomar decisiones orientadas a una ingeniería de software verde y eficiente, minimizando la huella ecológica del backend (impacto ambiental y económico).</p>
+                A través del Continuous Monitoring y Experiment Design, medí el impacto en el consumo de recursos de infraestructura en la nube. Esto nos ayuda a tomar decisiones orientadas a una ingeniería de software verde y eficiente, minimizando la huella ecológica del backend (impacto ambiental y económico).<br>
+                <strong>TB2:</strong><br>
+                Al diseñar la arquitectura de telemetría dual (Application Insights para backend/web y Firebase Analytics para mobile), opté por servicios gestionados existentes en lugar de construir infraestructura analítica propia, reduciendo el consumo adicional de recursos de cómputo y el costo económico de mantener servidores propios (impacto económico y ambiental).</p>
             </td>
             <td style="padding: 10px; vertical-align: top;"> 
                 <strong>TB1:</strong><br>
@@ -423,6 +485,9 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
                 <br><br>
                 <strong>AV2:</strong><br>
                 Concluimos que el proceso de validación, auditoría y monitoreo continuo nos otorga una visión empírica del impacto de nuestro software. Validar con usuarios reales y analizar métricas de rendimiento nos ayuda a iterar la solución con conciencia de su accesibilidad social, eficiencia de costos económicos y sostenibilidad ambiental mediante el control de recursos digitales en la nube.
+                <br><br>
+                <strong>TB2:</strong><br>
+                En esta entrega concluimos que medir el impacto real de Demy exige aceptar resultados parciales: la evidencia de usabilidad y suficiencia del MVP fue positiva, pero la de adopción y retención fue insuficiente por el tamaño del piloto. Esto nos permitió emitir un juicio informado y realista sobre el estado del negocio digital, en vez de proyectar un impacto económico y social que los datos todavía no sustentan, priorizando ampliar el piloto antes de invertir en escalar la solución.
             </td>
         </tr>
     </tbody>
@@ -13387,36 +13452,54 @@ Se identificaron las siguientes conclusiones y recomendaciones basadas en el des
 
 ### Conclusiones
 
-El equipo concluyó que las academias educativas en el Perú enfrentan desafíos significativos en la gestión administrativa, lo que afecta su eficiencia operativa y la experiencia de estudiantes y docentes.
-La plataforma Demy, desarrollada por la startup EduLabs, aborda estas necesidades mediante una solución integral que automatiza procesos clave como matrícula, asistencia, asignación de horarios, control de inventarios y gestión de pagos.
+El equipo concluyó que las academias educativas medianas en el Perú enfrentan un problema real y validado: una **gestión administrativa fragmentada**, basada en Excel, talonarios físicos y WhatsApp, tal como se identificó en el Problem Statement (1.2.2.1). Esto genera duplicidad de tareas, pérdida de trazabilidad y dificultad para tomar decisiones financieras informadas. La plataforma Demy, desarrollada por la startup EduLabs, aborda estas necesidades mediante una solución integral que automatiza procesos clave como matrícula, asistencia, asignación de horarios y gestión de pagos.
 
-Mediante el uso de Demy, las academias pueden mejorar su eficiencia operativa, reducir errores administrativos y ofrecer una mejor experiencia a sus usuarios.
+Al contrastar los Assumptions iniciales (1.2.2.2) frente al comportamiento real observado durante el piloto de experimentación (Capítulo VIII), la evidencia resultó **parcialmente favorable**: se confirmó que los administrativos sí perciben valor en centralizar sus procesos (`DBM-08`: 66.7% de suficiencia percibida del MVP, sobre un umbral de 60%) y que la interfaz resultó fácil de usar (`DBM-07`: 94.4% de percepción positiva de usabilidad, superando ampliamente el 75% planteado en la Hypothesis 04 del Lean UX Canvas). Sin embargo, el supuesto de adopción masiva en el primer mes (Hypothesis 01: ≥70% de procesos gestionados dentro de la plataforma) no pudo confirmarse ni descartarse, ya que el piloto ejecutado (3 días, 1 academia) resultó insuficiente en tiempo y escala frente a la ventana de 4 semanas originalmente planteada.
 
-Las hipótesis se consideran válidas, ya que se basan en entrevistas y validaciones con potenciales usuarios y expertos en el dominio educativo.
-Sin embargo, aún no se ha contrastado la solución con usuarios reales, lo que será un paso crucial en las siguientes fases del proyecto.
-A pesar de ello, la investigación y el diseño realizados proporcionan una base sólida para el desarrollo futuro de la plataforma.
+Las Hypothesis Statements 02 (reducción de morosidad mediante alertas automáticas), 03 (uso activo de la plataforma por docentes) y 05 (migración a planes de suscripción superiores) definidas en el Lean UX Canvas quedan aún sin contrastar con datos reales, y se trasladan como preguntas priorizadas al Question Backlog re-escalado (8.4.2), junto con la extensión del piloto de adopción (`EXQ-09`) como la de mayor urgencia.
 
-Se recomienda priorizar la implementación de las funcionalidades más críticas para las academias, como la gestión de matrículas y pagos, para maximizar el impacto inicial de la plataforma.
+A diferencia de lo concluido en entregas anteriores, en esta última etapa el equipo sí logró contrastar la solución con datos de uso real —telemetría de backend, frontend y aplicaciones móviles, complementada con entrevistas de validación— aplicando un ciclo Experiment-Driven completo: identificamos preguntas priorizadas, diseñamos experimentos, instrumentamos la plataforma en producción y analizamos los resultados con honestidad metodológica, reconociendo qué hipótesis quedaron soportadas y cuáles requieren más evidencia, en lugar de forzar una conclusión favorable a todas.
 
-Asimismo, se logro verificar la robustez de nuestras soluciones mediante las pruebas unitarias, integración,e2e y bdd.
+Asimismo, se logró verificar la robustez de nuestras soluciones mediante pruebas unitarias, de integración, E2E y BDD, y mediante un pipeline de Integración y Entrega Continua (GitHub Actions) que permitió desplegar la instrumentación de forma segura durante el ciclo experimental.
 
-Para el AV2, el equipo realizó la etapa de experiment driven product development, donde logramos identificar la situación actual del proyecto y las pequeñas modificaciones que haríamos planteadas en las to-be user stories para poder mejorar la analítica del ecosistema demy y ver si las funcionalidades core son usadas por los usuarios.
+Para el TB2, el equipo cerró la etapa de Experiment-Driven Product Development iniciada en el AV2: pasamos de identificar la situación actual del proyecto y plantear pequeñas modificaciones en las To-Be User Stories, a instrumentarlas, ejecutarlas en producción y analizar si las funcionalidades core del ecosistema Demy son efectivamente usadas y percibidas como valiosas por los usuarios.
 
 ### Recomendaciones
 
-Es crucial preparar los escenarios de validación con usuarios reales para contrastar las hipótesis planteadas y asegurar que la solución propuesta realmente satisface las necesidades del mercado, así como identificar posibles mejoras o ajustes necesarios.
+Se recomienda priorizar, para el siguiente ciclo, extender el piloto de adopción y retención (Hypothesis 01) a una ventana completa de 4 semanas y a un mayor número de academias, tal como quedó registrado en el Question Backlog re-priorizado (`EXQ-09`), antes de invertir en nuevas funcionalidades.
 
-Además, se recomienda mantener la coherencia visual y de experiencia de usuario en todas las plataformas (web y móvil) para garantizar una experiencia fluida y agradable para los usuarios.
-Estas acciones permitirán aumentar la adopción y satisfacción de los usuarios con la plataforma Demy y acercarse al objetivo de transformar la gestión administrativa de las academias educativas en el Perú.
+Se recomienda también instrumentar y validar las Hypothesis Statements aún pendientes —en particular la reducción de morosidad mediante alertas automáticas (Hypothesis 02) y el uso activo de la aplicación móvil por parte de los docentes (Hypothesis 03)— siguiendo el mismo enfoque de telemetría dual (percepción de usuario vía frontend/mobile y hecho de negocio confirmado en backend) aplicado en este ciclo.
 
-Por otro lado, se recomienda realizar la parte de experiment driven product developemnt con casi o todo el equipo, ya que es una etapa que requiere muchas ideas, suposiciones del estado actual del proyecto y que modificaciones se realizaría para ver si hay cambios en la interacción del usuario con algunas funcionalidades.
+Además, se recomienda instrumentar la Landing Page (`BLQ-08`) en un próximo ciclo, ya que quedó fuera del alcance de esta entrega por una decisión consciente de priorización sobre la adopción operativa interna, y no porque se considere irrelevante para el crecimiento del negocio.
 
-Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa y atractiva.
-Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo.
+Por otro lado, se recomienda continuar realizando la etapa de Experiment-Driven Product Development con la participación de todo el equipo, ya que requiere generar ideas, cuestionar los supuestos del estado actual del proyecto y decidir en conjunto qué modificaciones vale la pena instrumentar para observar cambios reales en la interacción del usuario.
+
+Finalmente, se sugiere explorar oportunidades de integración con otras herramientas y servicios utilizados por las academias, como sistemas de contabilidad, plataformas de comunicación y servicios de pago, para ofrecer una solución aún más completa. Esto contribuirá a posicionar a Demy como una plataforma integral y líder en el mercado educativo, respaldada por evidencia real de uso y no solo por supuestos del equipo.
 
 <hr class="page-break">
 
 # Video About-The-Team
+
+El video About-The-Team resume el proceso de trabajo del equipo EduLabs a lo largo del ciclo de vida del proyecto Demy
+
+**Pauta de secuencias de contenido**
+
+| Timing (hh:mm:ss) | Sección | Descripción |
+|---|---|---|
+| 00:00:00 | Apertura | Presentación del equipo EduLabs y del producto Demy. |
+| 00:00:05 | Testimonio — Dominguez Vargas, Rafael Alexander | Aportes en Product Backlog, Domain-Driven Software Architecture, evidencia de soluciones móviles y documentación de Experiment Planning (8.1). |
+| 00:02:23 | Testimonio — Esteban Roman, Henry Kalet | Aportes en RESTful API documentation, Software Object-Oriented Design, validation interviews y validación de eventos analíticos en Application Insights (Sprint 4). |
+| 00:04:05 | Testimonio — Julca Cruz, Renso Anthony | Aportes en Acuerdo de Servicio (SaaS), despliegue de la Landing Page, pruebas del bounded context de Finance y producción de los videos del producto. |
+| 00:06:04 | Testimonio — Vilca Saboya, Diego Alejandro | Aportes en Continuous Integration/Delivery, Continuous Monitoring, instrumentación de telemetría (backend y apps móviles) y Experiment Design. |
+| 00:08:02 | Testimonio — Crispin Ramos, Daniel Franco | Aportes en Sprint Backlogs, codificación de la Web Application y cierre/retrospectiva del equipo. |
+| 00:09:29 | Fin del video | — |
+
+**Cuadro de video representativo**
+
+![Video About-The-Team](./assets/images/photos/about-the-team-video.png)
+
+**Enlaces**  
+* YouTube: [https://youtu.be/Am1GgRdQz4g](https://youtu.be/Am1GgRdQz4g)
 
 <hr class="page-break">
 
