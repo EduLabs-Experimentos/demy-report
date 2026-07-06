@@ -169,11 +169,11 @@ Para el desarrollo del TB2, cada participante del equipo realizó las siguientes
 
 | Integrantes | Tarea asignada |
 | :--- | :--- |
-| Crispin Ramos, Daniel Franco | - Implemented To-Be Frontend-Web Application Evidence |
-| Dominguez Vargas, Rafael | - To-Be Validation Interviews (Diseño y Registro de Entrevistas) |
-| Esteban Roman, Henry Kalet | - Experiment Aftermath & Analysis <br> - Matriz de Evaluación Ética y de Impacto |
-| Julca, Renso | - Continuous Learning: Shareback Session Artifacts <br> - To-Be Software Platform Pre-launch: About-the-Product Intro Video |
-| Vilca Saboya, Diego Alejandro | - To-Be Sprint Backlogs <br> - Implemented To-Be Landing Page, Native-Mobile y RESTful API Evidence <br> - Instrumentación de telemetría en backend y apps móviles (TelemetryClient, Firebase Analytics) <br> - Analysis and Interpretation of Results y Re-scored Question Backlog <br> - Video About-The-Team |
+| Crispin Ramos, Daniel Franco | - Implemented To-Be Frontend-Web Application Evidence y Matriz de Evalaucion y de Impacto |
+| Dominguez Vargas, Rafael | - To-Be Software Platform Pre-launch: About-the-Product Intro Video |
+| Esteban Roman, Henry Kalet | - Experiment Aftermath & Analysis <br> - Validation Interviews |
+| Julca, Renso | - Continuous Learning: Shareback Session Artifacts <br> - Validation Interviews |
+| Vilca Saboya, Diego Alejandro | - To-Be Sprint Backlogs <br> - Implemented To-Be Landing Page, Native-Mobile y RESTful API Evidence <br> - Instrumentación de telemetría en backend y apps móviles (TelemetryClient, Firebase Analytics) <br> - Analysis and Interpretation of Results y Re-scored Question Backlog <br> |
 
 **GitHub Collaboration Insights**
 
